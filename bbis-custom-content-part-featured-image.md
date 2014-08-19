@@ -6,7 +6,7 @@ This documentation covers how to create an advanced Custom Content Part.  We'll 
 
 ### Editor Input
 
-```
+```HTML
 <script>
 // Self executing module pattern
 (function($) {
@@ -69,7 +69,7 @@ This documentation covers how to create an advanced Custom Content Part.  We'll 
 
 ### Display Input
 
-```
+```HTML
 <script>
 // Function named specified in the Custom Content Part
 // For simplicity, I've made this method available in the global namespace.
