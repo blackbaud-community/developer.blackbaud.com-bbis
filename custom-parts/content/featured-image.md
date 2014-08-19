@@ -71,7 +71,7 @@ This documentation covers how to create an advanced Custom Content Part.  We'll 
 
 ```HTML
 <script>
-// Function named specified in the Custom Content Part
+// Function name specified in the Custom Content Part
 // For simplicity, I've made this method available in the global namespace.
 function CustomCallbackMethod(settings, element) {
 
