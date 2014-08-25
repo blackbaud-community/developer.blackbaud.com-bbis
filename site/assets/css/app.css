@@ -1,5 +1,14 @@
 /* 
 * ==========================================================================
+* HEADER
+* ========================================================================== 
+*/
+  .navbar {
+    background: #EFEFEF; 
+  }
+
+/* 
+* ==========================================================================
 * CAROUSEL
 * ========================================================================== 
 */
@@ -33,7 +42,7 @@
   }
 
   .content-getting-started .content-getting-started-column {
-    padding-bottom: 60px;
+    padding-bottom: 50px;
   }
 
   .content-getting-started h2 {
@@ -44,29 +53,59 @@
     margin-top: 20px; 
   }
 
+  .content-getting-started .btn,
   .content-latest-features .btn {
     display: block;
     white-space: normal;
     width: 100%; 
   }
 
+  .content-latest-features .feature {
+    margin-left: 5%;
+    width: 90%; 
+  }
+
+  .content-latest-features .feature h3 {
+    font-size: 22px; 
+  }
+
 /* 
 * ==========================================================================
-* RESPONSIVE
+* RESPONSIVE - SMALL
 * ========================================================================== 
 */
 @media (min-width: 768px) { 
+  
+
+
   .content {
     padding: 60px 0;
   }
+
+  .content-getting-started .btn,
   .content-latest-features .btn {
     display: inline-block;
     width: auto;
   }
+  
+  .content-getting-started-column {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+  }
+
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+/* 
+* ==========================================================================
+* RESPONSIVE - BETWEEN SMALL + MEDIUM
+* ========================================================================== 
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+
   .navbar-brand {
+    padding-top: 18px;
     width: 215px;
   }
+
 }
