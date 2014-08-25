@@ -1,0 +1,3 @@
+[submodule "site/assets/blackbaud-bootstrap-theme"]
+	path = site/assets/blackbaud-bootstrap-theme
+	url = https://github.com/bbBobbyEarl/blackbaud-bootstrap-theme.git
