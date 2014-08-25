@@ -1,14 +1,15 @@
 ### Proposed Structure for BBIS Developer Experience
 
 - Introduction
-- Custom Parts
-  - Custom Content Part
-    - Hello World
-    - Featured Image
-  - Custom Framework Part
-    - NEW Example using BBSP API
-    - Constituent Search
-    - Pledge Form
+- Developer Guides
+  - Custom Parts
+    - Custom Content Part
+      - Hello World
+      - Featured Image
+    - Custom Framework Part
+      - NEW Example using BBSP API
+      - Constituent Search
+      - Pledge Form
 - API's (Maybe this is the technical reference?)
   - DLL (What's a better name for this?  Maybe native, or .NET?)
     - Blackbaud Secure Payments API

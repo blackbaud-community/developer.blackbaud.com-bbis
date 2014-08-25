@@ -1,0 +1,46 @@
+/* 
+* ==========================================================================
+* CAROUSEL
+* ========================================================================== 
+*/
+  .carousel .slide-00 {
+    background-image: url(../img/carousel/example-00.jpg);
+  }
+
+  .carousel .slide-01 {
+    background-image: url(../img/carousel/example-01.jpg);
+  }
+
+  .carousel .slide-02 {
+    background-image: url(../img/carousel/example-02.jpg);
+  }
+
+  .carousel .slide-03 {
+    background-image: url(../img/carousel/example-03.jpg);
+  }
+
+  .carousel .slide-04 {
+    background-image: url(../img/carousel/example-04.jpg);
+  }
+
+/* 
+* ==========================================================================
+* CONTENT
+* ========================================================================== 
+*/
+  .content {
+    background: #FFF;
+    padding: 60px 0;
+  }
+
+  .content-getting-started {
+    padding-bottom: 60px;
+  }
+
+  .content-getting-started h2 {
+    padding-bottom: 20px;
+  }
+
+  .content-getting-started .btn {
+    margin-top: 20px; 
+  }
