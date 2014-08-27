@@ -1,10 +1,52 @@
 /* 
 * ==========================================================================
+* GLOBAL
+* ========================================================================== 
+*/
+  body {
+    position: relative;
+  }
+
+  a {
+    color: #34b1ec;
+  }
+
+  a:hover,
+  a:focus {
+     color: #18516C;
+  }
+
+  .btn-primary {
+    background-color: #34b1ec;
+    border-color: #34b1ec;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #37BBF9;
+    border-color: #37BBF9; 
+  }
+
+/* 
+* ==========================================================================
 * HEADER
 * ========================================================================== 
 */
   .navbar {
     background: #EFEFEF; 
+  }
+
+  .navbar .navbar-nav > li.active > a {
+    background: #DFDFDF;
+    color: #000;
+  }
+
+  .nav-sidebar.affix {
+    position: relative;
+  }
+
+  .nav-sidebar.affix-bottom {
+    position: absolute;
   }
 
 /* 
@@ -30,6 +72,21 @@
 
   .carousel .slide-04 {
     background-image: url(../img/carousel/example-04.jpg);
+  }
+
+/* 
+* ==========================================================================
+* SIDEBAR
+* ========================================================================== 
+*/
+  .nav-pills > li.active > a, 
+  .nav-pills > li.active > a:hover, 
+  .nav-pills > li.active > a:focus {
+    background-color: #34b1ec;
+  }
+
+  .nav-sidebar ul.nav a {
+    padding: 5px 5px 5px 35px;
   }
 
 /* 
@@ -71,13 +128,11 @@
 
 /* 
 * ==========================================================================
-* RESPONSIVE - SMALL
+* RESPONSIVE - SMALL (AND UP)
 * ========================================================================== 
 */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   
-
-
   .content {
     padding: 60px 0;
   }
@@ -92,6 +147,10 @@
     display: table-cell;
     float: none;
     vertical-align: middle;
+  }
+  
+  .footer .dl-horizontal {
+    float: right;
   }
 
 }
@@ -109,3 +168,18 @@
   }
 
 }
+
+/* 
+* ==========================================================================
+* RESPONSIVE - MEDIUM (AND UP)
+* ========================================================================== 
+*/
+@media (min-width: 992px) {
+
+  .nav-sidebar.affix {
+    position: fixed;
+    top: 10px;
+  }
+
+}
+

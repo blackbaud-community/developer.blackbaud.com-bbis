@@ -1,4 +1,4 @@
-  <div class="footer">
+<div class="footer">
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
@@ -10,11 +10,8 @@
             <li><a href="#">Blackbaud NetCommunity</a></li>
             <li><a href="#">Blackbaud Raiser's Edge</a></li>
           </ul>
-        </div>  <!-- .col-sm-6 -->
-        <div class="col-sm-5">
-          &nbsp;
-        </div>
-        <div class="col-sm-4">
+        </div>  <!-- .col-sm-3 -->
+        <div class="col-sm-9">
           <dl class="dl-horizontal">
             <dt>Prescriptive Parts</dt>
             <dd>
@@ -50,8 +47,9 @@
               </ul>
             </dd>
           </dl>
-        </div>  <!-- .col-sm-6 -->
+        </div>  <!-- .col-sm-9 -->
       </div>  <!-- .row -->
+      
     </div>  <!-- .container -->
   </div>  <!-- .footer -->
 
@@ -66,6 +64,8 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+  <script src="<?php assets() ?>blackbaud-bootstrap-theme/lib/tocify/jquery-ui-1.9.1.custom.min.js"></script>
+  <script src="<?php assets() ?>blackbaud-bootstrap-theme/lib/tocify/jquery.tocify.min.js"></script>
   <script src="<?php assets() ?>blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js"></script>
   <script src="<?php assets() ?>blackbaud-bootstrap-theme/js/owl.feature.js"></script>
   <script src="<?php assets() ?>blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js"></script>

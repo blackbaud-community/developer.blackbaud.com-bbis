@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="<?php assets(); ?>blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="<?php assets(); ?>blackbaud-bootstrap-theme/lib/animate/animate.css">
   <link rel="stylesheet" href="<?php assets(); ?>blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css">
+  <link rel="stylesheet" href="<?php assets(); ?>blackbaud-bootstrap-theme/lib/tocify/jquery.tocify.css">
   <link rel="stylesheet" href="<?php assets(); ?>css/app.css">
 
 </head>
@@ -35,44 +36,7 @@
       </div>  <!-- navbar-header -->
 
       <div class="collapse navbar-collapse" id="bb-navbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li <?php print isActive('getting-started/'); ?>>
-            <a href="<?php base() ?>getting-started/">Getting Started</a>
-          </li>
-          <li <?php print isActive('guide/'); ?>>
-            <a href="<?php base() ?>guide/" class="dropdown-toggle" data-toggle="dropdown">
-              Developer Guide <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li>
-                <a href="<?php base() ?>guide/#custom-content-part">Custom Content Part</a>
-              </li>
-              <li>
-                <a href="<?php base() ?>guide/#custom-framework-part">Custom Framework Part</a>
-              </li>
-              <li>
-                <a href="<?php base() ?>guide/#custom-content-part">More Coming Soon!</a>
-              </li>
-            </ul>
-          </li>
-          <li <?php print isActive('reference/'); ?>>
-            <a href="<?php base() ?>reference/" class="dropdown-toggle" data-toggle="dropdown">
-              Technical Reference <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li>
-                <a href="<?php base() ?>reference/#">.NET Assemblies</a>
-              </li>
-              <li>
-                <a href="<?php base() ?>reference/#">REST Web API</a>
-              </li>
-              <li>
-                <a href="<?php base() ?>reference/#">JavaScript SDK</a>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-        </ul>  <!-- .navbar-nav -->
+        <?php navMain(); ?>
       </div>  <!-- .navbar-collapse -->
 
     </div>  <!-- .container -->
