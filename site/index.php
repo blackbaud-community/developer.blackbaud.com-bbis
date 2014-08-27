@@ -13,7 +13,7 @@
               <h2>Getting Started</h2>
               <p>Blackbaud Internet Services exposes functionality through .NET assemblies, REST APIs, and JavaScript SDK's.  Using these tools allows developers to create rich interactions with your site and real data.</p>
               <p>Blackbaud’s vision of BBIS is to provide a highly flexible and robust Internet platform with a deep integration to BBCRM and feature set.</p>
-              <p><a href="#" class="btn btn-primary btn-lg">Getting Started</a></p>
+              <p><a href="getting-started/" class="btn btn-primary btn-lg">Getting Started</a></p>
             </div>  <!-- .col-sm-6 -->
 
             <div class="col-sm-6 content-getting-started-column">
