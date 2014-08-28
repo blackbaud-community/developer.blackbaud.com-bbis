@@ -1,8 +1,4 @@
 <?php
-
-define('_BASE', 'http://chs6bobbyear02.blackbaud.global:8080/github/bbBobbyEarl/bbis/site/');
-define('_ASSETS', _BASE . 'assets/');
-
 $sitemap = array(
   array(
     'title' => 'Getting Started',
@@ -123,12 +119,31 @@ $sitemap = array(
   )  
 );
 
+function getBase() {
+  $base = '';
+  switch ($_SERVER['SERVER_NAME']) {
+    case 'localhost':
+    case 'chs6bobbyearl02':
+    case 'chs6bobbyear02.blackbaud.global':
+      $base = 'http://chs6bobbyear02.blackbaud.global:8080/github/bbBobbyEarl/bbis/site/';
+    break;
+    default:
+      $base = 'http://developer.blackbaud.com/bbis/site/';
+    break;
+  }
+  return $base;
+}
+
+function getAssets() {
+  return getBase() . 'assets/';
+}
+
 function base() {
-  print _BASE;
+  print getBase();
 }
 
 function assets() {
-  print _ASSETS;
+  print getAssets();
 }
 
 function head($options = array()) {
@@ -160,7 +175,7 @@ function navMain() {
   $a = array('<ul class="nav navbar-nav navbar-right">');
   foreach ($sitemap as $li) {
     $a[] = '<li' . isActive($li['url']) . '>';
-    $a[] = '<a href="' . _BASE . $li['url'] . '">' . $li['title'] . '</a>';
+    $a[] = '<a href="' . getBase() . $li['url'] . '">' . $li['title'] . '</a>';
     $a[] = '</li>';
   }
   $a[] = '</ul>';
