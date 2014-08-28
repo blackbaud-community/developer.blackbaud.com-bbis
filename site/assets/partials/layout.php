@@ -15,7 +15,7 @@
       </div>  <!-- .col-md-3 -->
       
     </div>  <!-- .row -->
-  </div>  <!-- .container -->
+  </div>  <!-- .container -->  
 </div>  <!-- .content -->
 
 <?php foot(); ?>

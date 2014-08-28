@@ -9,24 +9,35 @@ $sitemap = array(
     'url' => 'getting-started/',
     'children' => array(
       array(
-        'title' => 'The Basics',
-        'url' => '#the-basics',
+        'title' => 'Getting Started',
+        'url' => '#getting-started',
+        'content' => 'getting-started.htm'
+      ),
+      array(
+        'title' => 'BBIS Understanding',
+        'url' => '#bbis-understanding',
+        'content' => 'bbis-understanding.htm'
+      ),
+      array(
+        'title' => 'Development Environment',
+        'url' => '#development-environment',
+        'content' => 'development-environment.htm',
         'children' => array(
           array(
-            'title' => 'Getting Started',
-            'url' => '#getting-started',
-            'content' => 'getting-started.htm'
+            'title' => 'Blackbaud CRM',
+            'url' => '#blackbaud-crm',
+            'content' => 'blackbaud-crm.htm'
           ),
           array(
-            'title' => 'BBIS Understanding',
-            'url' => '#bbis-understanding',
-            'content' => 'bbis-understanding.htm'
+            'title' => 'Blackbaud Internet Solutions',
+            'url' => '#blackbaud-internet-solutions',
+            'content' => 'blackbaud-internet-solutions.htm'
           ),
           array(
-            'title' => 'Development Environment',
-            'url' => '#development-environment',
-            'content' => 'development-environment.htm'
-          )
+            'title' => 'Infinity SDK',
+            'url' => '#infinity-sdk',
+            'content' => 'infinity-sdk.htm'
+          ),
         )
       )
     )
@@ -38,44 +49,54 @@ $sitemap = array(
       array(
         'title' => 'Custom Content Parts',
         'url' => '#custom-content-parts',
+        'content' => 'custom-content-parts.htm',
         'children' => array(
           array(
             'title' => 'Hello World',
-            'url' => '#hello-world'
+            'url' => '#hello-world',
+            'content' => 'hello-world.htm'
           ),
           array(
             'title' => 'Featured Image',
-            'url' => '#featured-image'
+            'url' => '#featured-image',
+            'content' => 'featured-image.htm'
           ),
           array(
             'title' => 'Query Service Directory',
-            'url' => '#query-service-directory'
+            'url' => '#query-service-directory',
+            'content' => 'query-service-directory'
           )
         )
       ),
       array(
         'title' => 'Custom Framework Parts',
         'url' => '#custom-framework-parts',
+        'content' => 'custom-framework-parts.htm',
         'children' => array(
           array(
             'title' => 'Setup',
-            'url' => '#setup'
+            'url' => '#setup',
+            'content' => 'setup.htm'
           ),
           array(
             'title' => 'Custom Pledge Form',
-            'url' => '#custom-pledge-form'
+            'url' => '#custom-pledge-form',
+            'content' => 'custom-pledge-form.htm'
           ),
           array(
             'title' => 'Constituent Search',
-            'url' => '#constituent-search'
+            'url' => '#constituent-search',
+            'content' => 'constituent-search.htm'
           ),
           array(
             'title' => 'Event Registration',
-            'url' => '#event-registration'
+            'url' => '#event-registration',
+            'content' => 'event-registration.htm'
           ),
           array(
             'title' => 'Barebone Secure Payments',
-            'url' => '#barebone-secure-payments'
+            'url' => '#barebone-secure-payments',
+            'content' => 'barebone-secure-payments.htm'
           )
         )
       ),
@@ -159,7 +180,7 @@ function navSidebar() {
         $a[] = '<li' . isActive($li['url']) . '>';
         $a[] = '<a href="' . $li['url'] . '">' . $li['title'] . '</a>';
         
-        if (is_array($li['children'])) {
+        if (isset($li['children']) && is_array($li['children'])) {
           $a[] = '<ul class="nav">';
           foreach ($li['children'] as $child) {
             $a[] = '<li>';
@@ -173,6 +194,12 @@ function navSidebar() {
       }
     }
   }
+  $a[] = '<li class="back-to-top">';
+  $a[] = '<a href="#top">';
+  $a[] = '<span class="sr-only">Back to Top</span>';
+  $a[] = '<i class="fa fa-chevron-circle-up"></i>';
+  $a[] = '</a>';
+  $a[] = '</li>';
   $a[] = '</ul>';
   
   print implode($a, "");
@@ -190,7 +217,7 @@ function content() {
         foreach ($parent['children'] as $child) {
           $a[] = '<h2' . getId($child) . '>' . $child['title'] . '</h2>';
           $a[] = getContent($parent['url'], $child);
-          if (is_array($child['children'])) {
+          if (isset($child['children']) && is_array($child['children'])) {
             foreach ($child['children'] as $grandchild) {
               $a[] = '<h3' . getId($grandchild) . '>' . $grandchild['title'] . '</h3>';
               $a[] = getContent($parent['url'], $grandchild);
@@ -211,7 +238,13 @@ function getId($item) {
 function getContent($base, $item) {
   $r = '';
   if (isset($item['content'])) {
-    $r = file_get_contents('../' . $base . $item['content']);
+    $url = '../' . $base . $item['content'];
+    if (!file_exists($url)) {
+      $r = '<p>Hipster ipsum served up instead of <strong>' . $url . '</strong>.</p>';
+      $r .= file_get_contents('../assets/hipsum/p' . rand(1, 10) . '.htm'); 
+    } else {
+      $r = file_get_contents($url);
+    }
   }
   return $r;
 }

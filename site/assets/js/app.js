@@ -30,8 +30,15 @@
         }).trigger('resize');
 
         $('body').scrollspy({
-          target: '#sidebar'
+          target: '.sidebar'
         });
+        
+        $('.back-to-top a').click(function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: 0
+          }, 500);
+        })
       }
 
 	});

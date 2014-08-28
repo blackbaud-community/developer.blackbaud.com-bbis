@@ -85,8 +85,25 @@
     background-color: #34b1ec;
   }
 
+  .nav-sidebar ul.nav .active a {
+    background-color: #eee;
+  }
+
   .nav-sidebar ul.nav a {
     padding: 5px 5px 5px 35px;
+  }
+
+  .nav-sidebar .back-to-top {
+    display: none;
+  }
+
+  .nav-sidebar.affix .back-to-top {
+    display: block;
+  }
+
+  .nav-sidebar .back-to-top a {
+    background: #FFF !important;
+    text-align: right;
   }
 
 /* 
