@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blackbaud</title>
 
-  <link rel="icon" href="blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  <link rel="icon" href="../img/favicon.ico" type="image/ico">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="blackbaud-bootstrap-theme/lib/animate/animate.css">
-  <link rel="stylesheet" href="blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="../lib/owl-carousel/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="../lib/owl-carousel/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../lib/animate/animate.css">
+  <link rel="stylesheet" href="../css/blackbaud-bootstrap-theme.css">
 
 </head>
 <body>
@@ -30,7 +29,8 @@
           <span class="icon-bar"></span>
         </button>
         <a href="http://www.blackbaud.com" target="_blank" class="navbar-brand">
-          <img src="img/logo-bbis.png" alt="Blackbaud" class="img-responsive" />
+          <img src="../img/logo-black.png" alt="Blackbaud" />
+          &nbsp;&nbsp;<span class="bb-interactive-text">Internet Solutions</span>
         </a>
       </div>  <!-- navbar-header -->
 
@@ -134,52 +134,50 @@
           <div class="content-getting-started">
             <div class="row">
               
-              <div class="col-sm-6 content-getting-started-column">
+              <div class="col-sm-6">
                 <h2>Getting Started</h2>
                 <p>Blackbaud Internet Services exposes functionality through .NET assemblies, REST APIs, and JavaScript SDK's.  Using these tools allows developers to create rich interactions with your site and real data.</p>
                 <p>Blackbaud’s vision of BBIS is to provide a highly flexible and robust Internet platform with a deep integration to BBCRM and feature set.</p>
                 <p><a href="#" class="btn btn-primary btn-lg">Getting Started</a></p>
               </div>  <!-- .col-sm-6 -->
               
-              <div class="col-sm-6 content-getting-started-column">
-                <p class="pull-right"><img src="img/static-hero.png" alt="" class="img-responsive" /></p>
+              <div class="col-sm-6">
+                <p class="pull-right"><img src="../img/static-hero.png" alt="" class="img-responsive" /></p>
               </div>  <!-- .col-sm-6 -->
               
             </div>  <!-- .row -->
           </div>  <!-- .content-getting-started -->
           
-          <div class="content-latest-features">
-            <h2>Latest Features</h2>          
-            <div class="row">            
-              <div class="col-sm-4">
+          <h2>Latest Features</h2>
+          
+          <div class="row">
+            
+            <div class="col-sm-4">
 
-                <h3><i class="fa fa-cogs pull-right"></i> Create Custom Parts</h3>
-                <p>Using .NET assemblies to create Custom Framework Parts or our JavaScript SDK to create Custom Content Parts gives you unbelievable granular control over the user experience.</p>
-              </div>  <!-- .col-sm-4 -->   
-
-              <div class="col-sm-4">
-                <h3><i class="fa fa-truck pull-right"></i> Enterprise CRM Integration</h3>
-                <p>Full integration means you have the ability to safely and securely manipulate all your sensitive constituent data.</p>
-              </div>  <!-- .col-sm-4 -->
-
-              <div class="col-sm-4">
-                <h3><i class="fa fa-credit-card pull-right"></i> Secure Payments Integration</h3>
-                <p>API endpoints exposed in the BBNCExtensions .NET Assembly allows custom parts to utilize the secure payments service.</p>
-              </div>  <!-- .col-sm-4 -->
-
-            </div>  <!-- .row -->
-            <div class="row">
-              <div class="col-sm-4">
-                <p class="text-center"><a href="#" class="btn btn-default">Learn More About Custom Parts</a></p>
-              </div>  <!-- .col-sm-4 -->
-              <div class="col-sm-4">
-                <p class="text-center"><a href="#" class="btn btn-default">Learn More About the Infinity SDK</a></p>        
-              </div>  <!-- .col-sm-4 -->
-              <div class="col-sm-4">
-                <p class="text-center"><a href="#" class="btn btn-default">Learn More About BBNCExtensions</a></p>
-              </div>  <!-- .col-sm-4 -->
-            </div> <!-- .row -->
-          </div>  <!-- .content-latest-features -->
+              <h3>Create Custom Parts <i class="fa fa-cogs pull-right"></i></h3>
+              <p>Using .NET assemblies to create Custom Framework Parts or our JavaScript SDK to create Custom Content Parts gives you unbelievable granular control over the user experience.</p>
+            </div>  <!-- .col-sm-4 -->            
+            <div class="col-sm-4">
+              <h3>Enterprise CRM Integration <i class="fa fa-truck pull-right"></i></h3>
+              <p>Full integration means you have the ability to safely and securely manipulate all your sensitive constituent data.</p>
+            </div>  <!-- .col-sm-4 -->            
+            <div class="col-sm-4">
+              <h3>Secure Payments Integration <i class="fa fa-credit-card pull-right"></i></h3>
+              <p>API endpoints exposed in the BBNCExtensions .NET Assembly allows custom parts to utilize the secure payments service.</p>
+            </div>  <!-- .col-sm-4 -->
+            
+          </div>  <!-- .row -->
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="text-center"><a href="#" class="btn btn-default">Learn More About Custom Parts</a></p>
+            </div>  <!-- .col-sm-4 -->
+            <div class="col-sm-4">
+              <p class="text-center"><a href="#" class="btn btn-default">Learn More About the Infinity SDK</a></p>        
+            </div>  <!-- .col-sm-4 -->
+            <div class="col-sm-4">
+              <p class="text-center"><a href="#" class="btn btn-default">Learn More About BBNCExtensions</a></p>
+            </div>  <!-- .col-sm-4 -->
+          </div> <!-- .row -->
           
         </div>  <!-- .col-sm-12 -->
       </div>  <!-- .row -->
@@ -190,7 +188,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <p><img src="blackbaud-bootstrap-theme/img/logo-developer.png" alt="Blackbaud Developer Network" /></p>
+          <p><img src="../img/logo-developer.png" alt="Blackbaud Developer Network" /></p>
           <ul class="list-unstyled">
             <li><a href="#">Blackbaud Education Edge</a></li>
             <li><a href="#">Blackbaud Infinity SDK</a></li>
@@ -251,10 +249,9 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
-  <script src="blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js"></script>
-  <script src="blackbaud-bootstrap-theme/js/owl.feature.js"></script>
-  <script src="blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../lib/owl-carousel/owl.carousel.js"></script>
+  <script src="../js/owl.feature.js"></script>
+  <script src="../js/blackbaud-bootstrap-theme.js"></script>
   
 </body>
 </html>

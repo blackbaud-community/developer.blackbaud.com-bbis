@@ -1,6 +1,5 @@
----
-layout: default
----
+<?php require_once(dirname(__FILE__) . '/assets/template.php'); ?>
+<?php head(array('carousel' => true)); ?>
 
 <div class="content">
   <div class="container">
@@ -18,7 +17,7 @@ layout: default
             </div>  <!-- .col-sm-6 -->
 
             <div class="col-sm-6 content-getting-started-column">
-              <img src="{{ site.baseurl }}/assets/img/static-hero.png" alt="" class="img-responsive" />
+              <img src="<?php assets() ?>img/static-hero.png" alt="" class="img-responsive" />
             </div>  <!-- .col-sm-6 -->
 
           </div>  <!-- .row -->
@@ -66,3 +65,5 @@ layout: default
     </div>  <!-- .row -->
   </div>  <!-- .container -->
 </div>  <!-- .content -->
+
+<?php include 'assets/partials/footer.php'; ?>

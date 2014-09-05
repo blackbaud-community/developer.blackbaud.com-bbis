@@ -1,0 +1,202 @@
+/* 
+* ==========================================================================
+* GLOBAL
+* ========================================================================== 
+*/
+  body {
+    position: relative;
+  }
+
+  a {
+    color: #34b1ec;
+  }
+
+  a:hover,
+  a:focus {
+     color: #18516C;
+  }
+
+  .btn-primary {
+    background-color: #34b1ec;
+    border-color: #34b1ec;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #37BBF9;
+    border-color: #37BBF9; 
+  }
+
+/* 
+* ==========================================================================
+* HEADER
+* ========================================================================== 
+*/
+  .navbar {
+    background: #EFEFEF; 
+  }
+
+  .navbar .navbar-nav > li.active > a {
+    background: #DFDFDF;
+    color: #000;
+  }
+
+  .nav-sidebar.affix {
+    position: relative;
+  }
+
+  .nav-sidebar.affix-bottom {
+    position: absolute;
+  }
+
+/* 
+* ==========================================================================
+* CAROUSEL
+* ========================================================================== 
+*/
+  .carousel .slide-00 {
+    background-image: url(../img/carousel/example-00.jpg);
+  }
+
+  .carousel .slide-01 {
+    background-image: url(../img/carousel/example-01.jpg);
+  }
+
+  .carousel .slide-02 {
+    background-image: url(../img/carousel/example-02.jpg);
+  }
+
+  .carousel .slide-03 {
+    background-image: url(../img/carousel/example-03.jpg);
+  }
+
+  .carousel .slide-04 {
+    background-image: url(../img/carousel/example-04.jpg);
+  }
+
+/* 
+* ==========================================================================
+* SIDEBAR
+* ========================================================================== 
+*/
+  .nav-pills > li.active > a, 
+  .nav-pills > li.active > a:hover, 
+  .nav-pills > li.active > a:focus {
+    background-color: #34b1ec;
+  }
+
+  .nav-sidebar ul.nav .active a {
+    background-color: #eee;
+  }
+
+  .nav-sidebar ul.nav a {
+    padding: 5px 5px 5px 35px;
+  }
+
+  .nav-sidebar .back-to-top {
+    display: none;
+  }
+
+  .nav-sidebar.affix .back-to-top {
+    display: block;
+  }
+
+  .nav-sidebar .back-to-top a {
+    background: #FFF !important;
+    text-align: right;
+  }
+
+/* 
+* ==========================================================================
+* CONTENT
+* ========================================================================== 
+*/
+  .content {
+    background: #FFF;
+  }
+
+  .content-getting-started .content-getting-started-column {
+    padding-bottom: 50px;
+  }
+
+  .content-getting-started h2 {
+    padding-bottom: 20px;
+  }
+
+  .content-getting-started .btn {
+    margin-top: 20px; 
+  }
+
+  .content-getting-started .btn,
+  .content-latest-features .btn {
+    display: block;
+    white-space: normal;
+    width: 100%; 
+  }
+
+  .content-latest-features .feature {
+    margin-left: 5%;
+    width: 90%; 
+  }
+
+  .content-latest-features .feature h3 {
+    font-size: 22px; 
+  }
+
+/* 
+* ==========================================================================
+* RESPONSIVE - SMALL (AND UP)
+* ========================================================================== 
+*/
+@media (min-width: 768px) {
+  
+  .content {
+    padding: 60px 0;
+  }
+
+  .content-getting-started .btn,
+  .content-latest-features .btn {
+    display: inline-block;
+    width: auto;
+  }
+  
+  .content-getting-started-column {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+  }
+  
+  .footer .dl-horizontal {
+    float: right;
+  }
+
+}
+
+/* 
+* ==========================================================================
+* RESPONSIVE - BETWEEN SMALL + MEDIUM
+* ========================================================================== 
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .navbar-brand {
+    padding-top: 18px;
+    width: 215px;
+  }
+
+}
+
+/* 
+* ==========================================================================
+* RESPONSIVE - MEDIUM (AND UP)
+* ========================================================================== 
+*/
+@media (min-width: 992px) {
+
+  .nav-sidebar.affix {
+    position: fixed;
+    top: 10px;
+  }
+
+}
+
