@@ -1,4 +1,13 @@
-title:        BBIS Developer Documentation
-baseurl:      /bbis
-markdown:     rdiscount
-highlighter:     true
+title: BBIS Developer Documentation
+baseurl: /bbis
+markdown: rdiscount
+highlighter: true
+permalink: /404.html
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      sidebar: true
+      carousel: false

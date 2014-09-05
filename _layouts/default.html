@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-  <title>{{ site.title }}</title>
+  {% include head.html %}
 </head>
 <body>
   
-<div class="content">
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-md-9 col-md-push-3">
-        {{ content }}
-      </div>  <!-- .col-md-9 -->
-      
-      <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
-        <div class="sidebar">
-          
-        </div>
-      </div>  <!-- .col-md-3 -->
-      
-    </div>  <!-- .row -->
-  </div>  <!-- .container -->  
-</div>  <!-- .content -->
+  {% include body-prefix.html %}
+
+  {% if page.carousel %}
+  {% include body-carousel.html %}
+  {% endif %}
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+
+        {% if page.sidebar %}
+        
+          <div class="col-md-9 col-md-push-3">
+            {{ content }}
+          </div>  <!-- .col-md-9 -->
+
+          <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
+            <div class="sidebar">
+              SIDEBAR
+            </div>
+          </div>  <!-- .col-md-3 -->
+        
+        {% else %}
+        
+          <div class="col-sm-12">
+            {{ content }}
+          </div>
+        
+        {% endif %}
+
+      </div>  <!-- .row -->
+    </div>  <!-- .container -->  
+  </div>  <!-- .content -->
+  
+  {% include body-suffix.html %}
   
 </body>
 </html>
