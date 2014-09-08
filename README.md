@@ -7,6 +7,6 @@ When working locally, you can either "build" or "serve."  Anything that's built 
 
 When serving locally, be certain to pass in the <code>--baseurl</code> flag, followed by an empy string <code>''</code>.  For example, I typically run the following:
 
-<pre>jekyll serve --watch --buildurl ''</pre>
+<pre>jekyll serve --watch --baseurl ''</pre>
 
 <code>--watch</code> allows the server to automatically refresh when a change is detected in your source.
