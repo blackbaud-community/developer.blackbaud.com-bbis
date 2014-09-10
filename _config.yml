@@ -3,6 +3,10 @@ baseurl: /bbis
 markdown: rdiscount
 highlighter: true
 permalink: /404.html
+collections:
+  getting_started:
+    output: true
+    permalink: /getting-started/:path/
 defaults:
   -
     scope:
