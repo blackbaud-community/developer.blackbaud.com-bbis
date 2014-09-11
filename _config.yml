@@ -1,12 +1,11 @@
 title: BBIS Developer Documentation
 baseurl: /bbis
-markdown: rdiscount
 highlighter: true
 permalink: /404.html
 collections:
-  getting_started:
+  reference:
     output: true
-    permalink: /getting-started/:path/
+    permalink: /reference/:path/
 defaults:
   -
     scope:

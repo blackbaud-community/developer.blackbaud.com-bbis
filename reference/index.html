@@ -1,2 +1,31 @@
 ---
 ---
+
+<h1>Technical Reference</h1>
+
+<h2>Pages</h2>
+
+<ul>
+{% for page in site.pages %}
+  <li>HEY: {{ page.url }}</li>
+{% endfor %}
+</ul>
+
+<h2>Collections</h2>
+
+<ul class="posts">
+  {% for reference in site.reference %}
+    <li class="post">
+      <a class="post-link" href="{{ reference.url | prepend: site.baseurl }}">{{ reference.title }}{{reference.url}}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Data</h2>
+
+<ul>
+  <li>{{ site.data.test.bobby }}</li>
+  {% for user in site.data.test.users %}
+  <li>{{ user }}</li>
+  {% endfor %}
+</ul>
