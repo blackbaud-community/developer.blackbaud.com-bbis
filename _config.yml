@@ -2,10 +2,6 @@ title: BBIS Developer Documentation
 baseurl: /bbis
 highlighter: true
 permalink: /404.html
-collections:
-  reference:
-    output: true
-    permalink: /reference/:path/
 defaults:
   -
     scope:

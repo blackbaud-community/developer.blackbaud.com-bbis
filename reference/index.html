@@ -21,11 +21,14 @@
   {% endfor %}
 </ul>
 
-<h2>Data</h2>
+<h2>Data: {{ site.data.WebTOC.HelpTOC.HelpTOCNode._Title }}</h2>
 
 <ul>
-  <li>{{ site.data.test.bobby }}</li>
-  {% for user in site.data.test.users %}
-  <li>{{ user }}</li>
+  {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
+  <li>
+    <a href="{{ namespace._Url }}">
+      {{ namespace._Title }}
+    </a>
+  </li>
   {% endfor %}
 </ul>
