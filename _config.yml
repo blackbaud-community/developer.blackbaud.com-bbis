@@ -2,6 +2,24 @@ title: BBIS Developer Documentation
 baseurl: /bbis
 highlighter: true
 permalink: /404.html
+
+css:
+  - //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
+  - //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/animate/animate.css
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
+  - {{ site.baseurl }}/assets/css/app.css
+
+js:
+  - //code.jquery.com/jquery-1.11.1.min.js
+  - //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/js/owl.feature.js
+  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
+  - {{ site.baseurl }}/assets/js/app.js
+
 defaults:
   -
     scope:

@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-  {% include head.html %}
+  
+  <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  
+  {% for css in site.css %}
+    <script src="{{ css }}"></script>
+  {% endfor %}
+  
+  {% for css in page.css %}
+    <script src="{{ css }}"></script>
+  {% endfor %}
+  
 </head>
 <body>
 
@@ -40,6 +50,14 @@
   </div>  <!-- .content -->
   
   {% include body-suffix.html %}
+  
+  {% for js in site.js %}
+    <script src="{{ js }}"></script>
+  {% endfor %}
+  
+  {% for js in page.js %}
+    <script src="{{ js }}"></script>
+  {% endfor %}
   
 </body>
 </html>
