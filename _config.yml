@@ -4,21 +4,47 @@ highlighter: true
 permalink: /404.html
 
 css:
-  - //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
-  - //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/animate/animate.css
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
-  - {{ site.baseurl }}/assets/css/app.css
+  - 
+    url: //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
+    base: false
+  - 
+    url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+    base: false
+  - 
+    url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
+    base: true
+  - 
+    url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css
+    base: true
+  - 
+    url: /assets/blackbaud-bootstrap-theme/lib/animate/animate.css
+    base: true
+  - 
+    url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
+    base: true
+  - 
+    url: /assets/css/app.css
+    base: true
 
 js:
-  - //code.jquery.com/jquery-1.11.1.min.js
-  - //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/js/owl.feature.js
-  - {{ site.baseurl }}/assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
-  - {{ site.baseurl }}/assets/js/app.js
+  - 
+    url: //code.jquery.com/jquery-1.11.1.min.js
+    base: false
+  - 
+    url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+    base: false
+  - 
+    url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
+    base: true
+  - 
+    url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
+    base: true
+  - 
+    url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
+    base: true
+  - 
+    url: /assets/js/app.js
+    base: true
 
 defaults:
   -
