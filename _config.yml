@@ -52,5 +52,5 @@ defaults:
       path: ""
     values:
       layout: "default"
-      sidebar: true
+      sidebar: ""
       carousel: false

@@ -3,26 +3,6 @@
 
 <h1>Technical Reference</h1>
 
-<h2>Pages</h2>
-
-<ul>
-{% for page in site.pages %}
-  <li>HEY: {{ page.url }}</li>
-{% endfor %}
-</ul>
-
-<h2>Collections</h2>
-
-<ul class="posts">
-  {% for reference in site.reference %}
-    <li class="post">
-      <a class="post-link" href="{{ reference.url | prepend: site.baseurl }}">{{ reference.title }}{{reference.url}}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-<h2>Data: {{ site.data.WebTOC.HelpTOC.HelpTOCNode._Title }}</h2>
-
 <ul>
   {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
   <li>

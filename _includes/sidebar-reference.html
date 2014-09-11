@@ -1,0 +1,22 @@
+{% assign url = page.url | remove: '/reference/' %}
+
+<ul class="nav nav-pills nav-stacked nav-sidebar">
+  <li>
+    <a href="#">BBNCExtensions Assembly</a>
+    <ul>
+      {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
+      <li {% if url == namespace._Url %} class="active" {% endif %}>
+        <a href="{{ namespace._Url }}">
+          {{ namespace._Title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>
+    <a href="#REST">Rest API</a>
+  </li>
+  <li>
+    <a href="#JS">JavaScript SDK</a>
+  </li>
+</ul>

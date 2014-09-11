@@ -11,6 +11,10 @@
   {% for css in page.css %}
     <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
   {% endfor %}
+
+  {% for js in page.js %}
+    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
+  {% endfor %}
   
 </head>
 <body>
@@ -25,7 +29,7 @@
     <div class="container">
       <div class="row">
 
-        {% if page.sidebar %}
+        {% if page.sidebar != "" %}
         
           <div class="col-md-9 col-md-push-3">
             {{ content }}
@@ -33,7 +37,7 @@
 
           <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
             <div class="sidebar">
-              SIDEBAR
+              {% include {{ page.sidebar }} %}
             </div>
           </div>  <!-- .col-md-3 -->
         
@@ -55,10 +59,5 @@
     <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
   {% endfor %}
   
-  {% for js in page.js %}
-    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
-  {% endfor %}
-  
-  {{ page.js }}
 </body>
 </html>
