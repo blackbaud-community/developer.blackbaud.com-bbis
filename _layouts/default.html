@@ -5,11 +5,11 @@
   <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
   
   {% for css in site.css %}
-    <script src="{{ css }}"></script>
+    <script src="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
   {% endfor %}
   
   {% for css in page.css %}
-    <script src="{{ css }}"></script>
+    <script src="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
   {% endfor %}
   
 </head>
@@ -52,11 +52,11 @@
   {% include body-suffix.html %}
   
   {% for js in site.js %}
-    <script src="{{ js }}"></script>
+    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
   {% endfor %}
   
   {% for js in page.js %}
-    <script src="{{ js }}"></script>
+    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
   {% endfor %}
   
 </body>
