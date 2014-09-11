@@ -7,8 +7,8 @@ layout: reference
 <ul>
   {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
   <li>
-    <a href="{{ namespace._Url }}">
-      {{ namespace._Title }}
+    <a href="bbncextensions/{{ namespace._Url }}">
+      {{ namespace._Title | remove: 'BBNCExtensions' }}
     </a>
   </li>
   {% endfor %}
