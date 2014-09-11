@@ -7,7 +7,7 @@
       {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
       <li {% if url == namespace._Url %} class="active" {% endif %}>
         <a href="{{ namespace._Url }}">
-          {{ namespace._Title }}
+          {{ namespace._Title | remove: 'BBNCExtensions.' }}
         </a>
       </li>
       {% endfor %}
