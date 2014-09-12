@@ -24,12 +24,12 @@
   {% endfor %}
   
 </head>
-<body>
-
+<body class="layout-{{ page.layout }} section-{{ section }}">
+  
   {% include body-prefix.html %}
 
   {% if page.carousel %}
-  {% include body-carousel.html %}
+    {% include body-carousel.html %}
   {% endif %}
 
   <div class="content">
