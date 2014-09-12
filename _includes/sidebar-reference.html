@@ -1,7 +1,5 @@
-{% assign url = page.url | remove: '/reference/' %}
-
 <ul class="nav nav-pills nav-stacked nav-sidebar">
-  <li>
+  <li {% if section == 'reference' %} class="active" {% endif %} >
     <a href="#">BBNCExtensions Assembly</a>
     <ul>
       {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
