@@ -1,3 +1,10 @@
+{% assign url_parts = page.url | split:"/" %}
+{% for part in url_parts %}
+  {% if forloop.index0 == 1 %}
+    {% assign section = part %}
+  {% endif %}
+{% endfor %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>

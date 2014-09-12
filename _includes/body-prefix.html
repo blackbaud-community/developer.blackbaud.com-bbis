@@ -15,17 +15,17 @@
 
     <div class="collapse navbar-collapse" id="bb-navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="{{ site.baseurl }}/getting-started/">
+        <li {% if section == 'start' %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/start/">
             Getting Started
           </a>
         </li>
-        <li>
+        <li {% if section == 'guide' %}class="active"{% endif %}>
           <a href="{{ site.baseurl }}/guide/">
             Developer Guide
           </a>
         </li>
-        <li>
+        <li {% if section == 'reference' %}class="active"{% endif %}>
           <a href="{{ site.baseurl }}/reference/">
             Technical Reference
           </a>
