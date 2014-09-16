@@ -1,22 +1,22 @@
 {
   "HelpTOC": {
     "HelpTOCNode": {
-      "_Id": "83d519ff-008b-4776-bcef-0d8a540a7f65",
+      "_Id": "a765bdcc-3825-489b-882f-912ebdf60bd9",
       "_Title": "BBNCExtensions Assembly",
       "_Url": "R_Project_BBNCExtensions.htm",
       "HelpTOCNode": [
         {
-          "_Id": "ee4e7c25-e5db-4dd3-bb9a-39414d120f60",
+          "_Id": "11880d83-8c04-4980-90f0-6d89c8beccce",
           "_Title": "BBNCExtensions",
           "_Url": "N_BBNCExtensions.htm",
           "HelpTOCNode": [
             {
-              "_Id": "e1fbd8ca-42f3-452e-9a3e-8728529f0e58",
+              "_Id": "019ebbe2-35dd-4e9f-852c-0047349a6721",
               "_Title": "CustomServiceBase Class",
               "_Url": "T_BBNCExtensions_CustomServiceBase.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "449b3ed5-76b1-49c8-b36f-bb9fef2ee861",
+                  "_Id": "3ea05c50-682f-434e-bd65-2d4935b610d2",
                   "_Title": "CustomServiceBase Methods",
                   "_Url": "Methods_T_BBNCExtensions_CustomServiceBase.htm",
                   "HelpTOCNode": [
@@ -39,7 +39,7 @@
                   ]
                 },
                 {
-                  "_Id": "98248470-e8e2-481e-9a2d-c64bfcc1ee61",
+                  "_Id": "9c9c2e60-b471-4e63-b9b8-93699f614ae3",
                   "_Title": "CustomServiceBase Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomServiceBase.htm",
                   "HelpTOCNode": [
@@ -68,11 +68,11 @@
               "_Url": "T_BBNCExtensions_CustomServiceBase_eScheduleOption.htm"
             },
             {
-              "_Id": "aabb449f-7db0-4942-9936-b15ca5153367",
+              "_Id": "64f69e66-d5b9-4a3d-ab63-26d981c898cd",
               "_Title": "NetCommunity Class",
               "_Url": "T_BBNCExtensions_NetCommunity.htm",
               "HelpTOCNode": {
-                "_Id": "0348b42a-0a2f-47fd-83d0-71ceed7ca71c",
+                "_Id": "0866dead-8043-4ce4-b2d6-ac7d41481dd3",
                 "_Title": "NetCommunity Properties",
                 "_Url": "Properties_T_BBNCExtensions_NetCommunity.htm",
                 "HelpTOCNode": [
@@ -104,7 +104,7 @@
               }
             },
             {
-              "_Id": "e587fb40-eaf5-45ea-86b4-76fba00c5296",
+              "_Id": "a7ee14d6-a853-426b-926e-1cfd01041aef",
               "_Title": "NetCommunityServiceAttribute Class",
               "_Url": "T_BBNCExtensions_NetCommunityServiceAttribute.htm",
               "HelpTOCNode": [
@@ -113,7 +113,7 @@
                   "_Url": "M_BBNCExtensions_NetCommunityServiceAttribute__ctor.htm"
                 },
                 {
-                  "_Id": "f63751f4-e284-4de7-8491-9b7fa5fdd4d8",
+                  "_Id": "d4e7df78-6b41-473f-92a6-c010f5aab4eb",
                   "_Title": "NetCommunityServiceAttribute Properties",
                   "_Url": "Properties_T_BBNCExtensions_NetCommunityServiceAttribute.htm",
                   "HelpTOCNode": {
@@ -124,11 +124,11 @@
               ]
             },
             {
-              "_Id": "8b7aff08-88db-4906-b66f-ca472241f6bd",
+              "_Id": "9d18dde5-baaf-4a14-9d5e-09d6d2fe6703",
               "_Title": "Services Class",
               "_Url": "T_BBNCExtensions_Services.htm",
               "HelpTOCNode": {
-                "_Id": "1e192ca8-1981-4f97-b18a-1ee4025c4bf3",
+                "_Id": "4ab2aab6-6ac2-42f4-9cb0-561cb16df484",
                 "_Title": "Services Properties",
                 "_Url": "Properties_T_BBNCExtensions_Services.htm",
                 "HelpTOCNode": [
@@ -144,11 +144,11 @@
               }
             },
             {
-              "_Id": "736c9bb7-d389-4e16-b246-aa692111ee07",
+              "_Id": "44f7ff55-e3ab-4038-ac21-2916e561179c",
               "_Title": "Transactions Class",
               "_Url": "T_BBNCExtensions_Transactions.htm",
               "HelpTOCNode": {
-                "_Id": "71e90457-0aa9-48ca-b271-38ee545c74d6",
+                "_Id": "854e86ae-cf28-4b3f-acd0-4acf8a0fcb64",
                 "_Title": "Transactions Methods",
                 "_Url": "Methods_T_BBNCExtensions_Transactions.htm",
                 "HelpTOCNode": [
@@ -194,22 +194,22 @@
           ]
         },
         {
-          "_Id": "0bb30b70-e278-438c-9ef1-b8ca0d6e8fee",
+          "_Id": "55f76dbb-4e2d-4fb8-bc9f-be21f4f0b2d3",
           "_Title": "BBNCExtensions.API Namespaces",
           "_Url": "G_BBNCExtensions_API.htm",
           "HelpTOCNode": [
             {
-              "_Id": "5bef73c9-53a3-4569-9527-b44ece8ec3cd",
+              "_Id": "5606b03c-37b7-41a8-9435-bf32c8824116",
               "_Title": "BBNCExtensions.API",
               "_Url": "N_BBNCExtensions_API.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "11b5b885-15e7-4246-b9e8-132013e86bbc",
+                  "_Id": "ae548894-dff7-48c1-9de6-6e37361b1d4e",
                   "_Title": "APIException Class",
                   "_Url": "T_BBNCExtensions_API_APIException.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "3f4891bf-ceb9-46eb-9224-73d557f86ae2",
+                      "_Id": "85b2685b-2c92-4229-8fe4-4969e91901d6",
                       "_Title": "APIException Constructor ",
                       "_Url": "Overload_BBNCExtensions_API_APIException__ctor.htm",
                       "HelpTOCNode": [
@@ -232,7 +232,7 @@
                       ]
                     },
                     {
-                      "_Id": "525ac434-af4b-47a0-8181-90b0224f9f29",
+                      "_Id": "1adfc1de-7801-4c3a-8c73-c659abeb79d8",
                       "_Title": "APIException Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_APIException.htm",
                       "HelpTOCNode": [
@@ -249,11 +249,11 @@
                   ]
                 },
                 {
-                  "_Id": "cfa9c92b-0afe-446a-a2df-6747bd13e18e",
+                  "_Id": "ac544301-9fe2-40f0-ad05-a2fb07a36913",
                   "_Title": "BackofficeUnavailableException Class",
                   "_Url": "T_BBNCExtensions_API_BackofficeUnavailableException.htm",
                   "HelpTOCNode": {
-                    "_Id": "c05f2a56-d95d-4e8d-bb17-7d70313a4fbd",
+                    "_Id": "0a7b7b0b-864e-4c71-8a20-61f3318c13ac",
                     "_Title": "BackofficeUnavailableException Constructor ",
                     "_Url": "Overload_BBNCExtensions_API_BackofficeUnavailableException__ctor.htm",
                     "HelpTOCNode": [
@@ -273,12 +273,12 @@
                   }
                 },
                 {
-                  "_Id": "14d52f09-0bef-4468-b695-354411fb3f89",
+                  "_Id": "880d47eb-5761-4389-b27e-b533bf24d326",
                   "_Title": "EmailSendingException Class",
                   "_Url": "T_BBNCExtensions_API_EmailSendingException.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "33535d27-ea37-4380-b03a-8c7c75c17ab0",
+                      "_Id": "ffe964f4-8ab2-41a1-8b02-70f362e071d9",
                       "_Title": "EmailSendingException Constructor ",
                       "_Url": "Overload_BBNCExtensions_API_EmailSendingException__ctor.htm",
                       "HelpTOCNode": [
@@ -297,7 +297,7 @@
                       ]
                     },
                     {
-                      "_Id": "fb325aa7-2e7a-4ec8-9491-15468a375be5",
+                      "_Id": "af095cca-db7a-4163-887a-0217dc923bb7",
                       "_Title": "EmailSendingException Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_EmailSendingException.htm",
                       "HelpTOCNode": [
@@ -314,12 +314,12 @@
                   ]
                 },
                 {
-                  "_Id": "3b1085cb-c1b5-4f59-a924-7cbc3527e0d6",
+                  "_Id": "409517e1-b7ae-4d2a-b068-68fd959ef369",
                   "_Title": "NetCommunity Class",
                   "_Url": "T_BBNCExtensions_API_NetCommunity.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "f8491690-1924-4269-93f4-ececa76111aa",
+                      "_Id": "22492804-193b-43c6-be6a-bdbd5405a75d",
                       "_Title": "NetCommunity Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_NetCommunity.htm",
                       "HelpTOCNode": {
@@ -328,7 +328,7 @@
                       }
                     },
                     {
-                      "_Id": "69047b67-f646-44c8-9cf6-3a90adc02d50",
+                      "_Id": "7b854832-e8a9-4971-9685-f887fac62722",
                       "_Title": "NetCommunity Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_NetCommunity.htm",
                       "HelpTOCNode": [
@@ -397,7 +397,7 @@
                   ]
                 },
                 {
-                  "_Id": "cd937293-f388-4b67-9b7f-87fc8646a6b5",
+                  "_Id": "4d001c15-1395-45b0-8010-5c235024f3fa",
                   "_Title": "RecordNotFoundException Class",
                   "_Url": "T_BBNCExtensions_API_RecordNotFoundException.htm",
                   "HelpTOCNode": {
@@ -406,11 +406,11 @@
                   }
                 },
                 {
-                  "_Id": "9152b942-69f3-4e40-9c2a-94911659a778",
+                  "_Id": "6dd32547-374f-49f8-a60b-ef09be69d4b8",
                   "_Title": "WebServiceException Class",
                   "_Url": "T_BBNCExtensions_API_WebServiceException.htm",
                   "HelpTOCNode": {
-                    "_Id": "116054e3-d2a5-4933-ae7d-72b28e7731d8",
+                    "_Id": "3f5746b5-8ed4-4222-b21a-5320e595aac0",
                     "_Title": "WebServiceException Constructor ",
                     "_Url": "Overload_BBNCExtensions_API_WebServiceException__ctor.htm",
                     "HelpTOCNode": [
@@ -432,12 +432,12 @@
               ]
             },
             {
-              "_Id": "65a1413a-c8dc-4716-8f5e-0878b7425f01",
+              "_Id": "fd543b7c-295a-4a8c-af52-930297a7d8bb",
               "_Title": "BBNCExtensions.API.DataObjects",
               "_Url": "N_BBNCExtensions_API_DataObjects.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "e676ef07-c584-4247-8f09-dd975b9fd343",
+                  "_Id": "360d7e55-7741-4a29-80ed-eabea2e1b397",
                   "_Title": "Address Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_Address.htm",
                   "HelpTOCNode": [
@@ -446,7 +446,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_Address__ctor.htm"
                     },
                     {
-                      "_Id": "4fa7cbc9-6998-40f2-953b-fea55c08cf01",
+                      "_Id": "739221fa-ad0f-475b-a7d7-90f23495ab5c",
                       "_Title": "Address Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_Address.htm",
                       "HelpTOCNode": [
@@ -487,7 +487,7 @@
                   ]
                 },
                 {
-                  "_Id": "f1880915-7c96-4c1a-ab21-29715db675f5",
+                  "_Id": "4ea4b43c-a48f-437f-b0a8-1e4135d640d8",
                   "_Title": "AttributeCollection Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_AttributeCollection.htm",
                   "HelpTOCNode": [
@@ -496,12 +496,12 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_AttributeCollection__ctor.htm"
                     },
                     {
-                      "_Id": "b3674ffb-accc-491d-be0f-5afb3d801144",
+                      "_Id": "8bd5e713-ef54-491f-9559-3504a063141a",
                       "_Title": "AttributeCollection Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_DataObjects_AttributeCollection.htm",
                       "HelpTOCNode": [
                         {
-                          "_Id": "c99f1ac4-6a32-4498-8713-f5e2757ffc42",
+                          "_Id": "1e683d00-1621-4c80-9763-f0d56ab43795",
                           "_Title": "GetAttributeMetaData Method ",
                           "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeCollection_GetAttributeMetaData.htm",
                           "HelpTOCNode": [
@@ -520,7 +520,7 @@
                           "_Url": "M_BBNCExtensions_API_DataObjects_AttributeCollection_GetAttributeTypeIdFromName.htm"
                         },
                         {
-                          "_Id": "0880a16a-4840-4bba-bda5-c2c3aed5cb86",
+                          "_Id": "b30c6bc9-6501-4ca1-892a-89dd6ebd71cc",
                           "_Title": "GetValue Method ",
                           "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeCollection_GetValue.htm",
                           "HelpTOCNode": [
@@ -535,7 +535,7 @@
                           ]
                         },
                         {
-                          "_Id": "23880d81-5abd-4d19-9820-fac244d3a4e8",
+                          "_Id": "ed2775aa-d622-4e2c-ac3f-224ae20d8586",
                           "_Title": "GetValues Method ",
                           "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeCollection_GetValues.htm",
                           "HelpTOCNode": [
@@ -550,7 +550,7 @@
                           ]
                         },
                         {
-                          "_Id": "02d94c5d-edf7-445b-b2cf-785d9727a6e4",
+                          "_Id": "4001af09-fa35-4742-96de-5c932f598aef",
                           "_Title": "ItemExists Method ",
                           "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeCollection_ItemExists.htm",
                           "HelpTOCNode": [
@@ -565,7 +565,7 @@
                           ]
                         },
                         {
-                          "_Id": "94c8f793-f212-4088-9b85-c87acf421cb2",
+                          "_Id": "3cfcd1ab-55dd-495e-8d72-c1d5d6fb84d7",
                           "_Title": "SetValue Method ",
                           "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeCollection_SetValue.htm",
                           "HelpTOCNode": [
@@ -580,7 +580,7 @@
                           ]
                         },
                         {
-                          "_Id": "0a366418-bf54-4da0-ae59-0c99fe2b6e9f",
+                          "_Id": "150518b5-c457-40b4-bb6c-e3988eccadca",
                           "_Title": "SetValues Method ",
                           "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeCollection_SetValues.htm",
                           "HelpTOCNode": [
@@ -599,7 +599,7 @@
                   ]
                 },
                 {
-                  "_Id": "c702ed3f-2324-4698-a84d-a87bd30b5e5d",
+                  "_Id": "4f0f4375-1327-416d-8efe-6eab551cd493",
                   "_Title": "AttributeItem Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_AttributeItem.htm",
                   "HelpTOCNode": [
@@ -608,7 +608,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_AttributeItem__ctor.htm"
                     },
                     {
-                      "_Id": "f19b6edf-caf7-43b7-bbc3-9bcaf4623450",
+                      "_Id": "7b12a657-3f87-4343-98f0-a283dc5cbcc9",
                       "_Title": "AttributeItem Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_AttributeItem.htm",
                       "HelpTOCNode": [
@@ -649,12 +649,12 @@
                   ]
                 },
                 {
-                  "_Id": "efa5dceb-dd84-4638-9732-c5cf251a20a3",
+                  "_Id": "224214c4-f6bd-4430-995f-a2a8293c5e5a",
                   "_Title": "AttributeValue Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_AttributeValue.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "9c643288-e60b-4bea-831d-59b7f43d15d8",
+                      "_Id": "2eb86743-751b-4642-8d79-b160953d1355",
                       "_Title": "AttributeValue Constructor ",
                       "_Url": "Overload_BBNCExtensions_API_DataObjects_AttributeValue__ctor.htm",
                       "HelpTOCNode": [
@@ -669,7 +669,7 @@
                       ]
                     },
                     {
-                      "_Id": "b7c37cff-4cfa-4a94-af87-8c6da603d2cf",
+                      "_Id": "f6a06da3-988a-4373-b010-8fc042481891",
                       "_Title": "AttributeValue Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_AttributeValue.htm",
                       "HelpTOCNode": [
@@ -684,7 +684,7 @@
                       ]
                     },
                     {
-                      "_Id": "175c741c-11df-4a4f-be47-b15de88c9753",
+                      "_Id": "f72e0a81-a0c5-4972-85db-c9e25a392120",
                       "_Title": "AttributeValue Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_DataObjects_AttributeValue.htm",
                       "HelpTOCNode": {
@@ -695,7 +695,7 @@
                   ]
                 },
                 {
-                  "_Id": "9c16f610-cd01-4a57-9fbf-28cba4fbae7c",
+                  "_Id": "d67f9a03-3a57-4619-9a30-512f13942498",
                   "_Title": "BioIndividual Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_BioIndividual.htm",
                   "HelpTOCNode": [
@@ -704,7 +704,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_BioIndividual__ctor.htm"
                     },
                     {
-                      "_Id": "484a93b5-7604-40b4-978b-716a29981b2a",
+                      "_Id": "658ab524-c2fe-4c45-9b29-ff1304dad1ee",
                       "_Title": "BioIndividual Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_BioIndividual.htm",
                       "HelpTOCNode": [
@@ -773,7 +773,7 @@
                   ]
                 },
                 {
-                  "_Id": "a117bfba-ed3f-4f80-84ca-86adf398ff25",
+                  "_Id": "8035fe33-97c0-4a54-8752-16b1b361a3a1",
                   "_Title": "BioOrganization Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_BioOrganization.htm",
                   "HelpTOCNode": [
@@ -782,7 +782,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_BioOrganization__ctor.htm"
                     },
                     {
-                      "_Id": "48e0a8ac-e1fc-4c51-b880-93cb9cded4ed",
+                      "_Id": "3a68ff84-a03d-4b2b-a5d1-43e44dfcf368",
                       "_Title": "BioOrganization Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_BioOrganization.htm",
                       "HelpTOCNode": [
@@ -819,7 +819,7 @@
                   ]
                 },
                 {
-                  "_Id": "900a45b8-d500-41bf-9ecd-a311b1ecf3e8",
+                  "_Id": "f683d169-ac0d-4946-b927-167ff73e1519",
                   "_Title": "Business Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_Business.htm",
                   "HelpTOCNode": [
@@ -828,7 +828,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_Business__ctor.htm"
                     },
                     {
-                      "_Id": "f068811b-8b77-4647-a9ed-073cf567721b",
+                      "_Id": "5922aee7-d246-447a-b80b-a1fef6305c78",
                       "_Title": "Business Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_Business.htm",
                       "HelpTOCNode": [
@@ -861,7 +861,7 @@
                   ]
                 },
                 {
-                  "_Id": "60527fa3-3557-4286-b040-335bb92da32b",
+                  "_Id": "1e7a00e3-6f53-4e4c-9d7a-eb88d5a13777",
                   "_Title": "CodeTableEntry Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_CodeTableEntry.htm",
                   "HelpTOCNode": [
@@ -870,7 +870,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_CodeTableEntry__ctor.htm"
                     },
                     {
-                      "_Id": "1a3194a0-b1bb-491d-9e8b-f828191686f3",
+                      "_Id": "94da7841-0cb6-41d2-9dac-a065357c50b2",
                       "_Title": "CodeTableEntry Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_CodeTableEntry.htm",
                       "HelpTOCNode": [
@@ -923,7 +923,7 @@
                   ]
                 },
                 {
-                  "_Id": "d5a180a6-c496-4903-8c06-1f0c3adbde77",
+                  "_Id": "586d019e-99bf-428b-a65e-d6ff23ca22a9",
                   "_Title": "Education Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_Education.htm",
                   "HelpTOCNode": [
@@ -932,7 +932,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_Education__ctor.htm"
                     },
                     {
-                      "_Id": "836f3fae-c131-4e87-90e9-d9702bff228a",
+                      "_Id": "5dc03a9b-3ec1-41a4-a773-990182e7b72b",
                       "_Title": "Education Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_Education.htm",
                       "HelpTOCNode": [
@@ -1021,7 +1021,7 @@
                   ]
                 },
                 {
-                  "_Id": "d268fc96-a58d-4442-9d29-1d11b38a944d",
+                  "_Id": "82bee28a-0c51-41e4-8e36-020cea349596",
                   "_Title": "Profile Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_Profile.htm",
                   "HelpTOCNode": [
@@ -1030,7 +1030,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_Profile__ctor.htm"
                     },
                     {
-                      "_Id": "c1e8b406-c1aa-4c96-856a-c0ce58248363",
+                      "_Id": "8835ff88-c3eb-4a97-af94-b738e115103e",
                       "_Title": "Profile Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_Profile.htm",
                       "HelpTOCNode": [
@@ -1101,7 +1101,7 @@
                       ]
                     },
                     {
-                      "_Id": "b16e4475-bdbd-4e6b-9d1b-bc8a864237ad",
+                      "_Id": "7f3b7ce9-b713-47ad-8f4f-12aa2000584c",
                       "_Title": "Profile Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_DataObjects_Profile.htm",
                       "HelpTOCNode": [
@@ -1118,7 +1118,7 @@
                   ]
                 },
                 {
-                  "_Id": "9490e729-9f23-444e-a9ad-9d861e24ba72",
+                  "_Id": "06ebd85d-7667-4262-8bbd-6f755ef5a1f2",
                   "_Title": "SecureAddress Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_SecureAddress.htm",
                   "HelpTOCNode": [
@@ -1127,7 +1127,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_SecureAddress__ctor.htm"
                     },
                     {
-                      "_Id": "97039853-2fc2-4dbf-87ae-44003651e14e",
+                      "_Id": "75a5b8bc-b571-4309-90b5-ee24bf75e581",
                       "_Title": "SecureAddress Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_SecureAddress.htm",
                       "HelpTOCNode": [
@@ -1164,7 +1164,7 @@
                   ]
                 },
                 {
-                  "_Id": "31abf8a0-3dd6-42b3-86f6-ef2cba7d4eb3",
+                  "_Id": "f473ac3f-bac7-4a52-92e4-005ac0ab2b90",
                   "_Title": "SecurePaymentTransaction Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_SecurePaymentTransaction.htm",
                   "HelpTOCNode": [
@@ -1173,7 +1173,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_SecurePaymentTransaction__ctor.htm"
                     },
                     {
-                      "_Id": "6c34ccd1-2b0d-4f27-8bdf-52e4be7c1c47",
+                      "_Id": "6211d74a-b280-41c1-913c-f93ecc289253",
                       "_Title": "SecurePaymentTransaction Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_SecurePaymentTransaction.htm",
                       "HelpTOCNode": [
@@ -1202,7 +1202,7 @@
                   ]
                 },
                 {
-                  "_Id": "a170359c-0bac-467e-b039-77ce367e116c",
+                  "_Id": "5804c5e4-e797-4f97-a20c-4fb4a316cf01",
                   "_Title": "SecureTransactionInfo Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_SecureTransactionInfo.htm",
                   "HelpTOCNode": [
@@ -1211,7 +1211,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_SecureTransactionInfo__ctor.htm"
                     },
                     {
-                      "_Id": "e45d73aa-053c-44ec-b9a5-6b7a301169e5",
+                      "_Id": "b1adfc92-a849-4da5-b8c8-f1204b41b896",
                       "_Title": "SecureTransactionInfo Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_SecureTransactionInfo.htm",
                       "HelpTOCNode": [
@@ -1344,7 +1344,7 @@
                   ]
                 },
                 {
-                  "_Id": "bdc6495d-f33a-47da-98b5-ec6a7b76aa1a",
+                  "_Id": "5dfb6d3a-fccc-4612-b282-4a4caa531a29",
                   "_Title": "TimeZone Class",
                   "_Url": "T_BBNCExtensions_API_DataObjects_TimeZone.htm",
                   "HelpTOCNode": [
@@ -1353,7 +1353,7 @@
                       "_Url": "M_BBNCExtensions_API_DataObjects_TimeZone__ctor.htm"
                     },
                     {
-                      "_Id": "fb607686-33ae-47de-83f8-3bf3c7ccb845",
+                      "_Id": "5f4d18e1-6a99-4cc8-a0e0-b005aeb8ee2d",
                       "_Title": "TimeZone Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_DataObjects_TimeZone.htm",
                       "HelpTOCNode": [
@@ -1380,12 +1380,12 @@
               ]
             },
             {
-              "_Id": "967be569-4056-4d80-990c-a439d7e6cf6a",
+              "_Id": "bfb3b8e4-f112-4111-b771-94a9a5db6a7a",
               "_Title": "BBNCExtensions.API.Documents",
               "_Url": "N_BBNCExtensions_API_Documents.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "70cd214e-455e-4deb-9d2b-b373052baba7",
+                  "_Id": "ea744442-d9f1-4e8f-a7e9-15a9f70d3607",
                   "_Title": "DocumentInfo Class",
                   "_Url": "T_BBNCExtensions_API_Documents_DocumentInfo.htm",
                   "HelpTOCNode": [
@@ -1394,7 +1394,7 @@
                       "_Url": "M_BBNCExtensions_API_Documents_DocumentInfo__ctor.htm"
                     },
                     {
-                      "_Id": "7b1903f5-c2a4-4ece-8cdb-5ce8db1334ea",
+                      "_Id": "fa92a471-5078-4da7-af98-356f860ab382",
                       "_Title": "DocumentInfo Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Documents_DocumentInfo.htm",
                       "HelpTOCNode": [
@@ -1443,7 +1443,7 @@
                   ]
                 },
                 {
-                  "_Id": "474dca6e-ec62-4a5b-8f1a-8a76dd17b856",
+                  "_Id": "34277af6-6a55-49b5-bb4e-9716de4504e2",
                   "_Title": "DocumentLibraryInfo Class",
                   "_Url": "T_BBNCExtensions_API_Documents_DocumentLibraryInfo.htm",
                   "HelpTOCNode": [
@@ -1452,7 +1452,7 @@
                       "_Url": "M_BBNCExtensions_API_Documents_DocumentLibraryInfo__ctor.htm"
                     },
                     {
-                      "_Id": "2223a8da-d535-4e61-ad8a-f29bc75c0c96",
+                      "_Id": "c811d6da-75f6-46b5-b47f-251125e5481d",
                       "_Title": "DocumentLibraryInfo Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Documents_DocumentLibraryInfo.htm",
                       "HelpTOCNode": [
@@ -1489,11 +1489,11 @@
                   ]
                 },
                 {
-                  "_Id": "59e87a5a-c98b-44fe-abb8-0ede7c4a4702",
+                  "_Id": "2d8fc823-01cc-4710-a777-992be68facfb",
                   "_Title": "Documents Class",
                   "_Url": "T_BBNCExtensions_API_Documents_Documents.htm",
                   "HelpTOCNode": {
-                    "_Id": "dd9fa76f-b557-41ef-a531-fb3139523f2e",
+                    "_Id": "00ba4377-6ac3-4073-8cbf-f34cac186b24",
                     "_Title": "Documents Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Documents_Documents.htm",
                     "HelpTOCNode": [
@@ -1539,16 +1539,16 @@
               ]
             },
             {
-              "_Id": "6e86a5a1-8677-419f-8eee-d3f34aa6993a",
+              "_Id": "9c870bfd-758e-48d9-beac-4f9b0717590b",
               "_Title": "BBNCExtensions.API.Emails",
               "_Url": "N_BBNCExtensions_API_Emails.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "7c559927-801c-4a8a-acdb-d63f0c91181b",
+                  "_Id": "33173104-5e1c-48cf-9572-75b9fc9fc48b",
                   "_Title": "EmailJob Class",
                   "_Url": "T_BBNCExtensions_API_Emails_EmailJob.htm",
                   "HelpTOCNode": {
-                    "_Id": "1e3f238a-6072-42c6-bc1c-c56fe9e2ec65",
+                    "_Id": "ccac88b0-800e-4d14-b892-6167e7005076",
                     "_Title": "EmailJob Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Emails_EmailJob.htm",
                     "HelpTOCNode": [
@@ -1565,7 +1565,7 @@
                         "_Url": "M_BBNCExtensions_API_Emails_EmailJob_Send.htm"
                       },
                       {
-                        "_Id": "08b00fc3-14fa-47fe-8223-8c45f7c45d46",
+                        "_Id": "4071266b-4d70-45ed-af0f-c439f248a991",
                         "_Title": "SendConstituentEmail Method ",
                         "_Url": "Overload_BBNCExtensions_API_Emails_EmailJob_SendConstituentEmail.htm",
                         "HelpTOCNode": [
@@ -1580,7 +1580,7 @@
                         ]
                       },
                       {
-                        "_Id": "98840598-8983-4df0-a390-342ae8eade46",
+                        "_Id": "068176fb-270b-4a91-8623-ada13f24a4eb",
                         "_Title": "SendUserEmail Method ",
                         "_Url": "Overload_BBNCExtensions_API_Emails_EmailJob_SendUserEmail.htm",
                         "HelpTOCNode": [
@@ -1598,11 +1598,11 @@
                   }
                 },
                 {
-                  "_Id": "41e85134-f46a-4f62-881a-6e111c0de038",
+                  "_Id": "2cb1aa5f-da06-4529-a4c6-b5b98964a675",
                   "_Title": "Emails Class",
                   "_Url": "T_BBNCExtensions_API_Emails_Emails.htm",
                   "HelpTOCNode": {
-                    "_Id": "875e31f5-5a42-46d5-b019-ddfe729ef4af",
+                    "_Id": "92e4c51f-9454-492f-8273-1b9a8e6fc0ff",
                     "_Title": "Emails Properties",
                     "_Url": "Properties_T_BBNCExtensions_API_Emails_Emails.htm",
                     "HelpTOCNode": {
@@ -1614,20 +1614,20 @@
               ]
             },
             {
-              "_Id": "d84385d2-e654-4a1f-a1df-aae3e9801159",
+              "_Id": "0960668a-c3a6-4c45-9cd6-5079451d1e90",
               "_Title": "BBNCExtensions.API.Images",
               "_Url": "N_BBNCExtensions_API_Images.htm",
               "HelpTOCNode": {
-                "_Id": "a6e6562b-3e76-46d2-87ed-c626fb38bbf9",
+                "_Id": "1c5fff1b-4a7a-469f-9015-2f2eaefe6f4d",
                 "_Title": "Images Class",
                 "_Url": "T_BBNCExtensions_API_Images_Images.htm",
                 "HelpTOCNode": {
-                  "_Id": "0254d01f-672f-4bad-b450-c82ac2d5d9dc",
+                  "_Id": "561110ab-3457-4020-9fe8-a00a6002294b",
                   "_Title": "Images Methods",
                   "_Url": "Methods_T_BBNCExtensions_API_Images_Images.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "7729de76-056c-43b3-af3c-ee55f1350c07",
+                      "_Id": "b6fe09d4-7e69-4c18-a957-63e9760cc654",
                       "_Title": "GetImageURL Method ",
                       "_Url": "Overload_BBNCExtensions_API_Images_Images_GetImageURL.htm",
                       "HelpTOCNode": [
@@ -1650,16 +1650,16 @@
               }
             },
             {
-              "_Id": "d36e8b00-e29a-495b-a215-b9bae462a6f9",
+              "_Id": "534432e3-8ee1-4489-a988-5cc26eb3c8f2",
               "_Title": "BBNCExtensions.API.Merge",
               "_Url": "N_BBNCExtensions_API_Merge.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "adec2369-b2f5-4975-a63e-164ba3f8786b",
+                  "_Id": "c1cad33e-41b8-4cd3-8f99-6034ca782104",
                   "_Title": "MergeData Class",
                   "_Url": "T_BBNCExtensions_API_Merge_MergeData.htm",
                   "HelpTOCNode": {
-                    "_Id": "29c11e50-e065-4632-96b0-565f669db69b",
+                    "_Id": "37558183-5026-41bc-87bb-e3a8826c88b3",
                     "_Title": "MergeData Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Merge_MergeData.htm",
                     "HelpTOCNode": {
@@ -1669,7 +1669,7 @@
                   }
                 },
                 {
-                  "_Id": "aa77a8b3-ce70-4b33-bb72-3c675f559ce2",
+                  "_Id": "0113c72a-50f1-4e79-a2b1-64db2613de20",
                   "_Title": "MergeField Class",
                   "_Url": "T_BBNCExtensions_API_Merge_MergeField.htm",
                   "HelpTOCNode": [
@@ -1678,7 +1678,7 @@
                       "_Url": "M_BBNCExtensions_API_Merge_MergeField__ctor.htm"
                     },
                     {
-                      "_Id": "4d9862a2-5c93-4598-9c1e-e0850391375a",
+                      "_Id": "e5510acc-c831-4bbb-a51d-c600fba5ea96",
                       "_Title": "MergeField Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Merge_MergeField.htm",
                       "HelpTOCNode": [
@@ -1711,7 +1711,7 @@
                   ]
                 },
                 {
-                  "_Id": "03bdcbca-44db-4016-a94a-f2830fb46c7a",
+                  "_Id": "244e4558-2b7b-44f7-b730-da9a89bb9229",
                   "_Title": "MergeFields Class",
                   "_Url": "T_BBNCExtensions_API_Merge_MergeFields.htm",
                   "HelpTOCNode": [
@@ -1720,7 +1720,7 @@
                       "_Url": "M_BBNCExtensions_API_Merge_MergeFields__ctor.htm"
                     },
                     {
-                      "_Id": "3aec3af5-a256-4462-9c4c-69ffcc402f98",
+                      "_Id": "86261dc4-c9c1-4424-a30a-1ec042acf753",
                       "_Title": "MergeFields Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Merge_MergeFields.htm",
                       "HelpTOCNode": [
@@ -1739,15 +1739,15 @@
               ]
             },
             {
-              "_Id": "cc96acc5-c5c6-45f3-b480-3b95703461f8",
+              "_Id": "c9fed75b-9075-41eb-9168-878119a72a0f",
               "_Title": "BBNCExtensions.API.Navigation",
               "_Url": "N_BBNCExtensions_API_Navigation.htm",
               "HelpTOCNode": {
-                "_Id": "3fcee65a-4a71-4874-972f-4959d0c3111a",
+                "_Id": "7f9e133a-55d5-4e02-8b54-03d1d170f546",
                 "_Title": "Navigation Class",
                 "_Url": "T_BBNCExtensions_API_Navigation_Navigation.htm",
                 "HelpTOCNode": {
-                  "_Id": "112cdad7-0a9a-4345-9f7f-4718010828a7",
+                  "_Id": "953984a7-dd31-4933-b445-d2bbb0259685",
                   "_Title": "Navigation Methods",
                   "_Url": "Methods_T_BBNCExtensions_API_Navigation_Navigation.htm",
                   "HelpTOCNode": [
@@ -1784,17 +1784,17 @@
               }
             },
             {
-              "_Id": "0887193a-8af3-4773-b537-935c0005d714",
+              "_Id": "62771d95-9858-4d6e-a49d-636e41ebd3f4",
               "_Title": "BBNCExtensions.API.Pages",
               "_Url": "N_BBNCExtensions_API_Pages.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "e80f56f9-12c6-4557-adcb-91c10d51fd8e",
+                  "_Id": "24e823d9-bcfa-4f8d-86e6-7c4d6a4a9dfb",
                   "_Title": "NetCommunityPage Class",
                   "_Url": "T_BBNCExtensions_API_Pages_NetCommunityPage.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "c0c42470-5e57-439c-a502-170ff307e170",
+                      "_Id": "1561b881-636a-46ac-8246-1a7f38c9cb71",
                       "_Title": "NetCommunityPage Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Pages_NetCommunityPage.htm",
                       "HelpTOCNode": {
@@ -1803,7 +1803,7 @@
                       }
                     },
                     {
-                      "_Id": "8d9ac042-ff61-4177-854b-9fab83f31f41",
+                      "_Id": "a950a0b6-45ca-4b5e-9e93-5618476ffa82",
                       "_Title": "NetCommunityPage Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Pages_NetCommunityPage.htm",
                       "HelpTOCNode": [
@@ -1832,12 +1832,12 @@
                   ]
                 },
                 {
-                  "_Id": "01cc0b32-f5fa-49e9-bf37-a8be2a32fa27",
+                  "_Id": "d707fa38-57b3-4bfa-8ca9-4f794aac81cb",
                   "_Title": "Pages Class",
                   "_Url": "T_BBNCExtensions_API_Pages_Pages.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "1b8e4d52-0f85-462b-aa64-711c145ca143",
+                      "_Id": "181c3cee-9bc5-4abf-ab82-54911a8c2252",
                       "_Title": "Pages Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Pages_Pages.htm",
                       "HelpTOCNode": [
@@ -1856,7 +1856,7 @@
                       ]
                     },
                     {
-                      "_Id": "7d2f36eb-38e2-4763-a51f-2f7538c7f03a",
+                      "_Id": "f69cee15-26ea-4052-bd1b-7b72f749ddcb",
                       "_Title": "Pages Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Pages_Pages.htm",
                       "HelpTOCNode": {
@@ -1869,12 +1869,12 @@
               ]
             },
             {
-              "_Id": "f6e36932-6570-4925-88b9-7dcda01c0795",
+              "_Id": "6a0667d1-d970-4207-a397-bc3ac425dd7f",
               "_Title": "BBNCExtensions.API.Parts",
               "_Url": "N_BBNCExtensions_API_Parts.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "d1f60d0b-c11f-4896-bcd9-4ee6fd0bc709",
+                  "_Id": "0b929f76-9fba-4f15-9f39-18bd61b170e8",
                   "_Title": "NewPartInstanceArgs Class",
                   "_Url": "T_BBNCExtensions_API_Parts_NewPartInstanceArgs.htm",
                   "HelpTOCNode": [
@@ -1883,7 +1883,7 @@
                       "_Url": "M_BBNCExtensions_API_Parts_NewPartInstanceArgs__ctor.htm"
                     },
                     {
-                      "_Id": "12abe9db-c7be-4488-8a70-f6850ee6bfa0",
+                      "_Id": "4955a969-95bc-454c-8ff3-87e216d51ba4",
                       "_Title": "NewPartInstanceArgs Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Parts_NewPartInstanceArgs.htm",
                       "HelpTOCNode": [
@@ -1908,7 +1908,7 @@
                   ]
                 },
                 {
-                  "_Id": "fd92ebbb-3879-43dc-b5b1-325685ef2ade",
+                  "_Id": "4d6df527-d92f-43c3-bc53-8d4405c725a4",
                   "_Title": "PartInfo Class",
                   "_Url": "T_BBNCExtensions_API_Parts_PartInfo.htm",
                   "HelpTOCNode": [
@@ -1917,7 +1917,7 @@
                       "_Url": "M_BBNCExtensions_API_Parts_PartInfo__ctor.htm"
                     },
                     {
-                      "_Id": "70965631-5b8d-43c1-8b46-c13ad66605f0",
+                      "_Id": "73aabbe6-9751-4c5c-9047-035a2cad5d1a",
                       "_Title": "PartInfo Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Parts_PartInfo.htm",
                       "HelpTOCNode": [
@@ -1942,11 +1942,11 @@
                   ]
                 },
                 {
-                  "_Id": "7563e38e-49f8-4927-a5a8-925da2cf5f65",
+                  "_Id": "ab021f59-795e-4ce1-95d9-054065d14549",
                   "_Title": "Parts Class",
                   "_Url": "T_BBNCExtensions_API_Parts_Parts.htm",
                   "HelpTOCNode": {
-                    "_Id": "46ae6d20-41f7-4598-9fd4-51ea099be209",
+                    "_Id": "091a3d0a-751a-4649-8998-a5e5985cd87d",
                     "_Title": "Parts Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Parts_Parts.htm",
                     "HelpTOCNode": [
@@ -1974,7 +1974,7 @@
                   }
                 },
                 {
-                  "_Id": "8aa28309-9e90-4332-8602-3d18e1301427",
+                  "_Id": "19626f69-d43d-407f-b597-8b1d3c9209d0",
                   "_Title": "PartTypeInfo Class",
                   "_Url": "T_BBNCExtensions_API_Parts_PartTypeInfo.htm",
                   "HelpTOCNode": [
@@ -1983,7 +1983,7 @@
                       "_Url": "M_BBNCExtensions_API_Parts_PartTypeInfo__ctor.htm"
                     },
                     {
-                      "_Id": "9dffbe1c-3046-4565-a8f0-f30808f3e75a",
+                      "_Id": "282d4a35-e3ce-401b-b5e9-07182b7cf300",
                       "_Title": "PartTypeInfo Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Parts_PartTypeInfo.htm",
                       "HelpTOCNode": [
@@ -2002,7 +2002,7 @@
               ]
             },
             {
-              "_Id": "400c2d60-32ea-4b8c-a0fa-eb62825f25a2",
+              "_Id": "7e5b3a68-1c5f-4aa0-8cc8-6351c3a931c6",
               "_Title": "BBNCExtensions.API.RSS",
               "_Url": "N_BBNCExtensions_API_RSS.htm",
               "HelpTOCNode": [
@@ -2011,7 +2011,7 @@
                   "_Url": "T_BBNCExtensions_API_RSS_ApprovalState.htm"
                 },
                 {
-                  "_Id": "5a41acc8-0c1c-45ea-8878-ca2d5fc79daa",
+                  "_Id": "5d4792f2-a199-42f6-82e6-6eb068b420af",
                   "_Title": "PostRssStoryArgs Class",
                   "_Url": "T_BBNCExtensions_API_RSS_PostRssStoryArgs.htm",
                   "HelpTOCNode": [
@@ -2020,7 +2020,7 @@
                       "_Url": "M_BBNCExtensions_API_RSS_PostRssStoryArgs__ctor.htm"
                     },
                     {
-                      "_Id": "5a232589-d563-4aa6-8bf5-eadd9a93471a",
+                      "_Id": "e56ed727-521a-4518-bd0b-a82e3f347bbc",
                       "_Title": "PostRssStoryArgs Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_RSS_PostRssStoryArgs.htm",
                       "HelpTOCNode": [
@@ -2065,11 +2065,11 @@
                   ]
                 },
                 {
-                  "_Id": "52f41928-0e8f-4ee8-882e-1af3fac277a0",
+                  "_Id": "86eacb92-fc83-491d-b20b-54444af0edac",
                   "_Title": "RSS Class",
                   "_Url": "T_BBNCExtensions_API_RSS_RSS.htm",
                   "HelpTOCNode": {
-                    "_Id": "52943ce9-5739-4fdf-bd55-dbe2123e8433",
+                    "_Id": "857b701a-48e8-4860-aabf-6c317751415d",
                     "_Title": "RSS Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_RSS_RSS.htm",
                     "HelpTOCNode": [
@@ -2089,7 +2089,7 @@
                   }
                 },
                 {
-                  "_Id": "37741aa4-b0f8-4b5c-a92e-f36e394ce57b",
+                  "_Id": "4aa2dd9c-2fdc-499c-9738-342fcaa65f7a",
                   "_Title": "RssInfo Class",
                   "_Url": "T_BBNCExtensions_API_RSS_RssInfo.htm",
                   "HelpTOCNode": [
@@ -2098,7 +2098,7 @@
                       "_Url": "M_BBNCExtensions_API_RSS_RssInfo__ctor.htm"
                     },
                     {
-                      "_Id": "d0005401-9a71-46f4-b3a3-caac3a0a2815",
+                      "_Id": "92df0374-9951-4634-b903-854bc2fdfa99",
                       "_Title": "RssInfo Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_RSS_RssInfo.htm",
                       "HelpTOCNode": [
@@ -2149,17 +2149,17 @@
               ]
             },
             {
-              "_Id": "5bc3a63d-776e-4a3e-8115-b61e87d5ca86",
+              "_Id": "6acce55c-d2a4-4259-94b8-1d5bbe33ea5f",
               "_Title": "BBNCExtensions.API.Services",
               "_Url": "N_BBNCExtensions_API_Services.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "d5014a31-4c60-4529-9c71-f75a8aeba17d",
+                  "_Id": "da350037-9f02-416b-8aeb-e7a159191024",
                   "_Title": "Facebook Class",
                   "_Url": "T_BBNCExtensions_API_Services_Facebook.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "8d90177b-a843-416a-b602-4b3e9ae12ea9",
+                      "_Id": "a7eab67d-a3c1-44c3-bdc0-b64e89a79052",
                       "_Title": "Facebook Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Services_Facebook.htm",
                       "HelpTOCNode": {
@@ -2168,7 +2168,7 @@
                       }
                     },
                     {
-                      "_Id": "18e918a7-5c54-4539-9c1d-fe97eaff5818",
+                      "_Id": "04b0f905-75b2-4053-82d2-079e26837031",
                       "_Title": "Facebook Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Services_Facebook.htm",
                       "HelpTOCNode": [
@@ -2201,11 +2201,11 @@
                   ]
                 },
                 {
-                  "_Id": "fc82533d-a97c-4b23-a798-1c1d59763482",
+                  "_Id": "f15072f9-b6b2-4945-96f8-6076f9577169",
                   "_Title": "Services Class",
                   "_Url": "T_BBNCExtensions_API_Services_Services.htm",
                   "HelpTOCNode": {
-                    "_Id": "1666b172-1fdc-420a-aa32-37936c3e9316",
+                    "_Id": "ee311759-1489-49fa-ae3a-0f0aa854087c",
                     "_Title": "Services Properties",
                     "_Url": "Properties_T_BBNCExtensions_API_Services_Services.htm",
                     "HelpTOCNode": {
@@ -2217,15 +2217,15 @@
               ]
             },
             {
-              "_Id": "3e4867a7-763a-4d39-a355-bd7d20b1c1e2",
+              "_Id": "ba496aaf-90de-4481-b41e-d79b84890ecc",
               "_Title": "BBNCExtensions.API.Settings",
               "_Url": "N_BBNCExtensions_API_Settings.htm",
               "HelpTOCNode": {
-                "_Id": "7043f843-fa69-4a72-a90f-56e4cc62bdaa",
+                "_Id": "4414b410-e73d-47c8-897b-549a182f80d6",
                 "_Title": "Settings Class",
                 "_Url": "T_BBNCExtensions_API_Settings_Settings.htm",
                 "HelpTOCNode": {
-                  "_Id": "5c1e862a-3b97-43a7-a6ab-e934d7924337",
+                  "_Id": "d880ee5b-084c-4612-8103-71423f5c2f5f",
                   "_Title": "Settings Properties",
                   "_Url": "Properties_T_BBNCExtensions_API_Settings_Settings.htm",
                   "HelpTOCNode": [
@@ -2266,17 +2266,17 @@
               }
             },
             {
-              "_Id": "60e3c514-a7f3-4a40-927c-86530a85ec22",
+              "_Id": "1f6b51ed-8b75-4bb1-8fa7-be1d69b2d0d7",
               "_Title": "BBNCExtensions.API.Transactions Namespaces",
               "_Url": "G_BBNCExtensions_API_Transactions.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "75c9ca3a-e0f9-4f60-8e22-11e5e1932590",
+                  "_Id": "f7ec947e-951f-48b2-bd8f-1939081d4eee",
                   "_Title": "BBNCExtensions.API.Transactions",
                   "_Url": "N_BBNCExtensions_API_Transactions.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "19d4c80b-113f-441f-a198-1c601f3ea87a",
+                      "_Id": "b1cd35a0-ad14-410b-8a94-e75c061e9946",
                       "_Title": "CreditCard Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_CreditCard.htm",
                       "HelpTOCNode": [
@@ -2285,7 +2285,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_CreditCard__ctor.htm"
                         },
                         {
-                          "_Id": "df8394e1-38e6-415d-a8f4-bd8a4a43fda3",
+                          "_Id": "769741dd-c7f6-4e47-b36f-c6bf0e4b1389",
                           "_Title": "CreditCard Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_CreditCard.htm",
                           "HelpTOCNode": [
@@ -2306,11 +2306,11 @@
                       ]
                     },
                     {
-                      "_Id": "47847d4a-ac40-4934-b195-f6495d8a0373",
+                      "_Id": "59ca4a2c-d4b4-4849-a3e0-37e899a0c850",
                       "_Title": "CustomTransaction Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_CustomTransaction.htm",
                       "HelpTOCNode": {
-                        "_Id": "e906d3a4-b030-49ae-85bb-20c8098862a3",
+                        "_Id": "08b0a717-518f-4f73-b28b-dc899ee5e3aa",
                         "_Title": "CustomTransaction Properties",
                         "_Url": "Properties_T_BBNCExtensions_API_Transactions_CustomTransaction.htm",
                         "HelpTOCNode": [
@@ -2342,11 +2342,11 @@
                       }
                     },
                     {
-                      "_Id": "a437abe7-2fab-4482-9b1c-6e4774cc930c",
+                      "_Id": "f70bf6c8-7be6-4668-9a75-d22dba2a7a03",
                       "_Title": "CustomTransactions Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_CustomTransactions.htm",
                       "HelpTOCNode": {
-                        "_Id": "f8460cfa-3fe2-4e0e-afb5-06a7ccaa38d8",
+                        "_Id": "bc0f38ae-3122-4daf-9891-26b8abdf9c65",
                         "_Title": "CustomTransactions Methods",
                         "_Url": "Methods_T_BBNCExtensions_API_Transactions_CustomTransactions.htm",
                         "HelpTOCNode": [
@@ -2390,7 +2390,7 @@
                       }
                     },
                     {
-                      "_Id": "f8cdfbec-34d4-4b15-a451-84e2de99ad6d",
+                      "_Id": "8a764625-7751-418f-86e6-5f4a16f1166b",
                       "_Title": "MerchantAccount Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_MerchantAccount.htm",
                       "HelpTOCNode": [
@@ -2399,7 +2399,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_MerchantAccount__ctor.htm"
                         },
                         {
-                          "_Id": "401f44e4-e291-4f6b-920e-de3b0068d769",
+                          "_Id": "58956e7a-5a4d-4317-9c67-2a0feae0ff50",
                           "_Title": "MerchantAccount Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_MerchantAccount.htm",
                           "HelpTOCNode": [
@@ -2428,7 +2428,7 @@
                       ]
                     },
                     {
-                      "_Id": "e700fb3f-27b7-40b2-9f41-7c3b9cd17d9f",
+                      "_Id": "d8b88611-4a0a-4b80-a56b-64da17e8c880",
                       "_Title": "PaymentArgs Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_PaymentArgs.htm",
                       "HelpTOCNode": [
@@ -2437,7 +2437,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_PaymentArgs__ctor.htm"
                         },
                         {
-                          "_Id": "dd0c51ad-544e-4b21-98e5-b743a85526fb",
+                          "_Id": "ce45d76b-9624-4803-9f03-7cf90d60a75e",
                           "_Title": "PaymentArgs Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_PaymentArgs.htm",
                           "HelpTOCNode": [
@@ -2714,7 +2714,7 @@
                       ]
                     },
                     {
-                      "_Id": "60405546-696c-4386-880c-0396197ae8fb",
+                      "_Id": "2af205f0-4f5b-45f5-9588-0546615b241f",
                       "_Title": "PaymentArgs.DesignationInfo Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_PaymentArgs_DesignationInfo.htm",
                       "HelpTOCNode": [
@@ -2723,7 +2723,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_PaymentArgs_DesignationInfo__ctor.htm"
                         },
                         {
-                          "_Id": "15c7e8e3-7572-4a2a-98a3-35d1316ddfb6",
+                          "_Id": "583dc91a-e46d-42df-a453-9d889c8786a2",
                           "_Title": "DesignationInfo Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_PaymentArgs_DesignationInfo.htm",
                           "HelpTOCNode": [
@@ -2752,12 +2752,12 @@
                       "_Url": "T_BBNCExtensions_API_Transactions_PaymentArgs_ePaymentMethod.htm"
                     },
                     {
-                      "_Id": "bea70c49-d87d-4f8e-be41-46be8cebdd25",
+                      "_Id": "4cafd5b9-0611-468e-8b6a-62a62e8f92b7",
                       "_Title": "Transactions Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Transactions.htm",
                       "HelpTOCNode": [
                         {
-                          "_Id": "bccf92b0-bc18-4a0d-88fb-eba3a106d0a4",
+                          "_Id": "9ccfe694-7d94-41a0-bb88-8b7b68acfa13",
                           "_Title": "Transactions Methods",
                           "_Url": "Methods_T_BBNCExtensions_API_Transactions_Transactions.htm",
                           "HelpTOCNode": [
@@ -2780,7 +2780,7 @@
                           ]
                         },
                         {
-                          "_Id": "5abc2000-4538-41a3-b5b0-806eef3f56a6",
+                          "_Id": "0b6dc9c8-5646-4478-9872-94cfe3780059",
                           "_Title": "Transactions Properties",
                           "_Url": "Properties_T_BBNCExtensions_API_Transactions_Transactions.htm",
                           "HelpTOCNode": {
@@ -2793,16 +2793,16 @@
                   ]
                 },
                 {
-                  "_Id": "edbf6a5f-fb6e-4587-a595-f4dd1f9b030f",
+                  "_Id": "1f6e349e-1fab-446f-b3a4-2f97844704b6",
                   "_Title": "BBNCExtensions.API.Transactions.Donations",
                   "_Url": "N_BBNCExtensions_API_Transactions_Donations.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "d62383ee-1450-45ec-9e0b-16fb3da0739d",
+                      "_Id": "17a4449f-4e79-4d60-bf0d-9b1b0d429eed",
                       "_Title": "IncompleteDonationTransaction Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Donations_IncompleteDonationTransaction.htm",
                       "HelpTOCNode": {
-                        "_Id": "7d8a292b-f36d-4477-a44b-e2e567e847a7",
+                        "_Id": "6ca59544-6c6c-42df-b3e0-dbfe22bb99ad",
                         "_Title": "IncompleteDonationTransaction Constructor ",
                         "_Url": "Overload_BBNCExtensions_API_Transactions_Donations_IncompleteDonationTransaction__ctor.htm",
                         "HelpTOCNode": [
@@ -2826,12 +2826,12 @@
                       }
                     },
                     {
-                      "_Id": "c0269903-b56e-442f-901b-f0b6b354bf7c",
+                      "_Id": "b968df8e-5392-454a-b934-7c6f4ff74622",
                       "_Title": "RecordDonationException Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Donations_RecordDonationException.htm",
                       "HelpTOCNode": [
                         {
-                          "_Id": "ed769680-376a-4fde-ae45-5d4494405519",
+                          "_Id": "af39894a-bef3-4a22-9fcb-e021f46b0431",
                           "_Title": "RecordDonationException Constructor ",
                           "_Url": "Overload_BBNCExtensions_API_Transactions_Donations_RecordDonationException__ctor.htm",
                           "HelpTOCNode": [
@@ -2854,7 +2854,7 @@
                           ]
                         },
                         {
-                          "_Id": "df33506f-54b0-433d-a66c-77729236b549",
+                          "_Id": "4e00211a-89da-4a24-bc25-8b9e6f98eae1",
                           "_Title": "RecordDonationException Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_Donations_RecordDonationException.htm",
                           "HelpTOCNode": {
@@ -2865,7 +2865,7 @@
                       ]
                     },
                     {
-                      "_Id": "7c257fe3-34bc-4e65-be17-fb10976ecbc6",
+                      "_Id": "fccd5c63-3ebf-4591-98b5-3de2eddd2616",
                       "_Title": "RecordDonationReply Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Donations_RecordDonationReply.htm",
                       "HelpTOCNode": [
@@ -2874,7 +2874,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_Donations_RecordDonationReply__ctor.htm"
                         },
                         {
-                          "_Id": "28aada3b-b48a-48a8-850d-d78cf9392302",
+                          "_Id": "1ee6468e-d556-4cd1-ba5f-05c8eeec84a5",
                           "_Title": "RecordDonationReply Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_Donations_RecordDonationReply.htm",
                           "HelpTOCNode": [
@@ -2895,7 +2895,7 @@
                       ]
                     },
                     {
-                      "_Id": "f147cf07-3fc7-41b8-8d16-50fc0586fbcc",
+                      "_Id": "9ef1f777-b9e0-41ca-bb1f-e76b232d3216",
                       "_Title": "Recurrence Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Donations_Recurrence.htm",
                       "HelpTOCNode": [
@@ -2904,7 +2904,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_Donations_Recurrence__ctor.htm"
                         },
                         {
-                          "_Id": "7e1ccb03-b29d-4420-a26c-f585a807112d",
+                          "_Id": "82644011-a3ea-4807-a30a-a91dc8456848",
                           "_Title": "Recurrence Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_Donations_Recurrence.htm",
                           "HelpTOCNode": [
@@ -2951,12 +2951,12 @@
                   ]
                 },
                 {
-                  "_Id": "09875f9d-6eea-4e13-9727-30762f75fd66",
+                  "_Id": "1962d7dd-c01e-461b-938c-73811a53e7ab",
                   "_Title": "BBNCExtensions.API.Transactions.Profiles",
                   "_Url": "N_BBNCExtensions_API_Transactions_Profiles.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "fff9f47d-30bb-4f6c-b6c5-6af7817aaf30",
+                      "_Id": "0331945f-4380-4014-bf96-547dc5e486ef",
                       "_Title": "ProfileUpdateArgs Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Profiles_ProfileUpdateArgs.htm",
                       "HelpTOCNode": [
@@ -2965,7 +2965,7 @@
                           "_Url": "M_BBNCExtensions_API_Transactions_Profiles_ProfileUpdateArgs__ctor.htm"
                         },
                         {
-                          "_Id": "7d4c5b7d-6dbd-47c5-be7a-d0d1b4143dac",
+                          "_Id": "ea18ad2b-8826-41d6-bf79-0ebc8bdc9c06",
                           "_Title": "ProfileUpdateArgs Fields",
                           "_Url": "Fields_T_BBNCExtensions_API_Transactions_Profiles_ProfileUpdateArgs.htm",
                           "HelpTOCNode": [
@@ -2986,7 +2986,7 @@
                       ]
                     },
                     {
-                      "_Id": "7120a32c-2a1b-4de3-a97b-e0e82d772493",
+                      "_Id": "bbbda0c7-bc6e-401c-ba8d-12fbf7123f29",
                       "_Title": "ProfileUpdateReply Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Profiles_ProfileUpdateReply.htm",
                       "HelpTOCNode": {
@@ -2995,11 +2995,11 @@
                       }
                     },
                     {
-                      "_Id": "32880b8e-c861-4782-b5f6-e0bbe5c439ba",
+                      "_Id": "940c3228-a084-4a90-9a70-30f063725b41",
                       "_Title": "RecordProfileUpdateException Class",
                       "_Url": "T_BBNCExtensions_API_Transactions_Profiles_RecordProfileUpdateException.htm",
                       "HelpTOCNode": {
-                        "_Id": "8570784f-615a-4241-9f5a-4b782046c177",
+                        "_Id": "393a8350-b46f-4fbe-bf55-95bba1d3b780",
                         "_Title": "RecordProfileUpdateException Constructor ",
                         "_Url": "Overload_BBNCExtensions_API_Transactions_Profiles_RecordProfileUpdateException__ctor.htm",
                         "HelpTOCNode": [
@@ -3023,16 +3023,16 @@
               ]
             },
             {
-              "_Id": "75666ecb-6fbf-4285-a00f-e4c48f22be4a",
+              "_Id": "5783c651-2368-442d-b9d8-41e51868789c",
               "_Title": "BBNCExtensions.API.Users",
               "_Url": "N_BBNCExtensions_API_Users.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "0d599a18-2ef0-4b1e-ab69-f8a931145120",
+                  "_Id": "c7e8f12c-e0e2-4f89-8c30-2ae202560b57",
                   "_Title": "BackOfficeRecord Class",
                   "_Url": "T_BBNCExtensions_API_Users_BackOfficeRecord.htm",
                   "HelpTOCNode": {
-                    "_Id": "a16d2685-d508-4982-a5ec-dd0e7436db59",
+                    "_Id": "3dd61c5f-e546-4e6c-83ab-58b88c78964a",
                     "_Title": "BackOfficeRecord Properties",
                     "_Url": "Properties_T_BBNCExtensions_API_Users_BackOfficeRecord.htm",
                     "HelpTOCNode": [
@@ -3048,12 +3048,12 @@
                   }
                 },
                 {
-                  "_Id": "22111394-132e-4fa3-9237-77a7c5962b14",
+                  "_Id": "07256a7f-6f59-4149-b6b3-5e3d236ccab5",
                   "_Title": "LoginUserArgs Class",
                   "_Url": "T_BBNCExtensions_API_Users_LoginUserArgs.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "4c77ea28-bc04-4889-b7c9-e50ffde12a56",
+                      "_Id": "745f1e3a-c94f-49ef-87bf-ba96db9a46ce",
                       "_Title": "LoginUserArgs Constructor ",
                       "_Url": "Overload_BBNCExtensions_API_Users_LoginUserArgs__ctor.htm",
                       "HelpTOCNode": [
@@ -3068,7 +3068,7 @@
                       ]
                     },
                     {
-                      "_Id": "4aeb0d72-bb0b-415b-9201-7f65bfb9d1e5",
+                      "_Id": "bbffe431-604b-4898-8fcc-2dc7414c1682",
                       "_Title": "LoginUserArgs Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Users_LoginUserArgs.htm",
                       "HelpTOCNode": [
@@ -3085,7 +3085,7 @@
                   ]
                 },
                 {
-                  "_Id": "68e0846a-a103-48eb-90de-1ce4912b26d4",
+                  "_Id": "a03c8987-4694-426c-ba6a-c6c0bba726a2",
                   "_Title": "NewUserArgs Class",
                   "_Url": "T_BBNCExtensions_API_Users_NewUserArgs.htm",
                   "HelpTOCNode": [
@@ -3094,7 +3094,7 @@
                       "_Url": "M_BBNCExtensions_API_Users_NewUserArgs__ctor.htm"
                     },
                     {
-                      "_Id": "f359d3e9-1a93-43e0-8220-aacc101456b1",
+                      "_Id": "575377d5-b776-4d39-a0c2-edc5a31a360a",
                       "_Title": "NewUserArgs Fields",
                       "_Url": "Fields_T_BBNCExtensions_API_Users_NewUserArgs.htm",
                       "HelpTOCNode": [
@@ -3215,11 +3215,11 @@
                   ]
                 },
                 {
-                  "_Id": "3ca1cbf3-2a6d-4732-94aa-d85f6e086603",
+                  "_Id": "7a67a64a-2fbc-401a-ba72-ede03563a1a4",
                   "_Title": "RecordNewUserException Class",
                   "_Url": "T_BBNCExtensions_API_Users_RecordNewUserException.htm",
                   "HelpTOCNode": {
-                    "_Id": "56271d16-ae0c-4e46-ad84-30e05322c1ab",
+                    "_Id": "6f3cf6bb-b392-4b53-95b4-2f277a09b228",
                     "_Title": "RecordNewUserException Constructor ",
                     "_Url": "Overload_BBNCExtensions_API_Users_RecordNewUserException__ctor.htm",
                     "HelpTOCNode": [
@@ -3239,12 +3239,12 @@
                   }
                 },
                 {
-                  "_Id": "e398dab1-ffb1-4106-ba59-1bd43e876ab5",
+                  "_Id": "341f06b7-2091-498c-a1ed-857d1a4f6424",
                   "_Title": "User Class",
                   "_Url": "T_BBNCExtensions_API_Users_User.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "1fcddc3d-ed5e-452a-8bc4-0d068de0d4a3",
+                      "_Id": "878f5485-b541-4a36-b0eb-c8a64115d0b2",
                       "_Title": "User Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Users_User.htm",
                       "HelpTOCNode": {
@@ -3253,7 +3253,7 @@
                       }
                     },
                     {
-                      "_Id": "22490536-9501-4aea-b44f-84d5bd2855b3",
+                      "_Id": "cae4b52f-d620-4357-85b0-f8fc15e87fd3",
                       "_Title": "User Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Users_User.htm",
                       "HelpTOCNode": [
@@ -3326,11 +3326,11 @@
                   ]
                 },
                 {
-                  "_Id": "4df37447-93e1-4185-9dba-97a30d43da29",
+                  "_Id": "e5253889-1ea3-4815-ad25-560feae3b8ca",
                   "_Title": "UserLoginAccountLockedException Class",
                   "_Url": "T_BBNCExtensions_API_Users_UserLoginAccountLockedException.htm",
                   "HelpTOCNode": {
-                    "_Id": "dbf4a157-4159-4aa2-b85b-39ff36db6add",
+                    "_Id": "5e2c61c8-dbdc-46c9-81a7-04042ac535e0",
                     "_Title": "UserLoginAccountLockedException Constructor ",
                     "_Url": "Overload_BBNCExtensions_API_Users_UserLoginAccountLockedException__ctor.htm",
                     "HelpTOCNode": [
@@ -3350,11 +3350,11 @@
                   }
                 },
                 {
-                  "_Id": "f3b45746-d652-41c9-a175-24c9270dbb6e",
+                  "_Id": "1ffca74d-1718-44b6-9843-8dd097e740f0",
                   "_Title": "UserLoginInvalidCredentialsException Class",
                   "_Url": "T_BBNCExtensions_API_Users_UserLoginInvalidCredentialsException.htm",
                   "HelpTOCNode": {
-                    "_Id": "0436974b-410b-42c0-8b0d-3dba775ffac2",
+                    "_Id": "5bf6dfb6-c35d-437a-9cf7-27df5e59d36d",
                     "_Title": "UserLoginInvalidCredentialsException Constructor ",
                     "_Url": "Overload_BBNCExtensions_API_Users_UserLoginInvalidCredentialsException__ctor.htm",
                     "HelpTOCNode": [
@@ -3374,12 +3374,12 @@
                   }
                 },
                 {
-                  "_Id": "acdb01d1-8db0-43d7-9d9d-13a524d5474b",
+                  "_Id": "feca5e73-2c1f-4a56-a7b9-dc2bbbe336a2",
                   "_Title": "Users Class",
                   "_Url": "T_BBNCExtensions_API_Users_Users.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "019035ee-9764-4070-b722-185e4d32bd00",
+                      "_Id": "e9af0eb8-f744-45ea-ab2f-ee3f0954bce4",
                       "_Title": "Users Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Users_Users.htm",
                       "HelpTOCNode": [
@@ -3406,7 +3406,7 @@
                       ]
                     },
                     {
-                      "_Id": "30dbe49e-c89d-4695-a212-b4aa798dca1e",
+                      "_Id": "3d59bde5-6b09-44f5-b77f-fbda887535d9",
                       "_Title": "Users Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Users_Users.htm",
                       "HelpTOCNode": [
@@ -3425,16 +3425,16 @@
               ]
             },
             {
-              "_Id": "dac17dcc-efcc-42e6-8fc0-72206b8d8abd",
+              "_Id": "c9814d88-79d0-4888-860a-bf176682c551",
               "_Title": "BBNCExtensions.API.Utility",
               "_Url": "N_BBNCExtensions_API_Utility.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "910d70bb-0de7-4def-9b35-ddfdfe85fdf8",
+                  "_Id": "67c2cc7f-f943-4c27-ba66-19131ca046db",
                   "_Title": "Attributes Class",
                   "_Url": "T_BBNCExtensions_API_Utility_Attributes.htm",
                   "HelpTOCNode": {
-                    "_Id": "b903aab0-b817-4bc3-9a27-ecfe3ed8ed39",
+                    "_Id": "91a4598c-1b98-42a6-a42d-c4a6425eaeea",
                     "_Title": "Attributes Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Utility_Attributes.htm",
                     "HelpTOCNode": [
@@ -3454,16 +3454,16 @@
                   }
                 },
                 {
-                  "_Id": "b6f52164-aee5-4f06-a6c0-4aa1e3708456",
+                  "_Id": "932cda49-16f7-4a17-8bc8-7f7df82a23da",
                   "_Title": "CodeTables Class",
                   "_Url": "T_BBNCExtensions_API_Utility_CodeTables.htm",
                   "HelpTOCNode": {
-                    "_Id": "c666a6b2-6bcb-49a4-a0e9-271ec5e43c68",
+                    "_Id": "5336e77e-c7f2-471b-bf11-01f67cd80b80",
                     "_Title": "CodeTables Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Utility_CodeTables.htm",
                     "HelpTOCNode": [
                       {
-                        "_Id": "cd718a5a-bf00-404f-9008-619abecf7374",
+                        "_Id": "f9335e70-f780-4d0e-b0ea-f9fa11916c21",
                         "_Title": "CodeTableEntries Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_CodeTables_CodeTableEntries.htm",
                         "HelpTOCNode": [
@@ -3478,7 +3478,7 @@
                         ]
                       },
                       {
-                        "_Id": "909d454c-fae2-4b03-9e7a-fb1b3c23e6b5",
+                        "_Id": "b551b483-0e25-46e6-83bd-618d8d03c2c2",
                         "_Title": "CodeTableEntryDescription Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_CodeTables_CodeTableEntryDescription.htm",
                         "HelpTOCNode": [
@@ -3493,7 +3493,7 @@
                         ]
                       },
                       {
-                        "_Id": "c89f9359-1c46-4943-ae8a-927013ac8dfc",
+                        "_Id": "8c6f6a29-5550-4846-a8b6-0cabdff8fdf0",
                         "_Title": "CodeTableEntryValue Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_CodeTables_CodeTableEntryValue.htm",
                         "HelpTOCNode": [
@@ -3508,7 +3508,7 @@
                         ]
                       },
                       {
-                        "_Id": "cb91320b-1ef8-4dbe-99e6-8a382e5c86cf",
+                        "_Id": "c982c602-fd48-40b1-9158-f32373c34c37",
                         "_Title": "LoadListWithCodeTableEntries Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_CodeTables_LoadListWithCodeTableEntries.htm",
                         "HelpTOCNode": [
@@ -3530,16 +3530,16 @@
                   }
                 },
                 {
-                  "_Id": "e5270e4c-547a-4bea-8710-f39efd0800ac",
+                  "_Id": "608bddae-9646-487d-b143-5f2a94870a00",
                   "_Title": "CreditCard Class",
                   "_Url": "T_BBNCExtensions_API_Utility_CreditCard.htm",
                   "HelpTOCNode": {
-                    "_Id": "c9b5ff92-1b8c-4be7-acc6-64aef6bbeb9e",
+                    "_Id": "705a9c6c-b817-44e3-84f2-a2ecd90fa8ac",
                     "_Title": "CreditCard Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Utility_CreditCard.htm",
                     "HelpTOCNode": [
                       {
-                        "_Id": "5f16dded-61e1-4c32-bb22-08cbe756298b",
+                        "_Id": "cb0585e2-700c-4bb8-83ea-93df61660287",
                         "_Title": "LoadListWithCreditCards Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_CreditCard_LoadListWithCreditCards.htm",
                         "HelpTOCNode": [
@@ -3558,7 +3558,7 @@
                         ]
                       },
                       {
-                        "_Id": "c26f6dc2-2989-4278-a653-e3b490d87d51",
+                        "_Id": "cb60069c-e405-4ef1-8ab2-5a81dc528853",
                         "_Title": "StoreCreditCard Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_CreditCard_StoreCreditCard.htm",
                         "HelpTOCNode": [
@@ -3576,11 +3576,11 @@
                   }
                 },
                 {
-                  "_Id": "14c91196-7102-4db2-a78c-7269ae99b424",
+                  "_Id": "07a97845-82e1-44ad-a31e-c9eec5e1a984",
                   "_Title": "MerchantAccount Class",
                   "_Url": "T_BBNCExtensions_API_Utility_MerchantAccount.htm",
                   "HelpTOCNode": {
-                    "_Id": "359885a2-c861-4fae-9b21-83375e2c9577",
+                    "_Id": "f993605f-3f79-4d4b-85ea-73bd0439af63",
                     "_Title": "MerchantAccount Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Utility_MerchantAccount.htm",
                     "HelpTOCNode": [
@@ -3589,7 +3589,7 @@
                         "_Url": "M_BBNCExtensions_API_Utility_MerchantAccount_LoadListWithMerchantAcccounts.htm"
                       },
                       {
-                        "_Id": "b9dbacbd-dc58-49a7-b03f-a3ea3db5eac7",
+                        "_Id": "bd41c8cc-99ed-4cf8-ab18-ea71a3a26123",
                         "_Title": "SupportedCards Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_MerchantAccount_SupportedCards.htm",
                         "HelpTOCNode": [
@@ -3615,12 +3615,12 @@
                   }
                 },
                 {
-                  "_Id": "034c6446-d89c-461f-941a-80459fdce67b",
+                  "_Id": "7d7e00cf-edf8-4a96-a076-aab62540aa9e",
                   "_Title": "SalesOrder Class",
                   "_Url": "T_BBNCExtensions_API_Utility_SalesOrder.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "6da16f2c-aea5-43ea-a7e3-89d96116e519",
+                      "_Id": "68983b99-34c2-423a-a2b1-6f75ed5573d2",
                       "_Title": "SalesOrder Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Utility_SalesOrder.htm",
                       "HelpTOCNode": {
@@ -3629,7 +3629,7 @@
                       }
                     },
                     {
-                      "_Id": "5d431a3b-7770-44ce-b953-c029982e3877",
+                      "_Id": "29456d4d-a9d6-43e4-8bbf-282d118ea4af",
                       "_Title": "SalesOrder Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Utility_SalesOrder.htm",
                       "HelpTOCNode": [
@@ -3646,11 +3646,11 @@
                   ]
                 },
                 {
-                  "_Id": "e3763b61-a522-49cd-9ce7-27af6c111c32",
+                  "_Id": "00fd6525-95d8-4be7-b51f-8beba15625aa",
                   "_Title": "SecurePayments Class",
                   "_Url": "T_BBNCExtensions_API_Utility_SecurePayments.htm",
                   "HelpTOCNode": {
-                    "_Id": "9d10d938-da52-4c3b-91f5-ab29e78e1cad",
+                    "_Id": "93168fca-8e96-46e3-8ffc-8d4efab62612",
                     "_Title": "SecurePayments Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Utility_SecurePayments.htm",
                     "HelpTOCNode": [
@@ -3674,11 +3674,11 @@
                   }
                 },
                 {
-                  "_Id": "45d2cf61-91f8-4452-8c80-c8419d284980",
+                  "_Id": "4ac74def-159d-48a8-9f77-a8eea160bbe7",
                   "_Title": "TimeZones Class",
                   "_Url": "T_BBNCExtensions_API_Utility_TimeZones.htm",
                   "HelpTOCNode": {
-                    "_Id": "b1b31267-77cf-450b-acc1-c59a1027dc1c",
+                    "_Id": "32f8aa4e-66d2-4b39-b630-6ccacdd3d711",
                     "_Title": "TimeZones Methods",
                     "_Url": "Methods_T_BBNCExtensions_API_Utility_TimeZones.htm",
                     "HelpTOCNode": [
@@ -3687,7 +3687,7 @@
                         "_Url": "M_BBNCExtensions_API_Utility_TimeZones_SiteTimeZone.htm"
                       },
                       {
-                        "_Id": "506433f1-999f-4a60-827f-714fff9a2e97",
+                        "_Id": "f678d934-4ed1-4b76-83b6-de5580d570c2",
                         "_Title": "TimeZone Method ",
                         "_Url": "Overload_BBNCExtensions_API_Utility_TimeZones_TimeZone.htm",
                         "HelpTOCNode": [
@@ -3713,12 +3713,12 @@
                   }
                 },
                 {
-                  "_Id": "d4dbc535-c81c-46ab-a3cd-3252c64efe02",
+                  "_Id": "d278a017-9bcf-4c03-91a7-7f0eff727416",
                   "_Title": "Utility Class",
                   "_Url": "T_BBNCExtensions_API_Utility_Utility.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "d1b932a5-59ca-47b4-a690-b360c684bdc9",
+                      "_Id": "c162f94c-addd-4881-b64e-588ba648859c",
                       "_Title": "Utility Methods",
                       "_Url": "Methods_T_BBNCExtensions_API_Utility_Utility.htm",
                       "HelpTOCNode": {
@@ -3727,7 +3727,7 @@
                       }
                     },
                     {
-                      "_Id": "0e9fef5a-48ea-493a-8e39-71d403ce1ba8",
+                      "_Id": "0163305c-ade0-4fff-b217-b9d81b0b8edf",
                       "_Title": "Utility Properties",
                       "_Url": "Properties_T_BBNCExtensions_API_Utility_Utility.htm",
                       "HelpTOCNode": [
@@ -3764,11 +3764,11 @@
                   ]
                 },
                 {
-                  "_Id": "33740ff1-cf5a-4e08-9491-2364afa7ef00",
+                  "_Id": "ff6653ac-63c3-4d04-b2ee-c711607f366d",
                   "_Title": "Version Class",
                   "_Url": "T_BBNCExtensions_API_Utility_Version.htm",
                   "HelpTOCNode": {
-                    "_Id": "78c08ea0-e8b0-4e0b-ae7e-f33f3382f183",
+                    "_Id": "7cab0fe9-f902-48b0-9303-da034288feb6",
                     "_Title": "Version Properties",
                     "_Url": "Properties_T_BBNCExtensions_API_Utility_Version.htm",
                     "HelpTOCNode": [
@@ -3800,16 +3800,16 @@
           ]
         },
         {
-          "_Id": "051c2c42-4a55-4d06-af98-3ad02f0b9056",
+          "_Id": "523e8413-1081-48f3-91a4-af2aaa2d0a79",
           "_Title": "BBNCExtensions.BackgroundServices",
           "_Url": "N_BBNCExtensions_BackgroundServices.htm",
           "HelpTOCNode": {
-            "_Id": "7141b022-daa7-4c52-9a5b-f0b2ca5f90c2",
+            "_Id": "68561567-d1ea-40a9-9c75-43e87873b5b8",
             "_Title": "INetCommunityService Interface",
             "_Url": "T_BBNCExtensions_BackgroundServices_INetCommunityService.htm",
             "HelpTOCNode": [
               {
-                "_Id": "26646250-9796-4ac0-8c97-06830db50e75",
+                "_Id": "c9797553-ebf2-4ebe-b4b3-daa4dceff161",
                 "_Title": "INetCommunityService Methods",
                 "_Url": "Methods_T_BBNCExtensions_BackgroundServices_INetCommunityService.htm",
                 "HelpTOCNode": [
@@ -3824,7 +3824,7 @@
                 ]
               },
               {
-                "_Id": "fbcf0ea1-f33b-4072-90c0-3c1901dfeee2",
+                "_Id": "30d39b6c-bc2d-4cf1-9a74-8c74efb61b9d",
                 "_Title": "INetCommunityService Properties",
                 "_Url": "Properties_T_BBNCExtensions_BackgroundServices_INetCommunityService.htm",
                 "HelpTOCNode": [
@@ -3842,11 +3842,11 @@
           }
         },
         {
-          "_Id": "a53a570a-3195-4020-bbe7-5db53d4e150d",
+          "_Id": "56f9fad6-7d3c-4c30-956e-be2301068070",
           "_Title": "BBNCExtensions.CustomHandlers",
           "_Url": "N_BBNCExtensions_CustomHandlers.htm",
           "HelpTOCNode": {
-            "_Id": "d75457a9-930b-4f60-ab4f-1bad4bc5b027",
+            "_Id": "27978015-2e6a-44e5-9d7a-ddb8e6762768",
             "_Title": "CustomHandlerBase Class",
             "_Url": "T_BBNCExtensions_CustomHandlers_CustomHandlerBase.htm",
             "HelpTOCNode": [
@@ -3855,7 +3855,7 @@
                 "_Url": "M_BBNCExtensions_CustomHandlers_CustomHandlerBase__ctor.htm"
               },
               {
-                "_Id": "73ca8106-dee5-4835-924c-7e1ce5dc6586",
+                "_Id": "194f7b3d-0cbf-4f62-95af-0f33339949c6",
                 "_Title": "CustomHandlerBase Methods",
                 "_Url": "Methods_T_BBNCExtensions_CustomHandlers_CustomHandlerBase.htm",
                 "HelpTOCNode": [
@@ -3870,7 +3870,7 @@
                 ]
               },
               {
-                "_Id": "bce613ea-34b4-4750-a768-ef40a91ba32c",
+                "_Id": "9f9084cb-10a9-4c0e-95a1-ad8fdab5a4bd",
                 "_Title": "CustomHandlerBase Properties",
                 "_Url": "Properties_T_BBNCExtensions_CustomHandlers_CustomHandlerBase.htm",
                 "HelpTOCNode": {
@@ -3882,12 +3882,12 @@
           }
         },
         {
-          "_Id": "8588c685-e657-439d-852d-89c180b0a25e",
+          "_Id": "3fe0e923-05a8-417e-81ee-620e363cc422",
           "_Title": "BBNCExtensions.CustomService",
           "_Url": "N_BBNCExtensions_CustomService.htm",
           "HelpTOCNode": [
             {
-              "_Id": "bac9528f-e5b1-416a-9cf4-26fe609cb554",
+              "_Id": "3f66a41a-5e6b-4b89-93fe-539126ee3485",
               "_Title": "ConnectionInfoHeader Class",
               "_Url": "T_BBNCExtensions_CustomService_ConnectionInfoHeader.htm",
               "HelpTOCNode": [
@@ -3896,7 +3896,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_ConnectionInfoHeader__ctor.htm"
                 },
                 {
-                  "_Id": "83024e10-1065-49e2-9c7f-285d289fa880",
+                  "_Id": "9f67cfbc-9413-4089-a90d-3271f56f17a0",
                   "_Title": "ConnectionInfoHeader Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_ConnectionInfoHeader.htm",
                   "HelpTOCNode": [
@@ -3917,7 +3917,7 @@
               ]
             },
             {
-              "_Id": "1988224a-c881-400c-8843-00ea24491996",
+              "_Id": "7acc7169-6237-4011-bba0-f56c59f5f68c",
               "_Title": "CustomMethodArgs Class",
               "_Url": "T_BBNCExtensions_CustomService_CustomMethodArgs.htm",
               "HelpTOCNode": [
@@ -3926,7 +3926,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_CustomMethodArgs__ctor.htm"
                 },
                 {
-                  "_Id": "8da3cc25-7d7e-4934-b24b-93a57e914062",
+                  "_Id": "2a44e9e7-9214-4da6-8ffc-dad9b6c4beb1",
                   "_Title": "CustomMethodArgs Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_CustomMethodArgs.htm",
                   "HelpTOCNode": [
@@ -3951,11 +3951,11 @@
               ]
             },
             {
-              "_Id": "7b517863-6ab0-4aa3-963e-9e11398fbe34",
+              "_Id": "3c8008dc-782c-4f46-ac9c-4a18bc18e069",
               "_Title": "CustomMethodCompletedEventArgs Class",
               "_Url": "T_BBNCExtensions_CustomService_CustomMethodCompletedEventArgs.htm",
               "HelpTOCNode": {
-                "_Id": "41121495-ba4b-4e5a-8eb2-8c61c956f37d",
+                "_Id": "8ffe78db-5696-42be-9b56-0879b7d3bddf",
                 "_Title": "CustomMethodCompletedEventArgs Properties",
                 "_Url": "Properties_T_BBNCExtensions_CustomService_CustomMethodCompletedEventArgs.htm",
                 "HelpTOCNode": {
@@ -3969,7 +3969,7 @@
               "_Url": "T_BBNCExtensions_CustomService_CustomMethodCompletedEventHandler.htm"
             },
             {
-              "_Id": "befa7c62-605f-4a9f-a782-c847cb00d78d",
+              "_Id": "ac00e4c2-a333-484e-b3f5-9e5032b8ef95",
               "_Title": "CustomMethodResponse Class",
               "_Url": "T_BBNCExtensions_CustomService_CustomMethodResponse.htm",
               "HelpTOCNode": [
@@ -3978,7 +3978,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_CustomMethodResponse__ctor.htm"
                 },
                 {
-                  "_Id": "200c828a-50d6-4d42-a34b-8a5797fff2db",
+                  "_Id": "dfd5870a-e11a-40ea-a3d0-49fc2fd2f22d",
                   "_Title": "CustomMethodResponse Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_CustomMethodResponse.htm",
                   "HelpTOCNode": [
@@ -4007,7 +4007,7 @@
               ]
             },
             {
-              "_Id": "858058f5-771d-41b2-941a-9eab85fb2ec8",
+              "_Id": "5f9d3180-a4fe-4895-a658-1ef422eeac4a",
               "_Title": "CustomService Class",
               "_Url": "T_BBNCExtensions_CustomService_CustomService.htm",
               "HelpTOCNode": [
@@ -4016,7 +4016,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_CustomService__ctor.htm"
                 },
                 {
-                  "_Id": "f7c5e07e-bada-4308-84da-220e0e0ac13e",
+                  "_Id": "f9b1b5df-9473-4088-9266-5dc3ae416aad",
                   "_Title": "CustomService Methods",
                   "_Url": "Methods_T_BBNCExtensions_CustomService_CustomService.htm",
                   "HelpTOCNode": [
@@ -4033,7 +4033,7 @@
                       "_Url": "M_BBNCExtensions_CustomService_CustomService_CustomMethod.htm"
                     },
                     {
-                      "_Id": "462ac987-bf63-42f8-b0c2-0cba4ff8b967",
+                      "_Id": "683452ba-a167-43f1-bab3-32627f7b9525",
                       "_Title": "CustomMethodAsync Method ",
                       "_Url": "Overload_BBNCExtensions_CustomService_CustomService_CustomMethodAsync.htm",
                       "HelpTOCNode": [
@@ -4054,7 +4054,7 @@
                   ]
                 },
                 {
-                  "_Id": "93d6b9b5-b0f6-4dab-b0d1-531ad36c5143",
+                  "_Id": "08d31472-4bbe-4bfb-a013-ef6abdb229e0",
                   "_Title": "CustomService Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_CustomService.htm",
                   "HelpTOCNode": [
@@ -4085,7 +4085,7 @@
                   ]
                 },
                 {
-                  "_Id": "5d1478d1-0114-49eb-9c2e-0e5271ca41d2",
+                  "_Id": "a02f9621-19ec-412d-a96a-679934ea4a65",
                   "_Title": "CustomService Events",
                   "_Url": "Events_T_BBNCExtensions_CustomService_CustomService.htm",
                   "HelpTOCNode": {
@@ -4108,7 +4108,7 @@
               "_Url": "T_BBNCExtensions_CustomService_ResponseErrorCodes.htm"
             },
             {
-              "_Id": "e7a7e7c1-f5fd-47c4-a6fd-d9ab6f33ac65",
+              "_Id": "930bc723-1aa0-4bc2-af53-52fcf9ca380b",
               "_Title": "ResponseErrorHeader Class",
               "_Url": "T_BBNCExtensions_CustomService_ResponseErrorHeader.htm",
               "HelpTOCNode": [
@@ -4117,7 +4117,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_ResponseErrorHeader__ctor.htm"
                 },
                 {
-                  "_Id": "9e91a9d8-94e1-4866-ae85-0a2534f4bf06",
+                  "_Id": "3558a3a5-ba10-4601-91f0-7cdcda8a9b38",
                   "_Title": "ResponseErrorHeader Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_ResponseErrorHeader.htm",
                   "HelpTOCNode": [
@@ -4154,7 +4154,7 @@
               ]
             },
             {
-              "_Id": "7d182e23-70dc-44d9-a219-4710c1a09570",
+              "_Id": "e6296809-fc07-4566-875b-40a503d11a15",
               "_Title": "ResponseTraceHeader Class",
               "_Url": "T_BBNCExtensions_CustomService_ResponseTraceHeader.htm",
               "HelpTOCNode": [
@@ -4163,7 +4163,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_ResponseTraceHeader__ctor.htm"
                 },
                 {
-                  "_Id": "d1072be2-9d3c-4937-9367-4b846dc75431",
+                  "_Id": "4779fec1-eacf-402b-b024-772592a07b7e",
                   "_Title": "ResponseTraceHeader Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_ResponseTraceHeader.htm",
                   "HelpTOCNode": [
@@ -4196,7 +4196,7 @@
               ]
             },
             {
-              "_Id": "3791e4a6-607a-46c4-a222-6cf511cbb55e",
+              "_Id": "b4efc840-3902-40e7-9016-5f0128f5eb79",
               "_Title": "ServiceAuthorizationHeader Class",
               "_Url": "T_BBNCExtensions_CustomService_ServiceAuthorizationHeader.htm",
               "HelpTOCNode": [
@@ -4205,7 +4205,7 @@
                   "_Url": "M_BBNCExtensions_CustomService_ServiceAuthorizationHeader__ctor.htm"
                 },
                 {
-                  "_Id": "df4658fe-7ad5-43b3-9dbf-3da41007713b",
+                  "_Id": "0c7ebc82-af9a-497c-9e0d-e2ddd53a5abe",
                   "_Title": "ServiceAuthorizationHeader Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomService_ServiceAuthorizationHeader.htm",
                   "HelpTOCNode": [
@@ -4232,12 +4232,12 @@
           ]
         },
         {
-          "_Id": "77174074-8201-4c0b-9565-9a7b8a6d0925",
+          "_Id": "d826f2c0-025e-441c-acba-5473d5cfc187",
           "_Title": "BBNCExtensions.CustomServiceMethods",
           "_Url": "N_BBNCExtensions_CustomServiceMethods.htm",
           "HelpTOCNode": [
             {
-              "_Id": "7c2f75a7-eff2-41fb-87ab-f90c5ee69ea1",
+              "_Id": "3298b2c3-191c-4707-85aa-c955abe95cb8",
               "_Title": "CustomMethod Class",
               "_Url": "T_BBNCExtensions_CustomServiceMethods_CustomMethod.htm",
               "HelpTOCNode": [
@@ -4246,7 +4246,7 @@
                   "_Url": "M_BBNCExtensions_CustomServiceMethods_CustomMethod__ctor.htm"
                 },
                 {
-                  "_Id": "fec9e468-a836-48b9-89f2-89e942195937",
+                  "_Id": "6bbe61db-a96f-452b-a953-613b63b572ea",
                   "_Title": "CustomMethod Methods",
                   "_Url": "Methods_T_BBNCExtensions_CustomServiceMethods_CustomMethod.htm",
                   "HelpTOCNode": [
@@ -4263,7 +4263,7 @@
               ]
             },
             {
-              "_Id": "a8c19c78-8b63-4d59-8fd7-fa2352e4f38c",
+              "_Id": "215f2cc9-6fd4-4ffb-9a90-370bc7e7a891",
               "_Title": "CustomMethodBase Class",
               "_Url": "T_BBNCExtensions_CustomServiceMethods_CustomMethodBase.htm",
               "HelpTOCNode": [
@@ -4272,7 +4272,7 @@
                   "_Url": "M_BBNCExtensions_CustomServiceMethods_CustomMethodBase__ctor.htm"
                 },
                 {
-                  "_Id": "cd201a90-ff2a-4753-a273-47f54c10cf1d",
+                  "_Id": "8087b0ad-1cce-4393-8eea-60c5bb8324d3",
                   "_Title": "CustomMethodBase Methods",
                   "_Url": "Methods_T_BBNCExtensions_CustomServiceMethods_CustomMethodBase.htm",
                   "HelpTOCNode": {
@@ -4283,7 +4283,7 @@
               ]
             },
             {
-              "_Id": "2b5d81dc-a583-438e-ba1d-f5f6474e708a",
+              "_Id": "9f4b0605-2df9-4c13-8e59-7a5e819aa0c2",
               "_Title": "CustomServiceMethodAttribute Class",
               "_Url": "T_BBNCExtensions_CustomServiceMethods_CustomServiceMethodAttribute.htm",
               "HelpTOCNode": [
@@ -4292,7 +4292,7 @@
                   "_Url": "M_BBNCExtensions_CustomServiceMethods_CustomServiceMethodAttribute__ctor.htm"
                 },
                 {
-                  "_Id": "50791751-0bb4-4e93-bd61-485de49c8e67",
+                  "_Id": "0cd2bc10-f946-4451-8b12-0da8debd27f2",
                   "_Title": "CustomServiceMethodAttribute Properties",
                   "_Url": "Properties_T_BBNCExtensions_CustomServiceMethods_CustomServiceMethodAttribute.htm",
                   "HelpTOCNode": {
@@ -4305,12 +4305,12 @@
           ]
         },
         {
-          "_Id": "1de00602-e05d-4ee1-9f23-6ffc3a976164",
+          "_Id": "493e3e9b-2f5c-4037-8e9e-eda2018ea46e",
           "_Title": "BBNCExtensions.EA7",
           "_Url": "N_BBNCExtensions_EA7.htm",
           "HelpTOCNode": [
             {
-              "_Id": "2b7a2932-267d-4cdc-a400-94a2aedebc44",
+              "_Id": "a26e5c3c-f6ba-40e7-9ec6-8ed680f96377",
               "_Title": "FieldListProviderAttribute Class",
               "_Url": "T_BBNCExtensions_EA7_FieldListProviderAttribute.htm",
               "HelpTOCNode": [
@@ -4319,7 +4319,7 @@
                   "_Url": "M_BBNCExtensions_EA7_FieldListProviderAttribute__ctor.htm"
                 },
                 {
-                  "_Id": "3ac33a22-0e14-4a2c-85d4-cd859078cade",
+                  "_Id": "cb22d53e-85a3-46f8-bf5d-15df3dc17a20",
                   "_Title": "FieldListProviderAttribute Properties",
                   "_Url": "Properties_T_BBNCExtensions_EA7_FieldListProviderAttribute.htm",
                   "HelpTOCNode": {
@@ -4330,7 +4330,7 @@
               ]
             },
             {
-              "_Id": "005375ef-74a7-47a6-8d76-0941175b6dfb",
+              "_Id": "6a5cf603-fc57-4b99-b106-f3686c20e2ba",
               "_Title": "ProfileDisplayHTMLAttribute Class",
               "_Url": "T_BBNCExtensions_EA7_ProfileDisplayHTMLAttribute.htm",
               "HelpTOCNode": [
@@ -4339,7 +4339,7 @@
                   "_Url": "M_BBNCExtensions_EA7_ProfileDisplayHTMLAttribute__ctor.htm"
                 },
                 {
-                  "_Id": "c7005c8a-eecc-44c3-b7fa-82baa2c06f57",
+                  "_Id": "6fce3d41-0a48-4fb7-852f-b0cd63de6bb5",
                   "_Title": "ProfileDisplayHTMLAttribute Properties",
                   "_Url": "Properties_T_BBNCExtensions_EA7_ProfileDisplayHTMLAttribute.htm",
                   "HelpTOCNode": {
@@ -4352,12 +4352,12 @@
           ]
         },
         {
-          "_Id": "ba653688-7858-4e0a-aca6-aab1228beb59",
+          "_Id": "39a2b9fb-3f53-47ab-9f4b-728db54c35ea",
           "_Title": "BBNCExtensions.Interfaces Namespaces",
           "_Url": "G_BBNCExtensions_Interfaces.htm",
           "HelpTOCNode": [
             {
-              "_Id": "af41e407-f972-4317-af19-362e8d5be699",
+              "_Id": "e4c5deee-29e3-4d81-8d36-ea2650240529",
               "_Title": "BBNCExtensions.Interfaces",
               "_Url": "N_BBNCExtensions_Interfaces.htm",
               "HelpTOCNode": [
@@ -4414,11 +4414,11 @@
                   "_Url": "T_BBNCExtensions_Interfaces_eVerificationMethod.htm"
                 },
                 {
-                  "_Id": "c7b74380-b62a-4a99-bf63-eda15df8ca39",
+                  "_Id": "09927301-b58d-486f-aab9-86cb1ed851d0",
                   "_Title": "IBackOfficeRecord Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_IBackOfficeRecord.htm",
                   "HelpTOCNode": {
-                    "_Id": "efe6f496-0ad7-4bd3-a9b1-0f0bebc227b5",
+                    "_Id": "80b9067d-5cac-453c-95a1-98c31a666efd",
                     "_Title": "IBackOfficeRecord Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_IBackOfficeRecord.htm",
                     "HelpTOCNode": [
@@ -4434,11 +4434,11 @@
                   }
                 },
                 {
-                  "_Id": "941a29f5-f1fc-49e5-89e2-ebc64a44afac",
+                  "_Id": "77c097e4-9705-404d-bd59-74701977b935",
                   "_Title": "ICurrentChapter Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_ICurrentChapter.htm",
                   "HelpTOCNode": {
-                    "_Id": "4e873687-d6bf-4f5f-b7b8-d12f5ccc3ff0",
+                    "_Id": "f2b5a8d3-966d-4a1e-8e01-cc0c36b2c8d1",
                     "_Title": "ICurrentChapter Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_ICurrentChapter.htm",
                     "HelpTOCNode": [
@@ -4470,12 +4470,12 @@
                   }
                 },
                 {
-                  "_Id": "196de1be-d7c6-4395-82a3-c4d532eeb5f4",
+                  "_Id": "cd7b863f-2d96-4dc0-9706-30d715e2b4c3",
                   "_Title": "ICurrentUser Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_ICurrentUser.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "178a3c11-0092-43fa-9467-0ce0b825fa28",
+                      "_Id": "6e209e0c-54e0-447e-8ada-c0cd10fbae32",
                       "_Title": "ICurrentUser Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_ICurrentUser.htm",
                       "HelpTOCNode": {
@@ -4484,7 +4484,7 @@
                       }
                     },
                     {
-                      "_Id": "3bc3f126-f735-4fce-9705-6feacc9c02f1",
+                      "_Id": "64480c3d-d8f7-416f-afcf-51c749b8d144",
                       "_Title": "ICurrentUser Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_ICurrentUser.htm",
                       "HelpTOCNode": [
@@ -4521,12 +4521,12 @@
                   ]
                 },
                 {
-                  "_Id": "29ffd059-64a2-41bf-9fa0-53c697a8d994",
+                  "_Id": "8bf1635f-8e05-4e7c-8123-a41fa8807fc8",
                   "_Title": "ICustomLink Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_ICustomLink.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "a03a3810-d070-419b-8c28-da49091c042a",
+                      "_Id": "dc8b99f4-0627-4954-a524-6ea449283e55",
                       "_Title": "ICustomLink Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_ICustomLink.htm",
                       "HelpTOCNode": {
@@ -4535,7 +4535,7 @@
                       }
                     },
                     {
-                      "_Id": "043b074a-027f-4a89-88ef-5dc93ccd7b1a",
+                      "_Id": "7c09a9d7-61a3-4da6-a247-96a6fc3fae99",
                       "_Title": "ICustomLink Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_ICustomLink.htm",
                       "HelpTOCNode": [
@@ -4564,11 +4564,11 @@
                   ]
                 },
                 {
-                  "_Id": "106395e9-94e7-4874-a724-a42fc97ce8f7",
+                  "_Id": "5d06f8c0-896b-43cf-a26f-efe4614225c8",
                   "_Title": "IEA7FieldListProvider Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_IEA7FieldListProvider.htm",
                   "HelpTOCNode": {
-                    "_Id": "78cffcb8-1a43-42d4-9a06-b694d626e2b4",
+                    "_Id": "c450bfce-b4f6-4d69-9189-912236d94ddd",
                     "_Title": "IEA7FieldListProvider Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_IEA7FieldListProvider.htm",
                     "HelpTOCNode": {
@@ -4578,11 +4578,11 @@
                   }
                 },
                 {
-                  "_Id": "296587ab-ca66-4d0e-9a59-7ed2c1bee083",
+                  "_Id": "6d48fe34-df6e-4b68-850d-367136428d43",
                   "_Title": "IEA7ProfileDisplayHTML Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_IEA7ProfileDisplayHTML.htm",
                   "HelpTOCNode": {
-                    "_Id": "80b162d5-23ef-4f58-9c8f-44df11f4595d",
+                    "_Id": "7afd5429-2ac4-415b-835f-a9f34caeaaf0",
                     "_Title": "IEA7ProfileDisplayHTML Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_IEA7ProfileDisplayHTML.htm",
                     "HelpTOCNode": {
@@ -4592,11 +4592,11 @@
                   }
                 },
                 {
-                  "_Id": "3ad1b03f-ee78-407e-b538-ef2ce6f07f7e",
+                  "_Id": "5bc9a656-016a-46db-a1e0-a5ac4961b2d1",
                   "_Title": "INetCommunity Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_INetCommunity.htm",
                   "HelpTOCNode": {
-                    "_Id": "2d8ee2fa-2523-4c2d-86d2-13c53612a0e5",
+                    "_Id": "e3ef7fe8-835b-4deb-a815-a19247939eb1",
                     "_Title": "INetCommunity Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_INetCommunity.htm",
                     "HelpTOCNode": [
@@ -4624,11 +4624,11 @@
                   }
                 },
                 {
-                  "_Id": "b1a45a80-ef39-48a2-99de-2b5883c5c648",
+                  "_Id": "d83358e5-01f6-4498-a368-554a8277909c",
                   "_Title": "INetCommunityPage Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_INetCommunityPage.htm",
                   "HelpTOCNode": {
-                    "_Id": "8e86b08d-9628-4543-90ec-f7a0db523d98",
+                    "_Id": "60c761f8-c1b8-42ee-be13-dcaa9709827a",
                     "_Title": "INetCommunityPage Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_INetCommunityPage.htm",
                     "HelpTOCNode": [
@@ -4648,11 +4648,11 @@
                   }
                 },
                 {
-                  "_Id": "9e1f80b8-25ce-4f54-8f0f-fc1f52f697cf",
+                  "_Id": "1fbed171-da2c-44c4-95e7-caace0ae8972",
                   "_Title": "INetCommunityUser Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_INetCommunityUser.htm",
                   "HelpTOCNode": {
-                    "_Id": "fee8d7ff-7fee-45c4-8a1a-858bd920d253",
+                    "_Id": "0cada7f6-ca3a-4018-bee6-b36a75559b18",
                     "_Title": "INetCommunityUser Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_INetCommunityUser.htm",
                     "HelpTOCNode": [
@@ -4680,11 +4680,11 @@
                   }
                 },
                 {
-                  "_Id": "9df7750f-1726-4453-9431-e7cba8eb1414",
+                  "_Id": "8f3fc0e6-d946-4081-914a-2166c36e8e8c",
                   "_Title": "IRole Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_IRole.htm",
                   "HelpTOCNode": {
-                    "_Id": "374725d9-63c5-45c4-9575-69b250b36e9a",
+                    "_Id": "0fdcb4c2-fae6-4d09-80ee-080c8df74772",
                     "_Title": "IRole Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_IRole.htm",
                     "HelpTOCNode": [
@@ -4712,11 +4712,11 @@
                   }
                 },
                 {
-                  "_Id": "f9e67775-50b3-48a7-99c0-2ba0dbce4ed0",
+                  "_Id": "fd8343ce-1827-47b8-a2d6-8a1df14896be",
                   "_Title": "IUserBackOfficePropertiesControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_IUserBackOfficePropertiesControl.htm",
                   "HelpTOCNode": {
-                    "_Id": "0b4367d6-996f-401b-83bc-cfd5dbce1fe8",
+                    "_Id": "32523334-01d7-4708-9b15-3115355d5723",
                     "_Title": "IUserBackOfficePropertiesControl Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_IUserBackOfficePropertiesControl.htm",
                     "HelpTOCNode": [
@@ -4740,11 +4740,11 @@
                   }
                 },
                 {
-                  "_Id": "623267ae-80fc-4a6a-bba5-446d03765d96",
+                  "_Id": "99789285-f022-49f3-8168-9040ccc17e76",
                   "_Title": "IUserBackOfficePropertiesControlBreakLink Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_IUserBackOfficePropertiesControlBreakLink.htm",
                   "HelpTOCNode": {
-                    "_Id": "af9ea889-8fe1-4676-a412-e2ee3c6a805c",
+                    "_Id": "330a9462-1de9-40cd-abc0-ffcc72e36cd6",
                     "_Title": "IUserBackOfficePropertiesControlBreakLink Events",
                     "_Url": "Events_T_BBNCExtensions_Interfaces_IUserBackOfficePropertiesControlBreakLink.htm",
                     "HelpTOCNode": {
@@ -4760,7 +4760,7 @@
               ]
             },
             {
-              "_Id": "2e02d442-3e25-4532-b86a-0e82a2401419",
+              "_Id": "bf9021f7-58ea-4a18-a4d8-98628e75bc28",
               "_Title": "BBNCExtensions.Interfaces.Backoffice",
               "_Url": "N_BBNCExtensions_Interfaces_Backoffice.htm",
               "HelpTOCNode": [
@@ -4769,11 +4769,11 @@
                   "_Url": "T_BBNCExtensions_Interfaces_Backoffice_CallbackEventType.htm"
                 },
                 {
-                  "_Id": "55f90e28-0400-450b-bc95-b4db70f0dc23",
+                  "_Id": "b1b198eb-d2bc-4f60-9f41-221c6796c681",
                   "_Title": "IBackofficeCallback Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Backoffice_IBackofficeCallback.htm",
                   "HelpTOCNode": {
-                    "_Id": "decd29af-586a-457f-bbdd-209435e69de6",
+                    "_Id": "e67d3119-1b75-4089-b659-9305cb07d135",
                     "_Title": "IBackofficeCallback Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_Backoffice_IBackofficeCallback.htm",
                     "HelpTOCNode": {
@@ -4783,11 +4783,11 @@
                   }
                 },
                 {
-                  "_Id": "0dd0a773-ddfe-4cb2-b3bb-bfbd56e8549c",
+                  "_Id": "15f770d4-223d-4338-a9cf-8b492a0c081b",
                   "_Title": "IRequestNoEmailChangeArg Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Backoffice_IRequestNoEmailChangeArg.htm",
                   "HelpTOCNode": {
-                    "_Id": "9ebb42c3-e482-4ab2-b94c-b75ce3b02bd9",
+                    "_Id": "327e3551-1702-433c-93b7-93e4020a4d7d",
                     "_Title": "IRequestNoEmailChangeArg Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Backoffice_IRequestNoEmailChangeArg.htm",
                     "HelpTOCNode": [
@@ -4807,11 +4807,11 @@
                   }
                 },
                 {
-                  "_Id": "05b47d92-a44f-4d1d-be16-b73ebb15939b",
+                  "_Id": "61cdfcdc-ae18-4c98-a39f-7fa537974cd7",
                   "_Title": "IUseridPasswordChangeArg Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Backoffice_IUseridPasswordChangeArg.htm",
                   "HelpTOCNode": {
-                    "_Id": "5bf42ab0-e610-4429-a075-4b13e1cbcd91",
+                    "_Id": "7ff5a071-566c-49b3-a36e-e4f21f1fb237",
                     "_Title": "IUseridPasswordChangeArg Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Backoffice_IUseridPasswordChangeArg.htm",
                     "HelpTOCNode": [
@@ -4841,7 +4841,7 @@
               ]
             },
             {
-              "_Id": "76dc54d2-bf51-4ce3-a2ef-8f0f72942c09",
+              "_Id": "1637c3ea-813e-40a5-9359-a756f8928b43",
               "_Title": "BBNCExtensions.Interfaces.Parts",
               "_Url": "N_BBNCExtensions_Interfaces_Parts.htm",
               "HelpTOCNode": [
@@ -4854,12 +4854,12 @@
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_EHTMLEditorFeatures.htm"
                 },
                 {
-                  "_Id": "2cc0a62c-baca-4558-9e3f-905c55901ef9",
+                  "_Id": "8011e421-0fcd-469b-9a07-19f9892dddb1",
                   "_Title": "IAddressUIControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IAddressUIControl.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "0da8d95b-6e98-4372-ad18-78b62f8888ee",
+                      "_Id": "08e0b8b9-1c2f-4564-9a68-703e860911f7",
                       "_Title": "IAddressUIControl Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_IAddressUIControl.htm",
                       "HelpTOCNode": [
@@ -4878,7 +4878,7 @@
                       ]
                     },
                     {
-                      "_Id": "397230a4-0869-4589-a461-764532ff66a1",
+                      "_Id": "8939e340-9607-45b3-9723-a9baceec1503",
                       "_Title": "IAddressUIControl Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IAddressUIControl.htm",
                       "HelpTOCNode": [
@@ -4895,12 +4895,12 @@
                   ]
                 },
                 {
-                  "_Id": "66ebeb21-732e-4c88-968c-b27024536865",
+                  "_Id": "65b8ed8e-3753-4bf0-829b-47ec532c16f7",
                   "_Title": "ICurrentContent Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_ICurrentContent.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "65ffec3d-2b58-4330-8a13-40160b4b6928",
+                      "_Id": "776a3eba-2769-4fcc-a1c9-1b7bf8636d4d",
                       "_Title": "ICurrentContent Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_ICurrentContent.htm",
                       "HelpTOCNode": [
@@ -4923,7 +4923,7 @@
                       ]
                     },
                     {
-                      "_Id": "6b3d56d4-18cd-4253-bf6e-c52820633766",
+                      "_Id": "5c43abb1-88cd-4e02-80c6-e554e5dd5b6c",
                       "_Title": "ICurrentContent Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_ICurrentContent.htm",
                       "HelpTOCNode": [
@@ -4968,12 +4968,12 @@
                   ]
                 },
                 {
-                  "_Id": "9b25d5ec-4d71-4fdd-9fe2-2e0ea8e42a66",
+                  "_Id": "12518f41-c3d0-404a-a16f-3c8f38b83834",
                   "_Title": "ICustomPartDesignControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_ICustomPartDesignControl.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "52157597-6ce2-4128-ad57-d49e057b9243",
+                      "_Id": "e9d76e23-8bad-4aef-a10e-61036e8754c8",
                       "_Title": "ICustomPartDesignControl Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_ICustomPartDesignControl.htm",
                       "HelpTOCNode": [
@@ -4996,7 +4996,7 @@
                       ]
                     },
                     {
-                      "_Id": "0c87df09-f32e-4cf2-b9b9-74c9dc7a475a",
+                      "_Id": "779b7bd0-85dd-44e1-a122-d2c74807e883",
                       "_Title": "ICustomPartDesignControl Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_ICustomPartDesignControl.htm",
                       "HelpTOCNode": [
@@ -5013,11 +5013,11 @@
                   ]
                 },
                 {
-                  "_Id": "c5aa1a36-8a9a-4153-80cc-dd888786915d",
+                  "_Id": "cab5ad81-e1f2-44b3-9092-6d678bba88ad",
                   "_Title": "ICustomPartDisplayControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_ICustomPartDisplayControl.htm",
                   "HelpTOCNode": {
-                    "_Id": "6eec9b5c-5725-4e2c-bbc0-164a4598d7dc",
+                    "_Id": "59a75536-1267-4dd4-8a13-d563a9f73b84",
                     "_Title": "ICustomPartDisplayControl Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_ICustomPartDisplayControl.htm",
                     "HelpTOCNode": {
@@ -5027,11 +5027,11 @@
                   }
                 },
                 {
-                  "_Id": "7d5c9468-bd95-4bec-8e3f-8c1665958174",
+                  "_Id": "89f6c90c-879d-4388-ac45-c3729e385ca0",
                   "_Title": "ICustomPartHost Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_ICustomPartHost.htm",
                   "HelpTOCNode": {
-                    "_Id": "ef09b213-40af-499e-aafb-a5e0a66f1485",
+                    "_Id": "05dbfb97-ce4c-430e-bd8d-a483a0961679",
                     "_Title": "ICustomPartHost Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_ICustomPartHost.htm",
                     "HelpTOCNode": [
@@ -5051,12 +5051,12 @@
                   }
                 },
                 {
-                  "_Id": "ef996b2e-3143-4927-9f09-db4dff610837",
+                  "_Id": "1527384e-040d-4279-95d0-0a3478441e1a",
                   "_Title": "ICustomPartHostHandler Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_ICustomPartHostHandler.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "7aec1397-87a6-4b7e-b35b-40b89b5e2d34",
+                      "_Id": "eccf697c-fbaf-4348-8eaa-27282266f165",
                       "_Title": "ICustomPartHostHandler Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_ICustomPartHostHandler.htm",
                       "HelpTOCNode": {
@@ -5065,7 +5065,7 @@
                       }
                     },
                     {
-                      "_Id": "a03204a2-490d-4857-9810-7c582181eaaa",
+                      "_Id": "6ebe19fc-38e5-4213-834e-5289e19e3852",
                       "_Title": "ICustomPartHostHandler Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_ICustomPartHostHandler.htm",
                       "HelpTOCNode": {
@@ -5076,12 +5076,12 @@
                   ]
                 },
                 {
-                  "_Id": "1db25d83-0c9b-410e-959e-8b0255c6fa61",
+                  "_Id": "0608a035-b9a0-4139-a9da-34776d14e999",
                   "_Title": "IEmailEditorControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "f537e19c-0d4a-4844-acc3-1c55ea996907",
+                      "_Id": "d26bf3ec-e01b-44a9-ba3d-c0e73caa5d0f",
                       "_Title": "IEmailEditorControl Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl.htm",
                       "HelpTOCNode": [
@@ -5100,7 +5100,7 @@
                       ]
                     },
                     {
-                      "_Id": "47c6531b-632b-4ae5-8e36-b2ed31708f76",
+                      "_Id": "6bf1d06b-04f4-4c55-8221-118c94bafa7c",
                       "_Title": "IEmailEditorControl Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl.htm",
                       "HelpTOCNode": [
@@ -5157,12 +5157,12 @@
                   ]
                 },
                 {
-                  "_Id": "68dec358-1432-4c84-b34a-fe622376e471",
+                  "_Id": "9d7b8a0f-17f9-4830-810d-9211fe41cb89",
                   "_Title": "IEmailEditorControl2 Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl2.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "cbd4695a-f1ab-4bfa-a542-0c74282fa44f",
+                      "_Id": "5969d908-9dc8-4111-b943-24424810f5c6",
                       "_Title": "IEmailEditorControl2 Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl2.htm",
                       "HelpTOCNode": {
@@ -5171,7 +5171,7 @@
                       }
                     },
                     {
-                      "_Id": "0da71bc6-0b70-44de-b1f8-7951878af9bc",
+                      "_Id": "2231b413-69a9-4bf9-8a14-7ff73d4b9415",
                       "_Title": "IEmailEditorControl2 Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl2.htm",
                       "HelpTOCNode": [
@@ -5196,11 +5196,11 @@
                   ]
                 },
                 {
-                  "_Id": "e3e17193-0168-4921-b042-c39af92053a6",
+                  "_Id": "c891b8b7-bb73-4135-9dc2-dfb0d9ee2675",
                   "_Title": "IEmailEditorControl3 Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl3.htm",
                   "HelpTOCNode": {
-                    "_Id": "903c9fcd-d7f3-46c1-9bbb-4300b71b96f1",
+                    "_Id": "f8ed8f41-0a1f-4b80-9b25-8d469d227ac4",
                     "_Title": "IEmailEditorControl3 Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IEmailEditorControl3.htm",
                     "HelpTOCNode": {
@@ -5210,11 +5210,11 @@
                   }
                 },
                 {
-                  "_Id": "835b7e73-0c84-47c9-b112-d7e782ab3484",
+                  "_Id": "0d395a56-7024-49cf-bddc-89d07df43c43",
                   "_Title": "IFileTypesSelector Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IFileTypesSelector.htm",
                   "HelpTOCNode": {
-                    "_Id": "3c720338-a8c0-41e5-bdc2-83a63a4e21fd",
+                    "_Id": "6a595f85-b089-49b2-b1c1-eb231cf5fcf8",
                     "_Title": "IFileTypesSelector Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IFileTypesSelector.htm",
                     "HelpTOCNode": {
@@ -5224,12 +5224,12 @@
                   }
                 },
                 {
-                  "_Id": "f1a27f26-0185-4c8e-a88f-c1947b13621f",
+                  "_Id": "57b43b84-8edf-4ebe-817b-4ff3a1dbb33c",
                   "_Title": "IFileUploadControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IFileUploadControl.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "e07de85b-1065-40f7-91d1-768d6aaaa2db",
+                      "_Id": "6afc8227-773b-46fe-808b-be44e4dd19cd",
                       "_Title": "IFileUploadControl Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_IFileUploadControl.htm",
                       "HelpTOCNode": [
@@ -5260,7 +5260,7 @@
                       ]
                     },
                     {
-                      "_Id": "b295bb98-7440-42cb-90b8-2dd85161f1c9",
+                      "_Id": "9954ce21-0c90-45d6-88c0-e0d879bb796a",
                       "_Title": "IFileUploadControl Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IFileUploadControl.htm",
                       "HelpTOCNode": [
@@ -5337,11 +5337,11 @@
                   ]
                 },
                 {
-                  "_Id": "e4a42a47-3533-4bfe-b5a5-312acb8fd8fe",
+                  "_Id": "7932e78b-8cb1-4f50-bc14-ae2c3fe19955",
                   "_Title": "IHtmlDisplayControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IHtmlDisplayControl.htm",
                   "HelpTOCNode": {
-                    "_Id": "305e6bd9-16db-4c48-816a-9b2c64439586",
+                    "_Id": "2f2610c4-a5a7-496d-8908-680e9f0a33af",
                     "_Title": "IHtmlDisplayControl Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IHtmlDisplayControl.htm",
                     "HelpTOCNode": [
@@ -5361,12 +5361,12 @@
                   }
                 },
                 {
-                  "_Id": "616b24c7-013e-4046-b6e4-b0514155e79f",
+                  "_Id": "97227756-58fe-4856-8eb5-5fa8aeaa62be",
                   "_Title": "IHTMLEditorControl Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_IHTMLEditorControl.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "4efc85d2-1a1c-4525-9ca1-05b050171594",
+                      "_Id": "547ad931-121c-4710-896a-f308f7183de7",
                       "_Title": "IHTMLEditorControl Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Parts_IHTMLEditorControl.htm",
                       "HelpTOCNode": {
@@ -5375,7 +5375,7 @@
                       }
                     },
                     {
-                      "_Id": "241e0647-0e3d-4cdf-8615-8491c24a73c2",
+                      "_Id": "f2b5d460-f253-4915-8f8b-4bca101ab32d",
                       "_Title": "IHTMLEditorControl Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_IHTMLEditorControl.htm",
                       "HelpTOCNode": [
@@ -5432,11 +5432,11 @@
                   ]
                 },
                 {
-                  "_Id": "64da7642-5315-4a8d-a708-b32be0a1de1d",
+                  "_Id": "6b38fc1f-01e9-4fd0-bbec-b890d253908c",
                   "_Title": "ILanguageField Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_ILanguageField.htm",
                   "HelpTOCNode": {
-                    "_Id": "2b437cd3-fbe3-49e3-abfa-33b590a092e6",
+                    "_Id": "c27994bf-9000-4a64-b5fb-6f00843060fe",
                     "_Title": "ILanguageField Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_ILanguageField.htm",
                     "HelpTOCNode": [
@@ -5468,11 +5468,11 @@
                   }
                 },
                 {
-                  "_Id": "15841e8a-a55f-419f-bd92-a566f94a55df",
+                  "_Id": "04c6385d-fc17-4cb2-884a-3fac444b8d53",
                   "_Title": "INetCommunityControls Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Parts_INetCommunityControls.htm",
                   "HelpTOCNode": {
-                    "_Id": "752fe5a3-14e1-41c5-8b5e-e7989a1c8256",
+                    "_Id": "fcae446e-74e3-4e19-a5d0-8f7c94a412cb",
                     "_Title": "INetCommunityControls Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Parts_INetCommunityControls.htm",
                     "HelpTOCNode": [
@@ -5490,7 +5490,7 @@
               ]
             },
             {
-              "_Id": "0b388cec-8bce-4ffa-88de-a3ee35b600ee",
+              "_Id": "73276948-69de-41a3-b9d5-8fa72a8000af",
               "_Title": "BBNCExtensions.Interfaces.Services",
               "_Url": "N_BBNCExtensions_Interfaces_Services.htm",
               "HelpTOCNode": [
@@ -5507,11 +5507,11 @@
                   "_Url": "T_BBNCExtensions_Interfaces_Services_ECreditCardResultCode.htm"
                 },
                 {
-                  "_Id": "12bf7ab5-315c-41a7-a7f2-f94c1b4dafb2",
+                  "_Id": "d1096cc7-52be-4516-bf0b-6eb16c52130e",
                   "_Title": "ICreditCardAuthorizationResponse Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Services_ICreditCardAuthorizationResponse.htm",
                   "HelpTOCNode": {
-                    "_Id": "230f5a86-f632-49c8-a917-a04ab677a6e9",
+                    "_Id": "eee5ca51-26e8-41a9-b4e1-09b0cc066651",
                     "_Title": "ICreditCardAuthorizationResponse Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Services_ICreditCardAuthorizationResponse.htm",
                     "HelpTOCNode": [
@@ -5567,12 +5567,12 @@
                   }
                 },
                 {
-                  "_Id": "2e11150d-43d2-40e2-8917-58d62150c6f2",
+                  "_Id": "562f229b-bb0a-4bdb-b589-a8191774424d",
                   "_Title": "ICreditCardService Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Services_ICreditCardService.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "3fdb625a-911c-47fe-9017-facc711e5d4b",
+                      "_Id": "660f8882-43e2-4918-8c7e-d1cbcb2c98e7",
                       "_Title": "ICreditCardService Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Services_ICreditCardService.htm",
                       "HelpTOCNode": {
@@ -5581,7 +5581,7 @@
                       }
                     },
                     {
-                      "_Id": "2c64d6e9-52c6-4bd8-9d5b-37b3be81ecce",
+                      "_Id": "d23a4639-3f15-4f03-bcb6-ad5653892981",
                       "_Title": "ICreditCardService Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Services_ICreditCardService.htm",
                       "HelpTOCNode": {
@@ -5592,12 +5592,12 @@
                   ]
                 },
                 {
-                  "_Id": "ce20e45d-80a8-4622-b852-0df9846754f8",
+                  "_Id": "9fca3b54-d612-4b15-bf56-48d881921b11",
                   "_Title": "IFaceBookServiceProvider Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Services_IFaceBookServiceProvider.htm",
                   "HelpTOCNode": [
                     {
-                      "_Id": "671f7549-31f2-46c6-ab5e-640e5334a67a",
+                      "_Id": "e98cb5c5-52e3-475d-8c5d-a3e648c6cdf3",
                       "_Title": "IFaceBookServiceProvider Methods",
                       "_Url": "Methods_T_BBNCExtensions_Interfaces_Services_IFaceBookServiceProvider.htm",
                       "HelpTOCNode": {
@@ -5606,7 +5606,7 @@
                       }
                     },
                     {
-                      "_Id": "b85aa765-9abd-4fce-bdf5-bd7911a1cb0e",
+                      "_Id": "e5c19f18-1288-424c-b782-f2480ebdeb9f",
                       "_Title": "IFaceBookServiceProvider Properties",
                       "_Url": "Properties_T_BBNCExtensions_Interfaces_Services_IFaceBookServiceProvider.htm",
                       "HelpTOCNode": [
@@ -5643,11 +5643,11 @@
                   "_Url": "T_BBNCExtensions_Interfaces_Services_IINCODES.htm"
                 },
                 {
-                  "_Id": "59f0277a-ffb7-41af-b940-c52997af89a6",
+                  "_Id": "0a3fdfb1-7c85-4ae8-af17-8d4478db0d98",
                   "_Title": "IMerchantAccount Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Services_IMerchantAccount.htm",
                   "HelpTOCNode": {
-                    "_Id": "b7ee38d7-f9c6-4a87-a84c-18d50c50929d",
+                    "_Id": "204df71d-3fc4-4fca-972b-28d2cfa82918",
                     "_Title": "IMerchantAccount Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Services_IMerchantAccount.htm",
                     "HelpTOCNode": [
@@ -5663,11 +5663,11 @@
                   }
                 },
                 {
-                  "_Id": "6d4f3375-10c7-4348-b6d0-0a7e9e020fc5",
+                  "_Id": "02406bed-aa3d-4263-a425-13b416ef3f67",
                   "_Title": "IServices Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Services_IServices.htm",
                   "HelpTOCNode": {
-                    "_Id": "5bc12caf-15ad-46aa-bbd5-0dc32828c09f",
+                    "_Id": "fd86a380-e944-4f41-8e69-275e0a695692",
                     "_Title": "IServices Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Services_IServices.htm",
                     "HelpTOCNode": {
@@ -5679,7 +5679,7 @@
               ]
             },
             {
-              "_Id": "9cae7189-ebfd-435c-ad6d-f55f791c2eeb",
+              "_Id": "90563476-ea2f-4c55-a888-0300b10ba2e9",
               "_Title": "BBNCExtensions.Interfaces.Transactions",
               "_Url": "N_BBNCExtensions_Interfaces_Transactions.htm",
               "HelpTOCNode": [
@@ -5688,11 +5688,11 @@
                   "_Url": "T_BBNCExtensions_Interfaces_Transactions_ETransactionProcessedFilter.htm"
                 },
                 {
-                  "_Id": "4115eb9b-c695-4e99-9c27-3f1c3c5796c8",
+                  "_Id": "660bdd76-da93-46b6-98ac-17cc049d3366",
                   "_Title": "INetCommunityTransaction Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Transactions_INetCommunityTransaction.htm",
                   "HelpTOCNode": {
-                    "_Id": "419a1f0e-7873-474f-a190-f26440bfae4c",
+                    "_Id": "fc4f9afc-c39a-4030-ba00-94b3a9d33325",
                     "_Title": "INetCommunityTransaction Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Transactions_INetCommunityTransaction.htm",
                     "HelpTOCNode": [
@@ -5756,11 +5756,11 @@
                   }
                 },
                 {
-                  "_Id": "aa8568aa-7479-4159-9289-e59c812acfcc",
+                  "_Id": "5a431cb4-d9f1-4b9a-8be7-b7f4619fbe16",
                   "_Title": "ITransaction Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Transactions_ITransaction.htm",
                   "HelpTOCNode": {
-                    "_Id": "609ccea5-4e9d-40cf-96e4-7d348f172aed",
+                    "_Id": "5016f8c8-3d13-4c35-925e-669cfcec91dd",
                     "_Title": "ITransaction Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Transactions_ITransaction.htm",
                     "HelpTOCNode": [
@@ -5792,11 +5792,11 @@
                   }
                 },
                 {
-                  "_Id": "2fbd6751-995e-4eef-97b1-36d3bf0e1335",
+                  "_Id": "10460bc3-bba1-46df-880f-ae8dc38978ea",
                   "_Title": "ITransactions Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Transactions_ITransactions.htm",
                   "HelpTOCNode": {
-                    "_Id": "b8215050-2385-4f33-94d8-213ff415d4fd",
+                    "_Id": "790b3829-a93a-49bc-babf-ffa67d49110d",
                     "_Title": "ITransactions Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_Transactions_ITransactions.htm",
                     "HelpTOCNode": [
@@ -5840,11 +5840,11 @@
                   }
                 },
                 {
-                  "_Id": "4d61e67f-6625-4173-b6bb-f921039af931",
+                  "_Id": "e695db92-2cd9-4a97-bcba-7d738dd77883",
                   "_Title": "ITransactionType Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Transactions_ITransactionType.htm",
                   "HelpTOCNode": {
-                    "_Id": "b88b858a-7c55-4775-bb78-653df5835ef8",
+                    "_Id": "8fe0de87-b72a-4ed4-8855-4c9343adb9aa",
                     "_Title": "ITransactionType Properties",
                     "_Url": "Properties_T_BBNCExtensions_Interfaces_Transactions_ITransactionType.htm",
                     "HelpTOCNode": [
@@ -5860,11 +5860,11 @@
                   }
                 },
                 {
-                  "_Id": "21101f8c-2d52-480a-8feb-28f8cf89c40f",
+                  "_Id": "ce04c46d-6225-4efd-a769-310ee2f00686",
                   "_Title": "ITransactionUtility Interface",
                   "_Url": "T_BBNCExtensions_Interfaces_Transactions_ITransactionUtility.htm",
                   "HelpTOCNode": {
-                    "_Id": "84f1eb6c-3847-4c25-84d5-cdc24c75b12d",
+                    "_Id": "e85d6cc9-cbaa-427c-9c9e-fd75e5712488",
                     "_Title": "ITransactionUtility Methods",
                     "_Url": "Methods_T_BBNCExtensions_Interfaces_Transactions_ITransactionUtility.htm",
                     "HelpTOCNode": [
@@ -5884,12 +5884,12 @@
           ]
         },
         {
-          "_Id": "4f525f7e-e088-4e64-9af9-94a2ae290350",
+          "_Id": "aaeffe9f-4ef7-43d2-a175-4561af52cd92",
           "_Title": "BBNCExtensions.Parts",
           "_Url": "N_BBNCExtensions_Parts.htm",
           "HelpTOCNode": [
             {
-              "_Id": "0d729016-63e0-4f7c-bdf6-ba2c1b3a3604",
+              "_Id": "5072fdd1-18b3-4c39-b1ca-2a0fe80e7f23",
               "_Title": "CustomPartBBSPDisplayBase Class",
               "_Url": "T_BBNCExtensions_Parts_CustomPartBBSPDisplayBase.htm",
               "HelpTOCNode": [
@@ -5898,7 +5898,7 @@
                   "_Url": "M_BBNCExtensions_Parts_CustomPartBBSPDisplayBase__ctor.htm"
                 },
                 {
-                  "_Id": "8565108e-8678-4f3b-ba62-a8f89a12bf50",
+                  "_Id": "25246846-ab84-4c62-adcc-13cd1ff4ca94",
                   "_Title": "CustomPartBBSPDisplayBase Properties",
                   "_Url": "Properties_T_BBNCExtensions_Parts_CustomPartBBSPDisplayBase.htm",
                   "HelpTOCNode": [
@@ -5915,7 +5915,7 @@
               ]
             },
             {
-              "_Id": "75478421-8780-4467-baaf-4aac280de64d",
+              "_Id": "72164a29-a00d-44ca-961d-68ffb2b90192",
               "_Title": "CustomPartBBSPEditorBase Class",
               "_Url": "T_BBNCExtensions_Parts_CustomPartBBSPEditorBase.htm",
               "HelpTOCNode": [
@@ -5924,7 +5924,7 @@
                   "_Url": "M_BBNCExtensions_Parts_CustomPartBBSPEditorBase__ctor.htm"
                 },
                 {
-                  "_Id": "b09d81c5-473b-4526-8448-5f93af835fb9",
+                  "_Id": "f47a8b63-7cfd-4166-aefb-320ccb821b2d",
                   "_Title": "CustomPartBBSPEditorBase Properties",
                   "_Url": "Properties_T_BBNCExtensions_Parts_CustomPartBBSPEditorBase.htm",
                   "HelpTOCNode": {
@@ -5935,7 +5935,7 @@
               ]
             },
             {
-              "_Id": "15fd2068-4770-4982-86ae-963fd9167daa",
+              "_Id": "b9450b8b-cf95-44c8-aa8b-c2957b5f3c97",
               "_Title": "CustomPartDisplayBase Class",
               "_Url": "T_BBNCExtensions_Parts_CustomPartDisplayBase.htm",
               "HelpTOCNode": [
@@ -5944,7 +5944,7 @@
                   "_Url": "M_BBNCExtensions_Parts_CustomPartDisplayBase__ctor.htm"
                 },
                 {
-                  "_Id": "da171604-ab32-404d-84a2-4b2ad5fe85a1",
+                  "_Id": "6eb81791-fe05-46c1-9c1b-fe5f76a1a8f2",
                   "_Title": "CustomPartDisplayBase Methods",
                   "_Url": "Methods_T_BBNCExtensions_Parts_CustomPartDisplayBase.htm",
                   "HelpTOCNode": [
@@ -5967,7 +5967,7 @@
                   ]
                 },
                 {
-                  "_Id": "78552024-0f57-4b5d-8058-ed0143d47bab",
+                  "_Id": "3994ac1f-ce4a-434a-965b-1676eb99e0d6",
                   "_Title": "CustomPartDisplayBase Properties",
                   "_Url": "Properties_T_BBNCExtensions_Parts_CustomPartDisplayBase.htm",
                   "HelpTOCNode": [
@@ -6004,7 +6004,7 @@
               ]
             },
             {
-              "_Id": "cd6b0cb4-6471-4e90-9e09-79ca2f3bf5ad",
+              "_Id": "8d068405-b7e8-4bdb-a96d-b3567d8c50d7",
               "_Title": "CustomPartEditorBase Class",
               "_Url": "T_BBNCExtensions_Parts_CustomPartEditorBase.htm",
               "HelpTOCNode": [
@@ -6013,7 +6013,7 @@
                   "_Url": "M_BBNCExtensions_Parts_CustomPartEditorBase__ctor.htm"
                 },
                 {
-                  "_Id": "50cfb559-4112-412d-bedd-051428627f2f",
+                  "_Id": "f008156f-3a71-4bc5-a2e7-a1d477d27aef",
                   "_Title": "CustomPartEditorBase Methods",
                   "_Url": "Methods_T_BBNCExtensions_Parts_CustomPartEditorBase.htm",
                   "HelpTOCNode": [
@@ -6040,7 +6040,7 @@
                   ]
                 },
                 {
-                  "_Id": "66257d68-45b0-4967-a8f2-68f692a71632",
+                  "_Id": "b475a967-e41a-4db3-bb87-fd34bea58146",
                   "_Title": "CustomPartEditorBase Properties",
                   "_Url": "Properties_T_BBNCExtensions_Parts_CustomPartEditorBase.htm",
                   "HelpTOCNode": [
@@ -6075,12 +6075,12 @@
           ]
         },
         {
-          "_Id": "7b7471ea-cc68-44b2-9b2d-a0e35704435f",
+          "_Id": "95d7097d-815e-45e6-916f-27420c28342d",
           "_Title": "BBNCExtensions.ServerControls",
           "_Url": "N_BBNCExtensions_ServerControls.htm",
           "HelpTOCNode": [
             {
-              "_Id": "ba37b16b-4f4d-4cf9-be1a-ed637f8c2b24",
+              "_Id": "3e21b474-be25-4142-9da9-6a934e183de2",
               "_Title": "AddressUI Class",
               "_Url": "T_BBNCExtensions_ServerControls_AddressUI.htm",
               "HelpTOCNode": [
@@ -6089,7 +6089,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_AddressUI__ctor.htm"
                 },
                 {
-                  "_Id": "2d99d541-fda4-4d8f-91f4-6b0eed30749d",
+                  "_Id": "d35396e6-c1e7-484c-99ea-ff192829f1e1",
                   "_Title": "AddressUI Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_AddressUI.htm",
                   "HelpTOCNode": [
@@ -6108,7 +6108,7 @@
                   ]
                 },
                 {
-                  "_Id": "b4399cab-52b2-42db-8952-f2b560601dff",
+                  "_Id": "4a9143ad-bad8-4af8-9b8c-fd8ca69bb309",
                   "_Title": "AddressUI Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_AddressUI.htm",
                   "HelpTOCNode": [
@@ -6129,7 +6129,7 @@
               ]
             },
             {
-              "_Id": "64dfc52b-df05-4d5b-ab5b-bb45fc3583b7",
+              "_Id": "ebd5db62-2a2b-4dbd-814b-712c8de88ee6",
               "_Title": "CFAPicker Class",
               "_Url": "T_BBNCExtensions_ServerControls_CFAPicker.htm",
               "HelpTOCNode": [
@@ -6138,7 +6138,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_CFAPicker__ctor.htm"
                 },
                 {
-                  "_Id": "bfa4f5ae-813f-4a23-b2d5-989d251ed765",
+                  "_Id": "846b7acb-147b-47b8-a9e8-f9fa5e9bf303",
                   "_Title": "CFAPicker Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_CFAPicker.htm",
                   "HelpTOCNode": {
@@ -6147,7 +6147,7 @@
                   }
                 },
                 {
-                  "_Id": "41584bdc-d3e6-42e7-a804-99b83a060486",
+                  "_Id": "b6ec0e35-66f0-4e53-9363-2e2cdcb49534",
                   "_Title": "CFAPicker Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_CFAPicker.htm",
                   "HelpTOCNode": [
@@ -6210,7 +6210,7 @@
                   ]
                 },
                 {
-                  "_Id": "710de41f-479b-4f77-93b5-6ddc0b1f224e",
+                  "_Id": "3fa9be7e-7489-403d-b16f-f5dbc3c97ee8",
                   "_Title": "CFAPicker Events",
                   "_Url": "Events_T_BBNCExtensions_ServerControls_CFAPicker.htm",
                   "HelpTOCNode": {
@@ -6233,7 +6233,7 @@
               "_Url": "T_BBNCExtensions_ServerControls_CFAPicker_RecordSearchType.htm"
             },
             {
-              "_Id": "771a7997-85ff-4a2c-bdb7-a4854c06598e",
+              "_Id": "555bb34f-1cd4-44fb-84a8-db473a8b609c",
               "_Title": "EmailEditor Class",
               "_Url": "T_BBNCExtensions_ServerControls_EmailEditor.htm",
               "HelpTOCNode": [
@@ -6242,7 +6242,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_EmailEditor__ctor.htm"
                 },
                 {
-                  "_Id": "a356060f-4b64-4b79-b6a1-4fe3cadbdd94",
+                  "_Id": "2e8f0a17-68aa-4f3d-8559-670f49259380",
                   "_Title": "EmailEditor Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_EmailEditor.htm",
                   "HelpTOCNode": [
@@ -6265,7 +6265,7 @@
                   ]
                 },
                 {
-                  "_Id": "11faae49-7c1f-46cc-8ce7-973cf074e627",
+                  "_Id": "2deec872-6b21-4c40-a5fd-314e8f502b6d",
                   "_Title": "EmailEditor Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_EmailEditor.htm",
                   "HelpTOCNode": [
@@ -6346,7 +6346,7 @@
               ]
             },
             {
-              "_Id": "4b549d27-7ac7-48d2-9339-82edbe5da3c8",
+              "_Id": "ef100e27-1bce-4c96-8524-c70d79659ac5",
               "_Title": "FileTypesSelector Class",
               "_Url": "T_BBNCExtensions_ServerControls_FileTypesSelector.htm",
               "HelpTOCNode": [
@@ -6355,7 +6355,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_FileTypesSelector__ctor.htm"
                 },
                 {
-                  "_Id": "2a61415c-837d-43ec-be6a-9aafa328d275",
+                  "_Id": "1c4d8fae-6204-4ef4-8991-c201c8ad5cd2",
                   "_Title": "FileTypesSelector Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_FileTypesSelector.htm",
                   "HelpTOCNode": [
@@ -6372,7 +6372,7 @@
               ]
             },
             {
-              "_Id": "daecd05b-d19b-481c-a90c-10be9d21d0f9",
+              "_Id": "03ba4630-97f9-4ebe-b5f5-e1da84526af7",
               "_Title": "FileUpload Class",
               "_Url": "T_BBNCExtensions_ServerControls_FileUpload.htm",
               "HelpTOCNode": [
@@ -6381,7 +6381,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_FileUpload__ctor.htm"
                 },
                 {
-                  "_Id": "f8a79fa3-f4dd-43f7-b0a9-ee01f73dd122",
+                  "_Id": "bf47491c-5934-4a96-a3a3-0663875707df",
                   "_Title": "FileUpload Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_FileUpload.htm",
                   "HelpTOCNode": [
@@ -6412,7 +6412,7 @@
                   ]
                 },
                 {
-                  "_Id": "1cdae45c-8272-4ab3-835b-bfb65af0295d",
+                  "_Id": "94b44cd5-9114-424b-a763-92a11af8b888",
                   "_Title": "FileUpload Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_FileUpload.htm",
                   "HelpTOCNode": [
@@ -6493,7 +6493,7 @@
               ]
             },
             {
-              "_Id": "2371c3d0-facf-4b6c-9206-a2d0c2a25bf4",
+              "_Id": "f267b102-d4a2-447f-90c1-7b4c18ea5608",
               "_Title": "HtmlDisplay Class",
               "_Url": "T_BBNCExtensions_ServerControls_HtmlDisplay.htm",
               "HelpTOCNode": [
@@ -6502,7 +6502,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_HtmlDisplay__ctor.htm"
                 },
                 {
-                  "_Id": "7b2bffe9-ca1b-4d8d-bb99-a760f95edd70",
+                  "_Id": "6e100a9c-2810-46f4-ae8b-f4f802c0b609",
                   "_Title": "HtmlDisplay Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_HtmlDisplay.htm",
                   "HelpTOCNode": {
@@ -6511,7 +6511,7 @@
                   }
                 },
                 {
-                  "_Id": "fe111dd9-8d48-4c72-9e3a-af22f290a07b",
+                  "_Id": "77f610ff-2719-4dcc-888a-a0e845689aeb",
                   "_Title": "HtmlDisplay Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_HtmlDisplay.htm",
                   "HelpTOCNode": [
@@ -6532,7 +6532,7 @@
               ]
             },
             {
-              "_Id": "60271292-2fc5-4d08-8813-ceecfe7f70e5",
+              "_Id": "849fb326-4654-44f6-a9c5-0eba933d842a",
               "_Title": "HTMLEditor Class",
               "_Url": "T_BBNCExtensions_ServerControls_HTMLEditor.htm",
               "HelpTOCNode": [
@@ -6541,7 +6541,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_HTMLEditor__ctor.htm"
                 },
                 {
-                  "_Id": "10ea261a-3d41-4e77-bf74-372db54c946d",
+                  "_Id": "67de3e9f-e92f-4e0f-a00b-52461232b39c",
                   "_Title": "HTMLEditor Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_HTMLEditor.htm",
                   "HelpTOCNode": {
@@ -6550,7 +6550,7 @@
                   }
                 },
                 {
-                  "_Id": "a6078249-a7d1-4d11-b30c-4b5132078d37",
+                  "_Id": "466d9b8d-5a9e-4153-af3d-af72942377ff",
                   "_Title": "HTMLEditor Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_HTMLEditor.htm",
                   "HelpTOCNode": [
@@ -6615,7 +6615,7 @@
               ]
             },
             {
-              "_Id": "90576439-e441-4884-9d28-5ae33591030f",
+              "_Id": "6b9d6978-0cd2-4f67-a238-25987b0e85f3",
               "_Title": "ImageSelectButton Class",
               "_Url": "T_BBNCExtensions_ServerControls_ImageSelectButton.htm",
               "HelpTOCNode": [
@@ -6624,7 +6624,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_ImageSelectButton__ctor.htm"
                 },
                 {
-                  "_Id": "a559547b-b8d8-44ce-810d-ad0c7d1dc844",
+                  "_Id": "19e9ed38-9439-401f-9861-91e408d358ec",
                   "_Title": "ImageSelectButton Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_ImageSelectButton.htm",
                   "HelpTOCNode": [
@@ -6653,7 +6653,7 @@
               ]
             },
             {
-              "_Id": "1d65b468-5ef6-4290-be61-ef44f7f11391",
+              "_Id": "80b5b64b-f04a-4dd4-9959-6c3539d1e026",
               "_Title": "PageLink Class",
               "_Url": "T_BBNCExtensions_ServerControls_PageLink.htm",
               "HelpTOCNode": [
@@ -6662,7 +6662,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_PageLink__ctor.htm"
                 },
                 {
-                  "_Id": "b899f256-c870-4853-9ffe-5ffa55b82aec",
+                  "_Id": "d4b06650-3ccb-403a-80b5-1708de26ccdb",
                   "_Title": "PageLink Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_PageLink.htm",
                   "HelpTOCNode": {
@@ -6671,7 +6671,7 @@
                   }
                 },
                 {
-                  "_Id": "fd9d7c97-9c3a-4420-84cc-6635f15c6175",
+                  "_Id": "9083d7b0-450b-4822-9374-d36975d53116",
                   "_Title": "PageLink Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_PageLink.htm",
                   "HelpTOCNode": [
@@ -6714,7 +6714,7 @@
                   ]
                 },
                 {
-                  "_Id": "a44e843b-ecf0-4b64-80fd-094c0425addf",
+                  "_Id": "bf7ae9e5-4261-480e-99c0-bfacda62561b",
                   "_Title": "PageLink Events",
                   "_Url": "Events_T_BBNCExtensions_ServerControls_PageLink.htm",
                   "HelpTOCNode": [
@@ -6735,7 +6735,7 @@
               "_Url": "T_BBNCExtensions_ServerControls_PageLink_ChangedEventHandler.htm"
             },
             {
-              "_Id": "4e9a5ebf-2f12-4904-9974-08eda8990773",
+              "_Id": "f791b430-3bf1-4930-907e-0bda97fec2ea",
               "_Title": "PageLink.PageLinkArgs Class",
               "_Url": "T_BBNCExtensions_ServerControls_PageLink_PageLinkArgs.htm",
               "HelpTOCNode": [
@@ -6744,7 +6744,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_PageLink_PageLinkArgs__ctor.htm"
                 },
                 {
-                  "_Id": "d616fe99-ee99-41f2-b466-7011488680e2",
+                  "_Id": "949d9bce-42ce-47be-a037-47a09d1c39f2",
                   "_Title": "PageLinkArgs Fields",
                   "_Url": "Fields_T_BBNCExtensions_ServerControls_PageLink_PageLinkArgs.htm",
                   "HelpTOCNode": [
@@ -6769,7 +6769,7 @@
               "_Url": "T_BBNCExtensions_ServerControls_PageLink_RemovedEventHandler.htm"
             },
             {
-              "_Id": "8f9397e5-d7c2-4a28-aee1-3a6f0b578ae3",
+              "_Id": "1117aff2-f16d-4633-acbe-7658beb15ae0",
               "_Title": "PartEditButton Class",
               "_Url": "T_BBNCExtensions_ServerControls_PartEditButton.htm",
               "HelpTOCNode": [
@@ -6778,7 +6778,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_PartEditButton__ctor.htm"
                 },
                 {
-                  "_Id": "145efaac-9622-4c77-a919-a03bfe577038",
+                  "_Id": "46899e5c-5100-4812-a648-88f93f9ffddb",
                   "_Title": "PartEditButton Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_PartEditButton.htm",
                   "HelpTOCNode": [
@@ -6803,7 +6803,7 @@
               ]
             },
             {
-              "_Id": "4498b901-00fc-4dad-baa0-c7f73e9a7896",
+              "_Id": "054064f0-33a1-4a83-becb-fd1f83b9341a",
               "_Title": "PartSelectButton Class",
               "_Url": "T_BBNCExtensions_ServerControls_PartSelectButton.htm",
               "HelpTOCNode": [
@@ -6812,7 +6812,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_PartSelectButton__ctor.htm"
                 },
                 {
-                  "_Id": "c7ee319f-c059-44a1-8a08-bfac79041d09",
+                  "_Id": "d08236bf-f4c4-4769-b81e-06137b007d24",
                   "_Title": "PartSelectButton Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_PartSelectButton.htm",
                   "HelpTOCNode": [
@@ -6833,7 +6833,7 @@
               ]
             },
             {
-              "_Id": "df73b9d3-3f83-471b-8de6-c1899882c53d",
+              "_Id": "29b529d1-1f42-401f-93d8-507fa335c43c",
               "_Title": "QueryPicker Class",
               "_Url": "T_BBNCExtensions_ServerControls_QueryPicker.htm",
               "HelpTOCNode": [
@@ -6842,7 +6842,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_QueryPicker__ctor.htm"
                 },
                 {
-                  "_Id": "6df296e4-3696-47d9-bad9-ad7f9c137ddb",
+                  "_Id": "32d55a3c-4006-426f-804f-8ec8f2d3c765",
                   "_Title": "QueryPicker Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_QueryPicker.htm",
                   "HelpTOCNode": [
@@ -6857,7 +6857,7 @@
                   ]
                 },
                 {
-                  "_Id": "16f72632-28b3-4b1b-ba7c-21ab86dea358",
+                  "_Id": "4cf2ef27-195c-4758-b07f-c9e530bfe656",
                   "_Title": "QueryPicker Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_QueryPicker.htm",
                   "HelpTOCNode": [
@@ -6920,7 +6920,7 @@
                   ]
                 },
                 {
-                  "_Id": "60baef50-d018-466b-9941-e3ccfbf681ec",
+                  "_Id": "bb85ffae-50cf-41bd-ba3c-206e611b6b6e",
                   "_Title": "QueryPicker Events",
                   "_Url": "Events_T_BBNCExtensions_ServerControls_QueryPicker.htm",
                   "HelpTOCNode": [
@@ -6945,7 +6945,7 @@
               "_Url": "T_BBNCExtensions_ServerControls_QueryPicker_EBBSystem.htm"
             },
             {
-              "_Id": "a4a5d06a-494c-48f7-802c-1b5d707af147",
+              "_Id": "f6821bc9-d01d-4be6-b208-b47cf1480486",
               "_Title": "QueryPicker.QueryPickerArgs Class",
               "_Url": "T_BBNCExtensions_ServerControls_QueryPicker_QueryPickerArgs.htm",
               "HelpTOCNode": [
@@ -6954,7 +6954,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_QueryPicker_QueryPickerArgs__ctor.htm"
                 },
                 {
-                  "_Id": "cc8bed3a-649a-4d2c-8e0e-61ed882b9337",
+                  "_Id": "752b0bc5-879e-4514-a422-4ccaaafd8756",
                   "_Title": "QueryPickerArgs Fields",
                   "_Url": "Fields_T_BBNCExtensions_ServerControls_QueryPicker_QueryPickerArgs.htm",
                   "HelpTOCNode": [
@@ -6979,12 +6979,12 @@
               "_Url": "T_BBNCExtensions_ServerControls_QueryPicker_RemovedEventHandler.htm"
             },
             {
-              "_Id": "167a2d5b-f96c-4ba7-9d18-5e7f2e5a42de",
+              "_Id": "30e10b00-5a22-496a-8fde-193233cdee4d",
               "_Title": "ServerControlBase Class",
               "_Url": "T_BBNCExtensions_ServerControls_ServerControlBase.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "e3f5e15a-9663-4d87-972d-1d351fcb7de8",
+                  "_Id": "0c81d6ce-d1b8-45a3-889a-14bf4c7f7aa0",
                   "_Title": "ServerControlBase Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_ServerControlBase.htm",
                   "HelpTOCNode": [
@@ -7011,7 +7011,7 @@
                   ]
                 },
                 {
-                  "_Id": "909a4bad-c850-430a-b862-2a1950b1de46",
+                  "_Id": "6d2774f7-c355-4aa7-89d6-2f2b860e3184",
                   "_Title": "ServerControlBase Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_ServerControlBase.htm",
                   "HelpTOCNode": [
@@ -7044,7 +7044,7 @@
               ]
             },
             {
-              "_Id": "5bea1b9b-5fad-4ae0-b265-cccdf61f6b7e",
+              "_Id": "d0543d1b-990f-48a4-826b-3f145d458c5e",
               "_Title": "ServerControlDesigner Class",
               "_Url": "T_BBNCExtensions_ServerControls_ServerControlDesigner.htm",
               "HelpTOCNode": [
@@ -7053,7 +7053,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_ServerControlDesigner__ctor.htm"
                 },
                 {
-                  "_Id": "09665186-3736-48a2-a833-115508af2b82",
+                  "_Id": "2ad4f94c-fc32-4213-95fc-5b9387d518d3",
                   "_Title": "ServerControlDesigner Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_ServerControlDesigner.htm",
                   "HelpTOCNode": [
@@ -7070,7 +7070,7 @@
               ]
             },
             {
-              "_Id": "9dede4f8-eb8e-4497-a96d-bfaf6306061b",
+              "_Id": "d57c4232-04af-45ed-af89-b44d7526d7b4",
               "_Title": "TimeZonePicker Class",
               "_Url": "T_BBNCExtensions_ServerControls_TimeZonePicker.htm",
               "HelpTOCNode": [
@@ -7079,7 +7079,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_TimeZonePicker__ctor.htm"
                 },
                 {
-                  "_Id": "9a310da8-ee2d-4f84-815e-c06fa0087c24",
+                  "_Id": "509ae92d-db12-494f-af08-e37240dfd599",
                   "_Title": "TimeZonePicker Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_TimeZonePicker.htm",
                   "HelpTOCNode": [
@@ -7112,7 +7112,7 @@
               ]
             },
             {
-              "_Id": "7d8d2714-404f-4470-a8c6-e5cce9f864ea",
+              "_Id": "c26bb561-6507-487c-ade5-c696357e8fe7",
               "_Title": "UserModalPart Class",
               "_Url": "T_BBNCExtensions_ServerControls_UserModalPart.htm",
               "HelpTOCNode": [
@@ -7121,7 +7121,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_UserModalPart__ctor.htm"
                 },
                 {
-                  "_Id": "cca60d41-e3de-4b9b-ab7a-ec9eb450ad55",
+                  "_Id": "a8069c3b-7917-4b1f-a047-9305eaaf520d",
                   "_Title": "UserModalPart Fields",
                   "_Url": "Fields_T_BBNCExtensions_ServerControls_UserModalPart.htm",
                   "HelpTOCNode": [
@@ -7148,7 +7148,7 @@
                   ]
                 },
                 {
-                  "_Id": "330ee4b3-dc05-4dea-b9c2-7160351255b1",
+                  "_Id": "380e967b-ab60-450d-9c07-0fe71bdc2745",
                   "_Title": "UserModalPart Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_UserModalPart.htm",
                   "HelpTOCNode": [
@@ -7163,7 +7163,7 @@
                   ]
                 },
                 {
-                  "_Id": "445834e5-97a8-44ed-90b9-587d3ceb5e45",
+                  "_Id": "15120cbf-6bc7-4c45-bca0-f282c7ed7562",
                   "_Title": "UserModalPart Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_UserModalPart.htm",
                   "HelpTOCNode": [
@@ -7294,7 +7294,7 @@
                   ]
                 },
                 {
-                  "_Id": "d2fda32a-e483-4117-a5d2-151732331f40",
+                  "_Id": "25302818-9a53-4b23-83c0-f30111390930",
                   "_Title": "UserModalPart Events",
                   "_Url": "Events_T_BBNCExtensions_ServerControls_UserModalPart.htm",
                   "HelpTOCNode": {
@@ -7305,7 +7305,7 @@
               ]
             },
             {
-              "_Id": "263c79ca-0a52-4720-ab06-1164b8b44cbe",
+              "_Id": "f014c539-6055-46f4-9831-ec6b24c45921",
               "_Title": "UserModalPart.NamingPanel Class",
               "_Url": "T_BBNCExtensions_ServerControls_UserModalPart_NamingPanel.htm",
               "HelpTOCNode": {
@@ -7314,7 +7314,7 @@
               }
             },
             {
-              "_Id": "87d855bb-30b0-4bc6-bb60-750291ae4fe2",
+              "_Id": "5a9ff73f-04b2-44c1-a789-91923da7a343",
               "_Title": "UserPagePart Class",
               "_Url": "T_BBNCExtensions_ServerControls_UserPagePart.htm",
               "HelpTOCNode": [
@@ -7323,7 +7323,7 @@
                   "_Url": "M_BBNCExtensions_ServerControls_UserPagePart__ctor.htm"
                 },
                 {
-                  "_Id": "dcca6687-e930-4507-96f1-c281f0e7ed52",
+                  "_Id": "f80ad34c-c268-465a-bc5c-461a6de8605a",
                   "_Title": "UserPagePart Fields",
                   "_Url": "Fields_T_BBNCExtensions_ServerControls_UserPagePart.htm",
                   "HelpTOCNode": [
@@ -7338,7 +7338,7 @@
                   ]
                 },
                 {
-                  "_Id": "3bf9c224-8956-4706-a09a-6ed15aac3d9e",
+                  "_Id": "3927bdd5-0849-4c9b-a3f4-77aba3ccad71",
                   "_Title": "UserPagePart Methods",
                   "_Url": "Methods_T_BBNCExtensions_ServerControls_UserPagePart.htm",
                   "HelpTOCNode": [
@@ -7353,7 +7353,7 @@
                   ]
                 },
                 {
-                  "_Id": "3a0b9445-e7fb-4ab1-bc8c-4bf8c8e07c3e",
+                  "_Id": "458ffec1-997a-4180-b754-0bc563d6be03",
                   "_Title": "UserPagePart Properties",
                   "_Url": "Properties_T_BBNCExtensions_ServerControls_UserPagePart.htm",
                   "HelpTOCNode": [
@@ -7416,7 +7416,7 @@
                   ]
                 },
                 {
-                  "_Id": "76fa3899-89ed-49ee-9152-5c48f1065b51",
+                  "_Id": "f89f7807-bb65-42aa-b8b9-2e75eb856018",
                   "_Title": "UserPagePart Events",
                   "_Url": "Events_T_BBNCExtensions_ServerControls_UserPagePart.htm",
                   "HelpTOCNode": {
@@ -7427,7 +7427,7 @@
               ]
             },
             {
-              "_Id": "62566022-9567-4133-a363-1a578d046d2f",
+              "_Id": "62cf0008-4f2d-4797-93a4-d9e1e071eff5",
               "_Title": "UserPagePart.NamingPanel Class",
               "_Url": "T_BBNCExtensions_ServerControls_UserPagePart_NamingPanel.htm",
               "HelpTOCNode": {
@@ -7438,12 +7438,12 @@
           ]
         },
         {
-          "_Id": "e771f9bb-752c-4c15-90d7-aa823e766d29",
+          "_Id": "a1d4cde0-e0d9-453e-9c8f-136628d49669",
           "_Title": "BBNCExtensions.TransactionProcessing",
           "_Url": "N_BBNCExtensions_TransactionProcessing.htm",
           "HelpTOCNode": [
             {
-              "_Id": "05523799-96fb-4608-a59c-7c40e5696fba",
+              "_Id": "0383642f-6710-4aa7-97e6-1c783a9719a5",
               "_Title": "CustomTransactionProcessorAttribute Class",
               "_Url": "T_BBNCExtensions_TransactionProcessing_CustomTransactionProcessorAttribute.htm",
               "HelpTOCNode": [
@@ -7452,7 +7452,7 @@
                   "_Url": "M_BBNCExtensions_TransactionProcessing_CustomTransactionProcessorAttribute__ctor.htm"
                 },
                 {
-                  "_Id": "ed77e1f0-6f93-476e-80af-3111dc3a63d1",
+                  "_Id": "abba2b44-3074-43a8-9a64-bf66ee2a403f",
                   "_Title": "CustomTransactionProcessorAttribute Properties",
                   "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_CustomTransactionProcessorAttribute.htm",
                   "HelpTOCNode": [
@@ -7481,11 +7481,11 @@
               ]
             },
             {
-              "_Id": "c20691e5-b774-4fa6-847a-b14e5b10d598",
+              "_Id": "4fee0a46-f6c6-4a40-b909-a27e3e1282c4",
               "_Title": "ITransactionClickable Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionClickable.htm",
               "HelpTOCNode": {
-                "_Id": "dfc35e18-f090-40dc-b960-04b6e771f31d",
+                "_Id": "73745c1f-ee7c-43a7-a4e0-25c090b0a989",
                 "_Title": "ITransactionClickable Methods",
                 "_Url": "Methods_T_BBNCExtensions_TransactionProcessing_ITransactionClickable.htm",
                 "HelpTOCNode": {
@@ -7495,11 +7495,11 @@
               }
             },
             {
-              "_Id": "8ac4527f-9795-48c1-85f3-66556fe2481e",
+              "_Id": "70e59c1b-684b-4595-ad06-ff1b19dd19e6",
               "_Title": "ITransactionProcessor Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionProcessor.htm",
               "HelpTOCNode": {
-                "_Id": "8ee5e8d8-bd1b-4ce6-859d-93bd6cb1733a",
+                "_Id": "c267b289-b9a0-4c99-a6d6-976feac2129b",
                 "_Title": "ITransactionProcessor Methods",
                 "_Url": "Methods_T_BBNCExtensions_TransactionProcessing_ITransactionProcessor.htm",
                 "HelpTOCNode": [
@@ -7519,11 +7519,11 @@
               }
             },
             {
-              "_Id": "fa6a0a4f-590b-4a89-bdc6-dfc322e481fd",
+              "_Id": "c443ec2f-e19c-4010-9a4b-2d63be4f5acf",
               "_Title": "ITransactionProcessorHost Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionProcessorHost.htm",
               "HelpTOCNode": {
-                "_Id": "cc2b9021-3980-4096-9a39-9efd3e14a784",
+                "_Id": "19ef7c09-d347-44a1-8b9c-ba463277248f",
                 "_Title": "ITransactionProcessorHost Properties",
                 "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_ITransactionProcessorHost.htm",
                 "HelpTOCNode": [
@@ -7547,11 +7547,11 @@
               }
             },
             {
-              "_Id": "06f3d03b-01f6-4bb7-b658-223b093b7bb4",
+              "_Id": "8b2a7b03-e3ba-4acb-9811-2ad4e786da76",
               "_Title": "ITransactionProcessorShowAbout Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionProcessorShowAbout.htm",
               "HelpTOCNode": {
-                "_Id": "4957b31c-0d37-48d4-9e08-32212d071da9",
+                "_Id": "0da96398-b5c3-4c88-b85b-3b9a00c69335",
                 "_Title": "ITransactionProcessorShowAbout Events",
                 "_Url": "Events_T_BBNCExtensions_TransactionProcessing_ITransactionProcessorShowAbout.htm",
                 "HelpTOCNode": {
@@ -7561,12 +7561,12 @@
               }
             },
             {
-              "_Id": "ff740378-15a0-4791-a53f-fc81c9ebe5ec",
+              "_Id": "042d547e-db31-4f02-902d-53cad6f498d6",
               "_Title": "ITransactionsPlugin Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionsPlugin.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "48a8d982-2795-49ff-9596-891b37e4fa43",
+                  "_Id": "e058d403-ad96-4b59-85f3-cba43aed75b6",
                   "_Title": "ITransactionsPlugin Methods",
                   "_Url": "Methods_T_BBNCExtensions_TransactionProcessing_ITransactionsPlugin.htm",
                   "HelpTOCNode": [
@@ -7585,7 +7585,7 @@
                   ]
                 },
                 {
-                  "_Id": "45aedc4b-c050-412c-8cc6-33c2b4cf0c61",
+                  "_Id": "6f6fc138-8427-4406-84fd-0a771e3762f5",
                   "_Title": "ITransactionsPlugin Properties",
                   "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_ITransactionsPlugin.htm",
                   "HelpTOCNode": [
@@ -7606,11 +7606,11 @@
               ]
             },
             {
-              "_Id": "fa8b114c-da9e-4726-8c25-67c21b822acd",
+              "_Id": "64846ca6-f81a-4a1d-80bd-8ef4c76e91fe",
               "_Title": "ITransactionToProcess Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionToProcess.htm",
               "HelpTOCNode": {
-                "_Id": "509861c5-c729-407b-af45-5f4983ecc9d7",
+                "_Id": "b45ff47d-3caa-411d-8d2e-671b6761c668",
                 "_Title": "ITransactionToProcess Properties",
                 "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_ITransactionToProcess.htm",
                 "HelpTOCNode": [
@@ -7630,11 +7630,11 @@
               }
             },
             {
-              "_Id": "b645e043-87f3-4b17-a41a-069d932bd435",
+              "_Id": "1c975c34-156d-48b8-a932-f98cd65b5451",
               "_Title": "ITransactionToProcess2 Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionToProcess2.htm",
               "HelpTOCNode": {
-                "_Id": "102784b7-d4ec-46c3-a595-59052a48a0db",
+                "_Id": "0dc6bbd9-4ac5-4bdc-b67d-83e8c6c13bb9",
                 "_Title": "ITransactionToProcess2 Properties",
                 "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_ITransactionToProcess2.htm",
                 "HelpTOCNode": [
@@ -7666,12 +7666,12 @@
               }
             },
             {
-              "_Id": "da342f11-55ee-449b-ae29-81bd884c60ef",
+              "_Id": "76bcdcc6-4de5-4c31-b18d-df53da934bda",
               "_Title": "ITransactionType Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionType.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "4ea1471b-9fba-49ef-afd1-03fc4159f4e1",
+                  "_Id": "787c6aae-6ecd-446e-a3e2-89ba6ff0d23c",
                   "_Title": "ITransactionType Methods",
                   "_Url": "Methods_T_BBNCExtensions_TransactionProcessing_ITransactionType.htm",
                   "HelpTOCNode": [
@@ -7698,7 +7698,7 @@
                   ]
                 },
                 {
-                  "_Id": "f94ee2dc-6650-478a-a195-4a668acc2728",
+                  "_Id": "ba4f18ce-3ca9-4968-9b20-af5dce9477c7",
                   "_Title": "ITransactionType Properties",
                   "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_ITransactionType.htm",
                   "HelpTOCNode": [
@@ -7743,16 +7743,16 @@
               ]
             },
             {
-              "_Id": "140ce23e-e517-4aac-890a-4ca6acac4691",
+              "_Id": "480747dc-e559-4886-a64c-9cd5f80ee798",
               "_Title": "ITransactionTypes Interface",
               "_Url": "T_BBNCExtensions_TransactionProcessing_ITransactionTypes.htm",
               "HelpTOCNode": [
                 {
-                  "_Id": "eda8abbe-3632-4c79-b8ca-9c98bcbcbf31",
+                  "_Id": "54b45471-da8c-4100-88a4-9b6c9a499186",
                   "_Title": "ITransactionTypes Methods",
                   "_Url": "Methods_T_BBNCExtensions_TransactionProcessing_ITransactionTypes.htm",
                   "HelpTOCNode": {
-                    "_Id": "a4d72346-caf1-488b-be5f-7a1a64f573fc",
+                    "_Id": "55ff2c91-db9f-4cfd-8d39-8fa1a1291aaa",
                     "_Title": "Add Method ",
                     "_Url": "Overload_BBNCExtensions_TransactionProcessing_ITransactionTypes_Add.htm",
                     "HelpTOCNode": [
@@ -7768,7 +7768,7 @@
                   }
                 },
                 {
-                  "_Id": "ababb186-61e5-4cf0-8316-237d09bfd0a8",
+                  "_Id": "87413219-81fd-44a0-a959-077618656305",
                   "_Title": "ITransactionTypes Properties",
                   "_Url": "Properties_T_BBNCExtensions_TransactionProcessing_ITransactionTypes.htm",
                   "HelpTOCNode": [
@@ -7791,12 +7791,12 @@
           ]
         },
         {
-          "_Id": "c13a2c8e-c7c4-48d7-b754-3d6959cebb29",
+          "_Id": "3bf9d7a4-fa84-40c4-a5d8-28afb4c04e53",
           "_Title": "BBNCExtensions.Utility",
           "_Url": "N_BBNCExtensions_Utility.htm",
           "HelpTOCNode": [
             {
-              "_Id": "fd2e2254-e459-4dfe-a9c3-832fccf83169",
+              "_Id": "57076cc0-b43a-484c-a994-a114af50eae9",
               "_Title": "CustomLinkAttribute Class",
               "_Url": "T_BBNCExtensions_Utility_CustomLinkAttribute.htm",
               "HelpTOCNode": [
@@ -7805,7 +7805,7 @@
                   "_Url": "M_BBNCExtensions_Utility_CustomLinkAttribute__ctor.htm"
                 },
                 {
-                  "_Id": "f3790583-7f05-48d3-b4ab-cf29ffcf34b2",
+                  "_Id": "054025b9-3c25-49a6-a650-d2bb8b4d3a73",
                   "_Title": "CustomLinkAttribute Properties",
                   "_Url": "Properties_T_BBNCExtensions_Utility_CustomLinkAttribute.htm",
                   "HelpTOCNode": [
@@ -7826,7 +7826,7 @@
               ]
             },
             {
-              "_Id": "6e9911d6-3127-4f91-b3d6-8e33c6b521fe",
+              "_Id": "c4efe9c4-774c-41b5-86ea-7e37e6f47dc6",
               "_Title": "SharedUtilities Class",
               "_Url": "T_BBNCExtensions_Utility_SharedUtilities.htm",
               "HelpTOCNode": [
@@ -7835,7 +7835,7 @@
                   "_Url": "M_BBNCExtensions_Utility_SharedUtilities__ctor.htm"
                 },
                 {
-                  "_Id": "5d5beb4a-33a5-4d7f-9036-6e7c59ec2bc0",
+                  "_Id": "88e30e6f-bc0f-4d3b-8ce9-582dcda0609c",
                   "_Title": "SharedUtilities Methods",
                   "_Url": "Methods_T_BBNCExtensions_Utility_SharedUtilities.htm",
                   "HelpTOCNode": [
@@ -7844,7 +7844,7 @@
                       "_Url": "M_BBNCExtensions_Utility_SharedUtilities_GetCustomFolderPath.htm"
                     },
                     {
-                      "_Id": "4c3bc374-428e-43bd-a772-80a1f0b04b28",
+                      "_Id": "b2da3300-876f-4729-ad35-844185f2e1d1",
                       "_Title": "GetCustomType Method ",
                       "_Url": "Overload_BBNCExtensions_Utility_SharedUtilities_GetCustomType.htm",
                       "HelpTOCNode": [
@@ -7863,7 +7863,7 @@
                       ]
                     },
                     {
-                      "_Id": "6f57d574-41c5-4e95-9bbd-ba1d88d50c25",
+                      "_Id": "e475a7f5-a8f6-4a12-a0fd-e54e18b52696",
                       "_Title": "GetSvcProxy Method ",
                       "_Url": "Overload_BBNCExtensions_Utility_SharedUtilities_GetSvcProxy.htm",
                       "HelpTOCNode": [
