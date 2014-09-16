@@ -1,8 +1,8 @@
 <ul class="nav nav-pills nav-stacked nav-sidebar">
   <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
     <a href="{{ site.baseurl }}/reference/bbncextensions/">BBNCExtensions Assembly</a>
-    <ul class="list-unstyled">
-      
+    <ul class="list-unstyled bbncextensions">
+      {% include sidebar-reference-recursive.html node=site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode %}
     </ul>
   </li>
   <li {% if subsection == 'rest' %} class="active" {% endif %} >

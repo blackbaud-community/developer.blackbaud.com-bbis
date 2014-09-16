@@ -193,8 +193,26 @@
     font-size: 12px;
   }
 
-  .section-reference .nav-sidebar ul ul {
-    padding-left: 20px; 
+  .section-reference .nav-sidebar ul ul a {
+    padding-left: 20px;
+  }
+
+  .bbncextensions {
+    padding: 10px 0 0 0; 
+  }
+
+  .bbncextensions li {
+    display: none;
+  }
+
+  .bbncextensions li.trail,
+  .bbncextensions li.active,
+  .bbncextensions > li {
+    display: block; 
+  }
+
+  .section-reference .nav-sidebar ul li.active {
+    background: #EFEFEF;
   }
 
 /* 

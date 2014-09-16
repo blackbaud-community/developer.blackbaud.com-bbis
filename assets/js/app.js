@@ -17,6 +17,7 @@
           nav = $('.nav-sidebar');
       
       if (sidebar.length && !body.hasClass('section-reference')) {
+        
         nav.affix({
           offset: {
             top: sidebar.offset().top,
@@ -41,6 +42,10 @@
           }, 500);
         })
       }
+        
+      $('.bbncextensions li.active').parents('li').each(function() {
+        $(this).addClass('trail');
+      });
 
 	});
 
