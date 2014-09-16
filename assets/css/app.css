@@ -215,6 +215,22 @@
     background: #EFEFEF;
   }
 
+  .sidebar {
+    font-size: 12px;
+  }
+
+  .toclevel1 {
+    padding-left: 10px; 
+  }
+
+  .toclevel2 {
+    padding-left: 20px; 
+  }
+
+  .toclevel3 {
+    padding-left: 30px; 
+  }
+
 /* 
 * ==========================================================================
 * RESPONSIVE - SMALL (AND UP)
