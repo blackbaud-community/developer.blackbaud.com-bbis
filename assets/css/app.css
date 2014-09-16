@@ -153,6 +153,14 @@
     float: left; 
   }
 
+  .section-reference .nav-sidebar li ul {
+    display: none;
+  }
+
+  .section-reference .nav-sidebar li.active ul {
+    display: block;
+  }
+
 /* 
 * ==========================================================================
 * RESPONSIVE - SMALL (AND UP)

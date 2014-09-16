@@ -1,15 +1,22 @@
 ---
-layout: reference
 ---
 
 <h1>Technical Reference</h1>
 
-<ul>
-  {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
-  <li>
-    <a href="bbncextensions/{{ namespace._Url }}">
-      {{ namespace._Title }}
+<div class="row">
+  <div class="col-md-4">
+    <a href="bbncextensions/N_BBNCExtensions.htm" class="btn btn-block btn-primary btn-lg">
+      BBNCExtensions Assembly
     </a>
-  </li>
-  {% endfor %}
-</ul>
+  </div>
+  <div class="col-md-4">
+    <a href="rest" class="btn btn-block btn-primary btn-lg">
+      REST API
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a href="javascript" class="btn btn-block btn-primary btn-lg">
+      JavaScript SDK
+    </a>
+  </div>
+</div>

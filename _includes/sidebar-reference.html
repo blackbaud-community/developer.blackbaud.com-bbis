@@ -1,20 +1,20 @@
 <ul class="nav nav-pills nav-stacked nav-sidebar">
   <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
-    <a href="#">BBNCExtensions Assembly</a>
+    <a href="{{ site.baseurl }}/reference/bbncextensions/">BBNCExtensions Assembly</a>
     <ul>
       {% for namespace in site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode  %}
       <li {% if url == namespace._Url %} class="active" {% endif %}>
-        <a href="{{ namespace._Url }}">
+        <a href="{{ site.baseurl }}/reference/bbncextensions/{{ namespace._Url }}">
           {{ namespace._Title | remove: 'BBNCExtensions.' }}
         </a>
       </li>
       {% endfor %}
     </ul>
   </li>
-  <li>
-    <a href="#REST">Rest API</a>
+  <li {% if subsection == 'rest' %} class="active" {% endif %} >
+    <a href="{{ site.baseurl }}/reference/rest/">Rest API</a>
   </li>
-  <li>
-    <a href="#JS">JavaScript SDK</a>
+  <li {% if subsection == 'javascript' %} class="active" {% endif %} >
+    <a href="{{ site.baseurl }}/reference/javascript/">JavaScript SDK</a>
   </li>
 </ul>
