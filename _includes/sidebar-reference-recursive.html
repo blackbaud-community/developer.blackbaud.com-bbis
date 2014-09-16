@@ -7,14 +7,14 @@
 {% if include.node[0] %}
 
   {% for item in include.node %}
-    <li {% if url == item._Url %} class="active" {% endif %}>
+    <li {% if url contains item._Url %} class="active" {% endif %}>
 
       <a href="{{ site.baseurl }}/reference/bbncextensions/{{ item._Url }}">
         {{ item._Title }}
       </a>
 
-      {% if item.HelpTOCNode and item.HelpTOCNode contains url %}
-        <ul>
+      {% if item.HelpTOCNode %}
+        <ul class="list-unstyled">
           {% include sidebar-reference-recursive.html node=item.HelpTOCNode %}
         </ul>
       {% endif %}
@@ -24,13 +24,13 @@
 
 {% else %}
 
-  <li>
+  <li {% if url contains include.node._Url %} class="active" {% endif %}>
     <a href="{{ site.baseurl }}/reference/bbncextensions/{{ include.node._Url }}">
       {{ include.node._Title }}
     </a>
 
     {% if include.node.HelpTOCNode %}
-      <ul>
+      <ul class="list-unstyled">
         {% include sidebar-reference-recursive.html node=include.node.HelpTOCNode %}
       </ul>
     {% endif %}

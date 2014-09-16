@@ -153,12 +153,36 @@
     float: left; 
   }
 
-  .section-reference .nav-sidebar li ul {
+  .codeSnippetContainerTab a,
+  .codeSnippetContainerTabActive a {
+    display: block;
+    padding: 0 10px;
+  }
+
+  .codeSnippetContainerTabActive a {
+    background: #EFEFEF;
+  }
+
+  .codeSnippetContainerTabs:before,
+  .codeSnippetContainerTabs:after {
+    content: " ";
+    display: table;
+  }
+
+  .codeSnippetContainerTabs:after {
+    clear: both;
+  }
+
+  .codeSnippetToolBarText {
     display: none;
   }
 
-  .section-reference .nav-sidebar li.active ul {
-    display: block;
+  .section-reference .nav-sidebar li li {
+    font-size: 12px;
+  }
+
+  .section-reference .nav-sidebar ul ul {
+    padding-left: 20px; 
   }
 
 /* 
