@@ -12,10 +12,11 @@
         $('.carousel').trigger('next.owl.carousel');
       });
       
-      var sidebar = $('.sidebar'),
+      var body = $('body'),
+          sidebar = $('.sidebar'),
           nav = $('.nav-sidebar');
       
-      if (sidebar.length) {
+      if (sidebar.length && !body.hasClass('section-reference')) {
         nav.affix({
           offset: {
             top: sidebar.offset().top,
@@ -29,7 +30,7 @@
           nav.css('width', sidebar.width() + 'px');
         }).trigger('resize');
 
-        $('body').scrollspy({
+        body.scrollspy({
           target: '.sidebar'
         });
         
