@@ -43,7 +43,7 @@
         })
       }
         
-      $('.bbncextensions li.active').parents('li').each(function() {
+      $('.section-reference .sidebar li.active').parents('ul').each(function() {
         $(this).addClass('trail');
       });
 

@@ -145,7 +145,7 @@
 
 /* 
 * ==========================================================================
-* TECHNICAL REFERENCE
+* TECHNICAL REFERENCE - SANDCASTLE
 * ========================================================================== 
 */
   .codeSnippetContainerTab,
@@ -189,32 +189,22 @@
     font-weight: bold;
   }
 
-  .section-reference .nav-sidebar li li {
-    font-size: 12px;
-  }
-
-  .section-reference .nav-sidebar ul ul a {
-    padding-left: 20px;
-  }
-
-  .bbncextensions {
-    padding: 10px 0 0 0; 
-  }
-
-  .bbncextensions li {
+/* 
+* ==========================================================================
+* TECHNICAL REFERENCE - SIDEBAR
+* ========================================================================== 
+*/
+  .section-reference .sidebar li {
     display: none;
   }
 
-  .bbncextensions li.trail,
-  .bbncextensions li.active,
-  .bbncextensions > li {
+  .section-reference .sidebar li.active,
+  .section-reference .sidebar ul.trail > li,
+  .section-reference .sidebar > ul > li {
     display: block; 
   }
 
-  .section-reference .nav-sidebar ul li.active {
-    background: #EFEFEF;
-  }
-
+  /* IF HARDCODED SIDEBAR
   .sidebar {
     font-size: 12px;
   }
@@ -230,6 +220,7 @@
   .toclevel3 {
     padding-left: 30px; 
   }
+  */
 
 /* 
 * ==========================================================================

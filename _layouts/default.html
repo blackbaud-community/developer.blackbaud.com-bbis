@@ -1,73 +1,29 @@
-{% assign url_parts = page.url | split:"/" %}
-{% for part in url_parts %}
-  {% if forloop.index0 == 1 %}
-    {% assign section = part %}
-  {% endif %}
-  {% if forloop.index0 == 2 %}
-    {% assign subsection = part %}
-  {% endif %}
-{% endfor %}
+---
+layout: base
+---
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  
-  <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
-  
-  {% for css in site.css %}
-    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
-  {% endfor %}
-  
-  {% for css in page.css %}
-    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
-  {% endfor %}
+<div class="container-fluid">
+  <div class="row">
 
-  {% for js in page.js %}
-    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
-  {% endfor %}
-  
-</head>
-<body class="layout-{{ page.layout }} section-{{ section }}">
-  
-  {% include body-prefix.html %}
+    {% if page.sidebar != "" %}
 
-  {% if page.carousel %}
-    {% include body-carousel.html %}
-  {% endif %}
+      <div class="col-md-9 col-md-push-3">
+        {{ content }}
+      </div>  <!-- .col-md-9 -->
 
-  <div class="content">
-    <div class="container">
-      <div class="row">
+      <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
+        <div class="sidebar">
+          {% include {{ page.sidebar }} %}
+        </div>
+      </div>  <!-- .col-md-3 -->
 
-        {% if page.sidebar != "" %}
-        
-          <div class="col-md-9 col-md-push-3">
-            {{ content }}
-          </div>  <!-- .col-md-9 -->
+    {% else %}
 
-          <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
-            <div class="sidebar">
-              {% include {{ page.sidebar }} %}
-            </div>
-          </div>  <!-- .col-md-3 -->
-        
-        {% else %}
-        
-          <div class="col-sm-12">
-            {{ content }}
-          </div>
-        
-        {% endif %}
+      <div class="col-sm-12">
+        {{ content }}
+      </div>
 
-      </div>  <!-- .row -->
-    </div>  <!-- .container -->  
-  </div>  <!-- .content -->
-  
-  {% include body-suffix.html %}
-  
-  {% for js in site.js %}
-    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
-  {% endfor %}
-  
-</body>
-</html>
+    {% endif %}
+
+  </div>  <!-- .row -->
+</div>  <!-- .container -->
