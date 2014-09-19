@@ -194,7 +194,6 @@
 * TECHNICAL REFERENCE - SIDEBAR
 * ========================================================================== 
 */
-
   .row-wrapper {
     overflow: hidden;
     position: relative;
@@ -223,10 +222,6 @@
   .section-reference .sidebar > ul {
     margin: 0;
     padding: 0;
-  }
-
-  .section-reference .sidebar li ul {
-    font-size: 12px;
   }
 
   .section-reference .sidebar li {
