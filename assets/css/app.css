@@ -194,6 +194,23 @@
 * TECHNICAL REFERENCE - SIDEBAR
 * ========================================================================== 
 */
+
+  .row-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .content-wrapper {
+    -webkit-transition: margin 0.5s ease, width 0.5s ease;
+    -moz-transition: margin 0.5s ease, width 0.5s ease;
+    -o-transition: margin 0.5s ease, width 0.5s ease;
+    transition: margin 0.5s ease, width 0.5s ease;
+    background: #FFF;
+  }
+
+  .section-reference .sidebar-wrapper {
+    position: absolute;
+  }
   
   .section-reference .sidebar ul {
     margin: 0;
@@ -203,6 +220,10 @@
   .section-reference .sidebar > ul {
     margin: 0;
     padding: 0;
+  }
+
+  .section-reference .sidebar li ul {
+    font-size: 12px;
   }
 
   .section-reference .sidebar li {
@@ -224,6 +245,10 @@
     font-family: FontAwesome;
     font-size: 12px;
     content: "\00a0\f105\00a0" 
+  }
+
+  .nav-visible .toggle-sidebar {
+    color: #777;
   }
 
   /* IF HARDCODED SIDEBAR

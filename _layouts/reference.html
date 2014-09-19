@@ -1,43 +1,38 @@
 ---
 layout: base
-sidebar: "sidebar-reference.html"
 js:
-  -
-    url: /assets/js/branding.js
+  - url: /assets/js/branding.js
     base: true
-  -
-    url: /assets/js/branding-Website.js
+  - url: /assets/js/branding-Website.js
     base: true
 ---
 
 <div class="container">
-  
-  {% if page.breadcrumbs %}
-    <div class="row">
-      <div class="col-md-12">
-        <ol class="breadcrumb">
-          {% for crumb in page.breadcrumbs reversed %}
-            <li>
-              <a href="{{crumb.url}}">{{crumb.title}}</a>
-            </li>
-          {% endfor %}
-          <li class="active">
-            {{page.title}}
-          </li>
-        </ol>
-      </div>
-    </div>
-  {% endif %}
-  
   <div class="row">
-
-    <div class="col-md-6 col-md-push-6">
-      {{ content }}
-    </div>  <!-- .col-md-6 -->
-
-    <div class="col-md-6 col-md-pull-6 hidden-xs hidden-sm">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li>
+          <a href="#" class="toggle-sidebar" data-toggle="tooltip" data-placement="top" title="Toggle Navigation">
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+        {% for crumb in page.breadcrumbs reversed %}
+          <li>
+            <a href="{{crumb.url}}">{{crumb.title}}</a>
+          </li>
+        {% endfor %}
+        <li class="active">
+          {{page.title}}
+        </li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class="row row-wrapper">
+    
+    <div class="sidebar-wrapper col-md-4">
       <div class="sidebar">
-        <ul>
+        <ul class="nav nav-pills nav-stacked nav-sidebar">
           <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
             <a href="{{ site.baseurl }}/reference/bbncextensions/">BBNCExtensions Assembly</a>
             {% include sidebar-reference.html node=site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode %}
@@ -51,6 +46,10 @@ js:
         </ul>
       </div>  <!-- .sidebar -->
     </div>  <!-- .col-md-6 -->
+
+    <div class="content-wrapper col-md-12" data-toggle="col-md-12 col-md-8 col-md-offset-4">
+      {{ content }}
+    </div>  <!-- .col-md-12 -->
 
   </div>  <!-- .row -->
 </div>  <!-- .container -->

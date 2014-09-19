@@ -1,24 +1,38 @@
 !function($) {
 
 	$(function() {
+      
+      var body = $('body'),
+          sidebarToggle = $('.toggle-sidebar'),
+          sidebarWrapper = $('.sidebar-wrapper'),
+          sidebar = $('.sidebar'),
+          sidebarNav = $('.nav-sidebar'),
+          content = $('.content-wrapper'),
+          contentToggle = content.data('toggle'),
+          isReference = body.hasClass('section-reference');
+      
+      // Remember if we're showing the sidebar
+      if (isReference && $.cookie('nav') == 'true') {
+        toggleSidebar(false);
+      }
 
+      // Trigger prev carousel slide
       $('.carousel-prev').click(function(e) {
         e.preventDefault();
         $('.carousel').trigger('prev.owl.carousel');
       });
       
+      // Trigger next carousel slide
       $('.carousel-next').click(function(e) {
         e.preventDefault();
         $('.carousel').trigger('next.owl.carousel');
       });
       
-      var body = $('body'),
-          sidebar = $('.sidebar'),
-          nav = $('.nav-sidebar');
-      
-      if (sidebar.length && !body.hasClass('section-reference')) {
+      // These only happen if there's a sidebar and it's not the technical reference.
+      if (sidebar.length && !isReference) {
         
-        nav.affix({
+        // Initiate affix
+        sidebarNav.affix({
           offset: {
             top: sidebar.offset().top,
             bottom: function() {
@@ -27,35 +41,58 @@
           }
         });
 
+        // Catch our window resizing
         $(window).resize(function() {
-          nav.css('width', sidebar.width() + 'px');
+          sidebarNav.css('width', sidebar.width() + 'px');
         }).trigger('resize');
 
+        // Initiate scrollspy
         body.scrollspy({
           target: '.sidebar'
         });
         
+        // Smooth scroll back to the top
         $('.back-to-top a').click(function(e) {
           e.preventDefault();
           $('html, body').animate({
             scrollTop: 0
           }, 500);
-        })
+        });
+
       }
+      
+      // These only happen on the technical reference
+      if (isReference) {
+
+        // Make the sidebar trail visible
+        $('.section-reference .sidebar li.active').parents('ul').each(function() {
+          $(this).addClass('trail');
+        });
+
+        // Write the minimum height CSS rule
+        $('<style>.nav-visible .content-wrapper { min-height: ' + sidebarWrapper.height() + 'px; }</style>').appendTo('head');
+
+        // Toggle our classes
+        sidebarToggle.click(function(e) {
+          e.preventDefault();
+          toggleSidebar(true);
+        });
         
-      var active = $('.section-reference .sidebar li.active');
-      var crumbs = $('.breadcrumb');
+      }
       
-      active.parents('ul').each(function() {
-        $(this).addClass('trail');
-      });
-      
-      /*
-      active.parents('li').each(function() {
-        crumbs.prepend('<li>' + $(this).children('a').get(0).outerHTML + '</li>');
-      });
-      */
+      // Function that toggles the sidebar.
+      // Can be called immediately
+      function toggleSidebar(storeCookie) {
+        body.toggleClass('nav-visible');
+        content.toggleClass(contentToggle);
+        if (storeCookie) {
+          $.cookie('nav', $.cookie('nav') == 'true' ? 'false' : 'true', { path: '/' });
+        }
+      }
 
 	});
+  
+  // Initialize any tooltips
+  $('[data-toggle="tooltip"]').tooltip();
 
 }(jQuery);

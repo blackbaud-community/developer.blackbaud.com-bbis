@@ -4,51 +4,51 @@ highlighter: true
 permalink: /404.html
 
 css:
-  - 
-    url: //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
+  - url: //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
     base: false
-  - 
-    url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+    
+  - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
     base: false
-  - 
-    url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
+    
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
     base: true
-  - 
-    url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css
+    
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css
     base: true
-  - 
-    url: /assets/blackbaud-bootstrap-theme/lib/animate/animate.css
+    
+  - url: /assets/blackbaud-bootstrap-theme/lib/animate/animate.css
     base: true
-  - 
-    url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
+    
+  - url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
     base: true
-  - 
-    url: /assets/css/app.css
+    
+  - url: /assets/css/app.css
     base: true
 
 js:
-  - 
-    url: //code.jquery.com/jquery-1.11.1.min.js
+  - url: //code.jquery.com/jquery-1.11.1.min.js
     base: false
-  - 
-    url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+    
+  - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
     base: false
-  - 
-    url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
+    
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
     base: true
-  - 
-    url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
+    
+  - url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
     base: true
-  - 
-    url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
+    
+  - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
     base: true
-  - 
-    url: /assets/js/app.js
+    
+  - url: /assets/js/jquery.cookie.js
+    base: true
+    
+  - url: /assets/js/app.js
     base: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"
