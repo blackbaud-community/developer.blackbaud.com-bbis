@@ -65,10 +65,12 @@
       if (isReference) {
         
         var url = window.location.pathname,
-            file = url.substring(url.lastIndexOf('/') + 1);
+            file = url.substring(url.lastIndexOf('/') + 1),
+            active = $('.section-reference .sidebar a[href="' + file + '"]');
 
         // Make the sidebar trail visible
-        $('.section-reference .sidebar a[href="' + file + '"]').parents('ul').each(function() {
+        active.closest('li').addClass('active');
+        active.parents('ul').each(function() {
           $(this).addClass('trail');
         });
 
