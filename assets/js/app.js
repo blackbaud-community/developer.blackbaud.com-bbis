@@ -63,9 +63,12 @@
       
       // These only happen on the technical reference
       if (isReference) {
+        
+        var url = window.location.pathname,
+            file = url.substring(url.lastIndexOf('/') + 1);
 
         // Make the sidebar trail visible
-        $('.section-reference .sidebar li.active').parents('ul').each(function() {
+        $('.section-reference .sidebar a[href="' + file + '"]').parents('ul').each(function() {
           $(this).addClass('trail');
         });
 
