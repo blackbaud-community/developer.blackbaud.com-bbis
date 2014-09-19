@@ -50,9 +50,11 @@
         $(this).addClass('trail');
       });
       
+      /*
       active.parents('li').each(function() {
         crumbs.prepend('<li>' + $(this).children('a').get(0).outerHTML + '</li>');
       });
+      */
 
 	});
 
