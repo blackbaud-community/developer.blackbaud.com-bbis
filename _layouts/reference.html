@@ -16,11 +16,13 @@ js:
             <i class="fa fa-bars"></i>
           </a>
         </li>
+        
         {% for crumb in page.breadcrumbs reversed %}
           <li>
             <a href="{{crumb.url}}">{{crumb.title}}</a>
           </li>
         {% endfor %}
+        
         <li class="active">
           {{page.title}}
         </li>
@@ -35,7 +37,7 @@ js:
         <ul class="nav nav-pills nav-stacked nav-sidebar">
           <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
             <a href="{{ site.baseurl }}/reference/bbncextensions/">BBNCExtensions Assembly</a>
-            {% include sidebar-reference.html node=site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode %}
+            {% include sidebar-reference-static.html %}
           </li>
           <li {% if subsection == 'rest' %} class="active" {% endif %} >
             <a href="{{ site.baseurl }}/reference/rest/">Rest API</a>
