@@ -88,11 +88,12 @@
       // Function that toggles the sidebar.
       // Can be called immediately
       function toggleSidebar(storeCookie) {
-        body.toggleClass('nav-visible');
-        content.toggleClass(contentToggle);
         if (storeCookie) {
+          body.addClass('nav-transition');
           $.cookie('nav', $.cookie('nav') == 'true' ? 'false' : 'true', { path: '/' });
         }
+        body.toggleClass('nav-visible');
+        content.toggleClass(contentToggle);
       }
 
 	});
