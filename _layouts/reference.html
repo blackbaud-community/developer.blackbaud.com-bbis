@@ -10,14 +10,19 @@ js:
     base: true
 ---
 
-<div class="container-fluid">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb"></ol>
+    </div>
+  </div>
   <div class="row">
 
-    <div class="col-md-8 col-md-push-4">
+    <div class="col-md-6 col-md-push-6">
       {{ content }}
-    </div>  <!-- .col-md-8 -->
+    </div>  <!-- .col-md-6 -->
 
-    <div class="col-md-4 col-md-pull-8 hidden-xs hidden-sm">
+    <div class="col-md-6 col-md-pull-6 hidden-xs hidden-sm">
       <div class="sidebar">
         <ul>
           <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
@@ -32,7 +37,7 @@ js:
           </li>
         </ul>
       </div>  <!-- .sidebar -->
-    </div>  <!-- .col-md-4 -->
+    </div>  <!-- .col-md-6 -->
 
   </div>  <!-- .row -->
 </div>  <!-- .container -->

@@ -194,14 +194,36 @@
 * TECHNICAL REFERENCE - SIDEBAR
 * ========================================================================== 
 */
+  
+  .section-reference .sidebar ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+  }
+
+  .section-reference .sidebar > ul {
+    margin: 0;
+    padding: 0;
+  }
+
   .section-reference .sidebar li {
     display: none;
   }
 
   .section-reference .sidebar li.active,
+  .section-reference .sidebar li.active > ul > li,
   .section-reference .sidebar ul.trail > li,
   .section-reference .sidebar > ul > li {
     display: block; 
+  }
+
+  .section-reference .sidebar li.active > a {
+    background: #EFEFEF;
+  }
+
+  .breadcrumb > li + li:before {
+    font-family: FontAwesome;
+    font-size: 12px;
+    content: "\00a0\f105\00a0" 
   }
 
   /* IF HARDCODED SIDEBAR

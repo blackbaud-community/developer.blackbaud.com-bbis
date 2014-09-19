@@ -2,10 +2,12 @@
 # Moves bbnc extensions files to desktop/temp
 
 files=(
+  R_Project_BBNCExtensions.htm
   G_BBNCExtensions_API.htm
   N_BBNCExtensions_API_Utility.htm
   T_BBNCExtensions_API_Utility_SecurePayments.htm
   M_BBNCExtensions_API_Utility_SecurePayments_TransactionResponse.htm
+  Methods_T_BBNCExtensions_API_Utility_SecurePayments.htm
 )
 
 if [ "$1" == "dev" ]; then
