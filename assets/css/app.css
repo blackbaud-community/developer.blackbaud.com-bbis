@@ -36,9 +36,16 @@
     background: #EFEFEF; 
   }
 
-  .navbar .navbar-nav > li.active > a {
+  .navbar .navbar-nav > li.active > a,
+  .navbar .navbar-nav > li.active > a:hover,
+  .navbar .navbar-nav > li.active > a:focus {
+    background: #37BBF9;
+    color: #FFF;
+  }
+
+  .navbar .navbar-nav > li > a:hover, 
+  .navbar .navbar-nav > li > a:focus {
     background: #DFDFDF;
-    color: #000;
   }
 
   .nav-sidebar.affix {
