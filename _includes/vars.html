@@ -1,0 +1,9 @@
+{% assign url_parts = page.url | split:"/" %}
+{% for part in url_parts %}
+  {% if forloop.index0 == 1 %}
+    {% assign section = part %}
+  {% endif %}
+  {% if forloop.index0 == 2 %}
+    {% assign subsection = part %}
+  {% endif %}
+{% endfor %}

@@ -83,6 +83,9 @@
           toggleSidebar(true);
         });
         
+        // Set the default language - can be "vb"
+        OnLoad('cs');
+        
       }
       
       // Function that toggles the sidebar.
