@@ -1,6 +1,10 @@
 BBIS
 =======================
 
+### Setup Instructions
+
+After successfully cloning this repo (and branch), please follow the steps to setup jekyll from https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll.
+
 ### Build Instructions
 
 When working locally, you can either "build" or "serve."  Anything that's built is stored in the _site folder, which Github is setup to ignore.  The serve command works really well to test things without having to commit.
