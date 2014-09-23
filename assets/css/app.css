@@ -319,6 +319,10 @@
     padding-top: 10px;
   }
 
+  .breadcrumb {
+    margin-top: 20px
+  }
+
   .breadcrumb > li + li:before {
     font-family: FontAwesome;
     font-size: 12px;
@@ -336,8 +340,12 @@
 */
 @media (min-width: 768px) {
   
+  .breadcrumb {
+    margin-top: 0;
+  }
+  
   .content {
-    padding: 60px 0;
+    padding: 30px 0;
   }
 
   .content-getting-started .btn,
