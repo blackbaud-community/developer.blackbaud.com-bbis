@@ -2,6 +2,8 @@ title: BBIS Developer Documentation
 baseurl: /bbis
 highlighter: true
 permalink: /404.html
+gems:
+  - jekyll-redirect-from
 
 css:
   - url: //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css

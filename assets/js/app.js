@@ -9,7 +9,7 @@
           sidebarNav = $('.nav-sidebar'),
           content = $('.content-wrapper'),
           contentToggle = content.data('toggle'),
-          isReference = body.hasClass('section-reference');
+          isReference = body.hasClass('section-reference') && body.hasClass('layout-reference');
       
       // Remember if we're showing the sidebar
       if (isReference && $.cookie('nav') == 'true') {
@@ -84,7 +84,9 @@
         });
         
         // Set the default language - can be "vb"
-        OnLoad('cs');
+        try {
+          OnLoad('cs');
+        } catch (err) {}
         
       }
       
