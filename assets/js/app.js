@@ -9,7 +9,7 @@
           sidebarNav = $('.nav-sidebar'),
           content = $('.content-wrapper'),
           contentToggle = content.data('toggle'),
-          isReference = body.hasClass('section-reference') && body.hasClass('layout-reference');
+          isReference = body.hasClass('section-reference');
       
       // Remember if we're showing the sidebar
       if (isReference && $.cookie('nav') == 'true') {
