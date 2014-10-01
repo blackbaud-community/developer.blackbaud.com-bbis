@@ -11,7 +11,10 @@ css:
     
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
     base: false
-    
+
+  - url: /assets/prism/prism.css
+    base: true
+
   - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
     base: true
     
@@ -33,6 +36,9 @@ js:
     
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
     base: false
+    
+  - url: /assets/prism/prism.js
+    base: true
     
   - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
     base: true

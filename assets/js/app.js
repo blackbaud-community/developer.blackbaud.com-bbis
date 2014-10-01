@@ -90,6 +90,16 @@
         
       }
       
+      // Try to pretty print JSON
+      $('code.language-json').each(function() {
+        var el = $(this),
+            json = el.text().replace('=',':');
+        console.log(JSON.parse(json));
+          
+        
+        //, JSON.stringify(json, undefined, 4);
+      });
+      
       // Function that toggles the sidebar.
       // Can be called immediately
       function toggleSidebar(storeCookie) {
