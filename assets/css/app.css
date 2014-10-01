@@ -108,9 +108,16 @@
     display: block;
   }
 
-  .nav-sidebar .back-to-top a {
-    background: #FFF !important;
+  .nav-sidebar > li.back-to-top a {
+    background: #FFF;
+    color: #34b1ec;
     text-align: right;
+  }
+
+  .nav-sidebar > li.back-to-top a:focus,
+  .nav-sidebar > li.back-to-top a:hover {
+    background: #FFF;
+    color: #18516C;
   }
 
 /* 
@@ -286,36 +293,36 @@
     transition: margin 0.5s ease, width 0.5s ease;
   }
 
-  .section-reference .sidebar-wrapper {
+  .subsection-bbncextensions .sidebar-wrapper {
     position: absolute;
   }
   
-  .section-reference .sidebar ul {
+  .subsection-bbncextensions .sidebar ul {
     margin: 0;
     padding: 0 0 0 20px;
   }
 
-  .section-reference .sidebar > ul {
+  .subsection-bbncextensions .sidebar > ul {
     margin: 0;
     padding: 0;
   }
 
-  .section-reference .sidebar li {
+  .subsection-bbncextensions .sidebar li {
     display: none;
   }
 
-  .section-reference .sidebar li.active,
-  .section-reference .sidebar li.active > ul > li,
-  .section-reference .sidebar ul.trail > li,
-  .section-reference .sidebar > ul > li {
+  .subsection-bbncextensions .sidebar li.active,
+  .subsection-bbncextensions .sidebar li.active > ul > li,
+  .subsection-bbncextensions .sidebar ul.trail > li,
+  .subsection-bbncextensions .sidebar > ul > li {
     display: block; 
   }
 
-  .section-reference .sidebar ul ul li.active > a {
+  .subsection-bbncextensions .sidebar ul ul li.active > a {
     background: #EFEFEF;
   }
 
-  .section-reference .sidebar > ul > li.active > ul {
+  .subsection-bbncextensions .sidebar > ul > li.active > ul {
     padding-top: 10px;
   }
 

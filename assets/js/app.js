@@ -9,7 +9,7 @@
           sidebarNav = $('.nav-sidebar'),
           content = $('.content-wrapper'),
           contentToggle = content.data('toggle'),
-          isReference = body.hasClass('section-reference');
+          isReference = body.hasClass('subsection-bbncextensions');
       
       // Remember if we're showing the sidebar
       if (isReference && $.cookie('nav') == 'true') {
@@ -61,7 +61,7 @@
 
       }
       
-      // These only happen on the technical reference
+      // These only happen on the technical reference (BBNCExtensions)
       if (isReference) {
         
         var url = window.location.pathname,
@@ -91,13 +91,11 @@
       }
       
       // Try to pretty print JSON
-      $('code.language-json').each(function() {
-        var el = $(this),
-            json = el.text().replace('=',':');
-        console.log(JSON.parse(json));
-          
-        
-        //, JSON.stringify(json, undefined, 4);
+      $('pre code').each(function() {
+        var el = $(this);
+        try {
+          el.text(JSON.stringify(JSON.parse(el.text()), undefined, 4));
+        } catch (ex) {}
       });
       
       // Function that toggles the sidebar.

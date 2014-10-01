@@ -1,76 +1,53 @@
 ---
 layout: base
-js:
-  - url: /assets/js/branding.js
-    base: true
-  - url: /assets/js/branding-Website.js
-    base: true
 ---
 
 {% include vars.html %}
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <ol class="breadcrumb">
-        <li class="hidden-xs hidden-sm">
-          <a href="#" class="toggle-sidebar" data-toggle="tooltip" data-placement="top" title="Toggle Navigation">
-            <i class="fa fa-bars"></i>
-          </a>
-        </li>
-        
-        {% for crumb in page.breadcrumbs reversed %}
-          <li>
-            <a href="{{crumb.url}}">{{crumb.title}}</a>
-          </li>
-        {% endfor %}
-        
-        <li class="active">
-          {{page.title}}
-        </li>
-      </ol>
-    </div>
-  </div>
   
   <div class="row row-wrapper">
     
-    <div class="sidebar-wrapper col-md-4 hidden-xs hidden-sm">
+    <div class="sidebar-wrapper col-md-3 hidden-xs hidden-sm">
       <div class="sidebar">
         <ul class="nav nav-pills nav-stacked nav-sidebar">
-          <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
+          <li>
             <a href="{{ site.baseurl }}/reference/bbncextensions/">BBNCExtensions Assembly</a>
-            {% include sidebar-reference-static.html %}
           </li>
           <li {% if subsection == 'rest' %} class="active" {% endif %} >
             <a href="{{ site.baseurl }}/reference/rest/">Rest API</a>
             <ul>
               <li>
-                <a href="{{ site.baseurl }}/reference/rest/code-table/">Code Table</a>
+                <a href="{{ site.baseurl }}/reference/rest/#CodeTableApi">Code Table</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/reference/rest/country-and-state/">Country and State</a>
+                <a href="{{ site.baseurl }}/reference/rest/#CountryApi">Country and State</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/reference/rest/donation/">Donation</a>
+                <a href="{{ site.baseurl }}/reference/rest/#DonationApi">Donation</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/reference/rest/query/">Query</a>
+                <a href="{{ site.baseurl }}/reference/rest/#QueryApi">Query</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/reference/rest/image/">Image</a>
+                <a href="{{ site.baseurl }}/reference/rest/#ImageApi">Image</a>
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/reference/rest/#UserApi">User</a>
               </li>
             </ul>
           </li>
           <li {% if subsection == 'javascript' %} class="active" {% endif %} >
             <a href="{{ site.baseurl }}/reference/javascript/">JavaScript SDK</a>
           </li>
+          {% include sidebar-back-to-top.html %}
         </ul>
       </div>  <!-- .sidebar -->
-    </div>  <!-- .col-md-6 -->
+    </div>  <!-- .col-md-3 -->
 
-    <div class="content-wrapper col-md-12" data-toggle="col-md-12 col-md-8 col-md-offset-4">
+    <div class="content-wrapper col-md-9">
       {{ content }}
-    </div>  <!-- .col-md-12 -->
+    </div>  <!-- .col-md-9 -->
 
   </div>  <!-- .row -->
 </div>  <!-- .container -->
