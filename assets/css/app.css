@@ -187,7 +187,7 @@
     text-transform: uppercase;
   }
 
-  .subsection-rest li.type {
+  .subsection-rest td.type {
     color: #b1b1b1;
     font-style: italic;
   }
