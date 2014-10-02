@@ -279,9 +279,11 @@
   }
 
   .section-reference pre {
+    background: none;
     border-radius: 0;
     -webkit-border-radius: 0;
-    border: solid 1px #CCC;
+    border: 0;
+    font-size: 12px;
   }
 
   /** BEGIN COPY - branding.css **/
