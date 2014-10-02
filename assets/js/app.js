@@ -91,13 +91,14 @@
       }
       
       // Try to pretty print JSON
-      $('pre code').each(function() {
-        var el = $(this);
+      $('.NOPE pre code').each(function() {
+        var el = $(this),
+            text = el.text();
         try {
-          el.text(JSON.stringify(JSON.parse(el.text()), undefined, 4));
+          el.text(JSON.stringify(JSON.parse(text), undefined, 4));
         } catch (ex) {
-          console.log(ex);
-          console.log(el.text());
+          text = text.replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');
+          el.text(text);
         }
       });
       
