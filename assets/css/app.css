@@ -209,19 +209,6 @@
     text-transform: uppercase;
   }
 
-  .subsection-rest .table {
-    table-layout: fixed;
-  }
-
-  .subsection-rest td.type,
-  .subsection-rest td.body {
-    color: #b1b1b1;
-    font-style: italic;
-  }
-
-  .subsection-rest td.name {
-  }
-
   .subsection-rest .label-default {
     float: right;
   }
@@ -231,8 +218,47 @@
     text-transform: uppercase;
   }
 
+  .subsection-rest .table {
+    font-size: 12px;
+  }
+
+  .subsection-rest td.type,
+  .subsection-rest td.body {
+    color: #b1b1b1;
+    font-style: italic;
+  }
+
+  .subsection-rest td.name,
+  .subsection-rest td.description {
+    width: 40%;
+  }
+
+  .subsection-rest td.type,
+  .subsection-rest td.required {
+    width: 10%;
+  }
+
   .subsection-rest tr.example-response td {
     border: 0;
+  }
+
+  .subsection-rest .table td.name {
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    white-space: pre-wrap;       /* css-3 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  .subsection-rest pre code {
+    font-size: 11px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
   }
 
 /* 
@@ -299,16 +325,6 @@
     margin: 0;
     padding: 0;
   }
-
-  .section-reference pre code,
-  .table td.name {
-    white-space: pre-wrap;       /* CSS 3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
-  }
-
 
   /** BEGIN COPY - branding.css **/
   span.code, span.command {
