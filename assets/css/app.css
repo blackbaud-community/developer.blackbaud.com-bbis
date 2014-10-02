@@ -88,7 +88,7 @@
 */
 
   .nav-sidebar {
-    font-size: 12px;
+    font-size: 13px;
     word-wrap: break-word;
   }
 
@@ -218,10 +218,6 @@
     text-transform: uppercase;
   }
 
-  .subsection-rest .table {
-    font-size: 12px;
-  }
-
   .subsection-rest td.type,
   .subsection-rest td.body {
     color: #b1b1b1;
@@ -257,13 +253,11 @@
     border-radius: 0;
     -webkit-border-radius: 0;
     border: 0;
-    font-size: 12px;
     margin: 0;
     padding: 0;
   }
 
   .subsection-rest pre code {
-    font-size: 11px;
     white-space: pre-wrap;       /* CSS 3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
