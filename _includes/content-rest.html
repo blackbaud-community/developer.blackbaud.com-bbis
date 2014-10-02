@@ -1,6 +1,6 @@
-<div id="CodeTableApi">
-<h2 id="blackbaud:header">CodeTable/{Id} <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<div id="codetableapi">
+<h2 id="codetableid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">CodeTable/{Id} <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Returns the active code table entries for the specified code table Id ordered as configured in the CRM.</p>
@@ -8,7 +8,7 @@
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>Id</strong>
       (GUID)
       Id of a code table.<br><span class="label label-danger">required</span></li>
@@ -16,11 +16,11 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No code table was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Array of Code Table Entry</li>
       <li>Returns an array of code table entries.</li>
@@ -31,9 +31,9 @@
   </dd>
 </dl>
 </div>
-<div id="CountryApi">
-<h2 id="blackbaud:header">Country <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<div id="countryapi">
+<h2 id="country" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Returns a list of all active countries alphabetized by their description.</p>
@@ -41,7 +41,7 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Array of Countries</li>
       <li>Returns an array country objects</li>
@@ -51,8 +51,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">Country/{Id} <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<h2 id="countryid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country/{Id} <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Returns information about a specific country.</p>
@@ -60,7 +60,7 @@
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>Id</strong>
       (GUID)
       Id of a country.<br><span class="label label-danger">required</span></li>
@@ -68,11 +68,11 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No country was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Country</li>
       <li>Returns a country object</li>
@@ -82,8 +82,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">Country/{Id}/State <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<h2 id="countryidstate" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country/{Id}/State <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Returns a list of states associated with a country, alphabetized by their description.</p>
@@ -91,7 +91,7 @@
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>Id</strong>
       (GUID)
       Id of a country.<br><span class="label label-danger">required</span></li>
@@ -99,11 +99,11 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No country was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Array of States</li>
       <li>Returns an array of state objects for the given country alphabetized by their description.</li>
@@ -113,8 +113,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">Country/{Id}/AddressCaptions <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<h2 id="countryidaddresscaptions" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country/{Id}/AddressCaptions <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Returns the captions for Address Lines, City, State, and Postcode.</p>
@@ -122,7 +122,7 @@
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>Id</strong>
       (GUID)
       Id of a country.<br><span class="label label-danger">required</span></li>
@@ -130,11 +130,11 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No country was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Address Captions</li>
       <li>Returns an AddressCaptions object containing the labels for Address Lines, City, State, and Postcode.</li>
@@ -145,9 +145,9 @@
   </dd>
 </dl>
 </div>
-<div id="DonationApi">
-<h2 id="blackbaud:header">{PartId}/Donation/{Id} <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<div id="donationapi">
+<h2 id="partiddonationid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/{Id} <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Gets the donation object of the specified Id if the user has appropriate access.</p>
@@ -155,7 +155,7 @@
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>PartId</strong>
       (Integer)
       Id of a donation form part.<br><span class="label label-danger">required</span></li>
@@ -166,15 +166,15 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>403 Forbidden</li>
       <li>User does not have access to the specified donation.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No donation was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Donation</li>
       <li>Returns a Donation object containing information about the requested donation Id.</li>
@@ -184,8 +184,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">{PartId}/Donation/Create <small><span class="label label-default">POST</span></small></h2>
-<dl>
+<h2 id="partiddonationcreate" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/Create <small><span class="label label-default">POST</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Attempts to create a donation from the posted object.</p>
@@ -193,7 +193,7 @@
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>PartId</strong>
       (Integer)
       Id of a donation form part.<br><span class="label label-danger">required</span></li>
@@ -201,7 +201,7 @@
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>400 Bad Request</li>
       <li>Error[]</li>
       <li>
@@ -219,7 +219,7 @@ Possible Errors:
         <pre><code>[ { "ErrorCode":101, "Field":"Donor.LastName", "Message":null }, { "ErrorCode":103, "Field":"Gift.Designations.Amount", "Message":"A designation's amount should be greater than 0." } ]</code></pre>
       </li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>201 OK</li>
       <li>CreateDonationReply</li>
       <li>Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</li>
@@ -229,8 +229,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">{PartId}/Donation/{Id}/CompleteBBSPDonation <small><span class="label label-default">POST</span></small></h2>
-<dl>
+<h2 id="partiddonationidcompletebbspdonation" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/{Id}/CompleteBBSPDonation <small><span class="label label-default">POST</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</p>
@@ -238,7 +238,7 @@ Possible Errors:
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>PartId</strong>
       (Integer)
       Id of a donation form part.<br><span class="label label-danger">required</span></li>
@@ -249,15 +249,15 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>403 Forbidden</li>
       <li>User does not have access to the specified donation.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No donation was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>400 Bad Request</li>
       <li>Error[]</li>
       <li>
@@ -270,7 +270,7 @@ Possible Errors:
         <pre><code>[ { "ErrorCode":102, "Field":null, "Message":null } ]</code></pre>
       </li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Donation</li>
       <li>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</li>
@@ -280,8 +280,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">{PartId}/Donation/{Id}/ConfirmationHtml <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<h2 id="partiddonationidconfirmationhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/{Id}/ConfirmationHtml <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Gets HTML for a confirmation screen for the completed donation.</p>
@@ -289,7 +289,7 @@ Possible Errors:
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>PartId</strong>
       (Integer)
       Id of a donation form part.<br><span class="label label-danger">required</span></li>
@@ -300,15 +300,15 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>403 Forbidden</li>
       <li>User does not have access to the specified donation.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No donation was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>String</li>
       <li>Returns a string containing the HTML block of the confirmation with the donation fields merged in.</li>
@@ -319,9 +319,9 @@ Possible Errors:
   </dd>
 </dl>
 </div>
-<div id="ImageApi">
-<h2 id="blackbaud:header">Images?FolderGUID={Id} <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<div id="imageapi">
+<h2 id="imagesfolderguidid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Images?FolderGUID={Id} <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to within the specified folder.</p>
@@ -329,7 +329,7 @@ Possible Errors:
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>Id</strong>
       (GUID)
       Id of an image folder.<br><span class="label label-danger">required</span></li>
@@ -337,7 +337,7 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Array of Images</li>
       <li>Returns an array of Image objects that current user has access to and exist within the specified folder.</li>
@@ -347,8 +347,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">Images?Tag={TagName} <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<h2 id="imagestagtagname" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Images?Tag={TagName} <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to tagged with the specified tag.</p>
@@ -356,7 +356,7 @@ Possible Errors:
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>TagName</strong>
       (String)
       Name of the tag<br><span class="label label-danger">required</span></li>
@@ -364,7 +364,7 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Array of Images</li>
       <li>Returns an array of Image objects that current user has access to and are tagged with the specified tag.</li>
@@ -374,8 +374,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="blackbaud:header">Images/{FolderName}/SubFolderName} <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<h2 id="imagesfoldernamesubfoldername" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Images/{FolderName}/SubFolderName} <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to under the specified folder name/path.</p>
@@ -383,7 +383,7 @@ Possible Errors:
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>FolderName</strong>
       (String)
       Path/name of the folder.<br><span class="label label-danger">required</span></li>
@@ -391,7 +391,7 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>Array of Images</li>
       <li>Returns an array of Image objects that current user has access to and exist under the specified folder path.</li>
@@ -399,18 +399,18 @@ Possible Errors:
         <pre><code>[ { "Caption": "Sunset", "Url": "http://www.mydomain.com/image/sunset.jpg" } ]</code></pre>
       </li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No folder exists at the given path.</li>
     </ul>
   </dd>
 </dl>
 </div>
-<div id="QueryApi">
-<h2 id="blackbaud:header">
+<div id="queryapi">
+<h2 id="queryidcolumn1namecolumnfiltercolumn2namecolu" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
                 Query/{Id}?Column1Name={ColumnFilter}&amp;Column2Name={ColumnFilter}
              <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Returns the results for the specified query.</p>
@@ -418,7 +418,7 @@ Possible Errors:
   </dd>
   <dt>Parameters</dt>
   <dd>
-    <ul>
+    <ul class="parameters">
       <li><strong>Id</strong>
       (GUID)
       Id of a query that has been published.<br><span class="label label-danger">required</span></li>
@@ -429,11 +429,11 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>404 Not Found</li>
       <li>No published query was found by the specified Id.</li>
     </ul>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>QueryResults</li>
       <li>Returns a Query object containing results of executing the specified query.</li>
@@ -444,9 +444,9 @@ Possible Errors:
   </dd>
 </dl>
 </div>
-<div id="UserApi">
-<h2 id="blackbaud:header">User <small><span class="label label-default">GET</span></small></h2>
-<dl>
+<div id="userapi">
+<h2 id="user" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">User <small><span class="label label-default">GET</span></small></h2>
+<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
   <dt>Description</dt>
   <dd>
     <p>Gets basic profile information about the current user.</p>
@@ -454,7 +454,7 @@ Possible Errors:
   </dd>
   <dt>Returns</dt>
   <dd>
-    <ul>
+    <ul class="responses">
       <li>200 OK</li>
       <li>UserInformation</li>
       <li>Returns profile information about the current user.</li>
