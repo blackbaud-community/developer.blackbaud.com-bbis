@@ -192,6 +192,11 @@
     font-style: italic;
   }
 
+  .subsection-rest .label-required {
+    background-color: #cfcfcf;
+    text-transform: uppercase;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - SANDCASTLE
