@@ -95,7 +95,10 @@
         var el = $(this);
         try {
           el.text(JSON.stringify(JSON.parse(el.text()), undefined, 4));
-        } catch (ex) {}
+        } catch (ex) {
+          console.log(ex);
+          console.log(el.text());
+        }
       });
       
       // Function that toggles the sidebar.

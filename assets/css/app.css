@@ -86,18 +86,31 @@
 * SIDEBAR
 * ========================================================================== 
 */
-  .nav-pills > li.active > a, 
-  .nav-pills > li.active > a:hover, 
-  .nav-pills > li.active > a:focus {
+  .nav-sidebar > li.active > a, 
+  .nav-sidebar > li.active > a:hover, 
+  .nav-sidebar > li.active > a:focus {
     background-color: #34b1ec;
+    color: #FFF;
   }
 
   .nav-sidebar ul.nav .active a {
-    background-color: #eee;
+    color: #000;
   }
 
   .nav-sidebar ul.nav a {
-    padding: 5px 5px 5px 35px;
+    padding: 5px 5px 5px 15px;
+  }
+
+  .nav-sidebar > li > a {
+    padding: 5px;
+  }
+
+  .nav-sidebar ul.nav li {
+    display: none;
+  }
+
+  .nav-sidebar li.active ul.nav li {
+    display: block;
   }
 
   .nav-sidebar .back-to-top {
@@ -155,6 +168,28 @@
 
   .content-latest-features .feature h3 {
     font-size: 22px; 
+  }
+
+/* 
+* ==========================================================================
+* TECHNICAL REFERENCE - REST
+* ========================================================================== 
+*/
+  .subsection-rest dt.description {
+    display: none;
+  }
+
+  .subsection-rest dt.parameters,
+  .subsection-rest dt.returns {
+    color: #404040;
+    font-size: 12px;
+    padding: 15px 0 10px 0;
+    text-transform: uppercase;
+  }
+
+  .subsection-rest li.type {
+    color: #b1b1b1;
+    font-style: italic;
   }
 
 /* 
@@ -338,26 +373,6 @@
 
   .nav-visible .toggle-sidebar {
     color: #777;
-  }
-
-/* 
-* ==========================================================================
-* TECHNICAL REFERENCE - REST + SDK
-* ========================================================================== 
-*/
-  .subsection-rest h2 {
-    border-bottom: solid 1px #EFEFEF;
-    font-size: 16px;
-    padding: 10px 0;
-  }
-
-  .subsection-rest h2 small {
-    float: right;
-    font-size: 16px;
-  }
-
-  .subsection-rest dt.description {
-    display: none;
   }
 
 /* 
