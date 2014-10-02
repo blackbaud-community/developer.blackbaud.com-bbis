@@ -209,10 +209,17 @@
     text-transform: uppercase;
   }
 
+  .subsection-rest .table {
+    table-layout: fixed;
+  }
+
   .subsection-rest td.type,
   .subsection-rest td.body {
     color: #b1b1b1;
     font-style: italic;
+  }
+
+  .subsection-rest td.name {
   }
 
   .subsection-rest .label-default {
@@ -293,7 +300,8 @@
     padding: 0;
   }
 
-  .section-reference pre code {
+  .section-reference pre code,
+  .table td.name {
     white-space: pre-wrap;       /* CSS 3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
