@@ -839,7 +839,86 @@
         <td class="required"><span class="label label-default label-required">Required</span></td>
         <td class="description">Id of the merchant account that should be used to process the donation. Exclude if Donation Form is using a Payment 2.0 Part.</td>
       </tr>
-                </table>
+                <tr class="example-response">
+        <td colspan="3">
+                  {% highlight javascript %}{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "/Date(1337227200000-0400)/"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Joe",
+                "LastName": "Schmo",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "BBSPReturnUri": "http://www.mydomain.com",
+    "BBSPTemplateSitePageId": 784,
+    "MerchantAccountId": "A9EBE81D-65A8-4BBF-8446-FB2ED0276209"
+}{% endhighlight %}
+                </td>
+      </tr>
+    </table>
   </dd>
   <dt class="returns">Response</dt>
   <dd>
