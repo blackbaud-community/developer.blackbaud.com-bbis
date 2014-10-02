@@ -1,12 +1,12 @@
 <div id="codetableapi">
 <h2 id="codetableid">CodeTable/{Id} <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Returns the active code table entries for the specified code table Id ordered as configured in the CRM.</p>
     <p>If the provided code table Id is valid, then this will return the active code table entries for the specified code table.  The entries will be ordered as configured in the CRM.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>Id</strong>
@@ -14,7 +14,7 @@
       Id of a code table.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>404 Not Found</li>
@@ -34,12 +34,12 @@
 <div id="countryapi">
 <h2 id="country">Country <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Returns a list of all active countries alphabetized by their description.</p>
     <p>Will return information about all active countries alphabetized by their description.</p>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>200 OK</li>
@@ -53,12 +53,12 @@
 </dl>
 <h2 id="countryid">Country/{Id} <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Returns information about a specific country.</p>
     <p>If the provided country Id is valid, then this will return information about the country.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>Id</strong>
@@ -66,7 +66,7 @@
       Id of a country.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>404 Not Found</li>
@@ -84,12 +84,12 @@
 </dl>
 <h2 id="countryidstate">Country/{Id}/State <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Returns a list of states associated with a country, alphabetized by their description.</p>
     <p>If the provided country Id is valid, then this will return a list of state objects for each state associated with the country.   The states will be returned alphabetized description.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>Id</strong>
@@ -97,7 +97,7 @@
       Id of a country.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>404 Not Found</li>
@@ -115,12 +115,12 @@
 </dl>
 <h2 id="countryidaddresscaptions">Country/{Id}/AddressCaptions <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Returns the captions for Address Lines, City, State, and Postcode.</p>
     <p>If the provided country Id is valid, then this will return the captions for address lines, city, state, and postcode.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>Id</strong>
@@ -128,7 +128,7 @@
       Id of a country.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>404 Not Found</li>
@@ -148,12 +148,12 @@
 <div id="donationapi">
 <h2 id="partiddonationid">{PartId}/Donation/{Id} <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Gets the donation object of the specified Id if the user has appropriate access.</p>
     <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>PartId</strong>
@@ -164,7 +164,7 @@
       Id of a donation.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>403 Forbidden</li>
@@ -186,12 +186,12 @@
 </dl>
 <h2 id="partiddonationcreate">{PartId}/Donation/Create <small><span class="label label-default">POST</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Attempts to create a donation from the posted object.</p>
     <p>Validates the fields in the posted CreateDonationRequest.  If valid, creates a donation transaction and saves it to the database. Stores the Id of the new donation in session so the user has permissions for the donation instance.  If the payment type is credit card, communicates with Blackbaud secured payment to set up a check out URI and adds that URI to the return object.  For credit card payment, the donation is saved in a Pending state.  For payments not using a credit card, the donation is saved in a Completed state and an acknowledgement email is sent.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>PartId</strong>
@@ -199,7 +199,7 @@
       Id of a donation form part.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>400 Bad Request</li>
@@ -231,12 +231,12 @@ Possible Errors:
 </dl>
 <h2 id="partiddonationidcompletebbspdonation">{PartId}/Donation/{Id}/CompleteBBSPDonation <small><span class="label label-default">POST</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</p>
     <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>PartId</strong>
@@ -247,7 +247,7 @@ Possible Errors:
       Id of a donation.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>403 Forbidden</li>
@@ -282,12 +282,12 @@ Possible Errors:
 </dl>
 <h2 id="partiddonationidconfirmationhtml">{PartId}/Donation/{Id}/ConfirmationHtml <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Gets HTML for a confirmation screen for the completed donation.</p>
     <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database and merges the fields into the part’s confirmation block.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>PartId</strong>
@@ -298,7 +298,7 @@ Possible Errors:
       Id of a donation.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>403 Forbidden</li>
@@ -322,12 +322,12 @@ Possible Errors:
 <div id="imageapi">
 <h2 id="imagesfolderguidid">Images?FolderGUID={Id} <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to within the specified folder.</p>
     <p>Returns information about all images that the current user has access to and exist within the specified folder.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>Id</strong>
@@ -335,7 +335,7 @@ Possible Errors:
       Id of an image folder.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>200 OK</li>
@@ -349,12 +349,12 @@ Possible Errors:
 </dl>
 <h2 id="imagestagtagname">Images?Tag={TagName} <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to tagged with the specified tag.</p>
     <p>Returns information about all images that the current user has access to and are tagged with the specified tag.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>TagName</strong>
@@ -362,7 +362,7 @@ Possible Errors:
       Name of the tag<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>200 OK</li>
@@ -374,14 +374,14 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="imagesfoldernamesubfoldername">Images/{FolderName}/SubFolderName} <small><span class="label label-default">GET</span></small></h2>
+<h2 id="imagesfoldernamesubfoldername">Images/{FolderName}/{SubFolderName} <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to under the specified folder name/path.</p>
     <p>Returns information about all images that the current user has access to and exist under the specified folder path.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>FolderName</strong>
@@ -389,7 +389,7 @@ Possible Errors:
       Path/name of the folder.<br><span class="label label-danger">required</span></li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>200 OK</li>
@@ -411,12 +411,12 @@ Possible Errors:
                 Query/{Id}?Column1Name={ColumnFilter}&amp;Column2Name={ColumnFilter}
              <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Returns the results for the specified query.</p>
     <p>Returns the result of executing the specified, published query.  The query is executed as the last user to save the query.  The results are cached and may be up to 10 minutes old.  The results are limited to 5000 rows.</p>
   </dd>
-  <dt>Parameters</dt>
+  <dt class="parameters">Parameters</dt>
   <dd>
     <ul class="parameters">
       <li><strong>Id</strong>
@@ -427,7 +427,7 @@ Possible Errors:
       Filters the results to rows that contain the specified value in the specified column.  When specifying a column, use the name that is found in the query response.  Depending on the type of column being filtered, the results may filter to rows that exactly match the specified value instead of those that contain the specified value.  Summary columns such as MAX, MIN, and COUNT cannot be used as filters and will be ignored.</li>
     </ul>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>404 Not Found</li>
@@ -447,12 +447,12 @@ Possible Errors:
 <div id="userapi">
 <h2 id="user">User <small><span class="label label-default">GET</span></small></h2>
 <dl>
-  <dt>Description</dt>
+  <dt class="description">Description</dt>
   <dd>
     <p>Gets basic profile information about the current user.</p>
     <p>Returns profile information for the current user.  If the user is not logged in, then it may be populated based on the current email-recipient information.</p>
   </dd>
-  <dt>Returns</dt>
+  <dt class="returns">Returns</dt>
   <dd>
     <ul class="responses">
       <li>200 OK</li>
