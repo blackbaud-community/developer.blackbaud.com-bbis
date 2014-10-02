@@ -285,81 +285,79 @@
       <tr class="example-response">
         <td colspan="3">
               {% highlight javascript %}{
-	"Donor":{
-		"Address":{
-			"City":"Columbia",
-			"Country":"United States",
-			"PostalCode":"29212",
-			"State":"SC",
-			"StreetAddress":"123 Main St."
-			},
-		"EmailAddress":"john.doe@blackbaud.com",
-		"FirstName":"John",
-		"LastName":"Doe",
-		"Phone":"555-555-5555",
-		"Title":"Mr."
-		},
-	"Gift":{
-		"Designations":
-			[{
-			"Amount":5,
-			"DesignationId":"3439a5c7-9977-4f9c-ba11-fadfb8144d35"
-			}],
-		"FinderNumber":0,
-		"SourceCode":"Sample Source Code",
-		"IsAnonymous":false,
-		"PaymentMethod":1,
-		"Comments":"Gift comments here.",
-    "CreateGiftAidDeclaration":false,
-		"Attributes":
-			[{
-			"AttributeId":"BD18B3FD-B382-4183-A415-8F84B1E0E411",
-			"Value":"Volunteer;Member;Alumni"
-			},
-			{
-			"AttributeId":"3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
-			"Value":"1985"
-			}],
-      "Recurrence":
-        {
-        "DayOfMonth":26,
-        "DayOfWeek":null,
-        "EndDate":null,
-        "Frequency":2,
-        "Month":null,
-        "StartDate":"Date(1337227200000-0400)"
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
         },
-      "Tribute":
-      {
-      "Acknowledgee":
-        {
-        "AddressLines":"123 Sunset ln.",
-        "City":"Charleston",
-        "Country":"USA",
-        "Email":"email@address.com",
-        "FirstName":"Jane",
-        "LastName":"Doe",
-        "Phone":"123-123-1234",
-        "PostalCode":"29482",
-        "State":"SC"
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "SourceCode": "Sample Source Code",
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "Date(1337227200000-0400)"
         },
-      "TributeDefinition":
-        {
-        "Description":"New tribute",
-        "FirstName":"John",
-        "LastName":"Hancock",
-        "Type":"Tribute"
-        },
-      "TributeId":null
-      }
-	},
-	"Id":"853f96be-bf08-4828-aefa-326a06e48d31","
-	Origin":{
-		"AppealId":"C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
-		"PageId":784,
-		"PageName":"Sample Page"
-		},
-	"TransactionStatus":1
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Jane",
+                "LastName": "Doe",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "TransactionStatus": 1
 }{% endhighlight %}
             </td>
       </tr>
@@ -428,83 +426,81 @@ Possible Errors:
       <tr class="example-response">
         <td colspan="3">
               {% highlight javascript %}{
-	"Donation":{
-		"Donor":{
-			"Address":{
-				"City":"Columbia",
-				"Country":"United States",
-				"PostalCode":"29212",
-				"State":"SC",
-				"StreetAddress":"123 Main St."
-				},
-			"EmailAddress":"john.doe@blackbaud.com",
-			"FirstName":"John",
-			"LastName":"Doe",
-			"Phone":"555-555-5555",
-			"Title":"Mr."
-			},
-		"Gift":{
-			"Designations":
-				[{
-				"Amount":5,
-				"DesignationId":"3439a5c7-9977-4f9c-ba11-fadfb8144d35"
-				}],
-			"FinderNumber":0,
-			"IsAnonymous":false,
-			"PaymentMethod":1,
-			"Comments":"Gift comments here.",
-      "CreateGiftAidDeclaration":false,
-			"Attributes":
-				[{
-				"AttributeId":"BD18B3FD-B382-4183-A415-8F84B1E0E411",
-				"Value":"Volunteer;Member;Alumni"
-				},
-				{
-				"AttributeId":"3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
-				"Value":"1985"
-				}],
-      "Recurrence":
-        {
-        "DayOfMonth":26,
-        "DayOfWeek":null,
-        "EndDate":null,
-        "Frequency":2,
-        "Month":null,
-        "StartDate":"\/Date(1337227200000-0400)\/"
+    "Donation": {
+        "Donor": {
+            "Address": {
+                "City": "Columbia",
+                "Country": "United States",
+                "PostalCode": "29212",
+                "State": "SC",
+                "StreetAddress": "123 Main St."
+            },
+            "EmailAddress": "john.doe@blackbaud.com",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Phone": "555-555-5555",
+            "Title": "Mr."
         },
-      "Tribute":
-      {
-      "Acknowledgee":
-        {
-        "AddressLines":"123 Sunset ln.",
-        "City":"Charleston",
-        "Country":"USA",
-        "Email":"email@address.com",
-        "FirstName":"Joe",
-        "LastName":"Schmo",
-        "Phone":"123-123-1234",
-        "PostalCode":"29482",
-        "State":"SC"
+        "Gift": {
+            "Designations": [
+                {
+                    "Amount": 5,
+                    "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+                }
+            ],
+            "FinderNumber": 0,
+            "IsAnonymous": false,
+            "PaymentMethod": 1,
+            "Comments": "Gift comments here.",
+            "CreateGiftAidDeclaration": false,
+            "Attributes": [
+                {
+                    "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                    "Value": "Volunteer;Member;Alumni"
+                },
+                {
+                    "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                    "Value": "1985"
+                }
+            ],
+            "Recurrence": {
+                "DayOfMonth": 26,
+                "DayOfWeek": null,
+                "EndDate": null,
+                "Frequency": 2,
+                "Month": null,
+                "StartDate": "/Date(1337227200000-0400)/"
+            },
+            "Tribute": {
+                "Acknowledgee": {
+                    "AddressLines": "123 Sunset ln.",
+                    "City": "Charleston",
+                    "Country": "USA",
+                    "Email": "email@address.com",
+                    "FirstName": "Joe",
+                    "LastName": "Schmo",
+                    "Phone": "123-123-1234",
+                    "PostalCode": "29482",
+                    "State": "SC"
+                },
+                "TributeDefinition": {
+                    "Description": "New tribute",
+                    "FirstName": "John",
+                    "LastName": "Hancock",
+                    "Type": "Tribute"
+                },
+                "TributeId": null
+            }
         },
-      "TributeDefinition":
-        {
-        "Description":"New tribute",
-        "FirstName":"John",
-        "LastName":"Hancock",
-        "Type":"Tribute"
+        "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+        "Origin": {
+            "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+            "PageId": 784,
+            "PageName": "Sample Page"
         },
-      "TributeId":null
-      }
-		},
-		"Id":"853f96be-bf08-4828-aefa-326a06e48d31","
-		Origin":{
-			"AppealId":"C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
-			"PageId":784,
-			"PageName":"Sample Page"
-			},
-		"TransactionStatus":1
-	},
-	"BBSPCheckoutUri":" https://payments.blackbaud.com/Pages/Index.aspx?t=853f96be-bf08-4828-aefa-326a06e48d31"
+        "TransactionStatus": 1
+    },
+    "BBSPCheckoutUri": " https://payments.blackbaud.com/Pages/Index.aspx?t=853f96be-bf08-4828-aefa-326a06e48d31"
 }{% endhighlight %}
             </td>
       </tr>
@@ -567,11 +563,11 @@ Possible Errors:
       <tr class="example-response">
         <td colspan="3">
               {% highlight javascript %}[
-	{
-		"ErrorCode":102,
-		"Field":null,
-		"Message":null
-	}
+    {
+        "ErrorCode": 102,
+        "Field": null,
+        "Message": null
+    }
 ]{% endhighlight %}
             </td>
       </tr>
@@ -583,80 +579,78 @@ Possible Errors:
       <tr class="example-response">
         <td colspan="3">
               {% highlight javascript %}{
-	"Donor":{
-		"Address":{
-			"City":"Columbia",
-			"Country":"United States",
-			"PostalCode":"29212",
-			"State":"SC",
-			"StreetAddress":"123 Main St."
-			},
-		"EmailAddress":"john.doe@blackbaud.com",
-		"FirstName":"John",
-		"LastName":"Doe",
-		"Phone":"555-555-5555",
-		"Title":"Mr."
-		},
-	"Gift":{
-		"Designations":
-			[{
-			"Amount":5,
-			"DesignationId":"3439a5c7-9977-4f9c-ba11-fadfb8144d35"
-			}],
-		"FinderNumber":0,
-		"IsAnonymous":false,
-		"PaymentMethod":1,
-		"Comments":"Gift comments here.",
-    "CreateGiftAidDeclaration":false,
-		"Attributes":
-			[{
-			"AttributeId":"BD18B3FD-B382-4183-A415-8F84B1E0E411",
-			"Value":"Volunteer;Member;Alumni"
-			},
-			{
-			"AttributeId":"3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
-			"Value":"1985"
-			}],
-      "Recurrence":
-        {
-        "DayOfMonth":26,
-        "DayOfWeek":null,
-        "EndDate":null,
-        "Frequency":2,
-        "Month":null,
-        "StartDate":"\/Date(1337227200000-0400)\/"
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
         },
-      "Tribute":
-      {
-      "Acknowledgee":
-        {
-        "AddressLines":"123 Sunset ln.",
-        "City":"Charleston",
-        "Country":"USA",
-        "Email":"email@address.com",
-        "FirstName":"Joe",
-        "LastName":"Schmo",
-        "Phone":"123-123-1234",
-        "PostalCode":"29482",
-        "State":"SC"
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "/Date(1337227200000-0400)/"
         },
-      "TributeDefinition":
-        {
-        "Description":"New tribute",
-        "FirstName":"John",
-        "LastName":"Hancock",
-        "Type":"Tribute"
-        },
-      "TributeId":null
-      }
-	},
-	"Id":"853f96be-bf08-4828-aefa-326a06e48d31","
-	Origin":{
-		"AppealId":"C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
-		"PageId":784,
-		"PageName":"Sample Page"
-		},
-	"TransactionStatus":1
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Joe",
+                "LastName": "Schmo",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "TransactionStatus": 1
 }{% endhighlight %}
             </td>
       </tr>
@@ -713,7 +707,7 @@ Possible Errors:
       </tr>
       <tr class="example-response">
         <td colspan="3">
-              {% highlight javascript %}“&amp;lt;div&amp;gt;Thank you for donating $10.00.&amp;lt;/div&amp;gt;”{% endhighlight %}
+              {% highlight javascript %}&lt;div&gt;Thank you for donating $10.00.&lt;/div&gt;{% endhighlight %}
             </td>
       </tr>
     </table>
