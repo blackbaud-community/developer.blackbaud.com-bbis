@@ -252,6 +252,16 @@
     white-space: normal;
   }
 
+  .subsection-rest pre {
+    background: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    border: 0;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
   .subsection-rest pre code {
     font-size: 11px;
     white-space: pre-wrap;       /* CSS 3 */
@@ -317,13 +327,9 @@
   }
 
   .section-reference pre {
-    background: none;
     border-radius: 0;
     -webkit-border-radius: 0;
-    border: 0;
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
+    border: solid 1px #CCC;
   }
 
   /** BEGIN COPY - branding.css **/
