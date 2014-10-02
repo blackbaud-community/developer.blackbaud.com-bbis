@@ -188,6 +188,11 @@
     padding: 10px 0;
   }
 
+  .subsection-rest h2 a {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
   .subsection-rest h2 small {
     font-size: 18px;
   }
@@ -284,7 +289,18 @@
     -webkit-border-radius: 0;
     border: 0;
     font-size: 12px;
+    margin: 0;
+    padding: 0;
   }
+
+  .section-reference pre code {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+
 
   /** BEGIN COPY - branding.css **/
   span.code, span.command {
