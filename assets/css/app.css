@@ -252,7 +252,7 @@
     white-space: normal;
   }
 
-  .subsection-rest pre {
+  .section-reference.subsection-rest pre {
     background: none;
     border-radius: 0;
     -webkit-border-radius: 0;
