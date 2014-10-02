@@ -187,7 +187,8 @@
     text-transform: uppercase;
   }
 
-  .subsection-rest td.type {
+  .subsection-rest td.type,
+  .subsection-rest td.body {
     color: #b1b1b1;
     font-style: italic;
   }
@@ -195,6 +196,10 @@
   .subsection-rest .label-required {
     background-color: #cfcfcf;
     text-transform: uppercase;
+  }
+
+  .subsection-rest tr.example-response td {
+    border: 0;
   }
 
 /* 
