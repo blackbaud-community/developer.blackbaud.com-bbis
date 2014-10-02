@@ -1,6 +1,6 @@
 <div id="codetableapi">
-<h2 id="codetableid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">CodeTable/{Id} <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="codetableid">CodeTable/{Id} <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Returns the active code table entries for the specified code table Id ordered as configured in the CRM.</p>
@@ -32,8 +32,8 @@
 </dl>
 </div>
 <div id="countryapi">
-<h2 id="country" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="country">Country <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Returns a list of all active countries alphabetized by their description.</p>
@@ -51,8 +51,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="countryid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country/{Id} <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="countryid">Country/{Id} <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Returns information about a specific country.</p>
@@ -82,8 +82,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="countryidstate" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country/{Id}/State <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="countryidstate">Country/{Id}/State <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Returns a list of states associated with a country, alphabetized by their description.</p>
@@ -113,8 +113,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="countryidaddresscaptions" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Country/{Id}/AddressCaptions <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="countryidaddresscaptions">Country/{Id}/AddressCaptions <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Returns the captions for Address Lines, City, State, and Postcode.</p>
@@ -146,8 +146,8 @@
 </dl>
 </div>
 <div id="donationapi">
-<h2 id="partiddonationid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/{Id} <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="partiddonationid">{PartId}/Donation/{Id} <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Gets the donation object of the specified Id if the user has appropriate access.</p>
@@ -184,8 +184,8 @@
     </ul>
   </dd>
 </dl>
-<h2 id="partiddonationcreate" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/Create <small><span class="label label-default">POST</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="partiddonationcreate">{PartId}/Donation/Create <small><span class="label label-default">POST</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Attempts to create a donation from the posted object.</p>
@@ -229,8 +229,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="partiddonationidcompletebbspdonation" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/{Id}/CompleteBBSPDonation <small><span class="label label-default">POST</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="partiddonationidcompletebbspdonation">{PartId}/Donation/{Id}/CompleteBBSPDonation <small><span class="label label-default">POST</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</p>
@@ -280,8 +280,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="partiddonationidconfirmationhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">{PartId}/Donation/{Id}/ConfirmationHtml <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="partiddonationidconfirmationhtml">{PartId}/Donation/{Id}/ConfirmationHtml <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Gets HTML for a confirmation screen for the completed donation.</p>
@@ -320,8 +320,8 @@ Possible Errors:
 </dl>
 </div>
 <div id="imageapi">
-<h2 id="imagesfolderguidid" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Images?FolderGUID={Id} <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="imagesfolderguidid">Images?FolderGUID={Id} <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to within the specified folder.</p>
@@ -347,8 +347,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="imagestagtagname" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Images?Tag={TagName} <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="imagestagtagname">Images?Tag={TagName} <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to tagged with the specified tag.</p>
@@ -374,8 +374,8 @@ Possible Errors:
     </ul>
   </dd>
 </dl>
-<h2 id="imagesfoldernamesubfoldername" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">Images/{FolderName}/SubFolderName} <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="imagesfoldernamesubfoldername">Images/{FolderName}/SubFolderName} <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Gets the image objects that the user has access to under the specified folder name/path.</p>
@@ -407,10 +407,10 @@ Possible Errors:
 </dl>
 </div>
 <div id="queryapi">
-<h2 id="queryidcolumn1namecolumnfiltercolumn2namecolu" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="queryidcolumn1namecolumnfiltercolumn2namecolu">
                 Query/{Id}?Column1Name={ColumnFilter}&amp;Column2Name={ColumnFilter}
              <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Returns the results for the specified query.</p>
@@ -445,8 +445,8 @@ Possible Errors:
 </dl>
 </div>
 <div id="userapi">
-<h2 id="user" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">User <small><span class="label label-default">GET</span></small></h2>
-<dl xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:blackbaud="urn:blackbaud">
+<h2 id="user">User <small><span class="label label-default">GET</span></small></h2>
+<dl>
   <dt>Description</dt>
   <dd>
     <p>Gets basic profile information about the current user.</p>
