@@ -384,6 +384,463 @@
       </tr>
     </table>
   </dd>
+  <dt class="post">Post Body</dt>
+  <dd>
+    <table class="table table-condensed table-post">
+                    <tr>
+        <td class="name">Donor</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the donor of the gift. Donor and all attributes related to the donor (ex: Donor.Title) should be excluded if the donation form uses a Payment 2.0 part.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Title</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.EmailAddress</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Phone</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Address information about the donor.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.StreetAddress</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.City</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.State</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.Country</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.PostalCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                  <tr>
+        <td class="name">Donor.OrganizationName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Required if Gift.IsCorporate is true. This field is not valid if the part is configured to use a Payment 2.0 page.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the donation gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.IsAnonymous</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates that the gift is being made anonymously.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.FinderNumber</td>
+        <td class="type">
+        (Long)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.SourceCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.PaymentMethod</td>
+        <td class="type">
+        (PaymentMethod ENUM)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">
+                            Indicates the method of payment to be used for the gift.  <pre>Possible values:
+•	CreditCard (0)
+•	BillMeLater (1)</pre></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Comments</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.CreateGiftAidDeclaration</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates whether the gift aid is applied to the donation.</td>
+      </tr>
+                  <tr>
+        <td class="name">Gift.Designations</td>
+        <td class="type">
+        (Array)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Array of designation objects for the gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Designations.Amount</td>
+        <td class="type">
+        (Decimal)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">The numeric amount of the designation.  The currency is dictated by the merchant account specified.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Designations.DesignationId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a designation to which the amount should be allocated.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes</td>
+        <td class="type">
+        (Array)
+      </td>
+        <td class="required"></td>
+        <td class="description">Array of revenue attributes to be added to the gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes.AttributeId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of revenue attribute.  The only supported attribute data types are text, number, date, currency, yes/no, and code table.  Only one per record attribute types are supported, except for code table attributes which support multiple entries per record.  Any individual attribute id can only be supplied once for a donation.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes.Value</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Value of the attribute.  For code table values, the name of the code table entry should be used.  For Multiple code table entries, use a single attribute with the names semicolon delimited in the value field.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.DayOfWeek</td>
+        <td class="type">
+        (DayOfWeek ENUM)
+      </td>
+        <td class="required"></td>
+        <td class="description">
+                        DayOfWeek value is required for weekly recurrences.  Field is invalid for any frequency other than weekly.  <pre>Possible values:
+                          •	Sunday (0)
+                          •	Monday (1)
+                          •	Tuesday (2)
+                          •	Wednesday (3)
+                          •	Thursday (4)
+                          •	Friday (5)
+                          •	Saturday (6)</pre>
+                        
+                      </td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.DayOfMonth</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">DayOfMonth value is required for non-weekly recurrences.  Field is invalid for weekly frequency.  Valid values: 1-31.  Months with less than 31 days will default to the last day of the month is DayOfMonth is higher than number of days in the month.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.Month</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Month value is required for annual recurrences.  Field is invalid for any frequency other than annually.  Valid values:  1-12; Jan-Dec.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.Frequency</td>
+        <td class="type">
+        (RecurrenceFrequency ENUM)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">
+                        Designates the recurrence frequency.  <pre>Possible values:
+                          •	Weekly (1)
+                          •	Monthly (2)
+                          •	Quarterly (3)
+                          •	Annually (4)</pre>
+                        
+                      </td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.StartDate</td>
+        <td class="type">
+        (Date)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Start date for recurrence.  Must start on or after today's date.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.EndDate</td>
+        <td class="type">
+        (Date)
+      </td>
+        <td class="required"></td>
+        <td class="description">Optional end date for recurrence.  Must end after start date.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeID</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"></td>
+        <td class="description">Optional Tribute ID to map to.  Must match Tribute ID from backoffice.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">First name for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Last name for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.Type</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Tribute type to map to in backoffice.  Must match existing tribute type.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.Description</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Description for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">First name for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Last name for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.Country</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Country for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.AddressLines</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Address lines for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.City</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">City for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.State</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">State for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.PostalCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Postal code for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.Phone</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Phone number for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.AcknowledgeeInformation.Email</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Email address for tribute acknowledgee.</td>
+      </tr>
+                  <tr>
+        <td class="name">Gift.IsCorporate</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates that the gift is given on behalf of a company. When true, the Corporate merge fields are displayed as opposed to the Individual merge fields. Cannot process if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the origin of the transaction.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.AppealId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of an appeal to associate with the donation.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.PageId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of the BBIS page hosting the donation form.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.PageName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Name of the web page hosting the donation form.</td>
+      </tr>
+                    <tr>
+        <td class="name">BBSPReturnUri</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">BBSPTemplateSitePageId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">MerchantAccountId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of the merchant account that should be used to process the donation. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                </table>
+  </dd>
   <dt class="returns">Response</dt>
   <dd>
     <table class="table table-condensed table-responses">
