@@ -34,7 +34,7 @@
         <td class="description">Returns an array of code table entries.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
   {
     "Description": "Mr.",
@@ -68,7 +68,7 @@
         <td class="description">Returns an array country objects</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
   { 
     "Id": "2C3F57A7-65DE-4D55-89EF-7857E6EDD53C",
@@ -121,7 +121,7 @@
         <td class="description">Returns a country object</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
   "Id": "B4837D3E-36F6-42F4-8049-CC2A2B108F9E",
   "Abbreviation": "US",
@@ -167,7 +167,7 @@
         <td class="description">Returns an array of state objects for the given country alphabetized by their description.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
   {
     "Id": "ba9b5958-b1d0-43ed-ba37-5e7c0eddfc78",
@@ -220,7 +220,7 @@
         <td class="description">Returns an AddressCaptions object containing the labels for Address Lines, City, State, and Postcode.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
   "AddressLines": "Address",
   "City": "City",
@@ -283,7 +283,7 @@
         <td class="description">Returns a Donation object containing information about the requested donation Id.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
     "Donor": {
         "Address": {
@@ -840,7 +840,7 @@
         <td class="description">Id of the merchant account that should be used to process the donation. Exclude if Donation Form is using a Payment 2.0 Part.</td>
       </tr>
                 <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
                   {% highlight javascript %}{
     "Donor": {
         "Address": {
@@ -939,7 +939,7 @@ Possible Errors:
 •	ExceedsMaximumLength (107)</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
 	{
 		"ErrorCode":101,
@@ -960,7 +960,7 @@ Possible Errors:
         <td class="description">Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
     "Donation": {
         "Donor": {
@@ -1097,7 +1097,7 @@ Possible Errors:
 </ul></td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
     {
         "ErrorCode": 102,
@@ -1113,7 +1113,7 @@ Possible Errors:
         <td class="description">Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
     "Donor": {
         "Address": {
@@ -1242,7 +1242,7 @@ Possible Errors:
         <td class="description">Returns a string containing the HTML block of the confirmation with the donation fields merged in.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}&lt;div&gt;Thank you for donating $10.00.&lt;/div&gt;{% endhighlight %}
             </td>
       </tr>
@@ -1280,7 +1280,7 @@ Possible Errors:
         <td class="description">Returns an array of Image objects that current user has access to and exist within the specified folder.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
   {
     "Caption": "Sunset", 
@@ -1321,7 +1321,7 @@ Possible Errors:
         <td class="description">Returns an array of Image objects that current user has access to and are tagged with the specified tag.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
   {
     "Caption": "Sunset",
@@ -1362,7 +1362,7 @@ Possible Errors:
         <td class="description">Returns an array of Image objects that current user has access to and exist under the specified folder path.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}[
   {
     "Caption": "Sunset", 
@@ -1427,7 +1427,7 @@ Possible Errors:
         <td class="description">Returns a Query object containing results of executing the specified query.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
   "Fields": [
     {
@@ -1483,7 +1483,7 @@ Possible Errors:
         <td class="description">Returns profile information about the current user.</td>
       </tr>
       <tr class="example-response">
-        <td colspan="3">
+        <td colspan="4">
               {% highlight javascript %}{
   "Addresses": [
     {
