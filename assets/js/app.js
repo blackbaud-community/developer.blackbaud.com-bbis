@@ -10,11 +10,6 @@
           content = $('.content-wrapper'),
           contentToggle = content.data('toggle'),
           isReference = body.hasClass('subsection-bbncextensions');
-      
-      // Remember if we're showing the sidebar
-      if (isReference && $.cookie('nav') == 'true') {
-        toggleSidebar(false);
-      }
 
       // Trigger prev carousel slide
       $('.carousel-prev').click(function(e) {
@@ -48,7 +43,7 @@
 
         // Initiate scrollspy
         body.scrollspy({
-          target: '.sidebar'
+          target: '.nav-sidebar'
         });
         
         // Smooth scroll back to the top
@@ -73,15 +68,6 @@
         active.parents('ul').each(function() {
           $(this).addClass('trail');
         });
-
-        // Write the minimum height CSS rule
-        $('<style>.nav-visible .content-wrapper { min-height: ' + sidebarWrapper.height() + 'px; }</style>').appendTo('head');
-
-        // Toggle our classes
-        sidebarToggle.click(function(e) {
-          e.preventDefault();
-          toggleSidebar(true);
-        });
         
         // Set the default language - can be "vb"
         try {
@@ -89,33 +75,7 @@
         } catch (err) {}
         
       }
-      
-      // Try to pretty print JSON
-      $('.NOPE pre code').each(function() {
-        var el = $(this),
-            text = el.text();
-        try {
-          el.text(JSON.stringify(JSON.parse(text), undefined, 4));
-        } catch (ex) {
-          text = text.replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');
-          el.text(text);
-        }
-      });
-      
-      // Function that toggles the sidebar.
-      // Can be called immediately
-      function toggleSidebar(storeCookie) {
-        if (storeCookie) {
-          body.addClass('nav-transition');
-          $.cookie('nav', $.cookie('nav') == 'true' ? 'false' : 'true', { path: '/' });
-        }
-        body.toggleClass('nav-visible');
-        content.toggleClass(contentToggle);
-      }
 
 	});
-  
-  // Initialize any tooltips
-  $('[data-toggle="tooltip"]').tooltip();
 
 }(jQuery);

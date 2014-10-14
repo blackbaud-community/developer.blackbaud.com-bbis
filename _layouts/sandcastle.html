@@ -13,11 +13,6 @@ js:
   <div class="row">
     <div class="col-md-12">
       <ol class="breadcrumb">
-        <li class="hidden-xs hidden-sm">
-          <a href="#" class="toggle-sidebar" data-toggle="tooltip" data-placement="top" title="Toggle Navigation">
-            <i class="fa fa-bars"></i>
-          </a>
-        </li>
 
         {% for crumb in page.breadcrumbs reversed %}
           <li>
@@ -34,26 +29,17 @@ js:
   
   <div class="row row-wrapper">
     
-    <div class="sidebar-wrapper col-md-4 hidden-xs hidden-sm">
+    <div class="col-md-4 hidden-xs hidden-sm">
       <div class="sidebar">
         <ul class="nav nav-pills nav-stacked nav-sidebar">
-          <li {% if subsection == 'bbncextensions' %} class="active" {% endif %} >
-            <a href="{{ site.baseurl }}/reference/bbncextensions/">BBNCExtensions Assembly</a>
-            {% if subsection == 'bbncextensions' %}
-              {% include sidebar-reference-static.html %}
-            {% endif %}
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/reference/rest/">Rest API</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/reference/javascript/">JavaScript SDK</a>
-          </li>
+          {% include sidebar-reference-static.html %}
+          <li class="divider"></li>
+          {% include sidebar-back-to-reference.html %}
         </ul>
       </div>  <!-- .sidebar -->
     </div>  <!-- .col-md-6 -->
 
-    <div class="content-wrapper col-md-12" data-toggle="col-md-12 col-md-8 col-md-offset-4">
+    <div class="content-wrapper col-md-8">
       {{ content }}
     </div>  <!-- .col-md-12 -->
 
