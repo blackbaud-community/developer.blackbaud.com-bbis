@@ -15,7 +15,11 @@ layout: base
 
       <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
         <div class="sidebar">
-          {% include {{ page.sidebar }} %}
+          {% if page.sidebarRelative %}
+            {% include_relative {{ page.sidebar }} %}
+          {% else %}
+            {% include {{ page.sidebar }} %}
+          {% endif %}
         </div>
       </div>  <!-- .col-md-3 -->
 
