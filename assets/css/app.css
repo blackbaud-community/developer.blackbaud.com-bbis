@@ -190,63 +190,79 @@
 * ========================================================================== 
 */
 
-  .subsection-rest h2 {
+  .subsection-rest h2,
+  .subsection-javascript h2 {
     border-bottom: solid 1px #EFEFEF;
     font-size: 18px;
     padding: 10px 0;
   }
 
-  .subsection-rest h2 a {
+  .subsection-rest h2 a,
+  .subsection-javascript h2 a {
     padding-left: 10px;
     font-size: 12px;
   }
 
-  .subsection-rest h2 small {
+  .subsection-rest h2 small,
+  .subsection-javascript h2 small {
     font-size: 18px;
   }
 
-  .subsection-rest dt.description {
+  .subsection-rest dt.description,
+  .subsection-javascript dt.description {
     display: none;
   }
 
   .subsection-rest dt.parameters,
-  .subsection-rest dt.returns {
+  .subsection-rest dt.returns,
+  .subsection-javascript dt.parameters,
+  .subsection-javascript dt.returns {
     color: #404040;
     font-size: 12px;
     padding: 15px 0 10px 0;
     text-transform: uppercase;
   }
 
-  .subsection-rest .label-default {
+  .subsection-rest .label-default,
+  .subsection-javascript .label-default {
     float: right;
   }
 
-  .subsection-rest .label-required {
+  .subsection-rest .label-required,
+  .subsection-javascript .label-required {
     background-color: #cfcfcf;
     text-transform: uppercase;
   }
 
   .subsection-rest td.type,
-  .subsection-rest td.body {
+  .subsection-rest td.body,
+  .subsection-javascript td.type,
+  .subsection-javascript td.body {
     color: #b1b1b1;
     font-style: italic;
   }
 
   .subsection-rest td.name,
-  .subsection-rest td.description {
+  .subsection-rest td.description,
+  .subsection-javascript td.name,
+  .subsection-javascript td.description {
     width: 40%;
   }
 
   .subsection-rest td.type,
-  .subsection-rest td.required {
+  .subsection-rest td.required,
+  .subsection-javascript td.type,
+  .subsection-javascript td.required {
     width: 10%;
   }
 
-  .subsection-rest tr.example-response td {
+  .subsection-rest tr.example-response td,
+  .subsection-javascript tr.example-response td {
     border: 0;
   }
 
-  .subsection-rest .table td.name {
+  .subsection-rest .table td.name,
+  .subsection-javascript .table td.name {
     white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
@@ -256,7 +272,8 @@
     white-space: normal;
   }
 
-  .section-reference.subsection-rest pre {
+  .section-reference.subsection-rest pre,
+  .section-reference.subsection-javascript pre {
     background: none;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -265,7 +282,8 @@
     padding: 0;
   }
 
-  .subsection-rest pre code {
+  .subsection-rest pre code,
+  .subsection-javascript pre code {
     white-space: pre-wrap;       /* CSS 3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
