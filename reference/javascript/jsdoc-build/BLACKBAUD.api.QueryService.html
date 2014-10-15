@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: QueryService</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: QueryService</h1>
+
+    
+
+
+
+<section>
+
+<header>
+    <h2>
+    QueryService
+    </h2>
+    
+        <div class="class-description">BLACKBAUD.api.QueryService Provides methods for retrieving query execution results from the CRM using calls to the BBIS REST services.</div>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+<dt>
+    <h4 class="name" id="QueryService"><span class="type-signature"></span>new QueryService<span class="signature">(options)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object literal containing one or more of the following optional properties:
+<ul>
+<li><tt>url</tt> : The URL of the BBIS site from which the data will be retrieved. This value is optional when accessed from a BBIS page. The default value will be the BBIS URL of the current page.</li>
+<li><tt>crossDomain</tt> : Indicates the BBIS url specified is from a separate domain than the current page. When True, the class will handle the complexities of making cross domain requests to retrieve data. The default value is False.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="API.js.html">API.js</a>, <a href="API.js.html#line249">line 249</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="getResults"><span class="type-signature"></span>getResults<span class="signature">(queryId, successCallback, failureCallback, filters)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Returns the result of executing the specified, published query. The query is executed as
+the last user to save the query. The results are cached and may be up to 10 minutes old. The
+results are limited to 5000 rows.
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>queryId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The Id of a query whose results should be returned.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds. The function
+will be passed an object with the following properties:
+<ul>
+<li><tt>Fields</tt> : An array of objects describing the fields returned from the query. The objects
+have have the following properties:
+<ul>
+<li><tt>Name</tt> : The name of the column in the query.</li>
+<li><tt>Caption</tt> : The caption of the column defined in the query.</li>
+</ul>
+</li>
+<li><tt>Rows</tt> : An array of objects describing the rows returned from the query. The objects
+have have the following properties:
+<ul>
+<li><tt>Values</tt> : An array of the values returned for the row. The values are in the same order as the array of fields.</li>
+</ul>
+</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of the filters to filter the results to rows that contain the
+specified value in the specified column. When specifying a column, use the name that is found
+in the query response. Depending on the type of column being filtered, the results may filter to rows
+that exactly match the specified value instead of those that contain the specified value. Summary
+columns such as MAX, MIN, and COUNT cannot be used as filters and will be ignored. The array should
+contain objects with the following properties:
+<ul>
+<li><tt>columnName</tt> : The name of the column that should be used to filter the results.</li>
+<li><tt>value</tt> : The value that the specified column should be filtered by.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="API.js.html">API.js</a>, <a href="API.js.html#line304">line 304</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="BLACKBAUD.api.CodeTableService.html">CodeTableService</a></li><li><a href="BLACKBAUD.api.CountryService.html">CountryService</a></li><li><a href="BLACKBAUD.api.DonationService.html">DonationService</a></li><li><a href="BLACKBAUD.api.ImageService.html">ImageService</a></li><li><a href="BLACKBAUD.api.QueryService.html">QueryService</a></li><li><a href="BLACKBAUD.api.UserService.html">UserService</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Wed Oct 15 2014 10:22:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
