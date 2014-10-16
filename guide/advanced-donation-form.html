@@ -22,13 +22,18 @@ layout: default
 {% highlight javascript linenos %}
 
 <script>
+// No need to clutter that global namespace
 (function($) {
   
+  // Let's make sure the DOM is ready
   $(function() {
     
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService();
+    
+    // Attach our event listener to the donate button
     $('.btn-donate').click(function(e) {
       e.preventDefault();    
-      var ds = new BLACKBAUD.api.DonationService();
       ds.CreateDonation();
     });
     
