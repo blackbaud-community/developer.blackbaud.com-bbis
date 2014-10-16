@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<h2>Advanced Donation Form</h2>
+
+<p>The Advanced Donation Form Part and accompanying REST APIs were released in version 3.1 of BBIS.  They allow completely custom interfaces to be created for the donation experience, relaying the necessary information to the backend via the REST API or JavaScript SDK.</p>
+
+<p>For a complete list of possible options, be sure to visit the technical reference for more information.</p>
+
+<h3>Setup</h3>
+<p>All the examples below expect a page with a configured instance of the Advanced Donation Form Part on it.  Selecting</p>
+
+<h3>Example 1 - Barebones</h3>
+
+<p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields.</p>
+
+<h3>Example 2 - Barebones using the Payment 2.0 Part</h3>
+
+<p>This example becomes even simpler, as many of the required fields from example 1 are no longer applicable.  For example, all the donor information is collected on the Payment 2.0 Part, so there's no need for us to collect it here.</p>
+
+{% highlight javascript linenos %}
+
+<script>
+(function($) {
+  
+  $(function() {
+    
+    $('.btn-donate').click(function(e) {
+      e.preventDefault();    
+      var ds = new BLACKBAUD.api.DonationService();
+      ds.CreateDonation();
+    });
+    
+  });
+}(jQuery))
+</script>
+
+<input type="text" placeholder="Enter Amount" />
+<button class="btn-donate">Donate</button>
+
+{% endhighlight %}
+
+<h3>Example 3 - Recurrence + Tribute </h3>
+<h3>Example 4 - Recurrent + Tribute using the Payment 2.0 Part</h3>

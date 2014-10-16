@@ -1,6 +1,6 @@
 ### Current Documentation Structure
 
-  - Custom Content Parts
+  - Custom Content Parts <span class="label label-success">Success</span>
     - Overview
     - Hello World
   - Website Customizations

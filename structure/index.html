@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% capture current %}{% include_relative current.md %}{% endcapture %}
+{% capture proposed %}{% include_relative proposed.md %}{% endcapture %}
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#current" role="tab" data-toggle="tab">Current</a></li>
+  <li><a href="#proposed" role="tab" data-toggle="tab">Proposed</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="current">{{ current | markdownify }}</div>
+  <div class="tab-pane" id="proposed">{{ proposed | markdownify }}</div>
+</div>
