@@ -263,6 +263,10 @@
     border: 0;
   }
 
+  .subsection-javascript .table {
+    margin-bottom: 60px;
+  }
+
   .subsection-rest .table td.name,
   .subsection-javascript .table td.name {
     white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
