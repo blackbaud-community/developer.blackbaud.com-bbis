@@ -243,10 +243,12 @@
   }
 
   .subsection-rest td.name,
-  .subsection-rest td.description,
-  .subsection-javascript td.name,
-  .subsection-javascript td.description {
+  .subsection-rest td.description {
     width: 40%;
+  }
+
+  .subsection-javascript td.description {
+    width: 70%;
   }
 
   .subsection-rest td.type,
