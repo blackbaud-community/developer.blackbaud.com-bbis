@@ -297,6 +297,24 @@
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
   }
 
+  .gist {
+    margin-bottom: 35px;
+  }
+
+  .gist .gist-file {
+    border-top: 0 !important;
+  }
+
+  .gist pre,
+  .gist code {
+    font: inherit;
+    white-space: pre;
+  }
+
+  ul.nav-tabs {
+    margin-top: 35px;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - SANDCASTLE
