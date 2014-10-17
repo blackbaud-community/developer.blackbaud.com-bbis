@@ -1,4 +1,5 @@
 <ul class="nav nav-pills nav-stacked nav-sidebar">
+  {% include sidebar-top.html %}
   <li>
     <a href="#getting-started">Getting Started</a>
   </li>
@@ -19,10 +20,6 @@
       </li>
     </ul>
   </li>
-  <li class="back-to-top">
-    <a href="#top">
-      <span class="sr-only">Back to Top</span>
-      <i class="fa fa-chevron-circle-up"></i>
-    </a>
-  </li>
+  <li class="divider"></li>
+  {% include sidebar-back-to-top.html %}
 </ul>

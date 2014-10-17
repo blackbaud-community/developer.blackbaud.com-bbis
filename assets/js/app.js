@@ -9,7 +9,7 @@
           sidebarNav = $('.nav-sidebar'),
           content = $('.content-wrapper'),
           contentToggle = content.data('toggle'),
-          isReference = body.hasClass('subsection-bbncextensions');
+          isSandcastle = body.hasClass('subsection-bbncextensions');
 
       // Trigger prev carousel slide
       $('.carousel-prev').click(function(e) {
@@ -24,7 +24,7 @@
       });
       
       // These only happen if there's a sidebar and it's not the technical reference.
-      if (sidebar.length && !isReference) {
+      if (sidebar.length && !isSandcastle) {
         
         // Initiate affix
         sidebarNav.affix({
@@ -57,7 +57,7 @@
       }
       
       // These only happen on the technical reference (BBNCExtensions)
-      if (isReference) {
+      if (isSandcastle) {
         
         var url = window.location.pathname,
             file = url.substring(url.lastIndexOf('/') + 1),

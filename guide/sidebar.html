@@ -1,6 +1,11 @@
 <ul class="nav nav-pills nav-stacked nav-sidebar">
-  <li><a href="#custom-content-parts">Custom Content Parts</a>
+  {% include sidebar-top.html %}
+  <li>
+    <a href="#custom-content-parts">Custom Content Parts</a>
     <ul class="nav">
+      <li>
+        <a href="#custom-content-parts-setup">Setup</a>
+      </li>
       <li>
         <a href="#hello-world">Hello World</a>
       </li>
@@ -12,10 +17,11 @@
       </li>
     </ul>
   </li>
-  <li><a href="#custom-framework-parts">Custom Framework Parts</a>
+  <li>
+    <a href="#custom-framework-parts">Custom Framework Parts</a>
     <ul class="nav">
       <li>
-        <a href="#setup">Setup</a>
+        <a href="#custom-framework-parts-setup">Setup</a>
       </li>
       <li>
         <a href="#custom-pledge-form">Custom Pledge Form</a>
@@ -31,7 +37,8 @@
       </li>
     </ul>
   </li>
-  <li><a href="#how-to">How-to Developer Guides</a>
+  <li>
+    <a href="#how-to">How-to Developer Guides</a>
     <ul class="nav">
       <li>
         <a href="#">Advanced Donation Form</a>
