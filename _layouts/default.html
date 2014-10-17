@@ -9,11 +9,7 @@ layout: base
 
     {% if page.sidebar != "" %}
 
-      <div class="col-md-9 col-md-push-3">
-        {{ content }}
-      </div>  <!-- .col-md-9 -->
-
-      <div class="col-md-3 col-md-pull-9 hidden-xs hidden-sm">
+      <div class="col-md-3 hidden-xs hidden-sm">
         <div class="sidebar">
           {% if page.sidebarRelative %}
             {% include_relative {{ page.sidebar }} %}
@@ -22,6 +18,10 @@ layout: base
           {% endif %}
         </div>
       </div>  <!-- .col-md-3 -->
+    
+      <div class="col-md-9">
+        {{ content }}
+      </div>  <!-- .col-md-9 -->
 
     {% else %}
 
