@@ -315,6 +315,27 @@
     margin-top: 35px;
   }
 
+  .nav-tabs > li.tab-download {
+    float: right;
+  }
+
+  .nav-tabs > li.tab-download > a {
+    padding: 0;
+  }
+
+  .nav-tabs > li.tab-download > a:hover,
+  .nav-tabs > li.tab-download > a:focus {
+    background: none;
+  }
+
+  .nav-tabs > li.tab-download > a i {
+    font-size: 30px;
+  }
+
+  .nav-tabs > li.tab-download .tooltip-inner {
+    white-space: nowrap;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - SANDCASTLE

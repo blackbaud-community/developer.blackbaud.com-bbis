@@ -23,8 +23,26 @@
         $('.carousel').trigger('next.owl.carousel');
       });
       
+      // These only happen on the technical reference (BBNCExtensions)
+      if (isSandcastle) {
+        
+        var url = window.location.pathname,
+            file = url.substring(url.lastIndexOf('/') + 1),
+            active = $('.section-reference .sidebar a[href="' + file + '"]');
+
+        // Make the sidebar trail visible
+        active.closest('li').addClass('active');
+        active.parents('ul').each(function() {
+          $(this).addClass('trail');
+        });
+        
+        // Set the default language - can be "vb"
+        try {
+          OnLoad('cs');
+        } catch (err) {}
+        
       // These only happen if there's a sidebar and it's not the technical reference.
-      if (sidebar.length && !isSandcastle) {
+      } else if (sidebar.length) {
         
         // Initiate affix
         sidebarNav.affix({
@@ -56,25 +74,8 @@
 
       }
       
-      // These only happen on the technical reference (BBNCExtensions)
-      if (isSandcastle) {
-        
-        var url = window.location.pathname,
-            file = url.substring(url.lastIndexOf('/') + 1),
-            active = $('.section-reference .sidebar a[href="' + file + '"]');
-
-        // Make the sidebar trail visible
-        active.closest('li').addClass('active');
-        active.parents('ul').each(function() {
-          $(this).addClass('trail');
-        });
-        
-        // Set the default language - can be "vb"
-        try {
-          OnLoad('cs');
-        } catch (err) {}
-        
-      }
+      // Initialize Tooltips
+      $('[data-toggle="tooltip"]').tooltip();
 
 	});
 
