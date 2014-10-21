@@ -6,13 +6,15 @@
 
 <h3>BBNCExtensions</h3>
 <ol>
-<li></li>
+  <li></li>
 </ol>
+
 <h3>REST API</h3>
 <ol>
-<li></li>
+  <li></li>
 </ol>
+
 <h3>JavaScript SDK</h3>
 <ol>
-<li></li>
+  <li></li>
 </ol>
