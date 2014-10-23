@@ -61,25 +61,30 @@
 * CAROUSEL
 * ========================================================================== 
 */
+  .carousel .slide {
+    font-size: 20px;
+  }
+
+  .carousel .slide h2 {
+    font-size: 40px;
+    padding-top: 60px;
+    text-transform: uppercase;
+  }
+
+  .carousel .slide img {
+    margin-top: 40px;
+  }
+
   .carousel .slide-00 {
     background-image: url(../img/highlights/schematic.jpg);
-    color: #000;
   }
 
   .carousel .slide-01 {
-    background-image: url(../img/highlights/467082919.jpg);
+    background-image: url(../img/carousel/example-04.jpg);
   }
 
   .carousel .slide-02 {
-    background-image: url(../img/highlights/467852587.jpg);
-  }
-
-  .carousel .slide-03 {
     background-image: url(../img/carousel/example-03.jpg);
-  }
-
-  .carousel .slide-04 {
-    background-image: url(../img/carousel/example-04.jpg);
   }
 
 /* 
@@ -183,6 +188,12 @@
 
   .content-latest-features .feature h3 {
     font-size: 22px; 
+  }
+  
+.content-latest-features .feature-split {
+    border-top: solid 1px #EFEFEF;
+    margin-top: 30px;
+    padding-top: 30px;
   }
 
 /* 
