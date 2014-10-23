@@ -62,15 +62,16 @@
 * ========================================================================== 
 */
   .carousel .slide-00 {
-    background-image: url(../img/carousel/example-00.jpg);
+    background-image: url(../img/highlights/178432036.jpg);
+    color: #000;
   }
 
   .carousel .slide-01 {
-    background-image: url(../img/carousel/example-01.jpg);
+    background-image: url(../img/highlights/467082919.jpg);
   }
 
   .carousel .slide-02 {
-    background-image: url(../img/carousel/example-02.jpg);
+    background-image: url(../img/highlights/467852587.jpg);
   }
 
   .carousel .slide-03 {
