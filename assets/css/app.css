@@ -61,22 +61,23 @@
 * CAROUSEL
 * ========================================================================== 
 */
-  .carousel .slide {
+  .carousel .slide p {
     font-size: 20px;
+    padding: 20px 0;
   }
 
   .carousel .slide h2 {
     font-size: 40px;
-    padding-top: 60px;
+    margin-top: 60px;
     text-transform: uppercase;
   }
 
   .carousel .slide img {
-    margin-top: 40px;
+    margin-top: 75px;
   }
 
   .carousel .slide-00 {
-    background-image: url(../img/highlights/schematic.jpg);
+    background-image: url(../img/highlights/schematic_wide.jpg);
   }
 
   .carousel .slide-01 {
