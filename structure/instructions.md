@@ -6,17 +6,38 @@
 
 <h3>BBNCExtensions</h3>
 <ol>
+  <li>
+    Check out the following projects from TFS:
+    <ul>
+      <li>$\Documentation\Technical_Training\Sandcastle</li>
+      <li>$\Documentation\Technical_Training\DocumentationUtilities\SandcastleToJekyll</li>
+      <li>$\Infinity\DEV\CRM_Integration\ClassicCMS\Web\Content</li>
+    </ul>
+  </li>
+  <li>In the Sandcastle folder, open BBNCExtensions.shfbproj.  You'll notice that the three referenced files are pointing to the ClassCMS checkout, which if you'er following standard UserEd folder structures, should be C:\Team_Projects\Inifinty\DEV..</li>
+  <li>You shouldn't need to adjust any of the settings, and instead can simply build the output by pressing CTRL-SHIFT-B.  This command builds the HTML version in the BBNCExtensionsOutput directory of the Sandcastle folder.</li>
+  <li>Open the SandcastleToJekyll Visual Studio solution.</li>
   <li></li>
 </ol>
 
 <h3>REST API</h3>
 <ol>
-  <li></li>
+  <li>
+    Check out the following projects from TFS:
+    <ul>
+      <li>$\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll</li>
+    </ul>
+  </li>
 </ol>
 
 <h3>JavaScript SDK</h3>
 <ol>
-  <li></li>
+  <li>
+    Check out the following projects from TFS:
+    <ul>
+      <li>$\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll</li>
+    </ul>
+  </li>
 </ol>
 
 <h1>Locally Testing Jekyll</h1>
