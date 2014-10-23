@@ -6,7 +6,7 @@ gems:
   - jekyll-redirect-from
 
 css:
-  - url: //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
+  - url: //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css
     base: false
     
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
