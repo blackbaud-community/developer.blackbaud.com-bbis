@@ -20,7 +20,7 @@
       var carousel = $('.carousel').owlCarousel({
         featureWaitForAnimation: false,
         autoplayHoverPause: true,
-        autoplay: true,
+        autoplay: false,
         loop: true,
         items: 1,
         animateOut: 'fadeOut'

@@ -64,16 +64,44 @@
   .carousel .slide p {
     font-size: 20px;
     padding: 20px 0;
+    text-shadow: 1px 1px 1px #31393d;
+  }
+
+  .carousel .slide p a {
+    text-shadow: none;
   }
 
   .carousel .slide h2 {
     font-size: 40px;
     margin-top: 60px;
     text-transform: uppercase;
+    text-shadow: 1px 1px 1px #31393d;
   }
 
-  .carousel .slide img {
+  .carousel .slide img.img-thumbnail,
+  .carousel .slide .logo-group {
     margin-top: 75px;
+  }
+
+  .carousel .slide .logo-group {
+    color: #DDD;
+  }
+
+  .carousel .slide .logo-group img {
+    margin: 7px;
+    width: 75px;
+  }
+
+  .carousel .slide .logo-group .fa-heart {
+    color: #FF0000;
+    font-size: 50px;
+    padding: 24px 15px 0 15px;
+    vertical-align: top;
+  }
+
+  .carousel .slide .logo-group .fa-github {
+    color: #4183c4;
+    padding: 0 7px;
   }
 
   .carousel .slide-00 {
@@ -191,7 +219,7 @@
     font-size: 22px; 
   }
   
-.content-latest-features .feature-split {
+  .content-latest-features .feature-split {
     border-top: solid 1px #EFEFEF;
     margin-top: 30px;
     padding-top: 30px;
