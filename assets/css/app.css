@@ -226,6 +226,10 @@
     padding-top: 30px;
   }
 
+  .alert .label {
+    font-weight: normal;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - REST

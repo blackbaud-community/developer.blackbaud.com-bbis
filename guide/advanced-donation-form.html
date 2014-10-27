@@ -1,106 +1,116 @@
-<h2 id="advanced-donation-form-setup">Advanced Donation Form</h2>
+<div id="{{ include.title }}">
+  <h2 id="{{ include.title }}-setup">Advanced Donation Form</h2>
 
-<p>The Advanced Donation Form Part and accompanying REST APIs were released in version 3.1 of BBIS.  They allow completely custom interfaces to be created for the donation experience, relaying the necessary information to the backend via the REST API or JavaScript SDK.  For a complete list of possible options, be sure to visit the <a href="{{ site.baseurl }}/reference/rest/#donationapi">technical reference</a> for more information.</p>
+  <p>The Advanced Donation Form Part and accompanying REST APIs were released in version 3.1 of BBIS.  They allow completely custom interfaces to be created for the donation experience, relaying the necessary information to the backend via the REST API or JavaScript SDK.  For a complete list of possible options, be sure to visit the <a href="{{ site.baseurl }}/reference/rest/#donationapi">technical reference</a> for more information.</p>
 
-<p>All the examples below expect a page with a configured instance of the Advanced Donation Form Part on it.  It's also important the examples below are meant to be as simple and straight-forward as possible.  In a real-world scenario, we highly suggestion following standard web practices for form design, including labels for accessibility, and client-side data validation.</p>
+  <p>All the examples below expect a page with a configured instance of the Advanced Donation Form Part on it.  It's also important the examples below are meant to be as simple and straight-forward as possible.  In a real-world scenario, we highly suggestion following standard web practices for form design, including labels for accessibility, and client-side data validation.</p>
 
-<h3 id="advanced-donation-form-example-1">
-  Example 1 - Barebones 
-</h3>
+  <p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID.  In the examples below, we dynamically find this ID.  You could hard-code this value if you prefer.  The technique below assumes there's only one Advanced Donation Form Part per page.</p>
 
-<p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields.  For this example we've included no styling or error handling, other than displaying a message in the console.  I've also hard-coded the designation and amount fields.</p>
+  <h3 id="{{ include.title }}-example-1">
+    Example 1 - Barebones 
+  </h3>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#example-1-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#example-1-js" data-toggle="tab">JS</a></li>
-  {% include download-on-github.html repo="BBIS-ADF-Example-1" %}
-</ul>
+  <p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields.  For this example we've included no styling or error handling, other than displaying a message in the console.  I've also hard-coded the designation and amount fields.</p>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="example-1-html">
-    {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.html %}
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-1-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-1-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Example-1" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-1-html">
+      {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.html %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-1-js">
+      {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.js %}
+    </div>
   </div>
-  <div class="tab-pane" id="example-1-js">
-    {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.js %}
+
+  <h3 id="{{ include.title }}-example-2">
+    Example 2 - Barebones using the Payment 2.0 Part
+  </h3>
+
+  <p>When using the Payment 2.0 Part, the information required is reduced.  For example, Donor information is should no longer be provided.  Again, we're not including any styling or error handling, but I have introduced the ability to select a donation amount and designation.</p>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-2-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-2-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Example-2" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-2-html">
+      {% gist bbBobbyEarl/b91b3b52bd0d613d29fa advanced-donation-form-example-2.html %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-2-js">
+      {% gist bbBobbyEarl/b91b3b52bd0d613d29fa advanced-donation-form-example-2.js %}
+    </div>
   </div>
-</div>
 
-<h3 id="advanced-donation-form-example-2">
-  Example 2 - Barebones using the Payment 2.0 Part
-</h3>
+  <p class="alert alert-info"><span class="label label-info">Note</span> The <a href="{{ site.baseurl }}/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="{{ site.baseurl }}/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p>
 
-<p>When using the Payment 2.0 Part, the information required is reduced.  For example, Donor information is should no longer be provided.  Again, we're not including any styling or error handling, but I have introduced the ability to select a donation amount and designation.</p>
+  <h3 id="{{ include.title }}-example-3">Example 3 - Recurrence + Tribute </h3>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#example-2-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#example-2-js" data-toggle="tab">JS</a></li>
-  {% include download-on-github.html repo="BBIS-ADF-Example-2" %}
-</ul>
+  <p>In this example, we're back to "proceeding directly to payment," as opposed to using the Payment 2.0 Part.  This means we'll need to collect the donor information.  I've also introduced the ability to add a tribute as well as make the gift recurring.</p>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="example-2-html">
-    {% gist bbBobbyEarl/b91b3b52bd0d613d29fa advanced-donation-form-example-2.html %}
+  <p>Using recurrence with the Advanced Donation Form can be a little tricky, in that the fields which are required, differs depending on the frequency of the recurrence.  For example, the Month field is only valid and required if the Frequency field is set to Annually (4).</p>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-3-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-3-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Example-3" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-3-html">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-3.html %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-3-js">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-3.js %}
+    </div>
   </div>
-  <div class="tab-pane" id="example-2-js">
-    {% gist bbBobbyEarl/b91b3b52bd0d613d29fa advanced-donation-form-example-2.js %}
+
+  <h3 id="{{ include.title }}-example-4">Example 4 - Using Blackbaud Secure Payments</h3>
+
+  <p>Integration with the Blackbaud Secure Payments service has been updated in the Advanced Donation Form.</p>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-4-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-4-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Example-4" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-4-html">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-4.html %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-4-js">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-4.js %}
+    </div>
   </div>
-</div>
 
-<p class="alert alert-info"><span class="label label-info">Note</span> The <a href="{{ site.baseurl }}/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="{{ site.baseurl }}/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p>
+  <h3 id="{{ include.title }}-example-5">Example 5 - Styling + Error Handling + API Integration</h3>
 
-<h3 id="advanced-donation-form-example-3">Example 3 - Recurrence + Tribute </h3>
+  <p>This last example is meant to show a more realistic real-world example of the Advanced Donation Form API, including all the necessary error handling and styling.  This example also incorporates the use of the <a href="{{ site.baseurl }}/reference/javascript/#countryservice">CountryService</a>, which is the javascript wrapper for the <a href="{{ site.baseurl}}/reference/rest/#countryapi">Country REST API endpoint</a>.</p>
 
-<p>In this example, we're back to "proceeding directly to payment," as opposed to using the Payment 2.0 Part.  This means we'll need to collect the donor information.  I've also introduced the ability to add a tribute as well as make the gift recurring.</p>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-5-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-5-js" data-toggle="tab">JS</a></li>
+    <li><a href="#{{ include.title }}-example-5-css" data-toggle="tab">CSS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Example-5" %}
+  </ul>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#example-3-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#example-3-js" data-toggle="tab">JS</a></li>
-  {% include download-on-github.html repo="BBIS-ADF-Example-3" %}
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="example-3-html">
-    {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-3.html %}
-  </div>
-  <div class="tab-pane" id="example-3-js">
-    {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-3.js %}
-  </div>
-</div>
-
-<h3 id="advanced-donation-form-example-4">Example 4 - Using Blackbaud Secure Payments</h3>
-
-<p>Integration with the Blackbaud Secure Payments service has been updated in the Advanced Donation Form.</p>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#example-4-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#example-4-js" data-toggle="tab">JS</a></li>
-  {% include download-on-github.html repo="BBIS-ADF-Example-4" %}
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="example-4-html">
-    {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-4.html %}
-  </div>
-  <div class="tab-pane" id="example-4-js">
-    {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-4.js %}
-  </div>
-</div>
-
-<h3 id="advanced-donation-form-example-5">Example 5 - Styling + Error Handling + API Integration</h3>
-
-<p>This last example is meant to show a more realistic real-world example of the Advanced Donation Form API, including all the necessary error handling and styling.  This example also incorporates the use of the <a href="{{ site.baseurl }}/reference/javascript/#countryservice">CountryService</a>, which is the javascript wrapper for the <a href="{{ site.baseurl}}/reference/rest/#countryapi">Country REST API endpoint</a>.</p>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#example-5-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#example-5-js" data-toggle="tab">JS</a></li>
-  {% include download-on-github.html repo="BBIS-ADF-Example-5" %}
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="example-5-html">
-    {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.html %}
-  </div>
-  <div class="tab-pane" id="example-5-js">
-    {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.js %}
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-5-html">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.html %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-5-js">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.js %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-5-css">
+      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.css %}
+    </div>
   </div>
 </div>

@@ -3,16 +3,6 @@ sidebar: sidebar.html
 sidebarRelative: true
 ---
 
-<h1 id="custom-content-parts">Developer Guide</h1><p id="custom-content-parts-setup">You can create part types which use your custom JavaScript and HTML. Parts based on these types are called content parts.</p>
-
-<p>Content parts are one of two types of custom parts in Blackbaud Internet Solutions. To create custom content parts, you need access to Custom parts in Blackbaud Internet Solutions, the ability to create part types, parts, and to add parts to a page. Knowledge of HTML and JavaScript is required.</p>
-
-<p>Parts have a display component which appears to Blackbaud Internet Solutions users who view a part on a page. Parts also have an editor component which is accessible to administrators. The editor component is used to configure a part. For information about Parts, see the guides for Blackbaud Internet Solutions: Blackbaud Internet Solutions User Guides at a Glance.</p>
-
-<p>When you create a custom content part type, you can define the behavior for the display and the editor using HTML and JavaScript. You also specify a JavaScript to run when the part is loaded onto a page. What the JavaScript function does is up to you. For example, you can use the Initialize JavaScript function to initialize forms on either the display or the editor, display messages, and execute other functions. You can include other JavaScript libraries or make use of the existing reference to the jQuery library on the Blackbaud Internet Solutions page.</p>
-
-<p class="alert alert-info"><span class="label label-info">Note</span> To create custom framework parts, you also need access to Custom parts in Blackbaud Internet Solutions, the ability to create part types, parts, and to add parts to a page. Knowledge of ASP.NET, user controls, Visual Basic, HTML and JavaScript is required. You also need access to upload the custom framework parts files to the server which hosts Blackbaud Internet Solutions. Custom framework parts are not discussed in this section.</p>
-
-<div id="advanced-donation-form">
-  {% include_relative advanced-donation-form.html %}
-</div>
+{% include_relative advanced-donation-form.html title="advanced-donation-form" %}
+{% include_relative custom-content-parts.html title="custom-content-parts" %}
+{% include_relative custom-framework-parts.html title="custom-framework-parts" %}

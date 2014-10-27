@@ -22,8 +22,7 @@
         autoplayHoverPause: true,
         autoplay: false,
         loop: true,
-        items: 1,
-        animateOut: 'fadeOut'
+        items: 1
       });
 
 	});

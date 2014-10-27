@@ -43,8 +43,8 @@ js:
   - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
-    base: true
+  #- url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
+  #  base: true
     
   - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
     base: true
