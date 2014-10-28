@@ -1,7 +1,53 @@
 <div id="{{ include.title }}">
 
-  <h2 id="{{ include.title }}-setup">Custom Framework Parts</h2>
+  <h2 id="{{ include.title }}-overview">Custom Framework Parts</h2>
   
-  <p class="alert alert-info"><span class="label label-info">Note</span> To create custom framework parts, you also need access to Custom parts in Blackbaud Internet Solutions, the ability to create part types, parts, and to add parts to a page. Knowledge of ASP.NET, user controls, Visual Basic, HTML and JavaScript is required. You also need access to upload the custom framework parts files to the server which hosts Blackbaud Internet Solutions. Custom framework parts are not discussed in this section.</p>
+  <p class="alert alert-info"><span class="label label-info">Note</span> To create custom framework parts, you also need access to Custom parts in Blackbaud Internet Solutions, the ability to create part types, parts, and to add parts to a page. Knowledge of ASP.NET, user controls, Visual Basic, HTML and JavaScript is required. You also need access to upload the custom framework parts files to the server which hosts Blackbaud Internet Solutions.</p>
+  
+  <p>To define a custom part, you create two standard ASP.NET (.ascx) user controls. You create an Editor Control to edit the content for the part, and you create a Display Control to render that content on a web page.</p>
+  
+  <p><img src="img/AnatomyOfCustomPart.png" alt="Anatomy of a Custom Framework Part" class="img-responsive img-center" /></p>
+  
+  <p>Each user control is derived from a corresponding base class in the BBNCExtensions.dll assembly in the \bin folder of your installation directory. Each control inherits the API and Content properties that provide full access to the API and the content stored for your part.</p>
+
+  <p>The Editor Control creates a user interface in Blackbaud Internet Solutions to edit the part’s content, while the Display Control provides the code and markup to render the content on a web page. While the Blackbaud Internet Solutions framework offers the correct user control at the correct time, it is up to your user controls to share common knowledge about the type of content that they edit, store, and render.</p>
+  
+  <p class="alert alert-info"><span class="label label-info">Note</span>  The framework handles persisting simple content and providing it to each control when it is needed. This allows you to focus on custom functionality and leave the mechanics to the platform. However, if you include complex content from other systems or content that references other Blackbaud Internet Solutions (BBIS) tables, it is up to you to code the controls to manage the storage and retrieval of that content.</p>
+  
+  <p>Blackbaud Internet Solutions and your custom parts are built on the Microsoft ASP.NET platform, so your custom parts can take advantage of a wealth of standard APIs and services from the .NET framework, as well as a variety third-party .NET based components.</p>
+
+  <p>After you create custom parts, you use the Infinity SDK to store and retrieve data. You can access existing data in BBIS through the *.WebApiClient.dlls available in the SDK. And you can create Infinity tables and CRUD processes with the SDK and then generate your own *.WebApiClient.dlls to access these tables for your custom parts.</p>
+  
+  <h2>Using the Infinity SDK with Custom Framework Parts</h2>
+  
+  <h2>WebApiClient Assemblies to Access CRM Data</h2>
+  
+  <h2>The Web Service</h2>
+  
+  <h2>Built-in Transactions</h2>
+  
+  <h2>Debugging</h2>
+  
+  <h2 id="{{ include.title }}-setup">Setup</h2>
+  
+  <h2>Projects for Custom Framework Parts</h2>
+  
+  <h2>Create a Custom Framework Part Project</h2>
+  
+  <h2>Custom Framework Parts Creation</h2>
+  
+  <h2>Add a Custom Framework Part to a Parts Project</h2>
+  
+  <h2>Adjust the Post-build Events</h2>
+  
+  <h2>Copy the Files for a Custom Framework Part</h2>
+  
+  <h2>Test the Build nad Post-build Commands</h2>
+  
+  <h2>Add a Custom Framework Part to Blackbaud Internet Solutions</h2>
+  
+  <h2>Create a Part Based on a Custom Framework Part Type</h2>
+  
+  <h2>Change the Reference for BBNCExtensions.dll</h2>
 
 </div>

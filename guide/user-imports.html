@@ -1,0 +1,172 @@
+<div id="{{ include.title }}">
+
+  <h2 id="{{ include.title }}-overview">User Imports</h2>
+  
+  <p>In order to link users in Blackbaud Internet Solutions to constituents in Blackbaud CRM, a user import must run. Imports are scheduled items which are created in Users &amp; Security > User imports and scheduled in Administration > Sites and settings > Schedules.</p>
+  
+  <p><img src="img/LinkedUsersAndConstituents.png" alt="" class="img-responsive img-center" /></p>
+  
+  <p>Make sure you distinguish these:</p>
+  
+  <ul>
+    <li>Linking a user in Blackbaud Internet Solutions to a constituent in Blackbaud CRM</li>
+    <li>User Imports into Blackbaud Internet Solutions from Blackbaud Enterpise CRM constituent exports</li>
+    <li>Linking a user in Blackbaud Enterprise CRM to a constituent in Blackbaud CRM</li>
+    <li>Blackbaud CRM Administration > Application Users</li>
+    <li>Mapping a user in Blackbaud Internet Solutions to a user in Blackbaud CRM</li>
+    <li>Blackbaud CRM Web > User mapping</li>
+  </ul>
+  
+  <p>With user imports, the idea is to create Blackbaud Internet Solutions users using Blackbaud CRM constituent information. This is the first bullet above. Those Blackbaud Internet Solutions users are then linked to Blackbaud CRM constituents from the viewpoint of Blackbaud Internet Solutions.</p>
+  
+  <h2 id="{{ include.title }}-export">Export Constituents from Blackbaud CRM</h2>
+  
+  <p>This topic describes creating an ad-hoc query, export process, and a business process. For more information about these subjects, see the <a href="https://www.blackbaud.com/files/support/guides/enterprise/queryex.pdf" target="_blank">Query and Export Guide</a>.</p>
+  
+  <h3>Step 1 -  Create a query of constituents for which to create user accounts. For example:</h3>
+  
+  <ol>
+    <li>
+      <p>
+        In Blackbaud CRM, navigate to Analysis > Query.<br />
+        <img src="img/AnalysisQuery.png" alt="" class="img-responsive" /><br />
+        The <strong>Query</strong> page appears.<br />
+        <img src="img/QueryPage.png" alt="" class="img-responsive" />
+      </p>
+    </li>
+    <li>Click Add > Ad-hoc query. The Select a Source View screen appears.</li>
+    <li>
+      From Record type, select Constituent, select Constituents from the grid, and click OK.<br />
+      <img src="img/SelectASourceViewScreenConstituent.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      At a minimum, select these fields:
+      <ul>
+        <li>Name</li>
+        <li>Lookup ID</li>
+        <li>Email addresses / Email address</li>
+        <li>Last / Organization / Group / Household name</li>
+        <li>Middle name</li>
+        <li>First name</li>
+      </ul><br />
+      <img src="img/NewAdHocQuery_616x437.png" alt="" class="img-responsive" />
+    </li>
+    <li>From Set save options, enter a name.</li>
+    <li>Click Save.</li>
+  </ol>
+  
+  <h3>Step 2 -  Create an export for the query. For example:</h3>
+  
+  <ol>
+    <li>
+      <p>
+        In Blackbaud CRM, navigate to Administration > Export.<br />
+        <img src="img/AdministrationExport.png" alt="" class="img-responsive" /><br />
+        The Export page appears.<br />
+        <img src="img/ExportPage.png" alt="" class="img-responsive" />
+      </p>
+    </li>
+    <li>
+      Click Add. The Add export process screen appears.<br />
+      <img src="img/AddExportProcessScreen.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Enter a name and from Ad-hoc query, select the ad-hoc query created earlier.<br />
+      <img src="img/AddExportProcessScreenFilledIn.png" alt="" class="img-responsive" />      
+    </li>
+    <li>
+      Click Save. The export process is created.<br />
+      <img src="img/ExportProcess.png" alt="" class="img-responsive" />
+    </li>
+  </ol>
+  
+  <h3>Step 3 -  Schedule the export:</h3>
+  
+  <p>
+    You can manually export the data by clicking Start export.<br />
+    <img src="img/StartExport.png" alt="" class="img-responsive" /><br />
+      And, from Administration > Business Processes, you can also view the business process for the export process.<br />
+      <img src="img/AdministrationBusinessProcesses.png" alt="" class="img-responsive" />
+  </p>
+  
+  <h3>Step 4 -  Download the export</h3>
+  
+  <p>
+    There is a set of actions to download export output on the page for the export. The Blackbaud Internet Solutions user import expects a CSV file<br />
+    <img src="img/DownloadExport.png" alt="" class="img-responsive" />
+  </p>
+  
+  <h2 id="{{ include.title }}-create">Create a User Import</h2>
+  
+  <ol>
+    <li>
+      From Blackbaud Internet Solutions, navigate to Users & security.<br />
+      <img src="img/UsersAndSecurityUserImports_708x318.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click User imports. The User imports page appears.<br />
+      <img src="img/UserImportsScreen.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click New user import. The New User Import (Properties) screen appears.<br />
+      <img src="img/NewUserImportProperties.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Enter a name and description.<br />
+      <img src="img/NewUserImportNameDescription.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Next. User Import Wizard appears.<br />
+      <img src="img/UserImportWizard.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Choose File and browse to the CSV file of the constituent export from Blackbaud CRM.<br />
+      <img src="img/UserImportUploadFileSelected.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Upload. The Upload File tab appears.<br />
+      <img src="img/UploadFileTab_627x464.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Adjust the mappings and configure as desired.<br />
+      <div class="alert alert-info"><span class="label label-info">Note</span>  Since all of the fields are required, everything must have a mapping. In this example, Blackbaud Enterprise System Record ID corresponds to Lookup ID in Blackbaud CRM.</div>
+      <div class="alert alert-warning"><span class="label label-warning">Important</span>  Confirm that Lookup ID works for your setup. If not, you can use Sequence ID, which can be retrieved by a Transact-SQL query.</div>
+      <img src="img/AdjustUserImportMappings.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      <p>Click Preview import. A summary and list appear. The list contains rows with import data including exceptions.</p>
+      <p>Some possible exceptions are:</p>
+      <ol>
+        <li>This record is already linked to...</li>
+        <li>... Required field missing</li>
+      </ol>
+    </li>
+    <li>Click Import file.</li>
+    <li>Select scheduling options and email options.</li>
+    <li>Click Queue import. The import is queued. It appears in User Imports. From there, you can edit or delete the import.</li>
+  </ol>
+  
+  <h2 id="{{ include.title }}-schedule">Schedule User Imports</h2>
+  
+  <ol>
+    <li>From Blackbaud Internet Solutions, navigate to Administration.</li>
+    <li>
+      Click Sites &amp; settings.<br />
+      <img src="img/SitesAndSettings.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      For the website, click the Schedules tab on the Settings tab.<br />
+      <img src="img/SchedulesTab.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      From the Schedules tab, scroll to User imports.<br />
+      <img src="img/UserImportsSectionOnSchedulesTab.png" alt="" class="img-responsive" />
+    </li>
+    <li>Adjust the frequency as necessary.</li>
+    <li>
+      Scroll back up to the top and click Save.<br />
+      <img src="img/SettingsSave.png" alt="" class="img-responsive" />
+    </li>
+  </ol>
+  
+</div>
