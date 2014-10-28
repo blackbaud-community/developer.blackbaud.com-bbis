@@ -18,14 +18,14 @@
   
   <h2 id="{{ include.title }}-call">Call a Custom Handler</h2>
   
-  <p>You compile your project and deploy it to the \NetCommunity\bin folder of your installation directory. The URL for the custom handler uses the following format: <code>http://<your site>/components/custom.ashx?handler=<your assemblyName.typeName></code>
-To pass parameters to the handler, place them at the end of the URL: <code>http://<your site>/components/custom.ashx?handler=<your assemblyName.typeName>&foo=bar</code></p>
+  <p>You compile your project and deploy it to the \NetCommunity\bin folder of your installation directory. The URL for the custom handler uses the following format: <code>http://{your site}/components/custom.ashx?handler={your assemblyName.typeName}</code>
+To pass parameters to the handler, place them at the end of the URL: <code>http://{your site}/components/custom.ashx?handler={your assemblyName.typeName}&foo=bar</code></p>
 
 <p>The handler code can inspect the Context.Request.QueryString ("foo") item to get the value (“bar”). Consumers of your handler can also post form elements to your handler, in which case you look to Context.Request.Form ("foo") for that value.</p>
 
 <p>You can also create a part to supply the response to your the custom handler. For example, you can create a custom part with a text box on the part editor to allow you to edit the content for the response. You can use the API to get the content from the custom part because all custom handlers have access to the API. Here is a simple example:</p>
 
-{% highlight vb.net %}
+{% highlight vbnet %}
 
 'locate the FBML part that holds the fbml to return
 Dim oPart As FBMLContent
@@ -37,6 +37,6 @@ If oPart IsNot Nothing Then
   sResponse = oPart.FBML
 {% endhighlight %}
 
-    <p>In the sample code, an FBML custom part stores an FBMLContent object as its content. The handler supports a Query String parameter called partId to identify the particular instance of the custom FBML part get. So if the part ID is 616, the URL to call the handler would be: <code>http://your-domain.org/netcommunity/components/custom.ashx?handler=facebooksample.getfbml&partid=616</code>.</p>
+    <p>In the sample code, an FBML custom part stores an FBMLContent object as its content. The handler supports a Query String parameter called partId to identify the particular instance of the custom FBML part get. So if the part ID is 616, the URL to call the handler would be: <code>http://blackbaud.org/netcommunity/components/custom.ashx?handler=facebooksample.getfbml&partid=616</code>.</p>
   
 </div>

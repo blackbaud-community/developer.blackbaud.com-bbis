@@ -629,9 +629,20 @@
 */
 @media (min-width: 768px) and (max-width: 991px) {
 
+  /*
   .navbar-brand {
     padding-top: 18px;
     width: 215px;
+  }
+  */
+  
+  #bb-navbar {
+    padding-left: 0;
+  }
+  
+  #bb-navbar ul {
+    float: left !important;
+    padding-top: 10px;
   }
 
 }

@@ -20,6 +20,11 @@
             Getting Started
           </a>
         </li>
+        <li {% if section == 'code' %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/code/">
+            Code Samples
+          </a>
+        </li>
         <li {% if section == 'guide' %}class="active"{% endif %}>
           <a href="{{ site.baseurl }}/guide/">
             Developer Guide
@@ -30,7 +35,7 @@
             Technical Reference
           </a>
         </li>
-        <li>
+        <li {% if section == 'help' %}class="active"{% endif %}>
           <a href="{{ site.baseurl }}/help/">
             <i class="fa fa-question-circle hidden-xs"></i>
             <span class="visible-xs-inline">Help</span>
