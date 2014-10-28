@@ -15,13 +15,10 @@ css:
   - url: /assets/prism/prism.css
     base: true
 
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.carousel.min.css
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.css
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/assets/owl.theme.default.min.css
-    base: true
-    
-  - url: /assets/blackbaud-bootstrap-theme/lib/animate/animate.css
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.theme.css
     base: true
     
   - url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
@@ -40,11 +37,8 @@ js:
   - url: /assets/prism/prism.js
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.js
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.min.js
     base: true
-    
-  #- url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
-  #  base: true
     
   - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
     base: true

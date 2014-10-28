@@ -14,13 +14,13 @@
       // Trigger prev carousel slide
       $('.carousel-prev').click(function(e) {
         e.preventDefault();
-        $('.carousel').trigger('prev.owl.carousel');
+        $('.carousel').trigger('owl.prev');
       });
       
       // Trigger next carousel slide
       $('.carousel-next').click(function(e) {
         e.preventDefault();
-        $('.carousel').trigger('next.owl.carousel');
+        $('.carousel').trigger('owl.next');
       });
       
       // These only happen on the technical reference (BBNCExtensions)
