@@ -250,6 +250,10 @@
     margin: 0 auto;
   }
 
+  .section-help .input-group {
+    margin-bottom: 40px;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - REST
