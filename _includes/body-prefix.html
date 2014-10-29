@@ -20,11 +20,6 @@
             Getting Started
           </a>
         </li>
-        <li {% if section == 'code' %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/code/">
-            Code Samples
-          </a>
-        </li>
         <li {% if section == 'guide' %}class="active"{% endif %}>
           <a href="{{ site.baseurl }}/guide/">
             Developer Guide
@@ -33,6 +28,11 @@
         <li {% if section == 'reference' %}class="active"{% endif %}>
           <a href="{{ site.baseurl }}/reference/">
             Technical Reference
+          </a>
+        </li>
+        <li class="{% if section == 'code' %}active{% endif %}">
+          <a href="{{ site.baseurl }}/code/">
+            Code Samples
           </a>
         </li>
         <li {% if section == 'help' %}class="active"{% endif %}>
