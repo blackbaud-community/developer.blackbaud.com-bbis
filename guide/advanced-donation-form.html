@@ -5,13 +5,15 @@
 
   <p>All the examples below expect a page with a configured instance of the Advanced Donation Form Part on it.  It's also important the examples below are meant to be as simple and straight-forward as possible.  In a real-world scenario, we highly suggestion following standard web practices for form design, including labels for accessibility, and client-side data validation.</p>
 
-  <p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID.  In the examples below, we dynamically find this ID.  You could hard-code this value if you prefer.  The technique below assumes there's only one Advanced Donation Form Part per page.</p>
+  <p>For all the Advanced Donation Form examples, I've split the grouped the content by language - HTML, CSS, or JS; however, when using the code in the Advanced Donation Form Part, the code is combined into a single textarea.  Please be certain to wrap the content with appropriate <code>&lt;script&gt;</code> or <code>&lt;style&gt;</code> tag.</p>
 
   <h3 id="{{ include.title }}-example-1">
     Example 1 - Barebones 
   </h3>
 
   <p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields.  For this example we've included no styling or error handling, other than displaying a message in the console.  I've also hard-coded the designation and amount fields.</p>
+  
+  <p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID.  In the examples below, we dynamically find this ID.  You could hard-code this value if you prefer.  The technique below assumes there's only one Advanced Donation Form Part per page.</p>
 
   <ul class="nav nav-tabs">
     <li class="active"><a href="#{{ include.title }}-example-1-html" data-toggle="tab">HTML</a></li>
@@ -21,7 +23,37 @@
 
   <div class="tab-content">
     <div class="tab-pane active" id="{{ include.title }}-example-1-html">
-      {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.html %}
+      
+    {% highlight html+smarty %}
+<dl>
+  <dt>First Name</dt>
+  <dd><input type="text" id="firstname" /></dd>
+  
+  <dt>Last Name</dt>
+  <dd><input type="text" id="lastname" /></dd>
+  
+  <dt>Email</dt>
+  <dd><input type="text" id="email" /></dd>
+  
+  <dt>Address</dt>
+  <dd><textarea id="address"></textarea></dd>
+  
+  <dt>City</dt>
+  <dd><input type="text" id="city" /></dd>
+  
+  <dt>State</dt>
+  <dd><input type="text" id="state" /></dd>
+  
+  <dt>Zip</dt>
+  <dd><input type="text" id="zip" /></dd>
+  
+  <dt>Country</dt>
+  <dd><input type="text" id="country" /></dd>
+</dl>
+
+<p><button class="btn-donate">Donate</button></p>
+    {% endhighlight %}
+      
     </div>
     <div class="tab-pane" id="{{ include.title }}-example-1-js">
       {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.js %}
