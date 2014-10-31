@@ -59,3 +59,10 @@
   <li>Run the following:<code>jekyll serve --baseurl ''</code></li>
 </ol>
 
+<p>Below are a list of links regarding Jekyll deployment:</p>
+
+<ul>
+  <li><a href="https://help.github.com/articles/using-jekyll-plugins-with-github-pages/" target="_blank">Using Jekyll Plugins with GitHub Pages</a></li>
+  <li><a href="https://pages.github.com/versions/" target="_blank">GitHub Pages Version Dependency</a></li>
+</ul>
+

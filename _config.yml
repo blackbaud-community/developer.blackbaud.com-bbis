@@ -1,9 +1,10 @@
 title: BBIS Developer Documentation
 baseurl: /bbis
-highlighter: true
+highlighter: pygments
 permalink: /404.html
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 css:
   - url: //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css
@@ -11,9 +12,6 @@ css:
     
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
     base: false
-
-  - url: /assets/prism/prism.css
-    base: true
 
   - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.css
     base: true
@@ -23,7 +21,10 @@ css:
     
   - url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
     base: true
-    
+  
+  - url: /assets/css/syntax.css
+    base: true
+  
   - url: /assets/css/app.css
     base: true
 

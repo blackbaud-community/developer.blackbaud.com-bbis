@@ -1,3 +1,8 @@
+---
+---
+
+{% include topic-with-navigation.html %}
+
 <div id="{{ include.title }}">
   <h2 id="{{ include.title }}-setup">Advanced Donation Form</h2>
 
@@ -17,14 +22,15 @@
 
   <ul class="nav nav-tabs">
     <li class="active"><a href="#{{ include.title }}-example-1-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-1-gist" data-toggle="tab">Gist</a></li>
     <li><a href="#{{ include.title }}-example-1-js" data-toggle="tab">JS</a></li>
     {% include download-on-github.html repo="BBIS-ADF-Example-1" %}
   </ul>
 
   <div class="tab-content">
     <div class="tab-pane active" id="{{ include.title }}-example-1-html">
-      
-    {% highlight html+smarty %}
+    
+{% highlight html %}
 <dl>
   <dt>First Name</dt>
   <dd><input type="text" id="firstname" /></dd>
@@ -52,11 +58,67 @@
 </dl>
 
 <p><button class="btn-donate">Donate</button></p>
-    {% endhighlight %}
+{% endhighlight %}
       
     </div>
+    <div class="tab-pane" id="{{ include.title }}-example-1-gist">
+      {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.html %}
+    </div>
     <div class="tab-pane" id="{{ include.title }}-example-1-js">
-      {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.js %}
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+  
+  // Let's make sure the DOM is ready
+  $(function() {
+    
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService();
+    
+    // Create the donation object we'll send
+    var donation = {
+      MerchantAccountId: 'A9EBE81D-65A8-4BBF-8446-FB2ED0276209',
+      Donor: {
+        FirstName: $('#firstname').val(),
+        LastName: $('#lastname').val(),
+        Address: {
+          StreetAddress: $('#address').val(),
+          City: $('#city').val(),
+          State: $('#state').val(),
+          PostalCode: $('#zip').val(),
+          Country: $('#country').val()
+        }
+      },
+      Gift: {
+        PaymentMethod: 0,
+        Designations: [
+          {
+            Amount: 5.00,
+            DesignationId: '3439a5c7-9977-4f9c-ba11-fadfb8144d35'
+          }
+        ]
+      }
+    };
+    
+    // Create our success handler
+    var success = function(returnedDonation) {
+      console.log(returnedDonation);
+    };
+    
+    // Create our error handler
+    var error = function(returnedErrors) {
+      console.log('Error!');
+    };
+    
+    // Attach our event listener to the donate button
+    $('.btn-donate').click(function(e) {
+      e.preventDefault();    
+      ds.createDonation(donation, success, error);
+    });
+    
+  });
+}(jQuery));
+{% endhighlight %}
     </div>
   </div>
 

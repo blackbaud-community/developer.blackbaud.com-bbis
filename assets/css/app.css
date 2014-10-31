@@ -389,6 +389,15 @@
     white-space: pre;
   }
 
+  .highlight pre {
+    background: #FFF;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
   ul.nav-tabs {
     margin-top: 35px;
   }
