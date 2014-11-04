@@ -6,26 +6,18 @@ layout: default
 
 <p>Would you expect to find what you're looking for by any other way?</p>
 
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="What can I help you find?" />
-  <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Search</button>
-  </span>
-</div>
+<form method="get">
+  <div class="input-group input-group-lg">
+    <input type="text" class="form-control input-lg" placeholder="What can I help you find?" name="q" />
+    <span class="input-group-btn">
+      <button class="btn btn-default btn-lg" type="submit">Search</button>
+    </span>
+  </div>
+</form>
 
-<script>
-  (function() {
-    var cx = '009813282815841828002:useqpw2afw4';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
+<div class="search-results">
+  <gcse:searchresults-only></gcse:searchresults-only>
+</div>
 
 <div class="row">
   <div class="col-sm-4">
@@ -50,3 +42,15 @@ layout: default
   </div>
 </div>
 
+<script>
+  (function() {
+    var cx = '009813282815841828002:useqpw2afw4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>

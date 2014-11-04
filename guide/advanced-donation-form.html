@@ -1,8 +1,3 @@
----
----
-
-{% include topic-with-navigation.html %}
-
 <div id="{{ include.title }}">
   <h2 id="{{ include.title }}-setup">Advanced Donation Form</h2>
 
@@ -12,8 +7,8 @@
 
   <p>For all the Advanced Donation Form examples, I've split the grouped the content by language - HTML, CSS, or JS; however, when using the code in the Advanced Donation Form Part, the code is combined into a single textarea.  Please be certain to wrap the content with appropriate <code>&lt;script&gt;</code> or <code>&lt;style&gt;</code> tag.</p>
 
-  <h3 id="{{ include.title }}-example-1">
-    Example 1 - Barebones 
+  <h3 id="{{ include.title }}-example-barebones">
+    Barebones Example
   </h3>
 
   <p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields.  For this example we've included no styling or error handling, other than displaying a message in the console.  I've also hard-coded the designation and amount fields.</p>
@@ -21,14 +16,13 @@
   <p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID.  In the examples below, we dynamically find this ID.  You could hard-code this value if you prefer.  The technique below assumes there's only one Advanced Donation Form Part per page.</p>
 
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#{{ include.title }}-example-1-html" data-toggle="tab">HTML</a></li>
-    <li><a href="#{{ include.title }}-example-1-gist" data-toggle="tab">Gist</a></li>
-    <li><a href="#{{ include.title }}-example-1-js" data-toggle="tab">JS</a></li>
-    {% include download-on-github.html repo="BBIS-ADF-Example-1" %}
+    <li class="active"><a href="#{{ include.title }}-example-barebones-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-barebones-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Examples" %}
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="{{ include.title }}-example-1-html">
+    <div class="tab-pane active" id="{{ include.title }}-example-barebones-html">
     
 {% highlight html %}
 <dl>
@@ -61,11 +55,216 @@
 {% endhighlight %}
       
     </div>
-    <div class="tab-pane" id="{{ include.title }}-example-1-gist">
-      {% gist bbBobbyEarl/2cf9a060a4cec5ba8e9a advanced-donation-form-example-1.html %}
-    </div>
-    <div class="tab-pane" id="{{ include.title }}-example-1-js">
+    <div class="tab-pane" id="{{ include.title }}-example-barebones-js">
 {% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+  
+  // Let's make sure the DOM is ready
+  $(function() {
+    
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService();
+    
+    // Create the donation object we'll send
+    // In order to simplify our examples, some of this information is hard-coded.
+    var donation = {
+      MerchantAccountId: '00000000-0000-0000-0000-000000000000',
+      Gift: {
+        PaymentMethod: 0,
+        Designations: [
+          {
+            Amount: 5.00,
+            DesignationId: '00000000-0000-0000-0000-000000000000'
+          }
+        ]
+      }
+    };
+    
+    // Create our success handler
+    var success = function(returnedDonation) {
+      console.log(returnedDonation);
+    };
+    
+    // Create our error handler
+    var error = function(returnedErrors) {
+      console.log('Error!');
+    };
+    
+    // Attach our event listener to the donate button
+    $('.btn-donate').click(function(e) {
+      
+      // Stop the button from submitting the form
+      e.preventDefault(); 
+      
+      // Add the information our user has typed
+      donation.Donor = {
+        FirstName: $('#firstname').val(),
+        LastName: $('#lastname').val(),
+        Address: {
+          StreetAddress: $('#address').val(),
+          City: $('#city').val(),
+          State: $('#state').val(),
+          PostalCode: $('#zip').val(),
+          Country: $('#country').val()
+        }
+      };
+      
+      // Submit our donation
+      ds.createDonation(donation, success, error);
+    });
+    
+  });
+}(jQuery));
+{% endhighlight %}
+    </div>
+  </div>
+
+  <h3 id="{{ include.title }}-example-payment-2-0">Using the Payment 2.0 Part</h3>
+
+  <p>When using the Payment 2.0 Part, the information required is reduced.  For example, Donor information is should no longer be provided.  Again, we're not including any styling or error handling, but I have introduced the ability to select a donation amount and designation.</p>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-payment-2-0-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-payment-2-0-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Examples" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-payment-2-0-html">
+      {% highlight html %}
+<dl>
+  <dt>Amount</dt>
+  <dd>
+    <select id="amount">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+  </dd>
+  
+  <dt>Designation</dt>
+  <dd>
+    <select id="designation">
+      <option value="59AA3BDE-FD4C-4320-9DDF-F377DF640BCB">Example Designation 1</option>
+      <option value="712CD3D9-BE4D-43EE-B1D2-9C467C969713">Example Designation 2</option>
+    </select>
+  </dd>
+</dl>
+<p><button class="btn-donate">Donate</button></p>
+      {% endhighlight %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-payment-2-0-js">
+      {% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+  
+  // Let's make sure the DOM is ready
+  $(function() {
+    
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService();
+    
+    // Create the donation object we'll send
+    var donation = {
+      MerchantAccountId: 'A9EBE81D-65A8-4BBF-8446-FB2ED0276209',
+      Gift: {
+        PaymentMethod: 0,
+        Designations: [
+          {
+            Amount: $('#amount').val(),
+            DesignationId: $('#designation').val()
+          }
+        ]
+      }
+    };
+    
+    // Create our success handler
+    var success = function(returnedDonation) {
+      console.log(returnedDonation);
+    };
+    
+    // Create our error handler
+    var error = function(returnedErrors) {
+      console.log('Error!');
+    };
+    
+    // Attach our event listener to the donate button
+    $('.btn-donate').click(function(e) {
+      e.preventDefault();    
+      ds.createDonation(donation, success, error);
+    });
+    
+  });
+}(jQuery));
+      {% endhighlight %}
+    </div>
+  </div>
+
+  <p class="alert alert-info"><span class="label label-info">Note</span> The <a href="{{ site.baseurl }}/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="{{ site.baseurl }}/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p>
+
+  <h3 id="{{ include.title }}-example-recurrence-tribute">Recurrence + Tribute </h3>
+
+  <p>In this example, we're back to "proceeding directly to payment," as opposed to using the Payment 2.0 Part.  This means we'll need to collect the donor information.  I've also introduced the ability to add a tribute as well as make the gift recurring.</p>
+
+  <p>Using recurrence with the Advanced Donation Form can be a little tricky, in that the fields which are required, differs depending on the frequency of the recurrence.  For example, the Month field is only valid and required if the Frequency field is set to Annually (4).</p>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-recurrence-tribute-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-recurrence-tribute-js" data-toggle="tab">JS</a></li>
+    {% include download-on-github.html repo="BBIS-ADF-Examples" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-recurrence-tribute-html">
+      {% highlight html %}
+<dl>
+  <dt>First Name</dt>
+  <dd><input type="text" id="firstname" /></dd>
+  
+  <dt>Last Name</dt>
+  <dd><input type="text" id="lastname" /></dd>
+  
+  <dt>Email</dt>
+  <dd><input type="text" id="email" /></dd>
+  
+  <dt>Address</dt>
+  <dd><textarea id="address"></textarea></dd>
+  
+  <dt>City</dt>
+  <dd><input type="text" id="city" /></dd>
+  
+  <dt>State</dt>
+  <dd><input type="text" id="state" /></dd>
+  
+  <dt>Zip</dt>
+  <dd><input type="text" id="zip" /></dd>
+  
+  <dt>Country</dt>
+  <dd><input type="text" id="country" /></dd>
+</dl>
+
+<h2>Recurrence</h2>
+<dl>
+  <dt>Frequency</dt>
+  <dd>
+    <select id="frequency">
+      <option value="1">Weekly</option>
+      <option value="2">Monthly</option>
+      <option value="3">Quarterly</option>
+      <option value="4">Annually</option>
+    </select>
+  </dd>
+  
+  <dt>Start Date</dt>
+  <dd><input type="text" id="startDate" /></dd>
+</dl>
+
+<p><button class="btn-donate">Donate</button></p>
+      {% endhighlight %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-recurrence-tribute-js">
+      {% highlight js %}
 // Let's be good developers and not pollute the global namespace
 (function($) {
   
@@ -96,7 +295,11 @@
             Amount: 5.00,
             DesignationId: '3439a5c7-9977-4f9c-ba11-fadfb8144d35'
           }
-        ]
+        ],
+        Recurrence: {
+          Frequency: $('#frequency').val(),
+          StartDate: $('#startDate').val()
+        }
       }
     };
     
@@ -118,93 +321,54 @@
     
   });
 }(jQuery));
-{% endhighlight %}
+      {% endhighlight %}
     </div>
   </div>
 
-  <h3 id="{{ include.title }}-example-2">
-    Example 2 - Barebones using the Payment 2.0 Part
-  </h3>
-
-  <p>When using the Payment 2.0 Part, the information required is reduced.  For example, Donor information is should no longer be provided.  Again, we're not including any styling or error handling, but I have introduced the ability to select a donation amount and designation.</p>
-
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#{{ include.title }}-example-2-html" data-toggle="tab">HTML</a></li>
-    <li><a href="#{{ include.title }}-example-2-js" data-toggle="tab">JS</a></li>
-    {% include download-on-github.html repo="BBIS-ADF-Example-2" %}
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="{{ include.title }}-example-2-html">
-      {% gist bbBobbyEarl/b91b3b52bd0d613d29fa advanced-donation-form-example-2.html %}
-    </div>
-    <div class="tab-pane" id="{{ include.title }}-example-2-js">
-      {% gist bbBobbyEarl/b91b3b52bd0d613d29fa advanced-donation-form-example-2.js %}
-    </div>
-  </div>
-
-  <p class="alert alert-info"><span class="label label-info">Note</span> The <a href="{{ site.baseurl }}/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="{{ site.baseurl }}/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p>
-
-  <h3 id="{{ include.title }}-example-3">Example 3 - Recurrence + Tribute </h3>
-
-  <p>In this example, we're back to "proceeding directly to payment," as opposed to using the Payment 2.0 Part.  This means we'll need to collect the donor information.  I've also introduced the ability to add a tribute as well as make the gift recurring.</p>
-
-  <p>Using recurrence with the Advanced Donation Form can be a little tricky, in that the fields which are required, differs depending on the frequency of the recurrence.  For example, the Month field is only valid and required if the Frequency field is set to Annually (4).</p>
-
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#{{ include.title }}-example-3-html" data-toggle="tab">HTML</a></li>
-    <li><a href="#{{ include.title }}-example-3-js" data-toggle="tab">JS</a></li>
-    {% include download-on-github.html repo="BBIS-ADF-Example-3" %}
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="{{ include.title }}-example-3-html">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-3.html %}
-    </div>
-    <div class="tab-pane" id="{{ include.title }}-example-3-js">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-3.js %}
-    </div>
-  </div>
-
-  <h3 id="{{ include.title }}-example-4">Example 4 - Using Blackbaud Secure Payments</h3>
+  <h3 id="{{ include.title }}-example-secure-payments">Using Blackbaud Secure Payments</h3>
 
   <p>Integration with the Blackbaud Secure Payments service has been updated in the Advanced Donation Form.</p>
 
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#{{ include.title }}-example-4-html" data-toggle="tab">HTML</a></li>
-    <li><a href="#{{ include.title }}-example-4-js" data-toggle="tab">JS</a></li>
+    <li class="active"><a href="#{{ include.title }}-example-secure-payments-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-secure-payments-js" data-toggle="tab">JS</a></li>
     {% include download-on-github.html repo="BBIS-ADF-Example-4" %}
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="{{ include.title }}-example-4-html">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-4.html %}
+    <div class="tab-pane active" id="{{ include.title }}-example-secure-payments-html">
+      {% highlight html %}
+      {% endhighlight %}
     </div>
-    <div class="tab-pane" id="{{ include.title }}-example-4-js">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-4.js %}
+    <div class="tab-pane" id="{{ include.title }}-example-secure-payments-js">
+      {% highlight js %}
+      {% endhighlight %}
     </div>
   </div>
 
-  <h3 id="{{ include.title }}-example-5">Example 5 - Styling + Error Handling + API Integration</h3>
+  <h3 id="{{ include.title }}-example-complete">Styling + Error Handling + API Integration</h3>
 
   <p>This last example is meant to show a more realistic real-world example of the Advanced Donation Form API, including all the necessary error handling and styling.  This example also incorporates the use of the <a href="{{ site.baseurl }}/reference/javascript/#countryservice">CountryService</a>, which is the javascript wrapper for the <a href="{{ site.baseurl}}/reference/rest/#countryapi">Country REST API endpoint</a>.</p>
 
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#{{ include.title }}-example-5-html" data-toggle="tab">HTML</a></li>
-    <li><a href="#{{ include.title }}-example-5-js" data-toggle="tab">JS</a></li>
-    <li><a href="#{{ include.title }}-example-5-css" data-toggle="tab">CSS</a></li>
+    <li class="active"><a href="#{{ include.title }}-example-complete-html" data-toggle="tab">HTML</a></li>
+    <li><a href="#{{ include.title }}-example-complete-js" data-toggle="tab">JS</a></li>
+    <li><a href="#{{ include.title }}-example-complete-css" data-toggle="tab">CSS</a></li>
     {% include download-on-github.html repo="BBIS-ADF-Example-5" %}
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="{{ include.title }}-example-5-html">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.html %}
+    <div class="tab-pane active" id="{{ include.title }}-example-complete-html">
+      {% highlight html %}
+      {% endhighlight %}
     </div>
-    <div class="tab-pane" id="{{ include.title }}-example-5-js">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.js %}
+    <div class="tab-pane" id="{{ include.title }}-example-complete-js">
+      {% highlight js %}
+      {% endhighlight %}
     </div>
-    <div class="tab-pane" id="{{ include.title }}-example-5-css">
-      {% gist bbBobbyEarl/f66ece78687acf98c046 advanced-donation-form-example-5.css %}
+    <div class="tab-pane" id="{{ include.title }}-example-complete-css">
+      {% highlight css %}
+      {% endhighlight %}
     </div>
   </div>
 </div>

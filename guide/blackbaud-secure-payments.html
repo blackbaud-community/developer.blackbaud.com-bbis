@@ -1,6 +1,91 @@
 <div id="{{ include.title }}">
 
-  <h2 id="{{ include.title }}-overview">Blackbaud Secure Payments</h2>
+  <h2 id="{{ include.title }}-overview">Blackbaud Secure Payments Overview</h2>
   
+  <p>Blackbaud Internet Solutions includes new API endpoints that allow custom parts to use Blackbaud’s secure payment page. For example, a customization can pre-populate the Blackbaud secure payment page with biographical information entered on the custom part to improve data entry speed for donors. A customization can also store a donor’s credit card information.</p>
+
+  <p class="alert alert-info"><span class="label label-info">Note</span> The Blackbaud secure payment offers additional flexibility, but comes with additional complexity. If you host your own website, we strongly recommend only developers knowledgeable in all areas of customizations design this page. This includes using endpoints, objects, and the API, as well as writing HTML and JavaScript code. Users without this expertise should not design this page. For information about the API, see the SDK / API Guide. If Blackbaud hosts your website, customizations can only be completed by Blackbaud or one of our designated partners. For more information, please contact your Blackbaud Account Executive.
+</p>
   
+  <h3 id="{{ include.title }}-usage">Blackbaud Secure Payments Usage</h3>
+  
+  <p>The following end points are now available.</p>
+  
+  <ul>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/F_BBNCExtensions_API_DataObjects_SecureTransactionInfo_AmountAsCurrency.htm">
+        AmountAsCurrency
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/F_BBNCExtensions_API_DataObjects_SecureTransactionInfo_ApplicationIdentifier.htm">
+        ApplicationIdentifier
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/F_BBNCExtensions_API_DataObjects_SecureTransactionInfo_ApplicationPreferredName.htm">
+        ApplicationPreferredName
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/F_BBNCExtensions_API_DataObjects_SecureTransactionInfo_Note.htm">
+        Note
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/F_BBNCExtensions_API_DataObjects_SecureTransactionInfo_Source.htm">Source</a> As <a href="{{ site.baseurl }}/reference/bbncextensions/T_BBNCExtensions_Interfaces_eTransactionSource.htm">TransactionSource
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/F_BBNCExtensions_API_DataObjects_SecureTransactionInfo_VerificationMethod.htm">
+        VerificationMethod
+      </a> As <a href="{{ site.baseurl }}/reference/bbncextensions/T_BBNCExtensions_Interfaces_eVerificationMethod.htm">
+        VerificationMethod
+      </a>
+    </li>
+  </ul>
+
+  <p>In Blackbaud Internet Solutions 3.0 service pack 5, the following endpoints were added to support this functionality.</p>
+
+  <ul>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/T_BBNCExtensions_Parts_CustomPartBBSPEditorBase.htm">
+        BBNCExtensions.Parts.CustomPartBBSPEditorBase
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/T_BBNCExtensions_Parts_CustomPartBBSPDisplayBase.htm">
+        BBNCExtensions.Parts.CustomPartBBSPDisplayBase
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/reference/bbncextensions/T_BBNCExtensions_API_Utility_SecurePayments.htm">
+        BBNCExtensions.API.NetCommunity.Utility.SecurePayments
+      </a>
+      <ul>
+        <li>
+          <a href="{{ site.baseurl }}/reference/bbncextensions/ASDF">
+            StoreCardInfo
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/reference/bbncextensions/ASDF">
+            CardNotPresent
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/reference/bbncextensions/ASDF">
+            TransactionResponse
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/reference/bbncextensions/ASDF">
+            Redirect
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+  <p>For more information on using the Blackbaud Secure Payments API, check out the <a href="{{ site.baseurl }}/guide/#custom-framework-parts-example-secure-payments">Blackbaud Secure Payments</a> example.</p>
 </div>

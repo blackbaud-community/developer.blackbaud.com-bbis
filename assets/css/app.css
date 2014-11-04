@@ -254,13 +254,9 @@
     margin-bottom: 40px;
   }
 
-  .gsc-search-button,
-  .gsc-input {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+  .search-results {
+    min-height: 30px;
   }
-
 
 /* 
 * ==========================================================================
