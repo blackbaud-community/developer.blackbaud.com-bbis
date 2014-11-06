@@ -18,25 +18,107 @@ layout: blank
 </head>
 <body>
   
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <form class="form-horizontal" ng-controller="DonationController">
-        
-          <h1>Advanced Donation Form</h1>
-          <h2>Complete Example - Standalone</h2>
+  <form class="form-horizontal" ng-controller="DonationController">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Advanced Donation Form <small>Complete Example</small></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
           
+          <h3>Donor Information</h3>
+          
+          <div class="form-group">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" ng-model="Donor.Firstname" placeholder="Firstname" required>
+            </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" ng-model="Donor.Lastname" placeholder="Lastname" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <textarea class="form-control" placeholder="Address" ng-model="Donor.Address.StreetAddress"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-6">
+              <select class="form-control" ng-model="Donor.Address.Country" ng-change="getStates()" ng-options="c.Description for c in countries track by c.Id" ng-change="getStates()" required>
+                <option value="">Country</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control" ng-model="Donor.Address.State" ng-options="s.Description for s in states track by s.Id" required>
+                <option value="">State</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="City" ng-model="Donor.Address.City">
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" placeholder="Zip" ng-model="Donor.Address.PostalCode" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Email" ng-model="Donor.EmailAddress" />
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" placeholder="Phone" ng-model="Donor.Phone" />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="btn btn-default" ng-model="Gift.IsCorporate" btn-checkbox>
+                <i class="fa fa-fw" ng-class="{ 'fa-square-o': !Gift.IsCorporate, 'fa-check-square-o': Gift.IsCorporate }"></i> Corporate?
+              </label>
+            </div>
+            <div class="col-sm-8" ng-show="Gift.IsCorporate">
+              <input type="text" class="form-control" ng-model="Donor.OrganizationName" placeholder="Organization Name" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="btn btn-default" ng-model="Gift.isAnonymous" btn-checkbox>
+                <i class="fa fa-fw" ng-class="{ 'fa-square-o': !Gift.isAnonymous, 'fa-check-square-o': Gift.isAnonymous }"></i> Anonymous?
+              </label>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-sm-6">
+        
           <h3>Gift Information</h3>
           
           <div class="form-group">
-            <div class="col-sm-3">
+            <div class="col-sm-6">
               <div class="btn-group">
-                <label class="btn btn-default" ng-repeat="option in amounts" ng-model="Gift.SelectedAmount" btn-radio="option.amount">
+                <label class="btn btn-default" ng-repeat="option in amounts" ng-model="defaults.amount" btn-radio="option.amount" required>
                   <span ng-bind="option.label"></span>
                 </label>
               </div>
             </div>
-            <div class="col-sm-4" ng-show="Gift.SelectedAmount == 'other'">
+            <div class="col-sm-6">
+              <div class="btn-group">
+                <label class="btn btn-default" ng-repeat="option in payments" ng-model="defaults.payments" btn-radio="option.id" required>
+                  <span ng-bind="option.label"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group" ng-show="defaults.amount == 'other'">
+            <div class="col-sm-12">
               <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input type="text" class="form-control" ng-model="Gift.Amount" placeholder="Other Amount" ng-required="Gift.SelectedAmount == 'other'">
@@ -45,15 +127,53 @@ layout: blank
           </div>
           
           <div class="form-group">
-            <div class="col-sm-3">
+            <div class="col-sm-12">
+              <textarea class="form-control" ng-model="Gift.Comments" placeholder="Comments"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-6">
+              <select class="form-control" ng-model="defaults.designation" ng-options="designation.label for designation in designations track by designation.id" required>
+                <option value="">Designation</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
               <div class="btn-group">
-                <label class="btn btn-default" ng-repeat="option in types" ng-model="Gift.SelectedType" btn-radio="option.id">
+                <label class="btn btn-default" ng-repeat="option in types" ng-model="defaults.type" btn-radio="option.id">
                   <span ng-bind="option.label"></span>
                 </label>
               </div>
             </div>
-            <div ng-show="Gift.SelectedType == 'recurring'">
-              <div class="col-sm-3">
+          </div>
+          
+          <div ng-show="defaults.type == 'recurring'">
+
+            <div class="form-group">
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="Gift.Recurrence.StartDate" datepicker-popup="MMMM dd, yyyy" is-open="openedStartDate" show-button-bar="false" min-date="minDate" placeholder="Start Date" required />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'openedStartDate')">
+                      <i class="fa fa-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="Gift.Recurrence.EndDate" datepicker-popup="MMMM dd, yyyy" is-open="openedEndDate" show-button-bar="false" min-date="minDate" placeholder="End Date" />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'openedEndDate')">
+                      <i class="fa fa-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-sm-4">
                 <select class="form-control" ng-model="Gift.Recurrence.Frequency" required>
                   <option value="">Frequency</option>
                   <option value="1">Weekly</option>
@@ -63,7 +183,7 @@ layout: blank
                 </select>
               </div>
               <div ng-show="Gift.Recurrence.Frequency">
-                <div class="col-sm-3" ng-show="Gift.Recurrence.Frequency == 1">
+                <div class="col-sm-4" ng-show="Gift.Recurrence.Frequency == 1">
                   <select class="form-control" ng-model="Gift.Recurrence.Month" required>
                     <option value="">Month</option>
                     <option value="1">January</option>
@@ -80,7 +200,7 @@ layout: blank
                     <option value="12">December</option>
                   </select>
                 </div>
-                <div class="col-sm-3" ng-show="Gift.Recurrence.Frequency == 1">
+                <div class="col-sm-4" ng-show="Gift.Recurrence.Frequency == 1">
                   <select class="form-control" ng-model="Gift.Recurrence.DayOfWeek" required>
                     <option value="">Day of Week</option>
                     <option value="0">Sunday</option>
@@ -92,7 +212,7 @@ layout: blank
                     <option value="6">Saturday</option>
                   </select>
                 </div>
-                <div class="col-sm-3" ng-show="Gift.Recurrence.Frequency != 1">
+                <div class="col-sm-4" ng-show="Gift.Recurrence.Frequency != 1">
                   <select class="form-control" ng-model="Gift.Reccurence.DayOfMonth" required>
                     <option value="">Day of Month</option>
                     <option value="1">1</option>
@@ -130,89 +250,35 @@ layout: blank
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div class="form-group" ng-show="Gift.SelectedType == 'recurring'">
-            <div class="col-sm-3">
-              <div class="input-group">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" ng-click="open($event, 'openedStartDate')">
-                    <i class="fa fa-calendar"></i>
-                  </button>
-                </span>
-                <input type="text" class="form-control" ng-model="Gift.Recurrence.StartDate" datepicker-popup="MMMM dd, yyyy" is-open="openedStartDate" show-button-bar="false" min-date="minDate" placeholder="Start Date" required />
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="input-group">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" ng-click="open($event, 'openedEndDate')">
-                    <i class="fa fa-calendar"></i>
-                  </button>
-                </span>
-                <input type="text" class="form-control" ng-model="Gift.Recurrence.EndDate" datepicker-popup="MMMM dd, yyyy" is-open="openedEndDate" show-button-bar="false" min-date="minDate" placeholder="End Date" />
-              </div>
-            </div>
-          </div>
 
-          <h3>Donor Information</h3>
-          
-          <div class="form-group">
-            <div class="col-sm-6">
-              <input type="text" class="form-control" ng-model="Donor.Firstname" placeholder="Firstname" required>
-            </div>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" ng-model="Donor.Lastname" placeholder="Lastname" required>
-            </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
 
           <div class="form-group">
             <div class="col-sm-12">
-              <textarea class="form-control" placeholder="Address" ng-model="Donor.Address.StreetAddress"></textarea>
+              
             </div>
           </div>
-
-          <div class="form-group">
-            <div class="col-sm-3">
-              <input type="text" class="form-control" placeholder="City" ng-model="Donor.Address.City">
-            </div>
-            <div class="col-sm-3">
-              <select class="form-control" ng-model="Donor.Address.State">
-                <option value="">Country</option>
-              </select>
-            </div>
-            <div class="col-sm-3">
-              <select class="form-control" ng-model="Donor.Address.Country">
-                <option value="">State</option>
-              </select>
-            </div>
-            <div class="col-sm-3">
-              <input type="text" class="form-control" placeholder="Zip" ng-model="Donor.Address.PostalCode" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-8">
-              <input type="text" class="form-control" placeholder="Email" ng-model="Donor.EmailAddress" />
-            </div>
-            <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Phone" ng-model="Donor.Phone" />
-            </div>
-          </div>
+        </div>
+        <div class="col-sm-6">
           
-          <h3>Tribute Information</h3>
-          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
           <p>
             <button class="btn btn-lg btn-primary btn-donate" ng-click="log()">
               <i class="fa fa-lock"></i> Donate
             </button>
           </p>
-          
-        </form>
-        
+        </div>
       </div>
     </div>
-  </div>
+  
+  </form>
   
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.min.js"></script>

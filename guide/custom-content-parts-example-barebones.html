@@ -1,0 +1,68 @@
+<h3 id="{{ include.title }}-example-barebones">Barebones Example</h3>
+
+<p>Let's start with the most basic example of a custom content part.  In this example we highlight two important steps:</p>
+
+<ol>
+  <li>Implement the <code>BLACKBAUD.api.customPartEditor.onSave</code> method</li>
+  <li>In the editor view, save settings to the <code>BLACKBAUD.api.customPartEditor.settings</code> object</li>
+  <li>In the display view, read settings passed to our initialize function</li>
+</ol>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#{{ include.title }}-example-barebones-initialize" data-toggle="tab">Initialize</a></li>
+  <li><a href="#{{ include.title }}-example-barebones-editor" data-toggle="tab">Editor</a></li>
+  <li><a href="#{{ include.title }}-example-barebones-display" data-toggle="tab">Display</a></li>
+  {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="{{ include.title }}-example-barebones-initialize">
+    {% highlight js %}initBarebonesExample{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="{{ include.title }}-example-barebones-editor">
+    {% highlight html %}
+<p>
+  <label for="greeting">Greeting:</label>
+  <input type="text" id="greeting" />
+</p>
+      
+<script>
+!function($) {
+  
+  $(function() {
+    
+    // Read our previously saved greeting (if it exists)
+    if (typeof BLACKBAUD.api.customPartEditor.settings.greeting != '') {
+      $('#greeting').val(BLACKBAUD.api.customPartEditor.settings.greeting);
+    }
+    
+    // We must implement the onSave method
+    // Returning true or false controls whether the save is successful
+    BLACKBAUD.api.customPartEditor.onSave = function() {
+      
+      // Save our greeting
+      BLACKBAUD.api.customPartEditor.settings = {
+        greeting: $('#greeting').val()
+      };
+      
+      // Required to allow the settings to save and the part to close
+      return true;
+    };
+    
+  });
+  
+}(jQuery);     
+</script>
+    {% endhighlight %}
+  </div>
+  <div class="tab-pane" id="{{ include.title }}-example-barebones-display">
+    {% highlight html %}
+<p>Hello, <span class="greeting"></span></p>
+<script>
+function initBarebonesExample(instance) {
+  $('#' + instance.elementId + ' .greeting').text(instance.settings.greeting);
+}
+</script>
+    {% endhighlight %}
+  </div>
+</div>
