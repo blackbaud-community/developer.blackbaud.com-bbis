@@ -18,15 +18,63 @@
 
   <p>After you create custom parts, you use the Infinity SDK to store and retrieve data. You can access existing data in BBIS through the *.WebApiClient.dlls available in the SDK. And you can create Infinity tables and CRUD processes with the SDK and then generate your own *.WebApiClient.dlls to access these tables for your custom parts.</p>
   
-  <h3 id="{{ site.baseurl }}-infinity">Using the Infinity SDK with Custom Framework Parts</h3>
+  <h3 id="{{ include.title }}-infinity">Use the Infinity SDK with Custom Framework Parts</h3>
+  
+  <p>Previously, a part’s content was a serialized object that was stored and retrieved in the database by the CMS framework. A part defined the content class which the Editor and Display controls both knew about, and the framework delivered content to each control and offered functions to save it back to the database. This old concept is still supported and can be useful in some cases, such as the HTML (FTI) part that just stores one blob of HTML and has no need for SQL joins to other tables. In the SDK item template for a part, you get the boilerplate code to support this approach automatically (see the MyContent property). You can use it or ignore it.</p>
+
+  <p>However, the SDK now allows you to create tables for a part’s content. You can use Infinity practices to define the table and its CRUD procedures via Infinity Specs. Then you can use the Infinity MetalWeb code generator to create strongly typed classes around these procedures. You can store and retrieve a part’s content data in exactly the same way as ANY Infinity data with the *.WebApiClient.dlls, which immediately makes your new content type part of the vast Infinity API.</p>
+
+  <p>You can also use both approaches, but be sure to keep foreign key references out of the serialized approach because this prohibits database level referential integrity, as well as the safe export and import of your part.</p>
   
   <h3>WebApiClient Assemblies to Access CRM Data</h3>
   
+  <p>The SDK includes BBMetalWeb assemblies for all CRM catalogs that are easily called using standard syntax from any web client app. To use BBMetalWeb assemblies in your parts project:</p>
+
+  <ul>
+    <li>Add a reference to the *.WebApiClient.dll assembly you need, such as Blackbaud.AppFx.Constituent.Catalog.WebApiClient.dll.</li>
+    <li>Add a reference to Blackbaud.AppFx.</li>
+    <li>Add a reference to Blackbaud.AppFx.WebAPI.</li>
+    <li>Add a reference to Blackbaud.Appfx.XmlTypes.</li>
+  </ul>
+  
   <h3>The Web Service</h3>
+  
+  <p>NetCommunity communicates with The Raiser’s Edge through a web service located near the Raiser’s Edge database. This web service is how NetCommunity retrieves all CRM data from The Raiser’s Edge, including constituents, funds, code tables, queries, and much more.</p>
+
+  <p>When we developed Blackbaud Internet Solutions as the Infinity version of NetCommunity, we created a service with an identical interface to communicate with Blackbaud CRM. The service fools Blackbaud Internet Solutions into thinking it is communicating with The Raiser’s Edge so that it will work as expected. The abstraction layer paid off in getting us to an Infinity version of NetCommunity in record time. In Blackbaud CRM, this service is referenced on the Web servicestab in Sites & settings.</p>
+  
+  <p><img src="img/BlackbaudEnterpriseSettings.png" alt="" class="img-responsive" /></p>
+  
+  <p>Should you use this web service to get CRM data to and from your custom parts? Or should you use the vast array of Infinity APIs to access whatever you want?  Either technique works, but here are key points to consider. As a rule of thumb, never call the service directly. The CMS framework wraps access to this service in cases where it would be advantageous for you to use, such as:</p>
+  
+  <ul>
+    <li>To get a current user’s linked constituent data – handles caching, reflecting pending updates, etc.</li>
+    <li>To get entries in a code table (caches supported common code tables such as states, titles, etc.)</li>
+    <li>API server UI controls such as the Campaign/Funds/Appeals picker</li>
+    <li>To prefill an API donation with constituent bio/address data</li>
+  </ul>
+  
+  <p>A relatively small subset of data is available through the service. You can extend the service with the API, but that only makes sense for a Raiser’s Edge installation that does not have Infinity’s rich, web-based CRM API.</p>
+
+  <p>Another important point about built-in CRM integration relates to record IDs. In The Raiser’s Edge, IDs (primary keys) are integers, but in Infinity, they are GUIDs. For the Blackbaud Internet Solutions version of the web service, we introduced an integer-GUID mapping concept for all Infinity tables accessed by the service. Otherwise, we would have had to change a TON of code to support GUIDs as keys to back office records, and it would no longer have worked for NetCommunity and The Raiser’s Edge.</p>
+
+  <p>For example, when the CMS Donation Form part stores IDs for CRM funds to include in the form, it stores them as integers. For the most part, this integer-GUID mapping is transparent and only relevant when you use the service to get CRM data, especially if you mix and match approaches. It’s also important to know that certain API functions such as recording a donation expect integers for back office IDs (such as the designation and fund IDs on a donation). If you get designations from the service, you already have the integers. But if you get the IDs yourself, you have GUIDs and need to look up the integer-GUID mapping yourself to create an API donation transaction.</p>
   
   <h3>Built-in Transactions</h3>
   
+  <p>As originally designed for The Raiser’s Edge, Blackbaud NetCommunity collects transactions for user sign-ups, constituent profile updates, donations, memberships, event registrations, and volunteering. These transactions are delivered to the CRM in a holding pen where users can review and approve them before importing the transactions into the CRM.</p>
+
+  <p>Only user signups, profile updates, and donations are supported in the API.</p>
+
+  <p>This support allows custom parts to capture these transactions and use the built-in web service to deliver them to Blackbaud CRM, where they benefit from the same review process. These transactions are also supported in Blackbaud Internet Solutions, and the InfinityPartSample2 shows a donation form in action. The donations API is particularly powerful because it also handles the clearing of credit cards, emailing of acknowledgements, and creation of donation transactions for download.</p>
+
+  <p>If you need to go outside the box, the transaction delivery pipe is not available, and you must find your own route to record your transaction in Blackbaud CRM. You can record transactions directly to the database with WebApiClient.dll wrappers, or you can create your own holding pen with a user interface to review and approve transactions in Blackbaud CRM.</p>
+  
   <h3>Debugging</h3>
+  
+  <p>For debugging, attach Visual Studio to all running w3wp processes and set the breakpoints you want.</p>
+  
+  <p><img src="img/VisualStudioAttachToProcessScreen.png" alt="" class="img-responsive" /></p>
   
   <h3 id="{{ include.title }}-setup">Setup</h3>
   
