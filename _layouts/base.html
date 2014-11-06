@@ -11,11 +11,11 @@
   <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
   
   {% for css in site.css %}
-    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
+    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}">
   {% endfor %}
   
   {% for css in page.css %}
-    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}"></script>
+    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}">
   {% endfor %}
 
   {% for js in page.js %}

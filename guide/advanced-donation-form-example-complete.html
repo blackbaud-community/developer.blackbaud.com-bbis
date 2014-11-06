@@ -1,0 +1,90 @@
+<h3 id="{{ include.title }}-example-complete">Styling + Error Handling + API Integration</h3>
+
+<p>This last example is meant to show a more realistic real-world example of the Advanced Donation Form API, including all the necessary error handling and styling.  This example also incorporates the use of the <a href="{{ site.baseurl }}/reference/javascript/#countryservice">CountryService</a>, which is the javascript wrapper for the <a href="{{ site.baseurl}}/reference/rest/#countryapi">Country REST API endpoint</a>.</p>
+
+<p>Whereas all the other examples are designed to be inserted into an Advanced Donation Form Part, the complete example is designed to be completely standalone - even on a different server than the one serving your BBIS website.</p>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#{{ include.title }}-example-complete-html" data-toggle="tab">HTML</a></li>
+  <li><a href="#{{ include.title }}-example-complete-js" data-toggle="tab">JS</a></li>
+  <li><a href="#{{ include.title }}-example-complete-css" data-toggle="tab">CSS</a></li>
+  {% include download-on-github.html repo="BBIS-ADF-Example-5" %}
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="{{ include.title }}-example-complete-html">
+{% highlight html %}
+    
+
+  
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="{{ include.title }}-example-complete-js">
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+
+// Let's make sure the DOM is ready
+$(function() {
+
+  // Create an instance of the DonationService
+  var ds = new BLACKBAUD.api.DonationService();
+
+  // Create the donation object we'll send
+  // In order to simplify our examples, some of this information is hard-coded.
+  var donation = {
+    MerchantAccountId: '00000000-0000-0000-0000-000000000000',
+    Gift: {
+      PaymentMethod: 0,
+      Designations: []
+    }
+  };
+
+  // Create our success handler
+  var success = function(returnedDonation) {
+    console.log(returnedDonation);
+  };
+
+  // Create our error handler
+  var error = function(returnedErrors) {
+    console.log('Error!');
+  };
+
+  // Attach our event listener to the donate button
+  $('.btn-donate').click(function(e) {
+
+    // Stop the button from submitting the form
+    e.preventDefault(); 
+
+    // Add the information our user has typed
+    donation.Donor = {
+      FirstName: $('#first-name').val(),
+      LastName: $('#last-name').val(),
+      Address: {
+        StreetAddress: $('#address').val(),
+        City: $('#city').val(),
+        State: $('#state').val(),
+        PostalCode: $('#zip').val(),
+        Country: $('#country').val()
+      }
+    };
+    
+      // Add the information our user has typed
+      donation.Gift.Designations.push({
+        Amount: $('#amount').val(),
+        DesignationId: $('#designation').val()
+      });
+
+    // Submit our donation
+    ds.createDonation(donation, success, error);
+  });
+
+});
+}(jQuery));
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="{{ include.title }}-example-complete-css">
+    {% highlight css %}
+    {% endhighlight %}
+  </div>
+</div>

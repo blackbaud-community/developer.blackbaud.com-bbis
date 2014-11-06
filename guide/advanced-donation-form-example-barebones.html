@@ -1,0 +1,111 @@
+<h3 id="{{ include.title }}-example-barebones">Barebones Example</h3>
+
+<p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields.  For this example we've included no styling or error handling, other than displaying a message in the console.  I've also hard-coded the designation and amount fields.</p>
+
+<p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID.  In the examples below, we dynamically find this ID.  You could hard-code this value if you prefer.  The technique below assumes there's only one Advanced Donation Form Part per page.</p>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#{{ include.title }}-example-barebones-html" data-toggle="tab">HTML</a></li>
+  <li><a href="#{{ include.title }}-example-barebones-js" data-toggle="tab">JS</a></li>
+  {% include download-on-github.html repo="BBIS-ADF-Examples" %}
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="{{ include.title }}-example-barebones-html">
+
+{% highlight html %}
+<dl>
+  <dt>First Name</dt>
+  <dd><input type="text" id="first-name" /></dd>
+
+  <dt>Last Name</dt>
+  <dd><input type="text" id="last-name" /></dd>
+
+  <dt>Email</dt>
+  <dd><input type="text" id="email" /></dd>
+
+  <dt>Address</dt>
+  <dd><textarea id="address"></textarea></dd>
+
+  <dt>City</dt>
+  <dd><input type="text" id="city" /></dd>
+
+  <dt>State</dt>
+  <dd><input type="text" id="state" /></dd>
+
+  <dt>Zip</dt>
+  <dd><input type="text" id="zip" /></dd>
+
+  <dt>Country</dt>
+  <dd><input type="text" id="country" /></dd>
+</dl>
+
+<p><button class="btn-donate">Donate</button></p>
+{% endhighlight %}
+
+  </div>
+  <div class="tab-pane" id="{{ include.title }}-example-barebones-js">
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+
+  // Let's make sure the DOM is ready
+  $(function() {
+
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService(
+    );
+
+    // Create the donation object we'll send
+    // In order to simplify our examples, some of this information is hard-coded.
+    var donation = {
+      MerchantAccountId: '00000000-0000-0000-0000-000000000000',
+      Gift: {
+        PaymentMethod: 0,
+        Designations: [
+          {
+            Amount: 5.00,
+            DesignationId: '00000000-0000-0000-0000-000000000000'
+          }
+        ]
+      }
+    };
+
+    // Create our success handler
+    var success = function(returnedDonation) {
+      console.log(returnedDonation);
+    };
+
+    // Create our error handler
+    var error = function(returnedErrors) {
+      console.log('Error!');
+    };
+
+    // Attach our event listener to the donate button
+    $('.btn-donate').click(function(e) {
+
+      // Stop the button from submitting the form
+      e.preventDefault(); 
+
+      // Add the information our user has typed
+      donation.Donor = {
+        FirstName: $('#first-name').val(),
+        LastName: $('#last-name').val(),
+        Address: {
+          StreetAddress: $('#address').val(),
+          City: $('#city').val(),
+          State: $('#state').val(),
+          PostalCode: $('#zip').val(),
+          Country: $('#country').val()
+        }
+      };
+
+      // Submit our donation
+      ds.createDonation(donation, success, error);
+    });
+
+  });
+}(jQuery));
+{% endhighlight %}
+  </div>
+</div>
