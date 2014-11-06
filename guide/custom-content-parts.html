@@ -10,9 +10,198 @@
 
   <p>When you create a custom content part type, you can define the behavior for the display and the editor using HTML and JavaScript. You also specify a JavaScript to run when the part is loaded onto a page. What the JavaScript function does is up to you. For example, you can use the Initialize JavaScript function to initialize forms on either the display or the editor, display messages, and execute other functions. You can include other JavaScript libraries or make use of the existing reference to the jQuery library on the Blackbaud Internet Solutions page.</p>
 
-  <h3 id="{{ include.title }}-example-1">Example 1 - Hello World</h3>
-  <h3 id="{{ include.title }}-example-2">Example 2 - Image Picker</h3>
-  <h3 id="{{ include.title }}-example-3">Example 3 - Link Picker</h3>
-  <h3 id="{{ include.title }}-example-4">Example 4 - Query Service</h3>
+  <h3 id="{{ include.title }}-example-hello-world">Barebones Example</h3>
+  
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-barebones-initialize" data-toggle="tab">Initialize</a></li>
+    <li><a href="#{{ include.title }}-example-barebones-display" data-toggle="tab">Display</a></li>
+    <li><a href="#{{ include.title }}-example-barebones-editor" data-toggle="tab">Editor</a></li>
+    {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-barebones-initialize">
+      {% highlight js %}initBarebonesExample{% endhighlight %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-barebones-display">
+      {% highlight html %}
+<p>Hello, <span class="greeting"></span></p>
+<script>
+function initBarebonesExample(o) {
+  $('#' + o.id + ' .greeting').text(o.settings.greeting);
+}
+</script>
+      {% endhighlight %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-barebones-editor">
+      {% highlight html %}
+
+      {% endhighlight %}
+    </div>
+  </div>
+  
+  <h3 id="{{ include.title }}-example-link-picker">Link Picker</h3>
+  
+  <h3 id="{{ include.title }}-example-image-picker">Image Picker</h3>
+  
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#{{ include.title }}-example-image-picker-initialize" data-toggle="tab">Initialize</a></li>
+    <li><a href="#{{ include.title }}-example-image-picker-display" data-toggle="tab">Display</a></li>
+    <li><a href="#{{ include.title }}-example-image-picker-editor" data-toggle="tab">Editor</a></li>
+    {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="{{ include.title }}-example-image-picker-initialize">
+      {% highlight js %}initBarebonesExample{% endhighlight %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-image-picker-display">
+      {% highlight html %}
+<script>
+function imageHighlighterRender(o) {
+  var html = [
+    '<p class="circle" style="background-image: url(' + o.settings.image.url + ')">',
+    '<span class="text">' + o.settings.text + '</span>',
+    '</p>'
+  ];
+  $('#' + o.elementId).html(html.join(''));
+}
+</script>
+      {% endhighlight %}
+    </div>
+    <div class="tab-pane" id="{{ include.title }}-example-image-picker-editor">
+      {% highlight html %}
+<script>
+!function($) {
+  
+  function setupSettings() {
+    if (typeof BLACKBAUD.api.customPartEditor.settings.text == 'undefined' || 
+        typeof BLACKBAUD.api.customPartEditor.settings.image == 'undefined') {
+      BLACKBAUD.api.customPartEditor.settings = {
+        text: '',
+        image: {
+          url: ''
+        }
+      }
+    }
+  }
+  
+  function bindImagePicker() {
+    if (!BLACKBAUD.api.customPartEditor.images.canLaunchImagePicker) {
+      $('.error-permission').show();
+    } else {
+      $('a.ImagePicker').click(function(e) {
+        e.preventDefault();
+        BLACKBAUD.api.customPartEditor.images.launchImagePicker({
+          callback: renderImage
+        });
+      });
+    }
+  }
+  
+  function bindSave() {
+    BLACKBAUD.api.customPartEditor.onSave = function() {
+      var success = true;
+      
+      $('.error-validation').hide();
+      $('[data-validate]').each(function() {
+        var element = $(this);
+        if (element.val() == '') {
+          $(element.data('validate')).show();
+          success = false;
+        }
+      });
+      
+      // Save text
+      BLACKBAUD.api.customPartEditor.settings.text = $('#field-highlighter-text').val();
+            
+      return success;
+    }    
+  }
+    
+  function renderText() {
+    $('#field-highlighter-text').val(BLACKBAUD.api.customPartEditor.settings.text); 
+  }
+  
+  function renderImage(o) {
+    if (typeof o.name != 'undefined' && o.url != 'undefined') {
+      $('.ImagePicker .SearchFieldText').text(o.name);
+      $('.ImagePickerRender').html('<img alt="" src="' + o.url + '" />');
+      $('#field-highlighter-image-name').val(o.name);
+      $('#field-highlighter-image-url').val(o.url);
+    }
+    BLACKBAUD.api.customPartEditor.settings.image = o;
+  }
+  
+  $(function() {
+    setupSettings();
+    bindImagePicker();
+    bindSave();
+    renderText();
+    renderImage(BLACKBAUD.api.customPartEditor.settings.image);
+  });
+  
+}(jQuery);
+</script>
+
+<style>
+.error { display: none; color: #FF0000; font-weight: bold; }
+</style>
+
+<div>
+  <ul>
+    <li class="error error-permission">You do not have permission to launch the image picker.</li>
+    <li class="error error-validation error-text">Text is required.</li>
+    <li class="error error-validation error-image">Image is required.</li>
+  </ul>
+</div>
+
+<div class="TabContainer">
+  <div class="FieldSetRow">
+    <div class="FieldSetColumn FieldSetColumnFirst">
+      <div class="Field">
+        <div class="FieldHeading">
+          <label for="field-highlighter-text" class="FieldLabel">Text:</label>
+          <span class="FieldRequired">*</span>
+          <span class="clear"></span>
+        </div>
+        <div class="FieldContentText">
+          <input type="text" id="field-highlighter-text" class="FieldSelect FieldInput" data-validate=".error-text" />
+          <input type="hidden" id="field-highlighter-image-name" data-validate=".error-image" />
+          <input type="hidden" id="field-highlighter-image-url" data-validate=".error-image" />
+        </div>
+      </div>
+      <div class="Field">
+        <div class="FieldHeading">
+          <label for="field-highlighter-image" class="FieldLabel">Image:</label>
+          <span class="FieldRequired">*</span>
+          <span class="clear"></span>
+        </div>
+        <div class="FieldContent">
+          <div class="SearchFieldContainer">
+            <div class="SearchFieldBox">
+              <a href="#" class="SearchField ImagePicker">
+                <span class="SearchFieldIcon">
+                  <img src="/images/pencil_16.gif" alt="" />
+                </span>
+                <span class="SearchFieldText"></span>
+                <span class="SearchFieldButton">
+                  <img src="/images/Admin/Buttons/search.gif" alt="" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Field ImagePickerRender"></div>
+    </div>
+  </div>
+</div>
+      {% endhighlight %}
+    </div>
+  </div>
+
+  
+  <h3 id="{{ include.title }}-example-image-folder-picker">Image Folder Picker</h3>
 
 </div>

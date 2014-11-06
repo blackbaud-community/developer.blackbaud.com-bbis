@@ -144,6 +144,11 @@
     word-wrap: break-word;
   }
 
+  .nav-sidebar > li > a:hover,
+  .nav-sidebar > li > a:focus {
+    transition: background-color 0.5s ease;
+  }
+
   .nav-sidebar > li.active > a, 
   .nav-sidebar > li.active > a:hover, 
   .nav-sidebar > li.active > a:focus {
