@@ -1,4 +1,4 @@
-<h3 id="{{ include.title }}-example-image-picker">Image Picker</h3>
+<h3 id="example-image-picker">Image Picker</h3>
 
 <p>Very similar to our link picker example, the Custom Content Part also exposes mechanisms to launch the image picker via the following:</p>
 
@@ -10,17 +10,17 @@
 <p>In this example, we've also introduced some more robust styling an error handling, in an effort to provide you with a more real-world example.  As you can see, the Custom Content Part allows you to develop very polished and custom administrative user experiences.</p>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#{{ include.title }}-example-image-picker-initialize" data-toggle="tab">Initialize</a></li>
-  <li><a href="#{{ include.title }}-example-image-picker-editor" data-toggle="tab">Editor</a></li>
-  <li><a href="#{{ include.title }}-example-image-picker-display" data-toggle="tab">Display</a></li>
+  <li class="active"><a href="#example-image-picker-initialize" data-toggle="tab">Initialize</a></li>
+  <li><a href="#example-image-picker-editor" data-toggle="tab">Editor</a></li>
+  <li><a href="#example-image-picker-display" data-toggle="tab">Display</a></li>
   {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="{{ include.title }}-example-image-picker-initialize">
+  <div class="tab-pane active" id="example-image-picker-initialize">
     {% highlight js %}imageHighlighterRender{% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-image-picker-editor">
+  <div class="tab-pane" id="example-image-picker-editor">
     {% highlight html %}
 <script>
 !function($) {
@@ -150,7 +150,7 @@
 </div>
     {% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-image-picker-display">
+  <div class="tab-pane" id="example-image-picker-display">
     {% highlight html %}
 <script>
 function imageHighlighterRender(o) {

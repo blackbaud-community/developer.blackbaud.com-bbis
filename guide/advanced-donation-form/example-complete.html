@@ -1,18 +1,18 @@
-<h3 id="{{ include.title }}-example-complete">Styling + Error Handling + API Integration</h3>
+<h3 id="example-complete">Styling + Error Handling + API Integration</h3>
 
 <p>This last example is meant to show a more realistic real-world example of the Advanced Donation Form API, including all the necessary error handling and styling.  This example also incorporates the use of the <a href="{{ site.baseurl }}/reference/javascript/#countryservice">CountryService</a>, which is the javascript wrapper for the <a href="{{ site.baseurl}}/reference/rest/#countryapi">Country REST API endpoint</a>.</p>
 
 <p>Whereas all the other examples are designed to be inserted into an Advanced Donation Form Part, the complete example is designed to be completely standalone - even on a different server than the one serving your BBIS website.</p>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#{{ include.title }}-example-complete-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#{{ include.title }}-example-complete-js" data-toggle="tab">JS</a></li>
-  <li><a href="#{{ include.title }}-example-complete-css" data-toggle="tab">CSS</a></li>
+  <li class="active"><a href="#example-complete-html" data-toggle="tab">HTML</a></li>
+  <li><a href="#example-complete-js" data-toggle="tab">JS</a></li>
+  <li><a href="#example-complete-css" data-toggle="tab">CSS</a></li>
   {% include download-on-github.html repo="BBIS-ADF-Example-5" %}
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="{{ include.title }}-example-complete-html">
+  <div class="tab-pane active" id="example-complete-html">
 {% highlight html %}
 <!DOCTYPE html>
 <html lang="en" ng-app="bbADF">
@@ -304,7 +304,7 @@
 </html>
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-complete-js">
+  <div class="tab-pane" id="example-complete-js">
 {% highlight js %}
 'use strict';
 
@@ -418,7 +418,7 @@ angular.module('bbADF', ['ui.bootstrap'])
 });
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-complete-css">
+  <div class="tab-pane" id="example-complete-css">
     {% highlight css %}
     {% endhighlight %}
   </div>

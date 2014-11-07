@@ -1,4 +1,4 @@
-<h3 id="{{ include.title }}-example-image-folder-picker">Image Folder Picker</h3>
+<h3 id="example-image-folder-picker">Image Folder Picker</h3>
 
 <p>Again, the Custom Content Part is also exposing mechanisms to launch the image folder picker.</p>
 
@@ -10,17 +10,17 @@
 <p>In this example, we're also introducing the use of the <a href="{{ site.baseurl }}/reference/rest/#imageapi">Images endpoint</a> of our <a href="{{ site.baseurl }}/reference/rest/">REST API</a>, but you could also easily use the <a href="{{ site.baseurl }}/reference/javascript/#imageapi">ImageService</a>. In an effort to make the end result more visually appealing to the end user, we've also chosen to use the <a href="http://owlgraphic.com/owlcarousel/">OWL Carousel</a>.</p>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#{{ include.title }}-example-image-folder-picker-initialize" data-toggle="tab">Initialize</a></li>
-  <li><a href="#{{ include.title }}-example-image-folder-picker-editor" data-toggle="tab">Editor</a></li>
-  <li><a href="#{{ include.title }}-example-image-folder-picker-display" data-toggle="tab">Display</a></li>
+  <li class="active"><a href="#example-image-folder-picker-initialize" data-toggle="tab">Initialize</a></li>
+  <li><a href="#example-image-folder-picker-editor" data-toggle="tab">Editor</a></li>
+  <li><a href="#example-image-folder-picker-display" data-toggle="tab">Display</a></li>
   {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="{{ include.title }}-example-image-folder-picker-initialize">
+  <div class="tab-pane active" id="example-image-folder-picker-initialize">
     {% highlight js %}imageFolderPickerRender{% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-image-folder-picker-editor">
+  <div class="tab-pane" id="example-image-folder-picker-editor">
     {% highlight html %}
 <p>
   <strong>Selected Folder Name:</strong>
@@ -87,7 +87,7 @@
 </script>
     {% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-image-folder-picker-display">
+  <div class="tab-pane" id="example-image-folder-picker-display">
     {% highlight html %}
 <div class="carousel">Loading...</div>
 

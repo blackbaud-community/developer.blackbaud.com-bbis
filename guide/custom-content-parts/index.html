@@ -1,0 +1,30 @@
+---
+layout: guide
+---
+
+<h2 id="overview">Custom Content Parts</h2>
+
+<p>You can create part types which use your custom JavaScript and HTML. Parts based on these types are called content parts.</p>
+
+<p>Content parts are one of two types of custom parts in Blackbaud Internet Solutions. To create custom content parts, you need access to Custom parts in Blackbaud Internet Solutions, the ability to create part types, parts, and to add parts to a page. Knowledge of HTML and JavaScript is required.</p>
+
+<p>Parts have a display component which appears to Blackbaud Internet Solutions users who view a part on a page. Parts also have an editor component which is accessible to administrators. The editor component is used to configure a part. For information about Parts, see the guides for Blackbaud Internet Solutions: Blackbaud Internet Solutions User Guides at a Glance.</p>
+
+<p>When you create a custom content part type, you can define the behavior for the display and the editor using HTML and JavaScript. You also specify a JavaScript to run when the part is loaded onto a page. What the JavaScript function does is up to you. For example, you can use the Initialize JavaScript function to initialize forms on either the display or the editor, display messages, and execute other functions. You can include other JavaScript libraries or make use of the existing reference to the jQuery library on the Blackbaud Internet Solutions page.</p>
+
+<p>To create a content part type, from Custom parts, you click New content part</p>
+
+<p><img src="../img/custom-parts-new-content-part.png" alt="" class="img-responsive" /></p>
+
+<p><img src="../img/administration-custom-parts.png" alt="" class="img-responsive" /></p>
+
+<p>The New content part page appears.</p>
+
+<p><img src="../img/new-content-part-page.png" alt="" class="img-responsive" /></p>
+
+<p>Using the text from any of the examples below, enter the appropriate information into the "Initialize JavaScript function," "Editor," and "Web page display" text fields.  Click the save button.   The procedure for creating an instance of your Custom Content Part is now handled the same as creating any other type of part.  Your Custom Content Part shows up as an available part type.</p>
+
+{% include_relative example-barebones.html %}
+{% include_relative example-link-picker.html %}
+{% include_relative example-image-picker.html %}
+{% include_relative example-image-folder-picker.html %}

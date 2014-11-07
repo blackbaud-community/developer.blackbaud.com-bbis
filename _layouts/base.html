@@ -31,6 +31,18 @@
     {% include body-carousel.html %}
   {% endif %}
   
+  {% if page.section-header %}
+    <div class="section-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Developer Guide</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
   <div class="content">
     {{ content }}
   </div>

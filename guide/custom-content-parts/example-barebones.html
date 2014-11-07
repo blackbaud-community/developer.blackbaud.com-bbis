@@ -1,4 +1,4 @@
-<h3 id="{{ include.title }}-example-barebones">Barebones Example</h3>
+<h3 id="example-barebones">Barebones Example</h3>
 
 <p>Let's start with the most basic example of a custom content part.  In this example we highlight two important steps:</p>
 
@@ -9,17 +9,17 @@
 </ol>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#{{ include.title }}-example-barebones-initialize" data-toggle="tab">Initialize</a></li>
-  <li><a href="#{{ include.title }}-example-barebones-editor" data-toggle="tab">Editor</a></li>
-  <li><a href="#{{ include.title }}-example-barebones-display" data-toggle="tab">Display</a></li>
+  <li class="active"><a href="#example-barebones-initialize" data-toggle="tab">Initialize</a></li>
+  <li><a href="#example-barebones-editor" data-toggle="tab">Editor</a></li>
+  <li><a href="#example-barebones-display" data-toggle="tab">Display</a></li>
   {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="{{ include.title }}-example-barebones-initialize">
+  <div class="tab-pane active" id="example-barebones-initialize">
     {% highlight js %}initBarebonesExample{% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-barebones-editor">
+  <div class="tab-pane" id="example-barebones-editor">
     {% highlight html %}
 <p>
   <label for="greeting">Greeting:</label>
@@ -55,7 +55,7 @@
 </script>
     {% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-barebones-display">
+  <div class="tab-pane" id="example-barebones-display">
     {% highlight html %}
 <p>Hello, <span class="greeting"></span></p>
 <script>

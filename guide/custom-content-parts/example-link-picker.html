@@ -1,4 +1,4 @@
-<h3 id="{{ include.title }}-example-link-picker">Link Picker</h3>
+<h3 id="example-link-picker">Link Picker</h3>
 
 <p>In addition to saving settings and building a custom inferface, the Custom Content Part also the following mechanism for interacting with the link picker:</p>
 
@@ -8,17 +8,17 @@
 </ul>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#{{ include.title }}-example-link-picker-initialize" data-toggle="tab">Initialize</a></li>
-  <li><a href="#{{ include.title }}-example-link-picker-editor" data-toggle="tab">Editor</a></li>
-  <li><a href="#{{ include.title }}-example-link-picker-display" data-toggle="tab">Display</a></li>
+  <li class="active"><a href="#example-link-picker-initialize" data-toggle="tab">Initialize</a></li>
+  <li><a href="#example-link-picker-editor" data-toggle="tab">Editor</a></li>
+  <li><a href="#example-link-picker-display" data-toggle="tab">Display</a></li>
   {% include download-on-github.html repo="BBIS-Custom-Content-Part-Examples" %}
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="{{ include.title }}-example-link-picker-initialize">
+  <div class="tab-pane active" id="example-link-picker-initialize">
     {% highlight js %}initLinkPickerExample{% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-link-picker-editor">
+  <div class="tab-pane" id="example-link-picker-editor">
     {% highlight html %}
 <p>
   <strong>Selected Link Name:</strong>
@@ -93,7 +93,7 @@
 </script>
     {% endhighlight %}
   </div>
-  <div class="tab-pane" id="{{ include.title }}-example-link-picker-display">
+  <div class="tab-pane" id="example-link-picker-display">
     {% highlight html %}
 <p>
   See my link: <span class="selected-link"></span>

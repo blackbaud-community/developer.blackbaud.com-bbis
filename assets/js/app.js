@@ -61,7 +61,7 @@
 
         // Initiate scrollspy
         body.scrollspy({
-          target: '.nav-sidebar'
+          target: '.scrollspy-start'
         });
         
         // Smooth scroll back to the top

@@ -1,15 +1,15 @@
-<h3 id="{{ include.title }}-example-tribute">Tribute Example</h3>
+<h3 id="example-tribute">Tribute Example</h3>
 
 <p>In this example, we're back to "proceeding directly to payment," as opposed to using the Payment 2.0 Part.  This means we'll need to collect the donor information.  I've also introduced the ability to add a tribute.</p>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#{{ include.title }}-example-tribute-html" data-toggle="tab">HTML</a></li>
-  <li><a href="#{{ include.title }}-example-tribute-js" data-toggle="tab">JS</a></li>
+  <li class="active"><a href="#example-tribute-html" data-toggle="tab">HTML</a></li>
+  <li><a href="#example-tribute-js" data-toggle="tab">JS</a></li>
   {% include download-on-github.html repo="BBIS-ADF-Examples" %}
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="{{ include.title }}-example-tribute-html">
+  <div class="tab-pane active" id="example-tribute-html">
 {% highlight html %}
 <h3>Donor Information</h3>
 <dl>
@@ -80,7 +80,7 @@
 <p><button class="btn-donate">Donate</button></p>
       {% endhighlight %}
     </div>
-    <div class="tab-pane" id="{{ include.title }}-example-recurrence-tribute-js">
+    <div class="tab-pane" id="example-recurrence-tribute-js">
 {% highlight js %}
 // Let's be good developers and not pollute the global namespace
 (function($) {

@@ -135,6 +135,29 @@
 
 /* 
 * ==========================================================================
+* SECTION HEADER
+* ========================================================================== 
+*/
+
+  .section-header {
+    background: url(../img/building-large-grey.jpg) no-repeat center center;
+    background-size: cover;
+    border-bottom: solid 1px #333;
+  }
+
+  .section-header h1 {
+    color: #EEE;
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin: 0;
+    padding: 80px 0;
+    text-shadow: 1px 1px 1px #333;
+    
+    text-transform: uppercase;
+  }
+
+/* 
+* ==========================================================================
 * SIDEBAR
 * ========================================================================== 
 */
@@ -180,31 +203,42 @@
     display: block;
   }
 
-  .nav-sidebar li.divider {
+  .nav-sidebar .back-to-section {
     border-bottom: solid 1px #EFEFEF;
-    height: 1px;
-    margin-top: 10px;
-  }
-
-  .nav-sidebar > li.back-to a {
-    background: #FFF;
-    color: #34b1ec;
     font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase
   }
 
-  .nav-sidebar > li.back-to a:focus,
-  .nav-sidebar > li.back-to a:hover {
+  .nav-sidebar .back-to-section a,
+  .nav-sidebar .back-to-section a:hover,
+  .nav-sidebar .back-to-section a:focus {
     background: #FFF;
-    color: #18516C;
+    color: #333;
   }
 
   .nav-sidebar .back-to-top {
-    display: none;
+    opacity: 0;
+    transition: opacity .4s;
+    visibility: hidden;
   }
 
   .nav-sidebar.affix .back-to-top,
-  .nav-sidebar.affix-bottom .back-to-top {
-    display: block;
+  .nav-sidebar.affix-bottom .back-to-top,
+  .subsection-bbncextensions .back-to-top {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-sidebar > li.back-to-top a {
+    background: #FFF;
+    color: #CCC;
+  }
+
+  .nav-sidebar > li.back-to-top a:focus,
+  .nav-sidebar > li.back-to-top a:hover {
+    background: #FFF;
+    color: #18516C;
   }
 
 

@@ -1,0 +1,166 @@
+<ul class="nav nav-pills nav-stacked nav-sidebar">
+  {% include sidebar-top.html %}
+  {% include sidebar-back-to-section.html title="Developer Guide" %}
+  <li class="{% if subsection == 'advanced-donation-form' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/advanced-donation-form/">Advanced Donation Form</a>
+    
+    {% if subsection == 'advanced-donation-form' %}
+      <ul class="nav">
+        <li>
+          <a href="#setup">Setup</a>
+        </li>
+        <li>
+          <a href="#example-barebones">Example - Barebones</a>
+        </li>
+        <li>
+          <a href="#example-payment-2-0">Example - Payment 2.0</a>
+        </li>
+        <li>
+          <a href="#example-recurrence">Example - Recurrence</a>
+        </li>
+        <li>
+          <a href="#example-tribute">Example - Tribute</a>
+        </li>
+        <li>
+          <a href="#example-secure-payments">Example - Blackbaud Secure Payments</a>
+        </li>
+        <li>
+          <a href="#example-complete">Example - Complete</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
+  <li class="{% if subsection == 'blackbaud-secure-payments' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/blackbaud-secure-payments/">Blackbaud Secure Payments</a>
+    
+    {% if subsection == 'blackbaud-secure-payments' %}
+      <ul class="nav">
+        <li>
+          <a href="#overview">Overview</a>
+        </li>
+        <li>
+          <a href="#usage">Usage</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
+  <li class="{% if subsection == 'custom-content-parts' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/custom-content-parts/">Custom Content Parts</a>
+    
+    {% if subsection == 'custom-content-parts' %}
+      <ul class="nav">
+        <li>
+          <a href="#overview">Overview</a>
+        </li>
+        <li>
+          <a href="#example-barebones">Example - Barebones</a>
+        </li>
+        <li>
+          <a href="#example-link-picker">Example - Link Picker</a>
+        </li>
+        <li>
+          <a href="#example-image-picker">Example - Image Picker</a>
+        </li>
+        <li>
+          <a href="#example-image-folder-picker">Example - Image Folder Picker</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
+  <li class="{% if subsection == 'custom-framework-parts' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/custom-framework-parts/">Custom Framework Parts</a>
+    
+    {% if subsection == 'custom-framework-parts' %}
+      <ul class="nav">
+        <li>
+          <a href="#overview">Overview</a>
+        </li>
+        <li>
+          <a href="#infinity-sdk">Using Infinity SDK</a>
+        </li>
+        <li>
+          <a href="#create-projects">Creating Projects</a>
+        </li>
+        <li>
+          <a href="#create-parts">Creating Parts</a>
+          <ul class="nav">
+            <li>
+              <a href="#create-parts-add-to-project">Add Parts to Project</a>
+            </li>
+            <li>
+              <a href="#create-parts-post-build">Post Build Events</a>
+            </li>
+            <li>
+              <a href="#create-parts-copy-files">Copy Files</a>
+            </li>
+            <li>
+              <a href="#create-parts-test-build">Test Build</a>
+            </li>
+            <li>
+              <a href="#create-parts-add-to-bbis">Add Parts to BBIS</a>
+            </li>
+            <li>
+              <a href="#create-parts-create-instance">Create Instance</a>
+            </li>
+            <li>
+              <a href="#create-parts-assembly-reference">Assembly Reference</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#example-pledge-form">Example - Custom Pledge Form</a>
+        </li>
+        <li>
+          <a href="#example-constituent-search">Example - Constituent Search</a>
+        </li>
+        <li>
+          <a href="#example-event-registration">Example - Event Registration</a>
+        </li>
+        <li>
+          <a href="#example-secure-payments">Example - Blackbaud Secure Payments</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
+  <li class="{% if subsection == 'custom-handlers' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/custom-handlers/">Custom Handlers</a>
+    
+    {% if subsection == 'custom-handlers' %}
+      <ul class="nav">
+        <li>
+          <a href="#overview">Custom Handlers Overview</a>
+        </li>
+        <li>
+          <a href="#write">Write a Custom Handler</a>
+        </li>
+        <li>
+          <a href="#call">Call a Custom Handler</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
+  <li class="{% if subsection == 'user-imports' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/user-imports/">User Imports</a>
+    
+    {% if subsection == 'user-imports' %}
+      <ul class="nav">
+        <li>
+          <a href="#export">Export Constituents from Blackbaud CRM</a>
+        </li>
+        <li>
+          <a href="#create">Create a User Import</a>
+        </li>
+        <li>
+          <a href="#schedule">Schedule User Imports</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
+  {% include sidebar-back-to-top.html %}
+</ul>
