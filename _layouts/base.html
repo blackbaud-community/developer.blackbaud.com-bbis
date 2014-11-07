@@ -1,0 +1,145 @@
+{% include vars.html %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackbaud Internet Solutions</title>
+  <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  
+  {% for css in site.css %}
+    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}">
+  {% endfor %}
+  
+  {% for css in page.css %}
+    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}">
+  {% endfor %}
+
+  {% for js in page.js %}
+    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
+  {% endfor %}
+  
+</head>
+<body class="layout-{{ page.layout }} section-{{ section }} subsection-{{ subsection }}">
+  
+  <nav class="navbar" role="navigation" id="top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bb-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="{{ site.baseurl }}/" class="navbar-brand">
+          <img src="{{ site.baseurl }}/assets/img/logo-bbis.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+        </a>
+      </div>  <!-- navbar-header -->
+
+      <div class="collapse navbar-collapse" id="bb-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li {% if section == 'start' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/start/">
+              Getting Started
+            </a>
+          </li>
+          <li {% if section == 'guide' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/guide/">
+              Developer Guide
+            </a>
+          </li>
+          <li {% if section == 'reference' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/reference/">
+              Technical Reference
+            </a>
+          </li>
+          <li class="{% if section == 'code' %}active{% endif %}">
+            <a href="{{ site.baseurl }}/code/">
+              Code Samples
+            </a>
+          </li>
+          <li {% if section == 'help' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/help/">
+              <i class="fa fa-fw fa-question-circle hidden-xs"></i>
+              <span class="visible-xs-inline">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>  <!-- .navbar-collapse -->
+
+    </div>  <!-- .container -->
+  </nav>  <!-- .navbar.navbar-inverse -->
+
+  {% if page.carousel %}
+    {% include body-carousel.html %}
+  {% endif %}
+  
+  {% if page.section-header %}
+    <div class="section-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>{{ page.section-header }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
+  <div class="content">
+    {{ content }}
+  </div>
+  
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p><img src="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" /></p>
+          <ul class="list-unstyled">
+            <li><a href="http://tripott.com/EE">Blackbaud Education Edge</a></li>
+            <li><a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx">Blackbaud Infinity SDK</a></li>
+            <li><a href="http://open.convio.com/">Blackbaud Luminate</a></li>
+            <li><a href="#">Blackbaud NetCommunity</a></li>
+            <li><a href="#">Blackbaud Raiser's Edge</a></li>
+          </ul>
+        </div>  <!-- .col-sm-3 -->
+        <div class="col-sm-6">
+          <ul class="list-inline bb-love pull-right">
+            <li>
+              <a href="http://www.blackbaud.com" target="_blank">
+                <img src="{{ site.baseurl }}/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive pull-left" />
+              </a>
+            </li>
+            <li>
+              <i class="fa fa-lg fa-plus"></i>
+            </li>
+            <li>
+              <a href="http://www.github.com/blackbaud-community" target="_blank">
+                <img src="{{ site.baseurl }}/assets/img/logo-github.png" alt="GitHub" class="img-responsive pull-left" />
+              </a>
+            </li>
+          </ul>
+        </div>  <!-- .col-sm-9 -->
+      </div>  <!-- .row -->
+
+    </div>  <!-- .container -->
+  </div>  <!-- .footer -->
+
+  <div class="copyright">
+    <div class="container">
+      <div class="col-sm-12">
+        &copy; 2014 Blackbaud, Inc.  All rights reserved. 
+      </div>
+    </div>
+  </div>  <!-- .copyright -->
+  
+  {% for js in site.js %}
+    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
+  {% endfor %}
+  
+</body>
+</html>
