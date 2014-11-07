@@ -153,6 +153,14 @@
     background-image: url(../img/section-header/schematic-grey.jpg);
   }
 
+  .section-code .section-header {
+    background-image: url(../img/section-header/github-office-grey.jpg);
+  }
+
+  .section-help .section-header {
+    background-image: url(../img/section-header/bbcon-grey.jpg);
+  }
+
   .section-header h1 {
     color: #FFF;
     font-size: 26px;
