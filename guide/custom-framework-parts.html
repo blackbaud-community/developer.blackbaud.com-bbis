@@ -18,7 +18,7 @@
 
   <p>After you create custom parts, you use the Infinity SDK to store and retrieve data. You can access existing data in BBIS through the *.WebApiClient.dlls available in the SDK. And you can create Infinity tables and CRUD processes with the SDK and then generate your own *.WebApiClient.dlls to access these tables for your custom parts.</p>
   
-  <h3 id="{{ include.title }}-infinity">Use the Infinity SDK with Custom Framework Parts</h3>
+  <h3 id="{{ include.title }}-infinity-sdk">Use the Infinity SDK with Custom Framework Parts</h3>
   
   <p>Previously, a part’s content was a serialized object that was stored and retrieved in the database by the CMS framework. A part defined the content class which the Editor and Display controls both knew about, and the framework delivered content to each control and offered functions to save it back to the database. This old concept is still supported and can be useful in some cases, such as the HTML (FTI) part that just stores one blob of HTML and has no need for SQL joins to other tables. In the SDK item template for a part, you get the boilerplate code to support this approach automatically (see the MyContent property). You can use it or ignore it.</p>
 
@@ -76,25 +76,273 @@
   
   <p><img src="img/VisualStudioAttachToProcessScreen.png" alt="" class="img-responsive" /></p>
   
-  <h3 id="{{ include.title }}-setup">Setup</h3>
+  <h3 id="{{ include.title }}-create-projects">Creating Custom Framework Parts Projects</h3>
   
-  <h3 id="{{ include.title }}-projects">Projects for Custom Framework Parts</h3>
+  <p>The SDK includes a project template to create a CMS Parts Project. The Parts project template creates an empty project with a reference the BBNCExtensions assembly, which is your key to the custom parts universe.</p>
+
+  <p>This Part template creates the scaffold of a CMS part that consists of three project items.</p>
   
-  <h3 id="{{ include.title }}-creation">Custom Framework Parts Creation</h3>
+  <ol>
+    <li>A web user control (ASCX) for the Display Control that provides the code and markup to render content on a web page.</li>
+    <li>A web user control (ASCX) for the Editor Control that creates a user interface to edit the part’s content.</li>
+    <li>A class to hold the part’s content/properties (optional).</li>
+  </ol>
   
-  <h4>Add a Custom Framework Part to a Parts Project</h4>
+  <p>To deploy the custom part to your website, you must copy its files to the appropriate folders on your web server and then add the part to the Custom parts gallery in Administration. You can configure post-build events in to copy the files.</p>
   
-  <h4>Adjust the Post-build Events</h4>
+  <p class="alert alert-warning"><span class="label label-warning">Warning</span> These steps require Visual Studio and the Infinity SDK. For more information about how to create a developer environment, see <a href="{{ site.baseurl }}/start/#development-environment">Development Environment</a>.</p>
   
-  <h4>Copy the Files for a Custom Framework Part</h4>
+      <p class="alert alert-info"><span class="label label-info">Note</span>  Subsequent tasks may require Administrator rights to folders on your developer machine. If you do not have Administrator rights enabled by default, you may have to run Visual Studio as an Administrator.</p>
   
-  <h4>Test the Build nad Post-build Commands</h4>
+  <ol>
+    <li>Open Visual Studio.</li>
+    <li>
+      From Visual Studio, click File > New > Project.<br />
+      <img src="img/FileNewProjectMenu_567x196.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      From the New Project screen, select Visual Basic > Blackbaud AppFx > Parts Project.<br />
+      <img src="img/NewProjectPartsProjectScreen_569x425.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Change the project and solution name.<br />
+      <img src="img/ProjectAndSolutionName.png" alt="" class="img-responsive" />
+    </li>
+    <li>Click OK. The solution appears.</li>
+    <li>Save the project.</li>
+  </ol>
   
-  <h4>Add a Custom Framework Part to Blackbaud Internet Solutions</h4>
+  <h3 id="{{ include.title }}-create-parts">Custom Framework Parts Creation</h3>
   
-  <h4>Create a Part Based on a Custom Framework Part Type</h4>
+  <p>Custom parts are comprised of two ASP.NET user controls. It is assumed that the machine where you create custom parts has Blackbaud Internet Solutions installed along with IIS and Visual Studio 2008 or 2010 for the development environment.</p>
+
+  <dl>
+    <dt>Editor Control</dt>
+    <dd>Creates the user interface to edit the part's content in Blackbaud Internet Solutions.</dd>
+    <dt>Display Control</dt>
+    <dd>Provides the code and markup to render the content on a web page.</dd>
+  </dl>
+
+  <p>The content for custom parts can come from a variety of sources. Content can be as simple as text or HTML stored in the BBIS database, or it can be data from the back office such as constituent giving history in Blackbaud CRM. Custom parts store content in the BBIS database, whether it’s the actual content or just the location of the content. Custom parts also store any design options for display or behavior in the database. Depending on the content, the Editor Control offers a place to edit the content or parameters to locate remote content. The Editor Control also allows users to edit design-time settings properties for display and behavior.</p>
+
+  <p>A custom part also has a code-behind DLL assembly. This is where the part’s executable code lives for all of its associated user controls. This is a common ASP.NET practice.</p>
+
+  <p>To install a custom part, you place all non-compiled files (.ascx files, images files, .js files, etc.) in the \NetCommunity\Custom folder of your installation directory. We recommend that you create subfolders in the \NetCommunity\Custom folder for each of your custom parts. In addition, you place all compiled files (your code behind DLL) and required references (.dll) in the \NetCommunity\bin folder.</p>
+
+  <p class="alert alert-info"><span class="label label-info">Note</span> If you do not have a \Custom folder in the \NetCommunity folder for your installation directory, you must create one.</p>
+
+  <p>After your files are in place, you can add custom parts to Blackbaud Internet Solutions from the Custom parts gallery in Administration. After this, the part is ready for use.</p>
   
-  <h4>Change the Reference for BBNCExtensions.dll</h4>
+  <h4 id="{{ include.title }}-create-parts-add-to-project">Add a Custom Framework Part to a Parts Project</h4>
+  
+  <p class="alert alert-success"><span class="label label-success">Tip</span>  Sometimes part types are referred to as parts. But parts are instances of part types. Custom parts are actually custom part types. You can create a part based on a custom part (type).</p>
+  
+  <ol>
+    <li>Open the Parts project.</li>
+    <li>
+      From Solution Explorer, right-click the project and select Add > New Item. The Add New Item screen appears.<br />
+      <img src="img/AddNewItemPartsProjectPartSolutionExplorer.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Select Visual Basic > Blackbaud AppFx CMS > Part.<br />
+      <img src="img/AddNewItemPartsProjectPartScreen.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Change the name.<br />
+      <img src="img/CustomPartName.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Add. The part is added to the project.<br />
+      <img src="img/PartsProjectAddedPartSolutionExplorer.png" alt="" class="img-responsive" />
+    </li>
+    <li>Save the project.</li>
+  </ol>
+  
+  <h4 id="{{ include.title }}-create-parts-post-build">Adjust the Post-build Events</h4>
+  
+  <ol>
+    <li>Ensure the Parts project is open.</li>
+    <li>
+      From Solution Explorer, right-click the project and select Properties.<br />
+      <img src="img/PartsProjectMenuProperties_315x409.png" alt="" class="img-responsive" /><br />
+      The Properties appear.<br />
+      <img src="img/ProjectProperties_432x347.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Compile.<br />
+      <img src="img/PropertiesCompile.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Build Events.<br />
+      <img src="img/PropertiesCompileBuildEvents_512x392.png" alt="" class="img-responsive" /><br />
+      The Build Events screen appears.<br />
+      <img src="img/BuildEventsScreen.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Edit Post-build.<br />
+      <img src="img/EditPostBuild.png" alt="" class="img-responsive" /><br />
+      The Post-build Event Command Line screen appears. There are template XCOPY commands in the editor. These commands copy files from the built project to the BBIS installation.<br />
+      <img src="img/PostBuildEventCommandLineScreen.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Clear the template commands in Post-build event command line and replace the commands with these:
+      {% highlight bat %}
+xcopy "$(ProjectDir)*.ascx" "C:\Program Files\Blackbaud\NetCommunity\Custom\$(ProjectName)" /s /I /y
+xcopy "$(TargetDir)$(ProjectName).*" "C:\Program Files\Blackbaud\NetCommunity\Bin\" /y
+      {% endhighlight %}
+      Adjust the paths for your BBIS installation.  The first line copies the ASCX forms and the second line copies the DLL for the Part.  Once you begin to reference other items in the project, such as API DLLs, you may have to add or adjust lines. For example, this will copy WebAPIClient DLLs:
+      {% highlight bat %}
+xcopy "$(TargetDir)*.WebApiClient.*" "C:\Program Files\Blackbaud\NetCommunity\Bin\" /y
+      {% endhighlight %}
+    </li>
+    <li>Click OK. You return to the Build Events screen.</li>
+    <li>Click OK. You return to the project's properties.</li>
+    <li>Save the project.</li>
+  </ol>
+  
+  <h4 id="{{ include.title }}-create-parts-copy-files">Copy the Files for a Custom Framework Part</h4>
+  
+  <ol>
+    <li>In Visual Studio, open the properties sheet for the Parts project.</li>
+    <li>
+      On the Compile tab, click Build Events. The Build Events screen appears.<br />
+      <img src="img/VisualStudioBuildEventsScreen.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Click Edit Post-build. The Post-build Event Command Line appears.<br />
+      <img src="img/VisualStudioPostBuildEventCommandLine.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      In the command line edit window, replace the default post-build event commands with the following commands and then replace the destination paths with the locations in your installation directory:
+      {% highlight bat %}
+copy "$(ProjectDir)*.ascx" "C:\Infinity\DEV\Firebird\ClassicCMS\Web\Content\Portal\Custom\$(ProjectName)" /s /I /y
+xcopy "$(TargetDir)$(ProjectName).*" "C:\Infinity\DEV\Firebird\ClassicCMS\Web\Content\Portal\bin" /y
+xcopy "$(TargetDir)*.WebApiClient.*" "C:\Infinity\DEV\Firebird\ClassicCMS\Web\Content\Portal\bin" /y
+      {% endhighlight %}
+    </li>
+    <li>Replace the destination paths in the commands with the appropriate locations in your installation directory. Remember to place your .ascx files in the \custom folder or a subfolder and your code-behind DLL and any *.webApiClient.dlls in the \bin folder.</li>
+    <li>
+      When you successfully recompile, these commands copy files to your installation folder.
+      <ul>
+        <li>The first command copies.ascx user controls from your project to the \NetCommunity\Custom folder or a subfolder. In our example, the command copies the file to the \Hello subfolder.</li>
+        <li>The second command copies the DLL to the \bin folder of your installation. The command includes “$(ProjectName)” to ensure that you only copy the DLL for your project and not other DLLs that you reference that are in the \bin folder.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p class="alert alert-info"><span class="label label-info">Note</span>  For more complex custom parts, you can add commands to copy related files such as images, scripts, and style sheets.</p>
+  
+  <h4 id="{{ include.title }}-create-parts-test-build">Test the Build and Post-build Commands</h4>
+  
+  <ol>
+    <li>Open the Parts project.</li>
+    <li>
+      <p>Right-click the project and select Build. A successful build should look like this in the Output window:</p>
+      <pre>
+------ Build started: Project: PartsProjectExample, Configuration: Debug Any CPU ------
+  PartsProjectExample -> C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.dll
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\PartExampleDisplay.ascx
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\PartExampleEditor.ascx
+  2 File(s) copied
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.dll
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.pdb
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.xml
+  3 File(s) copied
+========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========
+      </pre>
+      <p>Without Administrator rights, the output will look something like this:</p>
+      <pre>
+------ Build started: Project: PartsProjectExample, Configuration: Debug Any CPU ------
+  PartsProjectExample -> C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.dll
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\PartExampleDisplay.ascx
+  Access denied
+  C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.dll
+  Access denied
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(3717,9): error MSB3073: The command "xcopy "C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\*.ascx" "C:\Program Files\Blackbaud\NetCommunity\Custom\PartsProjectExample" /s /I /y
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(3717,9): error MSB3073: xcopy "C:\Users\TomTr\Documents\Visual Studio 2010\Projects\PartsProjectExample\PartsProjectExample\bin\PartsProjectExample.*" "C:\Program Files\Blackbaud\NetCommunity\Bin\" /y" exited with code 4.
+========== Build: 0 succeeded or up-to-date, 1 failed, 0 skipped ==========
+      </pre>
+    </li>
+    <li>
+      Browse to the files in Windows Explorer.<br />
+      <img src="img/CopiedFiles.png" alt="" class="img-responsive" />
+    </li>
+  </ol>
+  
+  <h4 id="{{ include.title }}-create-parts-add-to-bbis">Add a Custom Framework Part to Blackbaud Internet Solutions</h4>
+  
+  <ol>
+    <li>Log into BBIS as a supervisor and navigate to the Administration page.</li>
+    <li>
+      Click Custom parts.<br />
+      <img src="img/AdministrationCustomParts.png" alt="" class="img-responsive" /><br />
+      The Custom Parts page appears.<br />
+      <img src="img/CustomPartsPage1_545x353.png" alt="" class="img-responsive" /><br />
+    </li>
+    <li>Click New custom part.<br /><img src="img/NewCustomPartButton.png" alt="" class="img-responsive" /></li>
+    <li>In Name, enter a name for the custom part (type).</li>
+    <li>
+      <p>In Display Control Source, enter the path to the ASP.NET display user interface (ASCX file) that the post-build events copied to the BBIS installation. For example: Custom/PartsProjectExample/PartExampleDisplay.ascx.</p>
+      <p class="alert alert-warning"><span class="label label-warning">Warning</span> Enter a virtual path. Otherwise, you will get an error message like this:</p>
+      <p><img src="img/VirtualNotPhysicalError.png" alt="" class="img-responsive" /></p>
+    </li>
+    <li>
+      In Edit Control Source, enter the path to the ASP.NET editor user interface (ASCX file) that the post-build events copied to the BBIS installation. For example: Custom/PartsProjectExample/PartExampleEditor.ascx<br />
+      <img src="img/PartExampleCreateCustomPart.png" alt="" class="img-responsive" />
+    </li>
+    <li>Select the Requires SSL checkbox if the part contains, displays, or collects, sensitive data, such as credit card information. When you select this checkbox and you configure an SSL certificate on your web site, any page to which you add this part will use a secure (https://) URL.</li>
+    <li>Click Save</li>
+  </ol>
+  
+  <p class="alert alert-success"><span class="label label-success">Tip</span>  Sometimes part types are referred to as parts. But parts are instances of part types. Custom parts are actually custom part types. You can create a part based on a custom part (type).</p>
+  
+  <h4 id="{{ include.title }}-create-parts-create-instance">Create a Part Based on a Custom Framework Part Type</h4>
+  
+  <ol>
+    <li>
+      Click Create > New part.<br />
+      <img src="img/CreateNewPart.png" alt="" class="img-responsive" /><br />
+      The New Part Webpage Dialog appears.
+    </li>
+    <li>
+      From Part type, click the binoculars. Selections for part (type) appear.<br />
+      <img src="img/SelectParttype.png" alt="" class="img-responsive" />
+    </li>
+    <li>
+      Scroll or browse to the custom part (type).<br />
+      <img src="img/SelectedCustomPart.png" alt="" class="img-responsive" />
+    </li>
+    <li>Enter a name for the new part. Do not use the same name as the custom part (type). The name must be unique.</li>
+    <li>
+      <p>Click Next. A tabbed set of options appears. You can adjust those as necessary. For more information, see Website Design Guide.</p>
+      <p class="alert alert-warning"><span class="label label-warning">Warning</span>  If the version of the reference to BBNCExtensions.dll in your parts project does not match the version of the BBNCExtensions.dll used the compiler (BBIS), you may get an error like this:</p>
+      <p><img src="img/CompilationError_524x366.png" alt="" class="img-responsive" /></p>
+      <p>To correct this error, you can change the reference in your parts project to the copy of the DLL used by the compiler (BBIS). For more information, continue to the next section.</p>
+    </li>
+    <li>Click Save. The new part is created.</li>
+  </ol>
+  
+  <h4 id="{{ include.title }}-create-parts-assembly-reference">Change the Reference for BBNCExtensions.dll</h4>
+  
+  <ol>
+    <li>Open the Parts project.</li>
+    <li>From Solution Explorer, right-click the project and select Properties. The project's properties appear.</li>
+    <li>Click References.</li>
+    <li>
+      <p>Select the existing reference to BBNCExtensions.dll and click Remove.</p>
+      <p><img src="img/ReferenceToBBNCExtensionsDLL_633x271.png" alt="" class="img-responsive" /></p>
+    </li>
+    <li>
+      <p>Click Add. The Add Reference screen appears.</p>
+      <p><img src="img/AddReferenceScreen_354x465.png" alt="" class="img-responsive" /></p>
+    </li>
+    <li>
+      <p>Click the Browse tab. Browse to BBNCExtensions.dll in the BBIS installation. For example: C:\Program Files\Blackbaud\NetCommunity\Bin\BBNCExtensions.dll.</p>
+      <p><img src="img/AddReferenceScreenBBNCExtensionsLocation_357x468.png" alt="" class="img-responsive" /></p>
+    </li>
+    <li>Click OK.</li>
+    <li>Save the project. Then build the project.</li>
+  </ol>
   
   <h3 id="{{ include.title }}-example-pledge-form">Custom Pledge Form</h3>
   

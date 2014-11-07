@@ -156,12 +156,16 @@
     color: #FFF;
   }
 
-  .nav-sidebar ul.nav .active a {
+  .nav-sidebar ul.nav li.active > a {
     color: #000;
   }
 
   .nav-sidebar ul.nav a {
     padding: 5px 5px 5px 15px;
+  }
+
+  .nav-sidebar ul.nav ul.nav a {
+    padding-left: 30px;
   }
 
   .nav-sidebar > li > a {
@@ -172,7 +176,7 @@
     display: none;
   }
 
-  .nav-sidebar li.active ul.nav li {
+  .nav-sidebar li.active > ul.nav > li {
     display: block;
   }
 
@@ -392,11 +396,14 @@
 
   .highlight pre {
     background: #FFF;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .tab-pane .highlight pre {
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    font-size: 12px;
-    line-height: 16px;
   }
 
   ul.nav-tabs {

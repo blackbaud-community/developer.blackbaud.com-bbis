@@ -89,7 +89,9 @@
   $(function() {
     
     // Create an instance of the DonationService
-    var ds = new BLACKBAUD.api.DonationService();
+    var ds = new BLACKBAUD.api.DonationService(
+      $('.BBDonationApiContainer').data('partid')
+    );
     
     // Create the donation object we'll send
     // In order to simplify our examples, some of this information is hard-coded.
