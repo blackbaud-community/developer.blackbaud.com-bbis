@@ -140,14 +140,18 @@
 */
 
   .section-header {
-    background: url(../img/building-large-grey.jpg) no-repeat center center;
+    background: url(../img/section-header/building-large-grey.jpg) no-repeat center center;
     background-size: cover;
     border-bottom: solid 1px #333;
   }
 
+  .section-reference .section-header {
+    background-image: url(../img/section-header/schematic-grey.jpg);
+  }
+
   .section-header h1 {
     color: #EEE;
-    font-size: 22px;
+    font-size: 26px;
     letter-spacing: 4px;
     margin: 0;
     padding: 80px 0;
