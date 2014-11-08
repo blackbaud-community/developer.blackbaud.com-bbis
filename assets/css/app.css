@@ -317,6 +317,19 @@
     min-height: 30px;
   }
 
+  .stories {
+    background: #EFEFEF url(../img/section-header/sunset-grey.jpg) no-repeat center center;
+    background-size: cover;
+    border-bottom: solid 1px #333;
+    border-top: solid 1px #000;
+    color: #FFF;
+    padding: 60px;
+  }
+
+  .stories p {
+    padding-bottom: 30px;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - REST

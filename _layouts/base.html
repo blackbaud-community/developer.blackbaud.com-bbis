@@ -1,5 +1,16 @@
-{% include vars.html %}
+<!--
 
+Hello fellow developer.  Thank you for looking at our source.  Unfortunately there's not much to see here.
+This is a prototype project for a new breed of documentation for the Blackbaud Community.
+
+This page was last built on {{ site.time }} by Bobby Earl (https://github.com/bbBobbyEarl).
+If you're a passionate and knowledgable developer who cares about giving back to non-profits, consider joining the Blackbaud Team.
+
+https://www.blackbaud.com/careers
+
+-->
+
+{% include vars.html %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,25 +101,60 @@
     </div>
   {% endif %}
   
-  <div class="content">
-    {{ content }}
-  </div>
+  {{ content }}
   
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+          <p>
+            <img src="{{ site.baseurl }}/assets/img/logo-lonely.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="{{ site.baseurl }}/start/">Getting Started</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/guide/">Developer Guide</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/reference/">Technical Reference</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/code/">Code Samples</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/help/">Help</a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
           <p><img src="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" /></p>
           <ul class="list-unstyled">
-            <li><a href="http://tripott.com/EE">Blackbaud Education Edge</a></li>
-            <li><a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx">Blackbaud Infinity SDK</a></li>
-            <li><a href="http://open.convio.com/">Blackbaud Luminate</a></li>
-            <li><a href="#">Blackbaud NetCommunity</a></li>
-            <li><a href="#">Blackbaud Raiser's Edge</a></li>
-          </ul>
-        </div>  <!-- .col-sm-3 -->
-        <div class="col-sm-6">
-          <ul class="list-inline bb-love pull-right">
+            <li>
+              <a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx" target="_blank">
+                Blackbaud Infinity SDK
+              </a>
+            </li>
+            <li>
+              <a href="http://open.convio.com/" target="_blank">
+                Blackbaud Luminate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/netcommunity-developer/netcommunity-developer.htm" target="_blank">
+                Blackbaud NetCommunity
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/guides/re7ent/api.pdf" target="_blank">
+                Blackbaud Raiser's Edge
+              </a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
+          <ul class="list-inline bb-love">
             <li>
               <a href="http://www.blackbaud.com" target="_blank">
                 <img src="{{ site.baseurl }}/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive pull-left" />
@@ -122,8 +168,8 @@
                 <img src="{{ site.baseurl }}/assets/img/logo-github.png" alt="GitHub" class="img-responsive pull-left" />
               </a>
             </li>
-          </ul>
-        </div>  <!-- .col-sm-9 -->
+          </ul>  <!-- .list-inline -->
+        </div>  <!-- .col-sm-4 -->
       </div>  <!-- .row -->
 
     </div>  <!-- .container -->

@@ -1,3 +1,16 @@
+{% comment %}
+
+This page has no visual representation for the end user.
+It's only purpose is the parse the URL into the section + subsection structure.
+
+The ideal solution would be to use a plugin to generate this information, and make it available to all pages.
+Although not currently doing so, I build the site with the idea it could be built on gh-pages, which means no plugins.
+
+Because of the scope of custom variables, it became necessary to define them in multiple places.
+This is why the page became an include, as opposed to being defined in base.html.
+
+{% endcomment %}
+
 {% assign url_parts = page.url | split:"/" %}
 {% for part in url_parts %}
   {% if forloop.index0 == 1 %}
