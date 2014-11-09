@@ -330,6 +330,10 @@
     padding-bottom: 30px;
   }
 
+  .fa-sm {
+    font-size: 12px;
+  }
+
 /* 
 * ==========================================================================
 * TECHNICAL REFERENCE - REST
@@ -686,7 +690,7 @@
 * ========================================================================== 
 */
   .bb-love {
-    padding-top: 40px;
+    padding: 20px 0 0 0;
   }
 
   .bb-love li {
@@ -700,6 +704,33 @@
   .bb-love a:hover img,
   .bb-love a:focus img {
     opacity: .8;
+  }
+
+  .social-icons a {
+    font-size: 26px;
+    margin: 0 5px;
+  }
+
+/* 
+* ==========================================================================
+* COPYRIGHT
+* ========================================================================== 
+*/
+
+  .copyright p {
+    font-size: 12px;
+    margin: 0;
+    padding: 7px 0;
+  }
+
+  .copyright a {
+    color: #363636;
+    font-size: 12px;
+  }
+  
+  .copyright a:hover,
+  .copyright a:focus {
+    color: #34b1ec
   }
 
 /* 
