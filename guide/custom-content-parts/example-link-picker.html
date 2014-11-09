@@ -16,10 +16,12 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="example-link-picker-initialize">
+    {% include copy-code.html %}
     {% highlight js %}initLinkPickerExample{% endhighlight %}
   </div>
   <div class="tab-pane" id="example-link-picker-editor">
-    {% highlight html %}
+{% include copy-code.html %}
+{% highlight html %}
 <p>
   <strong>Selected Link Name:</strong>
   <span class="selected-link-name"></span>
@@ -91,10 +93,11 @@
   
 }(jQuery);     
 </script>
-    {% endhighlight %}
+{% endhighlight %}
   </div>
   <div class="tab-pane" id="example-link-picker-display">
-    {% highlight html %}
+{% include copy-code.html %}
+{% highlight html %}
 <p>
   See my link: <span class="selected-link"></span>
 </p>
@@ -105,6 +108,6 @@ function initLinkPickerExample(instance) {
   $('#' + instance.elementId + ' .selected-link').append(link);
 }
 </script>
-    {% endhighlight %}
+{% endhighlight %}
   </div>
 </div>

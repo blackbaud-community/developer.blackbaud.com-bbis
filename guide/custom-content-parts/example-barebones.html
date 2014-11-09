@@ -17,10 +17,12 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="example-barebones-initialize">
+    {% include copy-code.html %}
     {% highlight js %}initBarebonesExample{% endhighlight %}
   </div>
   <div class="tab-pane" id="example-barebones-editor">
-    {% highlight html %}
+{% include copy-code.html %}
+{% highlight html %}
 <p>
   <label for="greeting">Greeting:</label>
   <input type="text" id="greeting" />
@@ -53,16 +55,17 @@
   
 }(jQuery);     
 </script>
-    {% endhighlight %}
+{% endhighlight %}
   </div>
   <div class="tab-pane" id="example-barebones-display">
-    {% highlight html %}
+{% include copy-code.html %}
+{% highlight html %}
 <p>Hello, <span class="greeting"></span></p>
 <script>
 function initBarebonesExample(instance) {
   $('#' + instance.elementId + ' .greeting').text(instance.settings.greeting);
 }
 </script>
-    {% endhighlight %}
+{% endhighlight %}
   </div>
 </div>

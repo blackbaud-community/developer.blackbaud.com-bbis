@@ -295,7 +295,7 @@
     font-size: 22px; 
   }
   
-  .content-latest-features .feature-split {
+  .feature-split {
     border-top: solid 1px #EFEFEF;
     margin-top: 30px;
     padding-top: 30px;
@@ -467,10 +467,29 @@
     line-height: 16px;
   }
 
+  .tab-pane {
+    position: relative;
+  }
+
   .tab-pane .highlight pre {
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  .tab-pane .copy-code {
+    border-bottom: solid 1px #EFEFEF;
+    border-left: solid 1px #EFEFEF;
+    display: block;
+    padding: 2px 5px;
+    position: absolute;
+    right: 1px;
+    top: 0;
+  }
+
+  .tab-pane .copy-code a:focus,
+  .tab-pane .copy-code a:hover {
+    background: #EFEFEF;
   }
 
   ul.nav-tabs {

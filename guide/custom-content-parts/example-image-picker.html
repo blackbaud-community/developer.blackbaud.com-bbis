@@ -18,10 +18,12 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="example-image-picker-initialize">
+    {% include copy-code.html %}
     {% highlight js %}imageHighlighterRender{% endhighlight %}
   </div>
   <div class="tab-pane" id="example-image-picker-editor">
-    {% highlight html %}
+{% include copy-code.html %}
+{% highlight html %}
 <script>
 !function($) {
   
@@ -148,10 +150,11 @@
     </div>
   </div>
 </div>
-    {% endhighlight %}
+{% endhighlight %}
   </div>
   <div class="tab-pane" id="example-image-picker-display">
-    {% highlight html %}
+{% include copy-code.html %}
+{% highlight html %}
 <script>
 function imageHighlighterRender(o) {
   var html = [
@@ -162,6 +165,6 @@ function imageHighlighterRender(o) {
   $('#' + o.elementId).html(html.join(''));
 }
 </script>
-    {% endhighlight %}
+{% endhighlight %}
   </div>
 </div>
