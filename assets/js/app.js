@@ -7,6 +7,7 @@
           sidebarWrapper = $('.sidebar-wrapper'),
           sidebar = $('.sidebar'),
           sidebarNav = $('.nav-sidebar'),
+          copyCode = $('.copy-code'),
           content = $('.content-wrapper'),
           contentToggle = content.data('toggle'),
           isSandcastle = body.hasClass('subsection-bbncextensions');
@@ -76,6 +77,35 @@
       
       // Initialize Tooltips
       $('[data-toggle="tooltip"]').tooltip();
+      
+      // Initialize Clipboard Copy
+      if (copyCode.length) {
+        var client = new ZeroClipboard(copyCode);
+        var bridge;
+        
+        client.on('ready', function() {
+          bridge = $('#global-zeroclipboard-html-bridge');
+          bridge.data('placement', 'left').data('trigger', 'manual').attr('title', 'Copied!').tooltip();
+        });
+        
+        copyCode.on('mouseover', function() {
+          $(this).tooltip('show');
+        });
+        
+        copyCode.on('mouseout', function() {
+          $(this).tooltip('hide');
+          bridge.tooltip('hide');
+        });
+        
+        client.on('copy', function(e) {
+          e.clipboardData.setData('text/plain', $(e.target).siblings('.highlight').text());
+        });
+        
+        client.on('aftercopy', function(e) {
+          copyCode.tooltip('hide');
+          bridge.tooltip('show');
+        });
+      }
 
 	});
 

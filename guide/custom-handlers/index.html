@@ -27,6 +27,7 @@ To pass parameters to the handler, place them at the end of the URL: <code>http:
 
 <p>You can also create a part to supply the response to your the custom handler. For example, you can create a custom part with a text box on the part editor to allow you to edit the content for the response. You can use the API to get the content from the custom part because all custom handlers have access to the API. Here is a simple example:</p>
 
+<div class="highlight-wrapper">
 {% include copy-code.html %}
 {% highlight vbnet %}
 
@@ -39,5 +40,6 @@ oPart = Me.API.Parts.LoadCustomContentFromPartId(_
 If oPart IsNot Nothing Then
   sResponse = oPart.FBML
 {% endhighlight %}
+</div>
 
 <p>In the sample code, an FBML custom part stores an FBMLContent object as its content. The handler supports a Query String parameter called partId to identify the particular instance of the custom FBML part get. So if the part ID is 616, the URL to call the handler would be: <code>http://blackbaud.org/netcommunity/components/custom.ashx?handler=facebooksample.getfbml&partid=616</code>.</p>

@@ -9,39 +9,41 @@ js:
 
 {% include vars.html %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <ol class="breadcrumb">
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
 
-        {% for crumb in page.breadcrumbs reversed %}
-          <li>
-            <a href="{{crumb.url}}">{{crumb.title}}</a>
+          {% for crumb in page.breadcrumbs reversed %}
+            <li>
+              <a href="{{crumb.url}}">{{crumb.title}}</a>
+            </li>
+          {% endfor %}
+
+          <li class="active">
+            {{page.title}}
           </li>
-        {% endfor %}
-
-        <li class="active">
-          {{page.title}}
-        </li>
-      </ol>
+        </ol>
+      </div>
     </div>
-  </div>
-  
-  <div class="row row-wrapper">
-    
-    <div class="col-md-4 hidden-xs hidden-sm">
-      <div class="sidebar">
-        <ul class="nav nav-pills nav-stacked nav-sidebar">
-          {% include sidebar-back-to-section.html title="Technical Reference" %}
-          {% include_relative sidebar.html %}
-          {% include sidebar-back-to-top.html %}
-        </ul>
-      </div>  <!-- .sidebar -->
-    </div>  <!-- .col-md-6 -->
 
-    <div class="content-wrapper col-md-8">
-      {{ content }}
-    </div>  <!-- .col-md-12 -->
+    <div class="row row-wrapper">
 
-  </div>  <!-- .row -->
-</div>  <!-- .container -->
+      <div class="col-md-4 hidden-xs hidden-sm">
+        <div class="sidebar">
+          <ul class="nav nav-pills nav-stacked nav-sidebar">
+            {% include sidebar-back-to-section.html title="Technical Reference" %}
+            {% include_relative sidebar.html %}
+            {% include sidebar-back-to-top.html %}
+          </ul>
+        </div>  <!-- .sidebar -->
+      </div>  <!-- .col-md-6 -->
+
+      <div class="content-wrapper col-md-8">
+        {{ content }}
+      </div>  <!-- .col-md-12 -->
+
+    </div>  <!-- .row -->
+  </div>  <!-- .container -->
+</div>  <!-- .content -->

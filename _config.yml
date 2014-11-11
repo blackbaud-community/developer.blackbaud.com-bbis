@@ -38,10 +38,10 @@ js:
   - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.min.js
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
+  - url: /assets/blackbaud-bootstrap-theme/lib/zero-clipboard/ZeroClipboard.min.js
     base: true
     
-  - url: /assets/js/jquery.cookie.js
+  - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
     base: true
     
   - url: /assets/js/app.js
