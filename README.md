@@ -11,6 +11,8 @@ When working locally, you can either "build" or "serve."  Anything that's built 
 
 When serving locally, be certain to pass in the <code>--baseurl</code> flag, followed by an empy string <code>''</code>.  For example, I typically run the following:
 
-<pre>jekyll serve --watch --baseurl ''</pre>
+<pre>jekyll serve --baseurl ''</pre>
 
-<code>--watch</code> allows the server to automatically refresh when a change is detected in your source.
+### Deployment
+
+At present time, we deploy by uploading the contents of the _site directory directly to developer.blackbaud.com/bbis.  Please be aware this configuration may change the future.  For example, with some project restructuring and DNS changes, we could utilize gh-pages free hosting for all our documentation.
