@@ -13,7 +13,7 @@ When serving locally, be certain to pass in the <code>--baseurl</code> flag, fol
 
 <pre>jekyll serve --baseurl ''</pre>
 
-You will now be able to visit http://localhost:4000 in your browser to view the site.
+You will now be able to visit <a href="http://localhost:4000">http://localhost:4000</a> in your browser to view the site.
 
 ### Publishing
 
