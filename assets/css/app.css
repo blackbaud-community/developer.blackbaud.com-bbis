@@ -133,6 +133,10 @@
     background-image: url(../img/carousel/example-03.jpg);
   }
 
+  .carousel .slide-03 {
+    background-image: url(../img/highlights/arrows_wide.jpg);
+  }
+
 /* 
 * ==========================================================================
 * SECTION HEADER
