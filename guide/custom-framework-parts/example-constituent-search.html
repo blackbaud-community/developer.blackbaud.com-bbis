@@ -1,5 +1,470 @@
 <h3 id="example-constituent-search">Constituent Search</h3>
 
+<p>This example includes step-by-step instructions to create a custom part that meets these design requirements and learning objectives:</p>
+
+<h4>Design requirements: Create a custom individual search (Blackbaud CRM constituent) form for Blackbaud Internet Solutions</h4>
+
+<ol>
+  <li>A label will appear at the top of the display form. The label's text depends on a constituency selected in the editor form.</li>
+  <li>
+    <ul>
+      <li>
+        If All is selected on the editor form:<br />
+        <code>Individual Search</code>
+      </li>
+      <li>
+        If a constituency is selected on the editor form:<br />
+        <code>Individual Search: &lt;constituency&gt; constituency</code>
+      </li>
+      <li>
+        For example:<br />
+        <code>Individual Search: Staff constituency</code>
+      </li>
+    </ul>
+  </li>
+  <li>The display form will include a Search criteria section that includes labels and text boxes for first, middle, and last name.</li>
+  <li>The display form will include a Search button. When clicked, the search button will initiate a individual constituent search in the Blackbaud CRM database. The search will be filtered by constituency depending on the selection on the editor form.</li>
+  <li>The display form will include a First result section that shows the name, primary email address, and primary phone number for the first constituent returned by the search. If no email address or phone is found, the label will indicate that. If no results are returned, this section will indicate that.</li>
+  <li>The display form will include an All results section that lists all of the constituents returned by the search.</li>
+  <li>The editor form will include a radio button list that includes items for each system and user-defined constituency. The list will also include an All item to indicate to perform a search that is not filtered by constituency.</li>
+  <li>The editor form will include text that explains the configuration option:</li>
+  <li>Select the constituency on which to filter the individual search.</li>
+</ol>
+
+<h4>Objectives</h4>
+
+<ol>
+  <li>Create parts projects</li>
+  <li>Add custom parts to parts projects</li>
+  <li>Create a custom form (UI design)</li>
+  <li>Create a custom form (form behavior)</li>
+  <li>Add a configuration setting to a custom form (UI design)</li>
+</ol>
+
+<h4>Create a Custom Constituent Search (Design)</h4>
+
+<ol>
+  <li>
+    Open your Parts project in Visual Studio. This example uses a project called SearchPartExample.<br />
+    <img src="../img/SearchPartExample.png" alt="" class="img-responsive" />
+  </li>
+  <li>Add a new custom part (type) to the project called CustomSearchForm.</li>
+  <li>
+    A VB file may appear in an editor. For example, CustomSearchFormProperties.vb may appear. You will use this file later. But for now, close the VB files for properties and take a look at Solution Explorer.<br />
+    <img src="../img/CustomSearchFormPropertiesVB.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Open CustomSearchFormDisplay.ascx for editing in Designer. Right-click CustomSearchFormDisplay.vb and select View Designer.<br />
+    <img src="../img/CustomSearchFormDisplayHighlighted.png" alt="" class="img-responsive" /><br />
+    Right-clicking...<br />
+    <img src="../img/ViewDesignerForASCXCustomSearchForm.png" alt="" class="img-responsive" /><br />
+    The ASCX form appears in Design Mode.<br />
+    <img src="../img/ASCXInDesignerCustomSearchForm.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Click View > Toolbox. The Toolbox appears.<br />
+    <img src="../img/ToolboxAndDesignerCustomSearchFormDisplay.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Add a break after [lblError]. You can place the cursor after the text and press ENTER.<br />
+    <img src="../img/AddABreakCustomSearchFormDisplay.png" alt="" class="img-responsive" />
+  </li>
+  <li>Add two Panels to the form. Order the panels vertically and adjust the height and width so that there is space to work in.</li>
+  <li>
+    Change the panel IDs to PanelSearchFormEntry and PanelSearchFormResults. To adjust the panel properties, you can right-click the panel and select Properties.<br />
+    <img src="../img/PanelPropertiesFromRightClickMenuPanelSearchFormEntry.png" alt="" class="img-responsive" /><br />
+    The Properties window appears. ID is probably at the bottom.  Changing Panel1 to PanelSearchFormEntry...<br />
+    <img src="../img/PanelSearchFormEntryProperties.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Add a label inside the first Panel.<br />
+    <img src="../img/AddALabelCustomSearchFormEntryPanel.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Change the label ID to LabelSearchFormEntry. Change the text of the label to Search criteria.<br />
+    <img src="../img/ChangeTheLabelAndID.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Add a break and an HTML table with labels and text boxes for name information. Also, add a button with Search as the text.<br />
+    <img src="../img/SearchCriteriaUI.png" alt="" class="img-responsive" />
+    <table class="table table-striped">
+      <tr>
+        <th>Text</th>
+        <th>Control</th>
+        <th>ID</th>
+      </tr>
+      <tr>
+        <td>First</td>
+        <td>System.Web.UI.WebControls.Label</td>
+        <td>LabelFirst</td>
+      </tr>
+      <tr>
+        <td>Middle</td>
+        <td>System.Web.UI.WebControls.Label</td>
+        <td>LabelMiddle</td>
+      </tr>
+      <tr>
+        <td>Last</td>
+        <td>System.Web.UI.WebControls.Label</td>
+        <td>LabelLast</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>System.Web.UI.WebControls.TextBox</td>
+        <td>TextBoxFirst</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>System.Web.UI.WebControls.TextBox</td>
+        <td>TextBoxMiddle</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>System.Web.UI.WebControls.TextBox</td>
+        <td>TextBoxLast</td>
+      </tr>
+      <tr>
+        <td>Search</td>
+        <td>System.Web.UI.WebControls.Button</td>
+        <td>ButtonSearch</td>
+      </tr>
+    </table>
+  </li>
+  <li>
+    To the second panel, add fields for results.
+    <table class="table table-striped">
+      <tr>
+        <th>Text</th>
+        <th>Control</th>
+        <th>ID</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>System.Web.UI.WebControls.Label</td>
+        <td>LabelName</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>System.Web.UI.WebControls.Label</td>
+        <td>LabelEmail</td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td>System.Web.UI.WebControls.Label</td>
+        <td>LabelPhone</td>
+      </tr>
+    </table>
+  </li>
+</ol>
+
+<h4>Create a Custom Constituent Search Editor (Design)</h4>
+
+<ol>
+  <li>Open your Parts project in Visual Studio.</li>
+  <li>
+    Open CustomSearchFormEditor.ascx for editing in Designer.<br />
+    <img src="../img/CustomSearchFormEditorInDesigner.png" alt="" class="img-responsive" />
+  </li>
+  <li>Delete the label that contains this text: "This part does not have any design time options"</li>
+  <li>Add a break.</li>
+  <li>
+    Create the interface for the form's configuration options. The options are constituencies on which to filter:
+    <ol>
+      <li>Add a RadioButtonList.</li>
+      <li>Change the ID to RadioButtonListConstituencies.</li>
+      <li>
+        From the list tasks menu, select Edit Items. The ListItem Collection Editor screen appears.
+        <p class="alert alert-info"><span class="label label-info">Note</span>  This is only to add some defaults so that the editor form shows something in the IDE. The members of the collection will be populated dynamically based on Infinity constituencies retrieved with the Infinity web API.</p>
+        <img src="../img/ListItemCollectionEditorUnpopulated.png" alt="" class="img-responsive" />
+      </li>
+      <li>Click Add. A new member of the collection is added.</li>
+      <li>From Text, enter Board member</li>
+      <li>
+        Add members for Donor, Fundraiser, and Volunteer.<br />
+        <img src="../img/ListItemCollectionEditorPopulated.png" alt="" class="img-responsive" />
+      </li>
+      <li>Click OK.</li>
+      <li>
+        Add text that explains the options:<br />
+        Select constituency on which to filter the individual search.<br />
+        <img src="../img/RadioButtons.png" alt="" class="img-responsive" />
+      </li>
+      <li>Save CustomSearchFormEditor.ascx.</li>
+    </ol>
+  </li>
+</ol>
+
+<h4>Track the Selected Constituencies</h4>
+
+<ol>
+  <li>Open the form properties VB file that was created when you added the custom part (type). For example, open CustomSearchFormProperties.vb.</li>
+  <li>
+    Declare Boolean variables that track which constituency was selected on the editor form:
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+Public Class CustomSearchFormProperties
+    Public Constituency As String
+    Public ConstituencyID As System.Guid
+    Public SearchAll As Boolean
+End Class
+  {% endhighlight %}
+    </div>
+  </li>
+  <li>Save the file.  The display and editor forms will check these variables to determine which record to use.</li>
+</ol>
+
+<h4>Add Infinity Web API References</h4>
+
+<ol>
+  <li>Open the Parts project.</li>
+  <li>From Solution Explorer, right-click the project and select Properties. The project's properties appear.</li>
+  <li>Click References.</li>
+  <li>
+    Click Add. The Add Reference screen appears.<br />
+    <img src="../img/AddReferenceScreen_354x465.png" alt="" class="img-responsive" />
+  </li>
+  <li>Click the Browse tab. Browse to the Bin folder in your BBIS installation. For example: C:\Program Files\Blackbaud\NetCommunity\Bin</li>
+  <li>
+    Select these DLLs:
+    <ul>
+      <li>Blackbaud.AppFx</li>
+      <li>Blackbaud.AppFx.WebAPI</li>
+      <li>Blackbaud.Appfx.XmlTypes</li>
+    </ul>
+    <img src"../img/AddReferenceScreenWebAPIDLLs_369x484.png" alt="" class="img-responsive" />
+  </li>
+  <li>Click OK.</li>
+  <li>Save the project. Then build the project.</li>
+</ol>
+
+<h4>Change the Top Label Based on Selected Constituency</h4>
+
+<p>To change a label based on the part's content properties, in the display form code (CustomSearchFormDisplay.ascx.vb), add this for the page load:</p>
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        If MyContent.Constituency = "All" Then
+            LabelConstituency.Text = "Individual Search"
+        Else
+            LabelConstituency.Text = "Individual Search: " + MyContent.Constituency + " constituency"
+        End If
+    End Sub
+  {% endhighlight %}
+</div>
+
+<p>mContent is an instance of a properties class called CustomSearchFormProperties, which is a part of the project.</p>
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+Public Class CustomSearchFormProperties
+    Public Constituency As String
+    Public ConstituencyID As System.Guid
+    Public SearchAll As Boolean
+End Class
+  {% endhighlight %}
+</div>
+
+<h4>Find an Infinity Search for a Constituent</h4>
+
+<ol>
+  <li>
+    Open the Infinity web client. For example:<br />
+    <img src="../img/BlackbaudEnterpriseCRMHome.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Navigate to Administration > Application > Features > Search list search. The Search List Search screen appears.<br />
+    <img src="../img/SearchListSearchScreen_516x420.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    In Name, enter Constituent and click Search.<br />
+    <img src="../img/SearchListSearchScreenPopulated_522x426.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Select the search list with the name Constituent Search. The metadata page for the search list appears.<br />
+    <img src="../img/ConstituentSearchListMetadataPage.png" alt="" class="img-responsive" /><br />
+    Note the System record ID for the search list: 23c5c603-d7d8-4106-aecc-65392b563887
+  </li>
+</ol>
+
+<h4>Find the API DLL for the Constituent Search</h4>
+
+<p>Please refer to Find the API DLL for the Pledge Add Form (and add a reference to it). But look for constituent search instead.</p>
+
+<h4>Functions to Search for Individuals in Infinity</h4>
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+  
+Private Function ReturnIndividualSearchIDs(ByVal ConstituencyID As System.Guid)
+  'This is for the case where a constituency is chosen.
+  'Return an array of String that contains IDs for individuals in Infinity.
+  'Access an individual search feature in Infinity with the Constituent catalog
+  'web API WebAPIClient DLL. Only return results for the constituency chosen
+  'in the part's editor. The get IDs request requires a sevice provider. 
+  'The service provider is established by Blackbaud Internet Solutions: 
+  'Me.AP.AppFxWebServiceProvider. This uses BBNCExtensions.
+  Dim IndividualSearchFilter As New Blackbaud.AppFx.Constituent.Catalog.WebApiClient.SearchLists.Constituent.IndividualSearchFilterData
+  Dim IndividualIDs As String()
+  IndividualSearchFilter.FIRSTNAME = TextBoxFirst.Text
+  IndividualSearchFilter.MIDDLENAME = TextBoxMiddle.Text
+  IndividualSearchFilter.KEYNAME = TextBoxLast.Text
+  IndividualSearchFilter.INCLUDEINDIVIDUALS = True
+  IndividualSearchFilter.INCLUDEGROUPS = False
+  IndividualSearchFilter.INCLUDEINACTIVE = False
+  IndividualSearchFilter.INCLUDENONCONSTITUENTRECORDS = False
+  IndividualSearchFilter.INCLUDEORGANIZATIONS = False
+  IndividualSearchFilter.CONSTITUENCY = ConstituencyID
+  IndividualIDs = Blackbaud.AppFx.Constituent.Catalog.WebApiClient.SearchLists.Constituent.IndividualSearch.GetIDs(Me.API.AppFxWebServiceProvider, IndividualSearchFilter)
+  Return IndividualIDs
+End Function
+
+Private Function ReturnIndividualSearchIDs()
+  'This is for the case where a All is chosen for constituency.
+  'Return an array of String that contains IDs for individuals in Infinity.
+  'Access an individual search feature in Infinity with the Constituent catalog
+  'web API WebAPIClient DLL. The get IDs request requires a sevice provider. 
+  'The service provider is established by Blackbaud Internet Solutions: 
+  'Me.AP.AppFxWebServiceProvider. This uses BBNCExtensions.
+  Dim IndividualSearchFilter As New Blackbaud.AppFx.Constituent.Catalog.WebApiClient.SearchLists.Constituent.IndividualSearchFilterData
+  Dim IndividualIDs As String()
+  IndividualSearchFilter.FIRSTNAME = TextBoxFirst.Text
+  IndividualSearchFilter.MIDDLENAME = TextBoxMiddle.Text
+  IndividualSearchFilter.KEYNAME = TextBoxLast.Text
+  IndividualSearchFilter.INCLUDEINDIVIDUALS = True
+  IndividualSearchFilter.INCLUDEGROUPS = False
+  IndividualSearchFilter.INCLUDEINACTIVE = False
+  IndividualSearchFilter.INCLUDENONCONSTITUENTRECORDS = False
+  IndividualSearchFilter.INCLUDEORGANIZATIONS = False
+  IndividualIDs = Blackbaud.AppFx.Constituent.Catalog.WebApiClient.SearchLists.Constituent.IndividualSearch.GetIDs(Me.API.AppFxWebServiceProvider, IndividualSearchFilter)
+  Return IndividualIDs
+End Function 
+  {% endhighlight %}
+</div>
+
+<p>Add code to return constituent IDs for individuals. One function returns IDs for all individuals. The other function returns IDs based on a constituency.</p>
+
+<h4>Functions to Return Constituent Information</h4>
+
+<p>Add code that uses the Infinity web API to retrieve and return constituent information.</p>
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+Private Function GetConstituentSummary(ByVal ConstituentID As System.Guid)
+    'Use the Constituent catalog WebAPIClient DLL to get constituent summary
+    'information from Infinity. The create request and load data calls
+    'require a sevice provider. The service provider is established by Blackbaud
+    'Internet Solutions: Me.AP.AppFxWebServiceProvider. This uses BBNCExtensions.
+    'The load data call uses the constituent summary request. Return the summary.
+    Dim _ConstituentSummary As New Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentSummaryProfileViewFormData
+    Dim ConstituentSummaryReq = Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentSummaryProfileViewForm.CreateRequest(Me.API.AppFxWebServiceProvider)
+    ConstituentSummaryReq.RecordID = ConstituentID.ToString
+    _ConstituentSummary = Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentSummaryProfileViewForm.LoadData(Me.API.AppFxWebServiceProvider, ConstituentSummaryReq)
+    Return _ConstituentSummary
+End Function
+
+Private Function GetConstituentName(ByVal ConstituentID As System.Guid)
+    'Use the Constituent catalog WebAPIClient DLL to get constituent name
+    'information from Infinity. The create request and load data calls
+    'require a sevice provider. The service provider is established by Blackbaud
+    'Internet Solutions: Me.AP.AppFxWebServiceProvider. This uses BBNCExtensions.
+    'The load data call uses the constituent name request. Return the name data.
+    Dim _ConstituentName As New Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentFirstNameLastNameViewFormData
+    Dim ConstituentNameReq = Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentFirstNameLastNameViewForm.CreateRequest(Me.API.AppFxWebServiceProvider)
+    ConstituentNameReq.RecordID = ConstituentID.ToString
+    _ConstituentName = Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentFirstNameLastNameViewForm.LoadData(Me.API.AppFxWebServiceProvider, ConstituentNameReq)
+    Return _ConstituentName
+End Function
+  {% endhighlight %}
+</div>
+
+
+<h4>Procedure for Display</h4>
+
+<p>Add code to display constituent information.</p>
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+  
+Private Sub DisplayIndividualInformation(ByVal ConstituentSummary As Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentSummaryProfileViewFormData,
+                                             ByVal ConstituentName As Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentFirstNameLastNameViewFormData)
+      'Display consituent name and summary information. The information is passed
+      'to this procedure.
+      If ConstituentName.FIRSTNAME <> "" Then
+          LabelName.Text = ConstituentName.FIRSTNAME.ToString + " " + ConstituentName.KEYNAME.ToString
+      Else
+          LabelName.Text = ConstituentName.KEYNAME + " (last name only)"
+      End If
+      If ConstituentSummary.PHONENUMBER <> "" Then
+          LabelPhone.Text = ConstituentSummary.PHONENUMBER.ToString
+      Else
+          LabelPhone.Text = "No phone number listed"
+      End If
+      If ConstituentSummary.EMAILADDRESS <> "" Then
+          LabelEmail.Text = ConstituentSummary.EMAILADDRESS.ToString
+      Else
+          LabelEmail.Text = "No email address listed"
+      End If
+
+  End Sub
+  {% endhighlight %}
+</div>
+  
+<h4>Button Click for Search</h4>
+
+<p>Add code to perform an individual search based on the part's content (which constituency).</p>
+
+<div class="highlight-wrapper">
+  {% include copy-code.html %}
+  {% highlight vbnet %}
+Protected Sub ButtonSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ButtonSearch.Click
+    Dim IndividualIDs() As String
+    Dim ConstituentID As System.Guid
+    Dim ConstituentSummary As Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentSummaryProfileViewFormData
+    Dim ConstituentName As Blackbaud.AppFx.Constituent.Catalog.WebApiClient.ViewForms.Constituent.ConstituentFirstNameLastNameViewFormData
+
+    ListBoxOtherResults.Items.Clear()
+
+    'ReturnIndividualSearchIDs returns results for all constituencies or 
+    'results for just one depending on whether you specify a constituency ID.
+    If MyContent.SearchAll Then
+        IndividualIDs = ReturnIndividualSearchIDs()
+    Else
+        IndividualIDs = ReturnIndividualSearchIDs(MyContent.ConstituencyID)
+    End If
+
+    'Logic for when the button is clicked.
+    If IndividualIDs.Length = 0 Then
+        LabelName.Text = "No results"
+    ElseIf IndividualIDs.Length = 1 Then
+        ConstituentID = New System.Guid(IndividualIDs(0))
+        ConstituentSummary = GetConstituentSummary(ConstituentID)
+        ConstituentName = GetConstituentName(ConstituentID)
+        DisplayIndividualInformation(ConstituentSummary, ConstituentName)
+    Else
+        ConstituentID = New System.Guid(IndividualIDs(0))
+        ConstituentSummary = GetConstituentSummary(ConstituentID)
+        ConstituentName = GetConstituentName(ConstituentID)
+        DisplayIndividualInformation(ConstituentSummary, ConstituentName)
+        For Each IndResult In IndividualIDs
+            ConstituentID = New System.Guid(IndResult)
+            ConstituentName = GetConstituentName(ConstituentID)
+            ListBoxOtherResults.Items.Add(ConstituentName.FIRSTNAME + " " + ConstituentName.KEYNAME)
+        Next
+    End If
+
+End Sub
+  {% endhighlight %}
+</div>
+
 <h4>Editor Behavior</h4>
 
 <p>Add code to the editor form to populate a radio button list of constituencies. Also add code to update the part's content based on the selection in the editor form.</p>

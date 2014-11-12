@@ -11,7 +11,7 @@ This is why the page became an include, as opposed to being defined in base.html
 
 {% endcomment %}
 
-{% assign url_parts = page.url | split:"/" %}
+{% assign url_parts = page.url | replace: "index.html", "index" | split: "/" %}
 {% for part in url_parts %}
   {% if forloop.index0 == 1 %}
     {% assign section = part %}

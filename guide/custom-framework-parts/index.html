@@ -188,14 +188,20 @@ layout: guide
   </li>
   <li>
     Clear the template commands in Post-build event command line and replace the commands with these:
+    <div class="highlight-wrapper">
+      {% include copy-code.html %}
     {% highlight bat %}
 xcopy "$(ProjectDir)*.ascx" "C:\Program Files\Blackbaud\NetCommunity\Custom\$(ProjectName)" /s /I /y
 xcopy "$(TargetDir)$(ProjectName).*" "C:\Program Files\Blackbaud\NetCommunity\Bin\" /y
     {% endhighlight %}
+</div>
     Adjust the paths for your BBIS installation.  The first line copies the ASCX forms and the second line copies the DLL for the Part.  Once you begin to reference other items in the project, such as API DLLs, you may have to add or adjust lines. For example, this will copy WebAPIClient DLLs:
+    <div class="highlight-wrapper">
+      {% include copy-code.html %}
     {% highlight bat %}
 xcopy "$(TargetDir)*.WebApiClient.*" "C:\Program Files\Blackbaud\NetCommunity\Bin\" /y
     {% endhighlight %}
+    </div>
   </li>
   <li>Click OK. You return to the Build Events screen.</li>
   <li>Click OK. You return to the project's properties.</li>
@@ -216,11 +222,14 @@ xcopy "$(TargetDir)*.WebApiClient.*" "C:\Program Files\Blackbaud\NetCommunity\Bi
   </li>
   <li>
     In the command line edit window, replace the default post-build event commands with the following commands and then replace the destination paths with the locations in your installation directory:
+    <div class="highlight-wrapper">
+      {% include copy-code.html %}
     {% highlight bat %}
 copy "$(ProjectDir)*.ascx" "C:\Infinity\DEV\Firebird\ClassicCMS\Web\Content\Portal\Custom\$(ProjectName)" /s /I /y
 xcopy "$(TargetDir)$(ProjectName).*" "C:\Infinity\DEV\Firebird\ClassicCMS\Web\Content\Portal\bin" /y
 xcopy "$(TargetDir)*.WebApiClient.*" "C:\Infinity\DEV\Firebird\ClassicCMS\Web\Content\Portal\bin" /y
     {% endhighlight %}
+    </div>
   </li>
   <li>Replace the destination paths in the commands with the appropriate locations in your installation directory. Remember to place your .ascx files in the \custom folder or a subfolder and your code-behind DLL and any *.webApiClient.dlls in the \bin folder.</li>
   <li>

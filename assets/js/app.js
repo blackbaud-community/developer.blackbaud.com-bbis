@@ -2,27 +2,34 @@
 
 	$(function() {
       
-      var body = $('body'),
+      var $window = $(window),
+          body = $('body'),
           sidebarToggle = $('.toggle-sidebar'),
           sidebarWrapper = $('.sidebar-wrapper'),
           sidebar = $('.sidebar'),
           sidebarNav = $('.nav-sidebar'),
           copyCode = $('.copy-code'),
-          content = $('.content-wrapper'),
-          contentToggle = content.data('toggle'),
+          equalHeight = $('.equal-height'),
           isSandcastle = body.hasClass('subsection-bbncextensions');
-
-      // Trigger prev carousel slide
-      $('.carousel-prev').click(function(e) {
-        e.preventDefault();
-        $('.carousel').trigger('owl.prev');
-      });
       
-      // Trigger next carousel slide
-      $('.carousel-next').click(function(e) {
-        e.preventDefault();
-        $('.carousel').trigger('owl.next');
-      });
+      // Make columns equal height
+      if (equalHeight.length) {
+        $window.on('resize', function() {
+          
+          var width = $window.width(),
+              height = 0;
+
+          if (width > 767) {
+            equalHeight.each(function() {
+              var h = $(this).height();
+              height = h > height ? h : height;
+            });
+          }
+          
+          equalHeight.css('min-height', height + 'px');
+          
+        }).trigger('resize');
+      }
       
       // These only happen on the technical reference (BBNCExtensions)
       if (isSandcastle) {
@@ -106,6 +113,18 @@
           bridge.tooltip('show');
         });
       }
+      
+      // Trigger prev carousel slide
+      $('.carousel-prev').click(function(e) {
+        e.preventDefault();
+        $('.carousel').trigger('owl.prev');
+      });
+      
+      // Trigger next carousel slide
+      $('.carousel-next').click(function(e) {
+        e.preventDefault();
+        $('.carousel').trigger('owl.next');
+      });
 
 	});
 
