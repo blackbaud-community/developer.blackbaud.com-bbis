@@ -1,0 +1,11 @@
+{
+  "name": "bbis-developer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "bower cache clean && bower install"
+  },
+  "dependencies": {
+    "bower": "*"
+  }
+}

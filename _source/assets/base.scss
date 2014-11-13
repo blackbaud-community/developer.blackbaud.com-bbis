@@ -1,0 +1,13 @@
+---
+---  
+  
+$fa-font-path: "{{ site.baseurl }}/assets/vendors/fontawesome/fonts";
+@import "fontawesome/scss/font-awesome.scss";
+
+{% include_relative vendors/bootstrap/dist/css/bootstrap.min.css %}
+{% include_relative blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.css %}
+{% include_relative blackbaud-bootstrap-theme/lib/owl-carousel/owl.theme.css %}
+{% include_relative blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css %}
+{% include_relative css/syntax.css %}
+{% include_relative css/app.css %}
+  

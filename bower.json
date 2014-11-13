@@ -1,0 +1,8 @@
+{
+  "name": "bbis-developer",
+  "dependencies": {
+    "bootstrap": "~3",
+    "jQuery": "~1.11",
+    "fontawesome": "~4"
+  }
+}

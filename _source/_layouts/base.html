@@ -1,0 +1,237 @@
+<!--
+
+Hello fellow developer.  Thank you for looking at our source.  Unfortunately there's not much to see here.
+This is a prototype project for a new breed of documentation for the Blackbaud Community.
+
+This page was last built on {{ site.time }} by Bobby Earl (https://github.com/bbBobbyEarl).  Many thanks to the countless Blackbaud
+developers and clients that helped contribute to the site.
+
+If you're a passionate and knowledgable developer who cares about giving back to non-profits, consider joining the Blackbaud Team.
+https://www.blackbaud.com/careers
+
+.______    __           ___        ______  __  ___ .______        ___       __    __   _______  
+|   _  \  |  |         /   \      /      ||  |/  / |   _  \      /   \     |  |  |  | |       \ 
+|  |_)  | |  |        /  ^  \    |  ,----'|  '  /  |  |_)  |    /  ^  \    |  |  |  | |  .--.  |
+|   _  <  |  |       /  /_\  \   |  |     |    <   |   _  <    /  /_\  \   |  |  |  | |  |  |  |
+|  |_)  | |  `----. /  _____  \  |  `----.|  .  \  |  |_)  |  /  _____  \  |  `--'  | |  '--'  |
+|______/  |_______|/__/     \__\  \______||__|\__\ |______/  /__/     \__\  \______/  |_______/ 
+                                                                                                
+
+-->
+
+{% include vars.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackbaud Internet Solutions</title>
+  <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/base.css">
+  
+</head>
+<body class="layout-{{ page.layout }} section-{{ section }} subsection-{{ subsection }}">
+  
+  <nav class="navbar" role="navigation" id="top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bb-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="{{ site.baseurl }}/" class="navbar-brand">
+          <img src="{{ site.baseurl }}/assets/img/logo-bbis.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+        </a>
+      </div>  <!-- navbar-header -->
+
+      <div class="collapse navbar-collapse" id="bb-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li {% if section == 'start' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/start/">
+              Getting Started
+            </a>
+          </li>
+          <li {% if section == 'guide' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/guide/">
+              Developer Guide
+            </a>
+          </li>
+          <li {% if section == 'reference' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/reference/">
+              Technical Reference
+            </a>
+          </li>
+          <li class="{% if section == 'code' %}active{% endif %}">
+            <a href="{{ site.baseurl }}/code/">
+              Code Samples
+            </a>
+          </li>
+          <li {% if section == 'help' %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/help/">
+              <i class="fa fa-fw fa-question-circle hidden-xs"></i>
+              <span class="visible-xs-inline">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>  <!-- .navbar-collapse -->
+
+    </div>  <!-- .container -->
+  </nav>  <!-- .navbar.navbar-inverse -->
+
+  {% if page.carousel %}
+    {% include body-carousel.html %}
+  {% endif %}
+  
+  {% if page.section-header %}
+    <div class="section-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>{{ page.section-header }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
+  {{ content }}
+  
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <p>
+            <a href="{{ site.baseurl }}">
+              <img src="{{ site.baseurl }}/assets/img/logo-lonely.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+            </a>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="{{ site.baseurl }}/start/">Getting Started</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/guide/">Developer Guide</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/reference/">Technical Reference</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/code/">Code Samples</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/help/">Help</a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
+          <p>
+            <a href="http://www.bbdevnetwork.com" target="_blank">
+              <img src="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" />
+            </a>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx" target="_blank">
+                Blackbaud Infinity SDK
+              </a>
+            </li>
+            <li>
+              <a href="http://open.convio.com/" target="_blank">
+                Blackbaud Luminate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/netcommunity-developer/netcommunity-developer.htm" target="_blank">
+                Blackbaud NetCommunity
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/guides/re7ent/api.pdf" target="_blank">
+                Blackbaud Raiser's Edge
+              </a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="row">
+            <div class="col-sm-12">
+            
+              <ul class="list-inline bb-love">
+                <li>
+                  <a href="http://www.blackbaud.com" target="_blank">
+                    <img src="{{ site.baseurl }}/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive pull-left" />
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-lg fa-plus"></i>
+                </li>
+                <li>
+                  <a href="http://www.github.com/blackbaud-community" target="_blank">
+                    <img src="{{ site.baseurl }}/assets/img/logo-github.png" alt="GitHub" class="img-responsive pull-left" />
+                  </a>
+                </li>
+              </ul>  <!-- .list-inline -->
+              
+            </div>  <!-- .col-sm-12 -->
+          </div>  <!-- .row -->
+          <div class="row">
+            <div class="col-sm-12">
+              
+              <ul class="list-inline social-icons">
+                <li>
+                  <a href="https://github.com/blackbaud-community" target="_blank">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://plus.google.com/113382459921828617974" target="_blank">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://twitter.com/blackbaud" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/blackbaud" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.youtube.com/user/blackbaudinc" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>  <!-- .list-inline -->
+              
+            </div>  <!-- .col-sm-12 -->
+          </div>  <!-- .row -->
+        </div>  <!-- .col-sm-4 -->
+      </div>  <!-- .row -->
+
+    </div>  <!-- .container -->
+  </div>  <!-- .footer -->
+
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>&copy; 2014 Blackbaud, Inc.  All rights reserved.</p>
+        </div>
+        <div class="col-sm-6">
+          <p class="text-right">
+            <a href="#" class="">Provide Feedback</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>  <!-- .copyright -->
+  
+</body>
+</html>

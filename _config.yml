@@ -1,51 +1,15 @@
 title: BBIS Developer Documentation
 baseurl: /bbis
+source: _source
 highlighter: pygments
 permalink: /404.html
+sass:
+  sass_dir: assets/vendors
+  style: :compressed
+  
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
-
-css:
-  - url: //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css
-    base: false
-    
-  - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
-    base: false
-
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.css
-    base: true
-    
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.theme.css
-    base: true
-    
-  - url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
-    base: true
-  
-  - url: /assets/css/syntax.css
-    base: true
-  
-  - url: /assets/css/app.css
-    base: true
-
-js:
-  - url: //code.jquery.com/jquery-1.11.1.min.js
-    base: false
-    
-  - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
-    base: false
-    
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.min.js
-    base: true
-    
-  - url: /assets/blackbaud-bootstrap-theme/lib/zero-clipboard/ZeroClipboard.min.js
-    base: true
-    
-  - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
-    base: true
-    
-  - url: /assets/js/app.js
-    base: true
 
 defaults:
   - scope:

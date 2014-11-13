@@ -3,17 +3,22 @@ BBIS
 
 ### Setup Instructions
 
-After successfully cloning this repo (and branch), please follow the steps to setup jekyll from https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll.
+While the following instructions are all possible on Windows, they are <strong>much</strong> easier using OSX, as many of the requirements are already built-in and linked.
 
-### Working Locally
-
-When working locally, you can either "build" or "serve."  Anything that's built is stored in the _site folder, which Github is setup to ignore.  The serve command works really well to test things without having to commit.
-
-When serving locally, be certain to pass in the <code>--baseurl</code> flag, followed by an empy string <code>''</code>.  For example, I typically run the following:
-
-<pre>jekyll serve --baseurl ''</pre>
+0. Install <a href="http://bundler.io" target="_blank">Bundler</a>.
+0. Install <a href="http://nodejs.org/download" target="_blank">NodeJS</a>.
+0. Install <a href="https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll" target="_blank">Jekyll</a> by running <code>gem install jekyll</code>.
+0. Clone the BBIS repo using one of the following methods:
+  - <a href="https://mac.github.com/" target="_blank">GitHub App</a>
+  - In terminal, run <code>git clone git://github.com/blackbaud-community/developer.blackbaud.com-bbis.git</code> *Requires <a href="http://git-scm.com/download/mac" target="_blank">git</a>.
+0. In terminal, run <code>cd developer.blackbaud.com-bbis</code>
+0. In terminal, run <code>bundle install</code>
+0. In terminal, run <code>npm install</code>
+0. In terminal, run <code>jekyll serve --baseurl ''</code>
 
 You will now be able to visit <a href="http://localhost:4000">http://localhost:4000</a> in your browser to view the site.
+
+If you're not debugging, you could also run <code>jekyll build</code>, which will generate the site and place it into the _site folder.
 
 ### Publishing
 

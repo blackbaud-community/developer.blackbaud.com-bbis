@@ -11,13 +11,13 @@ files=(
 )
 
 if [ "$1" == "dev" ]; then
-  mv reference/bbncextensions/*.htm /Users/bobby.earl/Desktop/temp/
+  mv _source/reference/bbncextensions/*.htm /Users/bobby.earl/Desktop/temp/
   for file in ${files[*]}
   do
-    cp /Users/bobby.earl/Desktop/temp/$file reference/bbncextensions/
+    cp /Users/bobby.earl/Desktop/temp/$file _source/reference/bbncextensions/
   done
 elif [ "$1" == "prod" ]; then
-  mv /Users/bobby.earl/Desktop/temp/*.htm reference/bbncextensions/
+  mv /Users/bobby.earl/Desktop/temp/*.htm _source/reference/bbncextensions/
 else
   echo 'You must provide the environment: dev or prod'
 fi
