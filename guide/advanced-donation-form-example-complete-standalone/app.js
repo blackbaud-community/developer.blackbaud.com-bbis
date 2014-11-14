@@ -6,9 +6,11 @@ angular.module('bbADF', ['ui.bootstrap'])
 
   // Controls the available donor types
   $scope.defaults = {
+    isAdmin: true,
     type: '', // single | recurring
     payments: '', // credit | later
-    amount: 0 // dollar amount | other
+    amount: 0, // dollar amount | other
+    tribute: 'none' // none, etc
   };
 
   $scope.types = [
@@ -60,6 +62,17 @@ angular.module('bbADF', ['ui.bootstrap'])
     {
       id: '0002',
       label: 'Designation 2'
+    }
+  ];
+  
+  $scope.tributes = [
+    {
+      id: '0001',
+      label: 'Tribute 1'
+    },
+    {
+      id: '0002',
+      label: 'Tribute 2'
     }
   ];
 

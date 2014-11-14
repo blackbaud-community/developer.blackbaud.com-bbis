@@ -20,9 +20,21 @@ layout: blank
   
   <form class="form-horizontal" ng-controller="DonationController">
     <div class="container">
-      <div class="row">
+      <div class="row" ng-show="defaults.isAdmin">
         <div class="col-sm-12">
+          ADMIN
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-11">
           <h1>Advanced Donation Form <small>Complete Example</small></h1>
+        </div>
+        <div class="col-sm-1">
+          <div class="form-group">
+            <label class="btn btn-default btn-block" ng-model="defaults.isAdmin" btn-checkbox>
+              <i class="fa fa-fw" ng-class="{ 'fa-square-o': !defaults.isAdmin, 'fa-check-square-o': defaults.isAdmin }"></i> Admin
+            </label>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -77,21 +89,21 @@ layout: blank
           </div>
           
           <div class="form-group">
-            <div class="col-sm-4">
-              <label class="btn btn-default" ng-model="Gift.IsCorporate" btn-checkbox>
-                <i class="fa fa-fw" ng-class="{ 'fa-square-o': !Gift.IsCorporate, 'fa-check-square-o': Gift.IsCorporate }"></i> Corporate?
+            <div class="col-sm-6">
+              <label class="btn btn-default btn-block text-left" ng-model="Gift.IsCorporate" btn-checkbox>
+                <i class="fa fa-fw" ng-class="{ 'fa-square-o': !Gift.IsCorporate, 'fa-check-square-o': Gift.IsCorporate }"></i> Corporate
               </label>
             </div>
-            <div class="col-sm-8" ng-show="Gift.IsCorporate">
-              <input type="text" class="form-control" ng-model="Donor.OrganizationName" placeholder="Organization Name" required>
+            <div class="col-sm-6">
+              <label class="btn btn-default btn-block text-left" ng-model="Gift.isAnonymous" btn-checkbox>
+                <i class="fa fa-fw" ng-class="{ 'fa-square-o': !Gift.isAnonymous, 'fa-check-square-o': Gift.isAnonymous }"></i> Anonymous
+              </label>
             </div>
           </div>
           
           <div class="form-group">
-            <div class="col-sm-4">
-              <label class="btn btn-default" ng-model="Gift.isAnonymous" btn-checkbox>
-                <i class="fa fa-fw" ng-class="{ 'fa-square-o': !Gift.isAnonymous, 'fa-check-square-o': Gift.isAnonymous }"></i> Anonymous?
-              </label>
+            <div class="col-sm-12" ng-show="Gift.IsCorporate">
+              <input type="text" class="form-control" ng-model="Donor.OrganizationName" placeholder="Organization Name" required>
             </div>
           </div>
           
@@ -257,14 +269,88 @@ layout: blank
       <div class="row">
         <div class="col-sm-6">
 
+          <h3>Tribute Information</h3>
+          
           <div class="form-group">
-            <div class="col-sm-12">
-              
+            <div class="col-sm-6">
+              <select class="form-control" ng-model="defaults.tribute" ng-options="tribute.label for tribute in tributes track by tribute.id">
+                <option value="">No Tribute</option>
+              </select>
             </div>
           </div>
+          
+          <div ng-show="defaults.tribute.id">
+
+            <div class="form-group">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="Gift.Tribute.TributeDefinition.Firstname" placeholder="Firstname" required>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="Gift.Tribute.TributeDefinition.Lastname" placeholder="Lastname" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <textarea class="form-control" placeholder="Address" ng-model="Gift.Tribute.TributeDefinition.Description"></textarea>
+              </div>
+            </div>
+            
+          </div>
+          
         </div>
         <div class="col-sm-6">
           
+          <div ng-show="defaults.tribute.id">
+          
+            <h3>Acknowledgee Information</h3>
+
+            <div class="form-group">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="Gift.Tribute.Acknowledgee.Firstname" placeholder="Firstname" required>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="Gift.Tribute.Acknowledgee.Lastname" placeholder="Lastname" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <textarea class="form-control" placeholder="Address" ng-model="Gift.Tribute.Acknowledgee.AddressLines"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-6">
+                <select class="form-control" ng-model="Gift.Tribute.Acknowledgee.Country" ng-change="getStates()" ng-options="c.Description for c in countries track by c.Id" ng-change="getStates()" required>
+                  <option value="">Country</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <select class="form-control" ng-model="Gift.Tribute.Acknowledgee.State" ng-options="s.Description for s in states track by s.Id" required>
+                  <option value="">State</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="City" ng-model="Gift.Tribute.Acknowledgee.City">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" placeholder="Zip" ng-model="Gift.Tribute.Acknowledgee.PostalCode" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="Email" ng-model="Gift.Tribute.Acknowledgee.EmailAddress" />
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="Phone" ng-model="Gift.Tribute.Acknowledgee.Phone" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
