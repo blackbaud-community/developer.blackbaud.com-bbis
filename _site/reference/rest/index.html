@@ -1,0 +1,1957 @@
+<!--
+
+Hello fellow developer.  Thank you for looking at our source.  Unfortunately there's not much to see here.
+This is a prototype project for a new breed of documentation for the Blackbaud Community.
+
+This page was last built on 2014-11-17 22:13:54 -0500 by Bobby Earl (https://github.com/bbBobbyEarl).  Many thanks to the countless Blackbaud
+developers and clients that helped contribute to the site.
+
+If you're a passionate and knowledgable developer who cares about giving back to non-profits, consider joining the Blackbaud Team.
+https://www.blackbaud.com/careers
+
+.______    __           ___        ______  __  ___ .______        ___       __    __   _______  
+|   _  \  |  |         /   \      /      ||  |/  / |   _  \      /   \     |  |  |  | |       \ 
+|  |_)  | |  |        /  ^  \    |  ,----'|  '  /  |  |_)  |    /  ^  \    |  |  |  | |  .--.  |
+|   _  <  |  |       /  /_\  \   |  |     |    <   |   _  <    /  /_\  \   |  |  |  | |  |  |  |
+|  |_)  | |  `----. /  _____  \  |  `----.|  .  \  |  |_)  |  /  _____  \  |  `--'  | |  '--'  |
+|______/  |_______|/__/     \__\  \______||__|\__\ |______/  /__/     \__\  \______/  |_______/ 
+                                                                                                
+
+-->
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackbaud Internet Solutions</title>
+  <link rel="icon" href="/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  
+  
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="/assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.carousel.min.css">
+  
+    <link rel="stylesheet" href="/assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.theme.default.min.css">
+  
+    <link rel="stylesheet" href="/assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css">
+  
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+  
+    <link rel="stylesheet" href="/assets/css/app.css">
+  
+  
+  
+
+  
+  
+</head>
+<body class="layout-base section-reference subsection-rest">
+  
+  <nav class="navbar" role="navigation" id="top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bb-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          <img src="/assets/img/logo-bbis.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+        </a>
+      </div>  <!-- navbar-header -->
+
+      <div class="collapse navbar-collapse" id="bb-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li >
+            <a href="/start/">
+              Getting Started
+            </a>
+          </li>
+          <li >
+            <a href="/guide/">
+              Developer Guide
+            </a>
+          </li>
+          <li class="active">
+            <a href="/reference/">
+              Technical Reference
+            </a>
+          </li>
+          <li class="">
+            <a href="/code/">
+              Code Samples
+            </a>
+          </li>
+          <li >
+            <a href="/help/">
+              <i class="fa fa-fw fa-question-circle hidden-xs"></i>
+              <span class="visible-xs-inline">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>  <!-- .navbar-collapse -->
+
+    </div>  <!-- .container -->
+  </nav>  <!-- .navbar.navbar-inverse -->
+
+  
+  
+  
+  
+  
+
+
+
+  
+  
+
+  
+    
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+
+      
+
+        <div class="col-md-3 hidden-xs hidden-sm">
+          <div class="sidebar">
+            
+              <ul class="nav nav-stacked nav-sidebar scrollspy-start">
+  <!-- Ridiculous Bootstrap Scrollspy bug that required this nested linkage to function properly -->
+<li class="hidden">
+  <a href="#top">Top</a>
+  <ul class="nav">
+    <li>
+      <a href="#top">Top</a>
+    </li>
+  </ul>
+</li>
+  <li class="back-to back-to-section">
+  <a href="/reference/">
+    Technical Reference
+  </a>
+</li>
+  <li>
+    <a href="#codetableapi">Code Table</a>
+    <ul class="nav">
+      <li>
+        <a href="#codetableid">CodeTable/{id}</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#countryapi">Country and State</a>
+    <ul class="nav">
+      <li>
+        <a href="#country">Country</a>
+      </li>
+      <li>
+        <a href="#countryid">Country/{Id}</a>
+      </li>
+      <li>
+        <a href="#countryidstate">Country/{Id}/State</a>
+      </li>
+      <li>
+        <a href="#countryidaddresscaptions">Country/{Id}/AddressCaptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#donationapi">Donation</a>
+    <ul class="nav">
+      <li>
+        <a href="#partiddonationid">{PartId}/Donation/{Id}</a>
+      </li>
+      <li>
+        <a href="#partiddonationcreate">{PartId}/Donation/Create</a>
+      </li>
+      <li>
+        <a href="#partiddonationidcompletebbspdonation">{PartId}/Donation/{Id}/CompleteBBSPDonation</a>
+      </li>
+      <li>
+        <a href="#partiddonationidconfirmationhtml">{PartId}/Donation/{Id}/ConfirmationHtml</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#imageapi">Images</a>
+    <ul class="nav">
+      <li>
+        <a href="#imagesfolderguidid">Images?FolderGUID={Id}</a>
+      </li>
+      <li>
+        <a href="#imagestagtagname">Images?Tag={TagName}</a>
+      </li>
+      <li>
+        <a href="#imagesfoldernamesubfoldername">Images/{FolderName}/{SubFolderName}</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#queryapi">Query</a>
+    <ul class="nav hide">
+      <li>
+        <a href="#queryidcolumn1namecolumnfiltercolumn2namecolu">Query/{Id}?Column1Name{ColumnFilter}&amp;Column2Name={ColumnFilter}</a>
+      </li>
+    </ul>
+  </li>
+  <li class="last">
+    <a href="#userapi">User</a>
+    <ul class="nav hide">
+      <li>
+        <a href="#user">User</a>
+      </li>
+    </ul>
+  </li>
+  <li class="back-to back-to-top">
+  <a href="#top" class="">
+    <i class="fa fa-caret-square-o-up"></i>
+  </a>
+</li>
+</ul>
+            
+          </div>
+        </div>  <!-- .col-md-3 -->
+
+        <div class="col-md-9 readability">
+          <h1>REST API</h1>
+
+<p>The BBIS REST API provides access to several key components of data retrieval.  This API is commonly used in conjunction with the Advanced Donation Form.  The API defaults to returning JSON, but will also return XML based on the accept header.  See the <a href="#">Developer Guide</a> for more information.</p>
+
+<div id="codetableapi">
+<h2 id="codetableid">CodeTable/{Id}<a href="#codetableid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns the active code table entries for the specified code table Id ordered as configured in the CRM.</p>
+    <p>If the provided code table Id is valid, then this will return the active code table entries for the specified code table.  The entries will be ordered as configured in the CRM.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a code table.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No code table was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Code Table Entry</td>
+        <td class="description">Returns an array of code table entries.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;Mr.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;aa784eae-4649-43ce-bf5a-0d2fccb01807&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;Mrs.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;ca590da0-2884-4c90-86ef-a349d6ea6b09&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="countryapi">
+<h2 id="country">Country<a href="#country"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns a list of all active countries alphabetized by their description.</p>
+    <p>Will return information about all active countries alphabetized by their description.</p>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Countries</td>
+        <td class="description">Returns an array country objects</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+  <span class="p">{</span> 
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;2C3F57A7-65DE-4D55-89EF-7857E6EDD53C&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abbreviation&quot;</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;Canada&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;B4837D3E-36F6-42F4-8049-CC2A2B108F9E&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abbreviation&quot;</span><span class="o">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="countryid">Country/{Id}<a href="#countryid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns information about a specific country.</p>
+    <p>If the provided country Id is valid, then this will return information about the country.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a country.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No country was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Country</td>
+        <td class="description">Returns a country object</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;B4837D3E-36F6-42F4-8049-CC2A2B108F9E&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Abbreviation&quot;</span><span class="o">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="countryidstate">Country/{Id}/State<a href="#countryidstate"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns a list of states associated with a country, alphabetized by their description.</p>
+    <p>If the provided country Id is valid, then this will return a list of state objects for each state associated with the country.   The states will be returned alphabetized description.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a country.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No country was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of States</td>
+        <td class="description">Returns an array of state objects for the given country alphabetized by their description.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;ba9b5958-b1d0-43ed-ba37-5e7c0eddfc78&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abbreviation&quot;</span><span class="o">:</span> <span class="s2">&quot;RI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;Rhode Island&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;70BF9733-5D24-46F4-A40C-61F6D2765575&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Abbreviation&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;South Carolina&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="countryidaddresscaptions">Country/{Id}/AddressCaptions<a href="#countryidaddresscaptions"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns the captions for Address Lines, City, State, and Postcode.</p>
+    <p>If the provided country Id is valid, then this will return the captions for address lines, city, state, and postcode.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a country.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No country was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Address Captions</td>
+        <td class="description">Returns an AddressCaptions object containing the labels for Address Lines, City, State, and Postcode.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&quot;AddressLines&quot;</span><span class="o">:</span> <span class="s2">&quot;Address&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;PostCode&quot;</span><span class="o">:</span> <span class="s2">&quot;Zip&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;State&quot;</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="donationapi">
+<h2 id="partiddonationid">{PartId}/Donation/{Id}<a href="#partiddonationid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the donation object of the specified Id if the user has appropriate access.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">403 Forbidden</td>
+        <td class="body">
+        </td>
+        <td class="description">User does not have access to the specified donation.</td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No donation was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Donation</td>
+        <td class="description">Returns a Donation object containing information about the requested donation Id.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;Donor&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Address&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Columbia&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29212&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StreetAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Main St.&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;EmailAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;john.doe@blackbaud.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;555-555-5555&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Title&quot;</span><span class="o">:</span> <span class="s2">&quot;Mr.&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Gift&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Designations&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Amount&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;DesignationId&quot;</span><span class="o">:</span> <span class="s2">&quot;3439a5c7-9977-4f9c-ba11-fadfb8144d35&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;FinderNumber&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;SourceCode&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Source Code&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;IsAnonymous&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;PaymentMethod&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;Comments&quot;</span><span class="o">:</span> <span class="s2">&quot;Gift comments here.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CreateGiftAidDeclaration&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;Attributes&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;BD18B3FD-B382-4183-A415-8F84B1E0E411&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;Volunteer;Member;Alumni&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;3607C77D-19DC-4EE0-A0CD-A352762A8EF0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;1985&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Recurrence&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;DayOfMonth&quot;</span><span class="o">:</span> <span class="mi">26</span><span class="p">,</span>
+            <span class="s2">&quot;DayOfWeek&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;EndDate&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;Frequency&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;Month&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;StartDate&quot;</span><span class="o">:</span> <span class="s2">&quot;Date(1337227200000-0400)&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Tribute&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Acknowledgee&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;AddressLines&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Sunset ln.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Charleston&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@address.com&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;123-123-1234&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29482&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;TributeDefinition&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;New tribute&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Hancock&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Tribute&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;TributeId&quot;</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;853f96be-bf08-4828-aefa-326a06e48d31&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Origin&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;AppealId&quot;</span><span class="o">:</span> <span class="s2">&quot;C3B20FD8-6A81-451E-BF78-D195E82B4CBF&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PageId&quot;</span><span class="o">:</span> <span class="mi">784</span><span class="p">,</span>
+        <span class="s2">&quot;PageName&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Page&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;TransactionStatus&quot;</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="partiddonationcreate">{PartId}/Donation/Create<a href="#partiddonationcreate"><i class="fa fa-link"></i></a><small><span class="label label-default">POST</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Attempts to create a donation from the posted object.</p>
+    <p>Validates the fields in the posted CreateDonationRequest.  If valid, creates a donation transaction and saves it to the database. Stores the Id of the new donation in session so the user has permissions for the donation instance.  If the payment type is credit card, communicates with Blackbaud secured payment to set up a check out URI and adds that URI to the return object.  For credit card payment, the donation is saved in a Pending state.  For payments not using a credit card, the donation is saved in a Completed state and an acknowledgement email is sent.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="post">Post Body</dt>
+  <dd>
+    <table class="table table-condensed table-post">
+                    <tr>
+        <td class="name">Donor</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the donor of the gift. Donor and all attributes related to the donor (ex: Donor.Title) should be excluded if the donation form uses a Payment 2.0 part.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Title</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.EmailAddress</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Phone</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Address information about the donor.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.StreetAddress</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.City</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.State</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.Country</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.PostalCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                  <tr>
+        <td class="name">Donor.OrganizationName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Required if Gift.IsCorporate is true. This field is not valid if the part is configured to use a Payment 2.0 page.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the donation gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.IsAnonymous</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates that the gift is being made anonymously.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.FinderNumber</td>
+        <td class="type">
+        (Long)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.SourceCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.PaymentMethod</td>
+        <td class="type">
+        (PaymentMethod ENUM)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">
+                            Indicates the method of payment to be used for the gift.  Possible values:
+<ul>
+  <li>CreditCard (0)</li>
+  <li>BillMeLater (1)</li>
+</ul></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Comments</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.CreateGiftAidDeclaration</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates whether the gift aid is applied to the donation.</td>
+      </tr>
+                  <tr>
+        <td class="name">Gift.Designations</td>
+        <td class="type">
+        (Array)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Array of designation objects for the gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Designations.Amount</td>
+        <td class="type">
+        (Decimal)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">The numeric amount of the designation.  The currency is dictated by the merchant account specified.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Designations.DesignationId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a designation to which the amount should be allocated.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes</td>
+        <td class="type">
+        (Array)
+      </td>
+        <td class="required"></td>
+        <td class="description">Array of revenue attributes to be added to the gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes.AttributeId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of revenue attribute.  The only supported attribute data types are text, number, date, currency, yes/no, and code table.  Only one per record attribute types are supported, except for code table attributes which support multiple entries per record.  Any individual attribute id can only be supplied once for a donation.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes.Value</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Value of the attribute.  For code table values, the name of the code table entry should be used.  For Multiple code table entries, use a single attribute with the names semicolon delimited in the value field.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.DayOfWeek</td>
+        <td class="type">
+        (DayOfWeek ENUM)
+      </td>
+        <td class="required"></td>
+        <td class="description">
+                        DayOfWeek value is required for weekly recurrences.  Field is invalid for any frequency other than weekly.  Possible values:
+<ul>
+  <li>Sunday (0)</li>
+  <li>Monday (1)</li>
+  <li>Tuesday (2)</li>
+  <li>Wednesday (3)</li>
+  <li>Thursday (4)</li>
+  <li>Friday (5)</li>
+  <li>Saturday (6)</li>
+</ul>
+                        
+                      </td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.DayOfMonth</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">DayOfMonth value is required for non-weekly recurrences.  Field is invalid for weekly frequency.  Valid values: 1-31.  Months with less than 31 days will default to the last day of the month is DayOfMonth is higher than number of days in the month.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.Month</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Month value is required for annual recurrences.  Field is invalid for any frequency other than annually.  Valid values:  1-12; Jan-Dec.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.Frequency</td>
+        <td class="type">
+        (RecurrenceFrequency ENUM)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">
+                        Designates the recurrence frequency.  Possible values:
+<ul>
+  <li>Weekly (1)</li>
+  <li>Monthly (2)</li>
+  <li>Quarterly (3)</li>
+  <li>Annually (4)</li>
+</li>
+                      </td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.StartDate</td>
+        <td class="type">
+        (Date)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Start date for recurrence.  Must start on or after today's date.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.EndDate</td>
+        <td class="type">
+        (Date)
+      </td>
+        <td class="required"></td>
+        <td class="description">Optional end date for recurrence.  Must end after start date.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeID</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"></td>
+        <td class="description">Optional Tribute ID to map to.  Must match Tribute ID from backoffice.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">First name for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Last name for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.Type</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Tribute type to map to in backoffice.  Must match existing tribute type.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.Description</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Description for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">First name for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Last name for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.Country</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Country for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.AddressLines</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Address lines for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.City</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">City for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.State</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">State for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.PostalCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Postal code for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.Phone</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Phone number for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.Email</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Email address for tribute acknowledgee.</td>
+      </tr>
+                  <tr>
+        <td class="name">Gift.IsCorporate</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates that the gift is given on behalf of a company. When true, the Corporate merge fields are displayed as opposed to the Individual merge fields. Cannot process if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the origin of the transaction.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.AppealId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of an appeal to associate with the donation.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.PageId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of the BBIS page hosting the donation form.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.PageName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Name of the web page hosting the donation form.</td>
+      </tr>
+                    <tr>
+        <td class="name">BBSPReturnUri</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">BBSPTemplateSitePageId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">MerchantAccountId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of the merchant account that should be used to process the donation. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                <tr class="example-response">
+        <td colspan="4">
+                  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;Donor&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Address&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Columbia&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29212&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StreetAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Main St.&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;EmailAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;john.doe@blackbaud.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;555-555-5555&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Title&quot;</span><span class="o">:</span> <span class="s2">&quot;Mr.&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Gift&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Designations&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Amount&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;DesignationId&quot;</span><span class="o">:</span> <span class="s2">&quot;3439a5c7-9977-4f9c-ba11-fadfb8144d35&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;FinderNumber&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;IsAnonymous&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;PaymentMethod&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;Comments&quot;</span><span class="o">:</span> <span class="s2">&quot;Gift comments here.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CreateGiftAidDeclaration&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;Attributes&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;BD18B3FD-B382-4183-A415-8F84B1E0E411&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;Volunteer;Member;Alumni&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;3607C77D-19DC-4EE0-A0CD-A352762A8EF0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;1985&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Recurrence&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;DayOfMonth&quot;</span><span class="o">:</span> <span class="mi">26</span><span class="p">,</span>
+            <span class="s2">&quot;DayOfWeek&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;EndDate&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;Frequency&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;Month&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;StartDate&quot;</span><span class="o">:</span> <span class="s2">&quot;/Date(1337227200000-0400)/&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Tribute&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Acknowledgee&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;AddressLines&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Sunset ln.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Charleston&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@address.com&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Schmo&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;123-123-1234&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29482&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;TributeDefinition&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;New tribute&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Hancock&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Tribute&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;TributeId&quot;</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Origin&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;AppealId&quot;</span><span class="o">:</span> <span class="s2">&quot;C3B20FD8-6A81-451E-BF78-D195E82B4CBF&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PageId&quot;</span><span class="o">:</span> <span class="mi">784</span><span class="p">,</span>
+        <span class="s2">&quot;PageName&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Page&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;BBSPReturnUri&quot;</span><span class="o">:</span> <span class="s2">&quot;http://www.mydomain.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BBSPTemplateSitePageId&quot;</span><span class="o">:</span> <span class="mi">784</span><span class="p">,</span>
+    <span class="s2">&quot;MerchantAccountId&quot;</span><span class="o">:</span> <span class="s2">&quot;A9EBE81D-65A8-4BBF-8446-FB2ED0276209&quot;</span>
+<span class="p">}</span></code></pre></div>
+                </td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">400 Bad Request</td>
+        <td class="body">Error[]</td>
+        <td class="description">
+                        A validation error was found with the post data or an error occurred in the processing.  Returns an array of Errror objects.  Possible Errors:
+<ul>
+<li>RecordNotFound (106)</li>
+<li>RequiredFieldMissing (101)</li>
+<li>InvalidFieldSupplied (102)</li>
+<li>ValueBelowMinimum (103)</li>
+<li>ValueExceedsMaximum (104)</li>
+<li>ValueNotAllowed (105)</li>
+<li>ExceedsMaximumLength (107)</li>
+</ul>
+</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+	<span class="p">{</span>
+		<span class="s2">&quot;ErrorCode&quot;</span><span class="o">:</span><span class="mi">101</span><span class="p">,</span>
+		<span class="s2">&quot;Field&quot;</span><span class="o">:</span><span class="s2">&quot;Donor.LastName&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Message&quot;</span><span class="o">:</span><span class="kc">null</span>
+	<span class="p">},</span>
+	<span class="p">{</span>
+		<span class="s2">&quot;ErrorCode&quot;</span><span class="o">:</span><span class="mi">103</span><span class="p">,</span>
+		<span class="s2">&quot;Field&quot;</span><span class="o">:</span><span class="s2">&quot;Gift.Designations.Amount&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Message&quot;</span><span class="o">:</span><span class="s2">&quot;A designation&#39;s amount should be greater than 0.&quot;</span>
+	<span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+      <tr>
+        <td class="status">201 OK</td>
+        <td class="body">CreateDonationReply</td>
+        <td class="description">Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;Donation&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Donor&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Address&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Columbia&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29212&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;StreetAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Main St.&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;EmailAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;john.doe@blackbaud.com&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;555-555-5555&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Title&quot;</span><span class="o">:</span> <span class="s2">&quot;Mr.&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Gift&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Designations&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Amount&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                    <span class="s2">&quot;DesignationId&quot;</span><span class="o">:</span> <span class="s2">&quot;3439a5c7-9977-4f9c-ba11-fadfb8144d35&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;FinderNumber&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;IsAnonymous&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;PaymentMethod&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;Comments&quot;</span><span class="o">:</span> <span class="s2">&quot;Gift comments here.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;CreateGiftAidDeclaration&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;Attributes&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;BD18B3FD-B382-4183-A415-8F84B1E0E411&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;Volunteer;Member;Alumni&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;3607C77D-19DC-4EE0-A0CD-A352762A8EF0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;1985&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Recurrence&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;DayOfMonth&quot;</span><span class="o">:</span> <span class="mi">26</span><span class="p">,</span>
+                <span class="s2">&quot;DayOfWeek&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="s2">&quot;EndDate&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="s2">&quot;Frequency&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;Month&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="s2">&quot;StartDate&quot;</span><span class="o">:</span> <span class="s2">&quot;/Date(1337227200000-0400)/&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Tribute&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Acknowledgee&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;AddressLines&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Sunset ln.&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Charleston&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@address.com&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Schmo&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;123-123-1234&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29482&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;TributeDefinition&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;New tribute&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Hancock&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Tribute&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;TributeId&quot;</span><span class="o">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;853f96be-bf08-4828-aefa-326a06e48d31&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Origin&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;AppealId&quot;</span><span class="o">:</span> <span class="s2">&quot;C3B20FD8-6A81-451E-BF78-D195E82B4CBF&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PageId&quot;</span><span class="o">:</span> <span class="mi">784</span><span class="p">,</span>
+            <span class="s2">&quot;PageName&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Page&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;TransactionStatus&quot;</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;BBSPCheckoutUri&quot;</span><span class="o">:</span> <span class="s2">&quot; https://payments.blackbaud.com/Pages/Index.aspx?t=853f96be-bf08-4828-aefa-326a06e48d31&quot;</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="partiddonationidcompletebbspdonation">{PartId}/Donation/{Id}/CompleteBBSPDonation<a href="#partiddonationidcompletebbspdonation"><i class="fa fa-link"></i></a><small><span class="label label-default">POST</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">403 Forbidden</td>
+        <td class="body">
+        </td>
+        <td class="description">User does not have access to the specified donation.</td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No donation was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">400 Bad Request</td>
+        <td class="body">Error[]</td>
+        <td class="description">
+                        The donation payment was not properly completed in Blackbaud secured payment or the donation has already been marked as completed.  Possible Errors:
+<ul>
+  <li>InvalidOperation (102)</li>
+  <li>BBSPTransactionNotProcessed (203)</li>
+</ul></td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;ErrorCode&quot;</span><span class="o">:</span> <span class="mi">102</span><span class="p">,</span>
+        <span class="s2">&quot;Field&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Donation</td>
+        <td class="description">Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;Donor&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Address&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Columbia&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29212&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StreetAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Main St.&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;EmailAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;john.doe@blackbaud.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;555-555-5555&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Title&quot;</span><span class="o">:</span> <span class="s2">&quot;Mr.&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Gift&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Designations&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Amount&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;DesignationId&quot;</span><span class="o">:</span> <span class="s2">&quot;3439a5c7-9977-4f9c-ba11-fadfb8144d35&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;FinderNumber&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;IsAnonymous&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;PaymentMethod&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;Comments&quot;</span><span class="o">:</span> <span class="s2">&quot;Gift comments here.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CreateGiftAidDeclaration&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;Attributes&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;BD18B3FD-B382-4183-A415-8F84B1E0E411&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;Volunteer;Member;Alumni&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;AttributeId&quot;</span><span class="o">:</span> <span class="s2">&quot;3607C77D-19DC-4EE0-A0CD-A352762A8EF0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Value&quot;</span><span class="o">:</span> <span class="s2">&quot;1985&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Recurrence&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;DayOfMonth&quot;</span><span class="o">:</span> <span class="mi">26</span><span class="p">,</span>
+            <span class="s2">&quot;DayOfWeek&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;EndDate&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;Frequency&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;Month&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;StartDate&quot;</span><span class="o">:</span> <span class="s2">&quot;/Date(1337227200000-0400)/&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Tribute&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Acknowledgee&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;AddressLines&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Sunset ln.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Charleston&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@address.com&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Schmo&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;123-123-1234&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29482&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;TributeDefinition&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Description&quot;</span><span class="o">:</span> <span class="s2">&quot;New tribute&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Hancock&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Tribute&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;TributeId&quot;</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;853f96be-bf08-4828-aefa-326a06e48d31&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Origin&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;AppealId&quot;</span><span class="o">:</span> <span class="s2">&quot;C3B20FD8-6A81-451E-BF78-D195E82B4CBF&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PageId&quot;</span><span class="o">:</span> <span class="mi">784</span><span class="p">,</span>
+        <span class="s2">&quot;PageName&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Page&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;TransactionStatus&quot;</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="partiddonationidconfirmationhtml">{PartId}/Donation/{Id}/ConfirmationHtml<a href="#partiddonationidconfirmationhtml"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets HTML for a confirmation screen for the completed donation.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database and merges the fields into the part’s confirmation block.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">403 Forbidden</td>
+        <td class="body">
+        </td>
+        <td class="description">User does not have access to the specified donation.</td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No donation was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">String</td>
+        <td class="description">Returns a string containing the HTML block of the confirmation with the donation fields merged in.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">div</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Thank</span> <span class="nx">you</span> <span class="k">for</span> <span class="nx">donating</span> <span class="nx">$10</span><span class="p">.</span><span class="mi">00</span><span class="p">.</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/div&amp;gt;</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="imageapi">
+<h2 id="imagesfolderguidid">Images?FolderGUID={Id}<a href="#imagesfolderguidid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the image objects that the user has access to within the specified folder.</p>
+    <p>Returns information about all images that the current user has access to and exist within the specified folder.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of an image folder.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Images</td>
+        <td class="description">Returns an array of Image objects that current user has access to and exist within the specified folder.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Caption&quot;</span><span class="o">:</span> <span class="s2">&quot;Sunset&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://www.mydomain.com/image/sunset.jpg&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="imagestagtagname">Images?Tag={TagName}<a href="#imagestagtagname"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the image objects that the user has access to tagged with the specified tag.</p>
+    <p>Returns information about all images that the current user has access to and are tagged with the specified tag.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">TagName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Name of the tag</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Images</td>
+        <td class="description">Returns an array of Image objects that current user has access to and are tagged with the specified tag.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Caption&quot;</span><span class="o">:</span> <span class="s2">&quot;Sunset&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://www.mydomain.com/image/sunset.jpg&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="imagesfoldernamesubfoldername">Images/{FolderName}/{SubFolderName}<a href="#imagesfoldernamesubfoldername"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the image objects that the user has access to under the specified folder name/path.</p>
+    <p>Returns information about all images that the current user has access to and exist under the specified folder path.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">FolderName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Path/name of the folder.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Images</td>
+        <td class="description">Returns an array of Image objects that current user has access to and exist under the specified folder path.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Caption&quot;</span><span class="o">:</span> <span class="s2">&quot;Sunset&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://www.mydomain.com/image/sunset.jpg&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+            </td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No folder exists at the given path.</td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="queryapi">
+<h2 id="queryidcolumn1namecolumnfiltercolumn2namecolu">
+                Query/{Id}?Column1Name={ColumnFilter}&amp;Column2Name={ColumnFilter}
+            <a href="#queryidcolumn1namecolumnfiltercolumn2namecolu"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns the results for the specified query.</p>
+    <p>Returns the result of executing the specified, published query.  The query is executed as the last user to save the query.  The results are cached and may be up to 10 minutes old.  The results are limited to 5000 rows.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a query that has been published.</td>
+      </tr>
+      <tr>
+        <td class="name">ColumnFilter</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Filters the results to rows that contain the specified value in the specified column.  When specifying a column, use the name that is found in the query response.  Depending on the type of column being filtered, the results may filter to rows that exactly match the specified value instead of those that contain the specified value.  Summary columns such as MAX, MIN, and COUNT cannot be used as filters and will be ignored.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No published query was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">QueryResults</td>
+        <td class="description">Returns a Query object containing results of executing the specified query.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&quot;Fields&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Caption&quot;</span><span class="o">:</span> <span class="s2">&quot;ID&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;System record ID&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Caption&quot;</span><span class="o">:</span> <span class="s2">&quot;Fund&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;Purpose\\Public Name&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;Rows&quot;</span><span class="o">:</span><span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;1BB27696-3045-405E-BD74-DC8853506977&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Sample Designation 1&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;2AE550FB-B3FC-43CE-A07A-B23C45BF1A2E&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Sample Designation 2&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;2AE550FB-B3FC-43CE-A07A-B23C45BF1A2E&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Sample Designation 3&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="userapi">
+<h2 id="user">User<a href="#user"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets basic profile information about the current user.</p>
+    <p>Returns profile information for the current user.  If the user is not logged in, then it may be populated based on the current email-recipient information.</p>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">UserInformation</td>
+        <td class="description">Returns profile information about the current user.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&quot;Addresses&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Daniel Island&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;53064038-dea9-48d4-bbd6-42725f78b234&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;IsPrimary&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29464&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;StreetAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;123 Sample Drive&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;fda0e1f0-6918-4e96-8cb5-9a9a841d4ee6&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;City&quot;</span><span class="o">:</span> <span class="s2">&quot;Columbia&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Country&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Id&quot;</span><span class="o">:</span><span class="s2">&quot; d35a3299-407b-465f-b3f1-43465a60713e&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;IsPrimary&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;PostalCode&quot;</span><span class="o">:</span> <span class="s2">&quot;29212&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;State&quot;</span><span class="o">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;StreetAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;200 Harbison Boulevard&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;17b13db9-1fab-4203-8b66-a2f26db637c5&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;EmailAddresses&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;EmailAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;JohnDoe@organization.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;9127174d-4b16-4c38-8b35-f0dbc61d7e27&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;IsPrimary&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;51d52fc2-6ac1-4687-bec0-c4fed5a05b65&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;EmailAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;JohnDoe@personal.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Id&quot;</span><span class="o">:</span> <span class="s2">&quot;8e48a013-6484-42b8-9746-c40a8eee9729&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;IsPrimary&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;51d52fc2-6ac1-4687-bec0-c4fed5a05b65&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;FirstName&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;LastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Phone&quot;</span><span class="o">:</span> <span class="s2">&quot;803-781-8851&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Title&quot;</span><span class="o">:</span> <span class="s2">&quot;Mr&quot;</span>
+<span class="p">}</span></code></pre></div>
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+
+        </div>  <!-- .col-md-9 -->
+
+      
+
+    </div>  <!-- .row -->
+  </div>  <!-- .container -->
+</div>  <!-- .content -->
+
+  
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <p>
+            <a href="">
+              <img src="/assets/img/logo-lonely.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+            </a>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="/start/">Getting Started</a>
+            </li>
+            <li>
+              <a href="/guide/">Developer Guide</a>
+            </li>
+            <li>
+              <a href="/reference/">Technical Reference</a>
+            </li>
+            <li>
+              <a href="/code/">Code Samples</a>
+            </li>
+            <li>
+              <a href="/help/">Help</a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
+          <p>
+            <a href="http://www.bbdevnetwork.com" target="_blank">
+              <img src="/assets/blackbaud-bootstrap-theme/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" />
+            </a>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx" target="_blank">
+                Blackbaud Infinity SDK
+              </a>
+            </li>
+            <li>
+              <a href="http://open.convio.com/" target="_blank">
+                Blackbaud Luminate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/netcommunity-developer/netcommunity-developer.htm" target="_blank">
+                Blackbaud NetCommunity
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/guides/re7ent/api.pdf" target="_blank">
+                Blackbaud Raiser's Edge
+              </a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="row">
+            <div class="col-sm-12">
+            
+              <ul class="list-inline bb-love">
+                <li>
+                  <a href="http://www.blackbaud.com" target="_blank">
+                    <img src="/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive pull-left" />
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-lg fa-plus"></i>
+                </li>
+                <li>
+                  <a href="http://www.github.com/blackbaud-community" target="_blank">
+                    <img src="/assets/img/logo-github.png" alt="GitHub" class="img-responsive pull-left" />
+                  </a>
+                </li>
+              </ul>  <!-- .list-inline -->
+              
+            </div>  <!-- .col-sm-12 -->
+          </div>  <!-- .row -->
+          <div class="row">
+            <div class="col-sm-12">
+              
+              <ul class="list-inline social-icons">
+                <li>
+                  <a href="https://github.com/blackbaud-community" target="_blank">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://plus.google.com/113382459921828617974" target="_blank">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://twitter.com/blackbaud" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/blackbaud" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.youtube.com/user/blackbaudinc" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>  <!-- .list-inline -->
+              
+            </div>  <!-- .col-sm-12 -->
+          </div>  <!-- .row -->
+        </div>  <!-- .col-sm-4 -->
+      </div>  <!-- .row -->
+
+    </div>  <!-- .container -->
+  </div>  <!-- .footer -->
+
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>&copy; 2014 Blackbaud, Inc.  All rights reserved.</p>
+        </div>
+        <div class="col-sm-6">
+          <p class="text-right">
+            <a href="/help/">Provide Feedback</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>  <!-- .copyright -->
+  
+  
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+    <script src="/assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/owl.carousel.min.js"></script>
+  
+    <script src="/assets/blackbaud-bootstrap-theme/lib/zero-clipboard/ZeroClipboard.min.js"></script>
+  
+    <script src="/assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js"></script>
+  
+    <script src="/assets/js/app.js"></script>
+  
+  
+</body>
+</html>

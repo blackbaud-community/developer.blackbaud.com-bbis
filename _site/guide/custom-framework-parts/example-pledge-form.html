@@ -1,0 +1,285 @@
+<h3 id="example-pledge-form">Custom Pledge Form</h3>
+
+<p>This example includes step-by-step instructions to create a custom part that meets these design requirements and learning objectives:</p>
+
+<h4>Design requirements: Create a custom pledge form for Blackbaud Internet Solutions</h4>
+
+<ol>
+  <li>Any required field for a pledge transaction that is not on this form will be defaulted or calculated in some way.</li>
+  <li>Name information for the user will appear at the top of the form.
+    <ul>
+      <li>
+        If the user is logged in
+        <ul>
+          <li>form will be populated with that login’s user information</li>
+          <li>fields will be read-only</li>
+        </ul>
+      </li>
+      <li>
+        If the user is not logged in
+        <ul>
+          <li>form will not be populated</li>
+          <li>fields will be writeable</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Email address will be populated with constituent or login information when possible. But it will be writeable and include simple email address format validation. For linked users, when the email address is changed, a new email addressed will be added to the constituent record in Blackbaud CRM.</li>
+  <li>Amount will handle US currency values.</li>
+  <li>When the user hits the Pledge button, something will be sent to Infinity via a web API. This will be either custom content created with the Infinity SDK or a new pledge transaction. This demonstrates using an the web API for an Add Data Form to write to an Infinity record, one out-of-the box and one created with the SDK.</li>
+  <li>The behavior of the Pledge button will be configurable by a Blackbaud Internet Solutions administrator. Here are the two options:
+    <ol>
+      <li>Write to a custom content table created with Infinity SDK</li>
+      <li>For non-linked logins, write to a custom content table and for linked logins create pledge transaction in Infinity for that constituent</li>
+    </ol>
+  </li>
+</ol>
+
+<h4>Objectives</h4>
+
+<ol>
+  <li>Configure Infinity application (selected items)</li>
+  <li>Create parts projects</li>
+  <li>Add custom parts to parts projects</li>
+  <li>Create a custom form (UI design)</li>
+  <li>Create a custom form (form behavior)</li>
+  <li>Add Infinity record customizations for Blackbaud Internet Solutions parts</li>
+  <li>Add a configuration setting to a custom form (UI design)</li>
+  <li>Prepare to use Infinity API assemblies in a Blackbaud Internet Solutions custom part</li>
+  <li>Create a custom form (write logic implementation)</li>
+</ol>
+
+<h4>Add a Designation to Infinity</h4>
+
+<p class="alert alert-info"><span class="label label-info">Note</span> This is a dependency for the custom pledge form example. Designations are probably already configured for Fundraising in your Infinity solution. However, if you are developing in an installation that has not been configured, these are the minimum steps to establish a designation. For information about fundraising hierarchies and designations, see <a href="https://www.blackbaud.com/files/support/guides/enterprise/fundrais.pdf" target="_blank">Fundraising Guide</a>.</p>
+
+<ol>
+  <li>Ensure there is at least one fundraising purpose type. This a dependency for fundraising hierarchies.  You can add a fundraising purpose type from Fundraising > Configuration > Fundraising purpose types.  
+  <p class="alert alert-info"><span class="label label-info">Note</span>  If this option does not appear under Configuration, go to Administration > Application > Features and search for fundraising purpose types functionality. There are Add and Edit Data Forms and a delete record operation. Fundraising purpose types are stored as a simple data list.</p></li>
+  <li>Ensure there is at least on fundraising hierarchy. This is a dependency for designations.  You can add a fundraising hierarchy from Fundraising > Configuration > Fundraising hierarchies.</li>
+  <li>Ensure there is at least one designation. This is a dependency for the sample donation form.  You can add a designation from Fundraising > Configuration > Fundraising hierarchies.</li>
+</ol>
+
+<h4>Ensure Post Dates are Configured</h4>
+
+<p class="alert alert-info"><span class="label label-info">Note</span>  This is a dependency to create a Revenue transaction. For more information about general ledger setup, see the General Ledger Setup chapter of the <a href="https://www.blackbaud.com/files/support/guides/enterprise/admin.pdf" target="_blank">Administration Guide</a>.</p>
+
+<ol>
+  <li>From the Infinity application such as Blackbaud CRM, navigate to Administration.</li>
+  <li>
+    Click General Ledger setup.<br />
+    <img src="../img/AdministrationGeneralLedgerSetup.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Click the account system.<br />
+    <img src="../img/GeneralLedgerSetupAccountSystemSelection.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Fully configure the account system. Or, if General Ledger functionality is not needed, under Configuration, select the task to Disable General Ledger.<br />
+    <img src="../img/GeneralLedgerDisabled_1028x232.png" alt="" class="img-responsive" />
+  </li>
+</ol>
+
+<h4>Create a Custom Pledge Form (Design)</h4>
+
+<ol>
+  <li>Open your Parts project in Visual Studio. This example uses a project called PartsProjectExample.</li>
+  <li>Add a new custom part (type) to the project called CustomPledgeForm.</li>
+  <li>
+    A VB file may appear in an editor. For example, CustomPledgeFormProperties.vb may appear. You will use this file later. But for now, close the VB files for properties and take a look at Solution Explorer<br />
+    <img src="../img/CustomPledgeFormPropertiesVB.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Open CustomPledgeFormDisplay.ascx for editing in Designer. Right-click CustomPledgeFormDisplay.vb and select View Designer.<br />
+    <img src="../img/SolutionExplorerDisplayFormHighlighted.png" alt="" class="img-responsive" /><br />
+    Right-clicking...<br />
+    <img src="../img/ViewDesignerForCustomPledgeFormDisplay.png" alt="" class="img-responsive" /><br />
+    The ASCX form appears in Design Mode.<br />
+    <img src="../img/DesignerFor CustomPledgeFormDisplayASCX.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Click View > Toolbox. The Toolbox appears.<br />
+    <img src="../img/ToolboxAppears.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Add a break after [lblError]. You can place the cursor after the text and press ENTER.<br />
+    <img src="../img/AddABreak.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Add a Panel to the form. Adjust the height and width so that there is space to work in.<br />
+    <img src="../img/AddAPanel_461x378.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Change the panel ID to PanelPledgeForm. To adjust the panel properties, you can right-click the panel and select Properties.<br />
+    <img src="../img/PanelPropertiesFromRightClickMenu.png" alt="" class="img-responsive" /><br />
+    The Properties window appears. ID is probably at the bottom.<br />
+    <img src="../img/PropertiesWindow.png" alt="" class="img-responsive" /><br />
+    Changing Panel1 to PanelPledgeForm...<br />
+    <img src="../img/PanelPledgeForm.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Add a label inside the Panel.<br />
+    <img src="../img/AddALabel_474x370.png" alt="" class="img-responsive" />
+  </li>
+  <li>Change the label ID to LabelPledgeForm. Change the text of the label to Make a pledge.</li>
+  <li>Add a line break. Place the cursor next to the label and press ENTER.</li>
+  <li>
+    Add an HTML Table.<br />
+    <img src="../img/AddAnHTMLTable_481x362.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+    Delete the right-most column so that there are three rows and two columns.<br />
+    <img src="../img/DeleteRightMostColumn_491x232.png" alt="" class="img-responsive" />
+  </li>
+  <li>Adjust the widths of the columns as necessary.</li>
+  <li>
+    Add a Label to each of the cells in the left column. Change the text to First, Middle, and Last respectively. Change the IDs to LabelFirst, LabelMiddle, and LabelLast.<br />
+    <img src="../img/AddNameLabels.png" alt="" class="img-responsive" />
+  </li>
+  <li>
+  Add a TextBox to each of the cells in the right column. Change the IDs to TextBoxFirst, TextBoxMiddle, TextBoxLast respectively.<br />
+    <img src="../img/CustomPledgeFormDisplayNamesFieldsAdded.png" alt="" class="img-responsive" />
+  </li>
+  <li>Add a break after the table.</li>
+  <li>Add a Label for Email address and a break after that. Change the ID for the Label to LabelEmail.</li>
+  <li>Add a break.</li>
+  <li>Add a TextBox for email address. Change the ID for the TextBox to TextBoxEmail.</li>
+  <li>Add a break.</li>
+  <li>Add a Label for Amount. Change the ID for the Label to LabelAmount.</li>
+  <li>Add a break.</li>
+  <li>Add a TextBox for amount. Change the ID for the TextBox to TextBoxAmount.</li>
+  <li>Add a break.</li>
+  <li>
+    Add a Button with the text Pledge. Change the ID for the Button to ButtonPledge.<br />
+    <img src="../img/CustomPledgeFormDesign.png" alt="" class="img-responsive" />
+  </li>
+</ol>
+
+<h4>Create a Custom Pledge Form Editor (Design)</h4>
+
+<ol>
+  <li>Open your Parts project in Visual Studio.</li>
+  <li>
+    Open CustomPledgeFormEditor.ascx for editing in Designer.<br />
+    <img src="../img/CustomPledgeFormEditorDesignASCX.png" alt="" class="img-responsive" />
+  </li>
+  <li>Delete the label that contains this text: "This part does not have any design time options"</li>
+  <li>Add a break.</li>
+  <li>Create the interface for the form's configuration option. The option is to which record to write pledge information:
+    <ul>
+      <li>Write to a custom content table created with the Infinity SDK</li>
+      <li>For non-linked logins and anonymous users, write to a custom content table and for linked logins create a pledge transaction in Infinity for that constituent.</li>
+    </ul>
+  </li>
+  <li>
+    Add a CheckBox with this Text and ID:
+    <ul>
+      <li>Only write to custom pledge record</li>
+      <li>CheckBoxOnlyWriteToCustomPledgeRecord</li>
+    </ul>
+  </li>
+  <li>
+    Add some paragraphs with this explanation:
+    <ul>
+      <li>When this is selected, any time the Pledge button is clicked, the details will be written to the custom pledge record USR_CUSTOMPLEDGE using the custom pledge Add Data Form accessed through a BBMetalWeb generated DLL.</li>
+      <li>
+        When this is not selected, for logged in users with linked accounts, the details will be written to a new pledge transaction using a DLL to access a web API. For anonymous users, the information will be written to USR_CUSTOMPLEDGE using the custom pledge Add Data Form accessed through a BBMetalWeb-generated DLL.<br />
+        <img src="../img/CustomPledgeFormEditorDesignFinished.png" alt="" class="img-responsive" />
+      </li>
+    </ul>
+  </li>
+  <li>Save the form.</li>
+</ol>
+
+<h4>Populate the Name Fields</h4>
+
+<ol>
+  <li>From Visual Studio, open the code-behind VB file for CustomPledgeFormDisplay.ascx (CustomPledgeFormDisplay.ascx.vb).</li>
+  <li>Create a InitializeForm Sub for the custom pledge form.</li>
+  <li>
+    Call the InitializeForm Sub from the Page_Load Sub.
+    <div class="highlight-wrapper">
+{% include copy-code.html %}
+{% highlight vbnet %}
+Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    InitializeForm()
+End Sub
+{% endhighlight %}
+    </div>
+  </li>
+  <li>In the InitializeForm sub, check to see whether the current user is anonymous.  Use the <a href="{{ site.baseurl }}/reference/bbncextensions/P_BBNCExtensions_API_Users_Users_CurrentUser.htm">CurrentUser property</a> in the <a href="{{ site.baseurl }}/reference/bbncextensions/P_BBNCExtensions_API_Users_Users_CurrentUser.htm">BBNCExtensions.API.Users namespace</a> to get the current user. Users have the <a href="{{ site.baseurl }}/reference/bbncextensions/P_BBNCExtensions_API_Users_User_IsAnonymous.htm">IsAnonymous property</a>.</li>
+  <li>
+    Create a conditional that uses the value of the check as a condition. If the user is not anonymous, assign FirstName for CurrentUser to the text of TextBoxFirst and LastName to TextBoxLast. Then disable each name field by setting the Enabled property for the field to False.  If the user is anonymous, leave the fields alone.
+    <div class="highlight-wrapper">
+{% include copy-code.html %}
+{% highlight vbnet %}
+Private Sub InitializeForm()
+    'If there is a login, get the first and last name for the logged in user.
+    'Populate the First and Last fields on the form. Disable the First, Middle,
+    'and Last fields. Otherwise, leave the fields enabled and writeable.
+    If Not API.Users.CurrentUser.IsAnonymous Then
+        TextBoxFirst.Text = API.Users.CurrentUser.FirstName
+        TextBoxLast.Text = API.Users.CurrentUser.LastName
+        TextBoxFirst.Enabled = False
+        TextBoxMiddle.Enabled = False
+        TextBoxLast.Enabled = False
+    End If
+End Sub
+{% endhighlight %}
+</div>
+  </li>
+  <li>
+    After you build the project and copy the files to your BBIS installation, the part should behave as follows:  When accessed without logging in...<br />
+    <img src="../img/NameFieldsBlankAndEnabled.png" alt="" class="img-responsive" /><br />
+    While logged in, as Supervisor in this case...<br />
+    <img src="../img/NameFieldsPopulatedAndDisabled.png" alt="" class="img-responsive" />
+  </li>
+</ol>
+
+<h4>Track the Record Option</h4>
+<ol>
+  <li>Open the form properties VB file that was created when you added the custom part (type). For example, open CustomPledgeFormProperties.vb.</li>
+  <li>Declare a Boolean variable that tracks whether to write only to the custom pledge record:
+    <div class="highlight-wrapper">
+{% include copy-code.html %}
+{% highlight vbnet %}
+Public OnlyWriteToCustomPledgeRecord As Boolean
+{% endhighlight %}
+    </div>
+  </li>
+  <li>
+    Save the file.  The display and editor forms will check this variable to determine which record to use.
+    <div class="highlight-wrapper">
+{% include copy-code.html %}
+{% highlight vbnet %}
+Public Class CustomPledgeFormProperties
+    Public OnlyWriteToCustomPledgeRecord As Boolean
+End Class
+{% endhighlight %}
+    </div>
+  </li>
+</ol>
+
+<h4>Add Infinity Web API References</h4>
+
+<ol>
+  <li>Open the Parts project.</li>
+  <li>From Solution Explorer, right-click the project and select Properties. The project's properties appear.</li>
+  <li>Click References.</li>
+  <li>
+    Click Add. The Add Reference screen appears.<br />
+    <img src="../img/AddReferenceScreen_354x465.png" alt="" class="img-responsive" />
+  </li>
+  <li>Click the Browse tab. Browse to the Bin folder in your BBIS installation. For example: C:\Program Files\Blackbaud\NetCommunity\Bin</li>
+  <li>
+    Select these DLLs:
+    <ul>
+      <li>Blackbaud.AppFx</li>
+      <li>Blackbaud.AppFx.WebAPI</li>
+      <li>Blackbaud.Appfx.XmlTypes</li>
+    </ul><br />
+    <img src="../img/AddReferenceScreenWebAPIDLLs_369x484.png" alt="" class="img-responsive" />
+  </li>
+  <li>Click OK.</li>
+  <li>Save the project. Then build the project.</li>
+</ol>

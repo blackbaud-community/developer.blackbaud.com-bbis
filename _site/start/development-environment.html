@@ -1,0 +1,53 @@
+<div id="{{ include.title }}">
+
+  <h2 id="{{ include.title }}-overview">Development Environment</h2>
+
+  <p>A production BBIS environment can be complex. Aside from BBIS, there will be a Blackbaud CRM installation and any number of other items in your enterprise setup. When you create your development environment, you may need to consider whether it reflects the complexity of the production environment. Will you have separate sandbox environments? Will those mirror the complexity of the production environment? The guidance here will show you how to build a minimalist single machine development environment. From there, you can add complexity.</p>
+
+  <h3 id="{{ include.title }}-create-single-environment">Create Single Machine Environment</h3>
+  
+  <p>The installation and upgrade guide for Infinity programs is located at: <a href="https://www.blackbaud.com/files/support/guides/bbnc/bbinstal.pdf" target="_blank">https://www.blackbaud.com/files/support/guides/bbnc/bbinstal.pdf</a>. That guide discusses several paths depending on the solution configuration. This documentation focuses on the Blackbaud CRM and Blackbaud Internet Solutions upgrade path.</p>
+  
+  <ol>
+    <li>Configure a single developer machine to meet the installation requirements for Blackbaud CRM and Blackbaud Internet Solutions. The installation requirements are available at <a href="https://www.blackbaud.com/files/sysreqs/bbecreqs.pdf" target="_blank">https://www.blackbaud.com/files/sysreqs/bbecreqs.pdf</a>.</li>
+    <li>
+      <p>On that developer machine, install Blackbaud CRM and Blackbaud Internet Solutions. The downloads page for Blackbaud CRM is <a href="https://www.blackbaud.com/default.aspx?pgpId=2255&ID=131&Bundle=Blackbaud+Enterprise+CRM" target="_blank">https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=131&amp;Bundle=Blackbaud+Enterprise+CRM</a>.</p>
+      <p class="alert alert-info"><span class="label label-info">Note</span>  A password for the downloads page is required. Only the downloads available to your organization appear. There may be multiple versions of Blackbaud CRM available.</p>
+      <p>We recommend you read through the system requirements and installation instructions prior to running the installer.</p>
+      <ul>
+        <li>The download to install is an executable file (EXE). Click the link for the executable. After the executable is downloaded, run it as an Administrator.</li>
+        <li>The installer prompts for credentials. Although you can install without credentials, many of the configuration tasks required to integrate Blackbaud CRM and Blackbaud Internet Solutions cannot be completed without a database configured with unlocked modules and a user with administrator rights.<br /><img src="img/ClientInformation.png" alt="" class="img-responsive" /></li>
+        <li>Complete the installer wizard.</li>
+      </ul>
+    </li>
+    <li>
+      <p>Install the Infinity SDK. The downloads page for the Infinity SDK is <a href="https://www.blackbaud.com/default.aspx?pgpId=2255&ID=193&Bundle=Blackbaud+Infinity+SDK" target="_blank">https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=193&amp;Bundle=Blackbaud+Infinity+SDK</a>. Run the installer as an Administrator.</p>
+      <p class="alert alert-info"><span class="label label-info">Note</span>  A password for the downloads page is required. Only the downloads available to your organization appear.</p>
+    </li>
+  </ol>
+  
+  <h3 id="{{ include.title }}-blackbaud-crm">Blackbaud CRM</h3>
+  
+  <p>A Blackbaud Internet Solutions (BBIS) installation assumes a Blackbaud CRM installation. When you install Blackbaud CRM, you select whether to install BBIS items. If you already use Blackbaud CRM but not BBIS, an upgrade that includes BBIS may be performed on an existing installation of Blackbaud CRM. For general information about Blackbaud CRM, see <a href="https://www.blackbaud.com/fundraising-crm/blackbaud-nonprofit-crm.aspx" target="_blank">https://www.blackbaud.com/fundraising-crm/blackbaud-nonprofit-crm.aspx</a>. To learn about how to use Blackbaud CRM, read the user guides at <a href="https://www.blackbaud.com/howto/crm.aspx" target="_blank">https://www.blackbaud.com/howto/crm.aspx</a>. Blackbaud CRM is built on Blackbaud's Infinity platform.</p>
+  
+  <p><img src="img/BlackbaudEnterpriseCRMExampleScreenShot_1028x299.png" alt="" class="img-center img-responsive" /></p>
+  
+  <h3 id="{{ include.title }}-blackbaud-internet-solutions">Blackbaud Internet Solutions</h3>
+  
+  <p>Blackbaud Internet Solutions (BBIS) is a content management system for websites that integrates with Blackbaud CRM. To learn about how to set up and use BBIS, read the user guides at <a href="https://www.blackbaud.com/howto/crm.aspx#BBIS" target="_blank">https://www.blackbaud.com/howto/crm.aspx#BBIS</a>. BBIS shares many features with Blackbaud NetCommunity, including a web-based interface.</p>
+  
+  <p><img src="img/BlackbaudInternetSolutionsBlankClientSite_1028x285.png" alt="" class="img-center img-responsive" /></p>
+  
+  <p>The major difference is that Blackbaud NetCommunity integrates with solutions such as The Raiser's Edge version 7 and BBIS integrates with Blackbaud CRM. BBIS functionality surfaces in the Webarea of Blackbaud CRM.</p>
+  
+  <p><img src="img/WebFunctionalArea.png" alt="" class="img-responsive img-center" /></p>
+  
+  <h3 id="{{ include.title }}-infinity-sdk">Infinity SDK</h3>
+  
+  <p>Blackbaud CRM is built on Blackbaud's Infinityplatform. Depending on the solution, the Infinityplatform includes an SDK and web APIs. Blackbaud CRM includes both. When you develop using the Infinity SDK, you create specs which define features. You load the specs into a catalog. But the Infinity SDK also includes a project template that supports adding custom parts to BBIS.</p>
+
+  <p>When you customize BBIS, you may find that you only need to create custom parts. But if your customization involves custom integration with Blackbaud CRM, you may need to access Blackbaud CRM through one of its web APIs. If you need to customize an API, you may need to use other parts of the Infinity SDK.</p>
+  
+  <p><img src="img/PartsProjectNewProject.png" alt="" class="img-responsive img-center" /></p>
+  
+</div>

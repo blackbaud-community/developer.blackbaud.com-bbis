@@ -1,0 +1,32 @@
+<p>A production BBIS environment can be complex. Aside from BBIS, there will be a Blackbaud CRM installation and any number of other items in your enterprise setup. When you create your development environment, you may need to consider whether it reflects the complexity of the production environment. Will you have a separate sandbox environments? Will those mirror the complexity of the production environment? The guidance here will show you how to build a minimalist single machine development environment. From there, you can add complexity.</p>
+
+<ol data-original-display-attribute-value="">
+            <li value="1" data-original-display-attribute-value="">
+                <p class="Body" data-original-display-attribute-value="">Configure a single developer machine to meet the installation requirements for <span class="Program" data-original-display-attribute-value="">Blackbaud CRM</span> and <span class="Feature" data-original-display-attribute-value="">Blackbaud Internet Solutions</span>. The installation requirements are available at <a href="https://www.blackbaud.com/files/sysreqs/bbecreqs.pdf" target="_blank" data-original-display-attribute-value="">https://www.blackbaud.com/files/sysreqs/bbecreqs.pdf</a>.</p>
+            </li>
+            <li value="2" data-original-display-attribute-value="">
+                <p class="Body" data-original-display-attribute-value="">On that developer machine, install <span class="Program" data-original-display-attribute-value="">Blackbaud CRM</span> and <span class="Feature" data-original-display-attribute-value="">Blackbaud Internet Solutions</span>. The downloads page for <span class="Program" data-original-display-attribute-value="">Blackbaud CRM</span> is <a href="https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=131&amp;Bundle=Blackbaud+Enterprise+CRM" target="_blank" data-original-display-attribute-value="">https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=131&amp;Bundle=Blackbaud+Enterprise+CRM</a>.</p>
+                <p class="Note" data-mc-autonum="<b>Note: </b>" data-original-display-attribute-value=""><span class="autonumber" data-original-display-attribute-value=""><span data-original-display-attribute-value=""><b data-original-display-attribute-value="">Note: </b></span></span>A password for the downloads page is required. Only the downloads available to your organization appear. There may be multiple versions of <span class="Program" data-original-display-attribute-value="">Blackbaud CRM</span>&nbsp;available.</p>
+                <p class="Body" data-original-display-attribute-value="">We recommend you read through the system requirements and installation instructions prior to running the installer.</p>
+                <ol style="list-style-type: lower-alpha;" data-original-display-attribute-value="">
+                    <li value="1" data-original-display-attribute-value="">
+                        <p class="Body" data-original-display-attribute-value="">The download to install is an executable file (<span class="Code" data-original-display-attribute-value="">EXE</span>). Click the link for the executable. After the executable is downloaded, run it as an Administrator.</p>
+                    </li>
+                    <li value="2" data-original-display-attribute-value="">
+                        <p class="Body" data-original-display-attribute-value="">The installer prompts for credentials. Although you can install without credentials, many of the configuration tasks required to integrate <span class="Program" data-original-display-attribute-value="">Blackbaud CRM</span> and <span class="Feature" data-original-display-attribute-value="">Blackbaud Internet Solutions</span> cannot be completed without a database configured with unlocked modules and a user with administrator rights.</p>
+                        <p class="Graphic" data-original-display-attribute-value="">
+                            <img src="https://www.blackbaud.com/files/support/guides/infinitydevguide/Subsystems/bbisweb-developer-help/Content/Resources/Images/ClientInformation.png" data-original-display-attribute-value="" class="img-responsive">
+                        </p>
+                    </li>
+                    <li value="3" data-original-display-attribute-value="">
+                        <p class="Body" data-original-display-attribute-value="">Complete the installer wizard.</p>
+                    </li>
+                </ol>
+            </li>
+            <li value="3" data-original-display-attribute-value="">
+                <p class="Body" data-original-display-attribute-value="">Install the <span class="Platform" data-original-display-attribute-value="">Infinity</span> SDK. The downloads page for the <span class="Platform" data-original-display-attribute-value="">Infinity</span> SDK is <a href="https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=193&amp;Bundle=Blackbaud+Infinity+SDK" target="_blank" data-original-display-attribute-value="">https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=193&amp;Bundle=Blackbaud+Infinity+SDK</a>. Run the installer as an Administrator.</p>
+                <p class="Note" data-mc-autonum="<b>Note: </b>" data-original-display-attribute-value=""><span class="autonumber" data-original-display-attribute-value=""><span data-original-display-attribute-value=""><b data-original-display-attribute-value="">Note: </b></span></span>A password for the downloads page is required. Only the downloads available to your organization appear.</p>
+            </li>
+        </ol>
+        
+<p class="alert alert-info"><span class="label label-info">Note</span> If your BBIS installation is hosted by Blackbaud, special security considerations may be necessary.  <a href="#" class="alert-link">Learn More</a></p>

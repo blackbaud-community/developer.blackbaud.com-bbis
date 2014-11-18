@@ -1,0 +1,257 @@
+/* 
+* ==========================================================================
+* GLOBAL
+* ========================================================================== 
+*/
+  body {
+    background: #5B5F67;
+  }
+
+  a {
+    color: #8cbe4f;
+    text-decoration: none;
+    -webkit-transition: color .1s linear;
+    -moz-transition: color .1s linear;
+    transition: color .1s linear; 
+  }
+
+  a:hover,
+  a:focus {
+    color: #4F7124;
+    text-decoration: none;
+  }
+
+  .btn {
+    -webkit-transition: background-color .1s linear;
+    -moz-transition: background-color .1s linear;
+    transition: background-color .1s linear; 
+  }
+
+/* 
+* ==========================================================================
+* NAVBAR
+* ========================================================================== 
+*/
+  .navbar {
+    background: #FFF;
+    border-radius: 0;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .navbar .navbar-nav > li > a {
+    color: #50535A;
+  }
+
+  .navbar .navbar-nav > li > a:hover,
+  .navbar .navbar-nav > li > a:focus {
+    background: none;
+    color: #000;
+  }
+
+  .navbar .navbar-nav > li.active > a {
+    background: #CCC;
+    color: #000;
+  }
+
+  .navbar-toggle .icon-bar {
+    background-color: #34b1ec;
+  }
+
+  .vertical-divider {
+    background: #5B5F67;
+    margin-top: 15px;
+    width: 1px;
+  }
+
+/* 
+* ==========================================================================
+* NAVBAR-INVERSE
+* ========================================================================== 
+*/
+
+  .navbar-inverse .navbar-nav > li > a {
+    color: #BBB;
+  }
+
+  .navbar-inverse .navbar-nav > li > a:hover,
+  .navbar-inverse .navbar-nav > li > a:focus {
+    background: #999;
+    color: #FFF;
+  }
+
+  .navbar-inverse .navbar-nav > li.active,
+  .navbar-inverse .navbar-nav > li.active > a:hover,
+  .navbar-inverse .navbar-nav > li.active > a:focus {
+    background: #FFF;
+    color: #000;
+  }
+
+  .navbar.navbar-inverse {
+    background: #50535a;
+    border: 0;
+    margin: 0;
+  }
+
+  .navbar-inverse .navbar-text {
+    color: #999;
+  }
+
+/* 
+* ==========================================================================
+* HEADER
+* ========================================================================== 
+*/
+  .header {
+    background-color: #eee;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .header.no-carousel {
+    margin-bottom: 20px;
+  }
+
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .status-wrapper {
+    margin-top: 45px;
+  }
+
+/* 
+* ==========================================================================
+* CAROUSEL
+* ========================================================================== 
+*/
+  .carousel-wrapper {
+    background: #FFF;
+    position: relative;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    color: #FFF;
+    display: block;
+    height: 400px;
+    font-size: 80px;
+    opacity: .5;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    z-index: 1;
+    
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+
+  .carousel-prev:hover,
+  .carousel-prev:focus,
+  .carousel-next:hover,
+  .carousel-next:focus {
+    color: #FFF;
+    opacity: 1; 
+  }
+
+  .carousel-prev i,
+  .carousel-next i {
+    padding: 170px 0 0 0; 
+  }
+
+  .carousel-prev {
+    left: 0;
+  }
+
+  .carousel-next {
+    right: 0;
+  }
+
+  .carousel .slide {
+    background-color: #CCC;
+    background-position: center center;
+    background-repeat: none;
+    background-size: cover;
+    height: 400px;
+    color: #FFF;
+    font-size: 44px;
+  }
+
+  .owl-stage .col-sm-1,
+  .owl-stage .col-sm-2,
+  .owl-stage .col-sm-3,
+  .owl-stage .col-sm-4,
+  .owl-stage .col-sm-5,
+  .owl-stage .col-sm-6,
+  .owl-stage .col-sm-7,
+  .owl-stage .col-sm-8,
+  .owl-stage .col-sm-9,
+  .owl-stage .col-sm-10,
+  .owl-stage .col-sm-11,
+  .owl-stage .col-sm-12 {
+    position: inherit;
+  }
+
+  .owl-carousel .owl-item img {
+    transform-style: flat;
+  }
+
+/* 
+* ==========================================================================
+* FOOTER
+* ========================================================================== 
+*/
+  .footer {
+    background: #50535a;
+    color: #787D87;
+    padding: 30px 0;
+  }
+
+  .footer a {
+    color: #949AA6; 
+  }
+
+  .footer a:hover,
+  .footer a:focus {
+    color: #8cbe4f; 
+  }
+
+  .copyright {
+    background: #5B5F67;
+    color: #949AA6;
+    padding: 10px 0;
+  }
+
+/* 
+* ==========================================================================
+* UTILITY
+* ========================================================================== 
+*/
+  .bb-interactive-text {
+    color: #34b1ec;
+    text-transform: uppercase;
+  }
+
+  .fa-spin-slow {
+    -webkit-animation: spin 8s infinite linear;
+    -moz-animation: spin 8s infinite linear;
+    -o-animation: spin 8s infinite linear;
+    animation: spin 8s infinite linear; 
+  }
+
+/* 
+* ==========================================================================
+* RESPONSIVE
+* ========================================================================== 
+*/
+  @media (max-width: 767px) {
+
+    .vertical-divider {
+      display: none !important;
+    }
+
+  }
