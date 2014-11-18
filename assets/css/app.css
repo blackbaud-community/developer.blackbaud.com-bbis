@@ -418,12 +418,6 @@
     font-size: 22px; 
     margin: 20px 0 10px 0;
   }
-  
-  .feature-split {
-    border-top: solid 1px #EFEFEF;
-    margin-top: 30px;
-    padding-top: 30px;
-  }
 
 /* 
 * ==========================================================================
@@ -886,6 +880,12 @@
 * ========================================================================== 
 */
 @media (min-width: 768px) {
+  
+  .feature-split {
+    border-top: solid 1px #EFEFEF;
+    margin-top: 30px;
+    padding-top: 30px;
+  }
   
   .breadcrumb {
     margin-top: 0;

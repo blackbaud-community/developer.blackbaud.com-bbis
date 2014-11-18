@@ -18,9 +18,10 @@
       
       // Initialize Owl Carousel      
       var carousel = $('.carousel').owlCarousel({
-        stopOnHover: true,
-        autoPlay: 6000,
-        singleItem: true
+        autoplayHoverPause: true,
+        autoplay: false,
+        loop: true,
+        items: 1
       });
 
 	});

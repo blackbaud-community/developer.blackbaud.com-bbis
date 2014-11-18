@@ -128,13 +128,13 @@
       // Trigger prev carousel slide
       $('.carousel-prev').click(function(e) {
         e.preventDefault();
-        $('.carousel').trigger('owl.prev');
+        $('.carousel').trigger('prev.owl.carousel');
       });
       
       // Trigger next carousel slide
       $('.carousel-next').click(function(e) {
         e.preventDefault();
-        $('.carousel').trigger('owl.next');
+        $('.carousel').trigger('next.owl.carousel');
       });
 
 	});

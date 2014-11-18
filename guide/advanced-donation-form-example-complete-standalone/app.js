@@ -1,7 +1,7 @@
 'use strict';
 
 // Create our Angular application
-angular.module('bbADF', ['ui.bootstrap'])
+angular.module('bbADF', ['ui.bootstrap', 'ngMessages'])
 .controller('DonationController', function($scope, CountryService) {
 
   // Controls the available donor types
@@ -98,26 +98,23 @@ angular.module('bbADF', ['ui.bootstrap'])
     });
   }
 
-  CountryService.getCountries().success(function(data) {
+  CountryService.getCountries('').success(function(data) {
     $scope.countries = data;
   }).error(function() {
-    alert('Error loading countries.');
+    $scope.donationForm.donorCountry.$setValidity('server', false);
   });
 
 })
 .service('CountryService', function($http) {
-  
-  // Baseurl when using the Advanced Donation Form API
-  var baseurl = 'http://chs6bobbyear02.blackbaud.global/Webapi/';
 
   // Request countries
-  this.getCountries = function() {
+  this.getCountries = function(baseurl) {
     return $http.get(baseurl + 'Country');
   }
 
   // Request states when a country is selected
   this.getStates = function(id) {
-    return $http.get(baseurl + 'Country/' + id + '/State');
+    return $http.get('Country/' + id + '/State');
   };
 
 });

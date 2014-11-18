@@ -13,10 +13,10 @@ css:
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
     base: false
 
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.css
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.carousel.min.css
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.theme.css
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.theme.default.min.css
     base: true
     
   - url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
@@ -35,7 +35,7 @@ js:
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
     base: false
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel/owl.carousel.min.js
+  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/owl.carousel.min.js
     base: true
     
   - url: /assets/blackbaud-bootstrap-theme/lib/zero-clipboard/ZeroClipboard.min.js
