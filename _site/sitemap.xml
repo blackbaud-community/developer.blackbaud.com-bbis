@@ -5,126 +5,133 @@
   
   <url>
     <loc>/404.html</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/custom-framework-parts/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/custom-handlers/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/help/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>/code/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/bbncextensions/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/blackbaud-secure-payments/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form-example-complete-standalone/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/custom-content-parts/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/user-imports/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/rest/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/start/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/structure/</loc>
-    <lastmod>2014-11-17T22:13:54-05:00</lastmod>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>/reference/bbncextensions/</loc>
+    <lastmod>2014-11-19T10:57:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

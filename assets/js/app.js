@@ -125,6 +125,18 @@
         });
       }
       
+      // Initialize Omnibar
+      /*
+      var omnibar = $('#omnibar');
+      BBAUTH.Omnibar.load(omnibar.get(0), { 
+        afterLoad: function(){
+          body.addClass("bb-omnibar-height-padding");
+          omnibar.find('.desktop').find(".bar").css("z-index", "1000");
+          omnibar.find('.desktop').find(".accountflyout").css("z-index", "1000");
+        }
+      });
+      */
+      
       // Trigger prev carousel slide
       $('.carousel-prev').click(function(e) {
         e.preventDefault();

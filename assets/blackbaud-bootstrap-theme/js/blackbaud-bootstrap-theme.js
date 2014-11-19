@@ -18,8 +18,9 @@
       
       // Initialize Owl Carousel      
       var carousel = $('.carousel').owlCarousel({
-        autoplayHoverPause: true,
-        autoplay: false,
+        autoplayTimeout: 7000,
+        autoplayHoverPause: false,  // Turning this on is possible, but would mess with the animate out logic
+        autoplay: true,
         loop: true,
         items: 1
       });
