@@ -823,6 +823,9 @@
 
   .bb-love li {
     vertical-align: middle;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 10px;
   }
 
   .bb-love .fa-heart {
@@ -841,6 +844,11 @@
   .social-icons a {
     font-size: 26px;
     margin: 0 5px;
+  }
+  
+  .bb-love,
+  .social-icons {
+    text-align: center;
   }
 
 /* 
@@ -867,6 +875,20 @@
 
 /* 
 * ==========================================================================
+* RESPONSIVE - EXTRA-SMALL (AND UP)
+* ========================================================================== 
+*/
+@media (min-width: 480px) {
+
+  .bb-love,
+  .social-icons {
+    text-align: left;
+  }
+  
+}
+
+/* 
+* ==========================================================================
 * RESPONSIVE - SMALL (AND UP)
 * ========================================================================== 
 */
@@ -881,11 +903,6 @@
     border-top: solid 1px #EFEFEF;
     margin-top: 30px;
     padding-top: 30px;
-  }
-  
-  .learn-more a {
-    margin-left: 5%;
-    width: 90%;
   }
   
   .breadcrumb {
@@ -913,15 +930,16 @@
   
   .content-latest-features .learn-more {
     margin-bottom: 50px;
+    margin-left: 5%;
+    width: 90%;
   }
   
   .footer .dl-horizontal {
     float: right;
   }
   
-  .bb-love,
-  .social-icons {
-    text-align: center;
+  .feedback-link {
+    text-align: right;
   }
 
 }
