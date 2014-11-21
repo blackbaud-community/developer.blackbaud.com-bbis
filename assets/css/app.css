@@ -316,10 +316,6 @@
     margin: 0;
   }
 
-  .content-latest-features .learn-more {
-
-  }
-
   .content-latest-features .learn-more a {
     background: #FAFAFB;
     border: solid 1px #DBDDE0;
@@ -329,10 +325,9 @@
     color: #333;
     display: block;
     padding: 8px 10px;
-    margin: 0 0 10px 5%;
+    margin: 0 0 10px 0;
     text-align: center;
     transition: background-color 0.5s ease;
-    width: 90%;
   }
 
   .content-latest-features .learn-more a:hover,
@@ -407,11 +402,6 @@
 * FEATURES
 * ========================================================================== 
 */
-
-  .feature {
-    margin-left: 5%;
-    width: 90%; 
-  }
 
   .feature h3,
   .section-help h3 {
@@ -882,10 +872,20 @@
 */
 @media (min-width: 768px) {
   
+  .feature {
+    margin-left: 5%;
+    width: 90%; 
+  }
+  
   .feature-split {
     border-top: solid 1px #EFEFEF;
     margin-top: 30px;
     padding-top: 30px;
+  }
+  
+  .learn-more a {
+    margin-left: 5%;
+    width: 90%;
   }
   
   .breadcrumb {
