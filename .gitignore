@@ -8,6 +8,7 @@ pkg/
 .DS_Store
 bbin/
 gh-pages/
+_site/
 site/_site/
 coverage
 .ruby-version
