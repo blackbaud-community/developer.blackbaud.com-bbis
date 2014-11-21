@@ -824,8 +824,7 @@
   .bb-love li {
     vertical-align: middle;
     margin-left: 0;
-    padding-left: 0;
-    padding-right: 10px;
+    padding: 0 10px 10px 0;
   }
 
   .bb-love .fa-heart {
