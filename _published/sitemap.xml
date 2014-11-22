@@ -5,126 +5,126 @@
   
   <url>
     <loc>/404.html</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/custom-content-parts/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form-example-complete-standalone/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/blackbaud-secure-payments/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/code/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/custom-framework-parts/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/custom-handlers/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/guide/user-imports/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/help/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>/reference/bbncextensions/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/reference/rest/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/start/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/structure/</loc>
-    <lastmod>2014-11-22T08:49:02-05:00</lastmod>
+    <lastmod>2014-11-22T10:28:24-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -133,199 +133,199 @@
   
   <url>
     <loc>/assets/blackbaud-bootstrap-theme/examples/includes/header.html</loc>
-    <lastmod>2014-11-13T09:01:58Z</lastmod>
+    <lastmod>2014-11-22T09:01:03Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/example-barebones.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/example-complete.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/example-payment-2-0.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/example-recurrence.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/example-secure-payments.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/advanced-donation-form/example-tribute.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-content-parts/example-barebones.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-content-parts/example-image-folder-picker.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-content-parts/example-image-picker.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-content-parts/example-link-picker.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-framework-parts/example-blackbaud-secure-payments.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-framework-parts/example-constituent-search.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-framework-parts/example-event-registration.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/guide/custom-framework-parts/example-pledge-form.html</loc>
-    <lastmod>2014-11-13T09:02:01Z</lastmod>
+    <lastmod>2014-11-22T09:01:09Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/bbncextensions/sidebar.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/auto-generated-content.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/API.js.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/BLACKBAUD.api.CodeTableService.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/BLACKBAUD.api.CountryService.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/BLACKBAUD.api.DonationService.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/BLACKBAUD.api.ImageService.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/BLACKBAUD.api.QueryService.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/BLACKBAUD.api.UserService.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/DonationService.js.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/jsdoc-build/index.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/javascript/sidebar.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/rest/auto-generated-content.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/reference/rest/sidebar.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/start/bbis-understanding.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/start/development-environment.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/start/getting-started.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>/start/sidebar.html</loc>
-    <lastmod>2014-11-13T09:02:02Z</lastmod>
+    <lastmod>2014-11-22T09:01:10Z</lastmod>
     <priority>0.6</priority>
   </url>
   
