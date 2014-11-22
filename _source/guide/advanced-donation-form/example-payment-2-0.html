@@ -1,0 +1,92 @@
+<h3 id="example-payment-2-0">Using the Payment 2.0 Part</h3>
+
+<p>When using the Payment 2.0 Part, the information required is reduced.  For example, Donor information is should no longer be provided.  Again, we're not including any styling or error handling, but I have introduced the ability to select a donation amount and designation.</p>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#example-payment-2-0-html" data-toggle="tab">HTML</a></li>
+  <li><a href="#example-payment-2-0-js" data-toggle="tab">JS</a></li>
+  {% include download-on-github.html repo="BBIS-ADF-Examples" %}
+</ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="example-payment-2-0-html">
+{% include copy-code.html %}
+{% highlight html %}
+<dl>
+  <dt>Amount</dt>
+  <dd>
+    <select id="amount">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+  </dd>
+
+  <dt>Designation</dt>
+  <dd>
+    <select id="designation">
+      <option value="00000000-0000-0000-0000-000000000000">Example Designation 1</option>
+      <option value="00000000-0000-0000-0000-000000000000">Example Designation 2</option>
+    </select>
+  </dd>
+</dl>
+      
+<p><button class="btn-donate">Donate</button></p>
+{% endhighlight %}
+    </div>
+    <div class="tab-pane" id="example-payment-2-0-js">
+{% include copy-code.html %}
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+  
+  // Let's make sure the DOM is ready
+  $(function() {
+    
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService(
+      $('.BBDonationApiContainer').data('partid')
+    );
+    
+    // Create the donation object we'll send
+    // In order to simplify our examples, some of this information is hard-coded.
+    var donation = {
+      Gift: {
+        PaymentMethod: 0,
+        Designations: []
+      }
+    };
+    
+    // Create our success handler
+    var success = function(returnedDonation) {
+      console.log(returnedDonation);
+    };
+    
+    // Create our error handler
+    var error = function(returnedErrors) {
+      console.log('Error!');
+    };
+    
+    // Attach our event listener to the donate button
+    $('.btn-donate').click(function(e) {
+      
+      // Stop the button from submitting the form
+      e.preventDefault(); 
+      
+      // Add the information our user has typed
+      donation.Gift.Designations.push({
+        Amount: $('#amount').val(),
+        DesignationId: $('#designation').val()
+      });
+      
+      // Submit our donation
+      ds.createDonation(donation, success, error);
+    });
+    
+  });
+}(jQuery));
+{% endhighlight %}
+  </div>
+</div>
+
+<p class="alert alert-info"><span class="label label-info">Note</span> The <a href="{{ site.baseurl }}/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="{{ site.baseurl }}/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p>

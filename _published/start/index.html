@@ -1,0 +1,540 @@
+<!--
+
+Hello fellow developer.  Thank you for looking at our source.  Unfortunately there's not much to see here.
+This is a prototype project for a new breed of documentation for the Blackbaud Community.
+
+This page was last built on 2014-11-22 08:49:02 -0500 by Bobby Earl (https://github.com/bbBobbyEarl).  Many thanks to the countless Blackbaud
+developers and clients that helped contribute to the site.
+
+If you're a passionate and knowledgable developer who cares about giving back to non-profits, consider joining the Blackbaud Team.
+https://www.blackbaud.com/careers
+
+.______    __           ___        ______  __  ___ .______        ___       __    __   _______  
+|   _  \  |  |         /   \      /      ||  |/  / |   _  \      /   \     |  |  |  | |       \ 
+|  |_)  | |  |        /  ^  \    |  ,----'|  '  /  |  |_)  |    /  ^  \    |  |  |  | |  .--.  |
+|   _  <  |  |       /  /_\  \   |  |     |    <   |   _  <    /  /_\  \   |  |  |  | |  |  |  |
+|  |_)  | |  `----. /  _____  \  |  `----.|  .  \  |  |_)  |  /  _____  \  |  `--'  | |  '--'  |
+|______/  |_______|/__/     \__\  \______||__|\__\ |______/  /__/     \__\  \______/  |_______/ 
+                                                                                                
+
+-->
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+
+  
+  
+    
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackbaud Internet Solutions</title>
+  <link rel="icon" href="/bbis/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  
+  
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="/bbis/assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.carousel.min.css">
+  
+    <link rel="stylesheet" href="/bbis/assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.theme.default.min.css">
+  
+    <link rel="stylesheet" href="/bbis/assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css">
+  
+    <link rel="stylesheet" href="/bbis/assets/blackbaud-bootstrap-theme/lib/animate/animate.css">
+  
+    <link rel="stylesheet" href="/bbis/assets/css/syntax.css">
+  
+    <link rel="stylesheet" href="/bbis/assets/css/app.css">
+  
+  
+  
+
+  
+  
+</head>
+<body class="layout-base section-start subsection-index">
+  
+  <nav class="navbar" role="navigation" id="top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bb-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/bbis/" class="navbar-brand">
+          <img src="/bbis/assets/img/logo-bbis.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+        </a>
+      </div>  <!-- navbar-header -->
+
+      <div class="collapse navbar-collapse" id="bb-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="/bbis/start/">
+              Getting Started
+            </a>
+          </li>
+          <li >
+            <a href="/bbis/guide/">
+              Developer Guide
+            </a>
+          </li>
+          <li >
+            <a href="/bbis/reference/">
+              Technical Reference
+            </a>
+          </li>
+          <li class="">
+            <a href="/bbis/code/">
+              Code Samples
+            </a>
+          </li>
+          <li >
+            <a href="/bbis/help/">
+              <i class="fa fa-fw fa-question-circle hidden-xs"></i>
+              <span class="visible-xs-inline">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>  <!-- .navbar-collapse -->
+
+    </div>  <!-- .container -->
+  </nav>  <!-- .navbar.navbar-inverse -->
+
+  
+  
+  
+    <div class="section-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Getting Started</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+
+
+
+  
+  
+
+  
+    
+  
+  
+
+  
+  
+    
+  
+
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+
+      
+
+        <div class="col-md-3 hidden-xs hidden-sm">
+          <div class="sidebar">
+            
+              <ul class="nav nav-pills nav-stacked nav-sidebar scrollspy-start">
+  <!-- Ridiculous Bootstrap Scrollspy bug that required this nested linkage to function properly -->
+<li class="hidden">
+  <a href="#top">Top</a>
+  <ul class="nav">
+    <li>
+      <a href="#top">Top</a>
+    </li>
+  </ul>
+</li>
+  <li>
+    <a href="#getting-started">Getting Started</a>
+    <ul class="nav">
+      <li>
+        <a href="#getting-started-overview">Overview</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#development-environment">Development Environment</a>
+    <ul class="nav">
+      <li>
+        <a href="#development-environment-overview">Overview</a>
+      </li>
+      <li>
+        <a href="#development-environment-create-single-environment">Create Single Machine Environment</a>
+      </li>
+      <li>
+        <a href="#development-environment-blackbaud-crm">Blackbaud CRM</a>
+      </li>
+      <li>
+        <a href="#development-environment-blackbaud-internet-solutions">Blackbaud Internet Solutions</a>
+      </li>
+      <li>
+        <a href="#development-environment-infinity-sdk">Infinity SDK</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#bbis-understanding">BBIS Understanding</a>
+    <ul class="nav">
+      <li>
+        <a href="#bbis-understanding-overview">Overview</a>
+      </li>
+      <li>
+        <a href="#bbis-understanding-website-customizations">Website Customizations</a>
+      </li>
+      <li>
+        <a href="#bbis-understanding-types-of-customizations">Types of Customizations</a>
+      </li>
+      <li>
+        <a href="#bbis-understanding-access-crm">Accessing Blackbaud CRM</a>
+      </li>
+      <li>
+        <a href="#bbis-understanding-working-with-guids">Working with GUIDs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="divider"></li>
+  <li class="back-to back-to-top">
+  <a href="#top" class="">
+    <i class="fa fa-caret-square-o-up"></i>
+  </a>
+</li>
+</ul>
+            
+          </div>
+        </div>  <!-- .col-md-3 -->
+
+        <div class="col-md-9 readability">
+          <div id="getting-started">
+
+  <h1 id="getting-started-overview">Getting Started</h1>
+  
+  <p>Welcome to the Blackbaud Internet Solutions Getting Started for developers.  This site aims to help developers utilize the APIs and SDKs to the fullest extent.  In order to successfully understand many of the topics and example discussed throughout the site, there are a few minimum requirements before you get started.</p>
+  
+</div>
+<div id="development-environment">
+
+  <h2 id="development-environment-overview">Development Environment</h2>
+
+  <p>A production BBIS environment can be complex. Aside from BBIS, there will be a Blackbaud CRM installation and any number of other items in your enterprise setup. When you create your development environment, you may need to consider whether it reflects the complexity of the production environment. Will you have separate sandbox environments? Will those mirror the complexity of the production environment? The guidance here will show you how to build a minimalist single machine development environment. From there, you can add complexity.</p>
+
+  <h3 id="development-environment-create-single-environment">Create Single Machine Environment</h3>
+  
+  <p>The installation and upgrade guide for Infinity programs is located at: <a href="https://www.blackbaud.com/files/support/guides/bbnc/bbinstal.pdf" target="_blank">https://www.blackbaud.com/files/support/guides/bbnc/bbinstal.pdf</a>. That guide discusses several paths depending on the solution configuration. This documentation focuses on the Blackbaud CRM and Blackbaud Internet Solutions upgrade path.</p>
+  
+  <ol>
+    <li>Configure a single developer machine to meet the installation requirements for Blackbaud CRM and Blackbaud Internet Solutions. The installation requirements are available at <a href="https://www.blackbaud.com/files/sysreqs/bbecreqs.pdf" target="_blank">https://www.blackbaud.com/files/sysreqs/bbecreqs.pdf</a>.</li>
+    <li>
+      <p>On that developer machine, install Blackbaud CRM and Blackbaud Internet Solutions. The downloads page for Blackbaud CRM is <a href="https://www.blackbaud.com/default.aspx?pgpId=2255&ID=131&Bundle=Blackbaud+Enterprise+CRM" target="_blank">https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=131&amp;Bundle=Blackbaud+Enterprise+CRM</a>.</p>
+      <p class="alert alert-info"><span class="label label-info">Note</span>  A password for the downloads page is required. Only the downloads available to your organization appear. There may be multiple versions of Blackbaud CRM available.</p>
+      <p>We recommend you read through the system requirements and installation instructions prior to running the installer.</p>
+      <ul>
+        <li>The download to install is an executable file (EXE). Click the link for the executable. After the executable is downloaded, run it as an Administrator.</li>
+        <li>The installer prompts for credentials. Although you can install without credentials, many of the configuration tasks required to integrate Blackbaud CRM and Blackbaud Internet Solutions cannot be completed without a database configured with unlocked modules and a user with administrator rights.<br /><img src="img/ClientInformation.png" alt="" class="img-responsive" /></li>
+        <li>Complete the installer wizard.</li>
+      </ul>
+    </li>
+    <li>
+      <p>Install the Infinity SDK. The downloads page for the Infinity SDK is <a href="https://www.blackbaud.com/default.aspx?pgpId=2255&ID=193&Bundle=Blackbaud+Infinity+SDK" target="_blank">https://www.blackbaud.com/default.aspx?pgpId=2255&amp;ID=193&amp;Bundle=Blackbaud+Infinity+SDK</a>. Run the installer as an Administrator.</p>
+      <p class="alert alert-info"><span class="label label-info">Note</span>  A password for the downloads page is required. Only the downloads available to your organization appear.</p>
+    </li>
+  </ol>
+  
+  <h3 id="development-environment-blackbaud-crm">Blackbaud CRM</h3>
+  
+  <p>A Blackbaud Internet Solutions (BBIS) installation assumes a Blackbaud CRM installation. When you install Blackbaud CRM, you select whether to install BBIS items. If you already use Blackbaud CRM but not BBIS, an upgrade that includes BBIS may be performed on an existing installation of Blackbaud CRM. For general information about Blackbaud CRM, see <a href="https://www.blackbaud.com/fundraising-crm/blackbaud-nonprofit-crm.aspx" target="_blank">https://www.blackbaud.com/fundraising-crm/blackbaud-nonprofit-crm.aspx</a>. To learn about how to use Blackbaud CRM, read the user guides at <a href="https://www.blackbaud.com/howto/crm.aspx" target="_blank">https://www.blackbaud.com/howto/crm.aspx</a>. Blackbaud CRM is built on Blackbaud's Infinity platform.</p>
+  
+  <p><img src="img/BlackbaudEnterpriseCRMExampleScreenShot_1028x299.png" alt="" class="img-center img-responsive" /></p>
+  
+  <h3 id="development-environment-blackbaud-internet-solutions">Blackbaud Internet Solutions</h3>
+  
+  <p>Blackbaud Internet Solutions (BBIS) is a content management system for websites that integrates with Blackbaud CRM. To learn about how to set up and use BBIS, read the user guides at <a href="https://www.blackbaud.com/howto/crm.aspx#BBIS" target="_blank">https://www.blackbaud.com/howto/crm.aspx#BBIS</a>. BBIS shares many features with Blackbaud NetCommunity, including a web-based interface.</p>
+  
+  <p><img src="img/BlackbaudInternetSolutionsBlankClientSite_1028x285.png" alt="" class="img-center img-responsive" /></p>
+  
+  <p>The major difference is that Blackbaud NetCommunity integrates with solutions such as The Raiser's Edge version 7 and BBIS integrates with Blackbaud CRM. BBIS functionality surfaces in the Webarea of Blackbaud CRM.</p>
+  
+  <p><img src="img/WebFunctionalArea.png" alt="" class="img-responsive img-center" /></p>
+  
+  <h3 id="development-environment-infinity-sdk">Infinity SDK</h3>
+  
+  <p>Blackbaud CRM is built on Blackbaud's Infinityplatform. Depending on the solution, the Infinityplatform includes an SDK and web APIs. Blackbaud CRM includes both. When you develop using the Infinity SDK, you create specs which define features. You load the specs into a catalog. But the Infinity SDK also includes a project template that supports adding custom parts to BBIS.</p>
+
+  <p>When you customize BBIS, you may find that you only need to create custom parts. But if your customization involves custom integration with Blackbaud CRM, you may need to access Blackbaud CRM through one of its web APIs. If you need to customize an API, you may need to use other parts of the Infinity SDK.</p>
+  
+  <p><img src="img/PartsProjectNewProject.png" alt="" class="img-responsive img-center" /></p>
+  
+</div>
+<div id="bbis-understanding">
+
+  <h2 id="bbis-understanding-overview">BBIS Understanding</h2>
+  
+  <p>The developer guides and code examples available on this site assume you have a solid understanding of basic BBIS and CRM functionality.  This includes how information is organized within BBIS.  For more information about general BBIS usage, please visit the <a href="https://www.blackbaud.com/howto/crm/3.aspx#bbisguides" target="_blank">How-to User Guides</a>.</p>
+
+  <h3 id="bbis-understanding-website-customizations">Website Customizations</h3>
+
+  <p>Blackbaud Internet Solutions (BBIS) provides an open, programmable architecture that allows you to incorporate powerful customizations into your website. With custom parts and the Infinity SDK, you can create a vast array of rich website enhancements to surface on the website and in Blackbaud CRM. The integration between built-in features and custom features is seamless and transparent.</p>
+
+  <p>BBIS is built on Microsoft ASP.NET technology, and the CMS leverages the Web User Control concept to construct pages with distinct reusable components called parts. Each part is implemented as a web user control, so if you can create a .NET user control for a custom part, you can store and manage it in BBIS. To build customizations for your website, you should understand BBIS from a site designer’s perspective and have a working technical knowledge of ASP.NET.</p>
+
+  <p>BBIS builds web pages on demand from content in the database, but it can pull content from other places as well. For example, the News Reader part pulls RSS feeds from other sites and just stores design-time settings in the data base such as which blog to show. Several parts also pull data from BBIS, and you can pull additional data with custom parts as necessary. Custom parts allow you to add features and content to your website, and with the Infinity SDK, you can allow custom parts to access back office data and capture new data for the back office from custom parts.</p>
+
+  <p>BBIS is built on a Service Oriented Architecture and uses .NET web services to deliver data between the website and back office. Two built-in web services manage the website’s access to BBIS data and the back office’s access to web transaction data such as donations and profile updates. The web service technology provides data access across the Internet using firewall-safe protocols such as HTTP and HTTPS, and this allows you to host BBIS websites in different locations than the back office if necessary.</p>
+
+  <p>BBIS components form a pipeline that connects the website and the back office. This full circle model allows you to display and edit back office data on the website and to download data from the website to the back office.</p>
+
+  <p><img src="img/DataFlow-BBIS-CRM.png" alt="" class="img-responsive img-center" /></p>
+
+  <p>At key points in the pipeline, BBIS provides open access to developers. With a moderate level of ASP.NET programming experience, a developer can create custom parts and include them in the CMS just like built-in parts. Custom parts surface in all content management features, such as the page designer, role-based security for targeting content, and scheduled publishing. Custom parts can do anything that .NET web user controls can do, including the display of HTML-based content, forms, and information from other systems.</p>
+
+
+  <h3 id="bbis-understanding-types-of-customizations">Types of Customizations</h3>
+
+  <p>With the Infinity SDK, you can:</p>
+
+  <ul>
+    <li>Add features to your installation of Blackbaud Enterprise CRM</li>
+    <li>Use template projects to create clients to access Blackbaud Enterprise CRM with Infinity web APIs</li>
+    <li>Create custom parts for Blackbaud Internet Solutions which can also access Infinity web APIs</li>
+  </ul>
+
+  <p>With those capabilities, you can create customizations to further integrate your BBIS websites with your Blackbaud CRM installation.</p>
+
+  <h3 id="bbis-understanding-access-crm">How a BBIS custom part can access Blackbaud CRM features</h3>
+
+  <p>The Blackbaud AppFx web service exposes Infinity features as a web service. This web service is loosely typed. But you can access out-of-the-box and custom features through it. For example, if you add a custom code table your Blackbaud CRM installation using the Infinity SDK, you can access it through the Blackbaud AppFxweb service.</p>
+
+  <p>A wrapper DLL that ships with the SDK called Blackbaud.AppFx.WebAPI.dll makes it easier to access the Blackbaud AppFx web service with .NET client applications. However, the SOAP client classes defined by this assembly are still loosely typed.</p>
+
+  <p>The Blackbaud AppFx web service and Blackbaud.AppFx.WebAPI.dll client classes are loosely typed. For stronger typing, BizOps web services provide a wrapper that enables stronger typing than the Blackbaud AppFx web service. However, you can only access some features through BizOps web services.</p>
+
+  <p>Similarly, Blackbaud.AppFx.*.WebAPIClient.dlls provide strongly typed classes for .NET clients organized into namespaces. But only features that ship with the product are represented.</p>
+
+  <p>However, using a utility called BBMetalWeb, you can generate strongly typed client classes for features exposed by Blackbaud AppFxweb service. So you have many options, the most robust of which are assemblies that contain proxy classes for use by .NET clients. The diagram that follows shows the ways a BBIS custom part can communicate with Blackbaud CRM features via the web APIs and DLLs.</p>
+
+  <p><img src="img/CustomizationAreas_763x397.png" alt="" class="img-responsive img-center" /></p>
+  
+  <h3 id="bbis-understanding-working-with-guids">Working with GUIDs</h3>
+  
+  <p>Through most of the BBIS endpoints you'll notice the use of <a href="http://en.wikipedia.org/wiki/Globally_unique_identifier" target="_blank">GUIDs</a>, or Globally Unique Identifiers.  Currently, the only way to locate the appropriate GUID for your call is to query the applicable database table.</p>
+  
+  <p>For example, whether it's using <a href="/bbis/reference/rest/#partiddonationcreate">Donation/Create</a> endpoint of the Advanced Donation Form API or the <a href="/bbis/reference/bbncextensions/M_BBNCExtensions_API_Utility_SecurePayments_CardNotPresent.htm">CardNotPresent method</a> of the Blackbaud Secure Payments API, the following guids are common when created donation transactions.</p>
+  
+  <table class="table">
+    <tr>
+      <th>Description</th>
+      <th>Table</th>
+      <th>Column</th>
+    </tr>
+    <tr>
+      <td>Revenue attributes that can be included with a donation transaction.</td>
+      <td>ATTRIBUTECATEGORY</td>
+      <td>ID</td>
+    </tr>
+    <tr>
+      <td>Id of a designation to which a donation amount should be allocated.</td>
+      <td>DonationDesignations</td>
+      <td>BackOfficeIDGUID</td>
+    </tr>
+    <tr>
+      <td>Id of the merchant account that should be used to process the donation.</td>
+      <td>ClientMerchantAccounts</td>
+      <td>BBPSID</td>
+    </tr>
+  </table>
+  
+</div
+        </div>  <!-- .col-md-9 -->
+
+      
+
+    </div>  <!-- .row -->
+  </div>  <!-- .container -->
+</div>  <!-- .content -->
+
+  
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <p>
+            <a href="/bbis">
+              <img src="/bbis/assets/img/logo-lonely.png" alt="Blackbaud Internet Solutions" class="img-responsive" />
+            </a>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="/bbis/start/">Getting Started</a>
+            </li>
+            <li>
+              <a href="/bbis/guide/">Developer Guide</a>
+            </li>
+            <li>
+              <a href="/bbis/reference/">Technical Reference</a>
+            </li>
+            <li>
+              <a href="/bbis/code/">Code Samples</a>
+            </li>
+            <li>
+              <a href="/bbis/help/">Help</a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-xs-6 col-sm-4">
+          <p>
+            <a href="http://www.bbdevnetwork.com" target="_blank">
+              <img src="/bbis/assets/blackbaud-bootstrap-theme/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" />
+            </a>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx" target="_blank">
+                Blackbaud Infinity SDK
+              </a>
+            </li>
+            <li>
+              <a href="http://open.convio.com/" target="_blank">
+                Blackbaud Luminate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/netcommunity-developer/netcommunity-developer.htm" target="_blank">
+                Blackbaud NetCommunity
+              </a>
+            </li>
+            <li>
+              <a href="https://www.blackbaud.com/files/support/guides/re7ent/api.pdf" target="_blank">
+                Blackbaud Raiser's Edge
+              </a>
+            </li>
+            <li>
+              <a href="http://developer.everydayhero.com" target="_blank">
+                Everyday Hero
+              </a>
+            </li>
+          </ul>  <!-- .list-unstyled -->
+        </div>  <!-- .col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="row">
+            <div class="col-sm-12">
+            
+              <ul class="list-inline bb-love">
+                <li>
+                  <a href="http://www.blackbaud.com" target="_blank">
+                    <img src="/bbis/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive" />
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-lg fa-plus"></i>
+                </li>
+                <li>
+                  <a href="http://www.github.com/blackbaud-community" target="_blank">
+                    <img src="/bbis/assets/img/logo-github.png" alt="GitHub" class="img-responsive" />
+                  </a>
+                </li>
+              </ul>  <!-- .list-inline -->
+              
+            </div>  <!-- .col-sm-12 -->
+          </div>  <!-- .row -->
+          <div class="row">
+            <div class="col-sm-12">
+              
+              <ul class="list-inline social-icons">
+                <li>
+                  <a href="https://github.com/blackbaud-community" target="_blank">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://plus.google.com/113382459921828617974" target="_blank">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://twitter.com/blackbaud" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/blackbaud" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.youtube.com/user/blackbaudinc" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>  <!-- .list-inline -->
+              
+            </div>  <!-- .col-sm-12 -->
+          </div>  <!-- .row -->
+        </div>  <!-- .col-sm-4 -->
+      </div>  <!-- .row -->
+
+    </div>  <!-- .container -->
+  </div>  <!-- .footer -->
+
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>&copy; 2014 Blackbaud, Inc.  All rights reserved.</p>
+        </div>
+        <div class="col-sm-6">
+          <p class="feedback-link">
+            <a href="/bbis/help/">Provide Feedback</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>  <!-- .copyright -->
+  
+  <div id="omnibar">
+    &nbsp;
+  </div>
+  
+  
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+    <script src="/bbis/assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/owl.carousel.min.js"></script>
+  
+    <script src="/bbis/assets/blackbaud-bootstrap-theme/js/owl.feature.js"></script>
+  
+    <script src="/bbis/assets/blackbaud-bootstrap-theme/lib/zero-clipboard/ZeroClipboard.min.js"></script>
+  
+    <script src="/bbis/assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js"></script>
+  
+    <script src="/bbis/assets/js/app.js"></script>
+  
+  
+</body>
+</html>

@@ -1,0 +1,1540 @@
+<div id="codetableapi">
+<h2 id="codetableid">CodeTable/{Id}<a href="#codetableid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns the active code table entries for the specified code table Id ordered as configured in the CRM.</p>
+    <p>If the provided code table Id is valid, then this will return the active code table entries for the specified code table.  The entries will be ordered as configured in the CRM.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a code table.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No code table was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Code Table Entry</td>
+        <td class="description">Returns an array of code table entries.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+  {
+    "Description": "Mr.",
+    "Id": "aa784eae-4649-43ce-bf5a-0d2fccb01807"
+  },
+  {
+    "Description": "Mrs.",
+    "Id": "ca590da0-2884-4c90-86ef-a349d6ea6b09"
+  }
+]{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="countryapi">
+<h2 id="country">Country<a href="#country"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns a list of all active countries alphabetized by their description.</p>
+    <p>Will return information about all active countries alphabetized by their description.</p>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Countries</td>
+        <td class="description">Returns an array country objects</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+  { 
+    "Id": "2C3F57A7-65DE-4D55-89EF-7857E6EDD53C",
+    "Abbreviation": "CA",
+    "Description": "Canada"
+  },
+  {
+    "Id": "B4837D3E-36F6-42F4-8049-CC2A2B108F9E",
+    "Abbreviation": "US",
+    "Description": "United States"
+  }
+]{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="countryid">Country/{Id}<a href="#countryid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns information about a specific country.</p>
+    <p>If the provided country Id is valid, then this will return information about the country.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a country.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No country was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Country</td>
+        <td class="description">Returns a country object</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+  "Id": "B4837D3E-36F6-42F4-8049-CC2A2B108F9E",
+  "Abbreviation": "US",
+  "Description": "United States"
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="countryidstate">Country/{Id}/State<a href="#countryidstate"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns a list of states associated with a country, alphabetized by their description.</p>
+    <p>If the provided country Id is valid, then this will return a list of state objects for each state associated with the country.   The states will be returned alphabetized description.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a country.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No country was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of States</td>
+        <td class="description">Returns an array of state objects for the given country alphabetized by their description.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+  {
+    "Id": "ba9b5958-b1d0-43ed-ba37-5e7c0eddfc78",
+    "Abbreviation": "RI",
+    "Description": "Rhode Island"
+  },
+  {
+    "Id": "70BF9733-5D24-46F4-A40C-61F6D2765575", 
+    "Abbreviation": "SC",
+    "Description": "South Carolina"
+  }
+]{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="countryidaddresscaptions">Country/{Id}/AddressCaptions<a href="#countryidaddresscaptions"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns the captions for Address Lines, City, State, and Postcode.</p>
+    <p>If the provided country Id is valid, then this will return the captions for address lines, city, state, and postcode.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a country.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No country was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Address Captions</td>
+        <td class="description">Returns an AddressCaptions object containing the labels for Address Lines, City, State, and Postcode.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+  "AddressLines": "Address",
+  "City": "City",
+  "PostCode": "Zip",
+  "State": "State"
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="donationapi">
+<h2 id="partiddonationid">{PartId}/Donation/{Id}<a href="#partiddonationid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the donation object of the specified Id if the user has appropriate access.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">403 Forbidden</td>
+        <td class="body">
+        </td>
+        <td class="description">User does not have access to the specified donation.</td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No donation was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Donation</td>
+        <td class="description">Returns a Donation object containing information about the requested donation Id.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "SourceCode": "Sample Source Code",
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "Date(1337227200000-0400)"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Jane",
+                "LastName": "Doe",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "TransactionStatus": 1
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="partiddonationcreate">{PartId}/Donation/Create<a href="#partiddonationcreate"><i class="fa fa-link"></i></a><small><span class="label label-default">POST</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Attempts to create a donation from the posted object.</p>
+    <p>Validates the fields in the posted CreateDonationRequest.  If valid, creates a donation transaction and saves it to the database. Stores the Id of the new donation in session so the user has permissions for the donation instance.  If the payment type is credit card, communicates with Blackbaud secured payment to set up a check out URI and adds that URI to the return object.  For credit card payment, the donation is saved in a Pending state.  For payments not using a credit card, the donation is saved in a Completed state and an acknowledgement email is sent.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="post">Post Body</dt>
+  <dd>
+    <table class="table table-condensed table-post">
+                    <tr>
+        <td class="name">Donor</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the donor of the gift. Donor and all attributes related to the donor (ex: Donor.Title) should be excluded if the donation form uses a Payment 2.0 part.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Title</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.EmailAddress</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Phone</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Address information about the donor.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.StreetAddress</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.City</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.State</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.Country</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</td>
+      </tr>
+                    <tr>
+        <td class="name">Donor.Address.PostalCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description"></td>
+      </tr>
+                  <tr>
+        <td class="name">Donor.OrganizationName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Required if Gift.IsCorporate is true. This field is not valid if the part is configured to use a Payment 2.0 page.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the donation gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.IsAnonymous</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates that the gift is being made anonymously.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.FinderNumber</td>
+        <td class="type">
+        (Long)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.SourceCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.PaymentMethod</td>
+        <td class="type">
+        (PaymentMethod ENUM)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">
+                            Indicates the method of payment to be used for the gift.  Possible values:
+<ul>
+  <li>CreditCard (0)</li>
+  <li>BillMeLater (1)</li>
+</ul></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Comments</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description"></td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.CreateGiftAidDeclaration</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates whether the gift aid is applied to the donation.</td>
+      </tr>
+                  <tr>
+        <td class="name">Gift.Designations</td>
+        <td class="type">
+        (Array)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Array of designation objects for the gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Designations.Amount</td>
+        <td class="type">
+        (Decimal)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">The numeric amount of the designation.  The currency is dictated by the merchant account specified.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Designations.DesignationId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a designation to which the amount should be allocated.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes</td>
+        <td class="type">
+        (Array)
+      </td>
+        <td class="required"></td>
+        <td class="description">Array of revenue attributes to be added to the gift.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes.AttributeId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of revenue attribute.  The only supported attribute data types are text, number, date, currency, yes/no, and code table.  Only one per record attribute types are supported, except for code table attributes which support multiple entries per record.  Any individual attribute id can only be supplied once for a donation.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Attributes.Value</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Value of the attribute.  For code table values, the name of the code table entry should be used.  For Multiple code table entries, use a single attribute with the names semicolon delimited in the value field.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.DayOfWeek</td>
+        <td class="type">
+        (DayOfWeek ENUM)
+      </td>
+        <td class="required"></td>
+        <td class="description">
+                        DayOfWeek value is required for weekly recurrences.  Field is invalid for any frequency other than weekly.  Possible values:
+<ul>
+  <li>Sunday (0)</li>
+  <li>Monday (1)</li>
+  <li>Tuesday (2)</li>
+  <li>Wednesday (3)</li>
+  <li>Thursday (4)</li>
+  <li>Friday (5)</li>
+  <li>Saturday (6)</li>
+</ul>
+                        
+                      </td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.DayOfMonth</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">DayOfMonth value is required for non-weekly recurrences.  Field is invalid for weekly frequency.  Valid values: 1-31.  Months with less than 31 days will default to the last day of the month is DayOfMonth is higher than number of days in the month.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.Month</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Month value is required for annual recurrences.  Field is invalid for any frequency other than annually.  Valid values:  1-12; Jan-Dec.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.Frequency</td>
+        <td class="type">
+        (RecurrenceFrequency ENUM)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">
+                        Designates the recurrence frequency.  Possible values:
+<ul>
+  <li>Weekly (1)</li>
+  <li>Monthly (2)</li>
+  <li>Quarterly (3)</li>
+  <li>Annually (4)</li>
+</li>
+                      </td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.StartDate</td>
+        <td class="type">
+        (Date)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Start date for recurrence.  Must start on or after today's date.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Recurrence.EndDate</td>
+        <td class="type">
+        (Date)
+      </td>
+        <td class="required"></td>
+        <td class="description">Optional end date for recurrence.  Must end after start date.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeID</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"></td>
+        <td class="description">Optional Tribute ID to map to.  Must match Tribute ID from backoffice.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">First name for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Last name for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.Type</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Tribute type to map to in backoffice.  Must match existing tribute type.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.TributeDefinition.Description</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Description for new tribute definition.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.FirstName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">First name for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.LastName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Last name for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.Country</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Country for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.AddressLines</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Address lines for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.City</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">City for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.State</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">State for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.PostalCode</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Postal code for tribute acknowledgee address.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.Phone</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Phone number for tribute acknowledgee.</td>
+      </tr>
+                    <tr>
+        <td class="name">Gift.Tribute.Acknowledgee.Email</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Email address for tribute acknowledgee.</td>
+      </tr>
+                  <tr>
+        <td class="name">Gift.IsCorporate</td>
+        <td class="type">
+        (Boolean)
+      </td>
+        <td class="required"></td>
+        <td class="description">Indicates that the gift is given on behalf of a company. When true, the Corporate merge fields are displayed as opposed to the Individual merge fields. Cannot process if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin</td>
+        <td class="type">
+        ()
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Information about the origin of the transaction.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.AppealId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of an appeal to associate with the donation.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.PageId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of the BBIS page hosting the donation form.</td>
+      </tr>
+                    <tr>
+        <td class="name">Origin.PageName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Name of the web page hosting the donation form.</td>
+      </tr>
+                    <tr>
+        <td class="name">BBSPReturnUri</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">BBSPTemplateSitePageId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"></td>
+        <td class="description">Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                    <tr>
+        <td class="name">MerchantAccountId</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of the merchant account that should be used to process the donation. Exclude if Donation Form is using a Payment 2.0 Part.</td>
+      </tr>
+                <tr class="example-response">
+        <td colspan="4">
+                  {% highlight javascript %}{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "/Date(1337227200000-0400)/"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Joe",
+                "LastName": "Schmo",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "BBSPReturnUri": "http://www.mydomain.com",
+    "BBSPTemplateSitePageId": 784,
+    "MerchantAccountId": "A9EBE81D-65A8-4BBF-8446-FB2ED0276209"
+}{% endhighlight %}
+                </td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">400 Bad Request</td>
+        <td class="body">Error[]</td>
+        <td class="description">
+                        A validation error was found with the post data or an error occurred in the processing.  Returns an array of Errror objects.  Possible Errors:
+<ul>
+<li>RecordNotFound (106)</li>
+<li>RequiredFieldMissing (101)</li>
+<li>InvalidFieldSupplied (102)</li>
+<li>ValueBelowMinimum (103)</li>
+<li>ValueExceedsMaximum (104)</li>
+<li>ValueNotAllowed (105)</li>
+<li>ExceedsMaximumLength (107)</li>
+</ul>
+</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+	{
+		"ErrorCode":101,
+		"Field":"Donor.LastName",
+		"Message":null
+	},
+	{
+		"ErrorCode":103,
+		"Field":"Gift.Designations.Amount",
+		"Message":"A designation's amount should be greater than 0."
+	}
+]{% endhighlight %}
+            </td>
+      </tr>
+      <tr>
+        <td class="status">201 OK</td>
+        <td class="body">CreateDonationReply</td>
+        <td class="description">Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+    "Donation": {
+        "Donor": {
+            "Address": {
+                "City": "Columbia",
+                "Country": "United States",
+                "PostalCode": "29212",
+                "State": "SC",
+                "StreetAddress": "123 Main St."
+            },
+            "EmailAddress": "john.doe@blackbaud.com",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Phone": "555-555-5555",
+            "Title": "Mr."
+        },
+        "Gift": {
+            "Designations": [
+                {
+                    "Amount": 5,
+                    "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+                }
+            ],
+            "FinderNumber": 0,
+            "IsAnonymous": false,
+            "PaymentMethod": 1,
+            "Comments": "Gift comments here.",
+            "CreateGiftAidDeclaration": false,
+            "Attributes": [
+                {
+                    "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                    "Value": "Volunteer;Member;Alumni"
+                },
+                {
+                    "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                    "Value": "1985"
+                }
+            ],
+            "Recurrence": {
+                "DayOfMonth": 26,
+                "DayOfWeek": null,
+                "EndDate": null,
+                "Frequency": 2,
+                "Month": null,
+                "StartDate": "/Date(1337227200000-0400)/"
+            },
+            "Tribute": {
+                "Acknowledgee": {
+                    "AddressLines": "123 Sunset ln.",
+                    "City": "Charleston",
+                    "Country": "USA",
+                    "Email": "email@address.com",
+                    "FirstName": "Joe",
+                    "LastName": "Schmo",
+                    "Phone": "123-123-1234",
+                    "PostalCode": "29482",
+                    "State": "SC"
+                },
+                "TributeDefinition": {
+                    "Description": "New tribute",
+                    "FirstName": "John",
+                    "LastName": "Hancock",
+                    "Type": "Tribute"
+                },
+                "TributeId": null
+            }
+        },
+        "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+        "Origin": {
+            "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+            "PageId": 784,
+            "PageName": "Sample Page"
+        },
+        "TransactionStatus": 1
+    },
+    "BBSPCheckoutUri": " https://payments.blackbaud.com/Pages/Index.aspx?t=853f96be-bf08-4828-aefa-326a06e48d31"
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="partiddonationidcompletebbspdonation">{PartId}/Donation/{Id}/CompleteBBSPDonation<a href="#partiddonationidcompletebbspdonation"><i class="fa fa-link"></i></a><small><span class="label label-default">POST</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">403 Forbidden</td>
+        <td class="body">
+        </td>
+        <td class="description">User does not have access to the specified donation.</td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No donation was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">400 Bad Request</td>
+        <td class="body">Error[]</td>
+        <td class="description">
+                        The donation payment was not properly completed in Blackbaud secured payment or the donation has already been marked as completed.  Possible Errors:
+<ul>
+  <li>InvalidOperation (102)</li>
+  <li>BBSPTransactionNotProcessed (203)</li>
+</ul></td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+    {
+        "ErrorCode": 102,
+        "Field": null,
+        "Message": null
+    }
+]{% endhighlight %}
+            </td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Donation</td>
+        <td class="description">Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "/Date(1337227200000-0400)/"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Joe",
+                "LastName": "Schmo",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "TransactionStatus": 1
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="partiddonationidconfirmationhtml">{PartId}/Donation/{Id}/ConfirmationHtml<a href="#partiddonationidconfirmationhtml"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets HTML for a confirmation screen for the completed donation.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database and merges the fields into the part’s confirmation block.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">PartId</td>
+        <td class="type">
+        (Integer)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation form part.</td>
+      </tr>
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a donation.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">403 Forbidden</td>
+        <td class="body">
+        </td>
+        <td class="description">User does not have access to the specified donation.</td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No donation was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">String</td>
+        <td class="description">Returns a string containing the HTML block of the confirmation with the donation fields merged in.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}&lt;div&gt;Thank you for donating $10.00.&lt;/div&gt;{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="imageapi">
+<h2 id="imagesfolderguidid">Images?FolderGUID={Id}<a href="#imagesfolderguidid"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the image objects that the user has access to within the specified folder.</p>
+    <p>Returns information about all images that the current user has access to and exist within the specified folder.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of an image folder.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Images</td>
+        <td class="description">Returns an array of Image objects that current user has access to and exist within the specified folder.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+  {
+    "Caption": "Sunset", 
+    "Url": "http://www.mydomain.com/image/sunset.jpg"
+  }
+]{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="imagestagtagname">Images?Tag={TagName}<a href="#imagestagtagname"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the image objects that the user has access to tagged with the specified tag.</p>
+    <p>Returns information about all images that the current user has access to and are tagged with the specified tag.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">TagName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Name of the tag</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Images</td>
+        <td class="description">Returns an array of Image objects that current user has access to and are tagged with the specified tag.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+  {
+    "Caption": "Sunset",
+    "Url": "http://www.mydomain.com/image/sunset.jpg"
+  }
+]{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+<h2 id="imagesfoldernamesubfoldername">Images/{FolderName}/{SubFolderName}<a href="#imagesfoldernamesubfoldername"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets the image objects that the user has access to under the specified folder name/path.</p>
+    <p>Returns information about all images that the current user has access to and exist under the specified folder path.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">FolderName</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Path/name of the folder.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">Array of Images</td>
+        <td class="description">Returns an array of Image objects that current user has access to and exist under the specified folder path.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}[
+  {
+    "Caption": "Sunset", 
+    "Url": "http://www.mydomain.com/image/sunset.jpg"
+  }
+]{% endhighlight %}
+            </td>
+      </tr>
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No folder exists at the given path.</td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="queryapi">
+<h2 id="queryidcolumn1namecolumnfiltercolumn2namecolu">
+                Query/{Id}?Column1Name={ColumnFilter}&amp;Column2Name={ColumnFilter}
+            <a href="#queryidcolumn1namecolumnfiltercolumn2namecolu"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Returns the results for the specified query.</p>
+    <p>Returns the result of executing the specified, published query.  The query is executed as the last user to save the query.  The results are cached and may be up to 10 minutes old.  The results are limited to 5000 rows.</p>
+  </dd>
+  <dt class="parameters">Parameters</dt>
+  <dd>
+    <table class="table table-condensed table-parameters">
+      <tr>
+        <td class="name">Id</td>
+        <td class="type">
+        (GUID)
+      </td>
+        <td class="required"><span class="label label-default label-required">Required</span></td>
+        <td class="description">Id of a query that has been published.</td>
+      </tr>
+      <tr>
+        <td class="name">ColumnFilter</td>
+        <td class="type">
+        (String)
+      </td>
+        <td class="required"></td>
+        <td class="description">Filters the results to rows that contain the specified value in the specified column.  When specifying a column, use the name that is found in the query response.  Depending on the type of column being filtered, the results may filter to rows that exactly match the specified value instead of those that contain the specified value.  Summary columns such as MAX, MIN, and COUNT cannot be used as filters and will be ignored.</td>
+      </tr>
+    </table>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">404 Not Found</td>
+        <td class="body">
+        </td>
+        <td class="description">No published query was found by the specified Id.</td>
+      </tr>
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">QueryResults</td>
+        <td class="description">Returns a Query object containing results of executing the specified query.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+  "Fields": [
+    {
+      "Caption": "ID",
+      "Name": "System record ID"
+    },
+    {
+      "Caption": "Fund",
+      "Name": "Purpose\\Public Name"
+    }
+  ],
+  "Rows":[
+    {
+      "Values": [
+        "1BB27696-3045-405E-BD74-DC8853506977", 
+        "Sample Designation 1"
+      ]
+    },
+    {
+      "Values": [
+        "2AE550FB-B3FC-43CE-A07A-B23C45BF1A2E", 
+        "Sample Designation 2"
+      ]
+    },
+    {
+      "Values": [
+        "2AE550FB-B3FC-43CE-A07A-B23C45BF1A2E", 
+        "Sample Designation 3"
+      ]
+    }
+  ]
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>
+<div id="userapi">
+<h2 id="user">User<a href="#user"><i class="fa fa-link"></i></a><small><span class="label label-default">GET</span></small></h2>
+<dl>
+  <dt class="description">Description</dt>
+  <dd>
+    <p>Gets basic profile information about the current user.</p>
+    <p>Returns profile information for the current user.  If the user is not logged in, then it may be populated based on the current email-recipient information.</p>
+  </dd>
+  <dt class="returns">Response</dt>
+  <dd>
+    <table class="table table-condensed table-responses">
+      <tr>
+        <td class="status">200 OK</td>
+        <td class="body">UserInformation</td>
+        <td class="description">Returns profile information about the current user.</td>
+      </tr>
+      <tr class="example-response">
+        <td colspan="4">
+              {% highlight javascript %}{
+  "Addresses": [
+    {
+      "City": "Daniel Island",
+      "Country": "United States",
+      "Id": "53064038-dea9-48d4-bbd6-42725f78b234",
+      "IsPrimary": true,
+      "PostalCode": "29464",
+      "State": "SC",
+      "StreetAddress": "123 Sample Drive",
+      "Type": "fda0e1f0-6918-4e96-8cb5-9a9a841d4ee6"
+    },
+    {
+      "City": "Columbia",
+      "Country": "United States",
+      "Id":" d35a3299-407b-465f-b3f1-43465a60713e",
+      "IsPrimary": false,
+      "PostalCode": "29212",
+      "State": "SC",
+      "StreetAddress": "200 Harbison Boulevard",
+      "Type": "17b13db9-1fab-4203-8b66-a2f26db637c5"
+    }
+  ],
+  "EmailAddresses": [
+    {
+      "EmailAddress": "JohnDoe@organization.com",
+      "Id": "9127174d-4b16-4c38-8b35-f0dbc61d7e27",
+      "IsPrimary": true,
+      "Type": "51d52fc2-6ac1-4687-bec0-c4fed5a05b65"
+    },
+    {
+      "EmailAddress": "JohnDoe@personal.com",
+      "Id": "8e48a013-6484-42b8-9746-c40a8eee9729",
+      "IsPrimary": false,
+      "Type": "51d52fc2-6ac1-4687-bec0-c4fed5a05b65"
+    }
+  ],
+  "FirstName": "John",
+  "LastName": "Doe",
+  "Phone": "803-781-8851",
+  "Title": "Mr"
+}{% endhighlight %}
+            </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+</div>

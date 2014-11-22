@@ -1,5 +1,7 @@
 title: BBIS Developer Documentation
 baseurl: /bbis
+destination: _published/
+source: _source/
 highlighter: pygments
 permalink: /404.html
 gems:

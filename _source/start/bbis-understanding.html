@@ -1,0 +1,79 @@
+<div id="{{ include.title }}">
+
+  <h2 id="{{ include.title }}-overview">BBIS Understanding</h2>
+  
+  <p>The developer guides and code examples available on this site assume you have a solid understanding of basic BBIS and CRM functionality.  This includes how information is organized within BBIS.  For more information about general BBIS usage, please visit the <a href="https://www.blackbaud.com/howto/crm/3.aspx#bbisguides" target="_blank">How-to User Guides</a>.</p>
+
+  <h3 id="{{ include.title }}-website-customizations">Website Customizations</h3>
+
+  <p>Blackbaud Internet Solutions (BBIS) provides an open, programmable architecture that allows you to incorporate powerful customizations into your website. With custom parts and the Infinity SDK, you can create a vast array of rich website enhancements to surface on the website and in Blackbaud CRM. The integration between built-in features and custom features is seamless and transparent.</p>
+
+  <p>BBIS is built on Microsoft ASP.NET technology, and the CMS leverages the Web User Control concept to construct pages with distinct reusable components called parts. Each part is implemented as a web user control, so if you can create a .NET user control for a custom part, you can store and manage it in BBIS. To build customizations for your website, you should understand BBIS from a site designer’s perspective and have a working technical knowledge of ASP.NET.</p>
+
+  <p>BBIS builds web pages on demand from content in the database, but it can pull content from other places as well. For example, the News Reader part pulls RSS feeds from other sites and just stores design-time settings in the data base such as which blog to show. Several parts also pull data from BBIS, and you can pull additional data with custom parts as necessary. Custom parts allow you to add features and content to your website, and with the Infinity SDK, you can allow custom parts to access back office data and capture new data for the back office from custom parts.</p>
+
+  <p>BBIS is built on a Service Oriented Architecture and uses .NET web services to deliver data between the website and back office. Two built-in web services manage the website’s access to BBIS data and the back office’s access to web transaction data such as donations and profile updates. The web service technology provides data access across the Internet using firewall-safe protocols such as HTTP and HTTPS, and this allows you to host BBIS websites in different locations than the back office if necessary.</p>
+
+  <p>BBIS components form a pipeline that connects the website and the back office. This full circle model allows you to display and edit back office data on the website and to download data from the website to the back office.</p>
+
+  <p><img src="img/DataFlow-BBIS-CRM.png" alt="" class="img-responsive img-center" /></p>
+
+  <p>At key points in the pipeline, BBIS provides open access to developers. With a moderate level of ASP.NET programming experience, a developer can create custom parts and include them in the CMS just like built-in parts. Custom parts surface in all content management features, such as the page designer, role-based security for targeting content, and scheduled publishing. Custom parts can do anything that .NET web user controls can do, including the display of HTML-based content, forms, and information from other systems.</p>
+
+
+  <h3 id="{{ include.title }}-types-of-customizations">Types of Customizations</h3>
+
+  <p>With the Infinity SDK, you can:</p>
+
+  <ul>
+    <li>Add features to your installation of Blackbaud Enterprise CRM</li>
+    <li>Use template projects to create clients to access Blackbaud Enterprise CRM with Infinity web APIs</li>
+    <li>Create custom parts for Blackbaud Internet Solutions which can also access Infinity web APIs</li>
+  </ul>
+
+  <p>With those capabilities, you can create customizations to further integrate your BBIS websites with your Blackbaud CRM installation.</p>
+
+  <h3 id="{{ include.title }}-access-crm">How a BBIS custom part can access Blackbaud CRM features</h3>
+
+  <p>The Blackbaud AppFx web service exposes Infinity features as a web service. This web service is loosely typed. But you can access out-of-the-box and custom features through it. For example, if you add a custom code table your Blackbaud CRM installation using the Infinity SDK, you can access it through the Blackbaud AppFxweb service.</p>
+
+  <p>A wrapper DLL that ships with the SDK called Blackbaud.AppFx.WebAPI.dll makes it easier to access the Blackbaud AppFx web service with .NET client applications. However, the SOAP client classes defined by this assembly are still loosely typed.</p>
+
+  <p>The Blackbaud AppFx web service and Blackbaud.AppFx.WebAPI.dll client classes are loosely typed. For stronger typing, BizOps web services provide a wrapper that enables stronger typing than the Blackbaud AppFx web service. However, you can only access some features through BizOps web services.</p>
+
+  <p>Similarly, Blackbaud.AppFx.*.WebAPIClient.dlls provide strongly typed classes for .NET clients organized into namespaces. But only features that ship with the product are represented.</p>
+
+  <p>However, using a utility called BBMetalWeb, you can generate strongly typed client classes for features exposed by Blackbaud AppFxweb service. So you have many options, the most robust of which are assemblies that contain proxy classes for use by .NET clients. The diagram that follows shows the ways a BBIS custom part can communicate with Blackbaud CRM features via the web APIs and DLLs.</p>
+
+  <p><img src="img/CustomizationAreas_763x397.png" alt="" class="img-responsive img-center" /></p>
+  
+  <h3 id="{{ include.title }}-working-with-guids">Working with GUIDs</h3>
+  
+  <p>Through most of the BBIS endpoints you'll notice the use of <a href="http://en.wikipedia.org/wiki/Globally_unique_identifier" target="_blank">GUIDs</a>, or Globally Unique Identifiers.  Currently, the only way to locate the appropriate GUID for your call is to query the applicable database table.</p>
+  
+  <p>For example, whether it's using <a href="{{ site.baseurl }}/reference/rest/#partiddonationcreate">Donation/Create</a> endpoint of the Advanced Donation Form API or the <a href="{{ site.baseurl }}/reference/bbncextensions/M_BBNCExtensions_API_Utility_SecurePayments_CardNotPresent.htm">CardNotPresent method</a> of the Blackbaud Secure Payments API, the following guids are common when created donation transactions.</p>
+  
+  <table class="table">
+    <tr>
+      <th>Description</th>
+      <th>Table</th>
+      <th>Column</th>
+    </tr>
+    <tr>
+      <td>Revenue attributes that can be included with a donation transaction.</td>
+      <td>ATTRIBUTECATEGORY</td>
+      <td>ID</td>
+    </tr>
+    <tr>
+      <td>Id of a designation to which a donation amount should be allocated.</td>
+      <td>DonationDesignations</td>
+      <td>BackOfficeIDGUID</td>
+    </tr>
+    <tr>
+      <td>Id of the merchant account that should be used to process the donation.</td>
+      <td>ClientMerchantAccounts</td>
+      <td>BBPSID</td>
+    </tr>
+  </table>
+  
+</div
