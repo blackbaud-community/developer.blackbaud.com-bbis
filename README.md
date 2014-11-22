@@ -1,4 +1,4 @@
-BBIS
+BBIS Developer Documentation
 =======================
 
 ### Setup Instructions
@@ -20,3 +20,7 @@ You will now be able to visit <a href="http://localhost:4000">http://localhost:4
 At present time, we publish the site via the _published directory.  Building the site for publishing is an almost identical process as working locally, except the changes are tracked.
 
 <pre>jekyll build</pre>
+
+###Contributing###
+
+If you would like to contribute to this code sample, please carefully read the [contributing documentation](https://github.com/blackbaud-community/Blackbaud-CRM/blob/master/CONTRIBUTING.md), which details the necessary workflow.  Included in those requirements is [signing the Contributor License Agreement](http://developer.blackbaud.com/cla).
