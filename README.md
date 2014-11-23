@@ -1,12 +1,8 @@
 BBIS Developer Documentation
 =======================
 
-Hello fellow developer.  Thank you for looking at our source.  Unfortunately there's not much to see here.
-This is a prototype project for a new breed of documentation for the Blackbaud Community.  Many thanks to the countless Blackbaud
+Hello fellow developer.  Thank you for looking at the source for our <a href="http://developer.blackbaud.com/bbis/">Blackbaud Internet Solutions Developer Site</a>.  Many thanks to the countless Blackbaud
 developers and clients that helped contribute to the site.
-
-If you're a passionate and knowledgable developer who cares about giving back to non-profits, consider joining the Blackbaud Team.
-https://www.blackbaud.com/careers
 
 ### Setup Instructions
 
@@ -26,11 +22,16 @@ You will now be able to visit <a href="http://localhost:4000">http://localhost:4
 
 ** Please note: ** The BBNCExtensions Assembly documention produces approximately 1,700 files.  Building this in jekyll can take up to a few minutes.  In an effort to work more efficiently, the _config.dev.yml file sets the bbncextensions/ directory to be excluded.  If you are interested in building these locally, simply remove this from the config file.
 
-## Building for the Production Environment
+### Building for the Production Environment
 
 <code>jekyll build --config _config.yml,_config.prod.yml</code>
 
-
-###Contributing###
+### Contributing 
 
 If you would like to contribute to this code sample, please carefully read the [contributing documentation](https://github.com/blackbaud-community/Blackbaud-CRM/blob/master/CONTRIBUTING.md), which details the necessary workflow.  Included in those requirements is [signing the Contributor License Agreement](http://developer.blackbaud.com/cla).
+
+### Oh Hey, BTW
+
+If you're a passionate and knowledgable developer who enjoys working on challenging projects and equally cares about giving back to non-profits, consider joining the Blackbaud Team.  
+
+https://www.blackbaud.com/careers
