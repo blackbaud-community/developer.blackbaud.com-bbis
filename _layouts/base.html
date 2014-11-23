@@ -18,11 +18,23 @@ layout: compress
   {% endif %}
   
   {% if page.css %}
-    {% include body-css.html type="page" files=page.css %}
+    <style>
+    {% for file in page.css %}
+      {% if file.base %}
+        {% include {{ file.url }} %}
+      {% endif %}
+    {% endfor %}
+    </style>
   {% endif %}
   
   {% if page.js %}
-    {% include body-js.html type="page" files=pages.js %}
+    <script>
+    {% for file in page.js %}
+      {% if file.base %}
+        {% include {{ file.url }} %}
+       {% endif %}
+    {% endfor %}
+    </script>
   {% endif %}
   
 </head>
