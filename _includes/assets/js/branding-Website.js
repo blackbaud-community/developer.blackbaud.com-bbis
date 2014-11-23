@@ -433,7 +433,7 @@ function PerformSearch()
 
                     if(wordCount == 0)
                         wordNotFound = true;
-                },
+                }
             });
         }
     }
