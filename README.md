@@ -1,6 +1,13 @@
 BBIS Developer Documentation
 =======================
 
+Hello fellow developer.  Thank you for looking at our source.  Unfortunately there's not much to see here.
+This is a prototype project for a new breed of documentation for the Blackbaud Community.  Many thanks to the countless Blackbaud
+developers and clients that helped contribute to the site.
+
+If you're a passionate and knowledgable developer who cares about giving back to non-profits, consider joining the Blackbaud Team.
+https://www.blackbaud.com/careers
+
 ### Setup Instructions
 
 After successfully cloning this repo (and branch), please follow the steps to setup jekyll from https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll.
