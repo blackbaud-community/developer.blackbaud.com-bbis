@@ -1,0 +1,7 @@
+{% for file in include.files %}
+  {% unless file.base %}
+    <script src="{{ file.url }}"></script>
+  {% endunless %}
+{% endfor %}
+
+<script src="{{ site.baseurl }}/assets/js/combine.{{ include.type }}.js?v={{ site.time | date: '%F-%T' }}"></script>

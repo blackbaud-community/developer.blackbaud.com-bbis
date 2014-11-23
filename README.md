@@ -5,21 +5,24 @@ BBIS Developer Documentation
 
 After successfully cloning this repo (and branch), please follow the steps to setup jekyll from https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll.
 
-### Working Locally
+The config file structure is slightly more complicated than a normal jekyll project - the reason being is we're attempting to support three build environments.  One of the major differences between these three environments is the <code>baseurl</code> necessary to function properly.
 
-When working locally, you can either "build" or "serve."  Anything that's built is stored in the _site folder, which Github is setup to ignore.  The serve command works really well to test things without having to commit.
+### Building for GitHub Pages
 
-When serving locally, be certain to pass in the <code>--baseurl</code> flag, followed by an empy string <code>''</code>.  For example, I typically run the following:
+There is no work to be done for this environment.  Their build automatically looks at the _config.yml file.
 
-<pre>jekyll serve --baseurl '' --destination _site</pre>
+### Building for Development Environment
 
-You will now be able to visit <a href="http://localhost:4000">http://localhost:4000</a> in your browser to view the site.  You should also notice that the site is being stored and served from the _site directory.  This directory is temporary and any changes are ignored.
+<code>jekyll serve --config _config.yml,_config.dev.yml</code>
 
-### Publishing
+You will now be able to visit <a href="http://localhost:4000">http://localhost:4000</a> in your browser to view the site.  You should also notice that the site is being stored and served from the _site directory.  This directory is set to be ignored.
 
-At present time, we publish the site via the _published directory.  Building the site for publishing is an almost identical process as working locally, except the changes are tracked.
+** Please note: ** The BBNCExtensions Assembly documention produces approximately 1,700 files.  Building this in jekyll can take up to a few minutes.  In an effort to work more efficiently, the _config.dev.yml file sets the bbncextensions/ directory to be excluded.  If you are interested in building these locally, simply remove this from the config file.
 
-<pre>jekyll build</pre>
+## Building for the Production Environment
+
+<code>jekyll build --config _config.yml,_config.prod.yml</code>
+
 
 ###Contributing###
 

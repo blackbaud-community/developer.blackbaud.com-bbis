@@ -28,19 +28,19 @@ https://www.blackbaud.com/careers
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blackbaud Internet Solutions</title>
-  <link rel="icon" href="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/favicon.ico" type="image/ico">
+  <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.ico" type="image/ico">
   
-  {% for css in site.css %}
-    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}">
-  {% endfor %}
+  {% if site.css %}
+    {% include body-css.html type="site" files=site.css %}
+  {% endif %}
   
-  {% for css in page.css %}
-    <link rel="stylesheet" href="{% if css.base %}{{ site.baseurl }}{% endif %}{{ css.url }}">
-  {% endfor %}
-
-  {% for js in page.js %}
-    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
-  {% endfor %}
+  {% if page.css %}
+    {% include body-css.html type="page" files=page.css %}
+  {% endif %}
+  
+  {% if page.js %}
+    {% include body-js.html type="page" files=pages.js %}
+  {% endif %}
   
 </head>
 <body class="layout-{{ page.layout }} section-{{ section }} subsection-{{ subsection }}">
@@ -142,7 +142,7 @@ https://www.blackbaud.com/careers
         <div class="col-xs-6 col-sm-4">
           <p>
             <a href="http://www.bbdevnetwork.com" target="_blank">
-              <img src="{{ site.baseurl }}/assets/blackbaud-bootstrap-theme/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" />
+              <img src="{{ site.baseurl }}/assets/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" />
             </a>
           </p>
           <ul class="list-unstyled">
@@ -253,9 +253,9 @@ https://www.blackbaud.com/careers
     &nbsp;
   </div>
   
-  {% for js in site.js %}
-    <script src="{% if js.base %}{{ site.baseurl }}{% endif %}{{ js.url }}"></script>
-  {% endfor %}
+  {% if site.js %}
+    {% include body-js.html type="site" files=site.js %}
+  {% endif %}
   
 </body>
 </html>

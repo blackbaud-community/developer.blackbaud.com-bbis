@@ -1,6 +1,14 @@
+# This file is the base, which at a minimum should work on gh-pages
+# When building locally for development or production, pass in the environment config:
+#
+# GitHub Pages Automated Build: Uses _config.yml
+#
+# Development Serve: jekyll serve --config _config.yml,_config.dev.yml
+#
+# Production Build: jekyll build --config _config.yml,_config.prod.yml
+
 title: BBIS Developer Documentation
-baseurl: /bbis
-destination: _published/
+baseurl: /developer.blackbaud.com-bbis
 source: _source/
 highlighter: pygments
 permalink: /404.html
@@ -15,16 +23,16 @@ css:
   - url: //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
     base: false
 
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.carousel.min.css
+  - url: /assets/lib/owl-carousel-v2/assets/owl.carousel.min.css
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/assets/owl.theme.default.min.css
+  - url: /assets/lib/owl-carousel-v2/assets/owl.theme.default.min.css
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/css/blackbaud-bootstrap-theme.css
+  - url: /assets/css/blackbaud-bootstrap-theme.css
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/animate/animate.css
+  - url: /assets/lib/animate/animate.css
     base: true
   
   - url: /assets/css/syntax.css
@@ -46,16 +54,16 @@ js:
 #  - url: //signin.blackbaud.com/omnibar.js
 #    base: false
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/owl-carousel-v2/owl.carousel.min.js
+  - url: /assets/lib/owl-carousel-v2/owl.carousel.min.js
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/js/owl.feature.js
+  - url: /assets/js/owl.feature.js
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/lib/zero-clipboard/ZeroClipboard.min.js
+  - url: /assets/lib/zero-clipboard/ZeroClipboard.min.js
     base: true
     
-  - url: /assets/blackbaud-bootstrap-theme/js/blackbaud-bootstrap-theme.js
+  - url: /assets/js/blackbaud-bootstrap-theme.js
     base: true
     
   - url: /assets/js/app.js

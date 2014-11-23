@@ -1,0 +1,9 @@
+---
+layout: blank
+---
+  
+{% for css in site.css %}
+  {% if css.base %}
+    {% include {{ css.url }} %}
+   {% endif %}
+{% endfor %}

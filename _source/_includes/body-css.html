@@ -1,0 +1,7 @@
+{% for file in include.files %}
+  {% unless file.base %}
+    <link rel="stylesheet" href="{{ file.url }}">
+  {% endunless %}
+{% endfor %}
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/combine.{{ include.type }}.css?v={{ site.time | date: '%F-%T' }}">

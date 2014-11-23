@@ -1,0 +1,9 @@
+---
+layout: blank
+---
+  
+{% for file in page.css %}
+  {% if file.base %}
+    {% include {{ file.url }} %}
+   {% endif %}
+{% endfor %}
