@@ -11,6 +11,7 @@ title: BBIS Developer Documentation
 baseurl: /developer.blackbaud.com-bbis
 highlighter: pygments
 permalink: /404.html
+compress: true
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
