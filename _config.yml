@@ -9,7 +9,6 @@
 
 title: BBIS Developer Documentation
 baseurl: /developer.blackbaud.com-bbis
-source: _source/
 highlighter: pygments
 permalink: /404.html
 gems:
