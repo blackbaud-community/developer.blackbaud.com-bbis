@@ -1,2 +1,3 @@
 baseurl: /bbis
 destination: _published/
+exclude: [CONTRIBUTING.md, Gemfile, LICENSE, README.md]
