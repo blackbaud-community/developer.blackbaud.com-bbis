@@ -6,7 +6,16 @@ sitemap:
   - /
   - /start/
   - /guide/
+  - /guide/advanced-donation-form/
+  - /guide/blackbaud-secure-payments/
+  - /guide/custom-content-parts/
+  - /guide/custom-framework-parts/
+  - /guide/custom-handlers/
+  - /guide/user-imports/
   - /reference/
+  - /reference/bbncextensions/
+  - /reference/rest/
+  - /reference/javascript/
   - /code/
   - /help/
 ---
@@ -19,7 +28,7 @@ sitemap:
   
   {% for url in page.sitemap %}
     <url>
-      <loc>{{ url }}</loc>
+      <loc>{{ site.baseurl }}{{ url }}</loc>
       <lastmod>{{ site.time | date: '%FT%T' }}</lastmod>
       <changefreq>weekly</changefreq>
     </url>
