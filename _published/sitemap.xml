@@ -6,38 +6,92 @@
   
   
     <url>
-      <loc>/</loc>
-      <lastmod>2014-12-03T14:14:55</lastmod>
+      <loc>/bbis/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   
     <url>
-      <loc>/start/</loc>
-      <lastmod>2014-12-03T14:14:55</lastmod>
+      <loc>/bbis/start/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   
     <url>
-      <loc>/guide/</loc>
-      <lastmod>2014-12-03T14:14:55</lastmod>
+      <loc>/bbis/guide/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   
     <url>
-      <loc>/reference/</loc>
-      <lastmod>2014-12-03T14:14:55</lastmod>
+      <loc>/bbis/guide/advanced-donation-form/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   
     <url>
-      <loc>/code/</loc>
-      <lastmod>2014-12-03T14:14:55</lastmod>
+      <loc>/bbis/guide/blackbaud-secure-payments/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   
     <url>
-      <loc>/help/</loc>
-      <lastmod>2014-12-03T14:14:55</lastmod>
+      <loc>/bbis/guide/custom-content-parts/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/guide/custom-framework-parts/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/guide/custom-handlers/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/guide/user-imports/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/reference/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/reference/bbncextensions/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/reference/rest/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/reference/javascript/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/code/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  
+    <url>
+      <loc>/bbis/help/</loc>
+      <lastmod>2014-12-03T15:06:04</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   
