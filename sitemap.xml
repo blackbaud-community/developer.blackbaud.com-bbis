@@ -1,0 +1,28 @@
+---
+layout: blank
+
+# This would probably make more sense in _config.yml and used throughout the site - main nav + sidebar
+sitemap:
+  - /
+  - /start/
+  - /guide/
+  - /reference/
+  - /code/
+  - /help/
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  {% for url in page.sitemap %}
+    <url>
+      <loc>{{ url }}</loc>
+      <lastmod>{{ site.time | date: '%FT%T' }}</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>
+  {% endfor %}
+  
+</urlset>

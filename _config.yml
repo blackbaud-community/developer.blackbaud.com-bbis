@@ -14,7 +14,9 @@ permalink: /404.html
 compress: true
 gems:
   - jekyll-redirect-from
-  - jekyll-sitemap
+  
+# Disabling this gem until it's updated with better control to ignoring include_relative files
+#  - jekyll-sitemap
 
 css:
   - url: //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css
