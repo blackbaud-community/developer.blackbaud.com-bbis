@@ -20,7 +20,7 @@ There is no work to be done for this environment.  Their build automatically loo
 
 You will now be able to visit <a href="http://localhost:4000">http://localhost:4000</a> in your browser to view the site.  You should also notice that the site is being stored and served from the _site directory.  This directory is set to be ignored.
 
-** Please note: ** The BBNCExtensions Assembly documention produces approximately 1,700 files.  Building this in jekyll can take up to a few minutes.  In an effort to work more efficiently, the _config.dev.yml file sets the bbncextensions/ directory to be excluded.  If you are interested in building these locally, simply remove this from the config file.
+**Please note:** The BBNCExtensions Assembly documention produces approximately 1,700 files.  Building this in jekyll can take up to a few minutes.  In an effort to work more efficiently, the _config.dev.yml file sets the bbncextensions/ directory to be excluded.  If you are interested in building these locally, simply remove this from the config file.
 
 ### Building for the Production Environment
 
