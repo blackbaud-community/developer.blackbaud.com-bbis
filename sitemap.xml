@@ -29,7 +29,7 @@ sitemap:
   {% for url in page.sitemap %}
     <url>
       <loc>{{ site.url }}{{ site.baseurl }}{{ url }}</loc>
-      <lastmod>{{ site.time | date: '%FT%T' }}</lastmod>
+      <lastmod>{{ site.time | date: '%FT%T' }}{{ site.timezone }}</lastmod>
       <changefreq>weekly</changefreq>
     </url>
   {% endfor %}

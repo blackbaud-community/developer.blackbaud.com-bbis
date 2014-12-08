@@ -1,6 +1,6 @@
 <url>
   <loc>{{ site.url }}{{ site.baseurl }}/reference/bbncextensions/{{ include.url }}</loc>
-  <lastmod>{{ site.time | date: '%FT%T' }}</lastmod>
+  <lastmod>{{ site.time | date: '%FT%T' }}{{ site.timezone }}</lastmod>
   <changefreq>weekly</changefreq>
 </url>
 

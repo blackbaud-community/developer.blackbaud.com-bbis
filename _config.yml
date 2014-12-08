@@ -12,6 +12,7 @@ url: http://blackbaud-community.github.io
 baseurl: /developer.blackbaud.com-bbis
 highlighter: pygments
 permalink: /404.html
+timezone: "-05:00"
 compress: true
 gems:
   - jekyll-redirect-from
