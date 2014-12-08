@@ -1,0 +1,11 @@
+{% comment %} 
+  Jekyll (Liquid) treats arrays & hashes the same, so we check for that below.
+{% endcomment %}
+
+{% if include.node[0] %}
+  {% for item in include.node %}
+    {% include sitemap-bbncextensions-item.xml url=item._Url HelpTOCNode=item.HelpTOCNode %}
+  {% endfor %}
+{% else %}
+  {% include sitemap-bbncextensions-item.xml url=include.node._Url HelpTOCNode=include.node.HelpTOCNode %}
+{% endif %}

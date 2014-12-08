@@ -34,4 +34,6 @@ sitemap:
     </url>
   {% endfor %}
   
+  {% include sitemap-bbncextensions.xml node=site.data.WebTOC.HelpTOC.HelpTOCNode.HelpTOCNode %}
+  
 </urlset>
