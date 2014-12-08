@@ -1,3 +1,4 @@
+url: http://developer.blackbaud.com
 baseurl: /bbis
 destination: _published/
 exclude: [CONTRIBUTING.md, Gemfile, LICENSE, README.md]

@@ -1,5 +1,5 @@
 <url>
-  <loc>{{ site.baseurl }}/reference/bbncextensions/{{ include.url }}</loc>
+  <loc>{{ site.url }}{{ site.baseurl }}/reference/bbncextensions/{{ include.url }}</loc>
   <lastmod>{{ site.time | date: '%FT%T' }}</lastmod>
   <changefreq>weekly</changefreq>
 </url>
