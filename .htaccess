@@ -1,2 +1,6 @@
+# 300 is the error for "Multiple Choices," which is enabled by mod_speling
+# There's an apache bug that ignores the CheckCaseOnly directive.
+# For this reason, we need to treat the 300 as a 404.
+# Bobby Earl - 2014/12/10
 ErrorDocument 300 /bbis/404.html
 ErrorDocument 404 /bbis/404.html
