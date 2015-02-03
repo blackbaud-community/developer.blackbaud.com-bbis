@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd">
+    <name>Image API</name>
+    <endpoints>
+        <endpoint>
+            <url>Images?FolderGUID={Id}</url>
+            <method>GET</method>
+            <summary>Gets the image objects that the user has access to within the specified folder.</summary>
+            <behavior>Returns information about all images that the current user has access to and exist within the specified folder.</behavior>
+            <parameters>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of an image folder.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>200 OK</status>
+                    <body>Array of Images</body>
+                    <description>Returns an array of Image objects that current user has access to and exist within the specified folder.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+[
+  {
+    "Caption": "Sunset", 
+    "Url": "http://www.mydomain.com/image/sunset.jpg"
+  }
+]
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+      <endpoint>
+        <url>Images?Tag={TagName}</url>
+        <method>GET</method>
+        <summary>Gets the image objects that the user has access to tagged with the specified tag.</summary>
+        <behavior>Returns information about all images that the current user has access to and are tagged with the specified tag.</behavior>
+        <parameters>
+          <parameter>
+            <name>TagName</name>
+            <type>String</type>
+            <required>true</required>
+            <description>Name of the tag</description>
+          </parameter>
+        </parameters>
+        <responses>
+          <response>
+            <status>200 OK</status>
+            <body>Array of Images</body>
+            <description>Returns an array of Image objects that current user has access to and are tagged with the specified tag.</description>
+          </response>
+        </responses>
+        <exampleResponses>
+          <exampleResponse>
+            <name>Success</name>
+            <status>200 OK</status>
+            <body>
+<![CDATA[
+[
+  {
+    "Caption": "Sunset",
+    "Url": "http://www.mydomain.com/image/sunset.jpg"
+  }
+]
+]]>
+            </body>
+          </exampleResponse>
+        </exampleResponses>
+      </endpoint>
+      <endpoint>
+        <url>Images/{FolderName}/{SubFolderName}</url>
+        <method>GET</method>
+        <summary>Gets the image objects that the user has access to under the specified folder name/path.</summary>
+        <behavior>Returns information about all images that the current user has access to and exist under the specified folder path.</behavior>
+        <parameters>
+          <parameter>
+            <name>FolderName</name>
+            <type>String</type>
+            <required>true</required>
+            <description>Path/name of the folder.</description>
+          </parameter>
+        </parameters>
+        <responses>
+          <response>
+            <status>200 OK</status>
+            <body>Array of Images</body>
+            <description>Returns an array of Image objects that current user has access to and exist under the specified folder path.</description>
+          </response>
+          <response>
+            <status>404 Not Found</status>
+            <description>No folder exists at the given path.</description>
+          </response>
+        </responses>
+        <exampleResponses>
+          <exampleResponse>
+            <name>Success</name>
+            <status>200 OK</status>
+            <body>
+<![CDATA[
+[
+  {
+    "Caption": "Sunset", 
+    "Url": "http://www.mydomain.com/image/sunset.jpg"
+  }
+]
+]]>
+            </body>
+          </exampleResponse>
+        </exampleResponses>
+      </endpoint>
+    </endpoints>    
+</api>

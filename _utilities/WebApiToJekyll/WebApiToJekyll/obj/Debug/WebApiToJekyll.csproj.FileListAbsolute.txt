@@ -1,0 +1,9 @@
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\bin\Debug\WebApiToJekyll.exe.config
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\bin\Debug\WebApiToJekyll.exe
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\bin\Debug\WebApiToJekyll.pdb
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\obj\Debug\WebApiToJekyll.csprojResolveAssemblyReference.cache
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\obj\Debug\WebApiToJekyll.exe
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\obj\Debug\WebApiToJekyll.pdb
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\bin\Debug\Jekyll.xslt
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\bin\Debug\Newtonsoft.Json.dll
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\WebApiToJekyll\WebApiToJekyll\bin\Debug\Newtonsoft.Json.xml

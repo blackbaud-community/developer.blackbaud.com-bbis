@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../WebApiDocumentation.xsd">
+    <name>Query API</name>
+    <endpoints>
+        <endpoint>
+            <url>
+                <![CDATA[Query/{Id}?Column1Name={ColumnFilter}&Column2Name={ColumnFilter}]]>
+            </url>
+            <method>GET</method>
+            <summary>Returns the results for the specified query.</summary>
+            <behavior>Returns the result of executing the specified, published query.  The query is executed as the last user to save the query.  The results are cached and may be up to 10 minutes old.  The results are limited to 5000 rows.</behavior>
+            <parameters>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a query that has been published.</description>
+                </parameter>
+                <parameter>
+                    <name>ColumnFilter</name>
+                    <type>String</type>
+                    <required>false</required>
+                    <description>Filters the results to rows that contain the specified value in the specified column.  When specifying a column, use the name that is found in the query response.  Depending on the type of column being filtered, the results may filter to rows that exactly match the specified value instead of those that contain the specified value.  Summary columns such as MAX, MIN, and COUNT cannot be used as filters and will be ignored.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No published query was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>QueryResults</body>
+                    <description>Returns a Query object containing results of executing the specified query.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+{
+  "Fields": [
+    {
+      "Caption": "ID",
+      "Name": "System record ID"
+    },
+    {
+      "Caption": "Fund",
+      "Name": "Purpose\\Public Name"
+    }
+  ],
+  "Rows":[
+    {
+      "Values": [
+        "1BB27696-3045-405E-BD74-DC8853506977", 
+        "Sample Designation 1"
+      ]
+    },
+    {
+      "Values": [
+        "2AE550FB-B3FC-43CE-A07A-B23C45BF1A2E", 
+        "Sample Designation 2"
+      ]
+    },
+    {
+      "Values": [
+        "2AE550FB-B3FC-43CE-A07A-B23C45BF1A2E", 
+        "Sample Designation 3"
+      ]
+    }
+  ]
+}
+]]></body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+    </endpoints>
+</api>

@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd">
+    <name>Donation API</name>
+    <endpoints>
+        <endpoint>
+            <url>{PartId}/Donation/{Id}</url>
+            <method>GET</method>
+            <summary>Gets the donation object of the specified Id if the user has appropriate access.</summary>
+            <behavior>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.</behavior>
+            <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a donation.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>403 Forbidden</status>
+                    <description>User does not have access to the specified donation.</description>
+                </response>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No donation was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>Donation</body>
+                    <description>Returns a Donation object containing information about the requested donation Id.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "SourceCode": "Sample Source Code",
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "Date(1337227200000-0400)"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Jane",
+                "LastName": "Doe",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "TransactionStatus": 1
+}
+]]>
+                  </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+        <endpoint>
+            <url>{PartId}/Donation/Create</url>
+            <method>POST</method>
+            <summary>Attempts to create a donation from the posted object.</summary>
+            <behavior>Validates the fields in the posted CreateDonationRequest.  If valid, creates a donation transaction and saves it to the database. Stores the Id of the new donation in session so the user has permissions for the donation instance.  If the payment type is credit card, communicates with Blackbaud secured payment to set up a check out URI and adds that URI to the return object.  For credit card payment, the donation is saved in a Pending state.  For payments not using a credit card, the donation is saved in a Completed state and an acknowledgement email is sent.</behavior>
+            <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+            </parameters>
+            <post>
+                <fields>
+                    <field>
+                        <name>Donor</name>
+                        <required>true</required>
+                        <description>Information about the donor of the gift. Donor and all attributes related to the donor (ex: Donor.Title) should be excluded if the donation form uses a Payment 2.0 part.</description>
+                    </field>
+                    <field>
+                        <name>Donor.Title</name>
+                        <type>String</type>
+                    </field>
+                    <field>
+                        <name>Donor.FirstName</name>
+                        <type>String</type>
+                        <maxLength>30</maxLength>
+                    </field>
+                    <field>
+                        <name>Donor.LastName</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <maxLength>60</maxLength>
+                    </field>
+                    <field>
+                        <name>Donor.EmailAddress</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <maxLength>120</maxLength>
+                    </field>
+                    <field>
+                        <name>Donor.Phone</name>
+                        <type>String</type>
+                    </field>
+                    <field>
+                        <name>Donor.Address</name>
+                        <required>true</required>
+                        <description>Address information about the donor.</description>
+                    </field>
+                    <field>
+                        <name>Donor.Address.StreetAddress</name>
+                        <type>String</type>
+                        <required>true</required>
+                    </field>
+                    <field>
+                        <name>Donor.Address.City</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <maxLength>50</maxLength>
+                    </field>
+                    <field>
+                        <name>Donor.Address.State</name>
+                        <type>String</type>
+                        <required>true</required>
+                    </field>
+                    <field>
+                        <name>Donor.Address.Country</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <description>In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</description>
+                    </field>
+                    <field>
+                        <name>Donor.Address.PostalCode</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <maxLength>10</maxLength>
+                    </field>
+                  <field>
+                    <name>Donor.OrganizationName</name>
+                    <type>String</type>
+                    <description>Required if Gift.IsCorporate is true. This field is not valid if the part is configured to use a Payment 2.0 page.</description>
+                    <maxLength>60</maxLength>
+                  </field>
+                    <field>
+                        <name>Gift</name>
+                        <required>true</required>
+                        <description>Information about the donation gift.</description>
+                    </field>
+                    <field>
+                        <name>Gift.IsAnonymous</name>
+                        <type>Boolean</type>
+                        <description>Indicates that the gift is being made anonymously.</description>
+                        <default>false</default>
+                    </field>
+                    <field>
+                        <name>Gift.FinderNumber</name>
+                        <type>Long</type>
+                    </field>
+                    <field>
+                        <name>Gift.SourceCode</name>
+                        <type>String</type>
+                        <maxLength>50</maxLength>
+                    </field>
+                    <field>
+                        <name>Gift.PaymentMethod</name>
+                        <type>PaymentMethod ENUM</type>
+                        <required>true</required>
+                        <description>
+                            <![CDATA[Indicates the method of payment to be used for the gift.  Possible values:
+<ul>
+  <li>CreditCard (0)</li>
+  <li>BillMeLater (1)</li>
+</ul>]]></description>
+                    </field>
+                    <field>
+                      <name>Gift.Comments</name>
+                      <type>String</type>                      
+                      <maxLength>255</maxLength>
+                    </field>
+                    <field>
+                      <name>Gift.CreateGiftAidDeclaration</name>
+                      <type>Boolean</type>
+                      <description>Indicates whether the gift aid is applied to the donation.</description>
+                      <default>false</default>
+                    </field>
+                  <field>
+                        <name>Gift.Designations</name>
+                        <type>Array</type>
+                        <required>true</required>
+                        <description>Array of designation objects for the gift.</description>
+                    </field>
+                    <field>
+                        <name>Gift.Designations.Amount</name>
+                        <type>Decimal</type>
+                        <required>true</required>
+                        <description>The numeric amount of the designation.  The currency is dictated by the merchant account specified.</description>                        
+                    </field>
+                    <field>
+                        <name>Gift.Designations.DesignationId</name>
+                        <type>GUID</type>
+                        <required>true</required>
+                        <description>Id of a designation to which the amount should be allocated.</description>
+                    </field>
+                    <field>
+                        <name>Gift.Attributes</name>
+                        <type>Array</type>
+                        <description>Array of revenue attributes to be added to the gift.</description>
+                    </field>
+                    <field>
+                        <name>Gift.Attributes.AttributeId</name>
+                        <type>GUID</type>
+                        <required>true</required>
+                        <description>Id of revenue attribute.  The only supported attribute data types are text, number, date, currency, yes/no, and code table.  Only one per record attribute types are supported, except for code table attributes which support multiple entries per record.  Any individual attribute id can only be supplied once for a donation.</description>
+                    </field>
+                    <field>
+                        <name>Gift.Attributes.Value</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <description>Value of the attribute.  For code table values, the name of the code table entry should be used.  For Multiple code table entries, use a single attribute with the names semicolon delimited in the value field.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Recurrence.DayOfWeek</name>
+                      <type>DayOfWeek ENUM</type>
+                      <description>
+                        <![CDATA[DayOfWeek value is required for weekly recurrences.  Field is invalid for any frequency other than weekly.  Possible values:
+<ul>
+  <li>Sunday (0)</li>
+  <li>Monday (1)</li>
+  <li>Tuesday (2)</li>
+  <li>Wednesday (3)</li>
+  <li>Thursday (4)</li>
+  <li>Friday (5)</li>
+  <li>Saturday (6)</li>
+</ul>
+                        ]]>
+                      </description>
+                    </field>
+                    <field>
+                      <name>Gift.Recurrence.DayOfMonth</name>
+                      <type>Integer</type>
+                      <description>DayOfMonth value is required for non-weekly recurrences.  Field is invalid for weekly frequency.  Valid values: 1-31.  Months with less than 31 days will default to the last day of the month is DayOfMonth is higher than number of days in the month.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Recurrence.Month</name>
+                      <type>Integer</type>
+                      <description>Month value is required for annual recurrences.  Field is invalid for any frequency other than annually.  Valid values:  1-12; Jan-Dec.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Recurrence.Frequency</name>
+                      <type>RecurrenceFrequency ENUM</type>
+                      <required>true</required>
+                      <description>
+                        <![CDATA[Designates the recurrence frequency.  Possible values:
+<ul>
+  <li>Weekly (1)</li>
+  <li>Monthly (2)</li>
+  <li>Quarterly (3)</li>
+  <li>Annually (4)</li>
+</li>]]>
+                      </description>
+                    </field>
+                    <field>
+                      <name>Gift.Recurrence.StartDate</name>
+                      <type>Date</type>
+                      <required>true</required>
+                      <description>Start date for recurrence.  Must start on or after today's date.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Recurrence.EndDate</name>
+                      <type>Date</type>
+                      <description>Optional end date for recurrence.  Must end after start date.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.TributeID</name>
+                      <type>GUID</type>
+                      <description>Optional Tribute ID to map to.  Must match Tribute ID from backoffice.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.TributeDefinition.FirstName</name>
+                      <type>String</type>
+                      <description>First name for new tribute definition.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.TributeDefinition.LastName</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Last name for new tribute definition.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.TributeDefinition.Type</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Tribute type to map to in backoffice.  Must match existing tribute type.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.TributeDefinition.Description</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Description for new tribute definition.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.FirstName</name>
+                      <type>String</type>
+                      <description>First name for tribute acknowledgee.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.LastName</name>                    
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Last name for tribute acknowledgee.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.Country</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Country for tribute acknowledgee address.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.AddressLines</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Address lines for tribute acknowledgee address.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.City</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>City for tribute acknowledgee address.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.State</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>State for tribute acknowledgee address.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.PostalCode</name>
+                      <type>String</type>
+                      <required>true</required>
+                      <description>Postal code for tribute acknowledgee address.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.Phone</name>
+                      <type>String</type>
+                      <description>Phone number for tribute acknowledgee.</description>
+                    </field>
+                    <field>
+                      <name>Gift.Tribute.Acknowledgee.Email</name>
+                      <type>String</type>
+                      <description>Email address for tribute acknowledgee.</description>
+                    </field>
+                  <field>
+                    <name>Gift.IsCorporate</name>
+                    <type>Boolean</type>
+                    <description>Indicates that the gift is given on behalf of a company. When true, the Corporate merge fields are displayed as opposed to the Individual merge fields. Cannot process if Donation Form is using a Payment 2.0 Part.</description>
+                  </field>
+                    <field>
+                        <name>Origin</name>
+                        <required>true</required>
+                        <description>Information about the origin of the transaction.</description>
+                    </field>
+                    <field>
+                        <name>Origin.AppealId</name>
+                        <type>GUID</type>
+                        <description>Id of an appeal to associate with the donation.</description>
+                    </field>
+                    <field>
+                        <name>Origin.PageId</name>
+                        <type>Integer</type>
+                        <description>Id of the BBIS page hosting the donation form.</description>
+                    </field>
+                    <field>
+                        <name>Origin.PageName</name>
+                        <type>String</type>
+                        <required>true</required>
+                        <description>Name of the web page hosting the donation form.</description>
+                    </field>
+                    <field>
+                        <name>BBSPReturnUri</name>
+                        <type>String</type>
+                        <description>The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</description>                        
+                    </field>
+                    <field>
+                        <name>BBSPTemplateSitePageId</name>
+                        <type>Integer</type>
+                        <description>Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</description>
+                    </field>
+                    <field>
+                        <name>MerchantAccountId</name>
+                        <type>GUID</type>
+                        <required>true</required>
+                        <description>Id of the merchant account that should be used to process the donation. Exclude if Donation Form is using a Payment 2.0 Part.</description>
+                    </field>
+                </fields>
+                <example>
+<![CDATA[
+{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "/Date(1337227200000-0400)/"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Joe",
+                "LastName": "Schmo",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "BBSPReturnUri": "http://www.mydomain.com",
+    "BBSPTemplateSitePageId": 784,
+    "MerchantAccountId": "A9EBE81D-65A8-4BBF-8446-FB2ED0276209"
+}
+]]>
+              </example>
+            </post>
+            <responses>
+                <response>
+                    <status>400 Bad Request</status>
+                    <body>Error[]</body>
+                    <description>
+                        <![CDATA[A validation error was found with the post data or an error occurred in the processing.  Returns an array of Errror objects.  Possible Errors:
+<ul>
+<li>RecordNotFound (106)</li>
+<li>RequiredFieldMissing (101)</li>
+<li>InvalidFieldSupplied (102)</li>
+<li>ValueBelowMinimum (103)</li>
+<li>ValueExceedsMaximum (104)</li>
+<li>ValueNotAllowed (105)</li>
+<li>ExceedsMaximumLength (107)</li>
+</ul>
+]]></description>
+                </response>
+                <response>
+                    <status>201 OK</status>
+                    <body>CreateDonationReply</body>
+                    <description>Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>201 OK</status>
+                    <location>http://www.mydomain.com/webapi/123/Donation/853f96be-bf08-4828-aefa-326a06e48d31</location>
+                    <body>
+<![CDATA[
+{
+    "Donation": {
+        "Donor": {
+            "Address": {
+                "City": "Columbia",
+                "Country": "United States",
+                "PostalCode": "29212",
+                "State": "SC",
+                "StreetAddress": "123 Main St."
+            },
+            "EmailAddress": "john.doe@blackbaud.com",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Phone": "555-555-5555",
+            "Title": "Mr."
+        },
+        "Gift": {
+            "Designations": [
+                {
+                    "Amount": 5,
+                    "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+                }
+            ],
+            "FinderNumber": 0,
+            "IsAnonymous": false,
+            "PaymentMethod": 1,
+            "Comments": "Gift comments here.",
+            "CreateGiftAidDeclaration": false,
+            "Attributes": [
+                {
+                    "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                    "Value": "Volunteer;Member;Alumni"
+                },
+                {
+                    "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                    "Value": "1985"
+                }
+            ],
+            "Recurrence": {
+                "DayOfMonth": 26,
+                "DayOfWeek": null,
+                "EndDate": null,
+                "Frequency": 2,
+                "Month": null,
+                "StartDate": "/Date(1337227200000-0400)/"
+            },
+            "Tribute": {
+                "Acknowledgee": {
+                    "AddressLines": "123 Sunset ln.",
+                    "City": "Charleston",
+                    "Country": "USA",
+                    "Email": "email@address.com",
+                    "FirstName": "Joe",
+                    "LastName": "Schmo",
+                    "Phone": "123-123-1234",
+                    "PostalCode": "29482",
+                    "State": "SC"
+                },
+                "TributeDefinition": {
+                    "Description": "New tribute",
+                    "FirstName": "John",
+                    "LastName": "Hancock",
+                    "Type": "Tribute"
+                },
+                "TributeId": null
+            }
+        },
+        "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+        "Origin": {
+            "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+            "PageId": 784,
+            "PageName": "Sample Page"
+        },
+        "TransactionStatus": 1
+    },
+    "BBSPCheckoutUri": " https://payments.blackbaud.com/Pages/Index.aspx?t=853f96be-bf08-4828-aefa-326a06e48d31"
+}
+]]>
+                    </body>
+                </exampleResponse>
+                <exampleResponse>
+                    <name>Error</name>
+                    <status>400 Bad Request</status>
+                    <body>
+<![CDATA[
+[
+	{
+		"ErrorCode":101,
+		"Field":"Donor.LastName",
+		"Message":null
+	},
+	{
+		"ErrorCode":103,
+		"Field":"Gift.Designations.Amount",
+		"Message":"A designation's amount should be greater than 0."
+	}
+]
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+        <endpoint>
+            <url>{PartId}/Donation/{Id}/CompleteBBSPDonation</url>
+            <method>POST</method>
+            <summary>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</summary>
+            <behavior>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</behavior>
+            <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a donation.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>403 Forbidden</status>
+                    <description>User does not have access to the specified donation.</description>
+                </response>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No donation was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>400 Bad Request</status>
+                    <body>Error[]</body>
+                    <description>
+                        <![CDATA[The donation payment was not properly completed in Blackbaud secured payment or the donation has already been marked as completed.  Possible Errors:
+<ul>
+  <li>InvalidOperation (102)</li>
+  <li>BBSPTransactionNotProcessed (203)</li>
+</ul>]]></description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>Donation</body>
+                    <description>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+{
+    "Donor": {
+        "Address": {
+            "City": "Columbia",
+            "Country": "United States",
+            "PostalCode": "29212",
+            "State": "SC",
+            "StreetAddress": "123 Main St."
+        },
+        "EmailAddress": "john.doe@blackbaud.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Phone": "555-555-5555",
+        "Title": "Mr."
+    },
+    "Gift": {
+        "Designations": [
+            {
+                "Amount": 5,
+                "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+            }
+        ],
+        "FinderNumber": 0,
+        "IsAnonymous": false,
+        "PaymentMethod": 1,
+        "Comments": "Gift comments here.",
+        "CreateGiftAidDeclaration": false,
+        "Attributes": [
+            {
+                "AttributeId": "BD18B3FD-B382-4183-A415-8F84B1E0E411",
+                "Value": "Volunteer;Member;Alumni"
+            },
+            {
+                "AttributeId": "3607C77D-19DC-4EE0-A0CD-A352762A8EF0",
+                "Value": "1985"
+            }
+        ],
+        "Recurrence": {
+            "DayOfMonth": 26,
+            "DayOfWeek": null,
+            "EndDate": null,
+            "Frequency": 2,
+            "Month": null,
+            "StartDate": "/Date(1337227200000-0400)/"
+        },
+        "Tribute": {
+            "Acknowledgee": {
+                "AddressLines": "123 Sunset ln.",
+                "City": "Charleston",
+                "Country": "USA",
+                "Email": "email@address.com",
+                "FirstName": "Joe",
+                "LastName": "Schmo",
+                "Phone": "123-123-1234",
+                "PostalCode": "29482",
+                "State": "SC"
+            },
+            "TributeDefinition": {
+                "Description": "New tribute",
+                "FirstName": "John",
+                "LastName": "Hancock",
+                "Type": "Tribute"
+            },
+            "TributeId": null
+        }
+    },
+    "Id": "853f96be-bf08-4828-aefa-326a06e48d31",
+    "Origin": {
+        "AppealId": "C3B20FD8-6A81-451E-BF78-D195E82B4CBF",
+        "PageId": 784,
+        "PageName": "Sample Page"
+    },
+    "TransactionStatus": 1
+}
+]]>
+                    </body>
+                </exampleResponse>
+                <exampleResponse>
+                    <name>Error</name>
+                    <status>400 Bad Request</status>
+                    <body>
+<![CDATA[
+[
+    {
+        "ErrorCode": 102,
+        "Field": null,
+        "Message": null
+    }
+]
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+        <endpoint>
+            <url>{PartId}/Donation/{Id}/ConfirmationHtml</url>
+            <method>GET</method>
+            <summary>Gets HTML for a confirmation screen for the completed donation.</summary>
+            <behavior>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database and merges the fields into the part’s confirmation block.</behavior>
+            <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a donation.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>403 Forbidden</status>
+                    <description>User does not have access to the specified donation.</description>
+                </response>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No donation was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>String</body>
+                    <description>Returns a string containing the HTML block of the confirmation with the donation fields merged in.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+                        <![CDATA[<div>Thank you for donating $10.00.</div>]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+    </endpoints>
+    <enums>
+        <enum>
+            <name>PaymentMethod</name>
+            <values>
+                <value>
+                    <name>CreditCard</name>
+                    <value>0</value>
+                </value>
+                <value>
+                    <name>BillMeLater</name>
+                    <value>1</value>
+                </value>
+            </values>
+        </enum>
+        <enum>
+            <name>TransactionStatus</name>
+            <values>
+                <value>
+                    <name>Pending</name>
+                    <value>0</value>
+                </value>
+                <value>
+                    <name>Completed</name>
+                    <value>1</value>
+                </value>
+            </values>
+        </enum>
+        <enum>
+            <name>ErrorCode</name>
+            <values>
+                <value>
+                    <name>RequiredFieldMissing</name>
+                    <value>101</value>
+                    <description>A required field was not supplied.</description>
+                </value>
+                <value>
+                    <name>InvalidFieldSupplied</name>
+                    <value>102</value>
+                    <description>A field was provided which is not allowed, given the values of other fields.</description>
+                </value>
+                <value>
+                    <name>ValueBelowMinimum</name>
+                    <value>103</value>
+                </value>
+                <value>
+                    <name>ValueExceedsMaximum</name>
+                    <value>104</value>
+                </value>
+                <value>
+                    <name>ValueNotAllowed</name>
+                    <value>105</value>
+                    <description>Generic problem with the value of the field.</description>
+                </value>
+                <value>
+                    <name>RecordNotFound</name>
+                    <value>106</value>
+                    <description>No record was found for the specified id.</description>
+                </value>
+                <value>
+                    <name>ExceedsMaximumLength</name>
+                    <value>107</value>
+                    <description>The value contained too many characters.</description>
+                </value>
+                <value>
+                    <name>InvalidOperation</name>
+                    <value>201</value>
+                    <description>The operation is not valid for the current state of the object.</description>
+                </value>
+                <value>
+                    <name>BBSPBeginTransactionFailed</name>
+                    <value>202</value>
+                    <description>The initial request to Blackbaud secured payment to begin the transaction failed.</description>
+                </value>
+                <value>
+                    <name>BBSPTransactionNotProcessed</name>
+                    <value>203</value>
+                    <description>Blackbaud secured payment returned that the transaction has not been paid.</description>
+                </value>
+                <value>
+                    <name>BBSPTransactionGatewayDeclined</name>
+                    <value>204</value>
+                    <description>Blackbaud secured payment returned that the gateway declined the transaction.</description>
+                </value>
+                <value>
+                    <name>BBSPTransactionValidationError</name>
+                    <value>205</value>
+                    <description>Blackbaud secured payment returned that the transaction had a validation error.</description>
+                </value>
+                <value>
+                    <name>BBSPTransactionProcessingError</name>
+                    <value>206</value>
+                    <description>Blackbaud secured payment returned that the transaction had a processing error.</description>
+                </value>
+            </values>
+        </enum>
+      <enum>
+        <name>DayOfWeek</name>
+        <values>
+          <value>
+            <name>Sunday</name>
+            <value>0</value>
+          </value>
+          <value>
+            <name>Monday</name>
+            <value>1</value>
+          </value>
+          <value>
+            <name>Tuesday</name>
+            <value>2</value>
+          </value>
+          <value>
+            <name>Wednesday</name>
+            <value>3</value>
+          </value>
+          <value>
+            <name>Thursday</name>
+            <value>4</value>
+          </value>
+          <value>
+            <name>Friday</name>
+            <value>5</value>
+          </value>
+          <value>
+            <name>Saturday</name>
+            <value>6</value>
+          </value>
+        </values>
+      </enum>
+      <enum>
+        <name>RecurrenceFrequency</name>
+        <values>
+          <value>
+            <name>Weekly</name>
+            <value>1</value>
+            <description>Represents a weekly recurrence frequency.</description>
+          </value>
+          <value>
+            <name>Monthly</name>
+            <value>2</value>
+            <description>Represents a monthly recurrence frequency.</description>
+          </value>
+          <value>
+            <name>Quarterly</name>
+            <value>3</value>
+            <description>Represents a quarterly recurrence frequency.</description>
+          </value>
+          <value>
+            <name>Annually</name>
+            <value>4</value>
+            <description>Represents an annual recurrence frequency.</description>
+          </value>
+          
+        </values>
+      </enum>
+    </enums>
+</api>

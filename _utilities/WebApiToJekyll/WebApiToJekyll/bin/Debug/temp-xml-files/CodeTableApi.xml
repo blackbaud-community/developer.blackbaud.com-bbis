@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../WebApiDocumentation.xsd">
+    <name>Code Table API</name>
+    <endpoints>
+        <endpoint>
+            <url>CodeTable/{Id}</url>
+            <method>GET</method>
+            <summary>Returns the active code table entries for the specified code table Id ordered as configured in the CRM.</summary>
+            <behavior>If the provided code table Id is valid, then this will return the active code table entries for the specified code table.  The entries will be ordered as configured in the CRM.</behavior>
+            <parameters>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a code table.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No code table was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>Array of Code Table Entry</body>
+                    <description>Returns an array of code table entries.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+[
+  {
+    "Description": "Mr.",
+    "Id": "aa784eae-4649-43ce-bf5a-0d2fccb01807"
+  },
+  {
+    "Description": "Mrs.",
+    "Id": "ca590da0-2884-4c90-86ef-a349d6ea6b09"
+  }
+]
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+    </endpoints>
+</api>

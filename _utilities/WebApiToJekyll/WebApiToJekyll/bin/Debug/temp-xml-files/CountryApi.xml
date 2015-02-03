@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../WebApiDocumentation.xsd">
+    <name>Country And State API</name>
+    <endpoints>
+        <endpoint>
+            <url>Country</url>
+            <method>GET</method>
+            <summary>Returns a list of all active countries alphabetized by their description.</summary>
+            <behavior>Will return information about all active countries alphabetized by their description.</behavior>             
+            <responses>
+                <response>
+                    <status>200 OK</status>
+                    <body>Array of Countries</body>
+                    <description>Returns an array country objects</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+[
+  { 
+    "Id": "2C3F57A7-65DE-4D55-89EF-7857E6EDD53C",
+    "Abbreviation": "CA",
+    "Description": "Canada"
+  },
+  {
+    "Id": "B4837D3E-36F6-42F4-8049-CC2A2B108F9E",
+    "Abbreviation": "US",
+    "Description": "United States"
+  }
+]]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+        <endpoint>
+            <url>Country/{Id}</url>
+            <method>GET</method>
+            <summary>Returns information about a specific country.</summary>
+            <behavior>If the provided country Id is valid, then this will return information about the country.</behavior>
+            <parameters>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a country.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No country was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>Country</body>
+                    <description>Returns a country object</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+{
+  "Id": "B4837D3E-36F6-42F4-8049-CC2A2B108F9E",
+  "Abbreviation": "US",
+  "Description": "United States"
+}
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+        <endpoint>
+            <url>Country/{Id}/State</url>
+            <method>GET</method>
+            <summary>Returns a list of states associated with a country, alphabetized by their description.</summary>
+            <behavior>If the provided country Id is valid, then this will return a list of state objects for each state associated with the country.   The states will be returned alphabetized description.</behavior>
+            <parameters>
+                <parameter>
+                    <name>Id</name>
+                    <type>GUID</type>
+                    <required>true</required>
+                    <description>Id of a country.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No country was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>Array of States</body>
+                    <description>Returns an array of state objects for the given country alphabetized by their description.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+[
+  {
+    "Id": "ba9b5958-b1d0-43ed-ba37-5e7c0eddfc78",
+    "Abbreviation": "RI",
+    "Description": "Rhode Island"
+  },
+  {
+    "Id": "70BF9733-5D24-46F4-A40C-61F6D2765575", 
+    "Abbreviation": "SC",
+    "Description": "South Carolina"
+  }
+]
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+		<endpoint>
+			<url>Country/{Id}/AddressCaptions</url>
+			<method>GET</method>
+			<summary>Returns the captions for Address Lines, City, State, and Postcode.</summary>
+			<behavior>If the provided country Id is valid, then this will return the captions for address lines, city, state, and postcode.</behavior>
+			<parameters>
+				<parameter>
+					<name>Id</name>
+					<type>GUID</type>
+					<required>true</required>
+					<description>Id of a country.</description>
+				</parameter>
+			</parameters>
+			<responses>
+				<response>
+					<status>404 Not Found</status>
+					<description>No country was found by the specified Id.</description>
+				</response>
+				<response>
+					<status>200 OK</status>
+					<body>Address Captions</body>
+					<description>Returns an AddressCaptions object containing the labels for Address Lines, City, State, and Postcode.</description>
+				</response>
+			</responses>
+			<exampleResponses>
+				<exampleResponse>
+					<name>Success</name>
+					<status>200 OK</status>
+					<body>
+<![CDATA[
+{
+  "AddressLines": "Address",
+  "City": "City",
+  "PostCode": "Zip",
+  "State": "State"
+}
+]]>
+					</body>
+				</exampleResponse>
+			</exampleResponses>
+		</endpoint>
+    </endpoints>
+</api>

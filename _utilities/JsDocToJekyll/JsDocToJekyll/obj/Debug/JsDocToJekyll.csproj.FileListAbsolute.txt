@@ -1,0 +1,18 @@
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe.config
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.pdb
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.dll
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.pdb
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.xml
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csprojResolveAssemblyReference.cache
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.exe
+c:\users\bobby.earl\documents\visual studio 14\Projects\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.pdb
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe.config
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.exe
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.pdb
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.pdb
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.dll
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.pdb
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.xml
+C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csprojResolveAssemblyReference.cache

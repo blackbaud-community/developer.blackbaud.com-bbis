@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../WebApiDocumentation.xsd">
+  <name>User API</name>
+  <endpoints>
+    <endpoint>
+      <url>User</url>
+      <method>GET</method>
+      <summary>Gets basic profile information about the current user.</summary>
+      <behavior>Returns profile information for the current user.  If the user is not logged in, then it may be populated based on the current email-recipient information.</behavior>
+      <responses>
+        <response>
+          <status>200 OK</status>
+          <body>UserInformation</body>
+          <description>Returns profile information about the current user.</description>
+        </response>
+      </responses>
+      <exampleResponses>
+        <exampleResponse>
+          <name>Success</name>
+          <status>200 OK</status>
+          <body>
+            <![CDATA[
+{
+  "Addresses": [
+    {
+      "City": "Daniel Island",
+      "Country": "United States",
+      "Id": "53064038-dea9-48d4-bbd6-42725f78b234",
+      "IsPrimary": true,
+      "PostalCode": "29464",
+      "State": "SC",
+      "StreetAddress": "123 Sample Drive",
+      "Type": "fda0e1f0-6918-4e96-8cb5-9a9a841d4ee6"
+    },
+    {
+      "City": "Columbia",
+      "Country": "United States",
+      "Id":" d35a3299-407b-465f-b3f1-43465a60713e",
+      "IsPrimary": false,
+      "PostalCode": "29212",
+      "State": "SC",
+      "StreetAddress": "200 Harbison Boulevard",
+      "Type": "17b13db9-1fab-4203-8b66-a2f26db637c5"
+    }
+  ],
+  "EmailAddresses": [
+    {
+      "EmailAddress": "JohnDoe@organization.com",
+      "Id": "9127174d-4b16-4c38-8b35-f0dbc61d7e27",
+      "IsPrimary": true,
+      "Type": "51d52fc2-6ac1-4687-bec0-c4fed5a05b65"
+    },
+    {
+      "EmailAddress": "JohnDoe@personal.com",
+      "Id": "8e48a013-6484-42b8-9746-c40a8eee9729",
+      "IsPrimary": false,
+      "Type": "51d52fc2-6ac1-4687-bec0-c4fed5a05b65"
+    }
+  ],
+  "FirstName": "John",
+  "LastName": "Doe",
+  "Phone": "803-781-8851",
+  "Title": "Mr"
+}
+]]>
+          </body>
+        </exampleResponse>
+      </exampleResponses>
+    </endpoint>    
+  </endpoints>  
+</api>
