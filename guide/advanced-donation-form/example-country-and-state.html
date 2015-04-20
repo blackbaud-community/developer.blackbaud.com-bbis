@@ -1,0 +1,126 @@
+<h3 id="example-country-and-state">Displaying Available Countries and States</h3>
+
+<p>Using the Country and State endpoints, you can quickliy populate the available countries and their corresponding states.  The first example uses jQuery to make an AJAX request.  We also wrap this functionality in the Country and State JavaScript Service, which is shown in the second example.</p>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#example-country-and-state-html" data-toggle="tab">HTML</a>
+  </li>
+  <li>
+    <a href="#example-country-and-state-js" data-toggle="tab">JS</a>
+  </li>
+  {% include download-on-github.html repo="BBIS-Advanced-Donation-Form" %}
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="example-country-and-state-html">
+{% include copy-code.html %}
+{% highlight html %}
+<dl>
+  <dt>Country</dt>
+  <dd><select id="country"></select></dd>
+  
+  <dt>State</dt>
+  <dd><select id="state"></select></dd>
+</dl>
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="example-country-and-state-js">
+{% include copy-code.html %}
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+
+// Let's make sure the DOM is ready
+$(function() {
+
+  var selectCountry = $('#country');
+  var selectState = $('#state');
+  
+  // Load Countries
+  $.get(BLACKBAUD.api.pageInformation.rootPath + '/webapi/country', function(countries) {
+    for (var i = 0, j = countries.length; i < j; i++) {
+      selectCountry.append('<option value="' + countries[i].Id + '">' + countries[i].Description + '</option>');
+    }
+  });
+  
+  // Watch Countries Change
+  $('.countries').on('change', function() {
+  
+    // Load States
+    $.get(BLACKBAUD.api.pageInformation.rootPath + '/webapi/country/' + $(this).val(), function(states) {
+      selectState.html('');
+      for (var i = 0, j = states.length; i < j; i++) {
+        selectState.append('<option value="' + states[i].Id + '">' + states[i].Description + '</option>');
+      }
+    });
+  });
+
+});
+}(jQuery));
+{% endhighlight %}
+  </div>
+</div>
+
+<p>The following example uses the Country and State service instead of making an AJAX call directly to the endpoints.</p>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#example-country-and-state-service-html" data-toggle="tab">HTML</a>
+  </li>
+  <li>
+    <a href="#example-country-and-state-service-js" data-toggle="tab">JS</a>
+  </li>
+  {% include download-on-github.html repo="BBIS-Advanced-Donation-Form" %}
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="example-country-and-state-service-html">
+{% include copy-code.html %}
+{% highlight html %}
+<dl>
+  <dt>Country</dt>
+  <dd><select id="country"></select></dd>
+  
+  <dt>State</dt>
+  <dd><select id="state"></select></dd>
+</dl>
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="example-country-and-state-service-js">
+{% include copy-code.html %}
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+
+// Let's make sure the DOM is ready
+$(function() {
+
+  var selectCountry = $('#country');
+  var selectState = $('#state');
+  var service = new BLACKBAUD.api.CountryService();
+  
+  // Load Countries
+  service.getCountries(function(countries) {
+    for (var i = 0, j = countries.length; i < j; i++) {
+      selectCountry.append('<option value="' + countries[i].Id + '">' + countries[i].Description + '</option>');
+    }
+  });
+  
+  // Watch Countries Change
+  $('.countries').on('change', function() {
+  
+    // Load States
+    service.getStates($(this).val(), function(states) {
+      selectState.html('');
+      for (var i = 0, j = states.length; i < j; i++) {
+        selectState.append('<option value="' + states[i].Id + '">' + states[i].Description + '</option>');
+      }
+    });
+  });
+
+});
+}(jQuery));
+{% endhighlight %}
+  </div>
+</div>
