@@ -1,0 +1,27 @@
+<h3 id="adf-generator">Advanced Donation Form Generator</h3>
+<h4>Overview:</h4>
+
+<p>The ADF form generator is a custom content part to be used as an internal tool to generate a barebones ADF template HTML document that developers can use as a starting point for their ADF work. The workflow for using the generator is outlined below.</p>
+
+<ol>
+    <li>Create a new custom content part using the Administration menu in BBIS.</li>
+    <li>Copy and paste the "Editor" and "Web page display" HTML code available on <a href=https://github.com/blackbaud-community/BBIS-Advanced-Donation-Form/tree/master/example-adf-generator>Github</a>.</li>
+    <li>In the initialize javascript function field, put "init_form" as the function name.</li>
+    <li>Fill out the name and description to your liking.</li>
+    <li>Save the content part.</li>
+    <li>Create a new page from Site Explorer. It should be hidden from the public facing site, as it will only be used to host the generator tool for internal access.</li>
+    <li>On the newly created internal page, insert the custom content part created above. Use the edit feature to fill in the options you would like your form to have/not have. Remember to populat your designations list.</li>
+    <li>Select save and the form will be updated with your selections</li>
+    <li>Select "View This Page" in the top left corner of the BBIS site, and then click the "Get HTML" button on the donation form. A modal will appear from which you can copy the code for your own ADF.</li>
+    <li>Paste the code into your favorite text editor. There are some "TODO" tags throughout the code that you must act on prior to the ADF going live. Most just require you to delete leftover code from the generator. Use your editor's "find" feature (Ctrl + F) to find all strings matching "TODO" to make sure you see them all.</li>
+    <li>Uncomment and fill out the data in the first javascript function. Follow the example format to ensure it works correctly. GUID's can be found using the special selectors or querying the appropriate database tables.</li>
+    <li>Copy and paste the completed code to an ADF part. You now have a basic, fully functioning, donation form up and running.</li>
+</ol>
+
+<h4>Known Issues:</h4>
+<ul>
+    <li>Tributes need tribute definition details / types in order for them to work correctly. This was not implemented in the wizard. In order for tributes to function correctly, you will need to populate the relevant properties yourself. See the <a href="{{ site.baseurl }}/reference/rest/#partiddonationcreate">ADF "Create Donation" API</a> for more information.</li>
+    <li>Inputted details such as merchant account ID and BBSPReturnUri do not carry over to the form options. Instead, manually enter the information as outlined in step 11.</li>
+</ul>
+
+<p>The entirety of this code is publicly available on Github. Community input and pull requests are welcome and appreciated.</p>
