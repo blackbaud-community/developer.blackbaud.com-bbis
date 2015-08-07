@@ -1,0 +1,287 @@
+﻿<h3 id="email">Responsive Email Template</h3>
+
+<p>Due to the range of email clients currently on the market, creating a template that looks good on them all is difficult. Outlined are steps used to create an appealing reponsive email template in BBIS.</p>
+<p>The information and code samples in this guide create a basic three part email. The first part adds a logo, followed by a single content section. After that, a second section contains two content items and renders them side by side or in a column based on whether or not media queries exist:</p>
+
+<ul>
+  <li>Create a new email template</li>
+    <li>Select the View tab on the HTML editor in the program and then click the HTML Code button.</li>
+    <li>Let us begin with the style tags as placeholders for the media queries we ared going to create later.</li>
+</ul>
+<p class="alert alert-warning"><span class="label label-warning">Important</span> Email clients, such as Gmail, removes the head and style tags. Therefore, we are not going to use the contents of these tags for actual styling. You can develop css inside a style tag if you prefer, but make sure to run your code through a css inliner tool before you send the email. Here is one resource: <a href="http://templates.mailchimp.com/resources/inline-css/"> MailChimp inline css tool</a> 
+</p>
+
+<ul>
+	<li>After the style tags, add the body tags. Here, we want to make a table which is going to be our shell for the entire email.</li>
+<li>{% highlight html %}
+<table class=”container” width="600" style="background-color: #787878;" cellspacing="0" cellpadding="10" border="0" align="center">
+  <tbody>
+    <tr>
+	  <td>
+		BANNER SECTION
+		REGULAR SECTION
+		2 COLUMN SECTION
+	  </td>
+	</tr>
+  </tbody>
+</table>
+
+    {% endhighlight %} </li>
+	<li>You assign the class here so you can reference this table in the media query later.</li>
+
+	<li>The Container table is fixed width so we can cater directly to Outlook and partially to Gmail.</li>
+
+	<li>In a fully responsive design, we use width="100%" and set the max width to 600 so you can change elements based on size of windows and screens. Gmail does not support a max width inline style tag, so the email appears bloated in a Gmail browser client. To improve the appearance in Outlook, we also define width as a property instead of a style element. To make the email less bland, the cell padding=10 to create a clean border around the email and between sections.</li>
+
+	<li>Try to use cell padding as much as possible because margins and regular instyle padding does not work consistently across clients.</li>
+
+	<li>Each section is going to be encapsulated in a table to separate them more effectively.</li>
+	
+</ul>
+
+<h4>Banner Section</h4>
+<p>This places a banner image up at the top of the email.</p>
+<p class="alert alert-warning"><span class="label label-warning">Important</span> NOTE: Outlook does not resize images, so make sure all images are the size in which you want them to appear.</p>
+
+<div class="tab-pane">
+{% include copy-code.html %}
+{% highlight html %}
+<table class="banner" cellspacing="0" cellpadding="0" border="0">
+  <tbody>
+	<tr>
+	  <td>
+		<img src="src of banner" width="100%" alt="Banner here"/> 
+	  </td>
+	</tr>
+  </tbody>
+</table>
+{% endhighlight %}</div>
+<ul>
+	<li>make sure the width of your banner image is 600 pixels for outlook clients</li>
+</ul>
+
+<h4>Regular Section</h4>
+<div class="tab-pane">
+{% include copy-code.html %}
+{% highlight html %}
+<table class="section" width="600" style="background-color: #ffffff; text-align:left;" cellspacing="0" cellpadding="10" border="0" align="center">
+	<tbody>
+		<tr>
+			<td>
+			
+				<h1>Title</h1>
+				<center><img width="100%" src="another picture" alt="Picture" /><center>
+				<p>Lorem Ipsum is simply dummy text</p>
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
+{% endhighlight %}
+</div>
+
+<ul>
+	<li>Using Center tag is highly advised for Outlook to avoid the image width becoming too short and left aligned with the text. </li>
+	<li>The cell padding for each section creates a natural frame within each section and ensures the text does not come close to the border.</li>
+	<li>Now, let's add a separator between sections. Use {% highlight html %}<hr class="dividor" width="100%" style="border: none; color:#787878" />{% endhighlight %} to create the space between your sections. The color is for Outlook only because it tries to render the hr as visible white.</li>
+	<li>For the last and slightly more advanced section, we are going to create two related blocks. On devices that do not support media queries, these blocks stack on top of each other for a mobile friendly appearance. For devices that do support media queries, the blocks appear as side by side columns if the screen is large enough.</li>
+</ul>
+
+<h4>Two Column Section</h4>
+<div class="tab-pane">
+{% include copy-code.html %}
+{% highlight html %}
+<table class="section" width="600" style="background-color: #ffffff; text-align:left;" cellspacing="0" cellpadding="0" border="0" align="center">
+  <tbody>
+	<tr valign="top">
+	  <td>
+		COLUMN 1
+		COLUMN 2				
+	  </td>
+	</tr>
+  </tbody>
+</table>
+{% endhighlight %}
+</div>
+<ul>
+	<li> We do not need cell padding this time because each column has its own padding.</li>
+	<li> Each column is going to be a table that stacks on top of the other.</li>
+</ul>
+
+<h5>Columns 1 and 2:</h5>
+<div class="tab-pane">
+{% include copy-code.html %}
+{% highlight html %}
+<table class="column" cellspacing="0" cellpadding="10" border="0" align="left">
+	<tbody>
+		<tr>
+			<td>
+				<img src="image src" style="width: 100%; height: auto;" alt="" />
+			</td>
+		</tr>
+		<tr>
+			<td align="left" style="font-size: 16px; color: #01355D; font-weight: bold;">
+				Contrary to popular belief
+			</td>
+		</tr>
+		<tr>
+			<td align="left" style="font-size: 13px; color: #777; line-height: 16px;">
+				Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+				<a href="" style="color: #787878; font-weight: bold; font-size: 13px;">Read More &raquo;</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+{% endhighlight %}
+</div>
+
+<p> Now that we have the content of the page all set, let us return to the style tags and insert the proper media queries</p>
+<div class="tab-pane">
+{% include copy-code.html %}
+{% highlight html %}
+<style>
+	table[class="column"] { display: inline-block;
+							float: left; 
+							width: 50%; }
+		hr[class="dividor"] { width: 600px; };
+		
+	@media (min-width: 600px) {
+	table[class="container"] { width: 600px!important;}
+	table[class="column"] { float: left !important; 
+							width: 50% !important; }
+	hr[class="dividor"] { width: 600px !important; };
+</style>
+		
+{% endhighlight %}
+</div>
+
+<ul>
+	<li> This display the columns side by side in emails clients that support style tags.</li>
+</ul>
+<p class="alert alert-warning"><span class="label label-warning">Important</span> NOTE: For screens that are larger than 600 pixels, set the float property for columns to left. This allows them to stack next to each other in email clients that support queries.</p>
+
+<p> All set! Now you have a nice template that renders across many email clients. However, you should also review the font and button sizes. For regular paragraph font, it is best to use 16px. For buttons, it is best to use at least 46px squared area. 
+</p>
+
+<p> The final code for the template should looks something like this: </p>
+<div class="tab-pane">
+{% include copy-code.html %}
+{% highlight html %}
+<style>
+	table[class="column"] { float: left; 
+								width: 50%; }
+		hr[class="dividor"] { width: 600px; };
+
+	
+	@media (min-width: 600px) {
+		table[class="container"] { width: 600px!important;}
+		table[class="column"] { float: left !important; 
+								width: 50% !important; }
+		hr[class="dividor"] { width: 600px !important; };
+	}
+
+	@media (max-width: 599px) {
+		table[class="container"] { width: 100%!important; }
+		table[class="section"] { width: 100%!important; }
+		table[class="column"] { float: none!important; 
+								width: 100%!important; }
+		hr[class="dividor"] { width: 100!important; };
+		
+}
+
+</style>
+
+<body>
+	<table class="container" width="600" style="background-color: #787878;" cellspacing="0" cellpadding="10" border="0" align="center">
+		<tbody>
+			<tr>
+				<td>
+					<table class="banner" width="100%" cellspacing="0" cellpadding="0" border="0">
+						<tbody>
+							<tr>
+								<td>
+									<img src="http://i.imgur.com/wjNKyOF.png" width="100%" alt="Banner here"/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<table class="section" width="100%" style="background-color: #ffffff; text-align:left;" cellspacing="0" cellpadding="10" border="0" align="center">
+						<tbody>
+							<tr>
+								<td>
+									<h1>Title</h1>
+
+									<center>
+										<img width="100%" src="http://i.imgur.com/L9G9Tk3.png" alt="Picture" />
+									</center>
+									<p style="font-size: 16px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+							</tr>
+						</tbody>
+					</table>
+					
+					<hr class="dividor" width="100%" style="border: none;" />
+					
+					<table class="section" width="100%" style="background-color: #ffffff; text-align:left;" cellspacing="0" cellpadding="0" border="0" align="center">
+						<tbody>
+							<tr>
+								<td>
+									<table class="column" cellspacing="0" cellpadding="10" border="0" align="left">
+										<tbody>
+											<tr>
+												<td align="center" class="fullWidthImage" style="font-size: 12px; font-weight: bold; color: #37849c;">
+													<img src="http://i.imgur.com/K3Qk1k6.png" width="100%" style="height: auto;" alt="" />
+												</td>
+											</tr>
+											<tr>
+												<td align="center" style="font-size: 22px; color: #01355D; font-weight: bold;">
+													Contrary to popular belief
+												</td>
+											</tr>
+											<tr>
+												<td align="left" style="font-size: 16px; color: #777; line-height: 16px;">
+													Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur. <br /><br />
+													<a href="" style="color: #787878; font-weight: bold; font-size: 13px;">Read More &raquo;</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<table class="column" cellspacing="0" cellpadding="10" border="0" align="right">
+										<tbody>
+											<tr>
+												<td align="center" class="fullWidthImage" style="font-size: 12px; font-weight: bold; color: #37849c;">
+													<img src="http://i.imgur.com/K3Qk1k6.png" width="100%"  style="height: auto;" alt="" />
+												</td>
+											</tr>
+											<tr>
+												<td align="center" style="font-size: 22px; color: #01355D; font-weight: bold;">
+													Contrary to popular belief
+												</td>
+											</tr>
+											<tr>
+												<td align="left" style="font-size: 16px; color: #777; line-height: 16px;">
+													Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur. <br /><br />
+													<a href="" style="color: #787878; font-weight: bold; font-size: 13px;">Read More &raquo;</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+{% endhighlight %}
+</div>
+
+
+
+	
