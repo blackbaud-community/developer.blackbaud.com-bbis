@@ -213,5 +213,20 @@
     {% endif %}
     
   </li>
+  <li class="{% if subsection == 'responsive-design' %} active scrollspy-start {% endif %}">
+    <a href="{{ site.baseurl }}/guide/responsive-design/">Responsive Design</a>
+    
+    {% if subsection == 'responsive-design' %}
+      <ul class="nav">
+        <li>
+          <a href="#email">Designing Responsive Email Template</a>
+        </li>
+        <li>
+          <a href="#page">Disigning Responsive BBIS Page</a>
+        </li>
+      </ul>
+    {% endif %}
+    
+  </li>
   {% include sidebar-back-to-top.html %}
 </ul>
