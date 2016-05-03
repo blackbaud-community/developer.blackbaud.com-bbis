@@ -17,7 +17,7 @@ There is no work to be done for this environment.  Their build automatically loo
 ### Building for Development Environment
 
 #### Prerequisites
-- <code>gem install jekyll</code>
+- <code>gem install jekyll -v '2.5.3'</code>
 - <code>gem install bundler</code>
 - <code>bundle install</code>
 
@@ -32,7 +32,7 @@ You will now be able to visit <a href="http://localhost:4000">http://localhost:4
 
 <code>jekyll build --config _config.yml,_config.prod.yml</code>
 
-### Contributing 
+### Contributing
 
 If you would like to contribute to this code sample, please carefully read the [contributing documentation](https://github.com/blackbaud-community/Blackbaud-CRM/blob/master/CONTRIBUTING.md), which details the necessary workflow.  Included in those requirements is [signing the Contributor License Agreement](http://developer.blackbaud.com/cla).
 
