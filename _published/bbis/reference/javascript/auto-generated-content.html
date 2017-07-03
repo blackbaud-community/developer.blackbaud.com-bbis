@@ -512,6 +512,7 @@ function will be passed an array of objects with the following properties:
             
             </td>
 
+
             
 
             
@@ -646,6 +647,207 @@ has been updated.</td>
         </tr>
 
     
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="donationservice-getrecurringgiftinstallmentamount">getRecurringGiftInstallmentAmount(totalGiftAmount, numberOfInstallments) <a href="#donationservice-getrecurringgiftinstallmentamount"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>This calculates the price of each installment for a recurring gift based on the number of installments the website user wants to make.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">totalGiftAmount</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Decimal</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The total amount to be donated.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">numberOfInstallments</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The total number of installments.</td>
+        </tr>
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="donationservice-getrecurringgiftlastpaymentdate">getRecurringGiftLastPaymentDate(numberOfInstallments,
+	frequencyCode, installmentStartDate, installmentMonth, installmentDayOfMonth) <a href="#donationservice-getrecurringgiftlastpaymentdate"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>This calculates the end date of a recurring installment based on the number of installments the website user wants to make.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+            <tr>
+            
+                <td class="name">numberOfInstallments</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The total number of installments</td>
+        </tr>
+
+        <tr>
+            
+                <td class="name">frequencyCode</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Frequency code.</td>
+        </tr>
+		 <tr>
+            
+                <td class="name">installmentStartDate</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Date on which website user wants to start the installment.</td>
+        </tr>
+ <tr>
+            
+                <td class="name">installmentMonth</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Installment month.</td>
+        </tr>
+    
+<tr>
+            
+                <td class="name">installmentDayofMonth</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Day of the Month.</td>
+        </tr>
+
     </tbody>
 </table></dd>
 </dl>

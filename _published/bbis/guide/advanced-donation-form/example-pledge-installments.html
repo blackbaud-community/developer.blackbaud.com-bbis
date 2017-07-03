@@ -1,0 +1,174 @@
+<h3 id="example-pledge-installments">Pledge Installments Example</h3>
+<p>Pledge installments are the payment donor makes for a pledge according to a defiend time schedule. The example includes the HTML required to display input fields to capture required parameters for pledge installment endpoints.</p>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#example-pledge-installments-html" data-toggle="tab">HTML</a>
+  </li>
+  <li>
+    <a href="#example-pledge-installments-js" data-toggle="tab">JS</a>
+  </li>
+  {% include download-on-github.html repo="BBIS-Advanced-Donation-Form" %}
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="example-pledge-installments-html">
+{% include copy-code.html %}
+{% highlight html %}
+
+ <fieldset class="donationInformation">
+	<legend>
+		<span class="BBListingHeading DonationListingHeading">Gift Information</span>
+	</legend>
+	<div>
+		<input type="checkbox" id="isPaymentTwo"/> Check this box if you are using a Payment 2.0 part with this ADF
+		<div class="giftAmount">
+			<label class="required">Select Gift Amount:</label>
+			<ul>
+				<li>
+					<input id="amt1000" type="radio" name="radioAmount" value="1000" />
+					<label for="amt1000">
+						<span class="term">Platinum</span>
+						<span class="value">$1,000</span>
+					</label>
+				</li>
+				<li>
+					<input id="amt500" type="radio" name="radioAmount" value="500" />
+					<label for="amt500">
+						<span class="term">Gold</span>
+						<span class="value">$500</span>
+					</label>
+				</li>
+				<li>
+					<input id="amt100" type="radio" name="radioAmount" value="100" />
+					<label for="amt100">
+						<span class="term">Silver</span>
+						<span class="value">$100</span>
+					</label>
+				</li>
+				<li>
+					<input id="amt25" type="radio" name="radioAmount" value="25" />
+					<label for="amt25">
+						<span class="term">Bronze</span>
+						<span class="value">$25</span>
+					</label>
+				</li>
+				<li class="other">
+					<input id="amtOther" type="radio" name="radioAmount" value="-1" checked="checked" />
+					<label for="amtOther">
+						<span class="term">Enter an amount</span>
+					</label>
+					<input id="txtAmount" type="text" placeholder="$" class="BBFormTextbox">
+				</li>
+			</ul>
+		</div>
+	</div>
+</fieldset>
+        
+<!-- PLEDGE INSTALLMENT START-->
+<div class="pledgeInstallments">
+	<label class="required">Pledge Installment:</label>
+	<ul>
+		<li class="other">
+			<label for="numberOfInstallments">
+				Number of Installments:
+			</label>
+			<input id="numberOfInstallments" type="text" placeholder="$" class="BBFormTextbox">
+		</li>
+		<li class="other">
+			Installment Amount:
+			<label id="installmentAmount"/>
+		</li>
+		<li class="other">
+			Installment End Date:
+			<label id="installmentEndDate" />
+		</li>
+	</ul>
+</div>
+	<!-- PLEDGE INSTALLMENT END-->
+{% endhighlight %}
+  </div>
+ <div class="tab-pane" id="example-pledge-installments-js">
+{% include copy-code.html %}
+{% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function($) {
+  
+  // Let's make sure the DOM is ready
+  $(function() {
+    
+    // Create an instance of the DonationService
+    var ds = new BLACKBAUD.api.DonationService(
+      $('.BBDonationApiContainer').data('partid')
+    );
+    
+    // Create the donation object we'll send
+    // In order to simplify our examples, some of this information is hard-coded.
+    var donation = {
+      MerchantAccountId: '00000000-0000-0000-0000-000000000000',
+      Gift: {
+        PaymentMethod: 0,
+        Designations: [
+          {
+		  //Amount has been hardcoded to 500. Replace the value with a value entered by user.
+            Amount: 500.00,
+            DesignationId: '00000000-0000-0000-0000-000000000000'
+          }
+        ]
+      }
+    };
+    
+    // Create our success handler
+    var success = function(returnedDonation) {
+      console.log(returnedDonation);
+    };
+    
+    // Create our error handler
+    var error = function(returnedErrors) {
+      console.log('Error!');
+    };
+    
+    // Attach our event listener to the donate button
+    $('.btn-donate').click(function(e) {
+      
+      // Stop the button from submitting the form
+      e.preventDefault();
+	  
+      //if payment 2.0 is checked, No need to capture the donor information
+       if(!isPaymentTwo){
+		  donation.Donor = {
+			Title: $("#title").val(),
+			FirstName: $("#firstName").val(),
+			LastName: $("#lastName").val(),
+			EmailAddress: $("#emailAddress").val(),
+			Phone: $("#phone").val(),
+			Address: {
+			  Country: $("#country").val(),
+			  State: $("#state").val(),
+			  City: $("#city").val(),
+			  StreetAddress: $("#streetAddress").val(),
+			  PostalCode: $("#postalCode").val()
+			},
+			OrganizationName: organizationName
+		  };
+	  }
+	  
+	   // PLEDGE INSTALLMENT BEGIN ********************************************************************************************************************************************************************************************************************************************************
+	  var numberOfInstallments = $('#numberOfInstallments').val();
+	  if (numberOfInstallments) {
+	      //Amount has been hardcoded to 500. Replace the value with a value entered by user.
+		  var installmentAmount = ds.getRecurringGiftInstallmentAmount(500, numberOfInstallments);
+		  donation.Gift.PledgeInstallment = {
+			  NumberOfInstallments: numberOfInstallments,
+			  InstallmentAmount: installmentAmount
+		  }
+	  }
+      // PLEDGE INSTALLMENT END ********************************************************************************************************************************************************************************************************************************************************
+        
+      // Submit our donation
+      ds.createDonation(donation, success, error);
+    });
+    
+  });
+}(jQuery));
+{% endhighlight %}
+  </div>
+  </div>
