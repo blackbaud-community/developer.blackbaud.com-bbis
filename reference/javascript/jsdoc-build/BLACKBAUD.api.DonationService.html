@@ -91,6 +91,7 @@
             
             </td>
 
+
             
 
             
@@ -367,6 +368,286 @@ has been updated.</td>
 
     
 </dd>
+
+
+<dt>
+    <h4 class="name" id="getRecurringGiftInstallmentAmount"><span class="type-signature"></span>getRecurringGiftInstallmentAmount<span class="signature">(totalGiftAmount, numberOfInstallments)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        This calculates the price of each installment for a recurring gift based on the number of installments the website user wants to make.
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>totalGiftAmount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Decimal</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The total amount to be donated.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>numberOfInstallments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The total number of installments.</td>
+        </tr>
+    </tbody>
+</table>
+<dl class="details">
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line113">line 113</a>
+    </li></ul></dd>   
+</dl>
+</dd>
+
+
+<dt>
+    <h4 class="name" id="getRecurringGiftLastPaymentDate"><span class="type-signature"></span>getRecurringGiftLastPaymentDate<span class="signature">(numberOfInstallments,
+	frequencyCode, installmentStartDate, installmentMonth, installmentDayOfMonth)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        This calculates the end date of a recurring installment based on the number of installments the website user wants to make.
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+            <tr>
+            
+                <td class="name"><code>numberOfInstallments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The total number of installments</td>
+        </tr>
+
+        <tr>
+            
+                <td class="name"><code>frequencyCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Frequency code.</td>
+        </tr>
+		 <tr>
+            
+                <td class="name"><code>installmentStartDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Date on which website user wants to start the installment.</td>
+        </tr>
+ <tr>
+            
+                <td class="name"><code>installmentMonth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Installment month.</td>
+        </tr>
+    
+<tr>
+            
+                <td class="name"><code>installmentDayofMonth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Day of the Month.</td>
+        </tr>
+
+    </tbody>
+</table>
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+</dd>
+
+
+
+
+
 
         
             
