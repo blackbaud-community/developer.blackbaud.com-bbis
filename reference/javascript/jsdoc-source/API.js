@@ -515,6 +515,60 @@ BLACKBAUD.api = {};
             }
         };
 
+
+    }());
+
+    /// BLACKBAUD.api.ConsentOptionService
+    (function () {
+
+        /**
+         * @class BLACKBAUD.api.ConsentOptionService Provides methods for getting consent information from the CRM using calls to the BBIS REST services.
+         * @param {Object} options An object literal containing one or more of the following optional properties:
+         * <ul>
+         * <li><tt>url</tt> : The URL of the BBIS site from which the data will be retrieved. This value is optional when accessed from a BBIS page. The default value will be the BBIS URL of the current page.</li>
+         * <li><tt>crossDomain</tt> : Indicates the BBIS url specified is from a separate domain than the current page. When True, the class will handle the complexities of making cross domain requests to retrieve data. The default value is False.</li>
+         * </ul>
+        */
+        BLACKBAUD.api.ConsentOptionService = function (options) {
+            var crossDomain,
+                url;
+
+            if (typeof options === "string") {
+                url = options;
+            } else if (typeof options === "object") {
+                url = options.url;
+                crossDomain = options.crossDomain;
+            }
+            if (!url) {
+                url = BLACKBAUD.api.pageInformation.rootPath;
+            }
+            if (crossDomain) {
+                this._rpc = getRPC(url);
+            }
+            this.baseUrl = url + "WebApi";
+        };
+
+        BLACKBAUD.api.ConsentOptionService.prototype = {
+
+            /**
+             * Returns a ConsentOption about a specific consent part.
+             * @param {Function} successCallback The function to call if the request succeeds. The
+             * function will be passed an array of objects with the following properties:
+             * <ul>
+             * <li><tt>Id</tt> : The Id of a consent part.</li>
+             * </ul>
+             * @param {Function} failureCallback The function to call if the request fails.
+             */
+            getConsentOptions: function (consentPartId, successCallback, failureCallback) {
+                var url = this.baseUrl + "/ConsentOption/" + consentPartId;
+
+                ajax({
+                    url: url,
+                    type: 'GET'
+                }, this._rpc, successCallback, failureCallback);
+            }
+        };
+
     }());
 
 }());

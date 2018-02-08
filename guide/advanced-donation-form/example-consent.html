@@ -1,0 +1,300 @@
+﻿<h3 id="example-consent">Consent Information Example</h3>
+<p>Using the <a href="{{ site.baseurl }}/reference/rest/#consentapi">Consent endpoints</a>, you can quickly populate the available consents.  This example uses jQuery to make an AJAX request.  We also wrap this functionality in the <a href="{{ site.baseurl }}/reference/javascript/#consentservice">Consent JavaScript Service</a>, which is shown in this example.</p>
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#example-consent-html" data-toggle="tab">HTML</a>
+    </li>
+    <li>
+        <a href="#example-consent-js" data-toggle="tab">JS</a>
+    </li>
+    <li>
+        <a href="#example-consent-css" data-toggle="tab">CSS</a>
+    </li>
+    {% include download-on-github.html repo="BBIS-Advanced-Donation-Form" %}
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="example-consent-html">
+    {% include copy-code.html %}
+    {% highlight html %}
+<div id="myModal" class="modal-content" style="display:none">
+    <fieldset style="border:none;">
+        <legend style="width:535px">
+            <span id="consentTitle">Consent Start</span>
+            <hr />
+            <label id="consentStatement"></label>
+        </legend>
+        <input type="hidden" value="" id="hdnCRMConsentSolicitCode" />
+        <input type="hidden" value="" id="hdnCRMSolicitCode" />
+        <div class="consentTable" >
+            <div class="consentTableBody" id="consentOption" style='border-spacing:0px;'> 
+                <div class="consentTableRow">
+                    <div class="consentTableHead consentTableHeader">Communication Type</div>
+                    <div class="consentTableHead consentTableHeader">Opt-in</div>
+                    <div class="consentTableHead consentTableHeader">Opt-out</div>
+                </div>
+            </div>
+        </div>
+        <legend>
+           <p><a id="privacylink">View Privacy Policy</a></p>
+            <button style="display:none" class="btn btn-primary" type="button">Submit</button>
+        </legend>
+    </fieldset>
+</div>
+	{% endhighlight %}
+</div>
+<div class="tab-pane" id="example-consent-js">
+    {% include copy-code.html %}
+    {% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function ($) {
+
+ // Let's make sure the DOM is ready
+$(function () {
+
+  // Create an instance of the DonationService
+  var ds = new BLACKBAUD.api.DonationService(
+  $('.BBDonationApiContainer').data('partid'));
+     
+  //Id of a consent part
+  var consentPartId = parseInt($('.BBDonationApiContainer').attr('partid'), 10);
+  var cnstType = ($('.BBDonationApiContainer').attr('cnsttype') == "True");//True means overlay
+
+   //Create the donation object we'll send
+  //In order to simplify our examples, some of this information is hard-coded.
+  var donation = {
+  MerchantAccountId: '00000000-0000-0000-0000-000000000000',
+  BBSPReturnUri: window.location.href,
+  BBSPTemplateSitePageId: 000,
+  };
+
+  // Create our success handler
+  var success = function (returnedDonation) {
+  console.log(returnedDonation);
+  };   
+
+  // Create our error handler
+  var error = function (returnedErrors) {
+  console.log('Error!');
+  };
+  
+  //Bind Consent Options
+  function bindConsentOptions(solicitCodes){
+  
+   $.each(solicitCodes, function () {	  
+    //Add Separator
+    if (this["ConsentCode"] === 3) {
+    $("#consentOption").append($("<div class='consentTableRow'></div>").attr("id", this["SolicitCodeID"])
+    .append($("<div class='consentTableCell' style='text-align:left; font-weight:bold;'></div>").html(this["Caption"]))
+    .append($("<div class='consentTableCell'></div>"))
+    .append($("<div class='consentTableCell'></div>")));	 
+    }
+	
+    else {
+    //Add Consent Solicit Code
+    if (this["ConsentCode"] == 1) {
+    $("#consentOption").append($("<div class='consentTableRow'></div>").attr("id", this["SolicitCodeID"]).attr("IsRequired", this["IsRequired"])
+    .append($("<div class='consentTableCell'></div>").append($("<label></label>").text(this["Caption"])))
+    .append($("<div class='consentTableCell'></div>").append($("<input>").attr("type", "radio").val("2").attr("name", "radio" + this["Caption"])
+    .prop("checked", this["ConsentPreferenceCode"] === 2)))
+    .append($("<div class='consentTableCell'></div>").append($("<input>").attr("type", "radio").val("1").attr("name", "radio" + this["Caption"])
+    .prop("checked", this["ConsentPreferenceCode"] === 1))));                            
+    }
+		
+    else if (this["ConsentCode"] == 0) {
+    //Add Solicit Code
+    $("#consentOption").append($("<div class='consentTableRow'></div>").attr("id", this["SolicitCodeID"]).attr("IsRequired", this["IsRequired"])
+    .append($("<div class='consentTableCell'></div>").append($("<label></label>").text(this["Caption"])))
+    .append($("<div class='consentTableCell'></div>").append($("<input>").attr("type", "checkbox").val("2").attr("name", "radio" + this["Caption"])
+    .prop("checked", this["ConsentPreferenceCode"] === 2)))
+    .append($("<div class='consentTableCell'></div>")));
+     }}});
+  }
+  
+  //Linking between solicit codes selected in configure integration of CRM
+  function linkConsentCodes()
+  {
+    var solicitCode = $("#consentOption div[id=" + $("#hdnCRMSolicitCode").val() + "] div input");
+    var consentSolicitCodeOptIn = $("#consentOption div[id=" + $("#hdnCRMConsentSolicitCode").val() + "] div input[value='2']");
+    var consentSolicitCodeOptOut = $("#consentOption div[id=" + $("#hdnCRMConsentSolicitCode").val() + "] div input[value='1']");
+
+    solicitCode.click(function () { if (solicitCode.attr('checked')) { consentSolicitCodeOptOut.attr("checked", true); } else { consentSolicitCodeOptOut.attr("checked", false); } });
+    consentSolicitCodeOptOut.click(function () { solicitCode.attr("checked", true); }); 
+    if (cnstType) {
+    $("#myModal").css({ "display": "none", "align": "center" });
+    }
+    else {
+    $("#myModal").css("width", "600px");
+    }
+    $("#myModal").attr("cnstFilled", "0");
+  }
+  
+  //Bind Consent 
+  function bindConsent() {
+
+     consentOptionService = new BLACKBAUD.api.ConsentOptionService();
+     consentOptionService.getConsentOptions(consentPartId, function (d) {
+
+     if (!cnstType && d.SolicitCodes.length > 0) { $("#myModal").css("display", "block"); }
+     $("#consentTitle").append("<b></b>").text(d["Title"]);
+     if (d["hdnCRMSolicitCode"] != null) { $("#hdnCRMSolicitCode").val(d["hdnCRMSolicitCode"]); }
+     if (d["hdnCRMConsentSolicitCode"] != null) { $("#hdnCRMConsentSolicitCode").val(d["hdnCRMConsentSolicitCode"]); }
+     $("#consentStatement").text(d["ConsentStatement"]);
+     if (d["PrivacyPolicy"] != null) {
+     $("#privacylink").attr("onclick", "javascript:window.open('" + d["PrivacyPolicy"] + "', '_blank' ,height=600, width=800, resizable='yes', scrollbars='yes' )");
+     } 
+     else { $("#privacylink").css("display", "none"); }
+ 
+     //bind consent options
+     bindConsentOptions(d.SolicitCodes);
+           
+     //add asterisk mark on required consent
+     var requiredRows = $("#consentOption div[IsRequired]");
+     for (i = 0; i < requiredRows.length; i++) { if (requiredRows[i].getAttribute("IsRequired") == "true") { $("#consentOption div[id=" + requiredRows[i].getAttribute("id") + "]")
+	 .find("div:first").append("<span style='color:red;'>*</span>"); } }
+
+     //linking between solicit and consent solicit code selected in configure integration of CRM
+     linkConsentCodes();
+     });
+  }
+
+  //submit the donation
+  function sendData() {
+     
+     var consentOptions = [];
+     var solicitCodeCount = $("div[id='consentOption'] div[isRequired]").length;
+     if (solicitCodeCount > 0) {
+     for(var i = 1; i<= solicitCodeCount; i++) {
+     consentOptions.push({
+      SolicitCodeID: $("div[id='consentOption'] div[isRequired]")[i - 1].id,
+      IsRequired: $("div[id='consentOption'] div[isRequired]")[i - 1].isrequired,
+      ConsentPreferenceCode: $($("div[id='consentOption'] div[isRequired]")[i - 1]).find(':checked').val()
+     });
+     }}
+  
+     // Add the consent information our user has typed
+     donation.ContactConsents = { ConsentPartId: consentPartId, SolicitCodes: consentOptions };
+     // Submitting the donation
+     ds.createDonation(donation, success, error);
+     }   
+
+  // when consent type is overlay
+  function openDialog() {
+     $(function () {
+     $("#myModal").dialog({
+     dialogClass: "no-close",
+     modal: true,
+     autoOpen: false,
+     maxHeight: 393,
+     maxWidth: 474
+     });
+
+     $('#myModal').dialog('open');
+	 $('#myModal').addClass("modal");
+     $('.ui-widget-overlay').addClass("overlay");
+     $("#consentOption").css("width", "100%");
+     });
+     }
+
+  //call on donate button click
+  function onSubmitClick() {
+     if ($("div[id='consentOption'] div[isRequired]").length > 0) {
+     //if consent type is overlay
+     if (cnstType && $("#myModal").attr('cnstFilled') == "0") {
+     openDialog();
+     $("#myModal button").css("display", "block");
+     $("#myModal button").click(function () {
+     $("#myModal").attr("cnstFilled", "1");
+     $('#myModal').dialog('close');
+      sendData();
+     });
+     }
+     //if consent data is already submitted or consent type is inline
+     else {
+     sendData();
+     }
+     }
+     //if no consent
+     else {
+     sendData();
+     }
+     }
+
+     //bind consent on form
+     bindConsent();
+     // Attach our event listener to the donate button
+     $('.btn-donate').click(function () {
+     onSubmitClick();
+     });
+
+  });
+ }(jQuery));
+ {% endhighlight %}
+</div>
+<div class="tab-pane" id="example-consent-css">
+    {% include copy-code.html %}
+    {% highlight css %}
+ /* css other than bootstrap */
+ 
+.consentTable {
+  display: table;
+  width: 535px;
+}
+.consentTableRow {
+  display: table-row;
+}
+.consentTableHeading {
+  display: table-header-group;
+  width:800px;
+  font-weight: bold;
+}
+.consentTableCell, .consentTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+  width:100px;
+}
+.consentTableHeader{
+ border: 1px solid black;
+ border-color: #efefef;
+}
+.consentTableFoot {
+  display: table-footer-group;
+  font-weight: bold;
+}
+.consentTableBody {
+  display: table-row-group;
+}
+div.consentTableRow:nth-child(odd) { 
+  background: #efefef;
+}
+#privacylink {
+  color: blue;
+  text-decoration: underline
+}
+#privacylink:hover {
+  cursor: pointer;
+}       
+.no-close .ui-dialog-titlebar {
+  display: none;
+}
+.modal{
+  position: fixed;
+  top: 25%;
+  background-color: white; 
+  overflow: auto;
+  max-height: 393px;
+  max-width: 565px;
+  z-index: 101 ;
+}
+.overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0.6;
+  top: 0%;
+  left: 0%;
+}   
+  {% endhighlight %}
+</div>
+
+
