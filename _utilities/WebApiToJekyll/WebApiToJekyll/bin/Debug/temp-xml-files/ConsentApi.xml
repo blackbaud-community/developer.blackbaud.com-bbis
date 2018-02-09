@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com ../WebApiDocumentation.xsd">
+    <name>Consent API</name>
+    <endpoints>
+        <endpoint>
+            <url>Consent/{Id}</url>
+            <method>GET</method>
+            <summary>Returns the object of the consent with consent options associated with a specified consent partId.</summary>
+            <behavior>If the provided consent partId is valid, then this will return the object for the specified consent.  The entries will be as configured in the CRM.</behavior>
+            <parameters>
+                <parameter>
+                    <name>Id</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of the consent part.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>404 Not Found</status>
+                    <description>No consent part was found by the specified Id.</description>
+                </response>
+                <response>
+                    <status>200 OK</status>
+                    <body>Object</body>
+                    <description>Returns a consent object.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+<![CDATA[
+{
+    "ConsentPartId": 000,
+    "Title": "Consent Title",
+    "ConsentStatement": "Please let us know how we should contact you in the future.",
+    "PrivacyPolicy": null,
+    "SolicitCodes": [
+        {
+            "SolicitCodeID": "fc17b935-5aa9-458b-804f-885f4e9d1e68",
+            "ConsentPreferenceCode": 0,
+            "IsRequired": false,
+            "Sequence": 1,
+            "Caption": "Do not phone",
+            "ConsentCode": 0
+        },
+        {
+            "SolicitCodeID": "393295e5-e70c-4e82-b105-c19a90b11bf0",
+            "ConsentPreferenceCode": 0,
+            "IsRequired": false,
+            "Sequence": 4,
+            "Caption": "Consent Solicit Codes:",
+            "ConsentCode": 3
+        },
+        {
+            "SolicitCodeID": "216c4bd4-0cb6-4e1d-85da-6da56642f834",
+            "ConsentPreferenceCode": 0,
+            "IsRequired": false,
+            "Sequence": 7,
+            "Caption": "Autumn mailing only",
+            "ConsentCode": 0
+        }
+    ],
+    "PrivacyPolicyText": null,
+    "hdnCRMConsentSolicitCode": "41c43d63-7ea5-42e7-bbf4-032b0d72c2f5",
+    "hdnCRMSolicitCode": "0aa0aa03-53ab-4dc6-b294-8ba6c02d9ad3"
+}
+]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        </endpoint>
+    </endpoints>
+</api>
