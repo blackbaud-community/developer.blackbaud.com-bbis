@@ -23,7 +23,6 @@
             <hr />
             <label id="consentStatement"></label>
         </legend>
-        <input type="hidden" value="" id="hdnCRMConsentSolicitCode" />
         <input type="hidden" value="" id="hdnCRMSolicitCode" />
         <div class="consentTable" >
             <div class="consentTableBody" id="consentOption" style='border-spacing:0px;'> 
@@ -99,7 +98,15 @@ $(function () {
     .append($("<div class='consentTableCell'></div>").append($("<input>").attr("type", "radio").val("1").attr("name", "radio" + this["Caption"])
     .prop("checked", this["ConsentPreferenceCode"] === 1))));                            
     }
-		
+	//Add Advanced Consent Solicit Code
+    else if (this["ConsentCode"] == 2) {
+    $("#consentOption").append($("<div class='consentTableRow'></div>").attr("id", this["SolicitCodeID"]).attr("IsRequired", this["IsRequired"])
+    .append($("<div class='consentTableCell'></div>").append($("<label></label>").text(this["Caption"])))
+    .append($("<div class='consentTableCell'></div>").append($("<input>").attr("type", "radio").val("2").attr("name", "radio" + this["Caption"])
+    .prop("checked", this["ConsentPreferenceCode"] === 2)))
+    .append($("<div class='consentTableCell'></div>").append($("<input>").attr("type", "radio").val("1").attr("name", "radio" + this["Caption"])
+    .prop("checked", this["ConsentPreferenceCode"] === 1))));                            
+    }
     else if (this["ConsentCode"] == 0) {
     //Add Solicit Code
     $("#consentOption").append($("<div class='consentTableRow'></div>").attr("id", this["SolicitCodeID"]).attr("IsRequired", this["IsRequired"])
@@ -110,24 +117,7 @@ $(function () {
      }}});
   }
   
-  //Linking between solicit codes selected in configure integration of CRM
-  function linkConsentCodes()
-  {
-    var solicitCode = $("#consentOption div[id=" + $("#hdnCRMSolicitCode").val() + "] div input");
-    var consentSolicitCodeOptIn = $("#consentOption div[id=" + $("#hdnCRMConsentSolicitCode").val() + "] div input[value='2']");
-    var consentSolicitCodeOptOut = $("#consentOption div[id=" + $("#hdnCRMConsentSolicitCode").val() + "] div input[value='1']");
 
-    solicitCode.click(function () { if (solicitCode.attr('checked')) { consentSolicitCodeOptOut.attr("checked", true); } else { consentSolicitCodeOptOut.attr("checked", false); } });
-    consentSolicitCodeOptOut.click(function () { solicitCode.attr("checked", true); }); 
-    if (cnstType) {
-    $("#myModal").css({ "display": "none", "align": "center" });
-    }
-    else {
-    $("#myModal").css("width", "600px");
-    }
-    $("#myModal").attr("cnstFilled", "0");
-  }
-  
   //Bind Consent 
   function bindConsent() {
 
@@ -137,7 +127,6 @@ $(function () {
      if (!cnstType && d.SolicitCodes.length > 0) { $("#myModal").css("display", "block"); }
      $("#consentTitle").append("<b></b>").text(d["Title"]);
      if (d["hdnCRMSolicitCode"] != null) { $("#hdnCRMSolicitCode").val(d["hdnCRMSolicitCode"]); }
-     if (d["hdnCRMConsentSolicitCode"] != null) { $("#hdnCRMConsentSolicitCode").val(d["hdnCRMConsentSolicitCode"]); }
      $("#consentStatement").text(d["ConsentStatement"]);
      if (d["PrivacyPolicy"] != null) {
      $("#privacylink").attr("onclick", "javascript:window.open('" + d["PrivacyPolicy"] + "', '_blank' ,height=600, width=800, resizable='yes', scrollbars='yes' )");
@@ -152,8 +141,6 @@ $(function () {
      for (i = 0; i < requiredRows.length; i++) { if (requiredRows[i].getAttribute("IsRequired") == "true") { $("#consentOption div[id=" + requiredRows[i].getAttribute("id") + "]")
 	 .find("div:first").append("<span style='color:red;'>*</span>"); } }
 
-     //linking between solicit and consent solicit code selected in configure integration of CRM
-     linkConsentCodes();
      });
   }
 
