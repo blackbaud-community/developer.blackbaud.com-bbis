@@ -50,6 +50,7 @@
       <option value="2">Monthly</option>
       <option value="3">Quarterly</option>
       <option value="4">Annually</option>
+	  <option value="7">Every 4 weeks</option>
     </select>
   </dd>
   
@@ -187,6 +188,12 @@
         case 4:
           donation.Gift.Recurrence.Month = $('#month').val();
         break;
+		case 7:
+		 donation.Gift.Recurrence.DayOfMonth=0;
+		 donation.Gift.Recurrence.Month=0;
+		 //Purposefully assigning DayOfWeek is -1 beacuse 0 is defined for Sunday.
+		 donation.Gift.Recurrence.DayOfWeek =-1;
+		break;
       };
         
       // Submit our donation

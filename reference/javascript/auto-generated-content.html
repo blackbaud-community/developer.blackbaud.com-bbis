@@ -851,7 +851,7 @@ has been updated.</td>
 </table></dd>
 </dl>
 <h2 id="donationservice-getrecurringgiftlastpaymentdate">getRecurringGiftLastPaymentDate(numberOfInstallments,
-	frequencyCode, installmentStartDate, installmentMonth, installmentDayOfMonth) <a href="#donationservice-getrecurringgiftlastpaymentdate"><i class="fa fa-link"></i></a></h2>
+	frequencyCode, installmentStartDate, installmentMonth, installmentDayOfMonth, installmentDayOfWeek) <a href="#donationservice-getrecurringgiftlastpaymentdate"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
 <dd>This calculates the end date of a recurring installment based on the number of installments the website user wants to make.</dd>
@@ -975,6 +975,11 @@ has been updated.</td>
             
 
             <td class="description last">Day of the Month.</td>
+        </tr>
+		<tr>
+            <td class="name">installmentDayofWeek</td>
+            <td class="type"><span class="param-type">Integer</span></td>
+			<td class="description last">Day of the Week.</td>
         </tr>
 
     </tbody>
