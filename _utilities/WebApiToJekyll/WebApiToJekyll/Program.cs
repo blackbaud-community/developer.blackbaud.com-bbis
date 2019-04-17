@@ -25,6 +25,8 @@ namespace WebApiToJekyll {
 
             string root = @"temp-xml-files\";
             files.Add(root + @"CodeTableApi.xml");
+            files.Add(root + @"ConsentApi.xml");
+            files.Add(root + @"CheckoutApi.xml");
             files.Add(root + @"CountryApi.xml");
             files.Add(root + @"DonationApi.xml");
             files.Add(root + @"ImageApi.xml");
@@ -46,7 +48,7 @@ namespace WebApiToJekyll {
                     transforms.Add(writer.ToString());
                     transforms.Add("</div>");
 
-                    File.WriteAllLines(@"D:\GitHub\bbBobbyEarl\bbis\reference/rest/auto-generated-content.html", transforms);
+                    File.WriteAllLines(@"C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\reference\rest\auto-generated-content.html", transforms);
                     Console.WriteLine("Transformed: {0}", Path.GetFileName(file));
                 }
 
