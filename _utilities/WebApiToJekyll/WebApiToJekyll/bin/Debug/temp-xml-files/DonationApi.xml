@@ -4,6 +4,7 @@ xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd
     <name>Donation API</name>
     <endpoints>
         <endpoint>
+		
             <url>{PartId}/Donation/{Id}</url>
             <method>GET</method>
             <summary>Gets the donation object of the specified Id if the user has appropriate access.</summary>
@@ -123,7 +124,41 @@ xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd
                 </exampleResponse>
             </exampleResponses>
         </endpoint>
-        <endpoint>
+    
+		<endpoint>
+            <url>{PartId}/Donation/ValidateDonationRequest</url>
+            <method>POST</method>
+            <summary>When we use the checkout pop up  on the ADF then the request must be validated before opening the pop up.</summary>
+                        <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                <response>
+                    <status>200 OK</status>
+                    <body>Boolean</body>
+                    <description>Returns true if successfully validated.</description>
+                </response>
+            </responses>
+					 <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                </exampleResponse>
+            </exampleResponses>
+			 <responses>
+                <response>
+					<status>400 Bad Request</status>
+                    <body>Error[]</body>
+                </response>
+				</responses>
+        </endpoint>
+	
+    <endpoint>
             <url>{PartId}/Donation/Create</url>
             <method>POST</method>
             <summary>Attempts to create a donation from the posted object.</summary>
@@ -236,6 +271,7 @@ xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd
 <ul>
   <li>CreditCard (0)</li>
   <li>BillMeLater (1)</li>
+  <li>DirectDebit (2)</li>
 </ul>]]></description>
                     </field>
                     <field>
@@ -322,6 +358,7 @@ xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd
   <li>Monthly (2)</li>
   <li>Quarterly (3)</li>
   <li>Annually (4)</li>
+  <li>Every4Weeks (7)</li>
 </li>]]>
                       </description>
                     </field>
@@ -858,7 +895,135 @@ xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd
                 </exampleResponse>
             </exampleResponses>
         </endpoint>
-    </endpoints>
+     <endpoint>
+            <url>{PartId}/Donation/GetBankingSystemTypes</url>
+            <method>POST</method>
+            <summary>Gets an array of  Banking Type object containing all banking types that is enabled in CRM.</summary>
+                        <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                                <response>
+                    <status>200 OK</status>
+                    <body>Object</body>
+                    <description>Returns an array of  banking type object with all banking types.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+                        <![CDATA[
+						[
+{
+ "Abbreviation": "USA",
+ "Description": "USA(ACH)"
+}
+]
+						]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+			<responses>
+			<response>
+					<status>400 Bad Request</status>
+                    <body>Error[]</body>
+                </response>
+			</responses>
+        </endpoint>
+		<endpoint>
+            <url>{PartId}/Donation/GetAccountTypes</url>
+            <method>POST</method>
+            <summary>Gets an array of Account Type object containing all supported account types.</summary>
+                        <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+            </parameters>
+            <responses>
+                                <response>
+                    <status>200 OK</status>
+                    <body>Object</body>
+                    <description>Returns an array of account type object with all account types.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+                        <![CDATA[
+						[
+{
+"Id": "1",
+"Description": "Checking"
+}
+]
+						]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+       <responses>
+	   <response>
+					<status>400 Bad Request</status>
+                    <body>Error[]</body>
+                </response>
+	   </responses>
+	   </endpoint>
+		<endpoint>
+            <url>{PartId}/Donation/GetOriginIdAndTime</url>
+            <method>POST</method>
+            <summary>Gets OriginData object containing information about client id and time.</summary>
+                        <parameters>
+                <parameter>
+                    <name>PartId</name>
+                    <type>Integer</type>
+                    <required>true</required>
+                    <description>Id of a donation form part.</description>
+                </parameter>
+            </parameters>
+            <responses>
+
+                <response>
+                    <status>200 OK</status>
+                    <body>Object</body>
+                    <description>Returns a originData object with client id and time.</description>
+                </response>
+            </responses>
+            <exampleResponses>
+                <exampleResponse>
+                    <name>Success</name>
+                    <status>200 OK</status>
+                    <body>
+                        <![CDATA[
+												{
+"OriginId": "1",
+"Time": "01/01/1999"
+}
+												]]>
+                    </body>
+                </exampleResponse>
+            </exampleResponses>
+        <responses>
+		                <response>
+					<status>400 Bad Request</status>
+                    <body>Error[]</body>
+                </response>
+		</responses>
+		</endpoint>
+		
+		
+	</endpoints>
     <enums>
         <enum>
             <name>PaymentMethod</name>
@@ -870,6 +1035,10 @@ xsi:schemaLocation="http://www.w3schools.com ../Platform/WebApiDocumentation.xsd
                 <value>
                     <name>BillMeLater</name>
                     <value>1</value>
+                </value>
+				<value>
+                    <name>DirectDebit</name>
+                    <value>2</value>
                 </value>
             </values>
         </enum>

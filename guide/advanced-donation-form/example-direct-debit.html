@@ -1,0 +1,512 @@
+﻿<h3 id="example-direct-debit">Direct Debit Example</h3>
+<p> This feature can be used to configured the direct debit on ADF by using the payment's using the <a href="{{ site.baseurl }}/reference/rest/#donationapi">Donation endpoints.</a></p>
+<p>Organizations have many donors (especially in international markets) that prefer to give gifts with Direct Debit (also known as ACH). To build parity with our current Advance Donation Form (ADF), we need to allow organizations to accept donations via direct debit on ADF.
+This functionality is wrapped under <a href="{{ site.baseurl }}/reference/javascript/#donationservice">Donation Service</a>, as shown in the example.</p>
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#example-direct-debit-html" data-toggle="tab">HTML</a>
+    </li>
+    <li>
+        <a href="#example-direct-debit-js" data-toggle="tab">JS</a>
+    </li>
+    {% include download-on-github.html repo="BBIS-Advanced-Donation-Form" %}
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="example-direct-debit-html">
+    {% include copy-code.html %}
+    {% highlight html %}
+	<!--This div is use to show the direct debit section on a page-->
+<div id="directDebitSection">
+        <div class="formrow" id="tr_DDPDFInstructions">
+            <div colspan="3">
+                <span><i>In order to set up a Direct Debit instruction
+                    online, you must be the account holder of a personal bank or building society account.
+                    If you are not the only required signatory on your account or you would rather send
+                    us a paper version please
+                    <a ID="lnkDDPDF" title="Direct Debit PDF" href="DirectDebit.ddpdf"
+                        Target="_blank" rel="noopener noreferrer">click here</a></i>
+	            </span>
+            </div>
+        </div>
+        <div class="formrow">
+                <label ID="lblFinancialLBL">Financial Institution:</label>
+                <input type="text" ID="txtFinancialInstitution" MaxLength="100"/>
+        </div>
+        <div class="formrow">
+                <label ID="lblBranchName">Branch Name:</label>
+                <input type="text" ID="txtBranchName" MaxLength="100"/>
+        </div>
+        <div class="formrow" id="tr_BankingSystemType">
+                <label ID="lblBankingSystemType">Banking System Type:</label>
+                <select ID="ddlBankingSystemType"></select>
+        </div>
+        <div class="formrow">
+                <label ID="lblRoutNumLBL">Routing Number:</label>
+                <input type="text" ID="txtRoutingNumber" MaxLength="9" />
+               <!-- <asp:CustomValidator ID="cvRoutingNumber"  ClientValidationFunction="RoutingNumberClientValidation"  />   --> 
+  
+                <a ID="lnk_BankHelp" title="Display help details in another window" style="cursor:pointer;">
+	<img src="images/help-32_1.gif" alt="help" title="Help" style="height:32px;width:36px;vertical-align:bottom; border:0;" />
+                </a>
+        </div>
+        <div class="formrow" id="tr_CanadaTransitNum">
+                <label ID="lblCanadaTransitNum">Transit Number:</label>
+                <input type="text" ID="txtCanTransitNumber" MaxLength="5"/>
+        </div>
+        <div class="formrow">
+                <label ID="lblAccountNumber">Account Number:</label>
+                <span id="spn_AccountNo">
+                    <input type="text" ID="txtAccountNumber" MaxLength="20"/>
+                </span>
+                <span id="spn_AccountNoNZ">
+                    <input type="text" ID="txtAccountNumberNZ" Width="30" MaxLength="7"/>
+					<span>-</span>
+                    <input type="text" ID="txtSuffixNZ" Width="20" MaxLength="3" />
+                    <label ID="lblSuffixNZ" Visible="false"></label>
+                </span>
+                    </div>
+        <div class="formrow" id="tr_AccountType">
+                <label ID="lblAccountType">Account Type:</label>
+                <select ID="ddlAccountType"></select>
+        
+        </div>
+        <div class="formrow">
+                <label ID="lblAccountHolderName">Account Holder's Name:</label>
+                <input type="text" ID="txtAccountHolder" MaxLength="50"/>
+        </div>
+        <div class="formrow" id="tr_CurrentDate" >
+                <label ID="lblDebitDate">Date:</label>
+                <label ID="lbl_CurrentDate"></label>
+        </div>
+        <div class="formrow" id="tr_OrigNumber">
+                <label ID="lblOriginatorID">Service user's ID number:</label>
+                <label ID="lbl_OrigNumber"></label>
+        </div>
+        <div id="tr_DDBankInstructions">
+            <span colspan="3">
+                <p>
+                    <label><b>Instruction to your Bank or Building Society</b></label>
+                </p>
+                                   <label ID="lbl_DDBankInstructions">
+<i>Please pay %1 Direct Debits from the account detailed in this Instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this Instruction may remain with %1 and, if so, details will be passed electronically to my Bank/Building Society.</i>
+					</label>						
+                                
+                    <label>
+<i>Banks and Building Societies may not accept Direct Debit Instructions for some types of account.</i>
+                    </label>
+                
+            </span>
+        </div>
+        <div id="tr_DDInstructions">
+            <span colspan="3">
+                <img src="images\dlogo.gif" alt="Direct Debit" title="Direct Debit" style="text-align: center;" />
+                <a ID="lnk_DDGuarantee" title="Display the Direct Debit Guarantee in another window" style="cursor:pointer;color:blue;text-decoration:underline;">The Direct Debit Guarantee</a>
+			</span>
+        </div>
+        <div id="tr_DDPDFInstructions2">
+            <span colspan="2">
+                <p>
+                    <label>
+<i>By clicking 'Donate Now' you are confirming that you are the account holder and that you are the only person required to authorise debits from this account.</i>
+		</label>
+                </p>
+            </span>
+        </div>
+   </div>
+</fieldset>   
+	{% endhighlight %}
+</div>
+<div class="tab-pane" id="example-direct-debit-js">
+    {% include copy-code.html %}
+    {% highlight js %}
+// Let's be good developers and not pollute the global namespace
+(function ($) {
+
+ // Let's make sure the DOM is ready
+$(function () {
+
+  // Create an instance of the DonationService
+  var ds = new BLACKBAUD.api.DonationService(
+  $('.BBDonationApiContainer').data('partid'));
+     
+ 
+   //Create the donation object we'll send
+  //In order to simplify our examples, some of this information is hard-coded.
+  var donation = {
+  MerchantAccountId: '00000000-0000-0000-0000-000000000000',
+  BBSPReturnUri: window.location.href,
+  BBSPTemplateSitePageId: 000,
+  };
+
+  // Create our success handler
+  var success = function (returnedDonation) {
+  console.log(returnedDonation);
+  if (returnedDonation.Donation.Gift.PaymentMethod === 2) {
+      window.location.href = window.location.href + "?t=" + d.Donation.Id;
+  }
+  };   
+
+  // Create our error handler
+  var error = function (returnedErrors) {
+  console.log('Error!');
+  };
+  
+	//Show and Hide directdebit div on the page
+ function showHideDirectDebitDiv() {
+   if (part.find("#paymentDirectDebit").prop("checked")) {
+      part.find("#directDebitInformation").show();
+      hideAndVisible_BankingTypeField();
+      addCountryHandler();
+     }
+     else {
+       part.find("#directDebitInformation").hide();
+        }
+    }
+
+	//Call the function when we have to hide and visible the banking type field
+    function hideAndVisible_BankingTypeField() {
+        if ($('[id="ddlBankingSystemType"] option').length == 1) {
+            $('#tr_BankingSystemType').css('display', 'none');
+        } else {
+            $('#tr_BankingSystemType').css('display', '');
+        }
+    }
+
+	//Use to bind the banking types that is configured in CRM
+    function bindDirectDebitData() {
+        donationService.getBankingTypeData(function (d) {
+            $.each(d, function () {
+                $("#ddlBankingSystemType").append($("<option></option>").val(this["Abbreviation"]).text(this["Description"]));
+            });
+        });
+
+        donationService.getAccountTypeData(function (d) {
+            $.each(d, function () {
+                $("#ddlAccountType").append($("<option></option>").val(this["Id"]).text(this["Description"]));
+            });
+        });
+
+        donationService.getOriginIdAndTime(function (d) {
+            $("#lbl_CurrentDate").text(d["Time"]);
+            $("#lbl_OrigNumber").text(d["OriginId"]);
+        });
+    }
+
+	//this function is used to select the banking type on the basis of country dropdown change
+    function addCountryHandler() {
+        var bankingSystemType = $('[id="ddlBankingSystemType"]'), addrCtl = $("[id='country'] :selected"), selectBankingOption, exists = false, bankingOptions;
+        if (bankingSystemType && bankingSystemType.length > 0) {
+            bankingOptions = $('[id="ddlBankingSystemType"] option');
+            if (bankingOptions.length > 0) {
+                if (!(bankingOptions.length === 1)) {
+                    if (countryData && (validateCountry(addrCtl.val(), countryData.NZ) || validateCountry(addrCtl.val(), countryData.AUS))) {
+                        selectBankingOption = "Aus_NZ";
+                    }
+                    else if (countryData && validateCountry(addrCtl.val(), countryData.UK)) {
+                        selectBankingOption = "UK";
+                    }
+                    else if (countryData && validateCountry(addrCtl.val(), countryData.CAD) || validateCountry(addrCtl.val(), countryData.USA)) {
+                        selectBankingOption = "USA";
+                    }
+
+                    exists = 0 !== bankingSystemType.find('option[value="' + selectBankingOption + '"]').length;
+                    if (exists && exists === true) {
+                        bankingSystemType.val(selectBankingOption);
+                    } else {
+                        bankingSystemType.val("Please Select");
+                    }
+                }
+            }
+            hideAndVisible_DirectDebitFields();
+        }
+    }
+
+	//Hide and Visible direct debit fields on the basis of country dropdown and banking type dropdown change
+    function hideAndVisible_DirectDebitFields() {
+        var bankingType = "Please Select", htmlElement = "", routingNumberTextBoxLabel = "", selectedCountry = "", routingNumberTextBox = "", transitNumberBox = "",
+            routingNumber = $('[id="txtRoutingNumber"]'),
+            transitNumber = $('[id="txtCanTransitNumber"]'),
+            routingNumberLabel = $('[id="lblRoutNumLBL"]'),
+            addressCTL = $("[id='country'] :selected"),
+            bankingSystemLabel = $('[id="lblBankingSystemType"]'),
+            bankingSystemType = $('[id="ddlBankingSystemType"] :selected'),
+            accountType = $('[id="tr_AccountType"],[id*="DC_AccountType"]'),
+            accountNo = $('[id="spn_AccountNo"]'),
+            accountNoNZ = $('[id="spn_AccountNoNZ"]'),
+            financialInstitution = $('[id="lblFinancialLBL"]'),
+            accountNoLabel = $('[id="lblAccountNumber"]'),
+            routingNumberHelpSymbol = $('[id="lnk_BankHelp"]'),
+            requiredFieldAccountType = $('[id="RequiredFieldAccountType"]'),
+            ukFields = $('[id="tr_DDInstructions"], [id="tr_OrigNumber"], [id="tr_CurrentDate"], [id="tr_DDBankInstructions"], [id="tr_DDPDFInstructions"], [id="tr_DDPDFInstructions2"],[id="DC_DDInstructions"],[id="DC_OrigNumber"],[id="DC_CurrentDate"],[id="DC_DDBankInstructions"],[id="DC_DDPDFInstructions"],[id="DC_DDPDFInstructions2"]');
+
+        if (!routingNumber || routingNumber.length <= 0) {
+            return;
+        }
+
+        if (bankingSystemType && bankingSystemType.length > 0) {
+            bankingType = bankingSystemType.attr("Value");
+        }
+
+        if (routingNumber && routingNumber.length > 0) {
+            routingNumberTextBox = routingNumber;
+        }
+
+        if (addressCTL && addressCTL.length > 0) {
+            selectedCountry = addressCTL.val();
+        }
+
+        if (routingNumberLabel && routingNumberLabel.length > 0) {
+            routingNumberTextBoxLabel = routingNumberLabel;
+        }
+
+        if (transitNumber && transitNumber.length > 0) {
+            transitNumberBox = transitNumber;
+            $('[id="tr_CanadaTransitNum"]').css("display", "none");
+        }
+        accountNo.css("display", "");
+        accountNoNZ.css("display", "");
+        accountNoLabel.html("Account Number:");
+        routingNumberHelpSymbol.css("display", "");
+        if (ukFields && ukFields.length > 0) {
+
+            ukFields.css('display', 'none');
+        }
+
+        if (countryData && validateCountry(selectedCountry, countryData.CAD) && transitNumberBox && transitNumberBox.length > 0 && bankingType === "USA") {
+            routingNumberTextBoxLabel.html("Institution ID:");
+            routingNumberTextBox.attr("maxlength", "4");
+            routingNumberTextBox.val('');
+            accountType.css("display", "none");
+            accountNoNZ.css("display", "none");
+            $('[id="tr_CanadaTransitNum"]').css("display", "");
+
+        } else {
+            if (bankingType !== "Please Select") {
+                if (bankingType === "USA") {
+                    routingNumberTextBoxLabel.html("Routing Number:");
+                    routingNumberTextBox.attr("maxlength", "9");
+                    routingNumberTextBox.val('');
+                    accountType.css("display", "");
+                    accountNoNZ.css("display", "none");
+                }
+                else if (bankingType === "UK") {
+                    routingNumberTextBoxLabel.html("Sort Code:");
+                    routingNumberTextBox.attr("maxlength", "6");
+                    routingNumberTextBox.val('');
+                    accountType.css("display", "none");
+                    accountNoNZ.css("display", "none");
+                    if (ukFields) {
+                        ukFields.css('display', '');
+                    }
+
+                }
+                else if (bankingType === "Europe") {
+                    routingNumberTextBoxLabel.html("BIC:");
+                    routingNumberTextBox.attr("maxlength", "11");
+                    routingNumberTextBox.val('');
+                    accountType.css("display", "");
+                    accountNoNZ.css("display", "none");
+                    routingNumberHelpSymbol.css("display", "none");
+                }
+                else if (bankingType === "Aus_NZ") {
+                    routingNumberTextBoxLabel.html("BSB Number:");
+                    routingNumberTextBox.attr("maxlength", "6");
+                    routingNumberTextBox.val('');
+                    accountType.css("display", "none");
+                    accountNoNZ.css("display", "none");
+                    if (countryData && validateCountry(selectedCountry, countryData.NZ)) {
+                        accountNo.css("display", "none");
+                        accountNoNZ.css("display", "");
+                        routingNumberTextBoxLabel.html("Bank/Branch No.:");
+                        accountNoLabel.html("Account No./Suffix:");
+                        routingNumberTextBox.attr("maxlength", "7");
+                        routingNumberTextBox.val('');
+                    }
+                }
+                else if (bankingType === "Other") {
+                    routingNumberTextBoxLabel.html("Bank Code:");
+                    routingNumberTextBox.attr("maxlength", "25");
+                    routingNumberTextBox.val('');
+                    accountType.css("display", "");
+                    accountNoNZ.css("display", "none");
+                    routingNumberHelpSymbol.css("display", "none");
+                }
+
+                else {
+                    routingNumberTextBoxLabel.html("Routing Number:");
+                    routingNumberTextBox.attr("maxlength", "9");
+                    routingNumberTextBox.val('');
+                    accountType.css("display", "");
+                    accountNoNZ.css("display", "none");
+
+                }
+
+            }
+            else {
+                routingNumberTextBoxLabel.html("Routing Number:");
+                routingNumberTextBox.attr("maxlength", "9");
+                accountType.css("display", "");
+                accountNoNZ.css("display", "none");
+            }
+        }
+    }
+
+//this function is called when we click on help image of reoting number textbox(and it changes on the basis of banking type dropdown change)
+    function donationBankHelp() {
+        var sFeatures = 'WIDTH=392px,HEIGHT=400px,RESIZABLE=YES,SCROLLBARS=NO,TOOLBAR=NO,LEFT=5,TOP=20,location=No;status=No', oPopUp,
+            bankingType = $('[id="ddlBankingSystemType"] :selected'), addressCTL = $("[id='country'] :selected"), selectedValue = "", selectedCountry = "", qParam = "";
+
+        if (bankingType && bankingType.length > 0) {
+            selectedValue = bankingType.attr("Value");;
+        }
+        if (addressCTL && addressCTL.length > 0) {
+            selectedCountry = addressCTL.val();
+        }
+
+
+        if (countryData && validateCountry(selectedCountry, countryData.AUS) && selectedValue === 'Aus_NZ') {
+            qParam = 'AUS';
+        } else if (countryData && validateCountry(selectedCountry, countryData.NZ) && selectedValue === 'Aus_NZ') {
+            qParam = 'NZ';
+        } else if (countryData && validateCountry(selectedCountry, countryData.CAD) && selectedValue === 'USA' && $('[id="tr_CanadaTransitNum"]') && $('[id="tr_CanadaTransitNum"]').length > 0) {
+            qParam = 'CAD';
+        } else {
+            switch (selectedValue) {
+                case 'USA':
+                    qParam = "USA";
+                    break;
+                case "Aus_NZ":
+                    qParam = "AUS";
+                    break;
+                case "UK":
+                    qParam = "UK";
+                    break;
+                default:
+                    qParam = "USA";
+                    break;
+            }
+        }
+
+        oPopUp = new PopUpDialogBB('~/Admin/DonationHelp.ascx', '_blank', sFeatures, '&mode=2&displayfor=' + qParam);
+        oPopUp.Show();
+    }
+
+
+    function dDGuarantee() {
+        var sFeatures = 'WIDTH=650px,HEIGHT=415px,RESIZABLE=YES,SCROLLBARS=NO,TOOLBAR=NO,LEFT=5,TOP=20,location=No;status=No',
+            oPopUp = new PopUpDialogBB('~/Admin/DonationHelp.ascx', '_blank', sFeatures, '&mode=3');
+        oPopUp.Show();
+    }
+
+	//this is used to set country object with all possible value of the countries(like Abbreviation, Country Name, and Guid)
+    function getCountryMappings() {
+
+        //this is use for direct debit validations
+        countryData = {};
+        countryService.getCountries(function (d) {
+            $.each(d, function () {
+                var tmpData = {};
+                tmpData.Id = this["Id"];
+                tmpData.Abbreviation = this["Abbreviation"];
+                tmpData.Description = this["Description"];
+                switch (this["Id"].toUpperCase()) {
+                    case 'D81CEF85-7569-4B2E-8F2E-F7CF998A3342':
+                        countryData.USA = tmpData;
+                        break;
+                    case 'A2ECC209-3D20-4DDA-BC4C-7585C8E2E701':
+                        countryData.UK = tmpData;
+                        break;
+                    case 'D9EE54CD-2183-490C-A3AD-11152B271335':
+                        countryData.CAD = tmpData;
+                        break;
+                    case 'F189F24C-2538-46A1-8458-1E3F3967B843':
+                        countryData.AUS = tmpData;
+                        break;
+                    case 'DA42443E-AB81-40EE-A239-91ED699C0801':
+                        countryData.NZ = tmpData;
+                        break;
+                }
+
+            });
+        });
+    }
+
+	//for validate the country thatused to select the banking type on the basis of country dropdown change 
+    function validateCountry(country, ctryData) {
+        if (country.toUpperCase() === ctryData.Id.toUpperCase() || country.toUpperCase() === ctryData.Abbreviation.toUpperCase() || country.toUpperCase() === ctryData.Description.toUpperCase()) {
+            return true;
+        }
+        return false;
+
+    }
+ 
+	 //Bind Direct Debit
+	 
+	    getCountryMappings();
+        bindDirectDebitData();
+		
+		//Attach Listeners
+		part.find("#recMonthly").click(function () {
+        part.find("#directDebit").css("display", "");
+        });
+        part.find("#recOneTime").click(function () {
+        part.find("#directDebit").css("display", "none");
+        });
+        part.find("#paymentDirectDebit").click(function () { showHideDirectDebitDiv(); })
+        part.find("#ddlBankingSystemType").change(function () { hideAndVisible_DirectDebitFields(); })
+part.find("#lnk_BankHelp").click(function () { donationBankHelp(); });
+        part.find("#lnk_DDGuarantee").click(function () { dDGuarantee(); });
+
+//Attach event listener on country change
+part.find("#country").change(function () { addCountryHandler(); })
+		
+     // Attach our event listener to the donate button
+   $('.btn-donate').click(function(e) {
+      
+      // Stop the button from submitting the form
+      e.preventDefault(); 
+	  
+      //Payment Method(2) means direct debit and set all the properties of direct debit
+        if (paymentMethod === "2" && part.find("#paymentDirectDebit").prop("checked")) {
+            donation.Gift.DirectDebitInformation = {};
+            var selectedCountry = part.find("#country :selected").val(), bankingType = part.find("#ddlBankingSystemType :selected").val();
+            donation.Gift.DirectDebitInformation.FinancialInstitution = part.find("#txtFinancialInstitution").val();
+            donation.Gift.DirectDebitInformation.BranchName = part.find("#txtBranchName").val();
+            donation.Gift.DirectDebitInformation.AccountHolderName = part.find("#txtAccountHolder").val();
+            donation.Gift.DirectDebitInformation.BankingType = bankingType;
+
+
+            if (countryData && validateCountry(selectedCountry, countryData.CAD) && bankingType === "USA") {
+                donation.Gift.DirectDebitInformation.RoutingNumber = part.find("#txtRoutingNumber").val();
+                donation.Gift.DirectDebitInformation.TransitNumber = part.find("#txtCanTransitNumber").val();
+            }
+            else {
+                donation.Gift.DirectDebitInformation.RoutingNumber = part.find("#txtRoutingNumber").val();
+            }
+
+            if (countryData && validateCountry(selectedCountry, countryData.NZ) && bankingType === "Aus_NZ") {
+                donation.Gift.DirectDebitInformation.AccountNumber = part.find("#txtAccountNumberNZ").val();
+                donation.Gift.DirectDebitInformation.SuffixNo = part.find("#txtSuffixNZ").val();
+            }
+            else {
+                donation.Gift.DirectDebitInformation.AccountNumber = part.find("#txtAccountNumber").val();
+            }
+
+            if (bankingType === "Europe" || bankingType === "Other" || countryData && (!validateCountry(selectedCountry, countryData.CAD) && bankingType === "USA")) {
+                donation.Gift.DirectDebitInformation.AccountType = part.find("#ddlAccountType :selected").val();
+            }
+            else {
+                donation.Gift.DirectDebitInformation.AccountType = "";
+            }
+
+        }
+
+     // Submitting the donation
+     ds.createDonation(donation, success, error);
+     }); 
+
+  });
+ }(jQuery));
+ {% endhighlight %}
+</div>
