@@ -1,6 +1,28 @@
 <ul class="nav nav-stacked nav-sidebar scrollspy-start">
   {% include sidebar-top.html %}
   {% include sidebar-back-to-section.html title="Technical Reference" %}
+    <li>
+        <a href="#checkoutapi">Checkout</a>
+        <ul class="nav">
+            <li>
+                <a href="#donationeditorpartid">DonationEditor/{PartId}</a>
+            </li>
+						            <li>
+                <a href="#adfcheckoutpublickey">ADFCheckout/PublicKey</a>
+            </li>
+			            <li>
+                <a href="#adfcheckoutcreate">ADFCheckout/Create</a>
+            </li>
+			            <li>
+                <a href="#adfcheckoutcomplete">ADFCheckout/Complete</a>
+            </li>
+						            <li>
+                <a href="#adfcheckoutdelete">ADFCheckout/Delete</a>
+            </li>
+
+        </ul>
+    </li>
+  <li>
   <li>
     <a href="#codetableapi">Code Table</a>
     <ul class="nav">
@@ -40,6 +62,9 @@
       <li>
         <a href="#partiddonationid">{PartId}/Donation/{Id}</a>
       </li>
+	  <li>
+        <a href="#partiddonationvalidatedonationrequest">{PartId}/Donation/ValidateDonationRequest</a>
+      </li>
       <li>
         <a href="#partiddonationcreate">{PartId}/Donation/Create</a>
       </li>
@@ -48,6 +73,15 @@
       </li>
       <li>
         <a href="#partiddonationidconfirmationhtml">{PartId}/Donation/{Id}/ConfirmationHtml</a>
+      </li>
+	   <li>
+        <a href="#partiddonationgetbankingsystemtypes">{PartId}/Donation/GetBankingSystemTypes</a>
+      </li>
+	   <li>
+        <a href="#partiddonationgetaccounttypes">{PartId}/Donation/GetAccountTypes</a>
+      </li>
+	   <li>
+        <a href="#partiddonationgetoriginidandtime">{PartId}/Donation/GetOriginIdAndTime</a>
       </li>
     </ul>
   </li>
