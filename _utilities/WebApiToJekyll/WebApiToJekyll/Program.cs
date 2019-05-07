@@ -49,6 +49,7 @@ namespace WebApiToJekyll {
                     transforms.Add("</div>");
 
                     File.WriteAllLines(@"C:\GitReps\Fork\reference\rest\auto-generated-content.html", transforms);
+
                     Console.WriteLine("Transformed: {0}", Path.GetFileName(file));
                 }
 

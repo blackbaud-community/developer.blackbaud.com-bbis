@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Blackbaud Internet Solutions | Developer Guide | Advanced Donation Form</title> <link rel="icon" href="/bbis/assets/img/favicon.ico" type="image/ico"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="stylesheet" href="/bbis/assets/css/combine.site.css?v=2018-11-01-18:45:39"> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-2418840-40', 'auto'); ga('send', 'pageview'); </script> </head> <body class="layout-compress section-guide subsection-advanced-donation-form"> <nav class="navbar" role="navigation" id="top"> <div class="container"> <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bb-navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="/bbis/" class="navbar-brand"> <img src="/bbis/assets/img/logo-bbis.png" alt="Blackbaud Internet Solutions" class="img-responsive" /> </a> </div> <!-- navbar-header --> <div class="collapse navbar-collapse" id="bb-navbar"> <ul class="nav navbar-nav navbar-right"> <li > <a href="/bbis/start/"> Getting Started </a> </li> <li class="active"> <a href="/bbis/guide/"> Developer Guide </a> </li> <li > <a href="/bbis/reference/"> Technical Reference </a> </li> <li class=""> <a href="/bbis/code/"> Code Samples </a> </li> <li > <a href="/bbis/help/"> <i class="fa fa-fw fa-question-circle hidden-xs"></i> <span class="visible-xs-inline">Help</span> </a> </li> </ul> </div> <!-- .navbar-collapse --> </div> <!-- .container --> </nav> <!-- .navbar.navbar-inverse --> <div class="content"> <div class="container"> <div class="row"> <div class="col-md-3 hidden-xs hidden-sm"> <div class="sidebar"> <ul class="nav nav-pills nav-stacked nav-sidebar"> <!-- Ridiculous Bootstrap Scrollspy bug that required this nested linkage to function properly --> <li class="hidden"> <a href="#top">Top</a> <ul class="nav"> <li> <a href="#top">Top</a> </li> </ul> </li> <li class="back-to back-to-section"> <a href="/bbis/guide/"> Developer Guide </a> </li> <li class=" active scrollspy-start "> <a href="/bbis/guide/advanced-donation-form/">Advanced Donation Form</a> <ul class="nav"> <li> <a href="#setup">Setup</a> </li> <li> <a href="#example-barebones">Example - Barebones</a> </li> <li> <a href="#example-payment-2-0">Example - Payment 2.0</a> </li> <li> <a href="#example-pledge-installments">Example - Pledge Installments</a> </li> <li> <a href="#example-country-and-state">Example - Country and State</a> </li> <li> <a href="#example-recurrence">Example - Recurrence</a> </li> <li> <a href="#example-tribute">Example - Tribute</a> </li> <li> <a href="#example-consent">Example - Consent</a> </li> <li> <a href="#example-secure-payments">Example - Blackbaud Secure Payments</a> </li> <li> <a href="#example-complete">Example - Complete</a> </li> <li> <a href="#adf-generator">ADF Generator</a> </li> </ul> </li> <li class=""> <a href="/bbis/guide/blackbaud-secure-payments/">Blackbaud Secure Payments</a> </li> <li class=""> <a href="/bbis/guide/custom-content-parts/">Custom Content Parts</a> </li> <li class=""> <a href="/bbis/guide/custom-framework-parts/">Custom Framework Parts</a> </li> <li class=""> <a href="/bbis/guide/custom-handlers/">Custom Handlers</a> </li> <li class=""> <a href="/bbis/guide/user-imports/">User Imports</a> </li> <li class=""> <a href="/bbis/guide/responsive-design/">Responsive Design</a> </li> <li class="back-to back-to-top"> <a href="#top" class=""> <i class="fa fa-caret-square-o-up"></i> </a> </li> </ul> </div> </div> <!-- .col-md-3 --> <div class="col-md-9 readability"> <h2 id="setup">Advanced Donation Form</h2> <p>The Advanced Donation Form Part and accompanying REST APIs were released in version 3.0 of BBIS. They allow completely custom interfaces to be created for the donation experience, relaying the necessary information to the backend via the REST API or JavaScript SDK. For a complete list of possible options, be sure to visit the <a href="/bbis/reference/rest/#donationapi">technical reference</a> for more information.</p> <p>All the examples below expect a page with a configured instance of the Advanced Donation Form Part on it. It's also important the examples below are meant to be as simple and straight-forward as possible. In a real-world scenario, we highly suggestion following standard web practices for form design, including labels for accessibility, and client-side data validation.</p> <p>For all the Advanced Donation Form examples, I've split the grouped the content by language - HTML, CSS, or JS; however, when using the code in the Advanced Donation Form Part, the code is combined into a single textarea. Please be certain to wrap the content with appropriate <code>&lt;script&gt;</code> or <code>&lt;style&gt;</code> tag.</p> <h3 id="example-barebones">Barebones Example</h3> <p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields. For this example we've included no styling or error handling, other than displaying a message in the console. I've also hard-coded the designation and amount fields.</p> <p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID. In the examples below, we dynamically find this ID. You could hard-code this value if you prefer. The technique below assumes there's only one Advanced Donation Form Part per page.</p> <ul class="nav nav-tabs"> <li class="active"><a href="#example-barebones-html" data-toggle="tab">HTML</a></li> <li><a href="#example-barebones-js" data-toggle="tab">JS</a></li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-barebones-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl&gt;</span>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Blackbaud Internet Solutions | Developer Guide | Advanced Donation Form</title> <link rel="icon" href="/bbis/assets/img/favicon.ico" type="image/ico"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="stylesheet" href="/bbis/assets/css/combine.site.css?v=2019-05-03-20:30:10"> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-2418840-40', 'auto'); ga('send', 'pageview'); </script> </head> <body class="layout-compress section-guide subsection-advanced-donation-form"> <nav class="navbar" role="navigation" id="top"> <div class="container"> <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bb-navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="/bbis/" class="navbar-brand"> <img src="/bbis/assets/img/logo-bbis.png" alt="Blackbaud Internet Solutions" class="img-responsive" /> </a> </div> <!-- navbar-header --> <div class="collapse navbar-collapse" id="bb-navbar"> <ul class="nav navbar-nav navbar-right"> <li > <a href="/bbis/start/"> Getting Started </a> </li> <li class="active"> <a href="/bbis/guide/"> Developer Guide </a> </li> <li > <a href="/bbis/reference/"> Technical Reference </a> </li> <li class=""> <a href="/bbis/code/"> Code Samples </a> </li> <li > <a href="/bbis/help/"> <i class="fa fa-fw fa-question-circle hidden-xs"></i> <span class="visible-xs-inline">Help</span> </a> </li> </ul> </div> <!-- .navbar-collapse --> </div> <!-- .container --> </nav> <!-- .navbar.navbar-inverse --> <div class="content"> <div class="container"> <div class="row"> <div class="col-md-3 hidden-xs hidden-sm"> <div class="sidebar"> <ul class="nav nav-pills nav-stacked nav-sidebar"> <!-- Ridiculous Bootstrap Scrollspy bug that required this nested linkage to function properly --> <li class="hidden"> <a href="#top">Top</a> <ul class="nav"> <li> <a href="#top">Top</a> </li> </ul> </li> <li class="back-to back-to-section"> <a href="/bbis/guide/"> Developer Guide </a> </li> <li class=" active scrollspy-start "> <a href="/bbis/guide/advanced-donation-form/">Advanced Donation Form</a> <ul class="nav"> <li> <a href="#setup">Setup</a> </li> <li> <a href="#example-barebones">Example - Barebones</a> </li> <li> <a href="#example-payment-2-0">Example - Payment 2.0</a> </li> <li> <a href="#example-pledge-installments">Example - Pledge Installments</a> </li> <li> <a href="#example-country-and-state">Example - Country and State</a> </li> <li> <a href="#example-recurrence">Example - Recurrence</a> </li> <li> <a href="#example-tribute">Example - Tribute</a> </li> <li> <a href="#example-consent">Example - Consent</a> </li> <li> <a href="#example-secure-payments">Example - Blackbaud Secure Payments</a> </li> <li> <a href="#example-complete">Example - Complete</a> </li> <li> <a href="#adf-generator">ADF Generator</a> </li> </ul> </li> <li class=""> <a href="/bbis/guide/blackbaud-secure-payments/">Blackbaud Secure Payments</a> </li> <li class=""> <a href="/bbis/guide/custom-content-parts/">Custom Content Parts</a> </li> <li class=""> <a href="/bbis/guide/custom-framework-parts/">Custom Framework Parts</a> </li> <li class=""> <a href="/bbis/guide/custom-handlers/">Custom Handlers</a> </li> <li class=""> <a href="/bbis/guide/user-imports/">User Imports</a> </li> <li class=""> <a href="/bbis/guide/responsive-design/">Responsive Design</a> </li> <li class="back-to back-to-top"> <a href="#top" class=""> <i class="fa fa-caret-square-o-up"></i> </a> </li> </ul> </div> </div> <!-- .col-md-3 --> <div class="col-md-9 readability"> <h2 id="setup">Advanced Donation Form</h2> <p>The Advanced Donation Form Part and accompanying REST APIs were released in version 3.0 of BBIS. They allow completely custom interfaces to be created for the donation experience, relaying the necessary information to the backend via the REST API or JavaScript SDK. For a complete list of possible options, be sure to visit the <a href="/bbis/reference/rest/#donationapi">technical reference</a> for more information.</p> <p>All the examples below expect a page with a configured instance of the Advanced Donation Form Part on it. It's also important the examples below are meant to be as simple and straight-forward as possible. In a real-world scenario, we highly suggestion following standard web practices for form design, including labels for accessibility, and client-side data validation.</p> <p>For all the Advanced Donation Form examples, I've split the grouped the content by language - HTML, CSS, or JS; however, when using the code in the Advanced Donation Form Part, the code is combined into a single textarea. Please be certain to wrap the content with appropriate <code>&lt;script&gt;</code> or <code>&lt;style&gt;</code> tag.</p> <h3 id="example-barebones">Barebones Example</h3> <p>In our first example, we'll create a very barebones example of a donation form, supplying only the required fields. For this example we've included no styling or error handling, other than displaying a message in the console. I've also hard-coded the designation and amount fields.</p> <p class="alert alert-warning"><span class="label label-warning">Important</span> The DonationService constructor requires the Advanced Donation Form Part ID. In the examples below, we dynamically find this ID. You could hard-code this value if you prefer. The technique below assumes there's only one Advanced Donation Form Part per page.</p> <ul class="nav nav-tabs"> <li class="active"><a href="#example-barebones-html" data-toggle="tab">HTML</a></li> <li><a href="#example-barebones-js" data-toggle="tab">JS</a></li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-barebones-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl&gt;</span>
   <span class="nt">&lt;dt&gt;</span>First Name<span class="nt">&lt;/dt&gt;</span>
   <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"first-name"</span> <span class="nt">/&gt;&lt;/dd&gt;</span>
 
@@ -150,7 +150,356 @@
     <span class="p">});</span>
     
   <span class="p">});</span>
-<span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div> </div> </div> <p class="alert alert-info"><span class="label label-info">Note</span> The <a href="/bbis/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="/bbis/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p> <h3 id="example-pledge-installments">Pledge Installments Example</h3> <p>Pledge installments are the payment donor makes for a pledge according to a defiend time schedule. The example includes the HTML required to display input fields to capture required parameters for pledge installment endpoints.</p> <ul class="nav nav-tabs"> <li class="active"> <a href="#example-pledge-installments-html" data-toggle="tab">HTML</a> </li> <li> <a href="#example-pledge-installments-js" data-toggle="tab">JS</a> </li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-pledge-installments-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"donationInformation"</span><span class="nt">&gt;</span>
+<span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div> </div> </div> <p class="alert alert-info"><span class="label label-info">Note</span> The <a href="/bbis/reference/javascript/#donationservice">DonationService</a> attempts to redirect to the BBSPCheckoutUri or PaymentPageUri if either of them exist (in that order) after a successful callback from the <a href="/bbis/reference/javascript/#donationservice-createdonation">createDonation</a> method.</p> ﻿<h3 id="example-payment-checkout">Payment Checkout Example</h3> <p>This feature can be used to configure the payment checkout pop up on ADF by using the payment's <a href="/bbis/reference/rest/#checkoutapi">Checkout endpoints</a>. This functionality is wrapped under <a href="/bbis/reference/javascript/#donationservice">Donation Service</a>, as shown in the example. This will enhance the end user experience and provide better troubleshooting around the missing transactions. </p> <ul class="nav nav-tabs"> <li class="active"> <a href="#example-payment-checkout-html" data-toggle="tab">HTML</a> </li> <li> <a href="#example-payment-checkout-js" data-toggle="tab">JS</a> </li> <li> <a href="#example-payment-checkout-css" data-toggle="tab">CSS</a> </li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-payment-checkout-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- This div is for showing the layover after the payment completion and before the confirmation page(use when payment checkout pop up is configured)--&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"bbspLoadingOverlay"</span> <span class="na">class=</span><span class="s">"bbspLoadingOverlay"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div> </div> <div class="tab-pane" id="example-payment-checkout-js"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+
+
+ <span class="c1">// Create an instance of the DonationService</span>
+  <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BLACKBAUD</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">DonationService</span><span class="p">(</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.BBDonationApiContainer'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'partid'</span><span class="p">)),</span>
+         <span class="nx">serverMonth</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">parents</span><span class="p">(</span><span class="s2">".BBDonationApiContainer"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"serverMonth"</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nx">serverDay</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">parents</span><span class="p">(</span><span class="s2">".BBDonationApiContainer"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"serverDay"</span><span class="p">),</span>
+         <span class="nx">serverYear</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">parents</span><span class="p">(</span><span class="s2">".BBDonationApiContainer"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"serverYear"</span><span class="p">),</span>
+         <span class="nx">ServerDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">serverYear</span><span class="p">,</span> <span class="nx">serverMonth</span><span class="p">,</span> <span class="nx">serverDay</span><span class="p">);</span>
+		 
+  <span class="kd">var</span> <span class="nx">donationAmount</span> <span class="o">=</span> <span class="nx">getDonationAmount</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">numberOfInstallments</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#number-of-installments"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">installmentAmount</span> <span class="o">=</span> <span class="nx">ds</span><span class="p">.</span><span class="nx">getRecurringGiftInstallmentAmount</span><span class="p">(</span><span class="nx">donationAmount</span><span class="p">,</span> <span class="nx">numberOfInstallments</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">installmentAmt</span> <span class="o">=</span> <span class="nx">installmentAmount</span><span class="p">;</span>
+
+  <span class="c1">//Create the donation object we'll send</span>
+  <span class="c1">//In order to simplify our examples, some of this information is hard-coded.</span>
+  <span class="kd">var</span> <span class="nx">donation</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">MerchantAccountId</span><span class="p">:</span> <span class="s1">'00000000-0000-0000-0000-000000000000'</span><span class="p">,</span>
+  <span class="na">BBSPReturnUri</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span>
+  <span class="na">BBSPTemplateSitePageId</span><span class="p">:</span> <span class="mi">000</span><span class="p">,</span>
+  <span class="na">PartId</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.BBDonationApiContainer'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'partid'</span><span class="p">)</span>
+  <span class="p">};</span>
+
+  <span class="c1">// Create our success handler</span>
+  <span class="kd">var</span> <span class="nx">success</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">returnedDonation</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">returnedDonation</span><span class="p">);</span>
+  <span class="p">};</span>   
+
+  <span class="c1">// Create our error handler</span>
+  <span class="kd">var</span> <span class="nx">error</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">returnedErrors</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Error!'</span><span class="p">);</span>
+  <span class="p">};</span>
+ 
+<span class="c1">//Checkout Payment popup is loaded in this form.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'form[data-formtype="bbCheckout"]'</span><span class="p">).</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="s1">'&lt;form method=</span><span class="se">\'</span><span class="s1">get</span><span class="se">\'</span><span class="s1"> id=</span><span class="err">\</span><span class="s1">"paymentForm</span><span class="err">\</span><span class="s1">" data-formtype=</span><span class="se">\'</span><span class="s1">bbCheckout</span><span class="se">\'</span><span class="s1"> data-disable-submit=</span><span class="se">\'</span><span class="s1">false</span><span class="se">\'</span><span class="s1"> novalidate&gt;&lt;</span><span class="err">\</span><span class="s1">/form&gt;'</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#paymentForm"</span><span class="p">).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span> <span class="nx">paymentComplete</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// prevent form from refreshing and show the transaction token</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="p">});</span>
+
+	
+	 <span class="kd">var</span>  <span class="nx">SrtDt</span><span class="p">,</span> <span class="nx">publicKey</span><span class="p">,</span> <span class="nx">donationData</span><span class="p">,</span> <span class="nx">EditorContent</span><span class="p">,</span> <span class="nx">ServerDate</span><span class="p">,</span>
+        <span class="nx">checkoutGenericError</span> <span class="o">=</span> <span class="s2">"There was an error while performing the operation.The page will be refreshed"</span><span class="p">;</span>
+		
+	<span class="c1">//return the donation amount	</span>
+	<span class="kd">function</span> <span class="nx">getDonationAmount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#amtOther"</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">"checked"</span><span class="p">))</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtAmount"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"[name='radioAmount']:checked"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+	
+	 <span class="c1">//Handle Generic error </span>
+    <span class="kd">function</span> <span class="nx">handleError</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#bbspLoadingOverlay"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">checkoutGenericError</span><span class="p">);</span>
+        <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//#region CCCheckoutPayment</span>
+
+	<span class="c1">//return which payment method is selected on the page</span>
+    <span class="kd">function</span> <span class="nx">GetPaymentType</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">paymentMethod</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"[name='paymentMethod']:checked"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nx">paymentMethod</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="c1">//set the public key by using public key service that is used to open the checkout pop up</span>
+    <span class="kd">function</span> <span class="nx">GetPublicKey</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="nx">onPublicKeySuccess</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">reply</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">publicKey</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">reply</span><span class="p">.</span><span class="nx">Data</span><span class="p">).</span><span class="nx">PublicKey</span><span class="p">;</span>
+    <span class="p">};</span>
+    
+	<span class="nx">onPublicKeyFailure</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">};</span>
+    
+	<span class="nx">ds</span><span class="p">.</span><span class="nx">getCheckoutPublicKey</span><span class="p">(</span><span class="nx">onPublicKeySuccess</span><span class="p">,</span> <span class="nx">onPublicKeyFailure</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+
+	<span class="c1">//get all the information that is configured on the editor used to open the checkout pop up</span>
+    <span class="kd">function</span> <span class="nx">GetEditorInformation</span><span class="p">(</span><span class="nx">partId</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="nx">onEditorContentSuccess</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">onSuccess</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">donation</span><span class="p">.</span><span class="nx">MerchantAccountId</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">MerchantAccountID</span><span class="p">;</span>
+            <span class="nx">EditorContent</span> <span class="o">=</span> <span class="nx">content</span><span class="p">;</span>
+        <span class="p">};</span>
+
+        <span class="nx">onEditorContentFailure</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">onFail</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">};</span>
+
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">getADFEditorContentInformation</span><span class="p">(</span><span class="nx">partId</span><span class="p">,</span> <span class="nx">onEditorContentSuccess</span><span class="p">,</span> <span class="nx">onEditorContentFailure</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+
+    <span class="kd">function</span> <span class="nx">getUrlVars</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">vars</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">hash</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">hashes</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">'&amp;'</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">hashes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">hash</span> <span class="o">=</span> <span class="nx">hashes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s1">'='</span><span class="p">);</span>
+            <span class="nx">vars</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">hash</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="nx">vars</span><span class="p">[</span><span class="nx">hash</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">vars</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="c1">//this is the function that calls the payment api to open the checkout pop up with all the parameters</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">makePayment</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">opened</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">checkout</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SecureCheckout</span><span class="p">(</span><span class="nx">handleCheckoutComplete</span><span class="p">,</span> <span class="nx">handleCheckoutError</span><span class="p">,</span> <span class="nx">handleCheckoutCancelled</span><span class="p">,</span> <span class="nx">handleCheckoutLoaded</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">donor</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Donor</span><span class="p">;</span>
+        <span class="nx">donationData</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"key"</span><span class="p">:</span> <span class="nx">publicKey</span><span class="p">,</span>
+            <span class="s1">'Amount'</span><span class="p">:</span> <span class="p">(</span><span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#recMonthly"</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">"checked"</span><span class="p">))</span> <span class="p">?</span> <span class="nx">installmentAmt</span> <span class="p">:</span> <span class="nx">getDonationAmount</span><span class="p">(),</span>
+            <span class="s1">'UseCaptcha'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">RecaptchRequired</span><span class="p">,</span>
+            <span class="s1">'BillingAddressCity'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">City</span><span class="p">,</span>
+            <span class="s1">'BillingAddressCountry'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">Country</span><span class="p">,</span>
+            <span class="s1">'BillingAddressLine'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">StreetAddress</span><span class="p">,</span>
+            <span class="s1">'BillingAddressPostCode'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">PostalCode</span><span class="p">,</span>
+            <span class="s1">'BillingAddressState'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">State</span><span class="p">,</span>
+            <span class="s1">'BillingAddressEmail'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">EmailAddress</span><span class="p">,</span>
+            <span class="s1">'BillingAddressFirstName'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">FirstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span><span class="nx">donor</span><span class="p">.</span><span class="nx">MiddleName</span><span class="p">,</span>
+            <span class="s1">'BillingAddressLastName'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">LastName</span><span class="p">,</span>
+            <span class="s1">'Cardholder'</span><span class="p">:</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">FirstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">donor</span><span class="p">.</span><span class="nx">LastName</span><span class="p">,</span>
+            <span class="s1">'ClientAppName'</span><span class="p">:</span> <span class="s1">'BBIS'</span><span class="p">,</span>
+            <span class="s1">'MerchantAccountId'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">MerchantAccountID</span><span class="p">,</span>
+            <span class="s1">'IsEmailRequired'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s1">'PrimaryColor'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">PrimaryFontColor</span><span class="p">,</span>
+            <span class="s1">'SecondaryColor'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">SecondaryFontColor</span><span class="p">,</span>
+            <span class="s1">'FontFamily'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">FontType</span><span class="p">,</span>
+            <span class="s1">'IsNameVisible'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="s1">'UseVisaCheckout'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">UseVisaPass</span><span class="p">,</span>
+          <span class="s1">'UseMasterpass'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">UseMasterPass</span><span class="p">,</span>
+          <span class="s1">'UseApplePay'</span><span class="p">:</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">UseApplePay</span><span class="p">,</span>
+        <span class="p">};</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Gift</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">Recurrence</span> <span class="p">)</span>
+		<span class="p">{</span>
+			<span class="nx">donationData</span><span class="p">.</span><span class="nx">CardToken</span> <span class="o">=</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">DataKey</span><span class="p">;</span>
+		<span class="p">}</span>
+
+        <span class="c1">//check server date and start date here -- if same then make transaction today</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Gift</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">Recurrence</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">data</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">Recurrence</span><span class="p">.</span><span class="nx">ProcessNow</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">checkout</span><span class="p">.</span><span class="nx">processStoredCard</span><span class="p">(</span><span class="nx">donationData</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+
+            <span class="k">return</span> <span class="nx">checkout</span><span class="p">.</span><span class="nx">processCardNotPresent</span><span class="p">(</span><span class="nx">donationData</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+	<span class="c1">//to check for recurring gift that is to be processed today or not (this is check for call stored card payment api)</span>
+    <span class="kd">function</span> <span class="nx">isProcessNow</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">recStartDate</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#start-date"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+        <span class="kd">var</span> <span class="nx">frequency</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#frequency"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">dayOfMonth</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'#day-of-month'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">dayOfWeek</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#day-of-week"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'#month'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+        <span class="kd">var</span> <span class="nx">startDateIsTodayDate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">recurrrentStartDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">recStartDate</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">isProcessedNow</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">serverDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">ServerDate</span><span class="p">);</span>
+
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="nx">recurrrentStartDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span> <span class="o">===</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+            <span class="nx">recurrrentStartDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">===</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+            <span class="nx">recurrrentStartDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">===</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">startDateIsTodayDate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">//Weekly Frequency</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">frequency</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">isProcessedNow</span> <span class="o">=</span> <span class="nx">startDateIsTodayDate</span> <span class="o">&amp;&amp;</span> <span class="nx">dayOfWeek</span> <span class="o">==</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="c1">//Mothly and Quarterly frequency</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">frequency</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">||</span> <span class="nx">frequency</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">isProcessedNow</span> <span class="o">=</span> <span class="nx">startDateIsTodayDate</span> <span class="o">&amp;&amp;</span> <span class="nx">dayOfMonth</span> <span class="o">==</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="c1">//Annually frequency</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">frequency</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nx">isProcessedNow</span> <span class="o">=</span>
+                <span class="nx">startDateIsTodayDate</span>
+                <span class="o">&amp;&amp;</span> <span class="nx">dayOfMonth</span> <span class="o">==</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+                <span class="o">&amp;&amp;</span> <span class="nx">month</span> <span class="o">==</span> <span class="nx">serverDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">//Every 4 weeks</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">frequency</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">isProcessedNow</span> <span class="o">=</span> <span class="nx">startDateIsTodayDate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">isProcessedNow</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">isProcessedNow</span><span class="p">;</span>
+
+
+    <span class="p">};</span>
+
+	<span class="c1">//when checkout popup is successfully loaded</span>
+    <span class="nx">handleDonationCreated</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">orderID</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Data</span><span class="p">).</span><span class="nx">OrderId</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="c1">//when checkout popup is fail to load</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleDonationCreateFailed</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">handleError</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">}</span>
+
+	<span class="c1">//when the payment is successfully completed and we have to show the confirnmation screen</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handlePaymentComplete</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#bbspLoadingOverlay"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="c1">//confirmation message show here</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">".form"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">".confirmation"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">".confirmation"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Data</span><span class="p">).</span><span class="nx">confirmationHTML</span><span class="p">);</span>
+    <span class="p">}</span>
+
+	<span class="c1">//this function called when the checkout popup is loaded on a page</span>
+    <span class="kd">function</span> <span class="nx">handleCheckoutLoaded</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">opened</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nx">opened</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#bbCheckoutPaymentIframe"</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s1">'src'</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">tid</span> <span class="o">=</span> <span class="nx">getUrlVars</span><span class="p">(</span><span class="nx">url</span><span class="p">)[</span><span class="s2">"t"</span><span class="p">];</span>
+
+            <span class="c1">//save transaction id in global variable. Will be used throughout the transaction</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">transactionIDl</span> <span class="o">=</span> <span class="nx">tid</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">tid</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">TokenId</span> <span class="o">=</span> <span class="nx">tid</span><span class="p">;</span>
+                <span class="nx">ds</span><span class="p">.</span><span class="nx">checkoutDonationCreate</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">handleDonationCreated</span><span class="p">,</span> <span class="nx">handleDonationCreateFailed</span><span class="p">);</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="c1">//when we cancel the payment pop up hen unbind all the binded events on checkout popup</span>
+    <span class="kd">function</span> <span class="nx">UnBindPaymentCheckoutEvents</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">unbind</span><span class="p">(</span><span class="s2">"checkoutComplete"</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">unbind</span><span class="p">(</span><span class="s2">"checkoutLoaded"</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">unbind</span><span class="p">(</span><span class="s2">"checkoutError"</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">unbind</span><span class="p">(</span><span class="s2">"checkoutCancel"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+	<span class="c1">//this is called when the payment is completed</span>
+    <span class="kd">function</span> <span class="nx">handleCheckoutComplete</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">tranToken</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#bbspLoadingOverlay"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">tranToken</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">data</span><span class="p">.</span><span class="nx">TokenId</span> <span class="o">=</span> <span class="nx">tranToken</span><span class="p">;</span>
+            <span class="nx">ds</span><span class="p">.</span><span class="nx">checkoutDonationComplete</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">handlePaymentComplete</span><span class="p">,</span> <span class="nx">handleDonationCreateFailed</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">handleError</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="c1">//call when there is any error while doing the payment on checkout pop up</span>
+    <span class="nx">handleCheckoutError</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">errorMsg</span><span class="p">,</span> <span class="nx">errorCode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">handleError</span><span class="p">(</span><span class="nx">errorMsg</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Cancel Donation if user close checkout popup</span>
+    <span class="kd">function</span> <span class="nx">handleCheckoutCancelled</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nx">ds</span><span class="p">.</span><span class="nx">checkoutDonationCancel</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">onSuccess</span><span class="p">,</span> <span class="nx">onFail</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//do not store this error. Already stored from server side</span>
+        <span class="p">}</span>
+        <span class="nx">UnBindPaymentCheckoutEvents</span><span class="p">();</span>
+    <span class="p">}</span>
+
+	<span class="c1">//this function call when we click on donate button</span>
+	<span class="kd">function</span> <span class="nx">sendData</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">EditorContent</span> <span class="o">&amp;&amp;</span> <span class="nx">EditorContent</span><span class="p">.</span><span class="nx">MACheckoutSupported</span> <span class="o">&amp;&amp;</span> <span class="nx">GetPaymentType</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ProcessCCPayment</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+	
+	 <span class="c1">//use this method for credit card payment through popup</span>
+    <span class="kd">function</span> <span class="nx">ProcessCCPayment</span><span class="p">()</span> <span class="p">{</span>
+        
+        <span class="nx">data</span> <span class="o">=</span> <span class="nx">donation</span><span class="p">;</span>
+
+            <span class="nx">onValidationSuccess</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">makePayment</span><span class="p">();</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="nx">onValidationFailed</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+        <span class="p">};</span>
+
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">validateDonationRequest</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">onValidationSuccess</span><span class="p">,</span> <span class="nx">onValidationFailed</span><span class="p">);</span>
+
+    <span class="p">}</span>
+	
+	<span class="c1">//Call some functions       </span>
+        <span class="nx">GetEditorInformation</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'.BBDonationApiContainer'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'partid'</span><span class="p">));</span>
+        <span class="nx">GetPublicKey</span><span class="p">();</span>
+		
+		
+	<span class="c1">// Attach our event listener to the donate button</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.btn-donate'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      
+      <span class="c1">// Stop the button from submitting the form</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> 
+	  <span class="nx">sendData</span><span class="p">();</span>
+	  <span class="p">});</span>
+		
+<span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div> </div> <div class="tab-pane" id="example-payment-checkout-css"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* css other than bootstrap */</span>
+<span class="nc">.bbspLoadingOverlay</span> <span class="p">{</span>
+<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+<span class="nl">z-index</span><span class="p">:</span> <span class="m">9999999</span><span class="p">;</span>
+<span class="nl">background-color</span><span class="p">:</span> <span class="n">grey</span><span class="p">;</span>
+<span class="nl">opacity</span><span class="p">:</span> <span class="m">0.8</span><span class="p">;</span>
+<span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> </div> </div> <h3 id="example-pledge-installments">Pledge Installments Example</h3> <p>Pledge installments are the payment donor makes for a pledge according to a defiend time schedule. The example includes the HTML required to display input fields to capture required parameters for pledge installment endpoints.</p> <ul class="nav nav-tabs"> <li class="active"> <a href="#example-pledge-installments-html" data-toggle="tab">HTML</a> </li> <li> <a href="#example-pledge-installments-js" data-toggle="tab">JS</a> </li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-pledge-installments-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"donationInformation"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;legend&gt;</span>
 		<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"BBListingHeading DonationListingHeading"</span><span class="nt">&gt;</span>Gift Information<span class="nt">&lt;/span&gt;</span>
 	<span class="nt">&lt;/legend&gt;</span>
@@ -951,7 +1300,492 @@
   <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.6</span><span class="p">;</span>
   <span class="nl">top</span><span class="p">:</span> <span class="m">0%</span><span class="p">;</span>
   <span class="nl">left</span><span class="p">:</span> <span class="m">0%</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div> </div> <h3 id="example-secure-payments">Using Blackbaud Secure Payments</h3> <p>Integration with the Blackbaud Secure Payments service has been updated in the Advanced Donation Form.</p> <ul class="nav nav-tabs"> <li class="active"> <a href="#example-secure-payments-html" data-toggle="tab">HTML</a> </li> <li> <a href="#example-secure-payments-js" data-toggle="tab">JS</a> </li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-secure-payments-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl&gt;</span>
+<span class="p">}</span></code></pre></div> </div> ﻿<h3 id="example-direct-debit">Direct Debit Example</h3> <p> This feature can be used to configured the direct debit on ADF by using the payment's using the <a href="/bbis/reference/rest/#donationapi">Donation endpoints.</a></p> <p>Organizations have many donors (especially in international markets) that prefer to give gifts with Direct Debit (also known as ACH). To build parity with our current Advance Donation Form (ADF), we need to allow organizations to accept donations via direct debit on ADF. This functionality is wrapped under <a href="/bbis/reference/javascript/#donationservice">Donation Service</a>, as shown in the example.</p> <ul class="nav nav-tabs"> <li class="active"> <a href="#example-direct-debit-html" data-toggle="tab">HTML</a> </li> <li> <a href="#example-direct-debit-js" data-toggle="tab">JS</a> </li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-direct-debit-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--This div is use to show the direct debit section on a page--&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"directDebitSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span> <span class="na">id=</span><span class="s">"tr_DDPDFInstructions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;&lt;i&gt;</span>In order to set up a Direct Debit instruction
+                    online, you must be the account holder of a personal bank or building society account.
+                    If you are not the only required signatory on your account or you would rather send
+                    us a paper version please
+                    <span class="nt">&lt;a</span> <span class="na">ID=</span><span class="s">"lnkDDPDF"</span> <span class="na">title=</span><span class="s">"Direct Debit PDF"</span> <span class="na">href=</span><span class="s">"DirectDebit.ddpdf"</span>
+                        <span class="na">Target=</span><span class="s">"_blank"</span> <span class="na">rel=</span><span class="s">"noopener noreferrer"</span><span class="nt">&gt;</span>click here<span class="nt">&lt;/a&gt;&lt;/i&gt;</span>
+	            <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblFinancialLBL"</span><span class="nt">&gt;</span>Financial Institution:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtFinancialInstitution"</span> <span class="na">MaxLength=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblBranchName"</span><span class="nt">&gt;</span>Branch Name:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtBranchName"</span> <span class="na">MaxLength=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span> <span class="na">id=</span><span class="s">"tr_BankingSystemType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblBankingSystemType"</span><span class="nt">&gt;</span>Banking System Type:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;select</span> <span class="na">ID=</span><span class="s">"ddlBankingSystemType"</span><span class="nt">&gt;&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblRoutNumLBL"</span><span class="nt">&gt;</span>Routing Number:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtRoutingNumber"</span> <span class="na">MaxLength=</span><span class="s">"9"</span> <span class="nt">/&gt;</span>
+               <span class="c">&lt;!-- &lt;asp:CustomValidator ID="cvRoutingNumber"  ClientValidationFunction="RoutingNumberClientValidation"  /&gt;   --&gt;</span> 
+  
+                <span class="nt">&lt;a</span> <span class="na">ID=</span><span class="s">"lnk_BankHelp"</span> <span class="na">title=</span><span class="s">"Display help details in another window"</span> <span class="na">style=</span><span class="s">"cursor:pointer;"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/help-32_1.gif"</span> <span class="na">alt=</span><span class="s">"help"</span> <span class="na">title=</span><span class="s">"Help"</span> <span class="na">style=</span><span class="s">"height:32px;width:36px;vertical-align:bottom; border:0;"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span> <span class="na">id=</span><span class="s">"tr_CanadaTransitNum"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblCanadaTransitNum"</span><span class="nt">&gt;</span>Transit Number:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtCanTransitNumber"</span> <span class="na">MaxLength=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblAccountNumber"</span><span class="nt">&gt;</span>Account Number:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"spn_AccountNo"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtAccountNumber"</span> <span class="na">MaxLength=</span><span class="s">"20"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"spn_AccountNoNZ"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtAccountNumberNZ"</span> <span class="na">Width=</span><span class="s">"30"</span> <span class="na">MaxLength=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+					<span class="nt">&lt;span&gt;</span>-<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtSuffixNZ"</span> <span class="na">Width=</span><span class="s">"20"</span> <span class="na">MaxLength=</span><span class="s">"3"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblSuffixNZ"</span> <span class="na">Visible=</span><span class="s">"false"</span><span class="nt">&gt;&lt;/label&gt;</span>
+                <span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span> <span class="na">id=</span><span class="s">"tr_AccountType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblAccountType"</span><span class="nt">&gt;</span>Account Type:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;select</span> <span class="na">ID=</span><span class="s">"ddlAccountType"</span><span class="nt">&gt;&lt;/select&gt;</span>
+        
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblAccountHolderName"</span><span class="nt">&gt;</span>Account Holder's Name:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ID=</span><span class="s">"txtAccountHolder"</span> <span class="na">MaxLength=</span><span class="s">"50"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span> <span class="na">id=</span><span class="s">"tr_CurrentDate"</span> <span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblDebitDate"</span><span class="nt">&gt;</span>Date:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lbl_CurrentDate"</span><span class="nt">&gt;&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"formrow"</span> <span class="na">id=</span><span class="s">"tr_OrigNumber"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lblOriginatorID"</span><span class="nt">&gt;</span>Service user's ID number:<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lbl_OrigNumber"</span><span class="nt">&gt;&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tr_DDBankInstructions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>
+                    <span class="nt">&lt;label&gt;&lt;b&gt;</span>Instruction to your Bank or Building Society<span class="nt">&lt;/b&gt;&lt;/label&gt;</span>
+                <span class="nt">&lt;/p&gt;</span>
+                                   <span class="nt">&lt;label</span> <span class="na">ID=</span><span class="s">"lbl_DDBankInstructions"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;i&gt;</span>Please pay %1 Direct Debits from the account detailed in this Instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this Instruction may remain with %1 and, if so, details will be passed electronically to my Bank/Building Society.<span class="nt">&lt;/i&gt;</span>
+					<span class="nt">&lt;/label&gt;</span>						
+                                
+                    <span class="nt">&lt;label&gt;</span>
+<span class="nt">&lt;i&gt;</span>Banks and Building Societies may not accept Direct Debit Instructions for some types of account.<span class="nt">&lt;/i&gt;</span>
+                    <span class="nt">&lt;/label&gt;</span>
+                
+            <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tr_DDInstructions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images\dlogo.gif"</span> <span class="na">alt=</span><span class="s">"Direct Debit"</span> <span class="na">title=</span><span class="s">"Direct Debit"</span> <span class="na">style=</span><span class="s">"text-align: center;"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">ID=</span><span class="s">"lnk_DDGuarantee"</span> <span class="na">title=</span><span class="s">"Display the Direct Debit Guarantee in another window"</span> <span class="na">style=</span><span class="s">"cursor:pointer;color:blue;text-decoration:underline;"</span><span class="nt">&gt;</span>The Direct Debit Guarantee<span class="nt">&lt;/a&gt;</span>
+			<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tr_DDPDFInstructions2"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">colspan=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>
+<span class="nt">&lt;i&gt;</span>By clicking 'Donate Now' you are confirming that you are the account holder and that you are the only person required to authorise debits from this account.<span class="nt">&lt;/i&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span></code></pre></div> </div> <div class="tab-pane" id="example-direct-debit-js"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Let's be good developers and not pollute the global namespace</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+
+ <span class="c1">// Let's make sure the DOM is ready</span>
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Create an instance of the DonationService</span>
+  <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BLACKBAUD</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">DonationService</span><span class="p">(</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.BBDonationApiContainer'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'partid'</span><span class="p">));</span>
+     
+ 
+   <span class="c1">//Create the donation object we'll send</span>
+  <span class="c1">//In order to simplify our examples, some of this information is hard-coded.</span>
+  <span class="kd">var</span> <span class="nx">donation</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">MerchantAccountId</span><span class="p">:</span> <span class="s1">'00000000-0000-0000-0000-000000000000'</span><span class="p">,</span>
+  <span class="na">BBSPReturnUri</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span>
+  <span class="na">BBSPTemplateSitePageId</span><span class="p">:</span> <span class="mi">000</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="c1">// Create our success handler</span>
+  <span class="kd">var</span> <span class="nx">success</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">returnedDonation</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">returnedDonation</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">returnedDonation</span><span class="p">.</span><span class="nx">Donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">PaymentMethod</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">+</span> <span class="s2">"?t="</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">Donation</span><span class="p">.</span><span class="nx">Id</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">};</span>   
+
+  <span class="c1">// Create our error handler</span>
+  <span class="kd">var</span> <span class="nx">error</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">returnedErrors</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Error!'</span><span class="p">);</span>
+  <span class="p">};</span>
+  
+	<span class="c1">//Show and Hide directdebit div on the page</span>
+ <span class="kd">function</span> <span class="nx">showHideDirectDebitDiv</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#paymentDirectDebit"</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">"checked"</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#directDebitInformation"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+      <span class="nx">hideAndVisible_BankingTypeField</span><span class="p">();</span>
+      <span class="nx">addCountryHandler</span><span class="p">();</span>
+     <span class="p">}</span>
+     <span class="k">else</span> <span class="p">{</span>
+       <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#directDebitInformation"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+	<span class="c1">//Call the function when we have to hide and visible the banking type field</span>
+    <span class="kd">function</span> <span class="nx">hideAndVisible_BankingTypeField</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'[id="ddlBankingSystemType"] option'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#tr_BankingSystemType'</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">'display'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#tr_BankingSystemType'</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">'display'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+	<span class="c1">//Use to bind the banking types that is configured in CRM</span>
+    <span class="kd">function</span> <span class="nx">bindDirectDebitData</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">donationService</span><span class="p">.</span><span class="nx">getBankingTypeData</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#ddlBankingSystemType"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;option&gt;&lt;/option&gt;"</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="s2">"Abbreviation"</span><span class="p">]).</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="s2">"Description"</span><span class="p">]));</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+
+        <span class="nx">donationService</span><span class="p">.</span><span class="nx">getAccountTypeData</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#ddlAccountType"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;option&gt;&lt;/option&gt;"</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="s2">"Id"</span><span class="p">]).</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="s2">"Description"</span><span class="p">]));</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+
+        <span class="nx">donationService</span><span class="p">.</span><span class="nx">getOriginIdAndTime</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">"#lbl_CurrentDate"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="s2">"Time"</span><span class="p">]);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">"#lbl_OrigNumber"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="s2">"OriginId"</span><span class="p">]);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+	<span class="c1">//this function is used to select the banking type on the basis of country dropdown change</span>
+    <span class="kd">function</span> <span class="nx">addCountryHandler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">bankingSystemType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="ddlBankingSystemType"]'</span><span class="p">),</span> <span class="nx">addrCtl</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"[id='country'] :selected"</span><span class="p">),</span> <span class="nx">selectBankingOption</span><span class="p">,</span> <span class="nx">exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">bankingOptions</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">bankingSystemType</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingSystemType</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">bankingOptions</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="ddlBankingSystemType"] option'</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">bankingOptions</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">bankingOptions</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">validateCountry</span><span class="p">(</span><span class="nx">addrCtl</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">NZ</span><span class="p">)</span> <span class="o">||</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">addrCtl</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">AUS</span><span class="p">)))</span> <span class="p">{</span>
+                        <span class="nx">selectBankingOption</span> <span class="o">=</span> <span class="s2">"Aus_NZ"</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">addrCtl</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">UK</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="nx">selectBankingOption</span> <span class="o">=</span> <span class="s2">"UK"</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">addrCtl</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">CAD</span><span class="p">)</span> <span class="o">||</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">addrCtl</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">USA</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="nx">selectBankingOption</span> <span class="o">=</span> <span class="s2">"USA"</span><span class="p">;</span>
+                    <span class="p">}</span>
+
+                    <span class="nx">exists</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">!==</span> <span class="nx">bankingSystemType</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'option[value="'</span> <span class="o">+</span> <span class="nx">selectBankingOption</span> <span class="o">+</span> <span class="s1">'"]'</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">exists</span> <span class="o">&amp;&amp;</span> <span class="nx">exists</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">bankingSystemType</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">selectBankingOption</span><span class="p">);</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">bankingSystemType</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s2">"Please Select"</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">hideAndVisible_DirectDebitFields</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+	<span class="c1">//Hide and Visible direct debit fields on the basis of country dropdown and banking type dropdown change</span>
+    <span class="kd">function</span> <span class="nx">hideAndVisible_DirectDebitFields</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">bankingType</span> <span class="o">=</span> <span class="s2">"Please Select"</span><span class="p">,</span> <span class="nx">htmlElement</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">routingNumberTextBoxLabel</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">selectedCountry</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">routingNumberTextBox</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">transitNumberBox</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="nx">routingNumber</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="txtRoutingNumber"]'</span><span class="p">),</span>
+            <span class="nx">transitNumber</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="txtCanTransitNumber"]'</span><span class="p">),</span>
+            <span class="nx">routingNumberLabel</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="lblRoutNumLBL"]'</span><span class="p">),</span>
+            <span class="nx">addressCTL</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"[id='country'] :selected"</span><span class="p">),</span>
+            <span class="nx">bankingSystemLabel</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="lblBankingSystemType"]'</span><span class="p">),</span>
+            <span class="nx">bankingSystemType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="ddlBankingSystemType"] :selected'</span><span class="p">),</span>
+            <span class="nx">accountType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="tr_AccountType"],[id*="DC_AccountType"]'</span><span class="p">),</span>
+            <span class="nx">accountNo</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="spn_AccountNo"]'</span><span class="p">),</span>
+            <span class="nx">accountNoNZ</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="spn_AccountNoNZ"]'</span><span class="p">),</span>
+            <span class="nx">financialInstitution</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="lblFinancialLBL"]'</span><span class="p">),</span>
+            <span class="nx">accountNoLabel</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="lblAccountNumber"]'</span><span class="p">),</span>
+            <span class="nx">routingNumberHelpSymbol</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="lnk_BankHelp"]'</span><span class="p">),</span>
+            <span class="nx">requiredFieldAccountType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="RequiredFieldAccountType"]'</span><span class="p">),</span>
+            <span class="nx">ukFields</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="tr_DDInstructions"], [id="tr_OrigNumber"], [id="tr_CurrentDate"], [id="tr_DDBankInstructions"], [id="tr_DDPDFInstructions"], [id="tr_DDPDFInstructions2"],[id="DC_DDInstructions"],[id="DC_OrigNumber"],[id="DC_CurrentDate"],[id="DC_DDBankInstructions"],[id="DC_DDPDFInstructions"],[id="DC_DDPDFInstructions2"]'</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">routingNumber</span> <span class="o">||</span> <span class="nx">routingNumber</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">bankingSystemType</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingSystemType</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">bankingType</span> <span class="o">=</span> <span class="nx">bankingSystemType</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"Value"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">routingNumber</span> <span class="o">&amp;&amp;</span> <span class="nx">routingNumber</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">routingNumberTextBox</span> <span class="o">=</span> <span class="nx">routingNumber</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">addressCTL</span> <span class="o">&amp;&amp;</span> <span class="nx">addressCTL</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">selectedCountry</span> <span class="o">=</span> <span class="nx">addressCTL</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">routingNumberLabel</span> <span class="o">&amp;&amp;</span> <span class="nx">routingNumberLabel</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">routingNumberTextBoxLabel</span> <span class="o">=</span> <span class="nx">routingNumberLabel</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">transitNumber</span> <span class="o">&amp;&amp;</span> <span class="nx">transitNumber</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">transitNumberBox</span> <span class="o">=</span> <span class="nx">transitNumber</span><span class="p">;</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="tr_CanadaTransitNum"]'</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">accountNo</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+        <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+        <span class="nx">accountNoLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Account Number:"</span><span class="p">);</span>
+        <span class="nx">routingNumberHelpSymbol</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ukFields</span> <span class="o">&amp;&amp;</span> <span class="nx">ukFields</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nx">ukFields</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">'display'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">CAD</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">transitNumberBox</span> <span class="o">&amp;&amp;</span> <span class="nx">transitNumberBox</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"USA"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Institution ID:"</span><span class="p">);</span>
+            <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">);</span>
+            <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+            <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+            <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="tr_CanadaTransitNum"]'</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">!==</span> <span class="s2">"Please Select"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"USA"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Routing Number:"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+                    <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"UK"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Sort Code:"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"6"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                    <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">ukFields</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">ukFields</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">'display'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+                    <span class="p">}</span>
+
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"Europe"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"BIC:"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"11"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+                    <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                    <span class="nx">routingNumberHelpSymbol</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"Aus_NZ"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"BSB Number:"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"6"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                    <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">NZ</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="nx">accountNo</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                        <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+                        <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Bank/Branch No.:"</span><span class="p">);</span>
+                        <span class="nx">accountNoLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Account No./Suffix:"</span><span class="p">);</span>
+                        <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">);</span>
+                        <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"Other"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Bank Code:"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"25"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+                    <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                    <span class="nx">routingNumberHelpSymbol</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Routing Number:"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">);</span>
+                    <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+                    <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+
+                <span class="p">}</span>
+
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">routingNumberTextBoxLabel</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Routing Number:"</span><span class="p">);</span>
+                <span class="nx">routingNumberTextBox</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"maxlength"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">);</span>
+                <span class="nx">accountType</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+                <span class="nx">accountNoNZ</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="c1">//this function is called when we click on help image of reoting number textbox(and it changes on the basis of banking type dropdown change)</span>
+    <span class="kd">function</span> <span class="nx">donationBankHelp</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">sFeatures</span> <span class="o">=</span> <span class="s1">'WIDTH=392px,HEIGHT=400px,RESIZABLE=YES,SCROLLBARS=NO,TOOLBAR=NO,LEFT=5,TOP=20,location=No;status=No'</span><span class="p">,</span> <span class="nx">oPopUp</span><span class="p">,</span>
+            <span class="nx">bankingType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="ddlBankingSystemType"] :selected'</span><span class="p">),</span> <span class="nx">addressCTL</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"[id='country'] :selected"</span><span class="p">),</span> <span class="nx">selectedValue</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">selectedCountry</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">qParam</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingType</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">selectedValue</span> <span class="o">=</span> <span class="nx">bankingType</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"Value"</span><span class="p">);;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">addressCTL</span> <span class="o">&amp;&amp;</span> <span class="nx">addressCTL</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">selectedCountry</span> <span class="o">=</span> <span class="nx">addressCTL</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+        <span class="p">}</span>
+
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">AUS</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">selectedValue</span> <span class="o">===</span> <span class="s1">'Aus_NZ'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">qParam</span> <span class="o">=</span> <span class="s1">'AUS'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">NZ</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">selectedValue</span> <span class="o">===</span> <span class="s1">'Aus_NZ'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">qParam</span> <span class="o">=</span> <span class="s1">'NZ'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">CAD</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">selectedValue</span> <span class="o">===</span> <span class="s1">'USA'</span> <span class="o">&amp;&amp;</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="tr_CanadaTransitNum"]'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[id="tr_CanadaTransitNum"]'</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">qParam</span> <span class="o">=</span> <span class="s1">'CAD'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="nx">selectedValue</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="s1">'USA'</span><span class="p">:</span>
+                    <span class="nx">qParam</span> <span class="o">=</span> <span class="s2">"USA"</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s2">"Aus_NZ"</span><span class="p">:</span>
+                    <span class="nx">qParam</span> <span class="o">=</span> <span class="s2">"AUS"</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s2">"UK"</span><span class="p">:</span>
+                    <span class="nx">qParam</span> <span class="o">=</span> <span class="s2">"UK"</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="nl">default</span><span class="p">:</span>
+                    <span class="nx">qParam</span> <span class="o">=</span> <span class="s2">"USA"</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="nx">oPopUp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PopUpDialogBB</span><span class="p">(</span><span class="s1">'~/Admin/DonationHelp.ascx'</span><span class="p">,</span> <span class="s1">'_blank'</span><span class="p">,</span> <span class="nx">sFeatures</span><span class="p">,</span> <span class="s1">'&amp;mode=2&amp;displayfor='</span> <span class="o">+</span> <span class="nx">qParam</span><span class="p">);</span>
+        <span class="nx">oPopUp</span><span class="p">.</span><span class="nx">Show</span><span class="p">();</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">function</span> <span class="nx">dDGuarantee</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">sFeatures</span> <span class="o">=</span> <span class="s1">'WIDTH=650px,HEIGHT=415px,RESIZABLE=YES,SCROLLBARS=NO,TOOLBAR=NO,LEFT=5,TOP=20,location=No;status=No'</span><span class="p">,</span>
+            <span class="nx">oPopUp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PopUpDialogBB</span><span class="p">(</span><span class="s1">'~/Admin/DonationHelp.ascx'</span><span class="p">,</span> <span class="s1">'_blank'</span><span class="p">,</span> <span class="nx">sFeatures</span><span class="p">,</span> <span class="s1">'&amp;mode=3'</span><span class="p">);</span>
+        <span class="nx">oPopUp</span><span class="p">.</span><span class="nx">Show</span><span class="p">();</span>
+    <span class="p">}</span>
+
+	<span class="c1">//this is used to set country object with all possible value of the countries(like Abbreviation, Country Name, and Guid)</span>
+    <span class="kd">function</span> <span class="nx">getCountryMappings</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="c1">//this is use for direct debit validations</span>
+        <span class="nx">countryData</span> <span class="o">=</span> <span class="p">{};</span>
+        <span class="nx">countryService</span><span class="p">.</span><span class="nx">getCountries</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">tmpData</span> <span class="o">=</span> <span class="p">{};</span>
+                <span class="nx">tmpData</span><span class="p">.</span><span class="nx">Id</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="s2">"Id"</span><span class="p">];</span>
+                <span class="nx">tmpData</span><span class="p">.</span><span class="nx">Abbreviation</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="s2">"Abbreviation"</span><span class="p">];</span>
+                <span class="nx">tmpData</span><span class="p">.</span><span class="nx">Description</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="s2">"Description"</span><span class="p">];</span>
+                <span class="k">switch</span> <span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="s2">"Id"</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="k">case</span> <span class="s1">'D81CEF85-7569-4B2E-8F2E-F7CF998A3342'</span><span class="p">:</span>
+                        <span class="nx">countryData</span><span class="p">.</span><span class="nx">USA</span> <span class="o">=</span> <span class="nx">tmpData</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="k">case</span> <span class="s1">'A2ECC209-3D20-4DDA-BC4C-7585C8E2E701'</span><span class="p">:</span>
+                        <span class="nx">countryData</span><span class="p">.</span><span class="nx">UK</span> <span class="o">=</span> <span class="nx">tmpData</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="k">case</span> <span class="s1">'D9EE54CD-2183-490C-A3AD-11152B271335'</span><span class="p">:</span>
+                        <span class="nx">countryData</span><span class="p">.</span><span class="nx">CAD</span> <span class="o">=</span> <span class="nx">tmpData</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="k">case</span> <span class="s1">'F189F24C-2538-46A1-8458-1E3F3967B843'</span><span class="p">:</span>
+                        <span class="nx">countryData</span><span class="p">.</span><span class="nx">AUS</span> <span class="o">=</span> <span class="nx">tmpData</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="k">case</span> <span class="s1">'DA42443E-AB81-40EE-A239-91ED699C0801'</span><span class="p">:</span>
+                        <span class="nx">countryData</span><span class="p">.</span><span class="nx">NZ</span> <span class="o">=</span> <span class="nx">tmpData</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+	<span class="c1">//for validate the country thatused to select the banking type on the basis of country dropdown change </span>
+    <span class="kd">function</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">country</span><span class="p">,</span> <span class="nx">ctryData</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">country</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">ctryData</span><span class="p">.</span><span class="nx">Id</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">||</span> <span class="nx">country</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">ctryData</span><span class="p">.</span><span class="nx">Abbreviation</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">||</span> <span class="nx">country</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">ctryData</span><span class="p">.</span><span class="nx">Description</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+    <span class="p">}</span>
+ 
+	 <span class="c1">//Bind Direct Debit</span>
+	 
+	    <span class="nx">getCountryMappings</span><span class="p">();</span>
+        <span class="nx">bindDirectDebitData</span><span class="p">();</span>
+		
+		<span class="c1">//Attach Listeners</span>
+		<span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#recMonthly"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#directDebit"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#recOneTime"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#directDebit"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#paymentDirectDebit"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">showHideDirectDebitDiv</span><span class="p">();</span> <span class="p">})</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#ddlBankingSystemType"</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">hideAndVisible_DirectDebitFields</span><span class="p">();</span> <span class="p">})</span>
+<span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#lnk_BankHelp"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">donationBankHelp</span><span class="p">();</span> <span class="p">});</span>
+        <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#lnk_DDGuarantee"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">dDGuarantee</span><span class="p">();</span> <span class="p">});</span>
+
+<span class="c1">//Attach event listener on country change</span>
+<span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#country"</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">addCountryHandler</span><span class="p">();</span> <span class="p">})</span>
+		
+     <span class="c1">// Attach our event listener to the donate button</span>
+   <span class="nx">$</span><span class="p">(</span><span class="s1">'.btn-donate'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      
+      <span class="c1">// Stop the button from submitting the form</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> 
+	  
+      <span class="c1">//Payment Method(2) means direct debit and set all the properties of direct debit</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">paymentMethod</span> <span class="o">===</span> <span class="s2">"2"</span> <span class="o">&amp;&amp;</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#paymentDirectDebit"</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">"checked"</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span> <span class="o">=</span> <span class="p">{};</span>
+            <span class="kd">var</span> <span class="nx">selectedCountry</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#country :selected"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="nx">bankingType</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#ddlBankingSystemType :selected"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">FinancialInstitution</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtFinancialInstitution"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">BranchName</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtBranchName"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">AccountHolderName</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtAccountHolder"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">BankingType</span> <span class="o">=</span> <span class="nx">bankingType</span><span class="p">;</span>
+
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">CAD</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"USA"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">RoutingNumber</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtRoutingNumber"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">TransitNumber</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtCanTransitNumber"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">RoutingNumber</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtRoutingNumber"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">NZ</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"Aus_NZ"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">AccountNumber</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtAccountNumberNZ"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">SuffixNo</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtSuffixNZ"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">AccountNumber</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#txtAccountNumber"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"Europe"</span> <span class="o">||</span> <span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"Other"</span> <span class="o">||</span> <span class="nx">countryData</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">validateCountry</span><span class="p">(</span><span class="nx">selectedCountry</span><span class="p">,</span> <span class="nx">countryData</span><span class="p">.</span><span class="nx">CAD</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">bankingType</span> <span class="o">===</span> <span class="s2">"USA"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">AccountType</span> <span class="o">=</span> <span class="nx">part</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"#ddlAccountType :selected"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">donation</span><span class="p">.</span><span class="nx">Gift</span><span class="p">.</span><span class="nx">DirectDebitInformation</span><span class="p">.</span><span class="nx">AccountType</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+
+     <span class="c1">// Submitting the donation</span>
+     <span class="nx">ds</span><span class="p">.</span><span class="nx">createDonation</span><span class="p">(</span><span class="nx">donation</span><span class="p">,</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+     <span class="p">});</span> 
+
+  <span class="p">});</span>
+ <span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div> </div> <h3 id="example-secure-payments">Using Blackbaud Secure Payments</h3> <p>Integration with the Blackbaud Secure Payments service has been updated in the Advanced Donation Form.</p> <ul class="nav nav-tabs"> <li class="active"> <a href="#example-secure-payments-html" data-toggle="tab">HTML</a> </li> <li> <a href="#example-secure-payments-js" data-toggle="tab">JS</a> </li> <li class="tab-download"> <a href="http://www.github.com/blackbaud-community/BBIS-Advanced-Donation-Form" target="_blank" data-toggle="tooltip" data-placement="left" title="Download on GitHub"> <i class="fa fa-github"></i> </a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="example-secure-payments-html"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl&gt;</span>
   <span class="nt">&lt;dt&gt;</span>First Name<span class="nt">&lt;/dt&gt;</span>
   <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"first-name"</span> <span class="nt">/&gt;&lt;/dd&gt;</span>
 
@@ -1436,4 +2270,4 @@
     <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">baseurl</span> <span class="o">+</span> <span class="s1">'Country/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'/State'</span><span class="p">);</span>
   <span class="p">};</span>
 
-<span class="p">});</span></code></pre></div> </div> <div class="tab-pane" id="example-complete-css"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Currently only using Bootstrap styles */</span></code></pre></div> </div> </div> <h3 id="adf-generator">Advanced Donation Form Generator</h3> <h4>Overview:</h4> <p>The ADF form generator is a custom content part to be used as an internal tool to generate a barebones ADF template HTML document that developers can use as a starting point for their ADF work. The workflow for using the generator is outlined below.</p> <ol> <li>Create a new custom content part using the Administration menu in BBIS.</li> <li>Copy and paste the "Editor" and "Web page display" HTML code available on <a href=https://github.com/blackbaud-community/BBIS-Advanced-Donation-Form/tree/master/example-adf-generator>Github</a>.</li> <li>In the initialize javascript function field, put "init_form" as the function name.</li> <li>Fill out the name and description to your liking.</li> <li>Save the content part.</li> <li>Create a new page from Site Explorer. It should be hidden from the public facing site, as it will only be used to host the generator tool for internal access.</li> <li>On the newly created internal page, insert the custom content part created above. Use the edit feature to fill in the options you would like your form to have/not have. Remember to populat your designations list.</li> <li>Select save and the form will be updated with your selections</li> <li>Select "View This Page" in the top left corner of the BBIS site, and then click the "Get HTML" button on the donation form. A modal will appear from which you can copy the code for your own ADF.</li> <li>Paste the code into your favorite text editor. There are some "TODO" tags throughout the code that you must act on prior to the ADF going live. Most just require you to delete leftover code from the generator. Use your editor's "find" feature (Ctrl + F) to find all strings matching "TODO" to make sure you see them all.</li> <li>Uncomment and fill out the data in the first javascript function. Follow the example format to ensure it works correctly. GUID's can be found using the special selectors or querying the appropriate database tables.</li> <li>Copy and paste the completed code to an ADF part. You now have a basic, fully functioning, donation form up and running.</li> </ol> <h4>Known Issues:</h4> <ul> <li>Tributes need tribute definition details / types in order for them to work correctly. This was not implemented in the wizard. In order for tributes to function correctly, you will need to populate the relevant properties yourself. See the <a href="/bbis/reference/rest/#partiddonationcreate">ADF "Create Donation" API</a> for more information.</li> <li>Inputted details such as merchant account ID and BBSPReturnUri do not carry over to the form options. Instead, manually enter the information as outlined in step 11.</li> </ul> <p>The entirety of this code is publicly available on Github. Community input and pull requests are welcome and appreciated.</p> </div> <!-- .col-md-9 --> </div> <!-- .row --> </div> <!-- .container --> </div> <!-- .content --> <div class="footer"> <div class="container"> <div class="row"> <div class="col-xs-6 col-sm-4"> <p> <a href="/bbis"> <img src="/bbis/assets/img/logo-lonely.png" alt="Blackbaud Internet Solutions" class="img-responsive" /> </a> </p> <ul class="list-unstyled"> <li> <a href="/bbis/start/">Getting Started</a> </li> <li> <a href="/bbis/guide/">Developer Guide</a> </li> <li> <a href="/bbis/reference/">Technical Reference</a> </li> <li> <a href="/bbis/code/">Code Samples</a> </li> <li> <a href="/bbis/help/">Help</a> </li> </ul> <!-- .list-unstyled --> </div> <!-- .col-sm-4 --> <div class="col-xs-6 col-sm-4"> <p> <a href="http://www.bbdevnetwork.com" target="_blank"> <img src="/bbis/assets/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" /> </a> </p> <ul class="list-unstyled"> <li> <a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx" target="_blank"> Blackbaud Infinity SDK </a> </li> <li> <a href="http://open.convio.com/" target="_blank"> Blackbaud Luminate </a> </li> <li> <a href="https://www.blackbaud.com/files/support/netcommunity-developer/netcommunity-developer.htm" target="_blank"> Blackbaud NetCommunity </a> </li> <li> <a href="https://www.blackbaud.com/files/support/guides/re7ent/api.pdf" target="_blank"> Blackbaud Raiser's Edge </a> </li> <li> <a href="http://developer.everydayhero.com" target="_blank"> Everyday Hero </a> </li> </ul> <!-- .list-unstyled --> </div> <!-- .col-sm-4 --> <div class="col-sm-4"> <div class="row"> <div class="col-sm-12"> <ul class="list-inline bb-love"> <li> <a href="http://www.blackbaud.com" target="_blank"> <img src="/bbis/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive" /> </a> </li> <li> <i class="fa fa-lg fa-plus"></i> </li> <li> <a href="http://www.github.com/blackbaud-community" target="_blank"> <img src="/bbis/assets/img/logo-github.png" alt="GitHub" class="img-responsive" /> </a> </li> </ul> <!-- .list-inline --> </div> <!-- .col-sm-12 --> </div> <!-- .row --> <div class="row"> <div class="col-sm-12"> <ul class="list-inline social-icons"> <li> <a href="https://github.com/blackbaud-community" target="_blank"> <i class="fa fa-github"></i> </a> </li> <li> <a href="https://plus.google.com/113382459921828617974" target="_blank"> <i class="fa fa-google-plus"></i> </a> </li> <li> <a href="http://twitter.com/blackbaud" target="_blank"> <i class="fa fa-twitter"></i> </a> </li> <li> <a href="https://www.facebook.com/blackbaud" target="_blank"> <i class="fa fa-facebook"></i> </a> </li> <li> <a href="http://www.youtube.com/user/blackbaudinc" target="_blank"> <i class="fa fa-youtube"></i> </a> </li> </ul> <!-- .list-inline --> </div> <!-- .col-sm-12 --> </div> <!-- .row --> </div> <!-- .col-sm-4 --> </div> <!-- .row --> </div> <!-- .container --> </div> <!-- .footer --> <div class="copyright"> <div class="container"> <div class="row"> <div class="col-sm-6"> <p>&copy; 2014 Blackbaud, Inc. All rights reserved.</p> </div> <div class="col-sm-6"> <p class="feedback-link"> <a href="/bbis/help/">Provide Feedback</a> </p> </div> </div> </div> </div> <!-- .copyright --> <div id="omnibar"> &nbsp; </div> <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> <script src="/bbis/assets/js/combine.site.js?v=2018-11-01-18:45:39"></script> </body> </html>
+<span class="p">});</span></code></pre></div> </div> <div class="tab-pane" id="example-complete-css"> <div class="copy-code" title="Copy to Clipboard" data-trigger="manual" data-placement="left" data-container="body"> <i class="fa fa-files-o"></i> </div> <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Currently only using Bootstrap styles */</span></code></pre></div> </div> </div> <h3 id="adf-generator">Advanced Donation Form Generator</h3> <h4>Overview:</h4> <p>The ADF form generator is a custom content part to be used as an internal tool to generate a barebones ADF template HTML document that developers can use as a starting point for their ADF work. The workflow for using the generator is outlined below.</p> <ol> <li>Create a new custom content part using the Administration menu in BBIS.</li> <li>Copy and paste the "Editor" and "Web page display" HTML code available on <a href=https://github.com/blackbaud-community/BBIS-Advanced-Donation-Form/tree/master/example-adf-generator>Github</a>.</li> <li>In the initialize javascript function field, put "init_form" as the function name.</li> <li>Fill out the name and description to your liking.</li> <li>Save the content part.</li> <li>Create a new page from Site Explorer. It should be hidden from the public facing site, as it will only be used to host the generator tool for internal access.</li> <li>On the newly created internal page, insert the custom content part created above. Use the edit feature to fill in the options you would like your form to have/not have. Remember to populat your designations list.</li> <li>Select save and the form will be updated with your selections</li> <li>Select "View This Page" in the top left corner of the BBIS site, and then click the "Get HTML" button on the donation form. A modal will appear from which you can copy the code for your own ADF.</li> <li>Paste the code into your favorite text editor. There are some "TODO" tags throughout the code that you must act on prior to the ADF going live. Most just require you to delete leftover code from the generator. Use your editor's "find" feature (Ctrl + F) to find all strings matching "TODO" to make sure you see them all.</li> <li>Uncomment and fill out the data in the first javascript function. Follow the example format to ensure it works correctly. GUID's can be found using the special selectors or querying the appropriate database tables.</li> <li>Copy and paste the completed code to an ADF part. You now have a basic, fully functioning, donation form up and running.</li> </ol> <h4>Known Issues:</h4> <ul> <li>Tributes need tribute definition details / types in order for them to work correctly. This was not implemented in the wizard. In order for tributes to function correctly, you will need to populate the relevant properties yourself. See the <a href="/bbis/reference/rest/#partiddonationcreate">ADF "Create Donation" API</a> for more information.</li> <li>Inputted details such as merchant account ID and BBSPReturnUri do not carry over to the form options. Instead, manually enter the information as outlined in step 11.</li> </ul> <p>The entirety of this code is publicly available on Github. Community input and pull requests are welcome and appreciated.</p> </div> <!-- .col-md-9 --> </div> <!-- .row --> </div> <!-- .container --> </div> <!-- .content --> <div class="footer"> <div class="container"> <div class="row"> <div class="col-xs-6 col-sm-4"> <p> <a href="/bbis"> <img src="/bbis/assets/img/logo-lonely.png" alt="Blackbaud Internet Solutions" class="img-responsive" /> </a> </p> <ul class="list-unstyled"> <li> <a href="/bbis/start/">Getting Started</a> </li> <li> <a href="/bbis/guide/">Developer Guide</a> </li> <li> <a href="/bbis/reference/">Technical Reference</a> </li> <li> <a href="/bbis/code/">Code Samples</a> </li> <li> <a href="/bbis/help/">Help</a> </li> </ul> <!-- .list-unstyled --> </div> <!-- .col-sm-4 --> <div class="col-xs-6 col-sm-4"> <p> <a href="http://www.bbdevnetwork.com" target="_blank"> <img src="/bbis/assets/img/logo-developer-small.png" alt="Blackbaud Developer Network" class="img-responsive" /> </a> </p> <ul class="list-unstyled"> <li> <a href="https://www.blackbaud.com/nonprofit-resources/sdk-resources.aspx" target="_blank"> Blackbaud Infinity SDK </a> </li> <li> <a href="http://open.convio.com/" target="_blank"> Blackbaud Luminate </a> </li> <li> <a href="https://www.blackbaud.com/files/support/netcommunity-developer/netcommunity-developer.htm" target="_blank"> Blackbaud NetCommunity </a> </li> <li> <a href="https://www.blackbaud.com/files/support/guides/re7ent/api.pdf" target="_blank"> Blackbaud Raiser's Edge </a> </li> <li> <a href="http://developer.everydayhero.com" target="_blank"> Everyday Hero </a> </li> </ul> <!-- .list-unstyled --> </div> <!-- .col-sm-4 --> <div class="col-sm-4"> <div class="row"> <div class="col-sm-12"> <ul class="list-inline bb-love"> <li> <a href="http://www.blackbaud.com" target="_blank"> <img src="/bbis/assets/img/logo-bb-white.png" alt="Blackbaud" class="img-responsive" /> </a> </li> <li> <i class="fa fa-lg fa-plus"></i> </li> <li> <a href="http://www.github.com/blackbaud-community" target="_blank"> <img src="/bbis/assets/img/logo-github.png" alt="GitHub" class="img-responsive" /> </a> </li> </ul> <!-- .list-inline --> </div> <!-- .col-sm-12 --> </div> <!-- .row --> <div class="row"> <div class="col-sm-12"> <ul class="list-inline social-icons"> <li> <a href="https://github.com/blackbaud-community" target="_blank"> <i class="fa fa-github"></i> </a> </li> <li> <a href="https://plus.google.com/113382459921828617974" target="_blank"> <i class="fa fa-google-plus"></i> </a> </li> <li> <a href="http://twitter.com/blackbaud" target="_blank"> <i class="fa fa-twitter"></i> </a> </li> <li> <a href="https://www.facebook.com/blackbaud" target="_blank"> <i class="fa fa-facebook"></i> </a> </li> <li> <a href="http://www.youtube.com/user/blackbaudinc" target="_blank"> <i class="fa fa-youtube"></i> </a> </li> </ul> <!-- .list-inline --> </div> <!-- .col-sm-12 --> </div> <!-- .row --> </div> <!-- .col-sm-4 --> </div> <!-- .row --> </div> <!-- .container --> </div> <!-- .footer --> <div class="copyright"> <div class="container"> <div class="row"> <div class="col-sm-6"> <p>&copy; 2014 Blackbaud, Inc. All rights reserved.</p> </div> <div class="col-sm-6"> <p class="feedback-link"> <a href="/bbis/help/">Provide Feedback</a> </p> </div> </div> </div> </div> <!-- .copyright --> <div id="omnibar"> &nbsp; </div> <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> <script src="/bbis/assets/js/combine.site.js?v=2019-05-03-20:30:10"></script> </body> </html>
