@@ -13,10 +13,11 @@ namespace JsDocToJekyll {
             List<string> files = new List<string>();
             List<string> content = new List<string>();
 
-            string output = @"D:\GitHub\bbBobbyEarl\bbis\reference\javascript\auto-generated-content.html";
-            string root = @"D:\GitHub\bbBobbyEarl\bbis\reference\javascript\jsdoc-build\";
+            string output = @"C:\GitReps\Fork\reference\javascript\auto-generated-content.html";
+            string root = @"C:\GitReps\Fork\reference\javascript\jsdoc-build\";
 
             files.Add(root + @"BLACKBAUD.api.CodeTableService.html");
+            files.Add(root + @"BLACKBAUD.api.ConsentService.html");
             files.Add(root + @"BLACKBAUD.api.CountryService.html");
             files.Add(root + @"BLACKBAUD.api.DonationService.html");
             files.Add(root + @"BLACKBAUD.api.ImageService.html");
