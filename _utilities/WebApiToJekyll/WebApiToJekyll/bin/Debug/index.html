@@ -21,6 +21,57 @@
     <pre><code>[ { "Description": "Mr.", "Id": "aa784eae-4649-43ce-bf5a-0d2fccb01807" }, { "Description": "Mrs.", "Id": "ca590da0-2884-4c90-86ef-a349d6ea6b09" } ]</code></pre>
   </li>
 </ul>
+<h2 id="blackbaud:header"><span class="method">GET</span>Consent/{Id}</h2>
+<h3>Description</h3>
+<p>Returns the consentoptions for the specified consent partId ordered as configured in the CRM.</p>
+<p>If the provided consent partId is valid, then this will return the consentoptions for the specified consent.  The entries will be  as configured in the CRM.</p>
+<h3>Parameters</h3>
+<ul>
+    <li>
+        <strong>Id</strong>
+        (Integer)
+        Id of a consent part.<br><span class="label label-danger">required</span>
+    </li>
+</ul>
+<h3>Returns</h3>
+<ul>
+    <li>404 Not Found</li>
+    <li>No consent part was found by the specified Id.</li>
+</ul>
+<ul>
+    <li>200 OK</li>
+    <li>Consent</li>
+    <li>Returns an object of consent.</li>
+    <li>
+        <pre><code>{
+    "ConsentPartId": 511,
+    "Title": "Consent",
+    "ConsentStatement": "Please let us know how we should contact you in the future. ",
+    "PrivacyPolicy": "https://sc14w7dev4-035.blackbaud.global/Portal.CRM_Program/privacy",
+    "SolicitCodes": [
+        {
+            "SolicitCodeID": "0a8ff00e-55d1-4905-87c0-ee04ef884ee4",
+            "ConsentPreferenceCode": 0,
+            "IsRequired": false,
+            "Sequence": 2,
+            "Caption": "Do not email",
+            "ConsentCode": 0
+        },
+        {
+            "SolicitCodeID": "2a73f1e6-2bb8-4393-91d6-6a8ce8564e60",
+            "ConsentPreferenceCode": 0,
+            "IsRequired": false,
+            "Sequence": 3,
+            "Caption": "Consent Solicit Code",
+            "ConsentCode": 3
+        }
+    ],
+    "PrivacyPolicyText": null,
+    "hdnCRMConsentSolicitCode": "838f45f0-2734-411e-9bd2-3ec40407dbd8",
+    "hdnCRMSolicitCode": "0a8ff00e-55d1-4905-87c0-ee04ef884ee4"
+}</code></pre>
+    </li>
+</ul>
 <h2 id="blackbaud:header"><span class="method">GET</span>Country</h2>
 <h3>Description</h3>
 <p>Returns a list of all active countries alphabetized by their description.</p>

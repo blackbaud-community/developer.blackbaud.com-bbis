@@ -16,3 +16,12 @@ C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocTo
 C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.pdb
 C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.xml
 C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csprojResolveAssemblyReference.cache
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe.config
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.dll
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.pdb
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.xml
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.exe
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.pdb
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.pdb
+C:\bbisdeveloper\developer.blackbaud.com-bbis-gh-pages\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csprojResolveAssemblyReference.cache

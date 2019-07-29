@@ -132,6 +132,135 @@ will be passed an array of objects with the following properties:
 </table></dd>
 </dl>
 </div>
+<div id="consentservice">
+<h2 id="consentservice-constructor">new ConsentService(options) <a href="#consentservice-constructor"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>BLACKBAUD.api.ConsentOptionService provides methods for getting consent options from the CRM using calls to the BBIS REST services.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+
+                                    <th>Type</th>
+
+
+                                    <th class="last">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+
+                                    <td class="name">options</td>
+
+                                    <td class="type">
+
+
+                                        <span class="param-type">Object</span>
+
+
+                                    </td>
+
+
+                                    <td class="description last">
+                                        An object literal containing one or more of the following optional properties:
+                                        <ul>
+                                            <li><tt>url</tt> : The URL of the BBIS site from which the data will be retrieved. This value is optional when accessed from a BBIS page. The default value will be the BBIS URL of the current page.</li>
+                                            <li><tt>crossDomain</tt> : Indicates the BBIS url specified is from a separate domain than the current page. When True, the class will handle the complexities of making cross domain requests to retrieve data. The default value is False.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table></dd>
+</dl>
+<h2 id="consentservice-getconsentoptions">getConsentOptions(consentPartId, successCallback, failureCallback) <a href="#consentservice-getconsentoptions"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Returns the object of the consent with consent options associated with a specified consent partId.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+
+                                    <th>Type</th>
+
+
+                                    <th class="last">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+
+                                    <td class="name">consentPartId</td>
+
+                                    <td class="type">
+
+
+                                        <span class="param-type">Integer</span>
+
+
+                                    </td>
+
+
+                                    <td class="description last">The Id of a consent part whose consent options should be returned.</td>
+                                </tr>
+
+                                <tr>
+
+                                    <td class="name">successCallback</td>
+
+                                    <td class="type">
+
+
+                                        <span class="param-type">function</span>
+
+
+                                    </td>
+
+
+                                    <td class="description last">
+                                        The function to call if the request succeeds. The
+                                        function will be passed an object with the following properties:
+                                        <ul>
+                                            <li><tt>ConsentPartId</tt> : The id of the consent part.</li>
+                                            <li><tt>Title</tt> : The title of the consent part.</li>
+                                            <li><tt>ConsentStatement</tt> : The consentstatement of the consent part.</li>
+                                            <li><tt>PrivacyPolicy</tt> : The privacypolicy that is set in the consent part.</li>
+                                            <li><tt>SolicitCodes</tt> : Array of consent options configured in consent part.</li>
+                                            <li><tt>PrivacyPolicyText</tt> : The privacypolicytext that is set in the consent part.</li>
+                                            <li><tt>hdnCRMConsentSolicitCode</tt> : The consent solicit code that is selected under web in configure integration of CRM.</li>
+                                            <li><tt>hdnCRMSolicitCode</tt> : The solicit code that is selected under web in configure integration of CRM.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td class="name">failureCallback</td>
+
+                                    <td class="type">
+
+
+                                        <span class="param-type">function</span>
+
+
+                                    </td>
+
+
+                                    <td class="description last">The function to call if the request fails.</td>
+                                </tr>
+
+                            </tbody>
+                        </table></dd>
+</dl>
+</div>
 <div id="countryservice">
 <h2 id="countryservice-constructor">new CountryService(options) <a href="#countryservice-constructor"><i class="fa fa-link"></i></a></h2>
 <dl>
@@ -339,6 +468,8 @@ function will be passed an array of objects with the following properties:
 <li><tt>Id</tt> : The Id of a country.</li>
 <li><tt>Abbreviation</tt> : The abbreviation of a country.</li>
 <li><tt>Description</tt> : The description of a country.</li>
+<li><tt>ISO</tt> : The iso of a country.</li>
+<li><tt>AddressFormat</tt> : The addressformat of a country.</li>
 </ul></td>
         </tr>
 
@@ -441,7 +572,643 @@ function will be passed an array of objects with the following properties:
 <li><tt>Id</tt> : The Id of a state.</li>
 <li><tt>Abbreviation</tt> : The abbreviation of a state.</li>
 <li><tt>Description</tt> : The description of a state.</li>
+<li><tt>ISO</tt> : The iso of a state.</li>
 </ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">failureCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+</div>
+<div id="checkoutservice">
+<h2 id="checkoutservice-constructor">new DonationService(partId, options) <a href="#checkoutservice-constructor"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>BLACKBAUD.api.DonationService provides methods that are use for the blackbaud checkout.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">partId</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+
+            
+
+            
+
+            <td class="description last">The Id of an Advanced Donation Form part that will be used as a context for all method calls.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">options</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object literal containing one or more of the following optional properties:
+<ul>
+<li><tt>url</tt> : The URL of the BBIS site from which the data will be retrieved.  This value is optional when accessed from a BBIS page.  The default value will be the BBIS URL of the current page.</li>
+<li><tt>crossDomain</tt> : Indicates the BBIS url specified is from a separate domain than the current page.  When True, the class will handle the complexities of making cross domain requests to retrieve data.  The default value is False.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="checkoutservice-getcheckoutpublickey">getCheckoutPublicKey(successCallback, failureCallback) <a href="#checkoutservice-getcheckoutpublickey"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Get public key that is used to open checkout popup.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+ 
+
+        <tr>
+            
+                <td class="name">successCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">failureCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="checkoutservice-getadfeditorcontentinformation">getADFEditorContentInformation(id,successCallback, failureCallback) <a href="#checkoutservice-getadfeditorcontentinformation"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Return editor information that will be used in BBPSCheckout.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">id</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> Part id.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">successCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">failureCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="checkoutservice-checkoutdonationcreate">checkoutDonationCreate(data,successCallback, failureCallback) <a href="#checkoutservice-checkoutdonationcreate"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Creates a donation transaction and saves it to the database in pending state.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">data</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> An object describing the donation transaction to be created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">successCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">failureCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="checkoutservice-checkoutdonationcomplete">checkoutDonationComplete(data,successCallback, failureCallback) <a href="#checkoutservice-checkoutdonationcomplete"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Update a donation transaction and saves it to the database in complete state.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">data</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> An object describing the donation transaction to be created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">successCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">failureCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="checkoutservice-checkoutdonationcancel">checkoutDonationCancel(data,successCallback, failureCallback) <a href="#checkoutservice-checkoutdonationcancel"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Delete the donation transaction exist in database.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">data</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> An object describing the donation transaction to be created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">successCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">failureCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="checkoutservice-validatedonationrequest">validateDonationRequest(data,successCallback, failureCallback) <a href="#checkoutservice-validatedonationrequest"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>Validate the donation data and opens the checkout pop if it is successfully validated.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">data</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> An object describing the donation transaction to be created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">successCallback</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
         </tr>
 
     
@@ -1160,7 +1927,87 @@ from the specified donation merged in.</td>
     </tbody>
 </table></dd>
 </dl>
-<h2 id="donationservice-getbankingtypedata">getBankingTypeData(successCallback, failureCallback) <a href="#donationservice-getbankingtypedata"><i class="fa fa-link"></i></a></h2>
+</div>
+<div id="directdebitservice">
+<h2 id="directdebitservice-constructor">new DonationService(partId, options) <a href="#directdebitservice-constructor"><i class="fa fa-link"></i></a></h2>
+<dl>
+<dt class="description">Description</dt>
+<dd>BLACKBAUD.api.DonationService provides methods that are use for the direct debit.</dd>
+<dt class="parameters">Parameters</dt>
+<dd><table class="table table-condensed table-parameters">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name">partId</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+
+            
+
+            
+
+            <td class="description last">The Id of an Advanced Donation Form part that will be used as a context for all method calls.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name">options</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object literal containing one or more of the following optional properties:
+<ul>
+<li><tt>url</tt> : The URL of the BBIS site from which the data will be retrieved.  This value is optional when accessed from a BBIS page.  The default value will be the BBIS URL of the current page.</li>
+<li><tt>crossDomain</tt> : Indicates the BBIS url specified is from a separate domain than the current page.  When True, the class will handle the complexities of making cross domain requests to retrieve data.  The default value is False.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table></dd>
+</dl>
+<h2 id="directdebitservice-getbankingtypedata">getBankingTypeData(successCallback, failureCallback) <a href="#directdebitservice-getbankingtypedata"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
 <dd>Get all banking types that is enabled in CRM.</dd>
@@ -1235,7 +2082,7 @@ from the specified donation merged in.</td>
     </tbody>
 </table></dd>
 </dl>
-<h2 id="donationservice-getaccounttypedata">getAccountTypeData(successCallback, failureCallback) <a href="#donationservice-getaccounttypedata"><i class="fa fa-link"></i></a></h2>
+<h2 id="directdebitservice-getaccounttypedata">getAccountTypeData(successCallback, failureCallback) <a href="#directdebitservice-getaccounttypedata"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
 <dd>Get all supported account types.</dd>
@@ -1310,7 +2157,7 @@ from the specified donation merged in.</td>
     </tbody>
 </table></dd>
 </dl>
-<h2 id="donationservice-getoriginidandtime">getOriginIdAndTime(successCallback, failureCallback) <a href="#donationservice-getoriginidandtime"><i class="fa fa-link"></i></a></h2>
+<h2 id="directdebitservice-getoriginidandtime">getOriginIdAndTime(successCallback, failureCallback) <a href="#directdebitservice-getoriginidandtime"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
 <dd>Get information about the client origin id and time.</dd>
@@ -1336,561 +2183,6 @@ from the specified donation merged in.</td>
     
 
  
-
-        <tr>
-            
-                <td class="name">successCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">failureCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table></dd>
-</dl>
-<h2 id="donationservice-getcheckoutpublickey">getCheckoutPublicKey(successCallback, failureCallback) <a href="#donationservice-getcheckoutpublickey"><i class="fa fa-link"></i></a></h2>
-<dl>
-<dt class="description">Description</dt>
-<dd>Get public key that is used to open checkout popup.</dd>
-<dt class="parameters">Parameters</dt>
-<dd><table class="table table-condensed table-parameters">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
- 
-
-        <tr>
-            
-                <td class="name">successCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">failureCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table></dd>
-</dl>
-<h2 id="donationservice-getadfeditorcontentinformation">getADFEditorContentInformation(id,successCallback, failureCallback) <a href="#donationservice-getadfeditorcontentinformation"><i class="fa fa-link"></i></a></h2>
-<dl>
-<dt class="description">Description</dt>
-<dd>Return editor information that will be used in BBPSCheckout.</dd>
-<dt class="parameters">Parameters</dt>
-<dd><table class="table table-condensed table-parameters">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name">id</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"> Part id.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">successCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">failureCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table></dd>
-</dl>
-<h2 id="donationservice-checkoutdonationcreate">checkoutDonationCreate(data,successCallback, failureCallback) <a href="#donationservice-checkoutdonationcreate"><i class="fa fa-link"></i></a></h2>
-<dl>
-<dt class="description">Description</dt>
-<dd>Creates a donation transaction and saves it to the database in pending state.</dd>
-<dt class="parameters">Parameters</dt>
-<dd><table class="table table-condensed table-parameters">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name">data</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"> An object describing the donation transaction to be created.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">successCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">failureCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table></dd>
-</dl>
-<h2 id="donationservice-checkoutdonationcomplete">checkoutDonationComplete(data,successCallback, failureCallback) <a href="#donationservice-checkoutdonationcomplete"><i class="fa fa-link"></i></a></h2>
-<dl>
-<dt class="description">Description</dt>
-<dd>Update a donation transaction and saves it to the database in complete state.</dd>
-<dt class="parameters">Parameters</dt>
-<dd><table class="table table-condensed table-parameters">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name">data</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"> An object describing the donation transaction to be created.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">successCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">failureCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table></dd>
-</dl>
-<h2 id="donationservice-checkoutdonationcancel">checkoutDonationCancel(data,successCallback, failureCallback) <a href="#donationservice-checkoutdonationcancel"><i class="fa fa-link"></i></a></h2>
-<dl>
-<dt class="description">Description</dt>
-<dd>Delete the donation transaction exist in database.</dd>
-<dt class="parameters">Parameters</dt>
-<dd><table class="table table-condensed table-parameters">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name">data</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"> An object describing the donation transaction to be created.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">successCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name">failureCallback</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table></dd>
-</dl>
-<h2 id="donationservice-validatedonationrequest">validateDonationRequest(data,successCallback, failureCallback) <a href="#donationservice-validatedonationrequest"><i class="fa fa-link"></i></a></h2>
-<dl>
-<dt class="description">Description</dt>
-<dd>Validate the donation data and opens the checkout pop if it is successfully validated.</dd>
-<dt class="parameters">Parameters</dt>
-<dd><table class="table table-condensed table-parameters">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name">data</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"> An object describing the donation transaction to be created.</td>
-        </tr>
-
-    
 
         <tr>
             

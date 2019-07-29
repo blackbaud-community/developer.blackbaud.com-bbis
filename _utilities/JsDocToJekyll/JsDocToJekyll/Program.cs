@@ -19,7 +19,9 @@ namespace JsDocToJekyll {
             files.Add(root + @"BLACKBAUD.api.CodeTableService.html");
             files.Add(root + @"BLACKBAUD.api.ConsentService.html");
             files.Add(root + @"BLACKBAUD.api.CountryService.html");
+            files.Add(root + @"BLACKBAUD.api.CheckoutService.html");
             files.Add(root + @"BLACKBAUD.api.DonationService.html");
+            files.Add(root + @"BLACKBAUD.api.DirectDebitService.html");
             files.Add(root + @"BLACKBAUD.api.ImageService.html");
             files.Add(root + @"BLACKBAUD.api.QueryService.html");
             files.Add(root + @"BLACKBAUD.api.UserService.html");
