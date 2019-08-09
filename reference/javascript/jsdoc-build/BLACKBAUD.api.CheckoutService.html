@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: DonationService</title>
+    <title>JSDoc: Class: CheckoutService</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: DonationService</h1>
+    <h1 class="page-title">Class: CheckoutService</h1>
 
     
 
@@ -26,11 +26,11 @@
 <section>
 
 <header>
-    <h2>
-    DonationService
+   <h2>
+    CheckoutService
     </h2>
     
-        <div class="class-description">BLACKBAUD.api.DonationService provides methods needed for taking donations and retrieving confirmation information.</div>
+        <div class="class-description">BLACKBAUD.api.DonationService provides methods that are use for the blackbaud checkout.</div>
     
 </header>
 
@@ -41,7 +41,7 @@
     
         
 <dt>
-    <h4 class="name" id="DonationService"><span class="type-signature"></span>new DonationService<span class="signature">(partId, options)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="checkoutService"><span class="type-signature"></span>new DonationService<span class="signature">(partId, options)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -169,55 +169,28 @@
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
 </dd>
 
     
     </div>
-
-    
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
+ 
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <dt>
-    <h4 class="name" id="completeBBSPDonation"><span class="type-signature"></span>completeBBSPDonation<span class="signature">(id, successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" 
+    id="getCheckoutPublicKey"><span class="type-signature"></span>getCheckoutPublicKey<span class="signature">(successCallback, failureCallback)</span><span class="type-signature"></span></h4>
 
-    
 </dt>
 <dd>
 
-    
-    <div class="description">
-        Signals the application to confirm that the credit card donation has been paid in Blackbaud secured
-payment and to complete the creation of the donation. Updates the donation status and sends the acknowledgment email.
-    </div>
-    
 
-    
+
+<div class="description">
+        Get public key that is used to open checkout popup.
+    </div>
+   
 
     
 
@@ -245,28 +218,7 @@ payment and to complete the creation of the donation. Updates the donation statu
     <tbody>
     
 
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The GUID id of the donation that should be completed.</td>
-        </tr>
-
-    
+ 
 
         <tr>
             
@@ -286,9 +238,7 @@ payment and to complete the creation of the donation. Updates the donation statu
 
             
 
-            <td class="description last">The function to call if the request succeeds. The
-function will be passed an object describing the donation with the specified Id after its status
-has been updated.</td>
+            <td class="description last">The function to call if the request succeeds.</td>
         </tr>
 
     
@@ -342,7 +292,158 @@ has been updated.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line160">line 160</a>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line178">line 178</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+   
+</dd>
+
+<dt>
+    <h4 class="name" 
+    id="getADFEditorContentInformation"><span class="type-signature"></span>getADFEditorContentInformation<span class="signature">(id,successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+
+</dt>
+
+<dd>
+
+    
+    <div class="description">
+        Return editor information that will be used in BBPSCheckout.
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> Part id.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -368,24 +469,19 @@ has been updated.</td>
 
     
 </dd>
-
+      
 
 <dt>
-    <h4 class="name" id="getRecurringGiftInstallmentAmount"><span class="type-signature"></span>getRecurringGiftInstallmentAmount<span class="signature">(totalGiftAmount, numberOfInstallments)</span><span class="type-signature"></span></h4>
+    <h4 class="name" 
+    id="checkoutDonationCreate"><span class="type-signature"></span>checkoutDonationCreate<span class="signature">(data,successCallback, failureCallback)</span><span class="type-signature"></span></h4>
 
-    
 </dt>
+
 <dd>
 
-    
     <div class="description">
-        This calculates the price of each installment for a recurring gift based on the number of installments the website user wants to make.
+        Creates a donation transaction and saves it to the database in pending state.
     </div>
-    
-
-    
-
-    
 
     
         <h5>Parameters:</h5>
@@ -413,302 +509,7 @@ has been updated.</td>
 
         <tr>
             
-                <td class="name"><code>totalGiftAmount</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Decimal</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The total amount to be donated.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>numberOfInstallments</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The total number of installments.</td>
-        </tr>
-    </tbody>
-</table>
-<dl class="details">
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line113">line 113</a>
-    </li></ul></dd>   
-</dl>
-</dd>
-
-
-<dt>
-    <h4 class="name" id="getRecurringGiftLastPaymentDate"><span class="type-signature"></span>getRecurringGiftLastPaymentDate<span class="signature">(numberOfInstallments,
-	frequencyCode, installmentStartDate, installmentMonth, installmentDayOfMonth,installmentDayOfWeek)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        This calculates the end date of a recurring installment based on the number of installments the website user wants to make.
-    </div>
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-            <tr>
-            
-                <td class="name"><code>numberOfInstallments</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The total number of installments</td>
-        </tr>
-
-        <tr>
-            
-                <td class="name"><code>frequencyCode</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Frequency code.</td>
-        </tr>
-		 <tr>
-            
-                <td class="name"><code>installmentStartDate</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">date</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Date on which website user wants to start the installment.</td>
-        </tr>
- <tr>
-            
-                <td class="name"><code>installmentMonth</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Installment month.</td>
-        </tr>
-    
-<tr>
-            
-                <td class="name"><code>installmentDayofMonth</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Day of the Month.</td>
-        </tr>
-		
-		
-		<tr>
-            <td class="name"><code>installmentDayofWeek</code></td>
-            <td class="type"><span class="param-type">Integer</span></td>
-			<td class="description last">Day of the Week.</td>
-        </tr>
-    </tbody>
-</table>
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-</dd>
-
-
-
-
-
-
-        
-            
-<dt>
-    <h4 class="name" id="createDonation"><span class="type-signature"></span>createDonation<span class="signature">(donation, successCallback, failureCallback)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Validates the specified donation parameter. If valid, creates a donation transaction
-and saves it to the database. Stores the Id of the new donation in session so the user
-has permissions for the donation transaction. If the payment type is credit card, 
-communicates with Blackbaud secured payment to set up a check out URI and adds that
-URI to the return object. For credit card payment, the donation is saved in a Pending
-state. For payments not using a credit card, the donation is saved in a Completed state
-and an acknowledgement email is sent.
-For credit card payments, the page is redirected to the Blackbaud secured payment checkout
-page after calling the successCallback function.
-    </div>
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>donation</code></td>
+                <td class="name"><code>data</code></td>
             
 
             <td class="type">
@@ -724,7 +525,7 @@ page after calling the successCallback function.
 
             
 
-            <td class="description last">An object describing the donation transaction to be created.</td>
+            <td class="description last"> An object describing the donation transaction to be created.</td>
         </tr>
 
     
@@ -747,175 +548,7 @@ page after calling the successCallback function.
 
             
 
-            <td class="description last">The function to call if the request succeeds. The
-function will be passed an object describing the donation that was created.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>failureCallback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request fails.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="getDonation"><span class="type-signature"></span>getDonation<span class="signature">(id, successCallback, failureCallback)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Ensures the user has access to this donation by finding the Id in their session.
-If so, returns information about the donation
-    </div>
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The GUID id of the donation whose information should be returned.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>successCallback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call if the request succeeds. The
-function will be passed an object describing the donation with the specified Id.</td>
+            <td class="description last">The function to call if the request succeeds.</td>
         </tr>
 
     
@@ -996,28 +629,16 @@ function will be passed an object describing the donation with the specified Id.
     
 </dd>
 
-        
-            
 <dt>
     <h4 class="name" 
-    id="getDonationConfirmationHtml"><span class="type-signature"></span>getDonationConfirmationHtml<span class="signature">(id, successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+    id="checkoutDonationComplete"><span class="type-signature"></span>checkoutDonationComplete<span class="signature">(data,successCallback, failureCallback)</span><span class="type-signature"></span></h4>
 
 </dt>
 <dd>
 
-
-
-    
     <div class="description">
-        Gets HTML for a confirmation screen for the completed donation. Ensures the user has access to this
-donation by finding the Id in their session. If so, loads the donation and merges the fields
-into the part’s confirmation block
+        Update a donation transaction and saves it to the database in complete state.
     </div>
-    
-
-    
-
-    
 
     
         <h5>Parameters:</h5>
@@ -1045,13 +666,13 @@ into the part’s confirmation block
 
         <tr>
             
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>data</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Object</span>
 
 
             
@@ -1061,7 +682,7 @@ into the part’s confirmation block
 
             
 
-            <td class="description last">The GUID id of the donation that should be completed.</td>
+            <td class="description last"> An object describing the donation transaction to be created.</td>
         </tr>
 
     
@@ -1084,9 +705,7 @@ into the part’s confirmation block
 
             
 
-            <td class="description last">The function to call if the request succeeds. The
-function will be passed a string containing the confirmation HTML from the part with details
-from the specified donation merged in.</td>
+            <td class="description last">The function to call if the request succeeds.</td>
         </tr>
 
     
@@ -1140,7 +759,7 @@ from the specified donation merged in.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line178">line 178</a>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -1167,8 +786,310 @@ from the specified donation merged in.</td>
     
 </dd>
 
+<dt>
+    <h4 class="name" 
+    id="checkoutDonationCancel"><span class="type-signature"></span>checkoutDonationCancel<span class="signature">(data,successCallback, failureCallback)</span><span class="type-signature"></span></h4>
 
-	  </dl>
+</dt>
+<dd>
+
+    <div class="description">
+        Delete the donation transaction exist in database.
+    </div>
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> An object describing the donation transaction to be created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+<dt>
+    <h4 class="name" 
+    id="validateDonationRequest"><span class="type-signature"></span>validateDonationRequest<span class="signature">(data,successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+
+</dt>
+
+<dd>
+
+    <div class="description">
+        Validate the donation data and opens the checkout pop if it is successfully validated.
+    </div>
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"> An object describing the donation transaction to be created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+</dd>
+
+
+        </dl>
     
 
     
@@ -1184,7 +1105,7 @@ from the specified donation merged in.</td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="BLACKBAUD.api.DirectDebitService.html">DirectDebitService</a></li><li><a href="BLACKBAUD.api.CodeTableService.html">CodeTableService</a></li><li><a href="BLACKBAUD.api.ConsentService.html">ConsentService</a></li><li><a href="BLACKBAUD.api.CountryService.html">CountryService</a></li><li><a href="BLACKBAUD.api.CheckoutService.html">CheckoutService</a></li><li><a href="BLACKBAUD.api.DonationService.html">DonationService</a></li><li><a href="BLACKBAUD.api.ImageService.html">ImageService</a></li><li><a href="BLACKBAUD.api.QueryService.html">QueryService</a></li><li><a href="BLACKBAUD.api.UserService.html">UserService</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="BLACKBAUD.api.DirectDebitService.html">DirectDebitService</a></li><li><a href="BLACKBAUD.api.CodeTableService.html">CodeTableService</a></li><li><a href="BLACKBAUD.api.CheckoutService.html">CheckoutService</a></li><li><a href="BLACKBAUD.api.ConsentService.html">ConsentService</a></li><li><a href="BLACKBAUD.api.CountryService.html">CountryService</a></li><li><a href="BLACKBAUD.api.DonationService.html">DonationService</a></li><li><a href="BLACKBAUD.api.ImageService.html">ImageService</a></li><li><a href="BLACKBAUD.api.QueryService.html">QueryService</a></li><li><a href="BLACKBAUD.api.UserService.html">UserService</a></li></ul>
 </nav>
 
 <br clear="both">

@@ -1,7 +1,7 @@
 ﻿<h3 id="example-direct-debit">Direct Debit Example</h3>
 <p> This feature can be used to configured the direct debit on ADF by using the payment's using the <a href="{{ site.baseurl }}/reference/rest/#donationapi">Donation endpoints.</a></p>
 <p>Organizations have many donors (especially in international markets) that prefer to give gifts with Direct Debit (also known as ACH). To build parity with our current Advance Donation Form (ADF), we need to allow organizations to accept donations via direct debit on ADF.
-This functionality is wrapped under <a href="{{ site.baseurl }}/reference/javascript/#donationservice">Donation Service</a>, as shown in the example.</p>
+This functionality is wrapped under <a href="{{ site.baseurl }}/reference/javascript/#directdebitservice">DirectDebit Service</a>, as shown in the example.</p>
 
 <ul class="nav nav-tabs">
     <li class="active">
@@ -136,6 +136,10 @@ $(function () {
   MerchantAccountId: '00000000-0000-0000-0000-000000000000',
   BBSPReturnUri: window.location.href,
   BBSPTemplateSitePageId: 000,
+  Gift: {
+        PaymentMethod: 2,
+        Designations: []
+      }
   };
 
   // Create our success handler
@@ -153,13 +157,13 @@ $(function () {
   
 	//Show and Hide directdebit div on the page
  function showHideDirectDebitDiv() {
-   if (part.find("#paymentDirectDebit").prop("checked")) {
-      part.find("#directDebitInformation").show();
+   if ($("#paymentDirectDebit").prop("checked")) {
+      $("#directDebitInformation").show();
       hideAndVisible_BankingTypeField();
       addCountryHandler();
      }
      else {
-       part.find("#directDebitInformation").hide();
+       $("#directDebitInformation").hide();
         }
     }
 
@@ -446,19 +450,19 @@ $(function () {
         bindDirectDebitData();
 		
 		//Attach Listeners
-		part.find("#recMonthly").click(function () {
-        part.find("#directDebit").css("display", "");
+		$("#recMonthly").click(function () {
+        $("#directDebit").css("display", "");
         });
-        part.find("#recOneTime").click(function () {
-        part.find("#directDebit").css("display", "none");
+        $("#recOneTime").click(function () {
+        $("#directDebit").css("display", "none");
         });
-        part.find("#paymentDirectDebit").click(function () { showHideDirectDebitDiv(); })
-        part.find("#ddlBankingSystemType").change(function () { hideAndVisible_DirectDebitFields(); })
-part.find("#lnk_BankHelp").click(function () { donationBankHelp(); });
-        part.find("#lnk_DDGuarantee").click(function () { dDGuarantee(); });
+        $("#paymentDirectDebit").click(function () { showHideDirectDebitDiv(); })
+        $("#ddlBankingSystemType").change(function () { hideAndVisible_DirectDebitFields(); })
+$("#lnk_BankHelp").click(function () { donationBankHelp(); });
+        $("#lnk_DDGuarantee").click(function () { dDGuarantee(); });
 
 //Attach event listener on country change
-part.find("#country").change(function () { addCountryHandler(); })
+$("#country").change(function () { addCountryHandler(); })
 		
      // Attach our event listener to the donate button
    $('.btn-donate').click(function(e) {
@@ -467,33 +471,33 @@ part.find("#country").change(function () { addCountryHandler(); })
       e.preventDefault(); 
 	  
       //Payment Method(2) means direct debit and set all the properties of direct debit
-        if (paymentMethod === "2" && part.find("#paymentDirectDebit").prop("checked")) {
+        if (paymentMethod === "2" && $("#paymentDirectDebit").prop("checked")) {
             donation.Gift.DirectDebitInformation = {};
-            var selectedCountry = part.find("#country :selected").val(), bankingType = part.find("#ddlBankingSystemType :selected").val();
-            donation.Gift.DirectDebitInformation.FinancialInstitution = part.find("#txtFinancialInstitution").val();
-            donation.Gift.DirectDebitInformation.BranchName = part.find("#txtBranchName").val();
-            donation.Gift.DirectDebitInformation.AccountHolderName = part.find("#txtAccountHolder").val();
+            var selectedCountry = $("#country :selected").val(), bankingType = $("#ddlBankingSystemType :selected").val();
+            donation.Gift.DirectDebitInformation.FinancialInstitution = $("#txtFinancialInstitution").val();
+            donation.Gift.DirectDebitInformation.BranchName = $("#txtBranchName").val();
+            donation.Gift.DirectDebitInformation.AccountHolderName = $("#txtAccountHolder").val();
             donation.Gift.DirectDebitInformation.BankingType = bankingType;
 
 
             if (countryData && validateCountry(selectedCountry, countryData.CAD) && bankingType === "USA") {
-                donation.Gift.DirectDebitInformation.RoutingNumber = part.find("#txtRoutingNumber").val();
-                donation.Gift.DirectDebitInformation.TransitNumber = part.find("#txtCanTransitNumber").val();
+                donation.Gift.DirectDebitInformation.RoutingNumber = $("#txtRoutingNumber").val();
+                donation.Gift.DirectDebitInformation.TransitNumber = $("#txtCanTransitNumber").val();
             }
             else {
-                donation.Gift.DirectDebitInformation.RoutingNumber = part.find("#txtRoutingNumber").val();
+                donation.Gift.DirectDebitInformation.RoutingNumber = $("#txtRoutingNumber").val();
             }
 
             if (countryData && validateCountry(selectedCountry, countryData.NZ) && bankingType === "Aus_NZ") {
-                donation.Gift.DirectDebitInformation.AccountNumber = part.find("#txtAccountNumberNZ").val();
-                donation.Gift.DirectDebitInformation.SuffixNo = part.find("#txtSuffixNZ").val();
+                donation.Gift.DirectDebitInformation.AccountNumber = $("#txtAccountNumberNZ").val();
+                donation.Gift.DirectDebitInformation.SuffixNo = $("#txtSuffixNZ").val();
             }
             else {
-                donation.Gift.DirectDebitInformation.AccountNumber = part.find("#txtAccountNumber").val();
+                donation.Gift.DirectDebitInformation.AccountNumber = $("#txtAccountNumber").val();
             }
 
             if (bankingType === "Europe" || bankingType === "Other" || countryData && (!validateCountry(selectedCountry, countryData.CAD) && bankingType === "USA")) {
-                donation.Gift.DirectDebitInformation.AccountType = part.find("#ddlAccountType :selected").val();
+                donation.Gift.DirectDebitInformation.AccountType = $("#ddlAccountType :selected").val();
             }
             else {
                 donation.Gift.DirectDebitInformation.AccountType = "";
