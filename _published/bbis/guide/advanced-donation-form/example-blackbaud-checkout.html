@@ -1,21 +1,21 @@
-﻿<h3 id="example-payment-checkout">Payment Checkout Example</h3>
-<p>This feature can be used to configure the payment checkout pop up on ADF by using the payment's <a href="{{ site.baseurl }}/reference/rest/#checkoutapi">Checkout endpoints</a>. This functionality is wrapped under <a href="{{ site.baseurl }}/reference/javascript/#donationservice">Donation Service</a>, as shown in the example.
+﻿<h3 id="example-blackbaud-checkout">Blackbaud Checkout Example</h3>
+<p>This feature can be used to configure the payment checkout pop up on ADF by using the payment's <a href="{{ site.baseurl }}/reference/rest/#checkoutapi">Checkout endpoints</a>. This functionality is wrapped under <a href="{{ site.baseurl }}/reference/javascript/#checkoutservice">Checkout Service</a>, as shown in the example.
 This will enhance the end user experience and provide better troubleshooting around the missing transactions.
 </p>
 <ul class="nav nav-tabs">
     <li class="active">
-        <a href="#example-payment-checkout-html" data-toggle="tab">HTML</a>
+        <a href="#example-blackbaud-checkout-html" data-toggle="tab">HTML</a>
     </li>
     <li>
-        <a href="#example-payment-checkout-js" data-toggle="tab">JS</a>
+        <a href="#example-blackbaud-checkout-js" data-toggle="tab">JS</a>
     </li>
     <li>
-        <a href="#example-payment-checkout-css" data-toggle="tab">CSS</a>
+        <a href="#example-blackbaud-checkout-css" data-toggle="tab">CSS</a>
     </li>
     {% include download-on-github.html repo="BBIS-Advanced-Donation-Form" %}
 </ul>
 <div class="tab-content">
-    <div class="tab-pane active" id="example-payment-checkout-html">
+    <div class="tab-pane active" id="example-blackbaud-checkout-html">
     {% include copy-code.html %}
     {% highlight html %}
 <!-- This div is for showing the layover after the payment completion and before the confirmation page(use when payment checkout pop up is configured)-->
@@ -23,7 +23,7 @@ This will enhance the end user experience and provide better troubleshooting aro
 </div>
 	{% endhighlight %}
 </div>
-<div class="tab-pane" id="example-payment-checkout-js">
+<div class="tab-pane" id="example-blackbaud-checkout-js">
     {% include copy-code.html %}
     {% highlight js %}
 (function ($) {
@@ -32,13 +32,13 @@ This will enhance the end user experience and provide better troubleshooting aro
  // Create an instance of the DonationService
   var ds = new BLACKBAUD.api.DonationService(
   $('.BBDonationApiContainer').data('partid')),
-         serverMonth = part.parents(".BBDonationApiContainer").attr("serverMonth") - 1,
-         serverDay = part.parents(".BBDonationApiContainer").attr("serverDay"),
-         serverYear = part.parents(".BBDonationApiContainer").attr("serverYear"),
+         serverMonth = $(".BBDonationApiContainer").attr("serverMonth") - 1,
+         serverDay = $(".BBDonationApiContainer").attr("serverDay"),
+         serverYear = $(".BBDonationApiContainer").attr("serverYear"),
          ServerDate = new Date(serverYear, serverMonth, serverDay);
 		 
   var donationAmount = getDonationAmount();
-        var numberOfInstallments = part.find("#number-of-installments").val();
+        var numberOfInstallments = $("#number-of-installments").val();
         var installmentAmount = ds.getRecurringGiftInstallmentAmount(donationAmount, numberOfInstallments);
         var installmentAmt = installmentAmount;
 
@@ -48,7 +48,11 @@ This will enhance the end user experience and provide better troubleshooting aro
   MerchantAccountId: '00000000-0000-0000-0000-000000000000',
   BBSPReturnUri: window.location.href,
   BBSPTemplateSitePageId: 000,
-  PartId: $('.BBDonationApiContainer').data('partid')
+  PartId: $('.BBDonationApiContainer').data('partid'),
+  Gift: {
+        PaymentMethod: 0,
+        Designations: []
+      }
   };
 
   // Create our success handler
@@ -79,10 +83,10 @@ This will enhance the end user experience and provide better troubleshooting aro
 		
 	//return the donation amount	
 	function getDonationAmount() {
-    if (part.find("#amtOther").prop("checked")) {
-         return part.find("#txtAmount").val();
+    if ($("#amtOther").prop("checked")) {
+         return $("#txtAmount").val();
     } else {
-         return part.find("[name='radioAmount']:checked").val();
+         return $("[name='radioAmount']:checked").val();
         }
     }
 	
@@ -97,7 +101,7 @@ This will enhance the end user experience and provide better troubleshooting aro
 
 	//return which payment method is selected on the page
     function GetPaymentType() {
-        paymentMethod = part.find("[name='paymentMethod']:checked").val();
+        paymentMethod = $("[name='paymentMethod']:checked").val();
         return paymentMethod;
     }
 
@@ -149,15 +153,22 @@ This will enhance the end user experience and provide better troubleshooting aro
 
         var checkout = new SecureCheckout(handleCheckoutComplete, handleCheckoutError, handleCheckoutCancelled, handleCheckoutLoaded);
         var donor = data.Donor;
+		var selectedCountry=$("#country :selected").attr("iso");
+		var selectedState=$("#state :selected").attr("iso");
+		
+		if(selectedCountry && selectedCountry=="GB")
+		{
+			selectedCountry="UK";
+		}
         donationData = {
             "key": publicKey,
-            'Amount': (part.find("#recMonthly").prop("checked")) ? installmentAmt : getDonationAmount(),
+            'Amount': ($("#recMonthly").prop("checked")) ? installmentAmt : getDonationAmount(),
             'UseCaptcha': EditorContent.RecaptchRequired,
             'BillingAddressCity': donor.Address.City,
-            'BillingAddressCountry': donor.Address.Country,
+            'BillingAddressCountry': selectedCountry,
             'BillingAddressLine': donor.Address.StreetAddress,
             'BillingAddressPostCode': donor.Address.PostalCode,
-            'BillingAddressState': donor.Address.State,
+            'BillingAddressState': selectedState,
             'BillingAddressEmail': donor.EmailAddress,
             'BillingAddressFirstName': donor.FirstName + " " +donor.MiddleName,
             'BillingAddressLastName': donor.LastName,
@@ -169,9 +180,9 @@ This will enhance the end user experience and provide better troubleshooting aro
             'SecondaryColor': EditorContent.SecondaryFontColor,
             'FontFamily': EditorContent.FontType,
             'IsNameVisible': true,
-          'UseVisaCheckout': EditorContent.UseVisaPass,
-          'UseMasterpass': EditorContent.UseMasterPass,
-          'UseApplePay': EditorContent.UseApplePay,
+          'UseVisaCheckout': EditorContent.UseVisaPass && (data.Gift && !data.Gift.Recurrence),
+          'UseMasterpass': EditorContent.UseMasterPass && (data.Gift && !data.Gift.Recurrence),
+          'UseApplePay': EditorContent.UseApplePay && (data.Gift && !data.Gift.Recurrence)
         };
        if (data.Gift && data.Gift.Recurrence )
 		{
@@ -190,11 +201,11 @@ This will enhance the end user experience and provide better troubleshooting aro
 
 	//to check for recurring gift that is to be processed today or not (this is check for call stored card payment api)
     function isProcessNow() {
-        var recStartDate = part.find("#start-date").val()
-        var frequency = part.find("#frequency").val();
-        var dayOfMonth = part.find('#day-of-month').val();
-        var dayOfWeek = part.find("#day-of-week").val();
-        var month = part.find('#month').val();
+        var recStartDate = $("#start-date").val()
+        var frequency = $("#frequency").val();
+        var dayOfMonth = $('#day-of-month').val();
+        var dayOfWeek = $("#day-of-week").val();
+        var month = $('#month').val();
 
         var startDateIsTodayDate = false;
 
@@ -260,10 +271,12 @@ This will enhance the end user experience and provide better troubleshooting aro
     this.handlePaymentComplete = function (data) {
         $("#bbspLoadingOverlay").hide();
         //confirmation message show here
-        part.find(".form").hide();
-        part.find(".confirmation").show();
+		//donationform
+        $(".form").hide();
+		//confirmation div
+        $(".confirmation").show();
 
-        part.find(".confirmation").html(JSON.parse(data.Data).confirmationHTML);
+       $(".confirmation").html(JSON.parse(data.Data).confirmationHTML);
     }
 
 	//this function called when the checkout popup is loaded on a page
@@ -299,13 +312,17 @@ This will enhance the end user experience and provide better troubleshooting aro
 	//this is called when the payment is completed
     function handleCheckoutComplete(event, tranToken) {
         $("#bbspLoadingOverlay").show();
-        if (tranToken) {
-            data.TokenId = tranToken;
+
+		var Id=tranToken ? tranToken :(event?(event.detail?(event.detail.transactionToken?event.detail.transactionToken:null):null):null);
+		
+        if (Id) {
+            data.TokenId = Id;
             ds.checkoutDonationComplete(data, handlePaymentComplete, handleDonationCreateFailed);
         }
         else {
             handleError();
         }
+		UnBindPaymentCheckoutEvents();
         return false;
     }
 
@@ -365,7 +382,7 @@ This will enhance the end user experience and provide better troubleshooting aro
 }(jQuery));
  {% endhighlight %}
 </div>
-<div class="tab-pane" id="example-payment-checkout-css">
+<div class="tab-pane" id="example-blackbaud-checkout-css">
     {% include copy-code.html %}
     {% highlight css %}
  /* css other than bootstrap */

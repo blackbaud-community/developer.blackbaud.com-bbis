@@ -1,0 +1,616 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: DirectDebitService</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: DirectDebitService</h1>
+
+    
+
+
+
+<section>
+
+<header>
+   <h2>
+    DirectDebitService
+    </h2>
+    
+        <div class="class-description">BLACKBAUD.api.DonationService provides methods that are use for the direct debit.</div>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+<dt>
+    <h4 class="name" id="directDebitService"><span class="type-signature"></span>new DonationService<span class="signature">(partId, options)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>partId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+
+            
+
+            
+
+            <td class="description last">The Id of an Advanced Donation Form part that will be used as a context for all method calls.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object literal containing one or more of the following optional properties:
+<ul>
+<li><tt>url</tt> : The URL of the BBIS site from which the data will be retrieved.  This value is optional when accessed from a BBIS page.  The default value will be the BBIS URL of the current page.</li>
+<li><tt>crossDomain</tt> : Indicates the BBIS url specified is from a separate domain than the current page.  When True, the class will handle the complexities of making cross domain requests to retrieve data.  The default value is False.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line76">line 76</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+    
+    </div>
+ 
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            <dt>
+    <h4 class="name" 
+    id="getBankingTypes"><span class="type-signature"></span>getBankingTypeData<span class="signature">(successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+
+<div class="description">
+        Get all banking types that is enabled in CRM.
+    </div>
+   
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+ 
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line178">line 178</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+<dt>
+    <h4 class="name" 
+    id="getAccountTypes"><span class="type-signature"></span>getAccountTypeData<span class="signature">(successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+
+<div class="description">
+        Get all supported account types.
+    </div>
+   
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+ 
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line178">line 178</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+<dt>
+    <h4 class="name" 
+    id="getOriginIdAndTime"><span class="type-signature"></span>getOriginIdAndTime<span class="signature">(successCallback, failureCallback)</span><span class="type-signature"></span></h4>
+
+</dt>
+
+<dd>
+
+
+
+<div class="description">
+        Get information about the client origin id and time.
+    </div>
+   
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+ 
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request succeeds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failureCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call if the request fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DonationService.js.html">DonationService.js</a>, <a href="DonationService.js.html#line178">line 178</a>
+    </li></ul></dd>
+    
+</dl>
+
+ 
+
+    
+</dd>
+
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="BLACKBAUD.api.DirectDebitService.html">DirectDebitService</a></li><li><a href="BLACKBAUD.api.CodeTableService.html">CodeTableService</a></li><li><a href="BLACKBAUD.api.CheckoutService.html">CheckoutService</a></li><li><a href="BLACKBAUD.api.ConsentService.html">ConsentService</a></li><li><a href="BLACKBAUD.api.CountryService.html">CountryService</a></li><li><a href="BLACKBAUD.api.DonationService.html">DonationService</a></li><li><a href="BLACKBAUD.api.ImageService.html">ImageService</a></li><li><a href="BLACKBAUD.api.QueryService.html">QueryService</a></li><li><a href="BLACKBAUD.api.UserService.html">UserService</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Wed Oct 15 2014 10:22:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
