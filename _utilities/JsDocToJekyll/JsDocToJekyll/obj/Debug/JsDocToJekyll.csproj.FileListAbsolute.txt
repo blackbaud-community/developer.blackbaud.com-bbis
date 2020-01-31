@@ -16,3 +16,14 @@ C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocTo
 C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.pdb
 C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.xml
 C:\Team_Projects\Documentation\Technical_Training\DocumentationUtilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csprojResolveAssemblyReference.cache
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe.config
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.exe
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\JsDocToJekyll.pdb
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.dll
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.pdb
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\bin\Debug\HtmlAgilityPack.xml
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csprojAssemblyReference.cache
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csproj.CoreCompileInputs.cache
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.csproj.CopyComplete
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.exe
+C:\GitReps\Main\_utilities\JsDocToJekyll\JsDocToJekyll\obj\Debug\JsDocToJekyll.pdb
