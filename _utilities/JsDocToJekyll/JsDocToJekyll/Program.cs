@@ -13,8 +13,9 @@ namespace JsDocToJekyll {
             List<string> files = new List<string>();
             List<string> content = new List<string>();
 
-            string output = @"C:\GitReps\Main\reference\javascript\auto-generated-content.html";
-            string root = @"C:\GitReps\Main\reference\javascript\jsdoc-build\";
+            string relativePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\../"));
+            string output = relativePath + "reference/javascript/auto-generated-content.html";
+            string root = relativePath + "reference/javascript/jsdoc-build/";
 
             files.Add(root + @"BLACKBAUD.api.CodeTableService.html");
             files.Add(root + @"BLACKBAUD.api.ConsentService.html");
