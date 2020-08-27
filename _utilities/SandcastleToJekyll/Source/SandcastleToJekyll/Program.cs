@@ -10,19 +10,20 @@ using System.Xml;
 namespace SandcastleToJekyll {
 
     class Options {
-        [Option('i', "input", DefaultValue = @"C:\GitReps\Main\_utilities\Sandcastle\BBNCExtensionsOutput\html", HelpText = "Input directory")]
+
+        [Option('i', "input", DefaultValue = @"..\..\..\..\..\../_utilities/Sandcastle/BBNCExtensionsOutput/html", HelpText = "Input directory")]
         public string InputDirectory { get; set; }
 
-        [Option('o', "output", DefaultValue = @"C:\GitReps\Main\reference\bbncextensions", HelpText = "Output directory")]
+        [Option('o', "output", DefaultValue = @"..\..\..\..\..\../reference/bbncextensions", HelpText = "Output directory")]
         public string OutputDirectory { get; set; }
 
-        [Option('x', "xml", DefaultValue = @"C:\GitReps\Main\_utilities\Sandcastle\BBNCExtensionsOutput\WebTOC.xml", HelpText = "XML file to convert to JSON")]
+        [Option('x', "xml", DefaultValue = @"..\..\..\..\..\../_utilities/Sandcastle/BBNCExtensionsOutput/WebTOC.xml", HelpText = "XML file to convert to JSON")]
         public string FileXML { get; set; }
 
-        [Option('j', "json", DefaultValue = @"C:\GitReps\Main\_data\WebTOC.json", HelpText = "Converted JSON file")]
+        [Option('j', "json", DefaultValue = @"..\..\..\..\..\../_data/WebTOC.json", HelpText = "Converted JSON file")]
         public string FileJSON { get; set; }
 
-        [Option('h', "html", DefaultValue = @"C:\GitReps\Main\_includes\sidebar-reference-static.html", HelpText = "Converted HTML file")]
+        [Option('h', "html", DefaultValue = @"..\..\..\..\..\../_includes/sidebar-reference-static.html", HelpText = "Converted HTML file")]
         public string FileHTML { get; set; }
 
         [Option('s', "sidebar", DefaultValue = false, HelpText = "Include the sidebar")]

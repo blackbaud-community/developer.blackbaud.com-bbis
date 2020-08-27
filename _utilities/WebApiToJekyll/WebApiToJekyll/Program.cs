@@ -48,7 +48,9 @@ namespace WebApiToJekyll {
                     transforms.Add(writer.ToString());
                     transforms.Add("</div>");
 
-                    File.WriteAllLines(@"C:\GitReps\Main\reference\rest\auto-generated-content.html", transforms);
+                    string relativePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\../"));
+                    File.WriteAllLines(relativePath + "reference/rest/auto-generated-content.html", transforms);
+ 
 
                     Console.WriteLine("Transformed: {0}", Path.GetFileName(file));
                 }
