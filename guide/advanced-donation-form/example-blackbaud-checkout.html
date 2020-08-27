@@ -1,7 +1,12 @@
-﻿<h3 id="example-blackbaud-checkout">Blackbaud Checkout Example</h3>
+﻿<h3 id="example-blackbaud-checkout">Blackbaud Checkout Example (Legacy)</h3>
+<p>
+    This example will continue to work with Service Pack 25 release, however, it will not utilize the transaction workflow optimization code included as part of that release.
+    Please refer to <a href="{{ site.baseurl }}/guide/advanced-donation-form/#example-blackbaud-checkout-SP25">Example - Blackbaud Checkout (New)</a> for updated sample that incorporates the optimized Blackbaud Checkout Code.
+</p>
 <p>This feature can be used to configure the payment checkout pop up on ADF by using the payment's <a href="{{ site.baseurl }}/reference/rest/#checkoutapi">Checkout endpoints</a>. This functionality is wrapped under <a href="{{ site.baseurl }}/reference/javascript/#checkoutservice">Checkout Service</a>, as shown in the example.
 This will enhance the end user experience and provide better troubleshooting around the missing transactions.
 </p>
+
 <ul class="nav nav-tabs">
     <li class="active">
         <a href="#example-blackbaud-checkout-html" data-toggle="tab">HTML</a>
@@ -301,7 +306,7 @@ This will enhance the end user experience and provide better troubleshooting aro
         return false;
     }
 
-	//when we cancel the payment pop up hen unbind all the binded events on checkout popup
+	//when we cancel the payment pop up then unbind all the binded events on checkout popup
     function UnBindPaymentCheckoutEvents() {
         $(document).unbind("checkoutComplete");
         $(document).unbind("checkoutLoaded");
