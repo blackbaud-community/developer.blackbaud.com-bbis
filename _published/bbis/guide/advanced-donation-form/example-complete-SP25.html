@@ -866,7 +866,9 @@
 {% include copy-code.html %}
 {% highlight js %}
 
-		/*------------------------------------------- GLOBAL VARIABLE DECLARATION - SECTION START -------------------------------------------*/
+        (function () {
+		
+		/*------------------------------------------- VARIABLE DECLARATION - SECTION START -------------------------------------------*/
 
         var blocked,
             donationService,
@@ -884,9 +886,7 @@
             ClientSitesID,
             checkoutGenericError = "There was an error while performing the operation. The page will be refreshed.";
 
-        /*------------------------------------------- GLOBAL VARIABLE DECLARATION - SECTION END -------------------------------------------*/
-
-        (function () {
+        /*------------------------------------------- VARIABLE DECLARATION - SECTION END -------------------------------------------*/
 
             this.transactionID = null;
 

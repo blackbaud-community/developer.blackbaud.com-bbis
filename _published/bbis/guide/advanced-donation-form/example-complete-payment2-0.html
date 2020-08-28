@@ -803,8 +803,9 @@
       {% include copy-code.html %}
       {% highlight js %}
 
-
-      /*------------------------------------------- GLOBAL VARIABLE DECLARATION - SECTION START -------------------------------------------*/
+      (function () {
+	  
+	  /*------------------------------------------- VARIABLE DECLARATION - SECTION START -------------------------------------------*/
 
       var blocked,
       donationService,
@@ -816,9 +817,7 @@
       postCodeCaption,
       installmentAmt;
 
-      /*------------------------------------------- GLOBAL VARIABLE DECLARATION - SECTION END -------------------------------------------*/
-
-      (function () {
+      /*------------------------------------------- VARIABLE DECLARATION - SECTION END -------------------------------------------*/
 
 
       /*------------------------------------------- JAVASCRIPT - VALIDATION FUNCTIONS - SECTION START -------------------------------------------*/
