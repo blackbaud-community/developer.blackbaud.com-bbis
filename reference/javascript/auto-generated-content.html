@@ -608,7 +608,8 @@ function will be passed an array of objects with the following properties:
 <h2 id="checkoutservice-constructor">new DonationService(partId, options) <a href="#checkoutservice-constructor"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
-<dd>BLACKBAUD.api.DonationService provides methods that are use for the blackbaud checkout.</dd>
+<dd>BLACKBAUD.api.DonationService provides methods that are use for the blackbaud checkout.<br>
+	<b>Note</b> - This is used in case of legacy checkout method</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
@@ -687,7 +688,7 @@ function will be passed an array of objects with the following properties:
 <dl>
 <dt class="description">Description</dt>
 <dd>Get public key that is used to open checkout popup.<br>
-		<b>Note</b> - PublicKey should be available on page before opening the checkout form</dd>
+		<b>Note</b> - PublicKey should be available on page before opening the checkout form. This is used in case of legacy checkout method</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
@@ -762,7 +763,9 @@ function will be passed an array of objects with the following properties:
 <h2 id="checkoutservice-getadfeditorcontentinformation">getADFEditorContentInformation(id,successCallback, failureCallback) <a href="#checkoutservice-getadfeditorcontentinformation"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
-<dd>Return editor information that will be used in BBPSCheckout.</dd>
+<dd>Return editor information that will be used in BBPSCheckout.<br>
+	<b>Note</b> - This is used in case of legacy checkout method
+</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
@@ -858,7 +861,9 @@ function will be passed an array of objects with the following properties:
 <h2 id="checkoutservice-checkoutdonationcreate">checkoutDonationCreate(data,successCallback, failureCallback) <a href="#checkoutservice-checkoutdonationcreate"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
-<dd>Creates a donation transaction and saves it to the database in pending state.</dd>
+<dd>Creates a donation transaction and saves it to the database in pending state.<br>
+	<b>Note</b> - This is used in case of legacy checkout method.
+</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
@@ -954,7 +959,9 @@ function will be passed an array of objects with the following properties:
 <h2 id="checkoutservice-checkoutdonationcomplete">checkoutDonationComplete(data,successCallback, failureCallback) <a href="#checkoutservice-checkoutdonationcomplete"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
-<dd>Update a donation transaction and saves it to the database in complete state.</dd>
+<dd>Update a donation transaction and saves it to the database in complete state.<br>
+	<b>Note</b> - This is used in case of legacy checkout method
+</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
@@ -1050,7 +1057,9 @@ function will be passed an array of objects with the following properties:
 <h2 id="checkoutservice-checkoutdonationcancel">checkoutDonationCancel(data,successCallback, failureCallback) <a href="#checkoutservice-checkoutdonationcancel"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
-<dd>Delete the donation transaction exist in database.</dd>
+<dd>Delete the donation transaction exist in database.<br>
+	<b>Note</b> - This is used in case of legacy checkout method
+</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
@@ -1146,7 +1155,9 @@ function will be passed an array of objects with the following properties:
 <h2 id="checkoutservice-validatedonationrequest">validateDonationRequest(data,successCallback, failureCallback) <a href="#checkoutservice-validatedonationrequest"><i class="fa fa-link"></i></a></h2>
 <dl>
 <dt class="description">Description</dt>
-<dd>Validate the donation data and opens the checkout pop if it is successfully validated.</dd>
+<dd>Validate the donation data and opens the checkout pop if it is successfully validated.<br>
+	<b>Note</b> - This is used in case of legacy checkout method
+</dd>
 <dt class="parameters">Parameters</dt>
 <dd><table class="table table-condensed table-parameters">
     <thead>
