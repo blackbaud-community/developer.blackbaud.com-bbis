@@ -138,6 +138,8 @@ This will enhance the end user experience and provide better troubleshooting aro
 		bbcheckout.Configuration.Data.UseVisaCheckout = (data.Gift && !data.Gift.Recurrence);
 		bbcheckout.Configuration.Data.UseMasterpass = (data.Gift && !data.Gift.Recurrence);
 		bbcheckout.Configuration.Data.UseApplePay = (data.Gift && !data.Gift.Recurrence);
+		// This error message will be shown in case of internal error while doing payment using blackbaud checkout.
+		bbcheckout.Configuration.GenericErrorMessage = "There was an error while performing the page. The page will be refreshed.";
         bbcheckout.Configuration.TransactionType = bbcheckout.TransactionType.Card_Not_Present;
         bbcheckout.Configuration.Data.CardToken = null;
 		
