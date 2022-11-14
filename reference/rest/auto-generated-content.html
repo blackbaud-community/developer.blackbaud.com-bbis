@@ -1259,60 +1259,6 @@
     </table>
   </dd>
 </dl>
-<h2 id="adfcheckoutpublickey">ADFCheckout/PublicKey<a href="#adfcheckoutpublickey"><i class="fa fa-link"></i></a><small><span class="label label-default">POST</span></small></h2>
-<dl>
-  <dt class="description">Description</dt>
-  <dd>
-    <p>To open the checkout pop up there is a key that we have to pass in payment api to initiate the Checkout library request.</p>
-  </dd>
-  <dt class="returns">Response</dt>
-  <dd>
-    <table class="table table-condensed table-responses">
-      <tr>
-        <td class="status">200 OK</td>
-        <td class="body">HttpResponseMessage</td>
-        <td class="description">Returns a HttpResponseMessage object containing information about the public key.</td>
-      </tr>
-      <tr class="example-response">
-        <td colspan="4">
-              {% highlight javascript %}{
-"Success":true,
-"Exceptions":{"Errors":[],"Success":true},
-"Data":"{\"PublicKey\":\"ca24c166-29a2-44d4-b4d0-32646e51bbb1\"}"
-}{% endhighlight %}
-            </td>
-      </tr>
-      <tr>
-        <td class="status">400 Bad Request</td>
-        <td class="body">Error[]</td>
-        <td class="description">
-            A validation error was found with the post data or an error occurred in the processing.  Returns an array of Errror objects.  Possible Errors:
-<ul>
-<li>RecordNotFound (106)</li>
-<li>RequiredFieldMissing (101)</li>
-<li>InvalidFieldSupplied (102)</li>
-<li>ValueBelowMinimum (103)</li>
-<li>ValueExceedsMaximum (104)</li>
-<li>ValueNotAllowed (105)</li>
-<li>ExceedsMaximumLength (107)</li>
-</ul>
-
-          </td>
-      </tr>
-      <tr class="example-response">
-        <td colspan="4">
-              {% highlight javascript %}[
-	{
-		"ErrorCode":101,
-		"Field":"Donor.LastName",
-		"Message":null
-	}
-]{% endhighlight %}
-            </td>
-      </tr>
-    </table>
-  </dd>
-</dl>
 <h2 id="adfcheckoutdelete">ADFCheckout/Delete<a href="#adfcheckoutdelete"><i class="fa fa-link"></i></a><small><span class="label label-default">POST</span></small></h2>
 <dl>
   <dt class="description">Description</dt>
