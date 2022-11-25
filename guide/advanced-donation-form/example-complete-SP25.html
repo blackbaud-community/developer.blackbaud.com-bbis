@@ -843,6 +843,8 @@
 
             <!-- *********************************************** DIRECT DEBIT - SECTION END *********************************************** -->
             <br />
+	    <!-- intialising div for recaptcha -->
+	    <div id="g_captcha"></div><br />
             <!-- This is the final 'Donate' button, when Donor fill the all required field of page after that press this button for Submit Donation. -->
             <div class="row">
                 <div class="col-sm-6">
@@ -866,45 +868,40 @@
 {% include copy-code.html %}
 {% highlight js %}
 
-		// Declaring global variable for div of google recaptcha
-		var recaptchadiv = document.getElementById('g_captcha');
-		var responseCaptcha = null;
-		// handle click funtion to to display captcha
-		function handleRadioClickEvent(myRadio) {
-			 if(myRadio.value == '1'){
-				ResetGoogleRecaptchaDivStyle();
-				GoogleRecaptchaRender();
-			 }
-			 else {
-				HideGoogleRecaptchaDiv();
-			 }
+	// Declaring global variable for div of google recaptcha
+	var recaptchadiv = document.getElementById('g_captcha');
+	var responseCaptcha = null;
+	// handle click funtion to to display captcha
+	function handleRadioClickEvent(myRadio) {
+		if(myRadio.value == '1'){
+			ResetGoogleRecaptchaDivStyle();
+			GoogleRecaptchaRender();
 		}
-		  
-
-
-
-		// binding captcha   
-		function GoogleRecaptchaRender() {
-				grecaptcha.render('g_captcha', {
-				'sitekey': CheckoutModel.SiteKey,
-				'theme': 'light',  // optional
-				'callback': 'onloadCallback'  
-			});
-		  }
-
-
-
-		 // function to hide captcha
-		  function HideGoogleRecaptchaDiv() {
-			   recaptchadiv.style.visibility = 'hidden';
-			   recaptchadiv.style.display ='none';
-		  }
-		  
-		  //function to reset captcha div style
-		  function ResetGoogleRecaptchaDivStyle() {
-			   recaptchadiv.style.visibility = '';
-			   recaptchadiv.style.display ='';
-		  }
+		else {
+			HideGoogleRecaptchaDiv();
+		}
+	}
+	
+	// binding captcha   
+	function GoogleRecaptchaRender() {
+			grecaptcha.render('g_captcha', {
+			'sitekey': CheckoutModel.SiteKey,
+			'theme': 'light',  // optional
+			'callback': 'onloadCallback'  
+		});
+	}
+	
+	// function to hide captcha
+	function HideGoogleRecaptchaDiv() {
+		recaptchadiv.style.visibility = 'hidden';
+		recaptchadiv.style.display ='none';
+	}
+	
+	//function to reset captcha div style
+	function ResetGoogleRecaptchaDivStyle() {
+		recaptchadiv.style.visibility = '';
+		recaptchadiv.style.display ='';
+	}
 
         (function () {
 		
