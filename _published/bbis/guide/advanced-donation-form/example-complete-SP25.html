@@ -1,4 +1,4 @@
-﻿<h3 id="example-complete-SP25">ADF - Complete Example(New)</h3>
+﻿<h3 id="example-complete-SP25">ADF - Complete Example</h3>
 <p>This example takes advantage of the transaction workflow optimization code included with our Service Pack 25 release.</p>
 <p>All our other examples available on the Developer Site are designed to be inserted into an Advanced Donation Form Part; however the following example is designed as a complete standalone solution – applicable even on a different server than the one serving your BBIS website.</p>
 
@@ -455,19 +455,19 @@
                         <div class="formrow required">
                             <ul class="list-group">
                                 <li id="creditCard">
-                                    <input id="paymentCreditCard" type="radio" name="paymentMethod" value="0" checked="checked" />
+                                    <input id="paymentCreditCard" type="radio" name="paymentMethod" value="0" onclick="handleRadioClickEvent(this);" checked="checked" />
                                     <label for="paymentCreditCard">
                                         Credit Card
                                     </label>
                                 </li>
                                 <li id="billMeLater">
-                                    <input id="paymentBillMeLater" type="radio" name="paymentMethod" value="1" />
+                                    <input id="paymentBillMeLater" type="radio" name="paymentMethod" value="1" onclick="handleRadioClickEvent(this);" />
                                     <label for="paymentBillMeLater">
                                         Bill Me Later
                                     </label>
                                 </li>
                                 <li id="directDebit" style="display:none;">
-                                    <input id="paymentDirectDebit" type="radio" name="paymentMethod" value="2" />
+                                    <input id="paymentDirectDebit" type="radio" name="paymentMethod" value="2" onclick="handleRadioClickEvent(this);" />
                                     <label for="paymentDirectDebit">
                                         DirectDebit
                                     </label>
@@ -843,6 +843,8 @@
 
             <!-- *********************************************** DIRECT DEBIT - SECTION END *********************************************** -->
             <br />
+	    <!-- intialising div for recaptcha -->
+	    <div id="g_captcha"></div><br />
             <!-- This is the final 'Donate' button, when Donor fill the all required field of page after that press this button for Submit Donation. -->
             <div class="row">
                 <div class="col-sm-6">
@@ -865,6 +867,41 @@
   <div class="tab-pane" id="example-complete-SP25-js">
 {% include copy-code.html %}
 {% highlight js %}
+
+	// Declaring global variable for div of google recaptcha
+	var recaptchadiv = document.getElementById('g_captcha');
+	var responseCaptcha = null;
+	// handle click funtion to to display captcha
+	function handleRadioClickEvent(myRadio) {
+		if(myRadio.value == '1'){
+			ResetGoogleRecaptchaDivStyle();
+			GoogleRecaptchaRender();
+		}
+		else {
+			HideGoogleRecaptchaDiv();
+		}
+	}
+	
+	// binding captcha   
+	function GoogleRecaptchaRender() {
+			grecaptcha.render('g_captcha', {
+			'sitekey': CheckoutModel.SiteKey,
+			'theme': 'light',  // optional
+			'callback': 'onloadCallback'  
+		});
+	}
+	
+	// function to hide captcha
+	function HideGoogleRecaptchaDiv() {
+		recaptchadiv.style.visibility = 'hidden';
+		recaptchadiv.style.display ='none';
+	}
+	
+	//function to reset captcha div style
+	function ResetGoogleRecaptchaDivStyle() {
+		recaptchadiv.style.visibility = '';
+		recaptchadiv.style.display ='';
+	}
 
         (function () {
 		
@@ -1000,6 +1037,14 @@
                         errs += "Select Payment Method"
                     }
                 }
+				
+				 // check client side validation of google recaptcha
+				if ($("#paymentBillMeLater").prop("checked") && CheckoutModel.SiteKey!= null){    
+					responseCaptcha = grecaptcha.getResponse();
+					if(responseCaptcha==""){
+					  errs += "CAPTCHA validation is required."
+					}
+				}
 
                 if (errs === "") {
                     return true;
@@ -1257,6 +1302,8 @@
                 if (data && data.Donor && data.Donor.Address) {
                     data.Donor.Address.State = part.find("#state :selected").attr("iso");
                 }
+				// sending the response token to validate on server side
+				data.ResponseToken = responseCaptcha;
                 donationService.createDonation(data, onSuccess, onFail);
 
             }
