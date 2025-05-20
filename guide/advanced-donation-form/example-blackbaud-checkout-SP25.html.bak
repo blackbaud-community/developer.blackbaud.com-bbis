@@ -83,7 +83,7 @@ This will enhance the end user experience and provide better troubleshooting aro
 	 var  SrtDt, donationData, ServerDate,
         checkoutGenericError = "There was an error while performing the operation.The page will be refreshed";
 		
-	//return the donation amount.	
+	//return the donation amount	
 	function getDonationAmount() {
     if ($("#amtOther").prop("checked")) {
          return $("#txtAmount").val();
