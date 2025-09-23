@@ -276,7 +276,7 @@
                   (String)
               </td>
               <td class="required"><span class="label label-default label-required">Required</span></td>
-              <td class="description">In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</td>
+              <td class="description"></td>
           </tr>
           <tr>
               <td class="name">Donor.Address.PostalCode</td>
@@ -660,22 +660,6 @@
               <td class="description">Id of the BBIS Part hosting the donation form.</td>
           </tr>
           <tr>
-              <td class="name">BBSPReturnUri</td>
-              <td class="type">
-                  (String)
-              </td>
-              <td class="required"></td>
-              <td class="description">The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</td>
-          </tr>
-          <tr>
-              <td class="name">BBSPTemplateSitePageId</td>
-              <td class="type">
-                  (Integer)
-              </td>
-              <td class="required"></td>
-              <td class="description">Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</td>
-          </tr>
-          <tr>
               <td class="name">MerchantAccountId</td>
               <td class="type">
                   (GUID)
@@ -831,7 +815,7 @@
                   (String)
               </td>
               <td class="required"><span class="label label-default label-required">Required</span></td>
-              <td class="description">In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</td>
+              <td class="description"></td>
           </tr>
           <tr>
               <td class="name">Donor.Address.PostalCode</td>
@@ -1215,22 +1199,6 @@
               <td class="description">Id of the BBIS Part hosting the donation form.</td>
           </tr>
           <tr>
-              <td class="name">BBSPReturnUri</td>
-              <td class="type">
-                  (String)
-              </td>
-              <td class="required"></td>
-              <td class="description">The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</td>
-          </tr>
-          <tr>
-              <td class="name">BBSPTemplateSitePageId</td>
-              <td class="type">
-                  (Integer)
-              </td>
-              <td class="required"></td>
-              <td class="description">Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</td>
-          </tr>
-          <tr>
               <td class="name">MerchantAccountId</td>
               <td class="type">
                   (GUID)
@@ -1253,7 +1221,7 @@
       <tr>
         <td class="status">200 OK</td>
         <td class="body">CreateDonationReply</td>
-        <td class="description">Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
+        <td class="description">Returns a CreateDonationReply object containing information about the created donation. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
       </tr>
       <tr>
         <td class="status">400 Bad Request</td>
@@ -1728,7 +1696,7 @@
   <dt class="description">Description</dt>
   <dd>
     <p>Attempts to create a donation from the posted object.</p>
-    <p>Validates the fields in the posted CreateDonationRequest.  If valid, creates a donation transaction and saves it to the database. Stores the Id of the new donation in session so the user has permissions for the donation instance.  If the payment type is credit card, communicates with Blackbaud secured payment to set up a check out URI and adds that URI to the return object.  For credit card payment, the donation is saved in a Pending state.  For payments not using a credit card, the donation is saved in a Completed state and an acknowledgement email is sent.</p>
+    <p>Validates the fields in the posted CreateDonationRequest.  If valid, creates a donation transaction and saves it to the database. Stores the Id of the new donation in session so the user has permissions for the donation instance. For payments not using a credit card, the donation is saved in a Completed state and an acknowledgement email is sent.</p>
   </dd>
   <dt class="parameters">Parameters</dt>
   <dd>
@@ -1832,7 +1800,7 @@
                   (String)
               </td>
               <td class="required"><span class="label label-default label-required">Required</span></td>
-              <td class="description">In order for Blackbaud Secure Payments to pre-populate international billing addresses, this value should be the full country description specified in CRM.</td>
+              <td class="description"></td>
           </tr>
           <tr>
               <td class="name">Donor.Address.PostalCode</td>
@@ -1899,7 +1867,6 @@
               <td class="description">
                   Indicates the method of payment to be used for the gift.  Possible values:
                   <ul>
-                      <li>CreditCard (0)</li>
                       <li>BillMeLater (1)</li>
                       <li>DirectDebit (2)</li>
                   </ul>
@@ -2199,22 +2166,6 @@
               <td class="description">Id of the BBIS Part hosting the donation form.</td>
           </tr>
           <tr>
-              <td class="name">BBSPReturnUri</td>
-              <td class="type">
-                  (String)
-              </td>
-              <td class="required"></td>
-              <td class="description">The Uri that Blackbaud secured payment should redirect to after completing the payment.  Required for credit card transactions. Exclude if Donation Form is using a Payment 2.0 Part.</td>
-          </tr>
-          <tr>
-              <td class="name">BBSPTemplateSitePageId</td>
-              <td class="type">
-                  (Integer)
-              </td>
-              <td class="required"></td>
-              <td class="description">Id of the BBIS page that should be used as the page template in Blackbaud secured payment.  This page must contain certain BBSP-integrated part types for the page template to be usable, such as the Advanced Donation Form. Exclude if Donation Form is using a Payment 2.0 Part.</td>
-          </tr>
-          <tr>
               <td class="name">MerchantAccountId</td>
               <td class="type">
                   (GUID)
@@ -2295,8 +2246,6 @@
                   "PageId": 784,
                   "PageName": "Sample Page"
                   },
-                  "BBSPReturnUri": "http://www.mydomain.com",
-                  "BBSPTemplateSitePageId": 784,
                   "MerchantAccountId": "A9EBE81D-65A8-4BBF-8446-FB2ED0276209",
                   "PartId": 12
                   }{% endhighlight %}
@@ -2342,7 +2291,7 @@
       <tr>
         <td class="status">201 OK</td>
         <td class="body">CreateDonationReply</td>
-        <td class="description">Returns a CreateDonationReply object containing information about the created donation and optionally a Uri for completing payment of the donation with Blackbaud secured payment. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
+        <td class="description">Returns a CreateDonationReply object containing information about the created donation. A location header is also returned containing a Uri of the new donation object.  If the part is configured to use a Payment 2.0 page, the reply will contain a URI to the selected payment page instead of a secure payment URI.</td>
       </tr>
       <tr class="example-response">
           <td colspan="4">
@@ -2421,7 +2370,6 @@
               },
               "TransactionStatus": 1
               },
-              "BBSPCheckoutUri": " https://payments.blackbaud.com/Pages/Index.aspx?t=853f96be-bf08-4828-aefa-326a06e48d31"
               }{% endhighlight %}
           </td>
       </tr>
@@ -2432,8 +2380,7 @@
 <dl>
   <dt class="description">Description</dt>
   <dd>
-    <p>Signals the application to confirm that the donation has been paid in Blackbaud secured payment and to complete the creation of the donation.</p>
-    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</p>
+    <p>Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database. Updates the donation status and sends the acknowledgment email.</p>
   </dd>
   <dt class="parameters">Parameters</dt>
   <dd>
@@ -2472,30 +2419,9 @@
         <td class="description">No donation was found by the specified Id.</td>
       </tr>
       <tr>
-        <td class="status">400 Bad Request</td>
-        <td class="body">Error[]</td>
-        <td class="description">
-                        The donation payment was not properly completed in Blackbaud secured payment or the donation has already been marked as completed.  Possible Errors:
-<ul>
-  <li>InvalidOperation (102)</li>
-  <li>BBSPTransactionNotProcessed (203)</li>
-</ul></td>
-      </tr>
-      <tr class="example-response">
-        <td colspan="4">
-              {% highlight javascript %}[
-    {
-        "ErrorCode": 102,
-        "Field": null,
-        "Message": null
-    }
-]{% endhighlight %}
-            </td>
-      </tr>
-      <tr>
         <td class="status">200 OK</td>
         <td class="body">Donation</td>
-        <td class="description">Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database.  Ensures the donation is a credit card donation and not already in a completed state.  If not, then confirms with Blackbaud secured payment whether the donation is paid.  If so, updates the donation status and sends the acknowledgment email.</td>
+        <td class="description">Ensures the user has access to this donation by finding the Id in their session.  If so, loads the donation out of the database. Updates the donation status and sends the acknowledgment email.</td>
       </tr>
       <tr class="example-response">
         <td colspan="4">
@@ -2625,11 +2551,6 @@
         <td class="status">200 OK</td>
         <td class="body">String</td>
         <td class="description">Returns a string containing the HTML block of the confirmation with the donation fields merged in.</td>
-      </tr>
-      <tr class="example-response">
-        <td colspan="4">
-              {% highlight javascript %}&lt;div&gt;Thank you for donating $10.00.&lt;/div&gt;{% endhighlight %}
-            </td>
       </tr>
     </table>
   </dd>
